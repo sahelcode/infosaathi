@@ -18,6 +18,7 @@ const show = (n: string) => n.replace(/^0/, '০').replace(/\d/g, (d) => '০১
         <div class="bo-top"><b>{o.data.name}</b><span class:list={['bo-v', o.data.verified_by === 'online' && 'on']}>{o.data.verified_by === 'phone' ? 'ফোনে যাচাই' : 'অনলাইনে দেখা'} · {bnDate(o.data.verified)}</span></div>
         <p class="bo-addr">{[o.data.address, o.data.upazila, districtBn(o.data.district)].filter(Boolean).join(', ')}</p>
         {o.data.note && <p class="bo-note">{o.data.note}</p>}
+        {o.data.source_url && <p class="bo-note" style="color:var(--text-muted,#6b7280)">সূত্র: <a href={o.data.source_url} target="_blank" rel="noopener" style="text-decoration:underline">অফিসিয়াল ওয়েবসাইট</a></p>}
         <div class="bo-act">
           {o.data.phones.map((p) => <a class="bo-call" href={`tel:${p.number}`}><Icon name="phone" size={16} w={2} />{show(p.number)}{p.who && <small>{p.who}</small>}</a>)}
           {o.data.facebook && <a class="bo-fb" href={o.data.facebook} target="_blank" rel="noopener"><Icon name="fb" size={16} w={1.8} />ফেসবুক গ্রুপ/পেজ</a>}

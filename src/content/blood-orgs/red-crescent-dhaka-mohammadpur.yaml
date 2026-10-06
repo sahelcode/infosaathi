@@ -1,0 +1,11 @@
+name: রেড ক্রিসেন্ট ব্লাড সেন্টার, মোহাম্মদপুর
+district: dhaka
+upazila: মোহাম্মদপুর
+address: ৭/৫ ঔরঙ্গজেব রোড
+phones:
+  - { number: "01811458537", who: "হটলাইন" }
+  - { number: "0248121182", who: "পিএবিএক্স" }
+note: বাংলাদেশ রেড ক্রিসেন্ট সোসাইটির ব্লাড সেন্টার
+source_url: https://bdrcs.org/donate-blood/
+verified: 2026-10-07
+verified_by: online

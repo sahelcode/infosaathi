@@ -497,6 +497,7 @@ const bloodOrgs = defineCollection({
     phones: z.array(z.object({ number: phone, who: z.string().optional() })).default([]), // who: যার নম্বর, যেমন সভাপতি
     facebook: z.url().refine((u) => /(^|\.)(facebook\.com|fb\.com|fb\.me)$/.test(new URL(u).hostname), 'facebook লিংক facebook.com থেকে হতে হবে').optional(),
     note: z.string().optional(), // যেমন "২৪ ঘণ্টা", "শুধু উপজেলার ভেতরে"
+    source_url: z.url().optional(), // যে পাতা থেকে তথ্য নিয়েছেন (online যাচাইয়ের ক্ষেত্রে দিন)
     verified: date, // যে দিন আপনি যাচাই করেছেন
     verified_by: z.enum(['phone', 'online'], 'verified_by হবে phone অথবা online').default('phone'),
   }).refine((d) => d.phones.length > 0 || d.facebook, 'অন্তত একটি ফোন নম্বর অথবা facebook লিংক দিন'),
