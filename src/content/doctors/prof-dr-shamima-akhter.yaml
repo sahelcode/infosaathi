@@ -1,0 +1,27 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/10/dr-shamima-akhter-shipa-gynecology.html, গত ১২ মাসে Google থেকে 79 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - নামের বানান অমিল: শিরোনামে 'ডা. শামিমা আক্তার (শিপা)' (প্রফেসর ছাড়া), মূল লেখায় 'প্রফেসর ডাঃ শামীমা আক্তার (শিপা)'
+draft: true
+name: "প্রফেসর ডাঃ শামীমা আক্তার (শিপা)"
+name_en: "Prof. Dr. Shamima Akhter (Shipa)"
+specialty: gynecology
+title: "প্রসূতি ও স্ত্রীরোগ বিশেষজ্ঞ (গাইনি)"
+degrees: ["MBBS", "MS (Gynae & Obs)"]
+designation: "Professor, Department of Obstetrics & Gynaecology — Parkview Medical College & Hospital, Sylhet"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/10/dr-shamima-akhter-shipa-gynecology.html]
+treats: ["উচ্চঝুঁকির গর্ভাবস্থা", "প্রসবপূর্ব ও প্রসবপরবর্তী যত্ন", "বন্ধ্যাত্ব", "ল্যাপারোস্কপিক গাইনি সার্জারি", "মাসিকের অনিয়ম", "PCOS", "এন্ডোমেট্রিওসিস", "ফাইব্রয়েড"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: শনিবার–বৃহস্পতিবার সন্ধ্যা (৪:০০ PM – ৮:০০ PM)* · শুক্রবার বন্ধ *সময় শিডিউলভেদে কিছুটা অদলবদল হতে পারে—আসার আগে ফোনে নিশ্চিত করুন।
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "16:00"
+    end: "20:00"
+    serials:
+      - label: "মোবাইল সিরিয়াল"
+        number: "01799218402"
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"

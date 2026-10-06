@@ -1,0 +1,23 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/dr-md-jasim-uddin-neuromedicine.html, গত ১২ মাসে Google থেকে 78 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. মো. জসিম উদ্দিন"
+name_en: "Dr. Md. Jasim Uddin"
+specialty: neurology
+title: "নিউরোমেডিসিন/নিউরোলজি বিশেষজ্ঞ"
+degrees: ["MBBS", "BCS (Health)", "MD (Neurology)"]
+designation: "Assistant Professor, Department of Neuromedicine — Sylhet MAG Osmani Medical College & Hospital"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/dr-md-jasim-uddin-neuromedicine.html]
+treats: ["স্ট্রোক", "খিঁচুনি/এপিলেপসি", "নিউরোপ্যাথি", "মুভমেন্ট ডিসঅর্ডার", "মাইগ্রেন", "মাথাব্যথা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: প্রতিদিন (শনি–বৃহস্পতি) ৫:০০ PM – ৯:০০ PM · শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "21:00"
+    serials:
+      - label: "হটলাইন (ইবনে সিনা সিলেট)"
+        number: "09610009640"

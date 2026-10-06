@@ -1,0 +1,23 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/10/dr-ummey-sayeeda-bilkis-ilora.html, গত ১২ মাসে Google থেকে 89 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. উম্মে সাইযেদা বিলকিস (ইলোরা)"
+name_en: "Dr. Ummey Sayeeda Bilkis (Ilora)"
+specialty: gynecology
+title: "গাইনোকোলজি ও অবসটেট্রিক্স বিশেষজ্ঞ"
+degrees: ["MBBS", "FCPS (Obs & Gynae)"]
+designation: "Gynecology & Obstetrics Specialist – Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/10/dr-ummey-sayeeda-bilkis-ilora.html]
+treats: ["গর্ভকালীন ও প্রসব-পরবর্তী সেবা", "উচ্চঝুঁকির গর্ভাবস্থা", "বন্ধ্যাত্ব", "মাসিকের অনিয়ম", "মেনোপজ-পরবর্তী যত্ন", "জরায়ুর ফাইব্রয়েড", "ওভারিয়ান সিস্ট", "গাইনোকোলজিক সার্জারি"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

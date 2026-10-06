@@ -1,0 +1,25 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/10/dr-m-a-hai.html, গত ১২ মাসে Google থেকে 532 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. এম. এ. হাই"
+name_en: "Dr. M. A. Hai"
+specialty: pediatrics
+title: "শিশু ও নবজাতক রোগ বিশেষজ্ঞ"
+degrees: ["MBBS", "DCH", "FCPS (Pediatrics)"]
+designation: "Consultant, Department of Pediatric Medicine — Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/10/dr-m-a-hai.html]
+treats: ["নবজাতকের পরিচর্যা", "টিকাদান", "নিউমোনিয়া", "ডায়রিয়া", "ইউরিনারি ইনফেকশন", "অ্যালার্জি ও হাঁপানি", "অপুষ্টি ও অ্যানিমিয়া", "বৃদ্ধি ও বিকাশজনিত সমস্যা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01937529287"
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"

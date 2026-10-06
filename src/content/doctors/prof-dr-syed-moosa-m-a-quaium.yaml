@@ -1,0 +1,25 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/10/prof-dr-syed-moosa-ma-quaium-pediatric.html, গত ১২ মাসে Google থেকে 61 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "প্রফেসর ডা. সৈয়দ মূসা এম. এ. কায়ুম"
+name_en: "Prof. Dr. Syed Moosa M.A. Quaium"
+specialty: pediatrics
+title: "শিশু ও নবজাতক রোগ বিশেষজ্ঞ"
+degrees: ["MBBS", "DCH", "FCPS (Pediatrics)", "MD (Pediatrics)"]
+designation: "Professor & Senior Consultant, Department of Pediatric Medicine — Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/10/prof-dr-syed-moosa-ma-quaium-pediatric.html]
+treats: ["নবজাতকের রোগ", "জ্বর ও সর্দি", "শ্বাসকষ্ট ও হাঁপানি", "অ্যালার্জি", "ডায়রিয়া", "অপুষ্টি", "অ্যানিমিয়া", "শিশু বিকাশজনিত সমস্যা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01767799841"
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

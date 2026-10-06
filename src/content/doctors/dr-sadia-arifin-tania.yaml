@@ -1,0 +1,28 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/12/dr-sadia-arifin-tania-sylhet-ibn-sina.html, গত ১২ মাসে Google থেকে 35 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - তিনি ক্লিনিক্যাল সাইকোলজিস্ট (BSc/MS Psychology), MBBS নেই — তবু নামে 'ডা./Dr.' লেখা এবং LABELS-এ 'Psychiatry'; উপাধি ও বিভাগ যাচাই করুন।
+#   - কোন নম্বরটি ব্যক্তিগত আর কোনটি হাসপাতালের, পোস্টে স্পষ্ট নয়।
+draft: true
+name: "ডা. সাদিয়া আরিফিন তানিয়া"
+name_en: "Dr. Sadia Arifin Tania"
+specialty: psychiatry
+title: "ক্লিনিক্যাল সাইকোলজিস্ট (মানসিক স্বাস্থ্য)"
+degrees: ["BSc (Psychology)", "MS (Psychology)"]
+designation: "Clinical Psychologist – Ibn Sina Hospital Sylhet"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/12/dr-sadia-arifin-tania-sylhet-ibn-sina.html]
+treats: ["মানসিক চাপ", "আবেগগত সমস্যা", "আচরণগত সমস্যা", "মনোবৈজ্ঞানিক কাউন্সেলিং"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: শুক্রবার (10:00 AM - 8:00 PM)
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শুক্র]
+    start: "10:00"
+    end: "20:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01865230004"
+      - label: "সিরিয়াল"
+        number: "09610009640"

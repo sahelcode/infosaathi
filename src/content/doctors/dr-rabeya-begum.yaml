@@ -1,0 +1,23 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/10/dr-rabeya-begum-gynecology.html, গত ১২ মাসে Google থেকে 49 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. রাবেয়া বেগম"
+name_en: "Dr. Rabeya Begum"
+specialty: gynecology
+title: "গাইনোকোলজি ও অবসটেট্রিক্স বিশেষজ্ঞ"
+degrees: ["MBBS", "FCPS (OBGYN)", "Training (Laparoscopic Surgery)"]
+designation: "Associate Professor, Department of Gynecology & Obstetrics — North East Medical College & Hospital"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/10/dr-rabeya-begum-gynecology.html]
+treats: ["উচ্চ ঝুঁকির গর্ভাবস্থা", "প্রসূতি সেবা", "বন্ধ্যাত্ব", "মাসিক অনিয়ম", "সিস্ট", "ফাইব্রয়েড", "মেনোপজ পরবর্তী যত্ন", "ল্যাপারোস্কোপিক গাইনি সার্জারি"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "09636300300"

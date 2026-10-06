@@ -1,0 +1,26 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2026/01/major-dr-md-mahtabul-hasan-general.html, গত ১২ মাসে Google থেকে 11 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "মেজর ডা. মো. মাহতাবুল হাসান"
+name_en: "Major Dr. Md. Mahtabul Hasan"
+specialty: surgery
+title: "জেনারেল ও ল্যাপারোস্কোপিক সার্জন"
+degrees: ["MBBS", "MCPS", "FCPS (Surgery)"]
+designation: "Assistant Professor & Head of Department (Surgery), CMH Sylhet"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2026/01/major-dr-md-mahtabul-hasan-general.html]
+treats: ["গলব্লাডার স্টোন (পিত্তপাথর)", "হার্ণিয়া", "টিউমার/গাঁট", "স্তন রোগ", "পাইল্স", "ফিসার", "ফিসটুলা", "ল্যাপারোস্কোপিক অপারেশন"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: প্রতি বৃহস্পতি ও শুক্রবার (বিকাল ৪টা - ৮টা)
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪১৭ (৪র্থ তলা)"
+    days: [বৃহস্পতি, শুক্র]
+    start: "16:00"
+    end: "20:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01756610585"
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

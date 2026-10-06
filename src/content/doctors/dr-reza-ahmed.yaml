@@ -1,0 +1,27 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2026/01/dr-reza-ahmed-general-laparoscopic.html, গত ১২ মাসে Google থেকে 2 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - দিনে দুইটি সেশন (১০:০০–১৪:০০ ও ১৭:০০–২১:০০)—একটি start/end-এ ধরানো যায় না, তাই start/end খালি রাখা হয়েছে
+draft: true
+name: "ডা. রেজা আহমদ"
+name_en: "Dr. Reza Ahmed"
+specialty: surgery
+title: "জেনারেল ও ল্যাপারোস্কপিক সার্জন"
+degrees: ["MBBS (DMC)", "FCPS (General Surgery)"]
+designation: "Consultant – General & Laparoscopic Surgery"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2026/01/dr-reza-ahmed-general-laparoscopic.html]
+treats: ["সাধারণ সার্জারি", "জরুরি সার্জারি", "ল্যাপারোস্কপিক সার্জারি"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সকালে ১০টা-২টা ও বিকেলে ৫টা-৯টা (শুক্রবার বন্ধ)
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    # start: "17:00"   <- যাচাই করে দিন
+    # end: "21:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01961439376"
+      - label: "হাসপাতালের সিরিয়াল (হটলাইন)"
+        number: "09610009640"

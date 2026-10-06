@@ -1,0 +1,28 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/dr-mazharul-islam-neuro-medicine.html, গত ১২ মাসে Google থেকে 109 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - বিশেষজ্ঞতা অস্পষ্ট: LABELS ও ইংরেজি লাইনে 'Neuro Medicine', কিন্তু বাংলা অংশে ও বিবরণে শুধু 'মেডিসিন বিশেষজ্ঞ' এবং আগ্রহের ক্ষেত্রগুলো সাধারণ মেডিসিনের; LABELS অনুযায়ী neurology ধরা হয়েছে, ফোনে যাচাই দরকার
+#   - চেম্বারের ঠিকানা 'Ibn Sina Hospital, Zindabazar, Sylhet' — সোবহানীঘাটের ইবনে সিনা হাসপাতাল সিলেট লিমিটেড নয়; জিন্দাবাজারে কোন শাখা তা অস্পষ্ট
+#   - ডিগ্রি তালিকায় অমিল: উপরের অংশে BCS (Health) আছে, কিন্তু 'Qualifications' লাইনে শুধু MBBS, FCPS (Medicine); বাংলায় 'বিএমবিবিএস' লেখা
+draft: true
+name: "ডা. মাজহারুল ইসলাম"
+name_en: "Dr. Mazharul Islam"
+specialty: neurology
+title: "মেডিসিন বিশেষজ্ঞ"
+degrees: ["MBBS", "FCPS (Medicine)", "BCS (Health)"]
+designation: "Consultant Physician, Ibn Sina Hospital, Sylhet"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/dr-mazharul-islam-neuro-medicine.html]
+treats: ["ডায়াবেটিস", "উচ্চ রক্তচাপ", "শ্বাসযন্ত্রের রোগ", "গ্যাস্ট্রোইনটেস্টাইনাল রোগ", "সংক্রামক রোগ"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: 5:00 PM - 9:00 PM (Saturday to Thursday) | বিকাল ৫টা - রাত ৯টা (শনিবার থেকে বৃহস্পতিবার); সাপ্তাহিক বন্ধ: শুক্রবার
+  - name: "Ibn Sina Hospital, Zindabazar, Sylhet"
+    address: "Ibn Sina Hospital, Zindabazar, Sylhet | ইবনে সিনা হাসপাতাল, জিন্দাবাজার, সিলেট"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "21:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "09610009640"

@@ -1,0 +1,28 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/prof-dr-d-hassan-chowdhury-surgeon.html, গত ১২ মাসে Google থেকে 182 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - চেম্বারের দিন ও সময় পোস্টে নেই ('Visiting hour অনিশ্চিত')
+#   - চেম্বারের নাম নেই, শুধু ঠিকানা (53, Stadium Market, Rikabi Bazar) দেওয়া
+#   - বিশেষজ্ঞতা জেনারেল, ল্যাপারোস্কোপিক ও কলোরেক্টাল সার্জারি — LABELS-এ বিশেষজ্ঞতা নেই; surgery ধরা হয়েছে, colorectal-ও প্রযোজ্য হতে পারে
+draft: true
+name: "প্রফেসর ডা. ডি. এ. হাসান চৌধুরী"
+name_en: "Prof. Dr. D. A. Hassan Chowdhury"
+specialty: surgery
+title: "জেনারেল, ল্যাপারোস্কোপিক ও কলোরেক্টাল (পাইলস) সার্জারি বিশেষজ্ঞ"
+degrees: ["MBBS", "FCPS (Surgery)", "FRCS (Edin)", "FRCS (Glasgow)"]
+designation: "প্রফেসর ও বিভাগীয় প্রধান, সার্জারি, সিলেট এম.এ.জি. ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/prof-dr-d-hassan-chowdhury-surgeon.html]
+treats: ["গলব্লাডার পাথর", "হার্নিয়া", "অ্যাপেন্ডিসাইটিস", "পাইলস", "ফিশার", "ফিস্টুলা", "অন্ত্রের অস্ত্রোপচার", "সফট-টিস্যু লাম্প"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সময় পরিবর্তিত হতে পারে — কল করে নিশ্চিত করুন
+  - name: "Stadium Market, Rikabi Bazar, Sylhet"
+    address: "53, Stadium Market, Rikabi Bazar, Sylhet-3100"
+    # days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]   <- যাচাই করে দিন
+    # start: "17:00"   <- যাচাই করে দিন
+    # end: "21:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01711349091"

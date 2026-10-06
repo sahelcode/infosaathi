@@ -1,0 +1,28 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/12/prof-dr-jamal-ahmed-chowdhury-general.html, গত ১২ মাসে Google থেকে 9 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - সময় শুধু 'approx. 6pm – 9pm' বলা; বাংলা অংশে শুধু 'সন্ধ্যায়' — ফোনে নিশ্চিত করুন।
+#   - ব্লগ শিরোনামে 'অধ্যাপক ডা.' কিন্তু মূল লেখায় 'প্রফেসর ডা.' লেখা।
+draft: true
+name: "প্রফেসর ডা. জামাল আহমেদ চৌধুরী"
+name_en: "Prof. Dr. Jamal Ahmed Chowdhury"
+specialty: surgery
+title: "জেনারেল, কোলোরেক্টাল ও ল্যাপারোস্কোপিক সার্জন"
+degrees: ["MBBS", "FCPS (Surgery)"]
+designation: "Professor & Head, Surgery – Sylhet Womens Medical College & Hospital"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/12/prof-dr-jamal-ahmed-chowdhury-general.html]
+treats: ["জেনারেল সার্জারি", "কোলোরেক্টাল সার্জারি", "ল্যাপারোস্কোপিক সার্জারি"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: শনিবার থেকে বৃহস্পতিবার (Evening approx. 6pm – 9pm, Friday Closed)
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "18:00"
+    end: "21:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01717847532"
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

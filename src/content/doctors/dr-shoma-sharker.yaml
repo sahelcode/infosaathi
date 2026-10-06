@@ -1,0 +1,32 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/dr-shoma-sharker-endocrinologist.html, গত ১২ মাসে Google থেকে 3 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - সিরিয়াল নম্বরে অমিল: 'সিরিয়াল' অংশে +8801401617876, কিন্তু ইংরেজি প্রোফাইল ও প্রশ্নোত্তরে +8809610009640 — কোনটি সঠিক যাচাই দরকার (দুটিই রাখা হয়েছে)
+#   - LABELS-এ Medicine, কিন্তু পোস্টের বিষয়বস্তু এন্ডোক্রাইনোলজি (ডায়াবেটিস ও হরমোন) — specialty 'diabetes' হতে পারে
+#   - পোস্টে বাংলা নাম নেই
+#   - পোস্টে চেম্বারের দিন ও সময় নেই
+#   - বাংলা নাম পোস্টে নেই; name ঘরে বাংলা নাম লিখুন
+draft: true
+name: "Dr. Shoma Sharker"
+name_en: "Dr. Shoma Sharker"
+specialty: medicine
+degrees: ["MBBS", "DEM (BSMMU)", "CCD (BIRDEM)", "MRCP (UK)"]
+designation: "Junior Consultant, Endocrinology, Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/dr-shoma-sharker-endocrinologist.html]
+treats: ["ডায়াবেটিস ও ইনসুলিন থেরাপি", "থাইরয়েড সমস্যা", "হরমোনজনিত সমস্যা (PCOS, পিটুইটারি, অ্যাড্রিনাল)", "মেটাবলিক সিনড্রোম ও ওজন নিয়ন্ত্রণ"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: (নেই)
+  - hospital: ibn-sina-hospital-sylhet
+    # days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]   <- যাচাই করে দিন
+    # start: "17:00"   <- যাচাই করে দিন
+    # end: "21:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01401617876"
+        note: "বাংলা 'সিরিয়াল' অংশে দেওয়া"
+      - label: "সিরিয়াল"
+        number: "09610009640"
+        note: "ইংরেজি প্রোফাইল ও প্রশ্নোত্তরে দেওয়া"

@@ -1,0 +1,25 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/11/dr-mohammad-shohel-pediatric-medicine.html, গত ১২ মাসে Google থেকে 25 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. মোহাম্মদ সোহেল"
+name_en: "Dr. Mohammad Shohel"
+specialty: pediatrics
+title: "শিশু ও নবজাতক রোগ বিশেষজ্ঞ"
+degrees: ["MBBS", "DCH (Child Health)"]
+designation: "Consultant, Department of Pediatric Medicine — Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/11/dr-mohammad-shohel-pediatric-medicine.html]
+treats: ["নবজাতকের যত্ন", "নিউমোনিয়া", "ডায়রিয়া", "ইউরিনারি ইনফেকশন", "হাঁপানি ও অ্যালার্জি", "অ্যানিমিয়া", "অপুষ্টি", "বৃদ্ধি ও বিকাশজনিত সমস্যা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01799263196"
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

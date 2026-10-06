@@ -1,0 +1,28 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2026/01/dr-ahmad-nasim-hasan-lavlu-sylhet.html, গত ১২ মাসে Google থেকে 27 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - চেম্বার ইবনে সিনা ডায়াগনস্টিক সেন্টার (রিকাবীবাজার), কিন্তু 09610009640 নম্বরটি পোস্টে '(Hospital)' হিসেবে লেখা — কোন শাখার সিরিয়াল তা ফোনে নিশ্চিত করুন।
+draft: true
+name: "ডা. আহমদ নাসিম হাসান (লাভলু)"
+name_en: "Dr. Ahmad Nasim Hasan Lavlu"
+specialty: surgery
+title: "জেনারেল ও ল্যাপারোস্কপিক সার্জন"
+degrees: ["MBBS", "BCS (Health)", "FCPS (Surgery)"]
+designation: "General & Laparoscopic Surgeon"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2026/01/dr-ahmad-nasim-hasan-lavlu-sylhet.html]
+treats: ["হার্নিয়া", "পিত্তথলির পাথর (গলস্টোন)", "অ্যাপেন্ডিসাইটিস", "পাইলস/ফিশার/ফিস্টুলা", "ফোঁড়া/ইনফেকশন", "ক্ষত", "জরুরি সার্জারি", "ল্যাপারোস্কপিক সার্জারি"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: প্রতিদিন (5:00pm - 9:00pm) (শুক্রবার বন্ধ)
+  - name: "Ibn Sina Diagnostic and Consultation Center"
+    address: "Medical College Road, Rikabi Bazar, Madhu Shahid, Sylhet-3100"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "21:00"
+    serials:
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"
+      - label: "সেন্টারের সিরিয়াল"
+        number: "01708399305"

@@ -1,0 +1,26 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/prof-dr-wazir-ahmed-chowdhury.html, গত ১২ মাসে Google থেকে 148 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - OLD_URL-এর স্লাগে অন্য ডাক্তারের নাম (prof-dr-wazir-ahmed-chowdhury), কিন্তু পোস্টের বিষয়বস্তু ডা. শুকদেব পালের — URL যাচাই করুন।
+draft: true
+name: "ডা. শুকদেব পাল"
+name_en: "Dr. Shukdeb Paul"
+specialty: medicine
+title: "মেডিসিন বিশেষজ্ঞ"
+degrees: ["MBBS", "BCS (Health)", "FCPS (Medicine)"]
+designation: "কনসালট্যান্ট, সিলেট এম.এ.জি. ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/prof-dr-wazir-ahmed-chowdhury.html]
+treats: ["জ্বর", "ডায়াবেটিস", "হাইপারটেনশন", "সংক্রমণজনিত জটিলতা", "দীর্ঘমেয়াদি রোগ ব্যবস্থাপনা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: প্রতিদিন বিকাল ৫:০০ – রাত ৯:০০ (শুক্রবার ও সোমবার বন্ধ)
+  - name: "Mount Adora Hospital"
+    address: "Nayasarak (Mirboxtula), Sylhet-3100"
+    days: [শনি, রবি, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "21:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01314911038"

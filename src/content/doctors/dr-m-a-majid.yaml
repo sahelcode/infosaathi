@@ -1,0 +1,23 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/11/dr-ma-majid-nephrology-specialist-sylhet.html, গত ১২ মাসে Google থেকে 38 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. এম. এ. মজিদ"
+name_en: "Dr. M. A. Majid"
+specialty: nephrology
+title: "নেফ্রোলজি বিশেষজ্ঞ"
+degrees: ["MBBS", "FCPS (Medicine)", "MD (Nephrology)"]
+designation: "Consultant, Department of Nephrology — Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/11/dr-ma-majid-nephrology-specialist-sylhet.html]
+treats: ["ক্রনিক কিডনি ডিজিজ", "নেফ্রাইটিস", "রেনাল ফেলিওর", "হাইপারটেনশন-সম্পর্কিত কিডনি সমস্যা", "ইলেকট্রোলাইট ভারসাম্যহীনতা", "ডায়ালাইসিস ব্যবস্থাপনা", "কিডনি ট্রান্সপ্লান্ট পরামর্শ", "ডায়াবেটিক কিডনি সমস্যা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

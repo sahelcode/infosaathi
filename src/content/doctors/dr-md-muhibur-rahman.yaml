@@ -1,0 +1,27 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/09/dr-md-muhibur-rahman-gastro-liver.html, গত ১২ মাসে Google থেকে 378 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - চেম্বার সময় শুধু 'Evening OPD' / সন্ধ্যা লেখা — নির্দিষ্ট ঘড়ির সময় নেই
+draft: true
+name: "ডা. মোঃ মুহিবুর রহমান"
+name_en: "Dr. Md. Muhibur Rahman"
+specialty: gastro
+title: "গ্যাস্ট্রোএন্টারোলজি ও লিভার বিশেষজ্ঞ"
+degrees: ["MBBS (DMC)", "BCS (Health)", "FCPS (Medicine)", "FCPS (Gastroenterology)", "MACP (USA)"]
+designation: "Medicine, Gastroenterology & Liver Specialist — Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/09/dr-md-muhibur-rahman-gastro-liver.html]
+treats: ["ফ্যাটি লিভার", "হেপাটাইটিস", "সিরোসিস", "পাকস্থলীর আলসার", "এসিডিটি / হার্টবার্ন", "IBS", "GI ব্লিডিং", "ডায়রিয়া / কোষ্ঠকাঠিন্য"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: Evening OPD (শনিবার–বৃহস্পতিবার); শুক্রবার বন্ধ — সময় পরিবর্তন হতে পারে, কল দিয়ে নিশ্চিত করুন।
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    # start: "17:00"   <- যাচাই করে দিন
+    # end: "21:00"
+    serials:
+      - label: "হটলাইন"
+        number: "09610009640"
+      - label: "মোবাইল"
+        number: "01401013251"

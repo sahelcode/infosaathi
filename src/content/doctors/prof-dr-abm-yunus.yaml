@@ -1,0 +1,27 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2026/02/prof-dr-abm-yunus-sylhet.html, গত ১২ মাসে Google থেকে 16 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - রোগী দেখা শুধু প্রতি মাসের ২য় ও ৪র্থ শুক্রবার — days-এ 'শুক্র' দেওয়া হলেও প্রতি শুক্রবার নয়
+#   - হেডারে দুটি কল বাটন (Hotline ও অ্যাপয়েন্টমেন্ট) থাকলেও পোস্টে একটিই নম্বর (09610009640) আছে
+#   - পোস্টের শেষাংশ (প্রশ্নোত্তর 'সিরিয়াল কিভাবে') মাঝপথে কাটা — অসম্পূর্ণ লেখা
+draft: true
+name: "প্রফেসর ডা. এ.বি.এম. ইউনুস"
+name_en: "Prof. Dr. ABM Yunus"
+specialty: hematology
+title: "হেমাটোলজি (রক্তরোগ) ও ব্লাড ক্যান্সার বিশেষজ্ঞ"
+degrees: ["MBBS (India)", "MPhil Path (Hons)", "FCPS (Haematology)", "WHO Fellow (Singapore)", "WHO Research Fellow (Thailand)"]
+designation: "Professor & Ex. Chairman (Dept. of Haematology), Bangladesh Medical University (Ex. PG Hospital)"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2026/02/prof-dr-abm-yunus-sylhet.html]
+treats: ["রক্তস্বল্পতা (অ্যানিমিয়া)", "থ্যালাসেমিয়া", "প্লেটলেট কমে যাওয়া", "অল্পতেই রক্তপাত বা দাগ পড়া", "অস্বাভাবিক CBC রিপোর্ট", "লিউকেমিয়া", "লিম্ফোমা", "ব্লাড ক্যান্সার"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: প্রতি মাসের ২য় ও ৪র্থ শুক্রবার (11:00am - 4:00pm)
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শুক্র]
+    start: "11:00"
+    end: "16:00"
+    serials:
+      - label: "সিরিয়াল (হটলাইন)"
+        number: "09610009640"

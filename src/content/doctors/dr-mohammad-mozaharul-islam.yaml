@@ -1,0 +1,26 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/12/dr-mohammad-mozaharul-islam-sylhet.html, গত ১২ মাসে Google থেকে 15 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. মোহাম্মদ মোজাহারুল ইসলাম"
+name_en: "Dr. Mohammad Mozaharul Islam"
+specialty: medicine
+title: "মেডিসিন বিশেষজ্ঞ"
+degrees: ["MBBS", "MRCP (UK)"]
+designation: "Consultant, Medicine – Mount Adora Hospital"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/12/dr-mohammad-mozaharul-islam-sylhet.html]
+treats: ["ডায়াবেটিস", "উচ্চ রক্তচাপ", "থাইরয়েড", "অ্যাজমা", "বক্ষ সংক্রমণ"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: শনিবার, মঙ্গলবার ও বৃহস্পতিবার (3pm - 8pm)
+  - name: "Mount Adora Hospital"
+    address: "Sylhet–Sunamganj Highway, Akhalia, Sylhet-3100"
+    days: [শনি, মঙ্গল, বৃহস্পতি]
+    start: "15:00"
+    end: "20:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01710419962"
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610848484"

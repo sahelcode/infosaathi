@@ -1,0 +1,26 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/12/dr-jahir-ahmed-general-laparoscopic.html, গত ১২ মাসে Google থেকে 37 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. জহির আহমেদ"
+name_en: "Dr. Jahir Ahmed"
+specialty: surgery
+title: "সাধারণ ও ল্যাপারোস্কোপিক সার্জারি বিশেষজ্ঞ"
+degrees: ["MBBS", "BCS (Health)", "FCPS (Surgery)"]
+designation: "Assistant Professor, Surgery – Sylhet MAG Osmani Medical College & Hospital"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/12/dr-jahir-ahmed-general-laparoscopic.html]
+treats: ["হার্নিয়া", "পিত্তথলির পাথর", "অ্যাপেন্ডিসাইটিস", "অন্ত্রের টিউমার", "থাইরয়েড নডিউল", "ট্রমা/আঘাতের সার্জারি", "ল্যাপারোস্কোপিক সার্জারি"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: শনিবার থেকে বৃহস্পতিবার (বিকাল ৫টা - রাত ৮টা) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং‑৪৩২ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01787936280"
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

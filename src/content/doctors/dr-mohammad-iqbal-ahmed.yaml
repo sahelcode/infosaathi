@@ -1,0 +1,27 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/11/dr-mohammad-iqbal-ahmed.html, গত ১২ মাসে Google থেকে 54 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - কোন নম্বরটি ব্যক্তিগত আর কোনটি হাসপাতালের, পোস্টে স্পষ্ট নয় (বোতামে 'Personal' ও 'Hospital' লেখা, নম্বরের পাশে নেই)।
+draft: true
+name: "ডা. মোহাম্মদ ইকবাল আহমেদ"
+name_en: "Dr. Mohammad Iqbal Ahmed"
+specialty: cardiology
+title: "কার্ডিওলজি বিশেষজ্ঞ"
+degrees: ["MBBS", "MD (Cardiology)", "FCPS (Medicine)"]
+designation: "Consultant, Department of Cardiology — Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/11/dr-mohammad-iqbal-ahmed.html]
+treats: ["হৃদরোগ", "উচ্চ রক্তচাপ", "বুকে ব্যথা", "হার্ট ফেইলিউর", "অনিয়মিত হৃদস্পন্দন"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01783819939"
+      - label: "সিরিয়াল"
+        number: "09610848484"

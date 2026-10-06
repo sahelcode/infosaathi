@@ -1,0 +1,25 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/12/dr-md-shafiqur-rahman.html, গত ১২ মাসে Google থেকে 28 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. মোঃ শফিকুর রহমান"
+name_en: "Dr. Md. Shafiqur Rahman"
+specialty: psychiatry
+title: "মনোরোগ ও মানসিক স্বাস্থ্য বিশেষজ্ঞ"
+degrees: ["MBBS", "M.Phil (Psychiatry)"]
+designation: "Consultant, Psychiatry – Ibn Sina Hospital, Sylhet"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/12/dr-md-shafiqur-rahman.html]
+treats: ["উদ্বেগ", "বিষণ্নতা", "মানসিক অবসাদ", "আসক্তি"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: শনিবার থেকে বৃহস্পতিবার (5pm - 8pm) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01601526793"
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

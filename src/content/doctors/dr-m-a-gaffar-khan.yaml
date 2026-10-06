@@ -1,0 +1,35 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/dr-ma-gaffar-khan-adil-orthopedic.html, গত ১২ মাসে Google থেকে 0 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - দিন হিসেবে শুধু 'শুক্রবার বন্ধ' লেখা—শনি–বৃহস্পতি ধরা হয়েছে, যাচাই করুন
+#   - রিকাবিবাজার শাখার সময় 'শাখা-ভেদে পরিবর্তিত হতে পারে' লেখা—অনিশ্চিত
+draft: true
+name: "ডা. এম. এ. গাফফার খান (আদিল)"
+name_en: "Dr. M. A. Gaffar Khan (Adil)"
+specialty: orthopedics
+title: "অর্থোপেডিক ও ট্রমা বিশেষজ্ঞ সার্জন"
+degrees: ["MBBS (SUST)", "MS (Orthopedics)"]
+designation: "Assistant Professor (Orthopedics) — Jalalabad Ragib-Rabeya Medical College & Hospital"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/dr-ma-gaffar-khan-adil-orthopedic.html]
+treats: ["হাড়-ভাঙা/ডিসলোকেশন", "ট্রমা", "স্পোর্টস-ইনজুরি", "আর্থ্রাইটিস-জনিত জয়েন্ট ব্যথা", "টেন্ডন/লিগামেন্ট ইঞ্জুরি", "লিগামেন্ট রিকনস্ট্রাকশন (ACL/PCL)", "কাঁধ-হাঁটু-হিপের সমস্যা", "স্পাইন-রিলেটেড ব্যথা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: ইবনে সিনা হাসপাতাল (সুবানিঘাট): ৪:০০ PM – ৮:০০ PM (শুক্রবার বন্ধ)
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "16:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতালের সিরিয়াল (হটলাইন)"
+        number: "09610009640"
+  # পোস্টে সময় যেভাবে লেখা: রিকাবিবাজার ডায়াগনস্টিক: ৫:০০ PM – ৯:০০ PM (শুক্রবার বন্ধ; শাখা‑ভেদে পরিবর্তিত হতে পারে)
+  - name: "Ibn Sina Diagnostic & Consultation Centre, Rikabibazar"
+    address: "New Medical College Road, Rikabibazar"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "21:00"
+    serials:
+      - label: "রিকাবিবাজার অ্যাপয়েন্টমেন্ট"
+        number: "01708399305"

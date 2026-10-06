@@ -1,0 +1,36 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/prof.dr.afzal-momin.html, গত ১২ মাসে Google থেকে 160 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - ধানমন্ডির শুরুর সময় '৪:৩০ AM' লেখা, কিন্তু বাংলা বিবরণে 'নিয়মিত সন্ধ্যায়'—start খালি রাখা হয়েছে
+#   - সিলেটে প্রতি শুক্রবার নয়, শুধু মাসের ১ম ও ৪র্থ শুক্রবার
+draft: true
+name: "প্রফেসর ডা. আফজাল মোমিন"
+name_en: "Prof. Dr. Afzal Momin"
+specialty: neurology
+title: "নিউরোলজি বিশেষজ্ঞ"
+degrees: ["MBBS (Dhaka)", "BCS (Health)", "MD (Neurology)"]
+designation: "Professor, Department of Neurology — National Institute of Neurosciences & Hospital (NINS&H)"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/prof.dr.afzal-momin.html]
+treats: ["স্ট্রোক", "মাইগ্রেন", "খিঁচুনি/এপিলেপসি", "পারকিনসন্স", "নার্ভের অসুখ (নিউরোপ্যাথি)", "মাথাব্যথা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: ধানমন্ডি: ৪:৩০ AM – ৮:৩০ PM (শনি–বুধ; বৃহস্পতি ও শুক্রবার বন্ধ)
+  - name: "Ibn Sina Diagnostic & Imaging Center, Dhanmondi"
+    address: "House 48, Road 9/A, Dhaka-1209"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ]
+    # start: "17:00"   <- যাচাই করে দিন
+    # end: "21:00"
+    serials:
+      - label: "ধানমন্ডি সিরিয়াল"
+        number: "09610010615"
+  # পোস্টে সময় যেভাবে লেখা: সিলেট: মাসের ১ম ও ৪র্থ শুক্রবার ৯:০০ AM – ৬:০০ PM
+  - hospital: ibn-sina-hospital-sylhet
+    room: "Room 326 (3rd Floor)"
+    days: [শুক্র]
+    start: "09:00"
+    end: "18:00"
+    serials:
+      - label: "হাসপাতালের সিরিয়াল (হটলাইন)"
+        number: "09610009640"

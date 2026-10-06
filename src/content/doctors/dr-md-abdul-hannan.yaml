@@ -1,0 +1,27 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/10/dr-md-abdul-hannan-tareq-diabetes.html, গত ১২ মাসে Google থেকে 114 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - 01715203550 নম্বরটি ব্যক্তিগত নাকি অন্য কিছু, পোস্টে স্পষ্ট নয় (বোতামে 'Personal' ও 'Hospital' লেখা থাকলেও নম্বরের পাশে নেই)।
+draft: true
+name: "ডা. মোঃ আব্দুল হান্নান (তারেক)"
+name_en: "Dr. Md. Abdul Hannan (Tareq)"
+specialty: diabetes
+title: "ডায়াবেটিস ও হরমোন বিশেষজ্ঞ"
+degrees: ["MBBS", "CCD (BIRDEM)", "MD (Endocrinology)"]
+designation: "Consultant, Department of Diabetes & Hormone — Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/10/dr-md-abdul-hannan-tareq-diabetes.html]
+treats: ["ডায়াবেটিস", "থাইরয়েড সমস্যা", "হরমোনজনিত সমস্যা", "স্থূলতা", "মেটাবলিক সিনড্রোম", "অ্যাড্রিনাল ও পিটুইটারি সমস্যা", "প্রজনন হরমোনের সমস্যা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতালের হটলাইন"
+        number: "09610009640"
+      - label: "সিরিয়াল"
+        number: "01715203550"

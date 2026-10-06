@@ -1,0 +1,26 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/12/dr-md-abdullah-yusuf-jamil-surgical.html, গত ১২ মাসে Google থেকে 41 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. মোঃ আব্দুল্লাহ ইউসুফ জামিল"
+name_en: "Dr. Md. Abdullah Yusuf Jamil"
+specialty: surgery
+title: "ক্যান্সার সার্জন (সার্জিক্যাল অনকোলজি), জেনারেল ও ল্যাপারোস্কপিক সার্জন"
+degrees: ["MBBS", "BCS (Health)", "FCPS (Surgery)", "MS (Surgical Oncology)"]
+designation: "Consultant, Surgical Oncology (Cancer Surgery) – Ibn Sina Hospital Sylhet Ltd"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/12/dr-md-abdullah-yusuf-jamil-surgical.html]
+treats: ["ক্যান্সার সার্জারি", "জেনারেল সার্জারি", "ল্যাপারোস্কপিক সার্জারি"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: বৃহস্পতিবার এবং শুক্রবার (বিকাল ৪:৩০টা - রাত ৮:৩০টা)
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং-৪৩৬ (৪র্থ তলা)"
+    days: [বৃহস্পতি, শুক্র]
+    start: "16:30"
+    end: "20:30"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01603017885"
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

@@ -1,0 +1,25 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/11/dr-md-saiful-islam-nephrology.html, গত ১২ মাসে Google থেকে 10 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. মোঃ সাইফুল ইসলাম"
+name_en: "Dr. Md. Saiful Islam"
+specialty: nephrology
+title: "নেফ্রোলজি বিশেষজ্ঞ"
+degrees: ["MBBS", "FCPS (Medicine)", "MD (Nephrology)"]
+designation: "Consultant, Department of Nephrology — Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/11/dr-md-saiful-islam-nephrology.html]
+treats: ["ক্রনিক কিডনি ডিজিজ (CKD)", "হাইপারটেনশন-সম্পর্কিত কিডনি সমস্যা", "নেফ্রাইটিস", "ডায়াবেটিক কিডনি জটিলতা", "রেনাল ফেলিওর", "ডায়ালাইসিস", "কিডনি ট্রান্সপ্লান্ট মূল্যায়ন", "ইলেকট্রোলাইট ভারসাম্যহীনতা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01768055325"
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

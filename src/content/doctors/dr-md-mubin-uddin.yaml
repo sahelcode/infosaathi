@@ -1,0 +1,27 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/12/dr-md-mubin-uddin-psychiatry-specialist.html, গত ১২ মাসে Google থেকে 61 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - পদবিতে কোন প্রতিষ্ঠানের অ্যাসিস্ট্যান্ট প্রফেসর তা উল্লেখ নেই
+draft: true
+name: "ডা. মোঃ মুবিন উদ্দিন"
+name_en: "Dr. Md. Mubin Uddin"
+specialty: psychiatry
+title: "মনোরোগ (সাইকিয়াট্রি) বিশেষজ্ঞ"
+degrees: ["MBBS", "BCS (Health)", "MCPS (Psychiatry)", "FCPS (Psychiatry)"]
+designation: "Assistant Professor, Psychiatry"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/12/dr-md-mubin-uddin-psychiatry-specialist.html]
+treats: ["মানসিক চাপ", "উদ্বেগ", "বিষণ্নতা", "মুড ডিসঅর্ডার"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: শনিবার থেকে বুধবার (5pm - 8pm)
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01740022855"
+      - label: "হাসপাতালের সিরিয়াল (হটলাইন)"
+        number: "09610009640"

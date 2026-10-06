@@ -1,0 +1,23 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/10/dr-mostakima-begum-eti-gynecology.html, গত ১২ মাসে Google থেকে 53 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. মোস্তাকিমা বেগম ইতি"
+name_en: "Dr. Mostakima Begum Eti"
+specialty: gynecology
+title: "গাইনোকোলজি ও অবসটেট্রিক্স বিশেষজ্ঞ"
+degrees: ["MBBS", "FCPS (Obs & Gynae)"]
+designation: "Gynecology & Obstetrics Specialist – Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/10/dr-mostakima-begum-eti-gynecology.html]
+treats: ["গর্ভকালীন ও প্রসব পরবর্তী যত্ন", "বন্ধ্যাত্ব", "মাসিক অনিয়ম", "সিস্ট", "ফাইব্রয়েড", "গাইনোকোলজিক সার্জারি", "মেনোপজ-পরবর্তী স্বাস্থ্যসেবা", "উচ্চ ঝুঁকির গর্ভাবস্থা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "09610009640"

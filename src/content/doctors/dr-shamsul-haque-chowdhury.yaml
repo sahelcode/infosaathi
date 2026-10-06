@@ -1,0 +1,29 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/11/dr-shamsul-haque-chowdhury-psychiatry.html, গত ১২ মাসে Google থেকে 28 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - ব্লগ শিরোনামে নাম 'ডা. শামছুল হক' (চৌধুরী ছাড়া), কিন্তু মূল লেখায় 'ডা. শামছুল হক চৌধুরী'।
+#   - পোস্টের টেক্সট শেষে অসম্পূর্ণ (মাঝপথে কেটে গেছে)।
+draft: true
+name: "ডা. শামছুল হক চৌধুরী"
+name_en: "Dr. Shamsul Haque Chowdhury"
+specialty: psychiatry
+title: "মনোরোগ ও মানসিক স্বাস্থ্যের বিশেষজ্ঞ"
+degrees: ["MBBS", "M.Phil (Psychiatry)"]
+designation: "Assistant Professor (Ex), Department of Psychiatry — Sylhet MAG Osmani Medical College & Hospital; Consultant Psychiatrist, Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/11/dr-shamsul-haque-chowdhury-psychiatry.html]
+treats: ["ডিপ্রেশন", "দুশ্চিন্তা/উদ্বেগ", "বাইপোলার ডিসঅর্ডার", "স্কিজোফ্রেনিয়া", "OCD", "ডিমেনশিয়া", "ঘুমের সমস্যা", "মাদকাসক্তি"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: শনিবার–বৃহস্পতিবার সকাল ১১টা – দুপুর ১টা (Morning, 11:00 AM – 1:00 PM) শুক্রবার বন্ধ (Friday Closed)
+  - hospital: ibn-sina-hospital-sylhet
+    room: "Room: ৩০৪, ৩য় তলা"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "11:00"
+    end: "13:00"
+    serials:
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"
+      - label: "অ্যাপয়েন্টমেন্ট সিরিয়াল"
+        number: "09636300300"

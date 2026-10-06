@@ -40,10 +40,12 @@ const chambers = d.chambers.map((c, i) => {
   const address = c.address ?? h!.data.address;
   const href = h && linkable.has(h.id) ? hospitalUrl(h) : undefined;
   const map = c.map ?? h?.data.map ?? `https://maps.google.com/?q=${encodeURIComponent(name + ', ' + address)}`;
-  return { ...c, i, key: `ch${i + 1}`, h, name, address, href, map, timeText: timeRange(c.start, c.end), daysTxt: daysText(c.days) };
+  return { ...c, i, key: `ch${i + 1}`, h, name, address, href, map, days: c.days ?? [], timeText: c.start && c.end ? timeRange(c.start, c.end) : 'সময় যাচাই বাকি',
+    daysTxt: c.days ? daysText(c.days) : 'দিন যাচাই বাকি' };
 });
 const first = chambers[0];
-const firstSerial = first.serials[0];
+// a draft may still lack numbers; the published site always has them (the schema makes sure)
+const firstSerial = chambers.flatMap((c) => c.serials)[0] ?? { label: 'সিরিয়াল', number: '', note: undefined };
 
 // ---- text written from the data ----
 const workDays = new Set(chambers.flatMap((c) => c.days));
@@ -109,7 +111,7 @@ const jsonld = {
       telephone: phoneIntl(firstSerial.number),
       address: { '@type': 'PostalAddress', streetAddress: first.address, addressLocality: city.en, addressCountry: 'BD' },
       hospitalAffiliation: chambers.filter((c) => c.h).map((c) => ({ '@type': 'Hospital', name: c.h!.data.name_en })),
-      openingHours: chambers.map((c) => `${daysSchema(c.days)} ${c.start}-${c.end}`),
+      openingHours: chambers.filter((c) => c.days.length && c.start && c.end).map((c) => `${daysSchema(c.days)} ${c.start}-${c.end}`),
     },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + u })) },
     { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -160,7 +162,7 @@ const jsonld = {
         <section class="pf-card" id="chambers" aria-labelledby="h-chamber">
           <div class="pf-card-head"><h2 id="h-chamber">চেম্বার ও সিরিয়াল</h2><span class="pf-count">{bn(chambers.length)}টি চেম্বার</span></div>
           {chambers.map((c) => (
-            <div class="pf-chamber" id={c.key} data-chamber={c.key} data-days={c.days.map((x) => DAY_JS[x]).join(',')} data-start={c.start} data-end={c.end}>
+            <div class="pf-chamber" id={c.key} data-chamber={c.key} data-days={c.start ? c.days.map((x) => DAY_JS[x]).join(',') : undefined} data-start={c.start} data-end={c.end}>
               <a class="pf-ch-hosp" href={c.href ?? c.map} target={c.href ? undefined : '_blank'} rel={c.href ? undefined : 'noopener'}>
                 <span class="pf-ch-no">{bn(c.i + 1)}</span>
                 <span class="pf-ch-txt"><b>{c.name}</b><span class="pf-ch-addr">{c.address}{c.room && ` · ${c.room}`}</span></span>

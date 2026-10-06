@@ -1,0 +1,23 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/11/dr-m-ahad-cardiology-specialist-sylhet.html, গত ১২ মাসে Google থেকে 37 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. এম. এ আহাদ"
+name_en: "Dr. M. A Ahad"
+specialty: cardiology
+title: "কার্ডিওলজি বিশেষজ্ঞ"
+degrees: ["MBBS", "MD (Cardiology)", "FCPS (Medicine)"]
+designation: "Consultant, Department of Cardiology — Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/11/dr-m-ahad-cardiology-specialist-sylhet.html]
+treats: ["উচ্চ রক্তচাপ", "বুকের ব্যথা", "হার্ট ফেইলিউর", "হৃদস্পন্দনের অনিয়ম", "করোনারি আর্টারি ডিজিজ", "হৃদরোগ প্রতিরোধ"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610848484"

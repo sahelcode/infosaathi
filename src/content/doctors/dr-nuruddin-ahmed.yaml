@@ -1,0 +1,26 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/dr-nuruddin-ahmed-orthopedic-spine.html, গত ১২ মাসে Google থেকে 357 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - শুধু 'শুক্রবার বন্ধ' বলা হয়েছে, কোন কোন দিন চেম্বার তা স্পষ্ট নয় — days খালি রাখা হয়েছে।
+#   - সময় ৫টা–৯টা 'সাধারণত' বলে উল্লেখ — ফোনে নিশ্চিত করুন।
+draft: true
+name: "ডাঃ নূরুদ্দীন আহমেদ"
+name_en: "Dr. Nuruddin Ahmed"
+specialty: orthopedics
+title: "অর্থোপেডিকস ও স্পাইন সার্জন"
+degrees: ["MBBS", "MPH", "MS (Orthopedics)"]
+designation: "সাবেক Assistant Professor, Orthopedics — Sylhet MAG Osmani Medical College & Hospital"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/dr-nuruddin-ahmed-orthopedic-spine.html]
+treats: ["ফ্র্যাকচার", "আর্থ্রাইটিস/জয়েন্টের ব্যথা", "লিগামেন্ট-মেনিস্কাস ইনজুরি", "কাঁধ-হাঁটু-হিপের সমস্যা", "সার্ভাইক্যাল/লম্বার স্পাইন ব্যথা", "ডিস্ক প্রোলাপস", "ট্রমা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: ইভনিং চেম্বার ৫:০০ PM – ৯:০০ PM (সাধারণত); শুক্রবার বন্ধ — সময় পরিবর্তিত হতে পারে, কল করে কনফার্ম করুন
+  - hospital: ibn-sina-hospital-sylhet
+    # days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]   <- যাচাই করে দিন
+    start: "17:00"
+    end: "21:00"
+    serials:
+      - label: "হাসপাতালের হটলাইন"
+        number: "09610009640"

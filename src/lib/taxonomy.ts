@@ -26,6 +26,8 @@ export const SPECIALTIES = {
   hematology: { bn: 'রক্তরোগ বিশেষজ্ঞ', en: 'Hematology', schema: 'Hematologic' },
   surgery: { bn: 'সার্জারি বিশেষজ্ঞ', en: 'General Surgery', schema: 'Surgical' },
   colorectal: { bn: 'কোলোরেক্টাল সার্জন', en: 'Colorectal Surgery', schema: 'Surgical' },
+  neurosurgery: { bn: 'নিউরো ও স্পাইন সার্জন', en: 'Neuro & Spine Surgery', schema: 'Surgical' },
+  pediatric_surgery: { bn: 'শিশু সার্জন', en: 'Pediatric Surgery', schema: 'Surgical' },
   orthopedics: { bn: 'হাড় ও জোড়া বিশেষজ্ঞ', en: 'Orthopedics', schema: 'Musculoskeletal' },
   neurology: { bn: 'নিউরোলজি বিশেষজ্ঞ', en: 'Neurology', schema: 'Neurologic' },
   ent: { bn: 'নাক কান গলা বিশেষজ্ঞ', en: 'ENT', schema: 'Otolaryngologic' },

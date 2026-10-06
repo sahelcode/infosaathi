@@ -1,0 +1,29 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/dr-sk-kabir-ahmmed-medicine-specialist.html, গত ১২ মাসে Google থেকে 302 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - OLD_URL-এর স্লাগ (dr-sk-kabir-ahmmed-medicine-specialist) এই ডাক্তারের নামের সাথে মেলে না।
+#   - চেম্বার রবি–বুধ বলা হয়েছে এবং বৃহস্পতি ও শুক্র 'সাধারণত' বন্ধ; শনিবার খোলা কিনা পোস্টে বলা নেই।
+#   - BLOG_TITLE-এ নামের বানান ভুল ('r. M. A. Hannan')।
+draft: true
+name: "ডাঃ এম. এ. হান্নান"
+name_en: "Dr. M. A. Hannan"
+specialty: orthopedics
+title: "অর্থোপেডিক্স (হাড়‑জয়েন্ট‑আর্থ্রাইটিস‑স্পাইন) ও ট্রমা বিশেষজ্ঞ সার্জন"
+degrees: ["MBBS", "BCS (Health)", "MS (Ortho)", "FICS (USA)", "APSS Spine Fellow (India)"]
+designation: "Consultant, Department of Orthopedics — Sylhet MAG Osmani Medical College & Hospital"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/dr-sk-kabir-ahmmed-medicine-specialist.html]
+treats: ["হাড়ভাঙা ও ট্রমা", "স্পাইনজনিত ব্যথা", "আর্থ্রাইটিস/জয়েন্টের সমস্যা", "স্পোর্টস ইনজুরি", "ACL/PCL ইনজুরি", "কাঁধের ইনজুরি", "অপারেশন-পরবর্তী পুনর্বাসন"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সিলেট: বিকাল ৪:০০ – রাত ৯:০০ (রবি–বুধ); বৃহস্পতি ও শুক্রবার সাধারণত বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [রবি, সোম, মঙ্গল, বুধ]
+    start: "16:00"
+    end: "21:00"
+    serials:
+      - label: "হটলাইন"
+        number: "09610009640"
+      - label: "সরাসরি"
+        number: "01753221327"

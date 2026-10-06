@@ -52,21 +52,26 @@ const doctors = defineCollection({
                 name: z.string().optional(), // only when the place has no hospital page
                 address: z.string().optional(),
                 room: z.string().optional(),
-                days,
-                start: time,
-                end: time,
+                days: days.optional(), // may be empty only while draft: true
+                start: time.optional(),
+                end: time.optional(),
                 fee: z.object({ new: z.number().optional(), old: z.number().optional(), report: z.number().optional() }).optional(),
                 serials: z
                   .array(z.object({ label: z.string().default('সিরিয়াল'), number: phone, note: z.string().optional() }))
-                  .min(1, 'অন্তত একটি সিরিয়াল নম্বর দিন'),
+                  .default([]),
                 map: z.url().optional(),
               })
               .refine((c) => c.hospital || (c.name && c.address), 'চেম্বারে hospital দিন, অথবা name ও address দুটোই দিন')
-              .refine((c) => c.start < c.end, 'শেষের সময় শুরুর সময়ের পরে হতে হবে'),
+              .refine((c) => !c.start || !c.end || c.start < c.end, 'শেষের সময় শুরুর সময়ের পরে হতে হবে'),
           )
           .min(1, 'অন্তত একটি চেম্বার দিন'),
         faq: extraFaq,
+        old_urls: z.array(z.string().startsWith('/')).default([]), // old Blogger links that should lead here
       })
+      .refine(
+        (d) => d.draft || d.chambers.every((c) => c.days && c.start && c.end && c.serials.length > 0),
+        'প্রকাশের আগে প্রতিটি চেম্বারে days, start, end আর অন্তত একটি সিরিয়াল নম্বর দিন (অথবা draft: true রাখুন)',
+      )
       .refine((d) => !d.notice || d.notice.from <= d.notice.to, 'নোটিশের from তারিখ to-এর আগে হতে হবে'),
 });
 

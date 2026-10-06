@@ -1,0 +1,35 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/dr-chowdhury-foyzur-rob-zubayer.html, গত ১২ মাসে Google থেকে 105 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - ইবনে সিনার দিন অস্পষ্ট: বাংলায় 'মূলত বৃহস্পতি, শনি-রবি, সোম' লেখা (বুধবার তালিকায় নেই), অথচ বন্ধ শুধু মঙ্গল ও শুক্র বলা হয়েছে; ইংরেজি অংশেও শুধু মঙ্গল ও শুক্র বন্ধ — বুধবার খোলা কিনা নিশ্চিত নয়, তাই days null
+#   - আল হারামাইন হাসপাতালের সময় ও দিন পোস্টে নেই (কল করে জানতে বলা হয়েছে)
+draft: true
+name: "ডা. চৌধুরী ফয়জুর রব (জুবায়ের)"
+name_en: "Dr. Chowdhury Foyzur Rob (Zubayer)"
+specialty: orthopedics
+title: "অর্থোপেডিক সার্জন ও ইলিজারভ সার্জন"
+degrees: ["MBBS", "MS (Orthopedics)", "Ilizarov Fellowship"]
+designation: "Senior Consultant, Orthopedics — North East Medical College & Hospital"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/dr-chowdhury-foyzur-rob-zubayer.html]
+treats: ["অর্থোপেডিক সার্জারি", "স্পোর্টস ইনজুরি", "ইলিজারভ সার্জারি", "হাড় ভাঙা ও বিকৃতি"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: ৬:০০ PM – ৯:০০ PM (মূলত বৃহস্পতিবার, শনিবার-রবিবার, সোমবার; মঙ্গলবার ও শুক্রবার বন্ধ)
+  - hospital: ibn-sina-hospital-sylhet
+    # days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]   <- যাচাই করে দিন
+    start: "18:00"
+    end: "21:00"
+    serials:
+      - label: "ইবনে সিনা হাসপাতালের সিরিয়াল"
+        number: "09610009640"
+  # পোস্টে সময় যেভাবে লেখা: সময় নির্দিষ্ট নয়—দয়া করে কল করে জেনে নিন
+  - name: "Al Haramain Hospital Pvt. Ltd"
+    address: "Samato-30, Chali Bandar, Bishwa Road, Subhani Ghat, Sylhet-3100"
+    # days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]   <- যাচাই করে দিন
+    # start: "17:00"   <- যাচাই করে দিন
+    # end: "21:00"
+    serials:
+      - label: "আল হারামাইনের সিরিয়াল"
+        number: "01931225555"

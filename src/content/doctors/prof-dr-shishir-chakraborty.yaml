@@ -1,0 +1,24 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/prof-dr-shishir-chakraborty-medicine.html, গত ১২ মাসে Google থেকে 239 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "প্রফেসর ডা. শিষির চক্রবর্তী"
+name_en: "Prof. Dr. Shishir Chakraborty"
+specialty: medicine
+title: "মেডিসিন বিশেষজ্ঞ"
+degrees: ["MBBS", "FCPS (Medicine)"]
+designation: "ভাইস প্রিন্সিপাল ও অধ্যাপক, মেডিসিন বিভাগ, সিলেট এম.এ.জি. ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/prof-dr-shishir-chakraborty-medicine.html]
+treats: ["ডায়াবেটিস", "উচ্চ রক্তচাপ", "শ্বাসতন্ত্রের রোগ", "সংক্রমণজনিত রোগ", "দীর্ঘদিনের জ্বর/দুর্বলতা", "দীর্ঘমেয়াদি রোগ ব্যবস্থাপনা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: প্রতিদিন সন্ধ্যা ৬:০০ – রাত ১০:০০ (শুক্রবার বন্ধ)
+  - name: "Popular Medical Center"
+    address: "New Medical Road, Kajolshah, Sylhet-3100"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "18:00"
+    end: "22:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01719374087"

@@ -1,0 +1,25 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/dr-mashiur-rahman-majumder-neuro-spine.html, গত ১২ মাসে Google থেকে 155 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - ঠিকানায় 'সুবহানীগেট পয়েন্ট' লেখা—সম্ভবত সোবহানীঘাট পয়েন্ট বোঝানো হয়েছে, যাচাই করুন
+draft: true
+name: "ডা. মশিউর রহমান মজুমদার"
+name_en: "Dr. Mashiur Rahman Majumder"
+specialty: neurosurgery
+title: "নিউরো ও স্পাইন সার্জন"
+degrees: ["MBBS", "MS (Neuro)", "FCPS (Surgery)"]
+designation: "Consultant, Department of Neurosurgery — Ibn Sina Hospital Sylhet"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/dr-mashiur-rahman-majumder-neuro-spine.html]
+treats: ["মস্তিষ্কের সার্জারি", "স্পাইন কন্ডিশন", "স্ট্রোক চিকিৎসা", "মুভমেন্ট ডিজঅর্ডার"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: প্রতি শনিবার–বুধবার: সকাল ১০:০০ – দুপুর ১:০০
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ]
+    start: "10:00"
+    end: "13:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01757993119"

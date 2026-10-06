@@ -36,7 +36,7 @@ const single = !er && h.numbers.length === 1; // one number: call it directly, n
 // doctors who have a chamber here, with their schedule at this hospital
 const doctors = doctorsAt(await getDoctors(), hospital.id).map((d) => {
   const c = d.data.chambers.find((x) => x.hospital?.id === hospital.id)!;
-  return { d, when: `${daysText(c.days)} · ${timeRange(c.start, c.end)}` };
+  return { d, when: c.days && c.start && c.end ? `${daysText(c.days)} · ${timeRange(c.start, c.end)}` : 'সময় যাচাই বাকি' };
 });
 const spCount = new Map<string, number>();
 doctors.forEach(({ d }) => spCount.set(d.data.specialty, (spCount.get(d.data.specialty) ?? 0) + 1));

@@ -1,0 +1,25 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/dr-md-mizanur-rahman-ibn-sina-hospital.html, গত ১২ মাসে Google থেকে 215 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - বিশেষজ্ঞতা মেডিসিন ও নিউরো-মেডিসিন দুটোই লেখা; LABELS অনুযায়ী neurology ধরা হয়েছে।
+draft: true
+name: "ডা. মো. মিজানুর রহমান"
+name_en: "Dr. Md. Mizanur Rahman"
+specialty: neurology
+title: "Medicine ও Neuro-Medicine বিশেষজ্ঞ"
+degrees: ["MBBS", "BCS (Health)", "MD (Neuro-Medicine)"]
+designation: "Medicine & Neuro-Medicine Specialist — Ibn Sina Hospital Sylhet Ltd."
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/08/dr-md-mizanur-rahman-ibn-sina-hospital.html]
+treats: ["অভ্যন্তরীণ চিকিৎসা (ইন্টার্নাল মেডিসিন)", "স্নায়ু-সম্পর্কিত সমস্যা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: শনিবার থেকে বৃহস্পতিবার ৫:০০ PM – ৯:০০ PM · শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "21:00"
+    serials:
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

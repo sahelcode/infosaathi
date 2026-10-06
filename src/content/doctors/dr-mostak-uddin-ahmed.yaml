@@ -1,0 +1,28 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/09/dr-mostak-uddin-ahmed.html, গত ১২ মাসে Google থেকে 242 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - চেম্বারের সময় শুধু 'সন্ধ্যাকালীন' লেখা, ঘড়ির সময় নেই—start/end খালি রাখা হয়েছে
+#   - ডিগ্রি 'MD/MS (Gastroenterology)' লেখা—MD না MS তা স্পষ্ট নয়
+draft: true
+name: "ডা. মোস্তাক উদ্দিন আহমদ"
+name_en: "Dr. Mostak Uddin Ahmed"
+specialty: gastro
+title: "গ্যাস্ট্রোএন্টারোলজি ও মেডিসিন বিশেষজ্ঞ"
+degrees: ["MBBS", "BCS (Health)", "FCPS (Medicine)", "MD/MS (Gastroenterology)"]
+designation: "Associate Professor, Department of Gastroenterology — Sylhet MAG Osmani Medical College & Hospital"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/09/dr-mostak-uddin-ahmed.html]
+treats: ["পাকস্থলীর আলসার/গ্যাস্ট্রাইটিস", "এসিডিটি/হার্টবার্ন", "ইরিটেবল বাওয়েল সিনড্রোম (IBS)", "দীর্ঘদিনের ডায়রিয়া/কনস্টিপেশন", "লিভারের রোগ (ফ্যাটি লিভার, হেপাটাইটিস, সিরোসিস)", "প্যানক্রিয়াটাইটিস", "গ্যাস্ট্রোইনটেস্টিনাল ব্লিডিং", "এন্ডোস্কপি/কোলোনোস্কপি"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যাকালীন OPD (শনি–বৃহস্পতি); শুক্রবার বন্ধ — সময় ভিন্ন হতে পারে, কল করে নিশ্চিত করুন।
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    # start: "17:00"   <- যাচাই করে দিন
+    # end: "21:00"
+    serials:
+      - label: "হাসপাতালের সিরিয়াল (হটলাইন)"
+        number: "09610009640"
+      - label: "মোবাইল"
+        number: "01728680627"

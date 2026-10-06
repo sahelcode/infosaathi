@@ -1,0 +1,25 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/11/dr-monirul-islam-sylhet.html, গত ১২ মাসে Google থেকে 101 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "ডা. মনিরুল ইসলাম"
+name_en: "Dr. Monirul Islam"
+specialty: chest
+title: "রেসপিরেটরি মেডিসিন বিশেষজ্ঞ"
+degrees: ["MBBS", "DTCD", "MD (Respiratory Medicine)"]
+designation: "Consultant, Department of Respiratory Medicine — Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/11/dr-monirul-islam-sylhet.html]
+treats: ["অ্যাজমা", "সিওপিডি", "টিবি", "নিউমোনিয়া", "ফুসফুস সংক্রমণ", "শ্বাসকষ্ট", "স্লিপ অ্যাপনিয়া", "পোস্ট-কোভিড জটিলতা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01762052163"
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

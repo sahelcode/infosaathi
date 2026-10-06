@@ -27,6 +27,7 @@
   $$('.pf-day[data-d="'+day+'"]').forEach(el=>el.classList.add('is-today'));
   const list=$('[data-today-list]'); let sessions=0;
   $$('.pf-chamber').forEach(ch=>{
+    if(!ch.dataset.start||!ch.dataset.days) return; /* time not known yet */
     const days=(ch.dataset.days||'').split(',').map(Number);
     if(away||days.indexOf(day)<0) return;
     sessions++;

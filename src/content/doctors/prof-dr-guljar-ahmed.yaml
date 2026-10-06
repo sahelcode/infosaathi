@@ -1,0 +1,28 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2026/02/professor-dr-guljar-ahmed.html, গত ১২ মাসে Google থেকে 30 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - সময় নিয়ে অস্পষ্টতা: উপরে 5:00pm - 8:00pm, কিন্তু পরিচিতিতে 'প্রায় ৫টা–৮টা' এবং অফিসিয়াল তালিকায় শুধু 'Evening' বলা হয়েছে — ফোনে নিশ্চিত করুন।
+#   - পোস্টের লেখা শেষে অসম্পূর্ণ (শেষ প্রশ্নোত্তর কেটে গেছে)।
+draft: true
+name: "অধ্যাপক ডা. গুলজার আহমেদ"
+name_en: "Prof. Dr. Guljar Ahmed"
+specialty: colorectal
+title: "জেনারেল/ল্যাপারোস্কোপিক/কোলোরেক্টাল সার্জারি"
+degrees: ["MBBS", "MS (Surgery)"]
+designation: "Professor & Head (General Surgery) – North East Medical College & Hospital, Sylhet"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2026/02/professor-dr-guljar-ahmed.html]
+treats: ["হার্নিয়া", "পিত্তথলির পাথর", "অ্যাপেন্ডিসাইটিস", "পাইলস", "ফিশার", "ফিস্টুলা", "পেটের গাঁট/ফোলা", "কোলোরেক্টাল সমস্যা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: শনিবার–বৃহস্পতিবার (Evening) (5:00pm - 8:00pm)
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01736711474"
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"

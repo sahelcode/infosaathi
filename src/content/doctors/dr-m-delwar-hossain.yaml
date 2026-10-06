@@ -1,0 +1,27 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/11/dr-m-delwar-hossain.html, গত ১২ মাসে Google থেকে 18 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - পোস্টের শেষাংশ (প্রশ্নোত্তর) মাঝপথে কাটা — অসম্পূর্ণ লেখা
+draft: true
+name: "ডা. এম. দেলোয়ার হোসেন"
+name_en: "Dr. M. Delwar Hossain"
+specialty: chest
+title: "রেসপিরেটরি মেডিসিন বিশেষজ্ঞ"
+degrees: ["MBBS", "MD (Respiratory Medicine)"]
+designation: "Consultant, Department of Respiratory Medicine — Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/11/dr-m-delwar-hossain.html]
+treats: ["হাঁপানি", "সিওপিডি", "নিউমোনিয়া", "ব্রঙ্কিয়েকটেসিস", "টিউবারকুলোসিস-সম্পর্কিত জটিলতা", "পেশাগত ফুসফুস রোগ", "অ্যালার্জি-জনিত শ্বাসকষ্ট", "স্লিপ অ্যাপনিয়া"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01715008618"
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610848484"

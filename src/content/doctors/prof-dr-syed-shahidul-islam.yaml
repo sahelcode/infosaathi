@@ -1,0 +1,23 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/10/professor-dr-syed-shahidul-islam.html, গত ১২ মাসে Google থেকে 4 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+draft: true
+name: "প্রফেসর ডা. সৈয়দ শহিদুল ইসলাম"
+name_en: "Prof. Dr. Syed Shahidul Islam"
+specialty: diabetes
+title: "ডায়াবেটিস ও হরমোন বিশেষজ্ঞ"
+degrees: ["MBBS", "MD (Endocrinology)", "CCD (BIRDEM)", "FRCP (UK)"]
+designation: "Professor & Senior Consultant, Department of Diabetes & Hormone — Ibn Sina Hospital Sylhet Limited"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/10/professor-dr-syed-shahidul-islam.html]
+treats: ["ডায়াবেটিস", "থাইরয়েড সমস্যা", "স্থূলতা", "হরমোনের অসামঞ্জস্য", "মেটাবলিক সমস্যা", "ডায়াবেটিক নিউরোপ্যাথি", "ডায়াবেটিক নেফ্রোপ্যাথি ও রেটিনোপ্যাথি", "অ্যাড্রিনাল ও পিটুইটারি সমস্যা"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতালের সিরিয়াল"
+        number: "09610009640"

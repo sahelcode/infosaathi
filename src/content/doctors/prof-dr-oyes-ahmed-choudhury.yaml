@@ -1,0 +1,26 @@
+# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/09/prof-dr-oyes-ahmed-choudhury-sylhet-ibn.html, গত ১২ মাসে Google থেকে 142 ক্লিক)।
+# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
+# যা বিশেষভাবে দেখতে হবে:
+#   - উপরের অংশে 'Fellow Pediatric Surgery' লেখা, কিন্তু ডিগ্রি তালিকায় নেই—degrees-এ রাখা হয়নি, যাচাই করুন
+#   - 'মোবাইল' হিসেবেও 09610009640 লেখা—এটি হটলাইনের একই নম্বর, আলাদা মোবাইল নম্বর নেই
+draft: true
+name: "প্রফেসর ডা. ওয়াইস আহমেদ চৌধুরী"
+name_en: "Prof. Dr. Oyes Ahmed Choudhury"
+specialty: pediatric_surgery
+title: "ল্যাপারোস্কপিক ও শিশু সার্জন"
+degrees: ["MBBS", "MS (Pediatric Surgery)"]
+designation: "Professor & Head, Pediatric Surgery — Sylhet Women’s Medical College & Hospital"
+city: sylhet
+verified: 2026-10-06   # যাচাইয়ের দিন বসান
+old_urls: [/2025/09/prof-dr-oyes-ahmed-choudhury-sylhet-ibn.html]
+treats: ["ল্যাপারোস্কপিক সার্জারি", "জন্মগত বিকৃতি সংশোধন", "শিশুদের জটিল পেটের সমস্যা", "টিউমার অপারেশন"]
+
+chambers:
+  # পোস্টে সময় যেভাবে লেখা: প্রতিদিন সন্ধ্যা ৬টা – রাত ১০টা (শুক্রবার বন্ধ)
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "18:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতালের সিরিয়াল (হটলাইন)"
+        number: "09610009640"
