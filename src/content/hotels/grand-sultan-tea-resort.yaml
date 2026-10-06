@@ -1,0 +1,31 @@
+kind: resort
+name: "Grand Sultan Tea Resort & Golf"
+name_bn: "গ্র্যান্ড সুলতান টি রিসোর্ট অ্যান্ড গলফ"
+short: "গ্র্যান্ড সুলতান"
+city: moulvibazar
+address: "শ্রীমঙ্গল, মৌলভীবাজার ৩২১০"
+stars: 5
+web: "https://grandsultanresort.com"
+map_query: "Grand Sultan Tea Resort & Golf, Srimangal"
+verified: 2026-10-07
+verified_by: official
+
+numbers:
+  - { label: "রিসোর্ট অফিস", number: "09678785959" }
+  - { label: "হোয়াটসঅ্যাপ", number: "01730793555" }
+
+rooms: []
+price_plus: true
+price_note: "ওয়েবসাইটে রুমের ভাড়া প্রকাশিত নেই; ভাড়া ফোনে জেনে নিন। হোটেলের নীতিমালা অনুযায়ী সব ভাড়ার সাথে ১০% সার্ভিস চার্জ ও ১৫% ভ্যাট প্রযোজ্য।"
+amenities: []
+facilities: [pool, spa, gym, restaurant, cinema, kids, golf]
+facility_notes: "৪৪ আসনের সিনেমা হল, তাপমাত্রা নিয়ন্ত্রিত সুইমিং পুল, গলফ কোর্স, টেনিস ও ব্যাডমিন্টন কোর্ট, লাইব্রেরি; রুম ও স্যুট ৮ ধরনের (৩৮২ থেকে ১,৭৫০ বর্গফুট)"
+rooms_total: 134
+checkin: "দুপুর ২টা থেকে"
+checkout: "দুপুর ১২টার মধ্যে"
+nearby:
+  - { name: "লাওয়াছড়া জাতীয় উদ্যান", place: lawachara-national-park }
+  - { name: "শ্রীমঙ্গল শহর" }
+sources:
+  - { title: "অফিসিয়াল ওয়েবসাইট", url: "https://grandsultanresort.com" }
+  - { title: "গেস্ট পলিসি", url: "https://grandsultanresort.com/guest-policy" }

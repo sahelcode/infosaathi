@@ -1,0 +1,18 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getHotels, hotelUrl } from '../../lib/data';
+import { CITIES } from '../../lib/taxonomy';
+import { bn } from '../../lib/format';
+const list = await getHotels();
+const cities = [...new Set(list.map((h) => h.data.city))];
+---
+<ListPage title="বাংলাদেশের হোটেল ও রিসোর্ট: রুম ভাড়া, সুবিধা ও বুকিং নম্বর | InfoSaathi" h1="হোটেল" path="/hotels/" crumbs={[['হোম', '/']]}
+  intro="হোটেল ও রিসোর্টের রুম ভাড়া, সুবিধা, ঠিকানা আর বুকিং নম্বর। সব তথ্য হোটেলের অফিসিয়াল সূত্র থেকে।"
+  chips={cities.map((c) => ({ href: `/hotels/${c}/`, label: CITIES[c].bn, n: bn(list.filter((h) => h.data.city === c).length) }))}>
+  {list.map((h) => (
+    <a class="pf-mini" href={hotelUrl(h)}><span class="hp-near-i un-rel-i"><Icon name="bed" size={20} w={1.8} /></span>
+      <span class="pf-mini-txt"><b>{h.data.name_bn}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{CITIES[h.data.city].bn}{h.data.stars ? ` · ${bn(h.data.stars)} তারকা` : ''}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>

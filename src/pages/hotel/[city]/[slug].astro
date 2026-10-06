@@ -1,0 +1,279 @@
+---
+// Hotel / resort page. One file in src/content/hotels/ per hotel. No ratings until real reviews exist.
+import { Image, getImage } from 'astro:assets';
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import NumRow from '../../../components/NumRow.astro';
+import Faq from '../../../components/Faq.astro';
+import Report from '../../../components/Report.astro';
+import ShareRow from '../../../components/ShareRow.astro';
+import Ad from '../../../components/Ad.astro';
+import { getHotels, hotelUrl, placeUrl, getPlaces, type HotelEntry } from '../../../lib/data';
+import { CITIES, HOTEL_FACILITIES } from '../../../lib/taxonomy';
+import { HOTEL_ICONS } from '../../../lib/icons';
+import { bn, taka, phoneShow, phoneIntl, bnDate } from '../../../lib/format';
+import { SITE } from '../../../lib/site';
+import '../../../styles/hospital.css';
+import '../../../styles/uni.css';
+import '../../../styles/place.css';
+
+export async function getStaticPaths() {
+  return (await getHotels()).map((h) => ({ params: { city: h.data.city, slug: h.id }, props: { hotel: h } }));
+}
+const { hotel } = Astro.props as { hotel: HotelEntry };
+const d = hotel.data;
+const city = CITIES[d.city];
+const path = hotelUrl(hotel);
+const KIND = d.kind === 'resort' ? 'রিসোর্ট' : 'হোটেল';
+const photos = d.photos;
+const map = `https://maps.google.com/?q=${encodeURIComponent(d.map_query)}`;
+const mainNum = d.numbers[0];
+const checked = d.verified_by === 'phone' ? `ফোনে যাচাই: ${bnDate(d.verified)}` : `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
+const minPrice = d.rooms.length ? Math.min(...d.rooms.map((r) => r.price)) : undefined;
+const plus = d.price_plus ? '++' : '';
+const places = await getPlaces();
+const nearby = d.nearby.map((n) => ({ ...n, p: n.place ? places.find((x) => x.id === n.place!.id) : undefined }));
+
+const glance = [
+  { icon: 'wallet', k: 'ভাড়া শুরু (প্রতি রাত)', v: minPrice ? taka(minPrice) + plus : 'ফোনে জেনে নিন' },
+  d.checkin && { icon: 'clock', k: 'চেক-ইন / চেক-আউট', v: [d.checkin, d.checkout].filter(Boolean).join(' · ') },
+  d.rooms_total && { icon: 'door', k: 'মোট রুম', v: `${bn(d.rooms_total)}টি` },
+  d.stars && { icon: 'star', k: 'হোটেলের ঘোষণা', v: `${bn(d.stars)} তারকা` },
+  { icon: 'pin', k: 'অবস্থান', v: city.bn },
+].filter(Boolean).slice(0, 4) as { icon: 'wallet' | 'clock' | 'door' | 'star' | 'pin'; k: string; v: string }[];
+
+const jump = [
+  d.rooms.length > 0 && ['rooms', 'রুম ও ভাড়া'],
+  d.facilities.length > 0 && ['facilities', 'সুবিধা'],
+  d.rules.length > 0 || d.checkin ? ['rules', 'নিয়ম'] : false,
+  ['location', 'লোকেশন'],
+  ['contact', 'যোগাযোগ'],
+].filter(Boolean) as string[][];
+
+const about = d.about ?? `${d.name_bn} ${city.of} একটি ${d.stars ? bn(d.stars) + ' তারকা ' : ''}${KIND}, ঠিকানা ${d.address}।${d.facilities.length ? ' সুবিধার মধ্যে আছে ' + d.facilities.slice(0, 4).map((f) => HOTEL_FACILITIES[f]).join(', ') + '।' : ''}`;
+const faq = [
+  ...(minPrice ? [{ q: `${d.name_bn}-এর রুম ভাড়া কত?`, a: `প্রতি রাত ${taka(minPrice)}${plus} থেকে শুরু${d.price_plus ? '। এর সাথে ভ্যাট ও সার্ভিস চার্জ যোগ হয়' : ''}। অফার বা অনলাইন বুকিংয়ে ভাড়া বদলাতে পারে।` }] : [{ q: `${d.name_bn}-এর রুম ভাড়া কত?`, a: `${d.price_note ?? 'ভাড়া মৌসুম অনুযায়ী বদলায়, বুকিংয়ের আগে ফোনে জেনে নিন।'}` }]),
+  ...(d.checkin ? [{ q: 'চেক-ইন ও চেক-আউটের সময় কখন?', a: `চেক-ইন ${d.checkin}${d.checkout ? `, চেক-আউট ${d.checkout}` : ''}।` }] : []),
+  { q: `${d.name_bn} কোথায়?`, a: `${d.address}।` },
+  ...(d.facilities.includes('pool') ? [{ q: `${d.name_bn}-এ সুইমিং পুল আছে?`, a: 'হ্যাঁ, সুইমিং পুল আছে।' }] : []),
+  { q: 'কীভাবে বুক করব?', a: `${mainNum.label} নম্বর ${phoneShow(mainNum.number)}-এ কল করে${d.web ? ' বা হোটেলের ওয়েবসাইট থেকে' : ''} বুক করা যায়।` },
+  ...d.faq,
+];
+
+const all = await getHotels();
+const others = all.filter((x) => x.id !== hotel.id);
+const related = [...others.filter((x) => x.data.city === d.city), ...others.filter((x) => x.data.city !== d.city)].slice(0, 3);
+const cover = photos[0] ? await getImage({ src: photos[0].src, width: 1200, format: 'webp' }) : undefined;
+const title = `${d.name} (${d.name_bn}) – রুম ভাড়া, সুবিধা ও বুকিং | InfoSaathi`;
+const description = `${d.name_bn} (${d.name}), ${city.bn}: ${minPrice ? `রুম ভাড়া ${taka(minPrice)} থেকে, ` : ''}${d.checkin ? 'চেক-ইন সময়, ' : ''}সুবিধা, ঠিকানা আর বুকিং নম্বর।`;
+const crumbs = [['হোম', '/'], ['হোটেল', '/hotels/'], [city.bn, `/hotels/${d.city}/`]];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': d.kind === 'resort' ? 'Resort' : 'Hotel',
+      name: d.name,
+      alternateName: [d.name_bn, ...(d.short ? [d.short] : [])],
+      url: SITE + path,
+      ...(d.web && { sameAs: [d.web] }),
+      ...(d.stars && { starRating: { '@type': 'Rating', ratingValue: d.stars } }),
+      telephone: phoneIntl(mainNum.number),
+      ...(d.rooms_total && { numberOfRooms: d.rooms_total }),
+      ...(cover && { image: new URL(cover.src, SITE).href }),
+      ...(d.geo && { geo: { '@type': 'GeoCoordinates', latitude: d.geo.lat, longitude: d.geo.lng } }),
+      address: { '@type': 'PostalAddress', streetAddress: d.address, addressLocality: city.en, addressCountry: 'BD' },
+      ...(d.facilities.length && { amenityFeature: d.facilities.map((f) => ({ '@type': 'LocationFeatureSpecification', name: HOTEL_FACILITIES[f], value: true })) }),
+    },
+    { '@type': 'BreadcrumbList', itemListElement: crumbs.map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) },
+    { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  ],
+};
+---
+<Base title={title} description={description} path={path} ogImage={cover?.src} jsonld={jsonld} draft={d.draft}>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{d.name}</a></nav>
+    <div class="pf-grid">
+      <article class="pf-main">
+        <section class="pf-hero">
+          {photos.length > 0 ? (
+            <>
+              <div class="pl-gal" data-gal tabindex="0" aria-roledescription="carousel" aria-label={`${d.name}-এর ছবি`}>
+                {photos.length > 1 && <div class="pl-bars" aria-hidden="true">{photos.map(() => <span><i></i></span>)}</div>}
+                {photos.map((p, i) => (
+                  <figure class="pl-slide" aria-roledescription="slide" aria-label={`${bn(i + 1)} / ${bn(photos.length)}`}>
+                    <Image src={p.src} alt={`${d.name}: ${p.caption}`} width={1200} loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} draggable="false" />
+                    <figcaption>{p.caption}{p.sub && <small>{p.sub}</small>}</figcaption>
+                  </figure>
+                ))}
+                {photos.length > 1 && (<>
+                  <span class="pl-count" data-count aria-hidden="true"></span>
+                  <button class="pl-nav prev" type="button" aria-label="আগের ছবি"><Icon name="chevl" size={20} w={2.4} /></button>
+                  <button class="pl-nav next" type="button" aria-label="পরের ছবি"><Icon name="chev" size={20} w={2.4} /></button>
+                </>)}
+              </div>
+              {photos.length > 1 && (
+                <div class="pl-thumbs">
+                  {photos.map((p, i) => (
+                    <button class="pl-th" type="button" data-go={i} aria-label={p.caption}>
+                      <span class="pl-th-img"><Image src={p.src} alt="" width={340} loading="lazy" /></span><span>{p.label ?? p.caption}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </>
+          ) : (
+            <div class="pl-gal art"><svg viewBox="0 0 160 80" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><rect width="160" height="80" fill="#DBEAFE" /><rect y="66" width="160" height="14" fill="#EFF6FF" />
+              <rect x="30" y="40" width="26" height="28" rx="2" fill="#EFF6FF" stroke="#3B6FE0" stroke-width="2" /><rect x="104" y="40" width="26" height="28" rx="2" fill="#EFF6FF" stroke="#3B6FE0" stroke-width="2" />
+              <rect x="56" y="12" width="48" height="56" rx="2" fill="#EFF6FF" stroke="#3B6FE0" stroke-width="2" />
+              {[0, 1, 2, 3].flatMap((r) => [0, 1, 2].map((c) => <rect x={62 + c * 13} y={20 + r * 11} width="8" height="6" rx="1" fill="#3B6FE0" opacity={(r * 3 + c) % 4 ? '.45' : '.9'} />))}
+              <path d="M68 68v-6a12 12 0 0 1 24 0v6Z" fill="#3B6FE0" /></svg></div>
+          )}
+          <div class="pf-hero-body pl-hero-body">
+            <h1 class="pf-name">{d.name}</h1>
+            <p class="pf-en">{d.name_bn}</p>
+            <p class="hp-addr"><Icon name="pin" size={15} w={2.2} />{d.address}</p>
+            <div class="pf-badges">
+              {d.stars && <span class="pf-badge ok"><Icon name="star" size={13} w={2.4} />{bn(d.stars)} তারকা {KIND}</span>}
+              {!d.stars && <span class="pf-badge ok">{KIND}</span>}
+              {d.facilities.includes('pool') && <span class="pf-badge">সুইমিং পুল</span>}
+              <span class:list={['pf-badge', { src: d.verified_by === 'official' }]}><Icon name="clock" size={13} w={2.2} />{checked}</span>
+            </div>
+          </div>
+          <div class="pf-actions hp-actions un-actions no-logo">
+            <button class="pf-btn primary" type="button" data-sheet-open="numbers"><Icon name="phone" size={17} w={2.2} />কল করে বুক করুন</button>
+            <a class="pf-btn" href={map} target="_blank" rel="noopener"><Icon name="pin" />ম্যাপ</a>
+            {d.web ? <a class="pf-btn" href={d.web} target="_blank" rel="noopener" aria-label="অফিসিয়াল ওয়েবসাইট"><Icon name="globe" /></a> : <span></span>}
+            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+          </div>
+          <nav class="hp-jump" aria-label="এই পেজে">{jump.map(([a, t]) => <a href={`#${a}`}>{t}</a>)}</nav>
+        </section>
+
+        <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>
+
+        {d.rooms.length > 0 && (
+          <section class="pf-card" id="rooms" aria-labelledby="h-rooms">
+            <div class="pf-card-head"><h2 id="h-rooms">রুম ও ভাড়া</h2><span class="pf-count">{bn(d.rooms.length)} ধরনের রুম</span></div>
+            <ul class="un-progs">
+              {d.rooms.map((r) => (
+                <li class="un-prog"><span class="un-prog-t"><b>{r.name}</b>{r.name_en && <small>{r.name_en}</small>}
+                  {(r.size || r.bed) && <span class="un-prog-m">{r.size && <span>{r.size}</span>}{r.bed && <span>{r.bed}</span>}</span>}</span>
+                  <span class="un-prog-c"><small>প্রতি রাত</small><strong>{taka(r.price)}{plus}</strong></span></li>
+              ))}
+            </ul>
+            <p class="pf-note">{d.price_plus && '++ মানে ভাড়ার সাথে ভ্যাট ও সার্ভিস চার্জ যোগ হবে। '}{d.price_note ?? 'এগুলো হোটেলের ঘোষিত ভাড়া, অফার বা অনলাইন বুকিংয়ে কম-বেশি হতে পারে।'}</p>
+            {d.amenities.length > 0 && (<><h3 class="pf-h3">সব রুমে যা থাকে</h3><ul class="ht-amen">{d.amenities.map((a) => <li>{a}</li>)}</ul></>)}
+          </section>
+        )}
+        {d.rooms.length === 0 && d.price_note && (
+          <section class="pf-card" id="rooms" aria-labelledby="h-rooms"><h2 id="h-rooms">রুম ভাড়া</h2><p class="pf-text">{d.price_note}</p>
+            {d.amenities.length > 0 && (<><h3 class="pf-h3">সব রুমে যা থাকে</h3><ul class="ht-amen">{d.amenities.map((a) => <li>{a}</li>)}</ul></>)}</section>
+        )}
+
+        {d.facilities.length > 0 && (
+          <section class="pf-card" id="facilities" aria-labelledby="h-fac">
+            <div class="pf-card-head"><h2 id="h-fac">{KIND}ের সুবিধা</h2></div>
+            <ul class="hp-facs">{d.facilities.map((f) => <li class="hp-fac"><span class="hp-fac-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={HOTEL_ICONS[f]} /></span>{HOTEL_FACILITIES[f]}</li>)}</ul>
+            {d.facility_notes && <p class="pf-text">{d.facility_notes}</p>}
+          </section>
+        )}
+
+        <Ad />
+
+        {(d.checkin || d.rules.length > 0) && (
+          <section class="pf-card" id="rules" aria-labelledby="h-rules">
+            <h2 id="h-rules">চেক-ইন ও নিয়ম</h2>
+            <dl class="un-adm-list">
+              {d.checkin && <div><dt>চেক-ইন</dt><dd>{d.checkin}</dd></div>}
+              {d.checkout && <div><dt>চেক-আউট</dt><dd>{d.checkout}</dd></div>}
+              {d.rules.map((r) => <div><dt>{r.k}</dt><dd>{r.v}</dd></div>)}
+            </dl>
+          </section>
+        )}
+
+        <section class="pf-card" id="location" aria-labelledby="h-loc">
+          <h2 id="h-loc">লোকেশন{nearby.length > 0 && ' ও কাছাকাছি'}</h2>
+          <div class="hp-info"><div><span class="pf-k">ঠিকানা</span><b>{d.address}</b></div></div>
+          {nearby.length > 0 && (
+            <ul class="ht-near">{nearby.map((n) => <li>{n.p ? <a href={placeUrl(n.p)}>{n.name}</a> : <span>{n.name}</span>}{n.time && <b>{n.time}</b>}</li>)}</ul>
+          )}
+          <a class="pf-btn hp-mapbtn" href={map} target="_blank" rel="noopener"><Icon name="pin" />Google Maps-এ দেখুন</a>
+        </section>
+
+        <section class="pf-card" aria-labelledby="h-about"><h2 id="h-about">পরিচিতি</h2><p class="pf-text">{about}</p>
+          {(d.good.length > 0 || d.think.length > 0) && (
+            <div class="un-pc">
+              {d.good.length > 0 && <div class="un-pc-b good"><b><Icon name="plus" size={16} w={2.6} />ভালো দিক</b><ul>{d.good.map((g) => <li>{g}</li>)}</ul></div>}
+              {d.think.length > 0 && <div class="un-pc-b think"><b><Icon name="minus" size={16} w={2.6} />যা জেনে নেবেন</b><ul>{d.think.map((t) => <li>{t}</li>)}</ul></div>}
+            </div>
+          )}
+        </section>
+
+        <section class="pf-card" id="contact" aria-labelledby="h-contact">
+          <h2 id="h-contact">বুকিং ও যোগাযোগ</h2>
+          <div class="pf-nums">
+            {d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}
+            {d.emails.map((m) => (
+              <div class="pf-num un-mail"><span class="pf-num-t"><small class="pf-num-l">ইমেইল · {m.label}</small><b>{m.email}</b></span>
+                <button class="pf-copy" type="button" data-copy-num={m.email} data-copy-msg="ইমেইল কপি হয়েছে" aria-label="ইমেইল কপি করুন"><Icon name="copy" size={17} w={1.9} /></button>
+                <a class="pf-call" href={`mailto:${m.email}`} aria-label="ইমেইল পাঠান"><Icon name="mail" size={17} /></a></div>
+            ))}
+          </div>
+          {d.web && <div class="hp-info"><div><span class="pf-k">ওয়েবসাইট</span><a class="un-web" href={d.web} target="_blank" rel="noopener">{d.web.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}<Icon name="ext" size={14} /></a></div></div>}
+        </section>
+
+        <Faq items={faq} />
+        <Report placeholder="যেমন: রুম ভাড়া বদলেছে" note="ভাড়া ও সুবিধা সময়ের সাথে বদলায়। বুকিংয়ের আগে হোটেলে কল করে নিশ্চিত হয়ে নিন।">
+          {d.sources.length > 0 && (
+            <div class="un-src"><b class="pf-h3" style="display:block;margin:4px 0 0">তথ্যসূত্র</b>
+              <ul>{d.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>
+          )}
+        </Report>
+        <ShareRow />
+        <nav class="pf-tags" aria-label="সম্পর্কিত"><a href={`/hotels/${d.city}/`}>{city.of} হোটেল</a><a href="/hotels/">বাংলাদেশের হোটেল</a></nav>
+        <Ad />
+
+        {related.length > 0 && (
+          <section class="pf-block" aria-labelledby="h-rel">
+            <div class="pf-block-head"><h2 id="h-rel">অন্য হোটেল</h2><a class="see-all" href="/hotels/">See all</a></div>
+            <div class="pf-minis">
+              {related.map((x) => (
+                <a class="pf-mini" href={hotelUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="bed" size={20} w={1.8} /></span>
+                  <span class="pf-mini-txt"><b>{x.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{CITIES[x.data.city].bn}</span></span>
+                  <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+
+      <aside class="pf-side" aria-label="সারাংশ">
+        <div class="pf-side-in">
+          <div class="pf-sum">
+            <b class="pf-sum-h">{d.short ?? d.name_bn}</b>
+            <span class="pf-sum-l"><Icon name="wallet" size={14} w={2.2} />{minPrice ? `ভাড়া ${taka(minPrice)}${plus} থেকে` : 'ভাড়া ফোনে জেনে নিন'}</span>
+            {d.checkin && <span class="pf-sum-l"><Icon name="clock" size={14} w={2.2} />চেক-ইন: {d.checkin}</span>}
+            <div class="pf-sheet-grp">{d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}</div>
+          </div>
+          <Ad side />
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="pf-sticky un-sticky" aria-label="দ্রুত যোগাযোগ">
+    <button class="pf-btn primary" type="button" data-sheet-open="numbers"><Icon name="phone" />কল করে বুক করুন</button>
+    <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
+  </div>
+  <div class="pf-sheet" data-sheet="numbers" hidden>
+    <div class="pf-sheet-bg" data-sheet-close></div>
+    <div class="pf-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-h">
+      <div class="pf-sheet-grip"></div>
+      <div class="pf-sheet-top"><b id="sheet-h">{d.short ?? d.name_bn} · বুকিং</b><button class="pf-sheet-x" type="button" data-sheet-close aria-label="বন্ধ করুন"><Icon name="x" w={2.4} /></button></div>
+      <div class="pf-sheet-grp">{d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}</div>
+    </div>
+  </div>
+</Base>
+
+<script>
+  import '../../../scripts/place.js';
+</script>

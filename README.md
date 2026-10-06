@@ -70,3 +70,6 @@ src/pages/               পেজের টেমপ্লেট
 public/index.html        হোমপেজ (আপাতত আগের ডিজাইন যেমন আছে)
 public/_redirects        পুরনো Blogger লিংক → নতুন পেজ
 ```
+
+## হোটেল
+`src/content/hotels/grand-sylhet-hotel-resort.yaml` কপি করে নমুনা বানান। লিংক হবে `infosaathi.com/hotel/sylhet/<ফাইলের নাম>/`। সুবিধা শুধু `src/lib/taxonomy.ts`-এর `HOTEL_FACILITIES` তালিকার নাম দিয়ে লিখবেন। রেটিং নেই, কারণ আসল রিভিউ জমা না হওয়া পর্যন্ত নকল রেটিং দেখানো হয় না। হোটেল রুমের ভাড়া ডলারে দিলে `rooms: []` রেখে `price_note`-এ ফোনে জেনে নিতে লিখুন।

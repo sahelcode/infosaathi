@@ -3,9 +3,9 @@
 import type { APIRoute } from 'astro';
 import { getImage } from 'astro:assets';
 import home from '../partials/home.html?raw';
-import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl } from '../lib/data';
+import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl } from '../lib/data';
 import { CITIES } from '../lib/taxonomy';
-import { SPECIALTIES } from '../lib/taxonomy';
+import { SPECIALTIES, HOTEL_FACILITIES } from '../lib/taxonomy';
 import { bn } from '../lib/format';
 
 const swap = (src: string, from: string, to: string) => {
@@ -87,7 +87,16 @@ export const GET: APIRoute = async () => {
     })),
   );
 
+  // hotels: real ones only, no ratings (there are no real reviews yet)
+  const hotelRows = (await getHotels()).slice(0, 8).map((h) => ({
+    name: h.data.name,
+    loc: `${h.data.address.split(',')[0]}, ${CITIES[h.data.city].bn}`,
+    tags: [...(h.data.stars ? [`${h.data.stars}-star`] : []), ...h.data.facilities.slice(0, 2).map((f) => HOTEL_FACILITIES[f])].slice(0, 3),
+    url: hotelUrl(h),
+  }));
+
   let html = swapArray(home, 'doctorNames', docRows);
+  html = swapArray(html, 'hotels', hotelRows);
   html = swapArray(html, 'places', placeRows);
   html = swap(html, "put('placeRow', places.map(p=>`\n    <div class=\"org-card ix-card ix-place\">\n      <div class=\"ix-image\">${placeArt(p.kind)}",
     "put('placeRow', places.map(p=>`\n    <a class=\"org-card ix-card ix-place\" href=\"${p.url}\" style=\"color:inherit;text-decoration:none\">\n      <div class=\"ix-image\">${p.img ? `<img src=\"${p.img}\" alt=\"\" loading=\"lazy\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\">` : placeArt(p.kind)}");
@@ -127,5 +136,8 @@ export const GET: APIRoute = async () => {
   html = swap(html, '<span class="eyebrow">Doctors</span><a href="#" class="see-all">', '<span class="eyebrow">Doctors</span><a href="/doctors/" class="see-all">');
   html = swap(html, '<span class="eyebrow">Hospitals</span><a href="#" class="see-all">', '<span class="eyebrow">Hospitals</span><a href="/hospitals/" class="see-all">');
 
+  html = swap(html, "put('hotelRow', hotels.map((h,i)=>`\n    <div class=\"org-card ix-card\">", "put('hotelRow', hotels.map((h,i)=>`\n    <a class=\"org-card ix-card\" href=\"${h.url}\" style=\"color:inherit;text-decoration:none\">");
+  html = swap(html, '<span class="eyebrow">Hotels</span><a href="#" class="see-all">', '<span class="eyebrow">Hotels</span><a href="/hotels/" class="see-all">');
+  html = swap(html, '<span class="ix-rate">★ ${h.rating}</span></div>\n      </div>\n    </div>`).join(\'\'));', '</div>\n      </div>\n    </a>`).join(\'\'));');
   return new Response(html, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
 };

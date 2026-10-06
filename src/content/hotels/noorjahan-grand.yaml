@@ -1,0 +1,37 @@
+kind: hotel
+name: "Noorjahan Grand"
+name_bn: "নূরজাহান গ্র্যান্ড"
+short: "নূরজাহান গ্র্যান্ড"
+city: sylhet
+address: "ওয়েভস ১, দরগাহ গেট, সিলেট ৩১০০"
+web: "https://noorjahangrand.com"
+map_query: "Hotel Noorjahan Grand, Dargah Gate, Sylhet"
+verified: 2026-10-07
+verified_by: official
+
+numbers:
+  - { label: "রিজার্ভেশন", number: "01930111666" }
+  - { label: "রিজার্ভেশন", number: "01927555999" }
+
+emails:
+  - { label: "ইমেইল", email: "info@noorjahangrand.com" }
+
+rooms:
+  - { name: "রয়্যাল স্যুট", name_en: "Royal Suite", bed: "২টি বেড", price: 15000 }
+  - { name: "গ্র্যান্ড স্যুট", name_en: "Grand Suite", bed: "২টি বেড", price: 13000 }
+  - { name: "প্রিমিয়ার টুইন", name_en: "Premier Twin", bed: "২টি বেড", price: 7500 }
+  - { name: "এক্সিকিউটিভ টুইন", name_en: "Executive Twin", bed: "২টি বেড", price: 6500 }
+  - { name: "এক্সিকিউটিভ ডাবল", name_en: "Executive Double", bed: "২টি বেড", price: 6500 }
+  - { name: "সুপিরিয়র টুইন", name_en: "Superior Twin", bed: "২টি বেড", price: 6000 }
+  - { name: "সুপিরিয়র ডাবল", name_en: "Superior Double", bed: "১টি বেড", price: 6000 }
+  - { name: "স্মল কাপল", name_en: "Small Couple", bed: "১টি বেড", price: 5500 }
+  - { name: "বুটিক রুম", name_en: "Boutique Room", bed: "১টি বেড", price: 3500 }
+price_plus: true
+price_note: "হোটেলের ওয়েবসাইটে ২০২৬-১০-০৭ তারিখে প্রকাশিত ভাড়া। ভ্যাট ও সার্ভিস চার্জ ধরা আছে কি না ওয়েবসাইটে লেখা নেই, তাই বুকিংয়ের আগে ফোনে নিশ্চিত করুন।"
+facilities: [pool, spa, gym, restaurant, meeting, wifi, parking, airport, roomservice]
+facility_notes: "ছাদে ইনফিনিটি সুইমিং পুল"
+nearby:
+  - { name: "শাহজালাল (রহ.) মাজার", time: "পায়ে হাঁটা দূরত্ব" }
+sources:
+  - { title: "অফিসিয়াল ওয়েবসাইট", url: "https://noorjahangrand.com" }
+  - { title: "অফিসিয়াল ওয়েবসাইট — রুম ও ভাড়া", url: "https://noorjahangrand.com/rooms-gridview/" }

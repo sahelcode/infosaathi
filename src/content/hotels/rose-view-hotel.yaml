@@ -1,0 +1,35 @@
+kind: hotel
+name: "Rose View Hotel"
+name_bn: "রোজ ভিউ হোটেল"
+short: "রোজ ভিউ"
+city: sylhet
+address: "শাহজালাল উপশহর, সিলেট ৩১০০"
+web: "https://www.roseviewhotel.com"
+map_query: "Rose View Hotel Shahjalal Uposhohor Sylhet"
+verified: 2026-10-07
+verified_by: official
+
+numbers:
+  - { label: "রিজার্ভেশন · মোবাইল", number: "01972787878" }
+  - { label: "রিজার্ভেশন · মোবাইল", number: "01977200701" }
+  - { label: "হোটেল ল্যান্ডলাইন", number: "02996637835" }
+  - { label: "হোটেল ল্যান্ডলাইন", number: "02996636416" }
+
+rooms: []
+price_plus: true
+price_note: "হোটেলের ওয়েবসাইটে ২০২৬ সালের ৭ অক্টোবর পর্যন্ত ভাড়া মার্কিন ডলারে (++) দেখানো আছে, টাকায় নয়। তাই টাকার ভাড়া ফোনে জেনে নিন। ভাড়ার সঙ্গে ১০% সার্ভিস চার্জ ও ১৫% ভ্যাট যোগ হয়।"
+amenities: ["স্যাটেলাইট টিভি", "ওয়াই-ফাই", "ইলেকট্রনিক সেফ", "পার্সোনাল বার", "২৪ ঘণ্টা রুম সার্ভিস"]
+facilities: [pool, spa, gym, restaurant, breakfast, roomservice, hall, meeting]
+facility_notes: "ছাদে সারা বছর গরম পানির সুইমিং পুল, সিয়াম থাই স্পা, ফিটনেস স্টুডিও ও স্টিম রুম। ৩টি খাবারের জায়গা ও একটি বার। ক্রিস্টাল বলরুম ১-এ ৬০০ জন পর্যন্ত, আরও দুটি মিটিং হল।"
+rooms_total: 140
+checkin: "দুপুর ২টা থেকে"
+checkout: "দুপুর ১২টার মধ্যে"
+nearby:
+  - { name: "ওসমানী আন্তর্জাতিক বিমানবন্দর" }
+  - { name: "হযরত শাহজালাল (র.) মাজার" }
+  - { name: "রাতারগুল জলাবন", place: ratargul-swamp-forest }
+  - { name: "জাফলং", place: jaflong }
+sources:
+  - { title: "অফিসিয়াল ওয়েবসাইট", url: "https://www.roseviewhotel.com" }
+  - { title: "রুম ও ভাড়া", url: "https://www.roseviewhotel.com/rooms-suites.php" }
+  - { title: "যোগাযোগ", url: "https://www.roseviewhotel.com/contact-us.php" }

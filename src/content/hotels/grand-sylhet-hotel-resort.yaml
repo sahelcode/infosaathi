@@ -1,0 +1,36 @@
+kind: hotel
+name: "Grand Sylhet Hotel & Resort"
+name_bn: "গ্র্যান্ড সিলেট হোটেল অ্যান্ড রিসোর্ট"
+short: "গ্র্যান্ড সিলেট"
+city: sylhet
+address: "বড়শালা, খাদিমনগর, এয়ারপোর্ট রোড, সিলেট"
+stars: 5
+web: "https://grandsylhet.com"
+map_query: "Grand Sylhet Hotel & Resort"
+verified: 2026-10-07
+verified_by: official
+# photos:                      # নিজের তোলা ছবি src/content/hotels/images/-এ রেখে
+#   - { src: ./images/pool.jpg, caption: "সুইমিং পুল", sub: "শহরের দৃশ্যসহ", label: "সুইমিং পুল" }
+
+numbers:
+  - { label: "রিজার্ভেশন · সিলেট", number: "01313204020" }
+  - { label: "ঢাকা অফিস", number: "01321201611" }
+  - { label: "ঢাকা অফিস", number: "01321201612" }
+
+rooms:
+  - { name: "ডিলাক্স কিং", name_en: "Deluxe King", size: "২৮৭ – ৩৩৩ বর্গফুট", bed: "১টি কিং বেড", price: 6323 }
+  - { name: "জুনিয়র স্যুট", name_en: "Junior Suite", size: "৪৭৫ বর্গফুট", bed: "১টি কিং বেড", price: 11857 }
+  - { name: "এক্সিকিউটিভ স্যুট", name_en: "Executive Suite", size: "৭৪৫ – ৭৮২ বর্গফুট", bed: "১টি কিং বেড", price: 15809 }
+price_plus: true
+price_note: "হোটেলের ঘোষিত ভাড়া। অফার বা অনলাইন বুকিংয়ে কম হতে পারে।"
+amenities: ["হাই-স্পিড ইন্টারনেট", "২৪ ঘণ্টা রুম সার্ভিস", "স্যাটেলাইট টিভি", "সেফ বক্স"]
+facilities: [pool, spa, gym, restaurant, rooftop, cinema, kids, hall, parking, cash, laundry, tours]
+facility_notes: "৫টি খাবারের জায়গা, ১৭০ আসনের সিনেমা হল, বলরুমে ৫৫০ জন পর্যন্ত"
+rooms_total: 235
+checkin: "দুপুর ২টা থেকে"
+checkout: "দুপুর ১২টার মধ্যে"
+nearby:
+  - { name: "ওসমানী আন্তর্জাতিক বিমানবন্দর", time: "প্রায় ৫ মিনিট" }
+  - { name: "জাফলং", place: jaflong }
+sources:
+  - { title: "অফিসিয়াল ওয়েবসাইট", url: "https://grandsylhet.com" }

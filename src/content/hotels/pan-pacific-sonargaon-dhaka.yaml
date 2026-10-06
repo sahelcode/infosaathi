@@ -1,0 +1,30 @@
+kind: hotel
+name: "Pan Pacific Sonargaon Dhaka"
+name_bn: "প্যান প্যাসিফিক সোনারগাঁও ঢাকা"
+short: "প্যান প্যাসিফিক সোনারগাঁও"
+city: dhaka
+address: "১০৭ কাজী নজরুল ইসলাম এভিনিউ, কারওয়ান বাজার, ঢাকা ১২১৫"
+stars: 5
+web: "https://www.panpacific.com/en/hotels-and-resorts/pp-dhaka.html"
+map_query: "Pan Pacific Sonargaon Dhaka"
+verified: 2026-10-07
+verified_by: official
+
+numbers:
+  - { label: "হোটেল রিজার্ভেশন", number: "0255028008" }
+  - { label: "হোটেল", number: "02222240400" }
+
+rooms: []
+price_plus: false
+price_note: "হোটেলের ওয়েবসাইটে ভাড়া মার্কিন ডলারে দেখানো হয়েছে, টাকায় নয়। বর্তমান টাকার ভাড়া ও ভ্যাট-সার্ভিস চার্জ ফোনে জেনে নিন।"
+amenities: ["২৪ ঘণ্টা রুম সার্ভিস", "ব্যবসা কেন্দ্র (বিজনেস সেন্টার)"]
+facilities: [pool, spa, gym, restaurant, roomservice, meeting, hall]
+facility_notes: "২৪ ঘণ্টা ফিটনেস সেন্টার, বাইরের সুইমিং পুল, জাকুজি, সনা ও স্টিম রুম; ডাইনিং: ঝর্ণা গ্রিল, ক্যাফে বাজার, পুল ক্যাফে, লবি লাউঞ্জ"
+checkin: "দুপুর ৩টা থেকে"
+checkout: "দুপুর ১২টার মধ্যে"
+nearby:
+  - { name: "হাতিরঝিল" }
+  - { name: "হযরত শাহজালাল আন্তর্জাতিক বিমানবন্দর" }
+sources:
+  - { title: "অফিসিয়াল ওয়েবসাইট", url: "https://www.panpacific.com/en/hotels-and-resorts/pp-dhaka.html" }
+  - { title: "অফিসিয়াল ওয়েবসাইট – রুম", url: "https://www.panpacific.com/en/hotels-and-resorts/pp-dhaka/rooms.html" }

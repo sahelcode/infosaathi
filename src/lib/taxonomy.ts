@@ -56,6 +56,14 @@ export const FACILITIES = {
 } as const;
 export type Facility = keyof typeof FACILITIES;
 
+// Hotel facilities: a hotel file may only use these keys (icons are in src/lib/icons.ts)
+export const HOTEL_FACILITIES = {
+  pool: 'সুইমিং পুল', spa: 'স্পা ও সেলুন', gym: 'জিম', restaurant: 'রেস্টুরেন্ট', rooftop: 'রুফটপ রেস্টুরেন্ট', breakfast: 'ব্রেকফাস্ট', roomservice: 'রুম সার্ভিস',
+  wifi: 'ফ্রি ওয়াই-ফাই', parking: 'পার্কিং', lift: 'লিফট', cinema: 'সিনেমা হল', kids: 'শিশুদের খেলার জায়গা', hall: 'বলরুম ও কনভেনশন', meeting: 'মিটিং রুম',
+  cash: 'মুদ্রা বিনিময়', laundry: 'লন্ড্রি', tours: 'ট্যুর ডেস্ক', airport: 'বিমানবন্দর পিকআপ', beach: 'সৈকত সংলগ্ন', golf: 'গলফ', generator: 'জেনারেটর',
+} as const;
+export type HotelFacility = keyof typeof HOTEL_FACILITIES;
+
 export const TEST_GROUPS = { lab: 'ল্যাব টেস্ট', imaging: 'এক্স-রে ও স্ক্যান', heart: 'হৃদরোগ', other: 'অন্যান্য' } as const;
 export type TestGroup = keyof typeof TEST_GROUPS;
 

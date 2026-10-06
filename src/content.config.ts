@@ -3,7 +3,7 @@
 import { defineCollection, reference } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { CITIES, SPECIALTIES, FACILITIES, TEST_GROUPS, keysOf } from './lib/taxonomy';
+import { CITIES, SPECIALTIES, FACILITIES, HOTEL_FACILITIES, TEST_GROUPS, keysOf } from './lib/taxonomy';
 import { DAYS } from './lib/format';
 
 // Files whose name starts with _ (like _template.yaml) are guides, never published.
@@ -302,4 +302,48 @@ const places = defineCollection({
       .refine((p) => p.draft || p.verified_by === 'visited' || p.sources.length > 0, 'sources থেকে নেওয়া তথ্যের জন্য অন্তত একটি sources দিন'),
 });
 
-export const collections = { doctors, hospitals, universities, institutions, places };
+// Hotel / resort. Rates are the hotel's published rack rates (no ratings until real reviews exist).
+const hotels = defineCollection({
+  loader: files('hotels'),
+  schema: ({ image }) =>
+    z
+      .object({
+        draft: z.boolean().default(false),
+        kind: z.enum(['hotel', 'resort'], 'kind হবে hotel অথবা resort').default('hotel'),
+        name: z.string().min(3), // English
+        name_bn: z.string().min(3),
+        short: z.string().optional(),
+        city,
+        address: z.string(),
+        stars: z.number().int().min(1).max(5).optional(), // only if the hotel itself states it
+        web: z.url().optional(),
+        map_query: z.string(),
+        geo: z.object({ lat: z.number(), lng: z.number() }).optional(),
+        photos: z.array(z.object({ src: image(), caption: z.string(), sub: z.string().optional(), label: z.string().optional() })).max(5).default([]),
+        logo: image().optional(),
+        verified: date,
+        verified_by: z.enum(['phone', 'official'], 'verified_by হবে phone অথবা official').default('phone'),
+        numbers: z.array(z.object({ label: z.string(), number: phone, note: z.string().optional() })).min(1, 'অন্তত একটি ফোন নম্বর দিন'),
+        emails: z.array(z.object({ label: z.string(), email: z.email() })).default([]),
+        rooms: z.array(z.object({ name: z.string(), name_en: z.string().optional(), size: z.string().optional(), bed: z.string().optional(), price: z.number().positive() })).default([]),
+        price_plus: z.boolean().default(true), // true = prices are before VAT and service charge (shown as ++)
+        price_note: z.string().optional(),
+        amenities: z.array(z.string()).default([]), // what every room has
+        facilities: z.array(z.enum(keysOf(HOTEL_FACILITIES), `সুবিধা src/lib/taxonomy.ts-এর HOTEL_FACILITIES তালিকা থেকে দিন (যেমন ${Object.keys(HOTEL_FACILITIES).slice(0, 4).join(', ')})`)).default([]),
+        facility_notes: z.string().optional(), // e.g. "৫টি রেস্টুরেন্ট, ১৭০ আসনের সিনেমা হল"
+        rooms_total: z.number().int().positive().optional(),
+        checkin: z.string().optional(), // e.g. "দুপুর ২টা থেকে"
+        checkout: z.string().optional(),
+        rules: z.array(z.object({ k: z.string(), v: z.string() })).default([]),
+        nearby: z.array(z.object({ name: z.string(), time: z.string().optional(), place: reference('places').optional() })).default([]), // time only if a source states it
+        about: z.string().optional(),
+        good: z.array(z.string()).default([]),
+        think: z.array(z.string()).default([]),
+        faq: extraFaq,
+        sources: sources,
+        old_urls: z.array(z.string().startsWith('/')).default([]),
+      })
+      .refine((h) => h.draft || h.verified_by === 'phone' || h.sources.length > 0, 'official তথ্যের জন্য অন্তত একটি sources দিন'),
+});
+
+export const collections = { doctors, hospitals, universities, institutions, places, hotels };

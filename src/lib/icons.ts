@@ -1,5 +1,6 @@
 // Line icons (24x24, stroke). Use with <Icon name="phone" />.
 export const ICONS = {
+  door: '<path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17M3 21h18"/><circle cx="15" cy="12" r="1"/>',
   bus: '<rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 21v-3M16 21v-3"/><circle cx="8" cy="14.5" r="1"/><circle cx="16" cy="14.5" r="1"/>',
   car: '<path d="M5 16V11l2-5h10l2 5v5"/><path d="M3 16h18v2H3zM7 18v2M17 18v2M5 11h14"/>',
   train: '<rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M8 21l2-4M16 21l-2-4"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/>',
@@ -65,4 +66,26 @@ export const FAC_ICONS: Record<string, string> = {
   atm: "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\"/><path d=\"M3 10h18M7 15h4\"/>",
   wifi: "<path d=\"M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M2 9a14 14 0 0 1 20 0\"/><circle cx=\"12\" cy=\"19\" r=\"1\"/>",
 };
+export const HOTEL_ICONS: Record<string, string> = {
+  pool: '<path d="M2 12c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M2 18c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M8 4v6M16 4v6"/>',
+  spa: '<path d="M12 21c-5 0-8-3-8-7 3 0 6 1 8 4 2-3 5-4 8-4 0 4-3 7-8 7Z"/><path d="M12 18c-2-3-2-7 0-11 2 4 2 8 0 11Z"/>',
+  gym: '<path d="M6 7v10M18 7v10M3 9v6M21 9v6M6 12h12"/>',
+  restaurant: '<path d="M7 3v8a2 2 0 0 0 2 2v8M5 3v5M9 3v5M17 3c-2 2-2 6 0 8v10"/>',
+  rooftop: '<path d="M7 3v8a2 2 0 0 0 2 2v8M5 3v5M9 3v5M17 3c-2 2-2 6 0 8v10"/>',
+  breakfast: '<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5Z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/>',
+  roomservice: '<path d="M4 18h16M6 18a6 6 0 0 1 12 0M12 9V7"/>',
+  wifi: '<path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/>', parking: ICONS.parking, lift: ICONS.lift,
+  cinema: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/>',
+  kids: '<circle cx="12" cy="5" r="2"/><path d="M12 7v7M8 10h8M9 21l3-7 3 7"/>',
+  hall: '<path d="M3 21h18M4 10h16M12 3 3 8h18Z"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8"/>',
+  meeting: ICONS.users,
+  cash: '<rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/>',
+  laundry: '<path d="M8 3 3 6l2 4 3-1v12h8V9l3 1 2-4-5-3a4 4 0 0 1-8 0Z"/>',
+  tours: '<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2Z"/><path d="M9 4v14M15 6v14"/>',
+  airport: '<path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5Z"/>',
+  beach: '<path d="M2 18c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M12 14V6M12 6c-3 0-5 1-6 3 2-1 4-1 6-1 2 0 4 0 6 1-1-2-3-3-6-3Z"/>',
+  golf: '<path d="M8 21h8M12 21V3l7 4-7 4"/>',
+  generator: '<path d="m13 2-9 12h7l-1 8 9-12h-7Z"/>',
+};
+
 export type IconName = keyof typeof ICONS;

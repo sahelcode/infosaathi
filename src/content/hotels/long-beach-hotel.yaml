@@ -1,0 +1,42 @@
+kind: hotel
+name: "Long Beach Hotel"
+name_bn: "লং বিচ হোটেল"
+short: "লং বিচ"
+city: coxsbazar
+address: "১৪ কলাতলী, হোটেল-মোটেল জোন, কক্সবাজার"
+web: "https://longbeachhotelbd.com"
+map_query: "Long Beach Hotel, Kolatoli, Cox's Bazar"
+verified: 2026-10-07
+verified_by: official
+
+numbers:
+  - { label: "রিজার্ভেশন", number: "01730338907" }
+  - { label: "রিজার্ভেশন", number: "01755660051" }
+  - { label: "কর্পোরেট সেলস", number: "01730338905" }
+  - { label: "হটলাইন", number: "09666772266" }
+
+rooms:
+  - { name: "প্রিমিয়ার রুম (ডাবল)", name_en: "Premier Room (Double)", size: "৩৫ বর্গমিটার", bed: "১টি কিং বেড", price: 10752 }
+  - { name: "প্রিমিয়ার রুম (টুইন)", name_en: "Premier Room (Twin)", size: "৩২ বর্গমিটার", bed: "২টি সিঙ্গেল বেড", price: 10752 }
+  - { name: "সুপিরিয়র ডিলাক্স (ডাবল)", name_en: "Superior Deluxe Room (Double)", size: "৩৫ বর্গমিটার", bed: "১টি কিং বেড", price: 11385 }
+  - { name: "সুপিরিয়র ডিলাক্স (টুইন)", name_en: "Superior Deluxe Room (Twin)", size: "৩৫ বর্গমিটার", bed: "২টি সিঙ্গেল বেড", price: 11385 }
+  - { name: "এক্সিকিউটিভ রুম (ডাবল)", name_en: "Executive Room (Double)", size: "৩৭ বর্গমিটার", bed: "১টি বেড", price: 12018 }
+  - { name: "এক্সিকিউটিভ রুম (টুইন)", name_en: "Executive Room (Twin)", size: "৩৭ বর্গমিটার", bed: "২টি সিঙ্গেল বেড", price: 12018 }
+  - { name: "প্রিমিয়ার স্যুট (ডাবল)", name_en: "Premier Suite (Double)", size: "৭৫ বর্গমিটার", bed: "১টি কিং বেড", price: 17078 }
+  - { name: "প্রিমিয়ার স্যুট (টুইন)", name_en: "Premier Suite (Twin)", size: "৭৫ বর্গমিটার", bed: "টুইন বেড", price: 17078 }
+  - { name: "হানিমুন স্যুট", name_en: "Honeymoon Suite", size: "৭৫ বর্গমিটার", bed: "১টি কিং বেড", price: 20240 }
+  - { name: "প্রেসিডেন্সিয়াল স্যুট", name_en: "Presidential Suite", size: "২০০ বর্গমিটার", bed: "১টি কিং বেড ও টুইন বেড", price: 75900 }
+price_plus: true
+price_note: "হোটেলের ওয়েবসাইটে (এপ্রিল ২০২৬-এ প্রকাশিত) প্রতি রাতের ভাড়া, কর ছাড়া। অতিরিক্ত বেড প্রতি রাতে ২,০০০ টাকা (সকালের নাস্তাসহ)। ভাড়া বদলাতে পারে, বুকিংয়ের আগে ফোনে নিশ্চিত করুন।"
+amenities: ["ফ্রি ওয়াই-ফাই", "এয়ার কন্ডিশন", "বুফে ব্রেকফাস্ট", "হাউসকিপিং"]
+facilities: [pool, gym, restaurant, breakfast, wifi, laundry, airport, beach]
+facility_notes: "১,৫০০ বর্গফুটের সুইমিং পুল, জ্যাকুজি, সনা ও স্টিম বাথ, বিলিয়ার্ড; কোজি রেস্টুরেন্ট, ক্যাফে ১৪ ও পুলসাইড বার-বি-কিউ"
+checkin: "দুপুর ১টা থেকে"
+checkout: "সকাল ১১টার মধ্যে"
+nearby:
+  - { name: "কক্সবাজার সমুদ্র সৈকত", time: "প্রায় ৫ মিনিট হাঁটা", place: coxs-bazar-sea-beach }
+  - { name: "লাবণী সৈকত" }
+  - { name: "হিমছড়ি" }
+sources:
+  - { title: "অফিসিয়াল ওয়েবসাইট", url: "https://longbeachhotelbd.com" }
+  - { title: "অফিসিয়াল ওয়েবসাইট - রুম ও ভাড়া", url: "https://longbeachhotelbd.com/stay/" }
