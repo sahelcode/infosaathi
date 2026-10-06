@@ -642,31 +642,21 @@ body.menu-open{overflow:hidden;}
 .blood-contact-btn{width:100%;justify-content:center;font-size:12.5px;padding:9px 10px;}
 
 /* ===== v13: blood donation CTA ===== */
-.blood-panel{display:grid;grid-template-columns:1.15fr 1fr;gap:0;border-radius:28px;overflow:hidden;background:linear-gradient(135deg,#7f1230 0%,#be123c 55%,#e11d48 100%);box-shadow:0 30px 60px -30px rgba(190,18,60,.55);position:relative;}
+.blood-panel{display:block;gap:0;border-radius:28px;overflow:hidden;background:linear-gradient(135deg,#7f1230 0%,#be123c 55%,#e11d48 100%);box-shadow:0 30px 60px -30px rgba(190,18,60,.55);position:relative;}
 .blood-panel::before{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%);pointer-events:none;}
 .bp-copy{padding:34px 34px 30px;color:#fff;position:relative;}
 .bp-eyebrow{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.16);font-size:12px;font-weight:600;letter-spacing:.02em;}
 .bp-eyebrow svg{animation:bloodBeat 1.8s ease-in-out infinite;}
 .bp-copy h2{margin:16px 0 8px;font-size:30px;line-height:1.2;color:#fff;}
-.bp-copy p{margin:0 0 22px;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,.86);max-width:420px;}
-.bp-groups{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:400px;}
-.bp-g{appearance:none;border:1.5px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;font:700 17px var(--font-display,inherit);padding:13px 0;border-radius:14px;cursor:pointer;transition:transform .15s,background .2s,color .2s,border-color .2s;}
+.bp-copy p{margin:0 0 22px;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,.86);max-width:480px;}
+.bp-groups{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:520px;}
+.bp-g{display:block;text-align:center;text-decoration:none;appearance:none;border:1.5px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;font:700 17px var(--font-display,inherit);padding:13px 0;border-radius:14px;cursor:pointer;transition:transform .15s,background .2s,color .2s,border-color .2s;}
 .bp-g:hover{background:rgba(255,255,255,.2);}
 .bp-g:active{transform:scale(.94);}
-.bp-g[aria-pressed="true"]{background:#fff;color:#be123c;border-color:#fff;box-shadow:0 8px 18px -8px rgba(0,0,0,.4);}
+.bp-g:hover{transform:translateY(-2px);}.bp-g.on{background:#fff;color:#be123c;border-color:#fff;box-shadow:0 8px 18px -8px rgba(0,0,0,.4);}
 .bp-g:focus-visible{outline:3px solid #fff;outline-offset:2px;}
-.bp-result{margin:18px;padding:24px;border-radius:20px;background:#fff;position:relative;display:flex;flex-direction:column;gap:18px;}
-.bp-res-head{display:flex;align-items:center;gap:14px;}
-.bp-need{flex:0 0 auto;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 20px var(--font-display,inherit);color:#fff;background:linear-gradient(145deg,#f43f5e,#be123c);box-shadow:0 8px 18px -8px rgba(190,18,60,.7);}
-.bp-res-head b{display:block;font-size:15.5px;color:#0b2a1c;}
-.bp-res-head span span,.bp-res-head div>span{font-size:12.5px;color:var(--text-muted);}
-.bp-donors{display:flex;flex-wrap:wrap;gap:10px;min-height:46px;}
-.bp-d{display:inline-flex;align-items:center;gap:7px;padding:9px 14px 9px 10px;border-radius:999px;background:#fff1f2;border:1px solid #fecdd3;color:#9f1239;font-weight:700;font-size:15px;animation:bpPop .35s cubic-bezier(.2,.9,.3,1.3) both;}
-.bp-d svg{color:#e11d48;}
-@keyframes bpPop{from{opacity:0;transform:translateY(8px) scale(.85)}to{opacity:1;transform:none}}
-.bp-note{display:flex;gap:9px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:#f8fafc;color:var(--text-muted);font-size:12.5px;line-height:1.6;}
-.bp-note svg{flex:0 0 auto;margin-top:2px;color:#9f1239;}
-@media (max-width:860px){.blood-panel{grid-template-columns:1fr;}.bp-copy{padding:26px 22px 8px;}.bp-copy h2{font-size:25px;}.bp-groups{max-width:none;}.bp-result{margin:14px;padding:20px;}}
+@media (min-width:861px){.bp-groups{grid-template-columns:repeat(8,1fr);max-width:760px;}.bp-copy{padding:40px 44px;}}
+@media (max-width:860px){.bp-copy{padding:26px 22px 8px;}.bp-copy h2{font-size:25px;}.bp-groups{max-width:none;}.bp-result{margin:14px;padding:20px;}}
 @media (prefers-reduced-motion:reduce){.bp-eyebrow svg,.bp-d{animation:none;}}
 .blood-cta{position:relative;display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:20px;overflow:hidden;
   background:linear-gradient(120deg,#fff5f6,#fff);border:1px solid #fecdd3;box-shadow:0 10px 24px -16px rgba(225,29,72,.35);}
@@ -968,13 +958,8 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
       <div class="bp-copy">
         <span class="bp-eyebrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2.5s7 7.3 7 12.2a7 7 0 0 1-14 0C5 9.800 12 2.500 12 2.500Z"/></svg>জরুরি রক্ত</span>
         <h2>আপনার রক্ত প্রয়োজন?</h2>
-        <p>রোগীর রক্তের গ্রুপটি বেছে নিন। কোন কোন গ্রুপের দাতা রক্ত দিতে পারবেন, সঙ্গে সঙ্গে দেখুন।</p>
+        <p>রোগীর রক্তের গ্রুপটি বেছে নিন। কোন গ্রুপের দাতা রক্ত দিতে পারবেন আর কার জন্য রক্ত দেওয়া যাবে, বিস্তারিত পেজে দেখুন।</p>
         <div class="bp-groups" id="bpGroups" role="group" aria-label="রোগীর রক্তের গ্রুপ"></div>
-      </div>
-      <div class="bp-result" aria-live="polite">
-        <div class="bp-res-head"><span id="bpNeed" class="bp-need">A+</span><div><b>রোগীর গ্রুপ <span id="bpNeedTxt">A+</span></b><span>এই গ্রুপগুলোর দাতা রক্ত দিতে পারেন</span></div></div>
-        <div class="bp-donors" id="bpDonors"></div>
-        <div class="bp-note"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.500v.01"/></svg><span>এটি সাধারণ নিয়ম। রক্ত দেওয়ার আগে হাসপাতাল বা ব্লাড ব্যাংকে ক্রস-ম্যাচ ও পরীক্ষা অবশ্যই হবে। চিকিৎসকের কথাই চূড়ান্ত।</span></div>
       </div>
     </div>
   </div>
@@ -1926,18 +1911,9 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 
 (function(){
-  const G=['A+','A-','B+','B-','O+','O-','AB+','AB-'];
-  const FROM={'O-':['O-'],'O+':['O+','O-'],'A-':['A-','O-'],'A+':['A+','A-','O+','O-'],'B-':['B-','O-'],'B+':['B+','B-','O+','O-'],'AB-':['AB-','A-','B-','O-'],'AB+':['AB+','AB-','A+','A-','B+','B-','O+','O-']};
+  const G=[['A+','a-positive'],['A-','a-negative'],['B+','b-positive'],['B-','b-negative'],['O+','o-positive'],['O-','o-negative'],['AB+','ab-positive'],['AB-','ab-negative']];
   const box=document.getElementById('bpGroups'); if(!box) return;
-  const drop='<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.5s7 7.3 7 12.2a7 7 0 0 1-14 0C5 9.8 12 2.5 12 2.5Z"/></svg>';
-  function show(g){
-    box.querySelectorAll('.bp-g').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.g===g)));
-    document.getElementById('bpNeed').textContent=g; document.getElementById('bpNeedTxt').textContent=g;
-    document.getElementById('bpDonors').innerHTML=FROM[g].map((d,i)=>`<span class="bp-d" style="animation-delay:${i*50}ms">${drop}${d}</span>`).join('');
-  }
-  box.innerHTML=G.map(g=>`<button type="button" class="bp-g" data-g="${g}" aria-pressed="false">${g}</button>`).join('');
-  box.addEventListener('click',e=>{const b=e.target.closest('.bp-g'); if(b) show(b.dataset.g);});
-  show('A+');
+  box.innerHTML=G.map(([g,slug])=>`<a class="bp-g" href="/blood/${slug}/" aria-label="রক্তের গ্রুপ ${g}">${g}</a>`).join('');
 })();
 </script>
 </body>

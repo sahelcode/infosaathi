@@ -1,0 +1,58 @@
+---
+// One page per blood group: who can give to / receive from this group (standard red-cell compatibility).
+import Base from '../../layouts/Base.astro';
+import { GROUPS, slugOf, RECEIVE_FROM, DONATE_TO, type Group } from '../../lib/blood';
+import { SITE } from '../../lib/site';
+import '../../styles/hospital.css';
+import '../../styles/uni.css';
+import '../../styles/blood.css';
+
+export function getStaticPaths() {
+  return GROUPS.map((g) => ({ params: { group: slugOf(g) }, props: { g } }));
+}
+const { g } = Astro.props as { g: Group };
+const recv = RECEIVE_FROM[g];
+const give = DONATE_TO(g);
+const path = `/blood/${slugOf(g)}/`;
+const crumbs = [['হোম', '/'], ['রক্তের গ্রুপ', '/#bloodCta']];
+const special = g === 'O-' ? 'O নেগেটিভ প্রায় সব গ্রুপের রোগীকে লাল রক্তকণিকা দিতে পারে, তাই জরুরি অবস্থায় এই গ্রুপের চাহিদা বেশি থাকে।'
+  : g === 'AB+' ? 'AB পজিটিভ রোগী সব গ্রুপ থেকে লাল রক্তকণিকা নিতে পারেন।' : '';
+const jsonld = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [...crumbs, [`${g} রক্ত`, path]].map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) };
+---
+<Base title={`${g} রক্তের গ্রুপ: কে রক্ত দিতে পারে, কার কাছ থেকে নিতে পারে | InfoSaathi`} description={`${g} গ্রুপের রোগী কোন কোন গ্রুপের দাতার রক্ত নিতে পারেন এবং ${g} গ্রুপের দাতা কাদের রক্ত দিতে পারেন।`} path={path} jsonld={jsonld}>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{g}</a></nav>
+    <article class="bd">
+      <header class="bd-hero">
+        <span class="bd-badge">{g}</span>
+        <div><h1>{g} রক্তের গ্রুপ</h1><p>কে রক্ত দিতে পারেন, কার কাছ থেকে নেওয়া যায়।</p></div>
+      </header>
+
+      <section class="bd-card">
+        <h2>রোগীর গ্রুপ {g} হলে, এই গ্রুপের দাতার রক্ত নেওয়া যায়</h2>
+        <div class="bd-chips">{recv.map((x) => <a href={`/blood/${slugOf(x)}/`} class:list={['bd-chip', x === g && 'self']}>{x}</a>)}</div>
+        <p class="bd-sub">নিজের গ্রুপের দাতা সবচেয়ে ভালো। না পেলে বাকি গ্রুপগুলো থেকেও নেওয়া যায়।</p>
+      </section>
+
+      <section class="bd-card">
+        <h2>দাতার গ্রুপ {g} হলে, এই গ্রুপের রোগীকে রক্ত দেওয়া যায়</h2>
+        <div class="bd-chips">{give.map((x) => <a href={`/blood/${slugOf(x)}/`} class:list={['bd-chip', x === g && 'self']}>{x}</a>)}</div>
+      </section>
+
+      {special && <p class="bd-special">{special}</p>}
+
+      <section class="bd-card">
+        <h2>রক্ত দরকার হলে</h2>
+        <ol class="bd-steps">
+          <li>হাসপাতালের ব্লাড ব্যাংকে আগে জানান। সেখানে মজুত থাকতে পারে।</li>
+          <li>রোগীর গ্রুপ নিশ্চিত করুন। ল্যাব রিপোর্টে লেখা গ্রুপ মিলিয়ে নিন।</li>
+          <li>প্রথমে একই গ্রুপের দাতা খুঁজুন, তারপর উপরের তালিকার অন্য গ্রুপ।</li>
+          <li>দাতার রক্ত রোগীকে দেওয়ার আগে হাসপাতাল ক্রস-ম্যাচ ও সংক্রমণের পরীক্ষা করবে। এটা বাদ দেওয়া যায় না।</li>
+        </ol>
+        <p class="bd-sub">এটি সাধারণ নিয়ম। কাকে কোন রক্ত দেওয়া হবে, সেই সিদ্ধান্ত চিকিৎসক ও ব্লাড ব্যাংকের।</p>
+      </section>
+
+      <nav class="bd-all" aria-label="অন্য গ্রুপ"><span>অন্য গ্রুপ:</span>{GROUPS.filter((x) => x !== g).map((x) => <a href={`/blood/${slugOf(x)}/`}>{x}</a>)}</nav>
+    </article>
+  </main>
+</Base>
