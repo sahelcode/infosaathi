@@ -3,7 +3,7 @@
 import type { APIRoute } from 'astro';
 import { getImage } from 'astro:assets';
 import home from '../partials/home.html?raw';
-import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, getServices, serviceUrl, scholarshipUrl, jobUrl, aiToolUrl, isClosed, getNews, getRankings } from '../lib/data';
+import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, getServices, serviceUrl, scholarshipUrl, jobUrl, aiToolUrl, isClosed, getNews, getRankings, getApps } from '../lib/data';
 import { CITIES } from '../lib/taxonomy';
 import { SPECIALTIES, HOTEL_FACILITIES } from '../lib/taxonomy';
 import { bn, bnDate } from '../lib/format';
@@ -116,7 +116,12 @@ export const GET: APIRoute = async () => {
   }));
   const rankInfo = { system: rk.data.system, source: rk.data.source_url, note: rk.data.note ?? '', verified: bnDate(rk.data.verified) };
 
+  const appRows = (await getApps()).map((x, i) => ({ name: x.data.name, desc: x.data.desc, url: x.data.url, featured: x.data.featured, own: x.data.own, t: i }));
+
   let html = swapArray(home, 'doctorNames', docRows);
+  html = swapArray(html, 'usefulApps', appRows);
+  html = swap(html, '<span class="app-desc">${a.desc}</span>', '<span class="app-desc">${a.desc}</span>');
+  html = swap(html, '</svg>Download</a>', '</svg>${a.own?\'Play Store\':\'খুঁজুন\'}</a>');
   html = swapArray(html, 'newsData', newsAll.slice(1));
   html = swapArray(html, 'rankData', rankRows);
   html = swap(html, 'const newsFeatureData = {', `const newsFeatureData = ${JSON.stringify(newsAll[0])}; const _unused = {`);

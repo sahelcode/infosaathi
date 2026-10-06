@@ -481,6 +481,8 @@ const services = defineCollection({
 export const AI_CATS = AI_CATEGORIES;
 export const SERVICE_CATS = SERVICE_CATEGORIES;
 // ---- Homepage news and university rankings ----
+const apps = defineCollection({ loader: glob({ pattern: '**/[^_]*.yaml', base: './src/content/apps' }),
+  schema: z.object({ draft: z.boolean().default(false), name: z.string(), desc: z.string(), url: z.url(), own: z.boolean().default(false), featured: z.boolean().default(false), order: z.number().default(99) }) });
 const news = defineCollection({
   loader: glob({ pattern: '**/[^_]*.yaml', base: './src/content/news' }),
   schema: z.object({
@@ -519,4 +521,4 @@ const rankings = defineCollection({
   }),
 });
 
-export const collections = { doctors, hospitals, universities, institutions, places, hotels, scholarships, jobs, aiTools, services, news, rankings };
+export const collections = { doctors, hospitals, universities, institutions, places, hotels, scholarships, jobs, aiTools, services, news, rankings, apps };
