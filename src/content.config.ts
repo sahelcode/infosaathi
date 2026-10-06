@@ -480,4 +480,43 @@ const services = defineCollection({
 
 export const AI_CATS = AI_CATEGORIES;
 export const SERVICE_CATS = SERVICE_CATEGORIES;
-export const collections = { doctors, hospitals, universities, institutions, places, hotels, scholarships, jobs, aiTools, services };
+// ---- Homepage news and university rankings ----
+const news = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.yaml', base: './src/content/news' }),
+  schema: z.object({
+    draft: z.boolean().default(false),
+    title: z.string().min(5), // the headline as the outlet published it (we link out, we do not copy the article)
+    source: z.string(), // outlet name
+    url: z.url(),
+    date: z.coerce.date(),
+    cat: z.string(), // e.g. শিক্ষা, স্বাস্থ্য, অর্থনীতি
+  }),
+});
+
+// One file per ranking system and year. `rows` are shown on the homepage in the order given.
+const rankings = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.yaml', base: './src/content/rankings' }),
+  schema: z.object({
+    draft: z.boolean().default(false),
+    system: z.string(), // e.g. QS World University Rankings 2027
+    year: z.number().int(),
+    source_url: z.url(),
+    note: z.string().optional(),
+    rows: z
+      .array(
+        z.object({
+          name_bn: z.string(),
+          name_en: z.string(),
+          rank: z.string(), // as the ranking states it: "৪৫১–৪৬০" or "১,০০১–১,২০০"
+          prev: z.string().optional(), // last year's rank, only if the source states it
+          trend: z.enum(['up', 'down', 'flat']).optional(), // only if both years are known
+          city: z.string().optional(),
+          university: reference('universities').optional(), // a page on this site, if there is one
+        }),
+      )
+      .min(1),
+    verified: date,
+  }),
+});
+
+export const collections = { doctors, hospitals, universities, institutions, places, hotels, scholarships, jobs, aiTools, services, news, rankings };

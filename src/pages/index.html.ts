@@ -3,7 +3,7 @@
 import type { APIRoute } from 'astro';
 import { getImage } from 'astro:assets';
 import home from '../partials/home.html?raw';
-import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, getServices, serviceUrl, scholarshipUrl, jobUrl, aiToolUrl, isClosed } from '../lib/data';
+import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, getServices, serviceUrl, scholarshipUrl, jobUrl, aiToolUrl, isClosed, getNews, getRankings } from '../lib/data';
 import { CITIES } from '../lib/taxonomy';
 import { SPECIALTIES, HOTEL_FACILITIES } from '../lib/taxonomy';
 import { bn, bnDate } from '../lib/format';
@@ -107,7 +107,30 @@ export const GET: APIRoute = async () => {
   const aiRows = (await getAiTools()).slice(0, 4).map((x, i) => ({ name: x.data.name, cat: x.data.category, desc: x.data.summary, free: x.data.free_plan ? 'ফ্রি প্ল্যান আছে' : 'পেইড', t: i, url: aiToolUrl(x) }));
   const govRows = (await getServices()).slice(0, 4).map((x, i) => ({ name: x.data.name, dept: x.data.dept, time: x.data.online ? 'অনলাইনে আবেদন' : 'সরাসরি আবেদন', url: serviceUrl(x), t: i }));
 
+  const newsAll = (await getNews()).map((x, i) => ({ cat: x.data.cat, title: x.data.title, source: x.data.source, time: bnDate(x.data.date), url: x.data.url, t: i }));
+  const rk = (await getRankings())[0];
+  const uniById = new Map((await getUniversities()).map((u) => [u.id, u]));
+  const rankRows = rk.data.rows.map((r, i) => ({
+    name: r.name_bn, sub: r.name_en, rank: r.rank, t: i, url: r.university && uniById.has(r.university.id) ? universityUrl(uniById.get(r.university.id)!) : '',
+    single: /^[০-৯]+$/.test(r.rank),
+  }));
+  const rankInfo = { system: rk.data.system, source: rk.data.source_url, note: rk.data.note ?? '', verified: bnDate(rk.data.verified) };
+
   let html = swapArray(home, 'doctorNames', docRows);
+  html = swapArray(html, 'newsData', newsAll.slice(1));
+  html = swapArray(html, 'rankData', rankRows);
+  html = swap(html, 'const newsFeatureData = {', `const newsFeatureData = ${JSON.stringify(newsAll[0])}; const _unused = {`);
+  html = swap(html, 'const rankData =', `const rankInfo = ${JSON.stringify(rankInfo)};\nconst rankData =`);
+  html = swap(html, '<span>#</span><span>Name</span><span>Score</span><span>Trend</span>', '<span>#</span><span>বিশ্ববিদ্যালয়</span><span>QS র‍্যাংক</span><span></span>');
+  html = swap(html, "<span class=\"rank-num\">${String(i+1).padStart(2,'0')}</span>", "<span class=\"rank-num\">${r.single?String(i+1).padStart(2,'0'):'–'}</span>");
+  html = swap(html, '<span class="rank-score">${r.score} / 100</span>', '<span class="rank-score">${r.rank}</span>');
+  html = swap(html, "<span class=\"rank-trend ${r.trend}\">${r.trend==='up'?'▲ Rising':r.trend==='down'?'▼ Falling':'● Stable'}</span></div>", "<span class=\"rank-trend flat\">${r.url?`<a href=\"${r.url}\">প্রোফাইল</a>`:''}</span></div>");
+  html = swap(html, '<h2>See who leads — by the numbers</h2><p>Independent, methodology-first rankings refreshed every quarter across research output, employability, and student satisfaction.</p>', `<h2>${rk.data.system}-এ বাংলাদেশ</h2><p>${rk.data.note} <a href="${rk.data.source_url}" target="_blank" rel="noopener" class="see-all">উৎস</a></p>`);
+  html = swap(html, '<h2 style="font-size:26px;">Signal, not noise</h2>', '<h2 style="font-size:26px;">সাম্প্রতিক খবর</h2><p style="font-size:13px;color:var(--text-muted)">শিরোনাম ও সূত্র মূল প্রতিবেদন থেকে। ক্লিক করলে সংবাদমাধ্যমের পাতায় যাবে।</p>');
+  html = swap(html, '<div class="news-feature"><div class="news-feature-img">', '<a class="news-feature" href="${newsFeatureData.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><div class="news-feature-img">');
+  html = swap(html, '${newsFeatureData.time}</div></div></div>', '${newsFeatureData.source} · ${newsFeatureData.time}</div></div></a>');
+  html = swap(html, '<div class="news-item"><div class="news-thumb', '<a class="news-item" href="${n.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><div class="news-thumb');
+  html = swap(html, '<div class="time">${n.time}</div></div></div>', '<div class="time">${n.source} · ${n.time}</div></div></a>');
   html = swapArray(html, 'scholarships', schRows);
   html = swapArray(html, 'jobs', jobRows);
   html = swapArray(html, 'aiTools', aiRows);

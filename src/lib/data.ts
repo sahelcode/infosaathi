@@ -64,3 +64,6 @@ export const universityUrl = (u: University) => `/university/${u.data.city}/${u.
 /** Doctors who sit in a chamber at this hospital. */
 export const doctorsAt = (doctors: Doctor[], hospitalId: string) =>
   doctors.filter((d) => d.data.chambers.some((c) => c.hospital?.id === hospitalId));
+
+export const getNews = async () => (await getCollection('news', visible)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+export const getRankings = async () => (await getCollection('rankings', visible)).sort((a, b) => b.data.year - a.data.year);
