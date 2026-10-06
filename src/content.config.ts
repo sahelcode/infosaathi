@@ -483,19 +483,25 @@ export const SERVICE_CATS = SERVICE_CATEGORIES;
 // ---- Homepage news and university rankings ----
 const apps = defineCollection({ loader: glob({ pattern: '**/[^_]*.yaml', base: './src/content/apps' }),
   schema: z.object({ draft: z.boolean().default(false), name: z.string(), desc: z.string(), url: z.url(), own: z.boolean().default(false), featured: z.boolean().default(false), order: z.number().default(99) }) });
+// Two kinds of item: (1) a headline that links out to the outlet (needs `url`), (2) our own weekly article (needs `body`, shown at /news/<file-name>/).
 const news = defineCollection({
   loader: glob({ pattern: '**/[^_]*.yaml', base: './src/content/news' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     draft: z.boolean().default(false),
-    title: z.string().min(5), // the headline as the outlet published it (we link out, we do not copy the article)
-    source: z.string(), // outlet name
-    url: z.url(),
+    title: z.string().min(5),
+    cat: z.string(), // শিক্ষা | স্বাস্থ্য ...
     date: z.coerce.date(),
-    cat: z.string(), // e.g. শিক্ষা, স্বাস্থ্য, অর্থনীতি
-  }),
+    source: z.string().optional(), // outlet name, for a link-out headline
+    url: z.url().optional(), // link-out headline: the outlet's article
+    summary: z.string().optional(), // our article: one or two lines under the headline
+    body: z.array(z.string()).optional(), // our article: one string per paragraph
+    image: image().optional(),
+    image_caption: z.string().optional(),
+    author: z.string().default('InfoSaathi ডেস্ক'),
+    sources: sources, // our article: where the facts came from (required below)
+  }).refine((d) => d.url || (d.body && d.body.length > 0), 'url (অন্য সংবাদমাধ্যমের লিংক) অথবা body (নিজের লেখা) — একটি অবশ্যই দিন')
+    .refine((d) => !d.body || d.sources.length > 0, 'নিজের লেখা খবরে অন্তত একটি sources দিন'),
 });
-
-// One file per ranking system and year. `rows` are shown on the homepage in the order given.
 const rankings = defineCollection({
   loader: glob({ pattern: '**/[^_]*.yaml', base: './src/content/rankings' }),
   schema: z.object({

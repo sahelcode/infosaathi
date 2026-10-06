@@ -1,5 +1,6 @@
 // Line icons (24x24, stroke). Use with <Icon name="phone" />.
 export const ICONS = {
+  news: '<path d="M4 5h13a1 1 0 0 1 1 1v13H6a2 2 0 0 1-2-2V5Z"/><path d="M18 9h2v8a2 2 0 0 1-2 2M8 9h6M8 13h6"/>',
   brief: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"/>',
   spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/>',
   award: '<circle cx="12" cy="9" r="5"/><path d="m8.5 13.5-1.5 7 5-3 5 3-1.5-7"/>',

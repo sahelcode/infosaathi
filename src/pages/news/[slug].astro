@@ -1,0 +1,55 @@
+---
+// Our own news article (a news item with `body`). Link-out headlines have no page of their own.
+import Base from '../../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import ShareRow from '../../components/ShareRow.astro';
+import Ad from '../../components/Ad.astro';
+import { getNews, isOwnNews } from '../../lib/data';
+import { bnDate } from '../../lib/format';
+import { SITE } from '../../lib/site';
+import '../../styles/hospital.css';
+import '../../styles/uni.css';
+import '../../styles/news.css';
+
+export async function getStaticPaths() {
+  const all = await getNews();
+  return all.filter(isOwnNews).map((n) => ({ params: { slug: n.id }, props: { n, more: all.filter((x) => x.id !== n.id).slice(0, 4) } }));
+}
+const { n, more } = Astro.props as any;
+const d = n.data;
+const path = `/news/${n.id}/`;
+const crumbs = [['হোম', '/'], ['খবর', '/news/']];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'NewsArticle', headline: d.title, datePublished: d.date.toISOString(), author: { '@type': 'Organization', name: 'InfoSaathi' }, publisher: { '@type': 'Organization', name: 'InfoSaathi' }, mainEntityOfPage: SITE + path, citation: d.sources.map((s: any) => s.url) },
+    { '@type': 'BreadcrumbList', itemListElement: [...crumbs, [d.title, path]].map(([nm, l], i) => ({ '@type': 'ListItem', position: i + 1, name: nm, item: SITE + l })) },
+  ],
+};
+---
+<Base title={`${d.title} | InfoSaathi`} description={d.summary ?? d.body[0].slice(0, 150)} path={path} jsonld={jsonld} ogType="article" draft={d.draft}>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([nm, l]) => (<><a href={l}>{nm}</a><span>›</span></>))}<a href={path}>{d.cat}</a></nav>
+    <article class="nw">
+      <span class="nw-cat">{d.cat}</span>
+      <h1>{d.title}</h1>
+      {d.summary && <p class="nw-sum">{d.summary}</p>}
+      <div class="nw-by"><span>{d.author}</span><span>·</span><time datetime={d.date.toISOString().slice(0, 10)}>{bnDate(d.date)}</time></div>
+      {d.image && (
+        <figure class="nw-fig"><Image src={d.image} alt={d.image_caption ?? d.title} widths={[480, 800, 1200]} sizes="(max-width:800px) 100vw, 760px" loading="eager" />
+          {d.image_caption && <figcaption>{d.image_caption}</figcaption>}</figure>
+      )}
+      <div class="nw-body">{d.body.map((p: string) => <p>{p}</p>)}</div>
+      <section class="nw-src"><h2>সূত্র</h2>
+        <ul>{d.sources.map((s: any) => <li><a href={s.url} target="_blank" rel="noopener">{s.title}</a></li>)}</ul>
+        <p>এই লেখা সূত্রগুলো থেকে সংকলিত। স্বাস্থ্য-সংক্রান্ত খবর চিকিৎসকের পরামর্শের বিকল্প নয়।</p></section>
+      <ShareRow />
+    </article>
+    <Ad />
+    {more.length > 0 && (
+      <section class="nw-more"><h2>আরও খবর</h2>
+        {more.map((x: any) => <a href={x.data.body?.length ? `/news/${x.id}/` : x.data.url} target={x.data.body?.length ? undefined : '_blank'} rel="noopener"><span>{x.data.cat}</span>{x.data.title}</a>)}
+        <a class="nw-all" href="/news/">সব খবর</a></section>
+    )}
+  </main>
+</Base>

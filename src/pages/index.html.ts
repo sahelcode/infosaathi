@@ -3,7 +3,7 @@
 import type { APIRoute } from 'astro';
 import { getImage } from 'astro:assets';
 import home from '../partials/home.html?raw';
-import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, getServices, serviceUrl, scholarshipUrl, jobUrl, aiToolUrl, isClosed, getNews, getRankings, getApps } from '../lib/data';
+import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, getServices, serviceUrl, scholarshipUrl, jobUrl, aiToolUrl, isClosed, getNews, getRankings, getApps, newsUrl, isOwnNews } from '../lib/data';
 import { CITIES } from '../lib/taxonomy';
 import { SPECIALTIES, HOTEL_FACILITIES } from '../lib/taxonomy';
 import { bn, bnDate } from '../lib/format';
@@ -107,7 +107,7 @@ export const GET: APIRoute = async () => {
   const aiRows = (await getAiTools()).slice(0, 4).map((x, i) => ({ name: x.data.name, cat: x.data.category, desc: x.data.summary, free: x.data.free_plan ? 'ফ্রি প্ল্যান আছে' : 'পেইড', t: i, url: aiToolUrl(x) }));
   const govRows = (await getServices()).slice(0, 4).map((x, i) => ({ name: x.data.name, dept: x.data.dept, time: x.data.online ? 'অনলাইনে আবেদন' : 'সরাসরি আবেদন', url: serviceUrl(x), t: i }));
 
-  const newsAll = (await getNews()).map((x, i) => ({ cat: x.data.cat, title: x.data.title, source: x.data.source, time: bnDate(x.data.date), url: x.data.url, t: i }));
+  const newsAll = (await getNews()).map((x, i) => ({ cat: x.data.cat, title: x.data.title, source: x.data.source ?? 'InfoSaathi', time: bnDate(x.data.date), url: newsUrl(x), own: isOwnNews(x), t: i }));
   const rk = (await getRankings())[0];
   const uniById = new Map((await getUniversities()).map((u) => [u.id, u]));
   const rankRows = rk.data.rows.slice(0, 5).map((r, i) => ({
@@ -131,10 +131,10 @@ export const GET: APIRoute = async () => {
   html = swap(html, '<span class="rank-score">${r.score} / 100</span>', '<span class="rank-score">${r.rank}</span>');
   html = swap(html, "<span class=\"rank-trend ${r.trend}\">${r.trend==='up'?'▲ Rising':r.trend==='down'?'▼ Falling':'● Stable'}</span></div>", "<span class=\"rank-trend flat\">${r.url?`<a href=\"${r.url}\">প্রোফাইল</a>`:''}</span></div>");
   html = swap(html, '<h2>See who leads — by the numbers</h2><p>Independent, methodology-first rankings refreshed every quarter across research output, employability, and student satisfaction.</p>', `<h2>${rk.data.system}-এ বাংলাদেশ</h2><p style="margin-top:8px"><a href="/rankings/" class="see-all">সব ${bn(rk.data.rows.length)}টি দেখুন</a></p>`);
-  html = swap(html, '<h2 style="font-size:26px;">Signal, not noise</h2>', '<h2 style="font-size:26px;">সাম্প্রতিক খবর</h2><p style="font-size:13px;color:var(--text-muted)">শিরোনাম ও সূত্র মূল প্রতিবেদন থেকে। ক্লিক করলে সংবাদমাধ্যমের পাতায় যাবে।</p>');
-  html = swap(html, '<div class="news-feature"><div class="news-feature-img">', '<a class="news-feature" href="${newsFeatureData.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><div class="news-feature-img">');
+  html = swap(html, '<h2 style="font-size:26px;">Signal, not noise</h2>', '<h2 style="font-size:26px;">সাম্প্রতিক খবর</h2><p style="font-size:13px;color:var(--text-muted)">শিরোনাম ও সূত্র মূল প্রতিবেদন থেকে। ক্লিক করলে সংবাদমাধ্যমের পাতায় যাবে। <a href="/news/" class="see-all">সব খবর</a></p>');
+  html = swap(html, '<div class="news-feature"><div class="news-feature-img">', '<a class="news-feature" href="${newsFeatureData.url}" ${newsFeatureData.own?\'\':\'target="_blank" rel="noopener"\'} style="color:inherit;text-decoration:none"><div class="news-feature-img">');
   html = swap(html, '${newsFeatureData.time}</div></div></div>', '${newsFeatureData.source} · ${newsFeatureData.time}</div></div></a>');
-  html = swap(html, '<div class="news-item"><div class="news-thumb', '<a class="news-item" href="${n.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><div class="news-thumb');
+  html = swap(html, '<div class="news-item"><div class="news-thumb', '<a class="news-item" href="${n.url}" ${n.own?\'\':\'target="_blank" rel="noopener"\'} style="color:inherit;text-decoration:none"><div class="news-thumb');
   html = swap(html, '<div class="time">${n.time}</div></div></div>', '<div class="time">${n.source} · ${n.time}</div></div></a>');
   html = swapArray(html, 'scholarships', schRows);
   html = swapArray(html, 'jobs', jobRows);
@@ -189,9 +189,10 @@ export const GET: APIRoute = async () => {
     html,
     `<div class="org-tags"><span>\${h.beds}</span><span>\${h.doctors}</span><span class="hosp-rating">★ \${h.rating}</span></div></div>
   </div>`,
-    `<div class="org-tags">\${h.tags.map(x=>\`<span>\${x}</span>\`).join('')}</div><a href="\${h.url}" class="p-view">বিস্তারিত দেখুন</a></div>
-  </div>`,
+    `<div class="org-tags">\${h.tags.map(x=>\`<span>\${x}</span>\`).join('')}</div></div>
+  </a>`,
   );
+  html = swap(html, '<div class="org-card hosp-card">', '<a class="org-card hosp-card" href="${h.url}" style="color:inherit;text-decoration:none">');
   // "See all" in the two section heads
   html = swap(html, '<span class="eyebrow">Doctors</span><a href="#" class="see-all">', '<span class="eyebrow">Doctors</span><a href="/doctors/" class="see-all">');
   html = swap(html, '<span class="eyebrow">Hospitals</span><a href="#" class="see-all">', '<span class="eyebrow">Hospitals</span><a href="/hospitals/" class="see-all">');

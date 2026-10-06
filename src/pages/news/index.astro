@@ -1,0 +1,20 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getNews, newsUrl, isOwnNews } from '../../lib/data';
+import { bnDate } from '../../lib/format';
+const list = await getNews();
+---
+<ListPage title="সাম্প্রতিক খবর: শিক্ষা ও স্বাস্থ্য | InfoSaathi" h1="সাম্প্রতিক খবর" path="/news/" crumbs={[['হোম', '/']]}
+  intro="শিক্ষা ও স্বাস্থ্যের খবর। InfoSaathi-র নিজের লেখা সাপ্তাহিক প্রতিবেদন আর অন্য সংবাদমাধ্যমের গুরুত্বপূর্ণ শিরোনাম, সূত্রসহ।">
+  {list.map((n) => {
+    const own = isOwnNews(n);
+    return (
+      <a class="pf-mini" href={newsUrl(n)} target={own ? undefined : '_blank'} rel={own ? undefined : 'noopener'}>
+        <span class="hp-near-i un-rel-i"><Icon name={own ? 'news' : 'ext'} size={20} w={1.8} /></span>
+        <span class="pf-mini-txt"><b>{n.data.title}</b><span class="pf-mini-h">{n.data.cat} · {own ? 'InfoSaathi' : n.data.source} · {bnDate(n.data.date)}</span></span>
+        <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span>
+      </a>
+    );
+  })}
+</ListPage>

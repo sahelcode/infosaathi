@@ -68,3 +68,6 @@ export const doctorsAt = (doctors: Doctor[], hospitalId: string) =>
 export const getNews = async () => (await getCollection('news', visible)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 export const getRankings = async () => (await getCollection('rankings', visible)).sort((a, b) => b.data.year - a.data.year);
 export const getApps = async () => (await getCollection('apps', visible)).sort((a, b) => a.data.order - b.data.order);
+export type NewsEntry = CollectionEntry<'news'>;
+export const newsUrl = (n: NewsEntry) => (n.data.body?.length ? `/news/${n.id}/` : n.data.url!);
+export const isOwnNews = (n: NewsEntry) => !!n.data.body?.length;
