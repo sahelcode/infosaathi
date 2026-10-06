@@ -1,8 +1,6 @@
 // Homepage. The design is the finished prototype (src/partials/home.html) exactly as it was;
 // the rows (doctors, hospitals, universities, colleges, schools, places) are filled from the published data files at build time.
 import type { APIRoute } from 'astro';
-import { getCollection } from 'astro:content';
-import { SHOW_DRAFTS } from '../lib/site';
 import { getImage } from 'astro:assets';
 import home from '../partials/home.html?raw';
 import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, getServices, serviceUrl, scholarshipUrl, jobUrl, aiToolUrl, isClosed, getNews, getRankings, getApps, newsUrl, isOwnNews } from '../lib/data';
@@ -121,14 +119,7 @@ export const GET: APIRoute = async () => {
 
   const appRows = (await getApps()).map((x, i) => ({ name: x.data.name, desc: x.data.desc, url: x.data.url, featured: x.data.featured, own: x.data.own, t: i }));
 
-  const cnt = async (n: string) => bn((await getCollection(n as any, (e: any) => SHOW_DRAFTS || !e.data.draft)).length);
-  const pill = async (k: string, name: string, c: string, href: string) => ({ k, name, count: await cnt(c), href });
-  const pillsA = [await pill('doctor', 'ডাক্তার', 'doctors', '/doctors/'), await pill('hospital', 'হাসপাতাল', 'hospitals', '/hospitals/'), await pill('university', 'বিশ্ববিদ্যালয়', 'universities', '/universities/'), await pill('hotels', 'হোটেল', 'hotels', '/hotels/'), await pill('scholarship', 'স্কলারশিপ', 'scholarships', '/scholarships/'), await pill('jobs', 'চাকরি', 'jobs', '/jobs/')];
-  const pillsB = [await pill('tourism', 'দর্শনীয় স্থান', 'places', '/places/'), await pill('news', 'খবর', 'news', '/news/'), await pill('aitools', 'AI টুল', 'aiTools', '/ai-tools/'), await pill('govt', 'সরকারি সেবা', 'services', '/services/'), await pill('ngo', 'রক্তদাতা সংস্থা', 'bloodOrgs', '/blood/'), await pill('rankings', 'র‍্যাংকিং', 'rankings', '/rankings/')];
-
   let html = swapArray(home, 'doctorNames', docRows);
-  html = swapArray(html, 'setA', pillsA);
-  html = swapArray(html, 'setB', pillsB);
   html = swapArray(html, 'usefulApps', appRows);
   html = swap(html, '<span class="app-desc">${a.desc}</span>', '<span class="app-desc">${a.desc}</span>');
   html = swap(html, '</svg>Download</a>', '</svg>${a.own?\'Play Store\':\'খুঁজুন\'}</a>');
