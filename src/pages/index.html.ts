@@ -126,7 +126,9 @@ export const GET: APIRoute = async () => {
   html = swapArray(html, 'newsData', newsAll.slice(1));
   html = swap(html, 'const newsFeatureData = {', `const NEWS_ART = ${JSON.stringify(ART)};\nconst newsFeatureData = {`);
   html = swap(html, "${icon('news',44,44)}</div>\n  <div class=\"news-feature-body\">", "${NEWS_ART[newsFeatureData.kind]||icon('news',44,44)}</div>\n  <div class=\"news-feature-body\">");
+  html = swap(html, '<div class="news-thumb ${tint(n.t)}">${icon(\'news\',20,20)}</div>', '<div class="news-thumb">${NEWS_ART[n.kind]||icon(\'news\',20,20)}</div>');
   html = swap(html, '.news-feature-img svg{', '.news-feature-img:has(svg.na){height:auto;aspect-ratio:16/9;}\n.news-feature-img svg.na{width:100%;height:100%;opacity:1;color:inherit;}\n.news-feature-img svg:not(.na){');
+  html = swap(html, '.news-thumb svg{width:20px;height:20px;}', '.news-thumb svg{width:20px;height:20px;}\n.news-thumb svg.na{width:100%;height:100%;display:block;}\n.news-thumb:has(svg.na){background:none;overflow:hidden;padding:0;}');
   html = swapArray(html, 'rankData', rankRows);
   html = swap(html, 'const newsFeatureData = {', `const newsFeatureData = ${JSON.stringify(newsAll[0])}; const _unused = {`);
   html = swap(html, 'const rankData =', `const rankInfo = ${JSON.stringify(rankInfo)};\nconst rankData =`);
