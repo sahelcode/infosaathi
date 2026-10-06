@@ -1,9 +1,4 @@
-# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/10/dr-habibur-rahman-diabetes-hormone.html, গত ১২ মাসে Google থেকে 362 ক্লিক)।
-# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
-# যা বিশেষভাবে দেখতে হবে:
-#   - ব্যক্তিগত সিরিয়াল নম্বর পোস্টে দুই রকম: উপরের তালিকা ও ইংরেজি অংশে 01715203550, কিন্তু বাংলা পরিচিতি ও প্রশ্নোত্তরে 01759585599 — কোনটি সঠিক ফোনে যাচাই করুন।
-#   - উপরের বাটনে Personal ও Hospital লেখা থাকলেও কোন নম্বর কোনটি তা স্পষ্ট নয়।
-draft: true
+# Imported from the old blog post /2025/10/dr-habibur-rahman-diabetes-hormone.html; checked by phone on 2026-10-06.
 name: "ডা. হাবিবুর রহমান"
 name_en: "Dr. Habibur Rahman"
 specialty: diabetes
@@ -11,22 +6,19 @@ title: "ডায়াবেটিস ও হরমোন বিশেষজ্
 degrees: ["MBBS", "CCD (BIRDEM)", "MD (Endocrinology)"]
 designation: "Consultant, Department of Diabetes & Hormone — Ibn Sina Hospital Sylhet Limited"
 city: sylhet
-verified: 2026-10-06   # যাচাইয়ের দিন বসান
+verified: 2026-10-06
 old_urls: [/2025/10/dr-habibur-rahman-diabetes-hormone.html]
 treats: ["ডায়াবেটিস", "থাইরয়েড", "স্থূলতা", "হরমোনজনিত অসামঞ্জস্য", "মেটাবলিক সিন্ড্রোম", "ইনসুলিন ব্যবস্থাপনা"]
 
 chambers:
-  # পোস্টে সময় যেভাবে লেখা: সন্ধ্যা ৫টা – রাত ৮টা (শনিবার – বৃহস্পতিবার) শুক্রবার বন্ধ
   - hospital: ibn-sina-hospital-sylhet
     days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
     start: "17:00"
     end: "20:00"
     serials:
-      - label: "সিরিয়াল"
+      - label: "হাসপাতালের সিরিয়াল"
         number: "09610009640"
-      - label: "সিরিয়াল"
+      - label: "ব্যক্তিগত সিরিয়াল"
         number: "01715203550"
-        note: "উপরের সিরিয়াল তালিকা ও ইংরেজি অংশে আছে; যাচাই প্রয়োজন"
-      - label: "সিরিয়াল"
+      - label: "ব্যক্তিগত সিরিয়াল (বিকল্প)"
         number: "01759585599"
-        note: "বাংলা পরিচিতি ও প্রশ্নোত্তরে আছে; যাচাই প্রয়োজন"

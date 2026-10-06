@@ -16,6 +16,13 @@ export async function getDoctors(): Promise<Doctor[]> {
     for (const c of d.data.chambers)
       if (c.hospital && !ids.has(c.hospital.id))
         throw new Error(`ডাক্তারের ফাইল "${d.id}.yaml": hospital: ${c.hospital.id} নামে কোনো হাসপাতালের ফাইল নেই। src/content/hospitals/-এ ফাইলের নাম মিলিয়ে দেখুন।`);
+  // One old Blogger link can lead to only one new page.
+  const seen = new Map<string, string>();
+  for (const d of await getCollection('doctors'))
+    for (const u of d.data.old_urls) {
+      if (seen.has(u)) throw new Error(`পুরনো লিংক ${u} দুটো ফাইলে আছে: "${seen.get(u)}.yaml" ও "${d.id}.yaml"। একটা থেকে মুছুন।`);
+      seen.set(u, d.id);
+    }
   return doctors;
 }
 export const getHospitals = async (): Promise<Hospital[]> => (await getCollection('hospitals', visible)).sort(byName);

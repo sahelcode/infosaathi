@@ -1,6 +1,4 @@
-# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/08/dr-md-aolad-hussain-neuromedicine.html, গত ১২ মাসে Google থেকে 774 ক্লিক)।
-# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
-draft: true
+# Imported from the old blog post /2025/08/dr-md-aolad-hussain-neuromedicine.html; checked by phone on 2026-10-06.
 name: "ডা. মোঃ আওলাদ হুসাইন"
 name_en: "Dr. Md. Aolad Hussain"
 specialty: neurology
@@ -8,12 +6,11 @@ title: "নিউরোমেডিসিন/নিউরোলজি বিশ�
 degrees: ["MBBS (DU)", "MD (Neurology)"]
 designation: "Associate Professor — Neurology, Jalalabad Ragib-Rabeya Medical College & Hospital"
 city: sylhet
-verified: 2026-10-06   # যাচাইয়ের দিন বসান
+verified: 2026-10-06
 old_urls: [/2025/08/dr-md-aolad-hussain-neuromedicine.html]
 treats: ["স্ট্রোক", "খিঁচুনি/এপিলেপসি", "নার্ভজনিত অসুখ", "মুভমেন্ট ডিসঅর্ডার", "মাইগ্রেন", "মাথাব্যথা"]
 
 chambers:
-  # পোস্টে সময় যেভাবে লেখা: সোবহানীঘাট (হাসপাতাল): শনিবার–বৃহস্পতিবার সকাল ১০:০০–১:০০ (শুক্রবার বন্ধ)
   - hospital: ibn-sina-hospital-sylhet
     days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
     start: "10:00"
@@ -23,7 +20,6 @@ chambers:
         number: "09610009640"
       - label: "বিকল্প হাসপাতাল সিরিয়াল"
         number: "01972832741"
-  # পোস্টে সময় যেভাবে লেখা: রিকাবীবাজার (ডায়াগনস্টিক): শনিবার–বৃহস্পতিবার সন্ধ্যা ৫:০০–৯:০০ (শুক্রবার বন্ধ)
   - name: "Ibn Sina Diagnostic & Consultation Center"
     address: "Medical College Road, Rikabibazar, Sylhet-3100"
     days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
