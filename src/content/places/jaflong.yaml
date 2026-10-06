@@ -10,6 +10,12 @@ map_query: Jaflong Zero Point, Gowainghat, Sylhet
 geo: { lat: 25.1636, lng: 92.0176 }
 # photos:                       # নিজের তোলা ২–৩টি ছবি src/content/places/images/-এ রেখে নিচের মতো লিখুন
 #   - { src: ./images/jaflong-1.jpg, caption: পিয়াইন নদী ও পাথরের চর, sub: জিরো পয়েন্ট, label: জিরো পয়েন্ট }
+#   # অন্যের ছবি হলে ছবির কোণে ছোট করে ক্রেডিট দেখাতে credit, license, credit_url দিন (সবগুলো ঐচ্ছিক):
+#   - { src: ./images/jaflong-2.jpg, caption: ঝর্ণা, credit: "ফটোগ্রাফারের নাম", license: "CC BY 4.0", credit_url: "https://commons.wikimedia.org/wiki/File:..." }
+#   # নিজের ছবি হলে credit বাদ দিন। অনুমতি নিয়ে নেওয়া হলে credit: "হোটেলের নাম (অনুমতিক্রমে)"
+#   # অন্যের ছবি হলে ছবির কোণে ছোট করে ক্রেডিট দেখাতে credit, license, credit_url দিন (সবগুলো ঐচ্ছিক):
+#   - { src: ./images/jaflong-2.jpg, caption: ঝর্ণা, credit: "ফটোগ্রাফারের নাম", license: "CC BY 4.0", credit_url: "https://commons.wikimedia.org/wiki/File:..." }
+#   # নিজের ছবি হলে credit বাদ দিন। অনুমতি নিয়ে নেওয়া হলে credit: "হোটেলের নাম (অনুমতিক্রমে)"
 intro: সিলেটের গোয়াইনঘাটে ভারতের মেঘালয় সীমান্তে খাসিয়া-জৈন্তা পাহাড়ের পাদদেশে পিয়াইন নদীর তীরে জাফলং। স্বচ্ছ পানি, পাথরের চর, ওপারের পাহাড় আর ঝর্ণার জন্য এটি সিলেটের সবচেয়ে পরিচিত ভ্রমণস্থান।
 
 glance:

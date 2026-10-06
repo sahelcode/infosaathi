@@ -38,7 +38,7 @@ const jsonld = {
       <div class="nw-by"><span>{d.author}</span><span>·</span><time datetime={d.date.toISOString().slice(0, 10)}>{bnDate(d.date)}</time></div>
       {d.image && (
         <figure class="nw-fig"><Image src={d.image} alt={d.image_caption ?? d.title} widths={[480, 800, 1200]} sizes="(max-width:800px) 100vw, 760px" loading="eager" />
-          {d.image_caption && <figcaption>{d.image_caption}</figcaption>}</figure>
+          {(d.image_caption || d.image_credit) && <figcaption>{d.image_caption}{d.image_credit && <span class="nw-credit"> ছবি: {d.image_credit}</span>}</figcaption>}</figure>
       )}
       {!d.image && <figure class="nw-fig nw-art"><NewsArt cat={d.cat} /><figcaption>প্রতীকী চিত্র</figcaption></figure>}
       <div class="nw-body">{d.body.map((p: string) => <p>{p}</p>)}</div>

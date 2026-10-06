@@ -101,6 +101,7 @@ const jsonld = {
                   <figure class="pl-slide" aria-roledescription="slide" aria-label={`${bn(i + 1)} / ${bn(photos.length)}`}>
                     <Image src={p.src} alt={`${d.name}: ${p.caption}`} width={1200} loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} draggable="false" />
                     <figcaption>{p.caption}{p.sub && <small>{p.sub}</small>}</figcaption>
+                    {(p.credit || p.license) && (p.credit_url ? <a class="pl-credit" href={p.credit_url} target="_blank" rel="noopener nofollow">ছবি: {[p.credit, p.license].filter(Boolean).join(' · ')}</a> : <span class="pl-credit">ছবি: {[p.credit, p.license].filter(Boolean).join(' · ')}</span>)}
                   </figure>
                 ))}
                 {photos.length > 1 && (<>
