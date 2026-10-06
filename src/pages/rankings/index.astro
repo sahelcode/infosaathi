@@ -1,0 +1,20 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getRankings, getUniversities, universityUrl } from '../../lib/data';
+const rk = (await getRankings())[0];
+const unis = new Map((await getUniversities()).map((u) => [u.id, u]));
+---
+<ListPage title={`${rk.data.system}: বাংলাদেশের বিশ্ববিদ্যালয় | InfoSaathi`} h1={`${rk.data.system}-এ বাংলাদেশ`} path="/rankings/" crumbs={[['হোম', '/']]}
+  intro={rk.data.note ?? ''}>
+  {rk.data.rows.map((r) => {
+    const u = r.university ? unis.get(r.university.id) : undefined;
+    const Tag = u ? 'a' : 'div';
+    return (
+      <Tag class="pf-mini" href={u ? universityUrl(u) : undefined}><span class="hp-near-i un-rel-i"><Icon name="award" size={20} w={1.8} /></span>
+        <span class="pf-mini-txt"><b>{r.name_bn}</b><span class="pf-mini-h">{r.name_en}</span></span>
+        <span class="pf-mini-h" style="white-space:nowrap;font-weight:600">{r.rank}</span></Tag>
+    );
+  })}
+  <p style="margin-top:16px;font-size:13px"><a href={rk.data.source_url} target="_blank" rel="noopener">উৎস: দ্য ডেইলি স্টার</a></p>
+</ListPage>

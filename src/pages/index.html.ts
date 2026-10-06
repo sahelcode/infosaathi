@@ -110,7 +110,7 @@ export const GET: APIRoute = async () => {
   const newsAll = (await getNews()).map((x, i) => ({ cat: x.data.cat, title: x.data.title, source: x.data.source, time: bnDate(x.data.date), url: x.data.url, t: i }));
   const rk = (await getRankings())[0];
   const uniById = new Map((await getUniversities()).map((u) => [u.id, u]));
-  const rankRows = rk.data.rows.map((r, i) => ({
+  const rankRows = rk.data.rows.slice(0, 5).map((r, i) => ({
     name: r.name_bn, sub: r.name_en, rank: r.rank, t: i, url: r.university && uniById.has(r.university.id) ? universityUrl(uniById.get(r.university.id)!) : '',
     single: /^[০-৯]+$/.test(r.rank),
   }));
@@ -130,7 +130,7 @@ export const GET: APIRoute = async () => {
   html = swap(html, "<span class=\"rank-num\">${String(i+1).padStart(2,'0')}</span>", "<span class=\"rank-num\">${r.single?String(i+1).padStart(2,'0'):'–'}</span>");
   html = swap(html, '<span class="rank-score">${r.score} / 100</span>', '<span class="rank-score">${r.rank}</span>');
   html = swap(html, "<span class=\"rank-trend ${r.trend}\">${r.trend==='up'?'▲ Rising':r.trend==='down'?'▼ Falling':'● Stable'}</span></div>", "<span class=\"rank-trend flat\">${r.url?`<a href=\"${r.url}\">প্রোফাইল</a>`:''}</span></div>");
-  html = swap(html, '<h2>See who leads — by the numbers</h2><p>Independent, methodology-first rankings refreshed every quarter across research output, employability, and student satisfaction.</p>', `<h2>${rk.data.system}-এ বাংলাদেশ</h2><p>${rk.data.note} <a href="${rk.data.source_url}" target="_blank" rel="noopener" class="see-all">উৎস</a></p>`);
+  html = swap(html, '<h2>See who leads — by the numbers</h2><p>Independent, methodology-first rankings refreshed every quarter across research output, employability, and student satisfaction.</p>', `<h2>${rk.data.system}-এ বাংলাদেশ</h2><p style="margin-top:8px"><a href="/rankings/" class="see-all">সব ${bn(rk.data.rows.length)}টি দেখুন</a></p>`);
   html = swap(html, '<h2 style="font-size:26px;">Signal, not noise</h2>', '<h2 style="font-size:26px;">সাম্প্রতিক খবর</h2><p style="font-size:13px;color:var(--text-muted)">শিরোনাম ও সূত্র মূল প্রতিবেদন থেকে। ক্লিক করলে সংবাদমাধ্যমের পাতায় যাবে।</p>');
   html = swap(html, '<div class="news-feature"><div class="news-feature-img">', '<a class="news-feature" href="${newsFeatureData.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><div class="news-feature-img">');
   html = swap(html, '${newsFeatureData.time}</div></div></div>', '${newsFeatureData.source} · ${newsFeatureData.time}</div></div></a>');
