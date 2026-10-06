@@ -8,6 +8,10 @@ export type University = CollectionEntry<'universities'>;
 export type Institution = CollectionEntry<'institutions'>;
 export type Place = CollectionEntry<'places'>;
 export type HotelEntry = CollectionEntry<'hotels'>;
+export type Scholarship = CollectionEntry<'scholarships'>;
+export type Job = CollectionEntry<'jobs'>;
+export type AiTool = CollectionEntry<'aiTools'>;
+export type Service = CollectionEntry<'services'>;
 
 const visible = (e: { data: { draft: boolean } }) => SHOW_DRAFTS || !e.data.draft;
 const byName = (a: { data: { name: string } }, b: { data: { name: string } }) => a.data.name.localeCompare(b.data.name, 'bn');
@@ -45,6 +49,16 @@ export const getPlaces = async (): Promise<Place[]> => (await getCollection('pla
 export const placeUrl = (p: Place) => `/place/${p.data.city}/${p.id}/`;
 export const getHotels = async (): Promise<HotelEntry[]> => (await getCollection('hotels', visible)).sort(byName);
 export const hotelUrl = (h: HotelEntry) => `/hotel/${h.data.city}/${h.id}/`;
+export const getScholarships = async (): Promise<Scholarship[]> => (await getCollection('scholarships', visible)).sort((a, b) => (a.data.close?.getTime() ?? 9e15) - (b.data.close?.getTime() ?? 9e15));
+export const getJobs = async (): Promise<Job[]> => (await getCollection('jobs', visible)).sort((a, b) => a.data.close.getTime() - b.data.close.getTime());
+export const getAiTools = async (): Promise<AiTool[]> => (await getCollection('aiTools', visible)).sort((a, b) => a.data.name.localeCompare(b.data.name));
+export const getServices = async (): Promise<Service[]> => (await getCollection('services', visible)).sort((a, b) => a.data.name.localeCompare(b.data.name, 'bn'));
+export const scholarshipUrl = (x: Scholarship) => `/scholarship/${x.id}/`;
+export const jobUrl = (x: Job) => `/job/${x.id}/`;
+export const aiToolUrl = (x: AiTool) => `/ai-tool/${x.id}/`;
+export const serviceUrl = (x: Service) => `/service/${x.id}/`;
+/** true once the deadline day (UTC+6) has passed; decided at build time, the page also checks again in the browser */
+export const isClosed = (close?: Date) => !!close && close.getTime() + 18 * 3600 * 1000 - 1000 < Date.now();
 export const universityUrl = (u: University) => `/university/${u.data.city}/${u.id}/`;
 
 /** Doctors who sit in a chamber at this hospital. */

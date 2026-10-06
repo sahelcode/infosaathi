@@ -1,0 +1,128 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import MiscHero from '../../components/MiscHero.astro';
+import Window from '../../components/Window.astro';
+import Faq from '../../components/Faq.astro';
+import Report from '../../components/Report.astro';
+import ShareRow from '../../components/ShareRow.astro';
+import Ad from '../../components/Ad.astro';
+import { getJobs, jobUrl, isClosed, type Job } from '../../lib/data';
+import { bn, bnDate } from '../../lib/format';
+import { SITE } from '../../lib/site';
+import '../../styles/hospital.css';
+import '../../styles/uni.css';
+import '../../styles/edu.css';
+import '../../styles/misc.css';
+
+export async function getStaticPaths() {
+  return (await getJobs()).map((j) => ({ params: { slug: j.id }, props: { job: j } }));
+}
+const { job } = Astro.props as { job: Job };
+const d = job.data;
+const path = jobUrl(job);
+const applyHref = d.apply_url ?? d.circular_url;
+const checked = `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
+const glance = [
+  { icon: 'cal', k: 'আবেদনের শেষ তারিখ', v: bnDate(d.close) },
+  d.vacancies && { icon: 'users', k: 'মোট পদ', v: d.vacancies },
+  d.age_limit && { icon: 'clock', k: 'বয়স', v: d.age_limit },
+  d.app_fee && { icon: 'wallet', k: 'আবেদন ফি', v: d.app_fee },
+  d.salary && { icon: 'wallet', k: 'বেতন', v: d.salary },
+].filter(Boolean).slice(0, 4) as { icon: 'cal' | 'users' | 'clock' | 'wallet'; k: string; v: string }[];
+const jump = [['apply', 'আবেদন'], d.posts.length && ['posts', 'পদ'], d.eligibility.length && ['eligible', 'যোগ্যতা'], d.steps.length && ['steps', 'ধাপ'], ['faq', 'প্রশ্ন']].filter(Boolean) as string[][];
+const closed = isClosed(d.close);
+const faq = [
+  { q: 'আবেদনের শেষ তারিখ কবে?', a: `${bnDate(d.close)}।${closed ? ' আবেদনের সময় শেষ হয়েছে।' : ''}` },
+  ...(d.vacancies ? [{ q: 'মোট কয়টি পদ?', a: `${d.vacancies}।` }] : []),
+  ...(d.apply_how ? [{ q: 'কীভাবে আবেদন করব?', a: `${d.apply_how}।` }] : []),
+  ...d.faq,
+];
+const all = await getJobs();
+const related = all.filter((x) => x.id !== job.id).slice(0, 3);
+const description = `${d.title}: ${d.org}। ${d.vacancies ? `মোট পদ ${d.vacancies}। ` : ''}আবেদনের শেষ তারিখ ${bnDate(d.close)}। যোগ্যতা, ফি ও আবেদনের নিয়ম।`;
+const crumbs = [['হোম', '/'], ['চাকরি', '/jobs/']];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'JobPosting', title: d.title, description: d.about ?? d.title, ...(d.published && { datePosted: d.published.toISOString().slice(0, 10) }), validThrough: d.close.toISOString().slice(0, 10),
+      hiringOrganization: { '@type': 'Organization', name: d.org }, jobLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressCountry: 'BD', ...(d.location && { addressLocality: d.location }) } },
+      ...(applyHref && { url: applyHref }) },
+    { '@type': 'BreadcrumbList', itemListElement: [...crumbs, [d.title, path]].map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) },
+    { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  ],
+};
+---
+<Base title={`${d.title} – শেষ তারিখ, যোগ্যতা ও আবেদন | InfoSaathi`} description={description} path={path} jsonld={jsonld} draft={d.draft}>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{d.title}</a></nav>
+    <div class="pf-grid">
+      <article class="pf-main">
+        <MiscHero kind="job" icon="brief" name={d.title} sub={d.org} line={d.location ?? 'বাংলাদেশ'}
+          badges={[{ text: `${d.sector} চাকরি`, ok: true }, ...(d.vacancies ? [{ text: `${d.vacancies} পদ` }] : [])]}
+          action={applyHref ? { href: applyHref, label: d.apply_url ? 'অনলাইনে আবেদন' : 'অফিসিয়াল বিজ্ঞপ্তি', icon: 'ext' } : { href: '#', label: 'আবেদন', icon: 'ext' }} jump={jump} checked={checked} />
+
+        <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>
+
+        <section class="pf-card" id="apply" aria-labelledby="h-apply">
+          <div class="pf-card-head"><h2 id="h-apply">আবেদন</h2><span class="pf-today" data-adm-status hidden></span></div>
+          <Window open={d.open} close={d.close} rows={[...(d.published ? [['বিজ্ঞপ্তি প্রকাশ', bnDate(d.published)] as [string, string]] : []), ...(d.apply_how ? [['আবেদনের মাধ্যম', d.apply_how] as [string, string]] : [])]} />
+          {d.circular_url && <a class="pf-btn hp-mapbtn" href={d.circular_url} target="_blank" rel="noopener"><Icon name="file" />অফিসিয়াল বিজ্ঞপ্তি দেখুন</a>}
+        </section>
+
+        {d.posts.length > 0 && (
+          <section class="pf-card" id="posts" aria-labelledby="h-posts">
+            <div class="pf-card-head"><h2 id="h-posts">পদের তালিকা</h2><span class="pf-count">{bn(d.posts.length)}টি পদ</span></div>
+            <ul class="un-progs">{d.posts.map((p) => (
+              <li class="un-prog"><span class="un-prog-t"><b>{p.name}</b>{(p.grade || p.requirement) && <small>{[p.grade, p.requirement].filter(Boolean).join(' · ')}</small>}</span>
+                {p.count && <span class="un-prog-c"><small>পদ</small><strong>{p.count}</strong></span>}</li>))}</ul>
+          </section>
+        )}
+        {d.eligibility.length > 0 && (
+          <section class="pf-card" id="eligible" aria-labelledby="h-el"><h2 id="h-el">যোগ্যতা</h2>
+            <ul class="un-docs">{d.eligibility.map((x) => <li><Icon name="check" size={15} w={2.6} />{x}</li>)}</ul></section>
+        )}
+        <Ad />
+        {d.steps.length > 0 && (
+          <section class="pf-card" id="steps" aria-labelledby="h-st"><h2 id="h-st">আবেদনের ধাপ</h2>
+            <ol class="un-steps">{d.steps.map((s, i) => <li><span class="un-step-n">{bn(i + 1)}</span><span><b>{s.title}</b><small>{s.text}</small></span></li>)}</ol></section>
+        )}
+        {d.documents.length > 0 && (
+          <section class="pf-card" aria-labelledby="h-docs"><h2 id="h-docs">যা লাগবে</h2>
+            <ul class="un-docs">{d.documents.map((x) => <li><Icon name="check" size={15} w={2.6} />{x}</li>)}</ul></section>
+        )}
+        {d.about && <section class="pf-card" aria-labelledby="h-ab"><h2 id="h-ab">সারসংক্ষেপ</h2><p class="pf-text">{d.about}</p></section>}
+        <Faq items={faq} />
+        <Report placeholder="যেমন: শেষ তারিখ বাড়ানো হয়েছে" note="শেষ তারিখ বাড়তে বা বদলাতে পারে। আবেদনের আগে অফিসিয়াল বিজ্ঞপ্তি মিলিয়ে নিন।">
+          {d.sources.length > 0 && (<div class="un-src"><b class="pf-h3" style="display:block;margin:4px 0 0">তথ্যসূত্র</b>
+            <ul>{d.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>)}
+        </Report>
+        <ShareRow />
+        <nav class="pf-tags" aria-label="সম্পর্কিত"><a href="/jobs/">চলমান চাকরির বিজ্ঞপ্তি</a></nav>
+        <Ad />
+        {related.length > 0 && (
+          <section class="pf-block" aria-labelledby="h-rel"><div class="pf-block-head"><h2 id="h-rel">আরও বিজ্ঞপ্তি</h2><a class="see-all" href="/jobs/">See all</a></div>
+            <div class="pf-minis">{related.map((x) => (
+              <a class="pf-mini" href={jobUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="brief" size={20} w={1.8} /></span>
+                <span class="pf-mini-txt"><b>{x.data.title}</b><span class="pf-mini-h">{x.data.org} · শেষ {bnDate(x.data.close)}</span></span>
+                <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>))}</div></section>
+        )}
+      </article>
+      <aside class="pf-side" aria-label="সারাংশ"><div class="pf-side-in">
+        <div class="pf-sum">
+          <span class="pf-today" data-adm-status hidden></span>
+          <b class="pf-sum-h">{d.org}</b>
+          <span class="pf-sum-l"><Icon name="cal" size={14} w={2.2} />শেষ তারিখ: {bnDate(d.close)}</span>
+          {d.vacancies && <span class="pf-sum-l"><Icon name="users" size={14} w={2.2} />মোট পদ: {d.vacancies}</span>}
+          {applyHref && <a class="pf-btn primary" href={applyHref} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />আবেদন করুন</a>}
+        </div>
+        <Ad side />
+      </div></aside>
+    </div>
+  </main>
+  {applyHref && <div class="pf-sticky un-sticky"><a class="pf-btn primary" href={applyHref} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />আবেদন করুন</a><button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button></div>}
+</Base>
+
+<script>
+  import '../../scripts/uni.js';
+</script>

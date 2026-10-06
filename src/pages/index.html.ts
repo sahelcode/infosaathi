@@ -3,10 +3,10 @@
 import type { APIRoute } from 'astro';
 import { getImage } from 'astro:assets';
 import home from '../partials/home.html?raw';
-import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl } from '../lib/data';
+import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, scholarshipUrl, jobUrl, aiToolUrl, isClosed } from '../lib/data';
 import { CITIES } from '../lib/taxonomy';
 import { SPECIALTIES, HOTEL_FACILITIES } from '../lib/taxonomy';
-import { bn } from '../lib/format';
+import { bn, bnDate } from '../lib/format';
 
 const swap = (src: string, from: string, to: string) => {
   if (!src.includes(from)) throw new Error(`হোমপেজের টেমপ্লেটে এই অংশ পাওয়া যায়নি: ${from.slice(0, 60)}`);
@@ -95,7 +95,44 @@ export const GET: APIRoute = async () => {
     url: hotelUrl(h),
   }));
 
+  // scholarships, jobs, AI tools: real entries; open ones first. Government services: links to the official portals only.
+  const FUND = { full: 'সম্পূর্ণ অর্থায়িত', partial: 'আংশিক', varies: 'ভিন্ন ভিন্ন' } as const;
+  const schRows = (await getScholarships()).sort((a, b) => Number(isClosed(a.data.close)) - Number(isClosed(b.data.close))).slice(0, 4).map((x, i) => ({
+    name: x.data.name_bn ?? x.data.name, org: x.data.provider, amount: x.data.country, badge: FUND[x.data.funding], t: i,
+    deadline: x.data.close ? (isClosed(x.data.close) ? 'আবেদন শেষ' : `শেষ ${bnDate(x.data.close)}`) : 'তারিখ ঘোষণা হয়নি', url: scholarshipUrl(x),
+  }));
+  const jobRows = (await getJobs()).filter((x) => !isClosed(x.data.close)).slice(0, 5).map((x, i) => ({
+    title: x.data.title, company: x.data.org, loc: x.data.sector, salary: `শেষ ${bnDate(x.data.close)}`, t: i, url: jobUrl(x),
+  }));
+  const aiRows = (await getAiTools()).slice(0, 4).map((x, i) => ({ name: x.data.name, cat: x.data.category, desc: x.data.summary, free: x.data.free_plan ? 'ফ্রি প্ল্যান আছে' : 'পেইড', t: i, url: aiToolUrl(x) }));
+  const govRows = [
+    { name: 'ই-পাসপোর্ট', dept: 'পাসপোর্ট অধিদপ্তর', url: 'https://www.epassport.gov.bd/', t: 0 },
+    { name: 'জাতীয় পরিচয়পত্র', dept: 'নির্বাচন কমিশন', url: 'https://services.nidw.gov.bd/', t: 1 },
+    { name: 'জন্ম ও মৃত্যু নিবন্ধন', dept: 'স্থানীয় সরকার বিভাগ', url: 'https://bdris.gov.bd/', t: 2 },
+    { name: 'ই-টিআইএন', dept: 'জাতীয় রাজস্ব বোর্ড', url: 'https://secure.incometax.gov.bd/', t: 3 },
+  ];
+
   let html = swapArray(home, 'doctorNames', docRows);
+  html = swapArray(html, 'scholarships', schRows);
+  html = swapArray(html, 'jobs', jobRows);
+  html = swapArray(html, 'aiTools', aiRows);
+  html = swapArray(html, 'govServices', govRows);
+  // scholarships
+  html = swap(html, '<div class="feature-card"><div class="fc-top"><div class="cat-icn ${tint(s.t)}">${icon(\'scholarship\')}</div>', '<a class="feature-card" href="${s.url}" style="color:inherit;text-decoration:none"><div class="fc-top"><div class="cat-icn ${tint(s.t)}">${icon(\'scholarship\')}</div>');
+  html = swap(html, '<span class="btn-text">Apply<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></div>\n`).join(\'\');', '<span class="btn-text">Apply<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>\n`).join(\'\');');
+  html = swap(html, '<p>48,000+ active scholarships across undergraduate, graduate, and research programs.</p>', '<p>Scholarships Bangladeshis can apply to, with real deadlines. <a href="/scholarships/" class="see-all">See all</a></p>');
+  // jobs
+  html = swap(html, '<a href="#" class="btn btn-ghost btn-sm job-apply">Apply</a>', '<a href="${j.url}" class="btn btn-ghost btn-sm job-apply">View</a>');
+  html = swap(html, '<span class="eyebrow">Jobs</span><a href="#" class="see-all">', '<span class="eyebrow">Jobs</span><a href="/jobs/" class="see-all">');
+  html = swap(html, '<h2 style="font-size:28px;">Careers worldwide</h2>', '<h2 style="font-size:28px;">Open recruitment circulars</h2>');
+  // AI tools
+  html = swap(html, '<div class="feature-card"><div class="fc-top"><div class="cat-icn ${tint(a.t)}">${icon(\'aitools\')}</div>', '<a class="feature-card" href="${a.url}" style="color:inherit;text-decoration:none"><div class="fc-top"><div class="cat-icn ${tint(a.t)}">${icon(\'aitools\')}</div>');
+  html = swap(html, "<span>${icon('star',12,12)} ${a.rating}</span><span class=\"btn-text\">View<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></div>", "<span>${a.free}</span><span class=\"btn-text\">View<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></a>");
+  html = swap(html, '<h2 style="font-size:28px;">14,000+ tools, tracked and rated</h2>', '<h2 style="font-size:28px;">Popular AI tools, with official prices</h2><p style="margin-top:8px"><a href="/ai-tools/" class="see-all">See all</a></p>');
+  // government services: links to the official portals
+  html = swap(html, '<div class="feature-card"><div class="fc-top"><div class="cat-icn ${tint(g.t)}">${icon(\'govt\')}</div></div>', '<a class="feature-card" href="${g.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><div class="fc-top"><div class="cat-icn ${tint(g.t)}">${icon(\'govt\')}</div></div>');
+  html = swap(html, "<span>${icon('clock',12,12)} ${g.time}</span><span class=\"btn-text\">Start<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></div>", "<span>অফিসিয়াল পোর্টাল</span><span class=\"btn-text\">Open<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></a>");
+  html = swap(html, '<h2 style="font-size:28px;">Every civic process, in plain language</h2>', '<h2 style="font-size:28px;">Official portals for common government services</h2>');
   html = swapArray(html, 'hotels', hotelRows);
   html = swapArray(html, 'places', placeRows);
   html = swap(html, "put('placeRow', places.map(p=>`\n    <div class=\"org-card ix-card ix-place\">\n      <div class=\"ix-image\">${placeArt(p.kind)}",

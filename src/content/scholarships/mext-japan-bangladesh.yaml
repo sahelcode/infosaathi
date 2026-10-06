@@ -1,0 +1,26 @@
+name: "MEXT Japanese Government Scholarship"
+name_bn: "মনবুশো (MEXT) জাপান সরকারি স্কলারশিপ"
+provider: "জাপান সরকার (MEXT), বাংলাদেশে জাপান দূতাবাসের মাধ্যমে"
+country: "জাপান"
+levels: ["স্নাতক", "মাস্টার্স", "পিএইচডি", "কলেজ অব টেকনোলজি", "শিক্ষক প্রশিক্ষণ"]
+funding: full
+round: "দূতাবাস সুপারিশ"
+next_note: "চলতি রাউন্ডের শেষ তারিখ ঘোষিত পাইনি; দূতাবাসের নিয়মে সাধারণত এপ্রিলে বিজ্ঞপ্তি আসে, জুনের মধ্যে আবেদন জমা দিতে হয়"
+apply_url: "https://www.bd.emb-japan.go.jp/en/education/scholarshipNotice.html"
+eligibility:
+  - "বাংলাদেশের নাগরিক হতে হবে এবং বাংলাদেশ থেকে আবেদন করতে হবে"
+  - "গবেষণা (মাস্টার্স/পিএইচডি): বিশ্ববিদ্যালয় স্নাতক; ১ এপ্রিল হিসাবে বয়স ৩৫-এর কম"
+  - "স্নাতক ও কলেজ অব টেকনোলজি: ১২ বছরের স্কুলিং (এইচএসসি সমমান) সম্পন্ন; ১ এপ্রিল হিসাবে বয়স ১৭ থেকে ২১ বছর (দূতাবাসের বিজ্ঞপ্তি)"
+  - "শিক্ষক প্রশিক্ষণ: প্রাথমিক বা মাধ্যমিকে কমপক্ষে ৫ বছর শিক্ষকতার অভিজ্ঞতা"
+covers: []
+steps:
+  - { title: "বিজ্ঞপ্তি দেখুন", text: "দূতাবাসের স্কলারশিপ নোটিশ পেজ ও শিক্ষা মন্ত্রণালয়ের ওয়েবসাইট (moedu.gov.bd) থেকে সেই বছরের বিজ্ঞপ্তি দেখুন" }
+  - { title: "দূতাবাসে আবেদন", text: "নির্ধারিত সময়ের মধ্যে ঢাকার জাপান দূতাবাসে আবেদন জমা দিন" }
+  - { title: "লিখিত পরীক্ষা ও ইন্টারভিউ", text: "দূতাবাসে ইংরেজি, জাপানি ও বিষয়ভিত্তিক পরীক্ষা এবং ইন্টারভিউ হয়" }
+  - { title: "চূড়ান্ত নির্বাচন", text: "দূতাবাসের সুপারিশের পর MEXT চূড়ান্ত নির্বাচন করে" }
+sources:
+  - { title: "Embassy of Japan in Bangladesh · Scholarship Notice", url: "https://www.bd.emb-japan.go.jp/en/education/scholarshipNotice.html" }
+  - { title: "Embassy of Japan in Bangladesh · MEXT for Bangladeshi students", url: "https://www.bd.emb-japan.go.jp/itpr_en/scholarshipnotice.html" }
+  - { title: "Study in Japan · About scholarships", url: "https://www.studyinjapan.go.jp/en/planning/about-scholarship/" }
+verified: 2026-10-07
+verified_by: official

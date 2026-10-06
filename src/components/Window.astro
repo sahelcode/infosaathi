@@ -1,0 +1,20 @@
+---
+// Application window: counts down in Bangladesh dates (script: uni.js) and says "closed" after the deadline.
+import { bnDate, isoDay } from '../lib/format';
+interface Props { open?: Date; close?: Date; rows?: [string, string][]; note?: string }
+const { open, close, rows = [], note } = Astro.props;
+---
+{close && (
+  <div class="un-adm" data-open={open ? isoDay(open) : undefined} data-close={isoDay(close)}>
+    <div class="un-adm-bar"><span data-adm-left></span><span class="un-adm-track"><i data-adm-fill></i></span></div>
+    <dl class="un-adm-list">
+      {open && <div><dt>আবেদন শুরু</dt><dd>{bnDate(open)}</dd></div>}
+      <div><dt>আবেদনের শেষ তারিখ</dt><dd>{bnDate(close)}</dd></div>
+      {rows.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
+    </dl>
+  </div>
+)}
+{!close && (
+  <dl class="un-adm-list"><div><dt>আবেদনের শেষ তারিখ</dt><dd>এখনও ঘোষণা হয়নি</dd></div>{rows.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
+)}
+{note && <p class="pf-note">{note}</p>}

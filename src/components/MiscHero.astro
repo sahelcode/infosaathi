@@ -1,0 +1,35 @@
+---
+// Top block shared by scholarship, job, AI tool and service pages.
+import Icon from './Icon.astro';
+import type { IconName } from '../lib/icons';
+interface Props {
+  kind: 'sch' | 'job' | 'ai' | 'gov';
+  icon: IconName;
+  name: string;
+  sub?: string;
+  line?: string;
+  badges: { text: string; ok?: boolean }[];
+  action: { href: string; label: string; icon: IconName };
+  jump: string[][];
+  checked: string;
+}
+const { kind, icon, name, sub, line, badges, action, jump, checked } = Astro.props;
+---
+<section class="pf-hero hp-hero">
+  <div class={`hp-cover mx-band ${kind}`}></div>
+  <div class="pf-hero-body">
+    <div class={`hp-logo un-logo ed-mono mx-ico ${kind}`} aria-hidden="true"><Icon name={icon} size={36} w={1.8} /></div>
+    <h1 class="pf-name">{name}</h1>
+    {sub && <p class="pf-en">{sub}</p>}
+    {line && <p class="hp-addr"><Icon name="pin" size={15} w={2.2} />{line}</p>}
+    <div class="pf-badges">
+      {badges.map((b) => b.ok ? <span class="pf-badge ok"><Icon name="check" size={13} w={3} />{b.text}</span> : <span class="pf-badge">{b.text}</span>)}
+      <span class="pf-badge src"><Icon name="clock" size={13} w={2.2} />{checked}</span>
+    </div>
+  </div>
+  <div class="pf-actions hp-actions mx-actions">
+    <a class="pf-btn primary" href={action.href} target="_blank" rel="noopener"><Icon name={action.icon} size={17} w={2.2} />{action.label}</a>
+    <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+  </div>
+  <nav class="hp-jump" aria-label="এই পেজে">{jump.map(([a, t]) => <a href={`#${a}`}>{t}</a>)}</nav>
+</section>

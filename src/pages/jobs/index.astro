@@ -1,0 +1,16 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getJobs, jobUrl, isClosed } from '../../lib/data';
+import { bnDate } from '../../lib/format';
+const list = await getJobs();
+const sorted = [...list.filter((j) => !isClosed(j.data.close)), ...list.filter((j) => isClosed(j.data.close))];
+---
+<ListPage title="চাকরির বিজ্ঞপ্তি: শেষ তারিখ, যোগ্যতা ও আবেদন | InfoSaathi" h1="চাকরি" path="/jobs/" crumbs={[['হোম', '/']]}
+  intro="সরকারি ও ব্যাংকের চলমান নিয়োগ বিজ্ঞপ্তি: শেষ তারিখ, পদ, যোগ্যতা আর আবেদনের নিয়ম। শেষ তারিখের পর আবেদন বন্ধ দেখায়।">
+  {sorted.map((j) => (
+    <a class="pf-mini" href={jobUrl(j)}><span class="hp-near-i un-rel-i"><Icon name="brief" size={20} w={1.8} /></span>
+      <span class="pf-mini-txt"><b>{j.data.title}</b><span class="pf-mini-h">{j.data.org} · {isClosed(j.data.close) ? 'আবেদন শেষ' : `শেষ ${bnDate(j.data.close)}`}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>

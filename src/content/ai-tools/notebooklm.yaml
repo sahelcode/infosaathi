@@ -1,0 +1,32 @@
+name: "NotebookLM"
+vendor: "Google"
+category: "গবেষণা"
+summary: "নিজের দেওয়া সোর্স বিশ্লেষণ করে সারাংশ ও ব্যাখ্যা দেওয়া গুগলের এআই গবেষণা টুল"
+url: "https://notebook.google/"
+free_plan: true
+pricing:
+  - { plan: "Standard (ফ্রি)", price: "$0", note: "ব্যবহারকারীপ্রতি ১০০টি নোটবুক, প্রতি নোটবুকে ৫০টি সোর্স" }
+  - { plan: "Plus (Google AI Plus)", price: "মাসে $4.99", note: "২০০টি নোটবুক, প্রতি নোটবুকে ১০০টি সোর্স" }
+  - { plan: "Pro (Google AI Pro)", price: "মাসে $19.99", note: "৫০০টি নোটবুক, প্রতি নোটবুকে ৩০০টি সোর্স" }
+  - { plan: "Ultra (Google AI Ultra)", price: "মাসে $99.99 থেকে", note: "৫০০টি নোটবুক, প্রতি নোটবুকে ৫০০–৬০০টি সোর্স" }
+bangla: "অজানা"
+platforms: ["ওয়েব", "মোবাইল অ্যাপ (ওয়েবের তুলনায় সীমিত সুবিধা)"]
+use_cases:
+  - { title: "পড়াশোনার নোট", text: "পাঠ্য নথি সোর্স হিসেবে দিয়ে সারাংশ ও প্রশ্নোত্তর পাওয়া" }
+  - { title: "গবেষণার সোর্স মেলানো", text: "একাধিক সোর্স একসাথে রেখে তথ্য খোঁজা" }
+  - { title: "দীর্ঘ নথি বোঝা", text: "বড় রিপোর্ট বা কাগজের মূল বিষয় বের করা" }
+about: "Google-এর সাইটে এখন এটিকে Gemini Notebook (আগের নাম NotebookLM) নামে দেখানো হয়, এবং একে নিজের সোর্স বিশ্লেষণ করা এআই গবেষণা টুল বলা হয়েছে।"
+good:
+  - "ফ্রি প্ল্যান আছে"
+  - "ডেটা Gemini Notebook-কে প্রশিক্ষণে ব্যবহার করা হয় না, ফিডব্যাক দিলে ছাড়া (Google-এর সহায়তা পেজ অনুযায়ী)"
+think:
+  - "মোবাইল অ্যাপে ওয়েবের সব সুবিধা নেই"
+  - "পেইড প্ল্যানের দাম Google AI প্ল্যানের দাম; দেশভেদে বদলাতে পারে"
+  - "বাংলা সমর্থন অফিসিয়াল পেজে স্পষ্টভাবে নিশ্চিত করা যায়নি, তাই অজানা রাখা হয়েছে"
+alternatives: ["gemini", "claude", "perplexity"]
+sources:
+  - { title: "Gemini Notebook (NotebookLM)", url: "https://notebook.google/" }
+  - { title: "Notebook plan upgrades · Google Help", url: "https://support.google.com/notebooklm/answer/16213268" }
+  - { title: "Google AI plans · Gemini", url: "https://gemini.google/subscriptions/" }
+verified: 2026-10-07
+verified_by: official

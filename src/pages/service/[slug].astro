@@ -1,0 +1,113 @@
+---
+// Government service page (template ready; pages appear once files exist in src/content/services/).
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import MiscHero from '../../components/MiscHero.astro';
+import Faq from '../../components/Faq.astro';
+import Report from '../../components/Report.astro';
+import ShareRow from '../../components/ShareRow.astro';
+import Ad from '../../components/Ad.astro';
+import { getServices, serviceUrl, type Service } from '../../lib/data';
+import { bn, bnDate } from '../../lib/format';
+import { SITE } from '../../lib/site';
+import '../../styles/hospital.css';
+import '../../styles/uni.css';
+import '../../styles/edu.css';
+import '../../styles/misc.css';
+
+export async function getStaticPaths() {
+  return (await getServices()).map((s) => ({ params: { slug: s.id }, props: { svc: s } }));
+}
+const { svc } = Astro.props as { svc: Service };
+const d = svc.data;
+const path = serviceUrl(svc);
+const checked = `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
+const glance = [
+  d.time && { icon: 'clock', k: 'সময় লাগে', v: d.time },
+  { icon: 'globe', k: 'অনলাইনে আবেদন', v: d.online ? 'করা যায়' : 'সরাসরি যেতে হয়' },
+  d.fees.length > 0 && { icon: 'wallet', k: 'ফি', v: `${bn(d.fees.length)}টি ফি-র তালিকা` },
+  { icon: 'users', k: 'দপ্তর', v: d.dept },
+].filter(Boolean).slice(0, 4) as { icon: 'clock' | 'globe' | 'wallet' | 'users'; k: string; v: string }[];
+const jump = [d.steps.length && ['steps', 'ধাপ'], d.fees.length && ['fees', 'ফি'], d.documents.length && ['docs', 'কাগজপত্র'], d.helpline.length && ['help', 'হেল্পলাইন'], ['faq', 'প্রশ্ন']].filter(Boolean) as string[][];
+const faq = [
+  ...(d.time ? [{ q: `${d.name} পেতে কত সময় লাগে?`, a: `${d.time}।` }] : []),
+  { q: 'অনলাইনে আবেদন করা যায়?', a: d.online ? `হ্যাঁ, অফিসিয়াল পোর্টাল ${d.portal_url.replace(/^https?:\/\//, '')}-এ।` : 'না, সরাসরি অফিসে যেতে হয়। অফিসিয়াল পোর্টালে বিস্তারিত আছে।' },
+  ...(d.documents.length ? [{ q: 'কী কী কাগজপত্র লাগবে?', a: d.documents.join(', ') + '।' }] : []),
+  ...d.faq,
+];
+const all = await getServices();
+const related = all.filter((x) => x.id !== svc.id && x.data.category === d.category).concat(all.filter((x) => x.id !== svc.id && x.data.category !== d.category)).slice(0, 3);
+const crumbs = [['হোম', '/'], ['সরকারি সেবা', '/services/']];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'GovernmentService', name: d.name, serviceType: d.category, provider: { '@type': 'GovernmentOrganization', name: d.dept }, url: d.portal_url, areaServed: 'BD' },
+    { '@type': 'BreadcrumbList', itemListElement: [...crumbs, [d.name, path]].map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) },
+    { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  ],
+};
+---
+<Base title={`${d.name} – ফি, কাগজপত্র ও আবেদনের ধাপ | InfoSaathi`} description={`${d.name} (${d.dept}): ${d.summary}`} path={path} jsonld={jsonld} draft={d.draft}>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{d.name}</a></nav>
+    <div class="pf-grid">
+      <article class="pf-main">
+        <MiscHero kind="gov" icon="gov" name={d.name} sub={d.name_en ?? d.dept} line={d.summary}
+          badges={[{ text: d.category, ok: true }, ...(d.online ? [{ text: 'অনলাইনে আবেদন' }] : [])]}
+          action={{ href: d.portal_url, label: 'অফিসিয়াল পোর্টাল', icon: 'ext' }} jump={jump} checked={checked} />
+        <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>
+
+        {d.steps.length > 0 && (
+          <section class="pf-card" id="steps" aria-labelledby="h-st"><h2 id="h-st">আবেদনের ধাপ</h2>
+            <ol class="un-steps">{d.steps.map((s, i) => <li><span class="un-step-n">{bn(i + 1)}</span><span><b>{s.title}</b><small>{s.text}</small></span></li>)}</ol></section>
+        )}
+        {d.fees.length > 0 && (
+          <section class="pf-card" id="fees" aria-labelledby="h-fee"><h2 id="h-fee">ফি</h2>
+            <ul class="un-waivers">{d.fees.map((f) => <li><span>{f.item}</span><b>{f.amount}</b></li>)}</ul>{d.fee_note && <p class="pf-note">{d.fee_note}</p>}</section>
+        )}
+        <Ad />
+        {d.eligibility.length > 0 && (
+          <section class="pf-card" aria-labelledby="h-el"><h2 id="h-el">কারা আবেদন করতে পারবেন</h2>
+            <ul class="un-docs">{d.eligibility.map((x) => <li><Icon name="check" size={15} w={2.6} />{x}</li>)}</ul></section>
+        )}
+        {d.documents.length > 0 && (
+          <section class="pf-card" id="docs" aria-labelledby="h-docs"><h2 id="h-docs">যে কাগজপত্র লাগবে</h2>
+            <ul class="un-docs">{d.documents.map((x) => <li><Icon name="check" size={15} w={2.6} />{x}</li>)}</ul></section>
+        )}
+        {d.tips.length > 0 && (
+          <section class="pf-card" aria-labelledby="h-tips"><h2 id="h-tips">যা মনে রাখবেন</h2>
+            <ul class="un-docs">{d.tips.map((x) => <li><span class="mx-warn"><Icon name="warn" size={16} w={2.2} /></span><span>{x}</span></li>)}</ul></section>
+        )}
+        {d.helpline.length > 0 && (
+          <section class="pf-card" id="help" aria-labelledby="h-help"><h2 id="h-help">হেল্পলাইন</h2>
+            <div class="pf-nums">{d.helpline.map((h) => (
+              <div class="pf-num"><span class="pf-num-t"><small class="pf-num-l">{h.label}</small><b>{h.number}</b></span>
+                <a class="pf-call" href={`tel:${h.number.replace(/[^\d+]/g, '')}`} aria-label={`${h.number} নম্বরে কল`}><Icon name="phone" size={17} /></a></div>))}</div></section>
+        )}
+        {d.about && <section class="pf-card" aria-labelledby="h-ab"><h2 id="h-ab">সেবাটি সম্পর্কে</h2><p class="pf-text">{d.about}</p></section>}
+        <Faq items={faq} />
+        <Report placeholder="যেমন: ফি বদলেছে" note="সরকারি ফি ও নিয়ম বদলায়। আবেদনের আগে অফিসিয়াল পোর্টালে মিলিয়ে নিন।">
+          {d.sources.length > 0 && (<div class="un-src"><b class="pf-h3" style="display:block;margin:4px 0 0">তথ্যসূত্র</b>
+            <ul>{d.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>)}
+        </Report>
+        <ShareRow />
+        <nav class="pf-tags" aria-label="সম্পর্কিত"><a href="/services/">সব সরকারি সেবা</a></nav>
+        <Ad />
+        {related.length > 0 && (
+          <section class="pf-block" aria-labelledby="h-rel"><div class="pf-block-head"><h2 id="h-rel">আরও সরকারি সেবা</h2><a class="see-all" href="/services/">See all</a></div>
+            <div class="pf-minis">{related.map((x) => (
+              <a class="pf-mini" href={serviceUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="gov" size={20} w={1.8} /></span>
+                <span class="pf-mini-txt"><b>{x.data.name}</b><span class="pf-mini-h">{x.data.dept}</span></span>
+                <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>))}</div></section>
+        )}
+      </article>
+      <aside class="pf-side" aria-label="সারাংশ"><div class="pf-side-in">
+        <div class="pf-sum"><b class="pf-sum-h">{d.name}</b><span class="pf-sum-l"><Icon name="users" size={14} w={2.2} />{d.dept}</span>
+          {d.time && <span class="pf-sum-l"><Icon name="clock" size={14} w={2.2} />{d.time}</span>}
+          <a class="pf-btn primary" href={d.portal_url} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />অফিসিয়াল পোর্টাল</a></div>
+        <Ad side />
+      </div></aside>
+    </div>
+  </main>
+  <div class="pf-sticky un-sticky"><a class="pf-btn primary" href={d.portal_url} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />অফিসিয়াল পোর্টাল</a><button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button></div>
+</Base>

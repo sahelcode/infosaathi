@@ -1,0 +1,23 @@
+name: "Australia Awards Scholarships"
+name_bn: "অস্ট্রেলিয়া অ্যাওয়ার্ডস স্কলারশিপ"
+provider: "অস্ট্রেলিয়া সরকার (Australia Awards)"
+country: "অস্ট্রেলিয়া"
+levels: ["মাস্টার্স"]
+funding: full
+round: "২০২৭"
+next_note: "আবেদন এখন বন্ধ; ২০২৭ সালের শুরুতে আবার খুলবে। সাধারণত ১ ফেব্রুয়ারি খোলে ও ৩০ এপ্রিল বন্ধ হয়"
+apply_url: "https://australiaawardsbangladesh.org"
+eligibility:
+  - "বাংলাদেশের উপযুক্ত যোগ্যতাসম্পন্ন নাগরিক হতে হবে"
+  - "পূর্ণকালীন স্নাতকোত্তর পড়াশোনার জন্য আবেদন"
+  - "পড়া শেষে কমপক্ষে ২ বছর দেশে ফিরে উন্নয়নে অবদান রাখতে হবে"
+  - "নারী, প্রতিবন্ধী ব্যক্তি ও প্রান্তিক জনগোষ্ঠীর আবেদনকে উৎসাহ দেওয়া হয়"
+covers: ["পূর্ণ টিউশন ফি", "যাওয়া-আসার বিমান ভাড়া", "থাকা-খাওয়ার খরচে সহায়তা", "মেডিকেল বীমা"]
+steps:
+  - { title: "আবেদন খোলার অপেক্ষা", text: "২০২৭ সালের শুরুতে আবেদন খুললে অফিসিয়াল সাইট থেকে নিয়ম ও যোগ্যতা দেখে নিন" }
+  - { title: "OASIS-এ আবেদন", text: "আবেদন OASIS অনলাইন প্ল্যাটফর্মের মাধ্যমে করতে হয়" }
+sources:
+  - { title: "Australia Awards Bangladesh", url: "https://australiaawardsbangladesh.org" }
+  - { title: "Australia Awards South Asia and Mongolia · Scholarships", url: "https://www.australiaawardssouthasiamongolia.org/scholarships/" }
+verified: 2026-10-07
+verified_by: official

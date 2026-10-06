@@ -1,0 +1,17 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getScholarships, scholarshipUrl, isClosed } from '../../lib/data';
+import { bnDate } from '../../lib/format';
+const list = await getScholarships();
+// open or not-yet-announced first, closed rounds last
+const sorted = [...list.filter((s) => !isClosed(s.data.close)), ...list.filter((s) => isClosed(s.data.close))];
+---
+<ListPage title="বাংলাদেশিদের জন্য স্কলারশিপ: যোগ্যতা, শেষ তারিখ ও আবেদন | InfoSaathi" h1="স্কলারশিপ" path="/scholarships/" crumbs={[['হোম', '/']]}
+  intro="বাংলাদেশিরা আবেদন করতে পারেন এমন বিদেশি স্কলারশিপ: যোগ্যতা, শেষ তারিখ আর আবেদনের ধাপ। সব তথ্য অফিসিয়াল সূত্র থেকে।">
+  {sorted.map((s) => (
+    <a class="pf-mini" href={scholarshipUrl(s)}><span class="hp-near-i un-rel-i"><Icon name="award" size={20} w={1.8} /></span>
+      <span class="pf-mini-txt"><b>{s.data.name_bn ?? s.data.name}</b><span class="pf-mini-h">{s.data.country} · {s.data.close ? (isClosed(s.data.close) ? 'আবেদন শেষ' : `শেষ ${bnDate(s.data.close)}`) : 'তারিখ ঘোষণা হয়নি'}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>

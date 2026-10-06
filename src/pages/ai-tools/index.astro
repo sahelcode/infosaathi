@@ -1,0 +1,14 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getAiTools, aiToolUrl } from '../../lib/data';
+const list = await getAiTools();
+---
+<ListPage title="জনপ্রিয় AI টুলস: দাম, ফ্রি প্ল্যান ও কীসে কাজে লাগে | InfoSaathi" h1="AI টুলস" path="/ai-tools/" crumbs={[['হোম', '/']]}
+  intro="জনপ্রিয় এআই টুলের অফিসিয়াল দাম, ফ্রি প্ল্যান আর কীসে কাজে লাগে। কোনো পেইড রিভিউ বা বানানো রেটিং নেই।">
+  {list.map((t) => (
+    <a class="pf-mini" href={aiToolUrl(t)}><span class="hp-near-i un-rel-i"><Icon name="spark" size={20} w={1.8} /></span>
+      <span class="pf-mini-txt"><b>{t.data.name}</b><span class="pf-mini-h">{t.data.category} · {t.data.vendor}{t.data.free_plan ? ' · ফ্রি প্ল্যান আছে' : ''}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>

@@ -1,0 +1,35 @@
+/* ===== scholarship / job / AI tool / government service pages ===== */
+.mx-band{height:104px;}
+.mx-band.sch{background:radial-gradient(circle at 18% 30%,rgba(255,255,255,.35) 0 2px,transparent 3px) 0 0/26px 26px,linear-gradient(120deg,#7c3aed,#4f46e5);}
+.mx-band.job{background:radial-gradient(circle at 18% 30%,rgba(255,255,255,.3) 0 2px,transparent 3px) 0 0/26px 26px,linear-gradient(120deg,#0f766e,#16a34a);}
+.mx-band.ai{background:radial-gradient(circle at 18% 30%,rgba(255,255,255,.3) 0 2px,transparent 3px) 0 0/26px 26px,linear-gradient(120deg,#0ea5e9,#6366f1 60%,#a855f7);}
+.mx-band.gov{background:radial-gradient(circle at 18% 30%,rgba(255,255,255,.3) 0 2px,transparent 3px) 0 0/26px 26px,linear-gradient(120deg,#006a4e,#0f766e);}
+.mx-ico{color:#fff;}
+.mx-ico.sch{background:linear-gradient(135deg,#7c3aed,#4f46e5);}
+.mx-ico.job{background:linear-gradient(135deg,#16a34a,#065f46);}
+.mx-ico.ai{background:linear-gradient(135deg,#6366f1,#a855f7);}
+.mx-ico.gov{background:linear-gradient(135deg,#006a4e,#0f766e);}
+.mx-actions{grid-template-columns:1fr 46px;}
+.mx-actions .pf-btn{min-width:0;}
+
+/* what you get / use cases: icon tiles */
+.mx-tiles{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;}
+@media (min-width:700px){.mx-tiles{grid-template-columns:repeat(3,1fr);}}
+.mx-tile{display:flex;flex-direction:column;gap:6px;padding:12px;border-radius:16px;background:#f6faf8;}
+.mx-tile-i{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#fff;color:var(--green-d);}
+.mx-tile b{font-size:14px;line-height:1.35;}
+.mx-tile small{font-size:12.5px;line-height:1.5;color:var(--muted);}
+
+/* fee table: highlight the cheapest column header */
+.mx-tbl th small{display:block;font-size:10.5px;font-weight:600;color:#94a3b8;margin-top:1px;}
+.mx-tbl td{white-space:nowrap;}
+.mx-tbl td:first-child{white-space:normal;}
+
+@media (min-width:768px){
+  .mx-band{height:130px;}
+  .mx-actions{grid-template-columns:auto 46px;}
+  .ed-mono svg{width:44px;height:44px;}
+}
+.mx-warn{display:flex;}
+.un-docs .mx-warn svg{color:#d97706;}
+.pf-card-head + .un-docs,.pf-card-head + .un-steps{margin-top:14px;}

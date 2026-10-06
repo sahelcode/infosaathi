@@ -1,0 +1,31 @@
+name: "Gemini"
+vendor: "Google"
+category: "চ্যাটবট"
+summary: "Google-এর এআই অ্যাসিস্ট্যান্ট, যা চ্যাট, ছবি তৈরি ও গবেষণায় সাহায্য করে"
+url: "https://gemini.google/"
+free_plan: true
+pricing:
+  - { plan: "Free", price: "বিনামূল্যে", note: "Google অ্যাকাউন্ট লাগে; ছবি তৈরি, Deep Research, Gemini Live ও ১৫ GB স্টোরেজ" }
+  - { plan: "Google AI Plus", price: "মাসে $৪.৯৯", note: "ফ্রির দ্বিগুণ সীমা, ভিডিও তৈরি, ৪০০ GB স্টোরেজ" }
+  - { plan: "Google AI Pro", price: "মাসে $১৯.৯৯", note: "ফ্রির ৪ গুণ সীমা, Jules কোডিং এজেন্ট, ৫ TB স্টোরেজ" }
+  - { plan: "Google AI Ultra", price: "মাসে $৯৯.৯৯ থেকে", note: "$৯৯.৯৯ (৫ গুণ সীমা) বা $১৯৯.৯৯ (২০ গুণ সীমা)" }
+bangla: "অজানা"
+platforms: ["মোবাইল অ্যাপ", "ওয়েব"]
+use_cases:
+  - { title: "দৈনন্দিন প্রশ্নোত্তর", text: "চ্যাটে তথ্য জানা ও আলোচনা করা" }
+  - { title: "গবেষণা", text: "Deep Research দিয়ে কোনো বিষয়ের প্রতিবেদন তৈরি" }
+  - { title: "ছবি তৈরি ও সম্পাদনা", text: "লেখা থেকে ছবি বানানো বা ছবি বদলানো" }
+  - { title: "Gmail ও Docs-এ সাহায্য", text: "পেইড প্ল্যানে Google অ্যাপের ভেতরেই এআই ব্যবহার" }
+good:
+  - "ফ্রি প্ল্যানেই ছবি তৈরি ও Deep Research আছে"
+  - "Google অ্যাকাউন্টের স্টোরেজের সঙ্গে প্ল্যান মেলানো"
+think:
+  - "ফ্রিতে মডেল ব্যবহারের সীমা বদলাতে পারে (Pro মডেলে 'varying access')"
+  - "Pro ও Ultra শুধু ১৮+ বয়সীদের জন্য"
+  - "Plus, Pro ও Ultra সব দেশে নেই; বাংলাদেশে পাওয়া যায় কি না পেজে বলা নেই"
+  - "বাংলা ভাষার মান নিয়ে অফিসিয়াল পেজে কিছু বলা নেই"
+alternatives: ["chatgpt", "claude", "notebooklm"]
+sources:
+  - { title: "Gemini Subscriptions", url: "https://gemini.google/subscriptions/" }
+verified: 2026-10-07
+verified_by: official

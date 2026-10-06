@@ -1,0 +1,28 @@
+name: "Chevening Scholarship"
+name_bn: "শেভেনিং স্কলারশিপ"
+provider: "যুক্তরাজ্য সরকার (FCDO)"
+country: "যুক্তরাজ্য"
+levels: ["মাস্টার্স"]
+funding: full
+duration: "১ বছর"
+round: "২০২৭–২৮"
+close: 2026-10-06
+next_note: "২০২৭–২৮ রাউন্ডের আবেদন ৬ অক্টোবর ২০২৬-এ শেষ হয়েছে; পরের রাউন্ডের তারিখ এখনো ঘোষিত নয়"
+apply_url: "https://www.chevening.org/scholarship/bangladesh/"
+eligibility:
+  - "বাংলাদেশের নাগরিক হতে হবে"
+  - "স্নাতক ডিগ্রি সম্পন্ন"
+  - "আবেদনের শেষ তারিখের অন্তত ২ বছর আগে স্নাতক শেষ হতে হবে"
+  - "স্নাতকের পর কমপক্ষে ২ বছর (২,৮০০ ঘণ্টা) কাজের অভিজ্ঞতা"
+  - "পড়া শেষে কমপক্ষে ২ বছর বাংলাদেশে ফিরে থাকতে হবে"
+covers: ["পুরো টিউশন ফি", "মাসিক থাকা-খাওয়ার ভাতা", "যাওয়া-আসার বিমান ভাড়া"]
+steps:
+  - { title: "অনলাইনে আবেদন", text: "chevening.org-এর বাংলাদেশ পেজ থেকে অ্যাকাউন্ট খুলে আবেদন" }
+  - { title: "৩টি কোর্স বাছাই", text: "যুক্তরাজ্যের ৩টি আলাদা যোগ্য কোর্স" }
+  - { title: "অফার জমা", text: "নির্বাচিত হলে ৮ জুলাই ২০২৭-এর মধ্যে অন্তত একটি বিশ্ববিদ্যালয়ের শর্তহীন অফার জমা দিতে হয়" }
+sources:
+  - { title: "Chevening · Bangladesh", url: "https://www.chevening.org/scholarship/bangladesh/" }
+  - { title: "Chevening · Eligibility", url: "https://chevening.org/resource-hub/guidance/eligibility/" }
+  - { title: "Chevening · Application timeline", url: "https://www.chevening.org/scholarships/application-timeline/" }
+verified: 2026-10-07
+verified_by: official

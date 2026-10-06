@@ -1,0 +1,32 @@
+name: "Canva"
+vendor: "Canva"
+category: "ডিজাইন"
+summary: "ডিজাইন প্ল্যাটফর্ম, যার Magic Studio-র এআই ফিচারে লেখা, ছবি সম্পাদনা ও অনুবাদ করা যায়"
+url: "https://www.canva.com/"
+free_plan: true
+pricing:
+  - { plan: "Free", price: "$0 (একজনের জন্য)", note: "২০টি পর্যন্ত Standard বা Premium AI ব্যবহার" }
+  - { plan: "Pro", price: "বছরে $144 (একজনের জন্য)", note: "Free-এর চেয়ে ১০ গুণ বেশি AI" }
+  - { plan: "Business", price: "বছরে $250 (প্রতি জনে)", note: "Free-এর চেয়ে ২০ গুণ বেশি AI" }
+  - { plan: "Enterprise", price: "বিক্রয় দলের সঙ্গে যোগাযোগ করুন" }
+bangla: "অজানা"
+platforms: []
+use_cases:
+  - { title: "লেখা তৈরি", text: "Magic Write দিয়ে ডিজাইনের জন্য লেখা তৈরি" }
+  - { title: "ছবি সম্পাদনা", text: "Magic Edit, Magic Eraser ও Magic Expand দিয়ে ছবিতে যোগ, মোছা বা বাড়ানো" }
+  - { title: "আকার বদল", text: "Magic Resize দিয়ে ডিজাইনের মাপ স্বয়ংক্রিয়ভাবে বদলানো" }
+  - { title: "অনুবাদ", text: "Translate দিয়ে ডিজাইনের লেখা অন্য ভাষায় নেওয়া" }
+about: "Canva-র এআই ফিচারগুলো Magic Studio নামে পরিচিত। Canva-র এআই পেজে এর মধ্যে Magic Write, Magic Edit, Magic Eraser, Magic Expand, Magic Resize, Magic Animate, Translate ও Text to Image-এর কথা আছে।"
+good:
+  - "ফ্রি প্ল্যান আছে"
+  - "এক জায়গায় ডিজাইন ও এআই ফিচার"
+think:
+  - "ফ্রি প্ল্যানে এআই ব্যবহার ২০টিতে সীমিত"
+  - "প্ল্যানের দাম বছরের হিসাবে দেখানো হয়েছে; মাসিক বিলিংয়ের দাম এখানে যাচাই করা হয়নি"
+  - "বাংলা সমর্থন নিয়ে অফিসিয়াল পেজে স্পষ্ট তথ্য পাওয়া যায়নি"
+alternatives: ["chatgpt", "gemini"]
+sources:
+  - { title: "Canva · Pricing", url: "https://www.canva.com/pricing/" }
+  - { title: "Canva · AI features", url: "https://www.canva.com/ai-image-generator/" }
+verified: 2026-10-07
+verified_by: official

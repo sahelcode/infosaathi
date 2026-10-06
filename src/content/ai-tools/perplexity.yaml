@@ -1,0 +1,32 @@
+name: "Perplexity"
+vendor: "Perplexity AI"
+category: "গবেষণা"
+summary: "উৎসসহ উত্তর দেওয়া এআই সার্চ ও গবেষণার টুল"
+url: "https://www.perplexity.ai/"
+free_plan: true
+pricing:
+  - { plan: "Standard (Free)", price: "বিনামূল্যে", note: "সাধারণ সার্চ প্রায় আনলিমিটেড; Pro Search খুবই সীমিত" }
+  - { plan: "Pro", price: "দাম অফিসিয়াল পেজে দেখুন", note: "বেশি Pro Search, উন্নত মডেল, ছবি ও সীমিত ভিডিও তৈরি" }
+  - { plan: "Max", price: "দাম অফিসিয়াল পেজে দেখুন", note: "সব উন্নত মডেলে সর্বোচ্চ সুবিধা ও নতুন ফিচারে আগে ঢোকা" }
+  - { plan: "Education Pro", price: "মাসে $১০", note: "যাচাইয়ের পর; Pro-র সুবিধার সঙ্গে Learn Mode" }
+  - { plan: "Enterprise Pro", price: "প্রতি সিটে মাসে $৪০", note: "বা বছরে $৪০০; দলের জন্য" }
+bangla: "অজানা"
+platforms: []
+use_cases:
+  - { title: "উৎসসহ উত্তর", text: "প্রতিটি উত্তরে সূত্র দেখে যাচাই করা" }
+  - { title: "গবেষণা", text: "Research মোডে কোনো বিষয় গভীরভাবে খোঁজা" }
+  - { title: "ফাইল ও ছবি নিয়ে প্রশ্ন", text: "ফাইল আপলোড করে তার ভিত্তিতে উত্তর নেওয়া" }
+  - { title: "শিক্ষার্থীর পড়াশোনা", text: "যাচাইকৃত শিক্ষার্থীদের জন্য Learn Mode" }
+good:
+  - "ফ্রি প্ল্যান আছে"
+  - "উত্তরের সঙ্গে সূত্র (citation) দেওয়া হয়"
+think:
+  - "ফ্রি প্ল্যানে Pro Search দিনে মাত্র ৩টি"
+  - "Pro ও Max-এর দাম আমরা অফিসিয়াল পেজ থেকে পাইনি; কেনার আগে দেখে নিন"
+  - "বাংলা ভাষার মান নিয়ে অফিসিয়াল ডকে কিছু বলা নেই"
+alternatives: ["chatgpt", "gemini", "notebooklm"]
+sources:
+  - { title: "Perplexity Help · Which plan is right for you", url: "https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you" }
+  - { title: "Perplexity Help · What is Perplexity Pro", url: "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro" }
+verified: 2026-10-07
+verified_by: official

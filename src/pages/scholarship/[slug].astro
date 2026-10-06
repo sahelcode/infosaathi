@@ -1,0 +1,128 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import MiscHero from '../../components/MiscHero.astro';
+import Window from '../../components/Window.astro';
+import Faq from '../../components/Faq.astro';
+import Report from '../../components/Report.astro';
+import ShareRow from '../../components/ShareRow.astro';
+import Ad from '../../components/Ad.astro';
+import { getScholarships, scholarshipUrl, isClosed, type Scholarship } from '../../lib/data';
+import { bn, bnDate } from '../../lib/format';
+import { SITE } from '../../lib/site';
+import '../../styles/hospital.css';
+import '../../styles/uni.css';
+import '../../styles/edu.css';
+import '../../styles/misc.css';
+
+export async function getStaticPaths() {
+  return (await getScholarships()).map((s) => ({ params: { slug: s.id }, props: { sch: s } }));
+}
+const { sch } = Astro.props as { sch: Scholarship };
+const d = sch.data;
+const path = scholarshipUrl(sch);
+const FUND = { full: 'সম্পূর্ণ অর্থায়িত', partial: 'আংশিক অর্থায়ন', varies: 'অর্থায়ন ভিন্ন ভিন্ন' } as const;
+const title = d.name_bn ? `${d.name_bn} (${d.name})` : d.name;
+const checked = `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
+const glance = [
+  { icon: 'cal', k: 'আবেদনের শেষ তারিখ', v: d.close ? bnDate(d.close) : 'ঘোষণা হয়নি' },
+  { icon: 'cap', k: 'স্তর', v: d.levels.join(', ') },
+  { icon: 'pin', k: 'কোন দেশে', v: d.country },
+  d.duration ? { icon: 'clock', k: 'মেয়াদ', v: d.duration } : { icon: 'wallet', k: 'অর্থায়ন', v: FUND[d.funding] },
+] as { icon: 'cal' | 'cap' | 'pin' | 'clock' | 'wallet'; k: string; v: string }[];
+const jump = [['apply', 'আবেদন'], d.eligibility.length && ['eligible', 'যোগ্যতা'], d.covers.length && ['covers', 'যা পাবেন'], d.steps.length && ['steps', 'ধাপ'], ['faq', 'প্রশ্ন']].filter(Boolean) as string[][];
+const closed = isClosed(d.close);
+const faq = [
+  { q: `${title}-এর আবেদনের শেষ তারিখ কবে?`, a: d.close ? `${bnDate(d.close)}।${closed ? ' এই রাউন্ডের আবেদন শেষ।' : ''}${d.next_note ? ' ' + d.next_note + '।' : ''}` : `এখনও ঘোষণা হয়নি।${d.next_note ? ' ' + d.next_note + '।' : ''}` },
+  { q: 'বাংলাদেশিরা কি আবেদন করতে পারেন?', a: 'হ্যাঁ, এই তথ্য বাংলাদেশি আবেদনকারীদের জন্য অফিসিয়াল সূত্র থেকে নেওয়া।' },
+  ...(d.covers.length ? [{ q: `${title}-এ কী কী পাওয়া যায়?`, a: d.covers.join(', ') + '।' }] : []),
+  ...d.faq,
+];
+const all = await getScholarships();
+const related = all.filter((x) => x.id !== sch.id).slice(0, 3);
+const description = `${title}: ${d.country}, ${d.levels.join('/')}, ${FUND[d.funding]}।${d.close ? ` আবেদনের শেষ তারিখ ${bnDate(d.close)}।` : ''} যোগ্যতা, ধাপ ও আবেদনের লিংক।`;
+const crumbs = [['হোম', '/'], ['স্কলারশিপ', '/scholarships/']];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'BreadcrumbList', itemListElement: [...crumbs, [title, path]].map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) },
+    { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  ],
+};
+---
+<Base title={`${title} – যোগ্যতা, আবেদনের তারিখ ও ধাপ | InfoSaathi`} description={description} path={path} jsonld={jsonld} draft={d.draft}>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{d.name_bn ?? d.name}</a></nav>
+    <div class="pf-grid">
+      <article class="pf-main">
+        <MiscHero kind="sch" icon="award" name={d.name} sub={d.name_bn ? `${d.name_bn} · ${d.provider}` : d.provider} line={`${d.country} · ${d.levels.join(', ')}`}
+          badges={[{ text: FUND[d.funding], ok: d.funding === 'full' }, ...d.levels.map((l) => ({ text: l })), { text: 'বাংলাদেশিরা আবেদন করতে পারেন' }]}
+          action={{ href: d.apply_url, label: 'অফিসিয়াল সাইটে আবেদন', icon: 'ext' }} jump={jump} checked={checked} />
+
+        <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>
+
+        <section class="pf-card" id="apply" aria-labelledby="h-apply">
+          <div class="pf-card-head"><h2 id="h-apply">আবেদন{d.round && ` · ${d.round}`}</h2>{d.close && <span class="pf-today" data-adm-status hidden></span>}</div>
+          <Window open={d.open} close={d.close} rows={d.amount ? [['অর্থের পরিমাণ', d.amount]] : []} note={d.next_note} />
+        </section>
+
+        {d.eligibility.length > 0 && (
+          <section class="pf-card" id="eligible" aria-labelledby="h-el"><h2 id="h-el">যোগ্যতা</h2>
+            <ul class="un-docs">{d.eligibility.map((x) => <li><Icon name="check" size={15} w={2.6} />{x}</li>)}</ul></section>
+        )}
+        {d.covers.length > 0 && (
+          <section class="pf-card" id="covers" aria-labelledby="h-cv"><h2 id="h-cv">যা পাবেন</h2>
+            <ul class="un-docs">{d.covers.map((x) => <li><Icon name="check" size={15} w={2.6} />{x}</li>)}</ul></section>
+        )}
+        <Ad />
+        {d.steps.length > 0 && (
+          <section class="pf-card" id="steps" aria-labelledby="h-st"><h2 id="h-st">আবেদনের ধাপ</h2>
+            <ol class="un-steps">{d.steps.map((s, i) => <li><span class="un-step-n">{bn(i + 1)}</span><span><b>{s.title}</b><small>{s.text}</small></span></li>)}</ol></section>
+        )}
+        {d.documents.length > 0 && (
+          <section class="pf-card" aria-labelledby="h-docs"><h2 id="h-docs">যে কাগজপত্র লাগবে</h2>
+            <ul class="un-docs">{d.documents.map((x) => <li><Icon name="check" size={15} w={2.6} />{x}</li>)}</ul></section>
+        )}
+        {(d.about || d.good.length > 0 || d.think.length > 0) && (
+          <section class="pf-card" aria-labelledby="h-ab"><h2 id="h-ab">পরিচিতি</h2>{d.about && <p class="pf-text">{d.about}</p>}
+            {(d.good.length > 0 || d.think.length > 0) && (
+              <div class="un-pc">
+                {d.good.length > 0 && <div class="un-pc-b good"><b><Icon name="plus" size={16} w={2.6} />ভালো দিক</b><ul>{d.good.map((g) => <li>{g}</li>)}</ul></div>}
+                {d.think.length > 0 && <div class="un-pc-b think"><b><Icon name="minus" size={16} w={2.6} />যা জেনে নেবেন</b><ul>{d.think.map((t) => <li>{t}</li>)}</ul></div>}
+              </div>)}
+          </section>
+        )}
+        <Faq items={faq} />
+        <Report placeholder="যেমন: শেষ তারিখ বদলেছে" note="স্কলারশিপের তারিখ ও শর্ত প্রতি রাউন্ডে বদলায়। আবেদনের আগে অফিসিয়াল সাইটে মিলিয়ে নিন।">
+          {d.sources.length > 0 && (<div class="un-src"><b class="pf-h3" style="display:block;margin:4px 0 0">তথ্যসূত্র</b>
+            <ul>{d.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>)}
+        </Report>
+        <ShareRow />
+        <nav class="pf-tags" aria-label="সম্পর্কিত"><a href="/scholarships/">বাংলাদেশিদের জন্য স্কলারশিপ</a></nav>
+        <Ad />
+        {related.length > 0 && (
+          <section class="pf-block" aria-labelledby="h-rel"><div class="pf-block-head"><h2 id="h-rel">আরও স্কলারশিপ</h2><a class="see-all" href="/scholarships/">See all</a></div>
+            <div class="pf-minis">{related.map((x) => (
+              <a class="pf-mini" href={scholarshipUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="award" size={20} w={1.8} /></span>
+                <span class="pf-mini-txt"><b>{x.data.name_bn ?? x.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{x.data.country} · {x.data.levels.join(', ')}</span></span>
+                <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>))}</div></section>
+        )}
+      </article>
+      <aside class="pf-side" aria-label="সারাংশ"><div class="pf-side-in">
+        <div class="pf-sum">
+          {d.close && <span class="pf-today" data-adm-status hidden></span>}
+          <b class="pf-sum-h">{d.name_bn ?? d.name}</b>
+          <span class="pf-sum-l"><Icon name="pin" size={14} w={2.2} />{d.country} · {d.levels.join(', ')}</span>
+          <span class="pf-sum-l"><Icon name="cal" size={14} w={2.2} />শেষ তারিখ: {d.close ? bnDate(d.close) : 'ঘোষণা হয়নি'}</span>
+          <a class="pf-btn primary" href={d.apply_url} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />অফিসিয়াল সাইটে আবেদন</a>
+        </div>
+        <Ad side />
+      </div></aside>
+    </div>
+  </main>
+  <div class="pf-sticky un-sticky"><a class="pf-btn primary" href={d.apply_url} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />অফিসিয়াল সাইটে আবেদন</a><button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button></div>
+</Base>
+
+<script>
+  import '../../scripts/uni.js';
+</script>

@@ -346,4 +346,138 @@ const hotels = defineCollection({
       .refine((h) => h.draft || h.verified_by === 'phone' || h.sources.length > 0, 'official তথ্যের জন্য অন্তত একটি sources দিন'),
 });
 
-export const collections = { doctors, hospitals, universities, institutions, places, hotels };
+// ---- Scholarships, job circulars, AI tools, government services ----
+// Dates here go stale fast: every scholarship and job needs a close date, and the page shows "আবেদন শেষ" automatically after it.
+const steps = z.array(z.object({ title: z.string(), text: z.string() })).default([]);
+const list = z.array(z.string()).default([]);
+const verifiedOfficial = z.enum(['official', 'phone'], 'verified_by হবে official অথবা phone').default('official');
+const needSources = (x: { draft: boolean; sources: unknown[] }) => x.draft || x.sources.length > 0;
+
+const scholarships = defineCollection({
+  loader: files('scholarships'),
+  schema: z
+    .object({
+      draft: z.boolean().default(false),
+      name: z.string().min(3), // English
+      name_bn: z.string().optional(),
+      provider: z.string(), // who gives it
+      country: z.string(), // where you study, e.g. যুক্তরাজ্য
+      levels: z.array(z.string()).min(1), // e.g. [মাস্টার্স]
+      funding: z.enum(['full', 'partial', 'varies'], 'funding হবে full, partial অথবা varies'),
+      amount: z.string().optional(),
+      duration: z.string().optional(),
+      round: z.string().optional(), // e.g. ২০২৭–২৮
+      open: z.coerce.date().optional(),
+      close: z.coerce.date().optional(), // leave out only if the date is not announced
+      next_note: z.string().optional(), // e.g. পরের রাউন্ড সাধারণত আগস্টে খোলে
+      apply_url: z.url(),
+      eligibility: list,
+      covers: list,
+      documents: list,
+      steps,
+      about: z.string().optional(),
+      good: list,
+      think: list,
+      faq: extraFaq,
+      sources,
+      verified: date,
+      verified_by: verifiedOfficial,
+      old_urls: z.array(z.string().startsWith('/')).default([]),
+    })
+    .refine(needSources, 'অন্তত একটি sources দিন'),
+});
+
+const jobs = defineCollection({
+  loader: files('jobs'),
+  schema: z
+    .object({
+      draft: z.boolean().default(false),
+      title: z.string().min(3), // the circular's title
+      org: z.string(),
+      sector: z.enum(['সরকারি', 'ব্যাংক', 'বাহিনী', 'সংস্থা', 'বেসরকারি'], 'sector হবে: সরকারি, ব্যাংক, বাহিনী, সংস্থা, বেসরকারি'),
+      published: z.coerce.date().optional(),
+      open: z.coerce.date().optional(),
+      close: z.coerce.date(), // application deadline (required)
+      vacancies: z.string().optional(), // e.g. ২,৫০০ জন
+      posts: z.array(z.object({ name: z.string(), count: z.string().optional(), grade: z.string().optional(), requirement: z.string().optional() })).default([]),
+      salary: z.string().optional(),
+      age_limit: z.string().optional(),
+      location: z.string().optional(),
+      apply_url: z.url().optional(),
+      circular_url: z.url().optional(), // the official notice
+      apply_how: z.string().optional(),
+      app_fee: z.string().optional(),
+      eligibility: list,
+      documents: list,
+      steps,
+      about: z.string().optional(),
+      faq: extraFaq,
+      sources,
+      verified: date,
+      verified_by: verifiedOfficial,
+    })
+    .refine((j) => j.draft || j.sources.length > 0, 'অন্তত একটি sources দিন')
+    .refine((j) => !j.open || j.open <= j.close, 'open তারিখ close-এর আগে হতে হবে'),
+});
+
+const AI_CATEGORIES = ['চ্যাটবট', 'লেখা', 'কোড', 'ছবি', 'ভিডিও', 'অডিও', 'গবেষণা', 'অনুবাদ', 'ডিজাইন', 'প্রোডাক্টিভিটি'] as const;
+const aiTools = defineCollection({
+  loader: files('ai-tools'),
+  schema: z
+    .object({
+      draft: z.boolean().default(false),
+      name: z.string().min(2),
+      vendor: z.string(),
+      category: z.enum(AI_CATEGORIES, `category হবে: ${AI_CATEGORIES.join(', ')}`),
+      summary: z.string(), // one line, Bangla
+      url: z.url(),
+      free_plan: z.boolean(),
+      pricing: z.array(z.object({ plan: z.string(), price: z.string(), note: z.string().optional() })).default([]),
+      bangla: z.enum(['ভালো', 'সীমিত', 'নেই', 'অজানা']).default('অজানা'),
+      platforms: list, // ওয়েব, অ্যান্ড্রয়েড, iOS ...
+      use_cases: z.array(z.object({ title: z.string(), text: z.string() })).default([]),
+      about: z.string().optional(),
+      good: list,
+      think: list,
+      alternatives: z.array(reference('aiTools')).default([]),
+      faq: extraFaq,
+      sources,
+      verified: date,
+      verified_by: verifiedOfficial,
+    })
+    .refine(needSources, 'অন্তত একটি sources দিন'),
+});
+
+const SERVICE_CATEGORIES = ['পাসপোর্ট ও ভ্রমণ', 'পরিচয় ও নিবন্ধন', 'কর ও ব্যবসা', 'ভূমি', 'পরিবহন', 'শিক্ষা', 'স্বাস্থ্য', 'নাগরিক সেবা'] as const;
+const services = defineCollection({
+  loader: files('services'),
+  schema: z
+    .object({
+      draft: z.boolean().default(false),
+      name: z.string().min(3),
+      name_en: z.string().optional(),
+      dept: z.string(), // who provides it
+      category: z.enum(SERVICE_CATEGORIES, `category হবে: ${SERVICE_CATEGORIES.join(', ')}`),
+      summary: z.string(),
+      portal_url: z.url(),
+      online: z.boolean(), // can it be applied for online?
+      time: z.string().optional(), // how long it takes
+      fees: z.array(z.object({ item: z.string(), amount: z.string() })).default([]),
+      fee_note: z.string().optional(),
+      eligibility: list,
+      documents: list,
+      steps,
+      helpline: z.array(z.object({ label: z.string(), number: z.string() })).default([]), // e.g. 16xxx short codes allowed
+      tips: list,
+      about: z.string().optional(),
+      faq: extraFaq,
+      sources,
+      verified: date,
+      verified_by: verifiedOfficial,
+    })
+    .refine((x) => x.draft || x.sources.length > 0, 'অন্তত একটি sources দিন'),
+});
+
+export const AI_CATS = AI_CATEGORIES;
+export const SERVICE_CATS = SERVICE_CATEGORIES;
+export const collections = { doctors, hospitals, universities, institutions, places, hotels, scholarships, jobs, aiTools, services };

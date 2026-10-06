@@ -1,0 +1,112 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import MiscHero from '../../components/MiscHero.astro';
+import Faq from '../../components/Faq.astro';
+import Report from '../../components/Report.astro';
+import ShareRow from '../../components/ShareRow.astro';
+import Ad from '../../components/Ad.astro';
+import { getAiTools, aiToolUrl, type AiTool } from '../../lib/data';
+import { bn, bnDate } from '../../lib/format';
+import { SITE } from '../../lib/site';
+import '../../styles/hospital.css';
+import '../../styles/uni.css';
+import '../../styles/edu.css';
+import '../../styles/misc.css';
+
+export async function getStaticPaths() {
+  return (await getAiTools()).map((t) => ({ params: { slug: t.id }, props: { tool: t } }));
+}
+const { tool } = Astro.props as { tool: AiTool };
+const d = tool.data;
+const path = aiToolUrl(tool);
+const checked = `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
+const host = d.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+const glance = [
+  { icon: 'wallet', k: 'ফ্রি প্ল্যান', v: d.free_plan ? 'আছে' : 'নেই' },
+  { icon: 'spark', k: 'ধরন', v: d.category },
+  { icon: 'globe', k: 'বাংলা সমর্থন', v: d.bangla === 'অজানা' ? 'অফিসিয়ালি জানা যায়নি' : d.bangla },
+  { icon: 'users', k: 'তৈরি করেছে', v: d.vendor },
+] as { icon: 'wallet' | 'spark' | 'globe' | 'users'; k: string; v: string }[];
+const jump = [d.pricing.length && ['pricing', 'দাম'], d.use_cases.length && ['uses', 'কীসে কাজে লাগে'], (d.good.length || d.think.length) && ['about', 'ভালো-মন্দ'], d.alternatives.length && ['alts', 'বিকল্প'], ['faq', 'প্রশ্ন']].filter(Boolean) as string[][];
+const all = await getAiTools();
+const alts = d.alternatives.map((r) => all.find((x) => x.id === r.id)).filter(Boolean) as AiTool[];
+const faq = [
+  { q: `${d.name} কি ফ্রি?`, a: d.free_plan ? `হ্যাঁ, অফিসিয়াল সাইটে ফ্রি প্ল্যান আছে। তবে ব্যবহারের সীমা থাকতে পারে।` : 'না, অফিসিয়াল সাইটে ফ্রি প্ল্যান দেখা যায়নি।' },
+  ...(d.pricing.length ? [{ q: `${d.name}-এর দাম কত?`, a: d.pricing.map((p) => `${p.plan}: ${p.price}`).join('; ') + '। দাম বদলাতে পারে, অফিসিয়াল সাইটে মিলিয়ে নিন।' }] : []),
+  { q: `${d.name} কে তৈরি করেছে?`, a: `${d.vendor}।` },
+  ...d.faq,
+];
+const description = `${d.name} (${d.vendor}): ${d.summary}। ${d.free_plan ? 'ফ্রি প্ল্যান আছে। ' : ''}দাম, কীসে কাজে লাগে আর বিকল্প।`;
+const crumbs = [['হোম', '/'], ['AI টুলস', '/ai-tools/']];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'SoftwareApplication', name: d.name, applicationCategory: 'BusinessApplication', url: d.url, description: d.summary, publisher: { '@type': 'Organization', name: d.vendor } },
+    { '@type': 'BreadcrumbList', itemListElement: [...crumbs, [d.name, path]].map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) },
+    { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  ],
+};
+---
+<Base title={`${d.name} – দাম, ফ্রি প্ল্যান ও কীসে কাজে লাগে | InfoSaathi`} description={description} path={path} jsonld={jsonld} draft={d.draft}>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{d.name}</a></nav>
+    <div class="pf-grid">
+      <article class="pf-main">
+        <MiscHero kind="ai" icon="spark" name={d.name} sub={d.vendor} line={d.summary}
+          badges={[{ text: d.category, ok: true }, ...(d.free_plan ? [{ text: 'ফ্রি প্ল্যান আছে' }] : []), ...d.platforms.slice(0, 2).map((p) => ({ text: p }))]}
+          action={{ href: d.url, label: 'অফিসিয়াল সাইট', icon: 'ext' }} jump={jump} checked={checked} />
+
+        <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>
+
+        {d.pricing.length > 0 && (
+          <section class="pf-card" id="pricing" aria-labelledby="h-pr">
+            <div class="pf-card-head"><h2 id="h-pr">প্ল্যান ও দাম</h2><span class="pf-count">{bn(d.pricing.length)}টি প্ল্যান</span></div>
+            <ul class="un-progs">{d.pricing.map((p) => (
+              <li class="un-prog"><span class="un-prog-t"><b>{p.plan}</b>{p.note && <small>{p.note}</small>}</span><span class="un-prog-c"><small>দাম</small><strong>{p.price}</strong></span></li>))}</ul>
+            <p class="pf-note">দাম ডলারে অফিসিয়াল সাইটে যেমন দেখা গেছে। দেশ ও সময়ভেদে বদলায়, কেনার আগে {host}-এ মিলিয়ে নিন।</p>
+          </section>
+        )}
+        {d.use_cases.length > 0 && (
+          <section class="pf-card" id="uses" aria-labelledby="h-uses"><h2 id="h-uses">কীসে কাজে লাগে</h2>
+            <ul class="mx-tiles">{d.use_cases.map((u) => <li class="mx-tile"><span class="mx-tile-i"><Icon name="check" size={18} w={2.2} /></span><b>{u.title}</b><small>{u.text}</small></li>)}</ul></section>
+        )}
+        <Ad />
+        {(d.about || d.good.length > 0 || d.think.length > 0) && (
+          <section class="pf-card" id="about" aria-labelledby="h-ab"><h2 id="h-ab">পরিচিতি</h2>{d.about && <p class="pf-text">{d.about}</p>}
+            {(d.good.length > 0 || d.think.length > 0) && (
+              <div class="un-pc">
+                {d.good.length > 0 && <div class="un-pc-b good"><b><Icon name="plus" size={16} w={2.6} />ভালো দিক</b><ul>{d.good.map((g) => <li>{g}</li>)}</ul></div>}
+                {d.think.length > 0 && <div class="un-pc-b think"><b><Icon name="minus" size={16} w={2.6} />যা জেনে নেবেন</b><ul>{d.think.map((t) => <li>{t}</li>)}</ul></div>}
+              </div>)}
+          </section>
+        )}
+        {alts.length > 0 && (
+          <section class="pf-block" id="alts" aria-labelledby="h-alt"><div class="pf-block-head"><h2 id="h-alt">বিকল্প টুল</h2><a class="see-all" href="/ai-tools/">See all</a></div>
+            <div class="pf-minis">{alts.map((x) => (
+              <a class="pf-mini" href={aiToolUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="spark" size={20} w={1.8} /></span>
+                <span class="pf-mini-txt"><b>{x.data.name}</b><span class="pf-mini-h">{x.data.category} · {x.data.vendor}</span></span>
+                <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>))}</div></section>
+        )}
+        <Faq items={faq} />
+        <Report placeholder="যেমন: দাম বদলেছে" note="এআই টুলের দাম ও সুবিধা ঘনঘন বদলায়। ব্যবহারের আগে অফিসিয়াল সাইটে মিলিয়ে নিন।">
+          {d.sources.length > 0 && (<div class="un-src"><b class="pf-h3" style="display:block;margin:4px 0 0">তথ্যসূত্র</b>
+            <ul>{d.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>)}
+        </Report>
+        <ShareRow />
+        <nav class="pf-tags" aria-label="সম্পর্কিত"><a href="/ai-tools/">সব AI টুলস</a></nav>
+        <Ad />
+      </article>
+      <aside class="pf-side" aria-label="সারাংশ"><div class="pf-side-in">
+        <div class="pf-sum">
+          <b class="pf-sum-h">{d.name}</b>
+          <span class="pf-sum-l"><Icon name="wallet" size={14} w={2.2} />{d.free_plan ? 'ফ্রি প্ল্যান আছে' : 'ফ্রি প্ল্যান নেই'}</span>
+          <span class="pf-sum-l"><Icon name="spark" size={14} w={2.2} />{d.category}</span>
+          <a class="pf-btn primary" href={d.url} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />অফিসিয়াল সাইট</a>
+        </div>
+        <Ad side />
+      </div></aside>
+    </div>
+  </main>
+  <div class="pf-sticky un-sticky"><a class="pf-btn primary" href={d.url} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />অফিসিয়াল সাইট</a><button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button></div>
+</Base>

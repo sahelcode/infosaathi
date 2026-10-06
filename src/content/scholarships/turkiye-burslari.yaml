@@ -1,0 +1,24 @@
+name: "Türkiye Scholarships (Türkiye Burslari)"
+name_bn: "তুরস্ক সরকারি স্কলারশিপ (Türkiye Burslari)"
+provider: "তুরস্ক সরকার (YTB)"
+country: "তুরস্ক"
+levels: ["স্নাতক", "মাস্টার্স", "পিএইচডি"]
+funding: full
+round: "২০২৬"
+next_note: "২০২৬ রাউন্ডের সাধারণ প্রোগ্রামের আবেদন ছিল ১০ জানুয়ারি–২০ ফেব্রুয়ারি; পরের রাউন্ডের তারিখ এখনো ঘোষিত নয়"
+apply_url: "https://tbbs.turkiyeburslari.gov.tr"
+eligibility:
+  - "যেকোনো দেশের নাগরিক আবেদন করতে পারেন; তুরস্কের নাগরিক বা সাবেক নাগরিক পারবেন না"
+  - "স্নাতকের জন্য বয়স ২১-এর কম, মাস্টার্সে ৩০-এর কম, পিএইচডিতে ৩৫-এর কম"
+  - "স্নাতকে কমপক্ষে ৭০%, স্নাতকোত্তরে কমপক্ষে ৭৫% নম্বর (স্বাস্থ্য বিজ্ঞানে ৯০%)"
+  - "আবেদনের একই স্তরে তুরস্কের কোনো বিশ্ববিদ্যালয়ে ইতিমধ্যে পড়ছেন এমন কেউ আবেদন করতে পারবেন না"
+covers: ["বিশ্ববিদ্যালয় ও বিভাগ নির্ধারণ", "মাসিক ভাতা", "টিউশন ফি", "স্বাস্থ্য বীমা", "থাকার ব্যবস্থা", "তুর্কি ভাষা কোর্স", "একবারের বিমান টিকিট"]
+steps:
+  - { title: "অনলাইনে আবেদন", text: "tbbs.turkiyeburslari.gov.tr পোর্টালে বিনা খরচে আবেদন করতে হয়; আবেদনের ধাপ ৫টি" }
+  - { title: "মেধাভিত্তিক মূল্যায়ন", text: "একাডেমিক ফলাফলের ভিত্তিতে প্রতিযোগিতামূলক বাছাই; ফল সাধারণত আগস্টের শুরুতে" }
+sources:
+  - { title: "Türkiye Scholarships", url: "https://turkiyeburslari.gov.tr/" }
+  - { title: "Türkiye Scholarships · Criteria and programs", url: "https://turkiyeburslari.gov.tr/scholarshipsprograms" }
+  - { title: "Türkiye Scholarships · Calendar", url: "https://turkiyeburslari.gov.tr/calendar" }
+verified: 2026-10-07
+verified_by: official
