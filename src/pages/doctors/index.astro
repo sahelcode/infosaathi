@@ -1,0 +1,11 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import { getDoctors } from '../../lib/data';
+import { CITIES } from '../../lib/taxonomy';
+import { bn } from '../../lib/format';
+const doctors = await getDoctors();
+const cities = [...new Set(doctors.map((d) => d.data.city))];
+---
+<ListPage title="ডাক্তারের তালিকা ও সিরিয়াল নম্বর | InfoSaathi" h1="ডাক্তার" path="/doctors/" crumbs={[['হোম', '/']]}
+  intro="শহর বেছে নিন। প্রতিটি ডাক্তারের চেম্বার, রোগী দেখার সময় ও সিরিয়াল নম্বর যাচাই করে দেওয়া।"
+  chips={cities.map((c) => ({ href: `/doctors/${c}/`, label: CITIES[c].bn, n: bn(doctors.filter((d) => d.data.city === c).length) }))} />

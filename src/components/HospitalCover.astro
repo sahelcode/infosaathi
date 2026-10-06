@@ -1,0 +1,14 @@
+---
+// Drawn hospital front, used when the hospital has no photo yet.
+const s = '#DBEAFE', w = '#F1F5F9', t = '#2563EB';
+const win = [108, 126, 182, 200].flatMap((x) => [40, 58].map((y) => [x, y]));
+const low = [50, 70, 234, 254];
+---
+<svg viewBox="0 0 320 110" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><rect width="320" height="110" fill={s} />
+  <circle cx="270" cy="26" r="14" fill="#fff" opacity=".7" /><rect y="92" width="320" height="18" fill={w} />
+  <rect x="96" y="30" width="128" height="62" rx="4" fill={w} stroke={t} stroke-width="2" />
+  <rect x="40" y="52" width="56" height="40" rx="3" fill={w} stroke={t} stroke-width="2" /><rect x="224" y="52" width="56" height="40" rx="3" fill={w} stroke={t} stroke-width="2" />
+  {win.map(([x, y]) => <rect x={x} y={y} width="12" height="10" fill={t} opacity=".45" />)}
+  {low.map((x) => <rect x={x} y="62" width="10" height="9" fill={t} opacity=".45" />)}
+  <rect x="148" y="70" width="24" height="22" fill={w} stroke={t} stroke-width="2" />
+  <rect x="150" y="12" width="20" height="20" rx="4" fill={t} /><rect x="158" y="16" width="4" height="12" fill="#fff" /><rect x="154" y="20" width="12" height="4" fill="#fff" /></svg>

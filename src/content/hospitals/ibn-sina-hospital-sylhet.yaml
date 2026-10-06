@@ -1,0 +1,17 @@
+# Real: name, address, ISO certificate (on the hospital banner), serial number.
+# Still to collect: emergency and ambulance numbers, beds, ICU, facilities, test fees, visiting hours.
+name: ইবনে সিনা হাসপাতাল সিলেট লিঃ
+name_en: Ibn Sina Hospital Sylhet Ltd.
+short: ইবনে সিনা হাসপাতাল
+type: বেসরকারি
+city: sylhet
+address: সোবহানীঘাট পয়েন্ট, সিলেট
+map: https://maps.google.com/?q=Ibn+Sina+Hospital+Sylhet
+certification: ISO 9001:2015
+verified: 2026-09-25
+
+numbers:
+  - label: ডাক্তারের সিরিয়াল
+    number: "09610009640"
+    note: সকাল ৮টা থেকে
+    kind: serial

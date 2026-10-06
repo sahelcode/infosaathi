@@ -1,0 +1,24 @@
+---
+// Simple list page frame: breadcrumb, heading, intro, chips, then the list in the default slot.
+import Base from '../layouts/Base.astro';
+import { SITE } from '../lib/site';
+import '../styles/hospital.css';
+interface Props { title: string; h1: string; intro: string; path: string; crumbs: string[][]; chips?: { href: string; label: string; n?: string }[] }
+const { title, h1, intro, path, crumbs, chips = [] } = Astro.props;
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [...crumbs, [h1, path]].map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + u })),
+};
+---
+<Base title={title} description={intro} path={path} jsonld={jsonld}>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, u]) => (<><a href={u}>{n}</a><span>›</span></>))}<a href={path}>{h1}</a></nav>
+    <h1 class="pf-list-h">{h1}</h1>
+    <p class="pf-list-intro">{intro}</p>
+    {chips.length > 0 && <nav class="pf-list-chips">{chips.map((c) => <a href={c.href}>{c.label}{c.n && <span>{c.n}</span>}</a>)}</nav>}
+    <div class="pf-minis">
+      <slot />
+    </div>
+  </main>
+</Base>

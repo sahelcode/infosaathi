@@ -1,0 +1,63 @@
+---
+// The frame every page shares: <head>, navbar, footer, share sheet, toast and the common scripts.
+import nav from '../partials/nav.html?raw';
+import footer from '../partials/footer.html?raw';
+import ShareSheet from '../components/ShareSheet.astro';
+import { SITE } from '../lib/site';
+import '../styles/shared.css';
+import '../styles/profile.css';
+import '../styles/profile2.css';
+import '../styles/site.css';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string; // e.g. /doctor/sylhet/prof-dr-jahanara-begum/
+  ogType?: string;
+  ogImage?: string; // absolute or site-relative URL
+  jsonld?: object;
+  draft?: boolean;
+}
+const { title, description, path, ogType = 'website', ogImage, jsonld, draft = false } = Astro.props;
+const url = SITE + path;
+const image = ogImage ? new URL(ogImage, SITE).href : undefined;
+---
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+    {draft && <meta name="robots" content="noindex" />}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={url} />
+    {image && <meta property="og:image" content={image} />}
+    <meta property="og:locale" content="bn_BD" />
+    <meta name="theme-color" content="#16A34A" />
+    <link rel="icon" href="/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+  </head>
+  <body>
+    <Fragment set:html={nav} />
+    {draft && <div class="draft-bar">খসড়া · এই পেজ লাইভ সাইটে যাবে না, যতক্ষণ draft: true থাকবে</div>}
+    <slot />
+    <ShareSheet />
+    <div class="pf-toast" role="status" aria-live="polite" hidden></div>
+    <Fragment set:html={footer} />
+    <script>
+      import '../scripts/menu.js';
+      import '../scripts/profile.js';
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  .draft-bar{padding:8px 16px;background:#f59e0b;color:#fff;font-size:13px;font-weight:700;text-align:center;}
+</style>

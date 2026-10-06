@@ -1,0 +1,41 @@
+<nav class="navbar" id="siteNav">
+    <a href="/" class="brand-logo" aria-label="InfoSaathi home">
+        <img src="/logo.png" alt="InfoSaathi Logo" width="28" height="37">
+        <span>InfoSaathi</span>
+    </a>
+    <div class="nav-links-d" aria-label="প্রধান মেনু">
+        <a href="/doctors/">ডাক্তার</a><a href="/hospitals/">হাসপাতাল</a><a href="/universities/">বিশ্ববিদ্যালয়</a><a href="/colleges/">কলেজ</a><a href="/places/">দর্শনীয় স্থান</a><a href="/hotels/">হোটেল</a>
+    </div>
+    <div class="nav-right-group">
+        <button class="nav-btn" type="button">সহযোগিতা</button>
+        <button class="hamburger-btn" id="menuBtn" type="button" aria-label="মেনু" aria-expanded="false" aria-controls="drawer">
+            <span class="hb"><i></i><i></i><i></i></span>
+        </button>
+    </div>
+</nav>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="মেনু">
+    <div class="dr-head dr-anim" style="--i:0"><b>মেনু</b><span>কী খুঁজছেন আজ?</span></div>
+    <div class="dr-label dr-anim" style="--i:1">ক্যাটাগরি</div>
+    <nav class="dr-grid" aria-label="ক্যাটাগরি">
+      <a href="/doctors/" class="dr-tile dr-anim" style="--i:0"><span class="dr-icn c1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v4a3 3 0 0 0 6 0V3"/><path d="M12 14v7M9 21h6"/><circle cx="12" cy="14" r="4"/><path d="M9 5H7a2 2 0 0 0-2 2v3a5 5 0 0 0 5 5"/></svg></span><span>ডাক্তার</span></a>
+      <a href="/hospitals/" class="dr-tile dr-anim" style="--i:1"><span class="dr-icn c2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="13" rx="1.5"/><path d="M9 8V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3"/><path d="M12 12v5M9.5 14.5h5"/></svg></span><span>হাসপাতাল</span></a>
+      <a href="/universities/" class="dr-tile dr-anim" style="--i:2"><span class="dr-icn c3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span><span>বিশ্ববিদ্যালয়</span></a>
+      <a href="/colleges/" class="dr-tile dr-anim" style="--i:3"><span class="dr-icn c4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-5h6v5"/><circle cx="12" cy="10" r="1.5"/></svg></span><span>কলেজ</span></a>
+      <a href="/schools/" class="dr-tile dr-anim" style="--i:4"><span class="dr-icn c5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V9l8-4 8 4v10"/><path d="M9 19v-6h6v6"/></svg></span><span>স্কুল</span></a>
+      <a href="/places/" class="dr-tile dr-anim" style="--i:5"><span class="dr-icn c6"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span>দর্শনীয় স্থান</span></a>
+      <a href="/hotels/" class="dr-tile dr-anim" style="--i:6"><span class="dr-icn c7"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V6a1 1 0 0 1 1-1h8v16"/><path d="M12 10h8a1 1 0 0 1 1 1v10"/><path d="M7 9v.01M7 12v.01M7 15v.01M16 14v.01M16 17v.01"/></svg></span><span>হোটেল</span></a>
+      <a href="/blood/" class="dr-tile dr-anim" style="--i:7"><span class="dr-icn c8"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s7 7.5 7 12a7 7 0 0 1-14 0c0-4.5 7-12 7-12Z"/><path d="M9.5 14.5h5M12 12v5"/></svg></span><span>রক্তদান</span></a>
+    </nav>
+    <div class="dr-label dr-anim" style="--i:12">আরও</div>
+    <nav class="dr-list" aria-label="আরও">
+      <a href="/rankings/" class="dr-row dr-anim" style="--i:8"><span class="dr-row-icn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V10M12 21V3M20 21v-7"/></svg></span><span class="dr-row-txt">র‍্যাঙ্কিং</span><svg class="dr-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="/admission/" class="dr-row dr-anim" style="--i:9"><span class="dr-row-icn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M6 10v5c1.5 1.7 4 2.5 6 2.5s4.5-.8 6-2.5v-5"/></svg></span><span class="dr-row-txt">ভর্তি ও ফলাফল</span><svg class="dr-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="/jobs/" class="dr-row dr-anim" style="--i:10"><span class="dr-row-icn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></span><span class="dr-row-txt">চাকরি</span><svg class="dr-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="/news/" class="dr-row dr-anim" style="--i:11"><span class="dr-row-icn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="16" rx="1.5"/><path d="M17 8h4v10a2 2 0 0 1-2 2h-2"/><path d="M6.5 8h7M6.5 11h7M6.5 14h4"/></svg></span><span class="dr-row-txt">খবর</span><svg class="dr-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    </nav>
+    <div class="dr-foot dr-anim" style="--i:13">
+      <button class="dr-cta" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.6a4.6 4.6 0 0 0-7.8-3.3L12 6.3l-1-1a4.6 4.6 0 1 0-6.5 6.5l7.5 7.5 7.5-7.5c.9-.9 1.3-1.9 1.3-3.2Z"/></svg>সহযোগিতা করুন</button>
+      <p>তথ্য ভুল দেখলে বা নতুন তথ্য দিতে যোগাযোগ করুন</p>
+    </div>
+</aside>

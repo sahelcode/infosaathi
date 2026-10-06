@@ -1,0 +1,13 @@
+---
+// One ad place. Published site: nothing until ADSENSE_CLIENT is set. Preview: a grey placeholder.
+import { ADSENSE_CLIENT, SHOW_DRAFTS } from '../lib/site';
+interface Props { side?: boolean }
+const { side = false } = Astro.props;
+---
+{ADSENSE_CLIENT ? (
+  <div class:list={['ad-slot', { side }]} aria-label="বিজ্ঞাপন">
+    <ins class="adsbygoogle" style="display:block" data-ad-client={ADSENSE_CLIENT} data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+) : SHOW_DRAFTS ? (
+  <div class:list={['ad-slot', { side }]} aria-label="বিজ্ঞাপন"><span>{side ? 'বিজ্ঞাপন · ৩০০×২৫০' : 'বিজ্ঞাপন'}</span></div>
+) : null}

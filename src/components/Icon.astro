@@ -1,0 +1,9 @@
+---
+// A line icon from src/lib/icons.ts: <Icon name="phone" size={17} />
+import { ICONS, FAC_ICONS, type IconName } from '../lib/icons';
+interface Props { name?: IconName; facility?: string; size?: number; w?: number }
+const { name, facility, size = 18, w = 2 } = Astro.props;
+const path = facility ? FAC_ICONS[facility] ?? ICONS.check : ICONS[name!];
+---
+<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={w}
+  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={path} />

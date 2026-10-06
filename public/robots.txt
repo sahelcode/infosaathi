@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://infosaathi.com/sitemap-index.xml

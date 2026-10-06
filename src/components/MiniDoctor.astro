@@ -1,0 +1,16 @@
+---
+// Small doctor card used in lists.
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import Avatar from './Avatar.astro';
+import { SPECIALTIES } from '../lib/taxonomy';
+import { doctorUrl, type Doctor } from '../lib/data';
+interface Props { doctor: Doctor; place: string; cls?: string; clock?: boolean }
+const { doctor: d, place, cls = '', clock = false } = Astro.props;
+---
+<a class={`pf-mini ${cls}`} href={doctorUrl(d)} data-sp={d.data.specialty}>
+  <span class="pf-mini-av">{d.data.photo ? <Image src={d.data.photo} alt="" width={52} height={52} /> : <Avatar seed={d.data.name} />}</span>
+  <span class="pf-mini-txt"><b>{d.data.name}</b><span class="pf-mini-sp">{SPECIALTIES[d.data.specialty].bn}</span>
+    <span class="pf-mini-h">{clock ? <Icon name="clock" size={12} w={2.2} /> : <Icon name="pin" size={12} />}{place}</span></span>
+  <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span>
+</a>

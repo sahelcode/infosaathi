@@ -1,0 +1,25 @@
+# Source: Ibn Sina Hospital Sylhet chamber card (banner), September 2026.
+name: অধ্যাপক ডা. জাহানারা বেগম
+name_en: Prof. Dr. Jahanara Begum
+specialty: gynecology
+title: প্রসূতি ও স্ত্রীরোগ বিশেষজ্ঞ ও সার্জন
+degrees: [MBBS, BCS (স্বাস্থ্য), MCPS, DGO, MS (Obs & Gynae)]
+designation: অধ্যাপক (অবসরপ্রাপ্ত), সিলেট এম এ জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল
+bmdc: A-11676
+city: sylhet
+photo: ./images/prof-dr-jahanara-begum.webp
+banner: ./images/prof-dr-jahanara-begum-banner.webp
+banner_month: 2026-09-01
+verified: 2026-09-25
+treats: [গর্ভকালীন ও প্রসব-পরবর্তী সেবা, ঝুঁকিপূর্ণ গর্ভাবস্থা, সিজারিয়ান অপারেশন, বন্ধ্যাত্ব পরামর্শ, PCOS, অনিয়মিত মাসিক, মেনোপজ]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: রুম নং ৩২৫ (৩য় তলা)
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "12:00"
+    end: "14:00"
+    serials:
+      - label: হাসপাতালের সিরিয়াল
+        number: "09610009640"
+        note: সকাল ৮টা থেকে

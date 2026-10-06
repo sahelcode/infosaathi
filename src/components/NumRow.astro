@@ -1,0 +1,13 @@
+---
+// One phone number: label, number, copy button, call button.
+import Icon from './Icon.astro';
+import { phoneShow } from '../lib/format';
+interface Props { label: string; number: string; note?: string; er?: boolean }
+const { label, number, note, er = false } = Astro.props;
+const show = phoneShow(number);
+---
+<div class:list={['pf-num', { er }]}>
+  <span class="pf-num-t"><small class="pf-num-l">{label}</small><b>{show}</b>{note && <small>{note}</small>}</span>
+  <button class="pf-copy" type="button" data-copy-num={number} aria-label="নম্বর কপি করুন"><Icon name="copy" size={17} w={1.9} /></button>
+  <a class="pf-call" href={`tel:${number}`} aria-label={`${show} নম্বরে কল`}><Icon name="phone" size={17} /></a>
+</div>

@@ -1,0 +1,11 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import { getHospitals } from '../../lib/data';
+import { CITIES } from '../../lib/taxonomy';
+import { bn } from '../../lib/format';
+const hospitals = await getHospitals();
+const cities = [...new Set(hospitals.map((h) => h.data.city))];
+---
+<ListPage title="হাসপাতালের তালিকা, ডাক্তার ও নম্বর | InfoSaathi" h1="হাসপাতাল" path="/hospitals/" crumbs={[['হোম', '/']]}
+  intro="শহর বেছে নিন। প্রতিটি হাসপাতালের ডাক্তার, যোগাযোগের নম্বর ও সুবিধা।"
+  chips={cities.map((c) => ({ href: `/hospitals/${c}/`, label: CITIES[c].bn, n: bn(hospitals.filter((h) => h.data.city === c).length) }))} />

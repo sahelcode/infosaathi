@@ -1,0 +1,22 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getHospitals, hospitalUrl, type Hospital } from '../../lib/data';
+import { CITIES, type City } from '../../lib/taxonomy';
+import { bn } from '../../lib/format';
+
+export async function getStaticPaths() {
+  const hospitals = await getHospitals();
+  return [...new Set(hospitals.map((h) => h.data.city))].map((city) => ({ params: { city }, props: { city, hospitals: hospitals.filter((h) => h.data.city === city) } }));
+}
+const { city, hospitals } = Astro.props as { city: City; hospitals: Hospital[] };
+const c = CITIES[city];
+---
+<ListPage title={`${c.of} হাসপাতালের তালিকা | InfoSaathi`} h1={`${c.of} হাসপাতাল`} path={`/hospitals/${city}/`}
+  crumbs={[['হোম', '/'], ['হাসপাতাল', '/hospitals/']]} intro={`${c.of} ${bn(hospitals.length)}টি হাসপাতালের ডাক্তার, নম্বর ও সুবিধা।`}>
+  {hospitals.map((h) => (
+    <a class="pf-mini" href={hospitalUrl(h)}><span class="hp-near-i"><Icon name="build" size={20} w={1.8} /></span>
+      <span class="pf-mini-txt"><b>{h.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{h.data.address}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>

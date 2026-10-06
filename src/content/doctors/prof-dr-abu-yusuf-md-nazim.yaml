@@ -1,0 +1,17 @@
+# DRAFT: designation and chamber time still need a phone check before publishing.
+draft: true
+name: প্রফেসর ডা. আবু ইউসুফ মো. নাজিম
+name_en: Prof. Dr. Abu Yusuf Md. Nazim
+specialty: hematology
+degrees: [MBBS, FCPS (Medicine)]
+city: sylhet
+verified: 2026-09-25
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "16:00"     # check
+    end: "20:00"       # check
+    serials:
+      - label: হাসপাতালের সিরিয়াল
+        number: "09610009640"

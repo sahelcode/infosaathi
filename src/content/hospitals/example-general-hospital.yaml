@@ -1,0 +1,38 @@
+# EXAMPLE ONLY: shows every field the hospital page can use. It stays a draft, so it is never published.
+# Delete this file once real hospitals are in.
+draft: true
+name: নমুনা জেনারেল হাসপাতাল
+name_en: Example General Hospital
+type: বেসরকারি
+city: sylhet
+address: জিন্দাবাজার, সিলেট
+emergency_24h: true
+visiting_hours: বিকাল ৪টা – সন্ধ্যা ৭টা
+beds: 250
+icu_beds: 20
+verified: 2026-10-05
+
+numbers:
+  - label: জরুরি বিভাগ
+    number: "01700000001"
+    note: ২৪ ঘণ্টা
+    kind: emergency
+  - label: ডাক্তারের সিরিয়াল
+    number: "01700000002"
+    note: সকাল ৮টা থেকে
+    kind: serial
+  - label: অ্যাম্বুলেন্স
+    number: "01700000003"
+    kind: ambulance
+
+facilities: [er, icu, ccu, nicu, dialysis, ot, lab, pharmacy, ambulance, lift, canteen]
+
+tests_updated: 2026-09-01
+tests:
+  - { group: lab, name: CBC (রক্তের পূর্ণাঙ্গ পরীক্ষা), name_en: Complete Blood Count, price: 400 }
+  - { group: lab, name: ব্লাড সুগার (খালি পেটে), name_en: Fasting Blood Sugar, price: 150 }
+  - { group: lab, name: লিপিড প্রোফাইল, name_en: Lipid Profile, price: 1000 }
+  - { group: imaging, name: বুকের এক্স-রে, name_en: X-Ray Chest P/A, price: 500 }
+  - { group: imaging, name: আল্ট্রাসনোগ্রাম (পুরো পেট), name_en: USG Whole Abdomen, price: 1500 }
+  - { group: heart, name: ইসিজি, name_en: ECG, price: 400 }
+  - { group: heart, name: ইকোকার্ডিওগ্রাম, name_en: Echocardiogram, price: 2500 }

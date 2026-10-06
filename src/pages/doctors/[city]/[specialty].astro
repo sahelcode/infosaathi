@@ -1,0 +1,23 @@
+---
+import ListPage from '../../../components/ListPage.astro';
+import MiniDoctor from '../../../components/MiniDoctor.astro';
+import { getDoctors, type Doctor } from '../../../lib/data';
+import { CITIES, SPECIALTIES, type City, type Specialty } from '../../../lib/taxonomy';
+import { bn } from '../../../lib/format';
+
+export async function getStaticPaths() {
+  const doctors = await getDoctors();
+  const pairs = new Set(doctors.map((d) => `${d.data.city}/${d.data.specialty}`));
+  return [...pairs].map((p) => {
+    const [city, specialty] = p.split('/');
+    return { params: { city, specialty }, props: { city, specialty, doctors: doctors.filter((d) => d.data.city === city && d.data.specialty === specialty) } };
+  });
+}
+const { city, specialty, doctors } = Astro.props as { city: City; specialty: Specialty; doctors: Doctor[] };
+const c = CITIES[city], sp = SPECIALTIES[specialty];
+---
+<ListPage title={`${c.in} ${sp.bn} ডাক্তারের তালিকা (${sp.en} in ${c.en}) | InfoSaathi`} h1={`${c.in} ${sp.bn}`} path={`/doctors/${city}/${specialty}/`}
+  crumbs={[['হোম', '/'], ['ডাক্তার', '/doctors/'], [c.bn, `/doctors/${city}/`]]}
+  intro={`${c.in} ${bn(doctors.length)} জন ${sp.bn} ডাক্তারের চেম্বার, রোগী দেখার সময় ও সিরিয়াল নম্বর।`}>
+  {doctors.map((d) => <MiniDoctor doctor={d} place={c.bn} />)}
+</ListPage>

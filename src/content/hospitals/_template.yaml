@@ -1,0 +1,33 @@
+# ===== নতুন হাসপাতাল যোগ করার নমুনা =====
+# ফাইলের নাম ইংরেজিতে, যেমন: osmani-medical-college-hospital.yaml। এই নামটাই ডাক্তারের ফাইলে hospital: হিসেবে লিখবেন।
+# যাচাই না হওয়া পর্যন্ত draft: true রাখুন।
+
+draft: true
+name: সিলেট এম এ জি ওসমানী মেডিকেল কলেজ হাসপাতাল
+name_en: Sylhet MAG Osmani Medical College Hospital
+short: ওসমানী হাসপাতাল                 # ঐচ্ছিক: ছোট নাম
+type: সরকারি                          # সরকারি অথবা বেসরকারি
+city: sylhet
+address: মেডিকেল রোড, কাজলশাহ, সিলেট
+# map: https://maps.google.com/?q=...   # ঐচ্ছিক, না দিলে নাম দিয়ে নিজে তৈরি হয়
+# photo: ./images/osmani.webp           # ঐচ্ছিক: হাসপাতালের নিজের ছবি
+# certification: ISO 9001:2015          # ঐচ্ছিক
+emergency_24h: true                    # ২৪ ঘণ্টা জরুরি বিভাগ থাকলে true
+visiting_hours: বিকাল ৪টা – সন্ধ্যা ৭টা   # ঐচ্ছিক
+beds: 900                              # ঐচ্ছিক
+icu_beds: 20                           # ঐচ্ছিক
+verified: 2026-10-05
+
+numbers:                               # kind: emergency (জরুরি), serial (সিরিয়াল), ambulance, other
+  - label: জরুরি বিভাগ
+    number: "01700000000"
+    kind: emergency
+  - label: তথ্যকেন্দ্র
+    number: "0821000000"
+    note: সকাল ৮টা – রাত ৮টা
+
+facilities: [er, icu, ccu, dialysis, ot, pharmacy, ambulance]   # তালিকা: src/lib/taxonomy.ts
+
+# tests_updated: 2026-09-01            # ঐচ্ছিক: পরীক্ষার ফি যেদিনের
+# tests:                               # group: lab, imaging, heart, other
+#   - { group: lab, name: CBC, name_en: Complete Blood Count, price: 400 }

@@ -1,0 +1,23 @@
+---
+import Icon from './Icon.astro';
+const apps = [
+  ['wa', '#25d366', 'wa', 'WhatsApp', true], ['fb', '#1877f2', 'fb', 'Facebook', true],
+  ['ms', 'linear-gradient(135deg,#00b2ff,#a033ff)', 'msg', 'Messenger', true], ['tg', '#229ed9', 'tg', 'Telegram', true],
+  ['x', '#0f1419', 'xi', 'X', true], ['sms', '#16a34a', 'sms', 'SMS', false], ['mail', '#64748b', 'mail', 'ইমেইল', false],
+] as const;
+---
+<div class="pf-sheet" data-sheet="share" hidden>
+  <div class="pf-sheet-bg" data-sheet-close></div>
+  <div class="pf-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="share-h">
+    <div class="pf-sheet-grip"></div>
+    <div class="pf-sheet-top"><b id="share-h">শেয়ার করুন</b><button class="pf-sheet-x" type="button" data-sheet-close aria-label="বন্ধ করুন"><Icon name="x" w={2.4} /></button></div>
+    <div class="pf-apps">
+      {apps.map(([to, bg, icon, label, blank]) => (
+        <a class="pf-app" data-to={to} href="#" target={blank ? '_blank' : undefined} rel={blank ? 'noopener' : undefined}>
+          <span style={`background:${bg}`}><Icon name={icon} size={icon === 'xi' ? 20 : 22} w={icon === 'xi' ? 2 : 1.8} /></span>{label}
+        </a>
+      ))}
+    </div>
+    <div class="pf-linkbox"><span data-share-url></span><button class="pf-btn primary sm" type="button" data-copy><Icon name="copy" size={16} />কপি</button></div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+---
+import Icon from './Icon.astro';
+interface Props { items: { q: string; a: string }[] }
+const { items } = Astro.props;
+---
+<section class="pf-card" aria-labelledby="h-faq">
+  <h2 id="h-faq">সাধারণ প্রশ্ন</h2>
+  {items.map((f) => (
+    <details class="pf-faq"><summary>{f.q}<span class="pf-faq-i"><Icon name="down" size={18} w={2.2} /></span></summary><p>{f.a}</p></details>
+  ))}
+</section>

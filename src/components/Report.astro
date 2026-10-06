@@ -1,0 +1,18 @@
+---
+// "Wrong information? Tell us" box. The form has no backend yet; it thanks the visitor.
+import Icon from './Icon.astro';
+interface Props { placeholder: string; note: string }
+const { placeholder, note } = Astro.props;
+---
+<section class="pf-card pf-trust" aria-label="তথ্য সংশোধন">
+  <details class="pf-report">
+    <summary><span class="pf-trust-icn"><Icon name="flag" /></span><span><b>তথ্য ভুল? জানান</b><small>৪৮ ঘণ্টার মধ্যে যাচাই করে ঠিক করা হয়</small></span></summary>
+    <form class="pf-form" data-report>
+      <label>কী ভুল আছে?<textarea rows="3" required placeholder={placeholder}></textarea></label>
+      <label>আপনার ফোন (ঐচ্ছিক)<input type="tel" inputmode="tel" placeholder="01XXXXXXXXX" /></label>
+      <button class="pf-btn primary" type="submit">পাঠান</button>
+    </form>
+  </details>
+  <slot />
+  <p class="pf-note">{note}</p>
+</section>

@@ -1,0 +1,280 @@
+---
+// Doctor profile. Everything on this page comes from one file in src/content/doctors/.
+import { getCollection } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import Avatar from '../../../components/Avatar.astro';
+import NumRow from '../../../components/NumRow.astro';
+import Faq from '../../../components/Faq.astro';
+import Report from '../../../components/Report.astro';
+import ShareRow from '../../../components/ShareRow.astro';
+import Ad from '../../../components/Ad.astro';
+import MiniDoctor from '../../../components/MiniDoctor.astro';
+import { getDoctors, getHospitals, doctorUrl, hospitalUrl, doctorsAt, type Doctor } from '../../../lib/data';
+import { CITIES, SPECIALTIES } from '../../../lib/taxonomy';
+import { DAYS, DAY_JS, DAY_SHORT, bn, taka, phoneShow, phoneIntl, daysText, daysSchema, timeRange, bnDate, bnMonth, isoDay } from '../../../lib/format';
+import { SITE } from '../../../lib/site';
+
+export async function getStaticPaths() {
+  const doctors = await getDoctors();
+  return doctors.map((d) => ({ params: { city: d.data.city, slug: d.id }, props: { doctor: d } }));
+}
+
+const { doctor } = Astro.props as { doctor: Doctor };
+const d = doctor.data;
+const city = CITIES[d.city];
+const sp = SPECIALTIES[d.specialty];
+const spTitle = d.title ?? sp.bn;
+const path = doctorUrl(doctor);
+
+const doctors = await getDoctors();
+const visibleHospitals = await getHospitals();
+const allHospitals = new Map((await getCollection('hospitals')).map((h) => [h.id, h]));
+const linkable = new Set(visibleHospitals.map((h) => h.id));
+
+// Each chamber with its place name, address, link and map resolved from the hospital file when there is one.
+const chambers = d.chambers.map((c, i) => {
+  const h = c.hospital ? allHospitals.get(c.hospital.id) : undefined;
+  const name = c.name ?? h!.data.name;
+  const address = c.address ?? h!.data.address;
+  const href = h && linkable.has(h.id) ? hospitalUrl(h) : undefined;
+  const map = c.map ?? h?.data.map ?? `https://maps.google.com/?q=${encodeURIComponent(name + ', ' + address)}`;
+  return { ...c, i, key: `ch${i + 1}`, h, name, address, href, map, timeText: timeRange(c.start, c.end), daysTxt: daysText(c.days) };
+});
+const first = chambers[0];
+const firstSerial = first.serials[0];
+
+// ---- text written from the data ----
+const workDays = new Set(chambers.flatMap((c) => c.days));
+const offDays = DAYS.filter((x) => !workDays.has(x));
+const placeLine = (c: (typeof chambers)[number]) => `${c.name}-এ ${c.daysTxt} ${c.timeText}`;
+const about =
+  d.about ??
+  `${d.name} ${city.of} একজন ${spTitle}।${d.designation ? ` ${d.designation}।` : ''} বর্তমানে ${chambers.map((c) => c.name).join(' ও ')}-এ রোগী দেখেন।`;
+
+const feeText = (f: NonNullable<(typeof chambers)[number]['fee']>) =>
+  [f.new && `নতুন রোগী ${taka(f.new)}`, f.old && `পুরনো রোগী ${taka(f.old)}`, f.report && `রিপোর্ট দেখাতে ${taka(f.report)}`].filter(Boolean).join(', ');
+const feeChamber = chambers.find((c) => c.fee);
+
+const faq = [
+  {
+    q: `${d.name}-এর সিরিয়াল কীভাবে নেব?`,
+    a: `${first.name}-এর জন্য ${phoneShow(firstSerial.number)} নম্বরে ${firstSerial.note ? firstSerial.note + ' ' : ''}কল করে সিরিয়াল নিন।` +
+      (chambers.length > 1 ? ' প্রতিটা চেম্বারের নম্বর ওপরের চেম্বার অংশে আলাদা দেওয়া আছে।' : ''),
+  },
+  {
+    q: `${d.name} কোন দিন রোগী দেখেন?`,
+    a: chambers.map(placeLine).join('। ') + '।' + (offDays.length ? ` ${offDays.map((x) => x + 'বার').join(', ')} বন্ধ।` : ''),
+  },
+  { q: `${d.name}-এর চেম্বার কোথায়?`, a: chambers.map((c) => `${c.name}: ${c.address}${c.room ? ', ' + c.room : ''}`).join('। ') + '।' },
+  ...(feeChamber ? [{ q: `${d.name}-এর ভিজিট ফি কত?`, a: `${feeChamber.name}-এ ${feeText(feeChamber.fee!)}।` }] : []),
+  ...d.faq,
+];
+
+// ---- related lists ----
+const others = doctors.filter((x) => x.id !== doctor.id);
+const sameSp = others.filter((x) => x.data.specialty === d.specialty && x.data.city === d.city).slice(0, 3);
+const mainHosp = chambers.find((c) => c.href)?.h;
+const sameHosp = mainHosp ? doctorsAt(others, mainHosp.id).slice(0, 3) : [];
+const usedHosp = new Set(chambers.map((c) => c.h?.id));
+const nearHosp = visibleHospitals.filter((h) => h.data.city === d.city && !usedHosp.has(h.id)).slice(0, 3);
+const placeOf = (x: Doctor) => {
+  const c = x.data.chambers[0];
+  const n = c.name ?? allHospitals.get(c.hospital!.id)?.data.short ?? allHospitals.get(c.hospital!.id)?.data.name;
+  return `${n}, ${CITIES[x.data.city].bn}`;
+};
+
+// ---- search engines ----
+const photo = d.photo ? await getImage({ src: d.photo, width: 400, height: 400, format: 'webp' }) : undefined;
+const banner = d.banner ? await getImage({ src: d.banner, width: 1000, format: 'webp' }) : undefined;
+const title = `${d.name} (${d.name_en}) – ${sp.bn}, ${city.bn} | সিরিয়াল নম্বর`;
+const description = `${d.name} (${d.name_en}), ${spTitle}, ${city.bn}। চেম্বার: ${first.name}, ${first.address}। সিরিয়াল: ${phoneShow(firstSerial.number)}।`;
+const crumbs = [
+  ['হোম', '/'],
+  ['ডাক্তার', '/doctors/'],
+  [city.bn, `/doctors/${d.city}/`],
+  [sp.bn, `/doctors/${d.city}/${d.specialty}/`],
+];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Physician',
+      name: d.name_en,
+      alternateName: [d.name],
+      url: SITE + path,
+      medicalSpecialty: sp.schema,
+      ...(photo && { image: new URL(photo.src, SITE).href }),
+      telephone: phoneIntl(firstSerial.number),
+      address: { '@type': 'PostalAddress', streetAddress: first.address, addressLocality: city.en, addressCountry: 'BD' },
+      hospitalAffiliation: chambers.filter((c) => c.h).map((c) => ({ '@type': 'Hospital', name: c.h!.data.name_en })),
+      openingHours: chambers.map((c) => `${daysSchema(c.days)} ${c.start}-${c.end}`),
+    },
+    { '@type': 'BreadcrumbList', itemListElement: crumbs.map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + u })) },
+    { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  ],
+};
+---
+<Base title={title} description={description} path={path} ogType="profile" ogImage={banner?.src ?? photo?.src} jsonld={jsonld} draft={d.draft}>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">
+      {crumbs.map(([n, u], i) => (<>{i > 0 && <span>›</span>}<a href={u}>{n}</a></>))}
+    </nav>
+
+    <div class="pf-grid">
+      <article class="pf-main">
+        <section class="pf-hero">
+          <div class="pf-hero-band"></div>
+          <div class="pf-hero-body">
+            <div class="pf-av">{d.photo ? <Image src={d.photo} alt={d.name} width={128} height={128} loading="eager" fetchpriority="high" /> : <Avatar seed={d.name} size={128} />}</div>
+            <h1 class="pf-name">{d.name}</h1>
+            <p class="pf-en">{d.name_en} · {sp.en}</p>
+            <p class="pf-sp">{spTitle}</p>
+            <p class="pf-deg">{d.degrees.join(', ')}</p>
+            {d.designation && <p class="pf-post">{d.designation}</p>}
+            <div class="pf-badges">
+              {d.bmdc && <span class="pf-badge ok"><Icon name="check" size={13} w={3} />BMDC {d.bmdc}</span>}
+              <span class="pf-badge"><Icon name="clock" size={13} w={2.2} />শেষ যাচাই: {bnDate(d.verified)}</span>
+            </div>
+          </div>
+          <div class="pf-actions">
+            <button class="pf-btn primary" type="button" data-sheet-open="numbers"><Icon name="phone" />সিরিয়াল নম্বর</button>
+            <a class="pf-btn" href="#chambers"><Icon name="pin" />চেম্বার</a>
+            <button class="pf-btn" type="button" data-share><Icon name="share" />শেয়ার</button>
+          </div>
+        </section>
+
+        {d.notice && (
+          <div class="pf-notice" data-from={isoDay(d.notice.from)} data-until={isoDay(d.notice.to)}>
+            <span class="pf-notice-i"><Icon name="bell" /></span>
+            <p><b>নোটিশ</b>{d.notice.text}</p>
+          </div>
+        )}
+
+        <section class="pf-card pf-todaycard" aria-labelledby="h-today">
+          <div class="pf-card-head"><h2 id="h-today"><Icon name="cal" />আজ <span data-today-name></span></h2><span class="pf-today" data-today hidden></span></div>
+          <div class="pf-today-list" data-today-list></div>
+        </section>
+
+        <section class="pf-card" id="chambers" aria-labelledby="h-chamber">
+          <div class="pf-card-head"><h2 id="h-chamber">চেম্বার ও সিরিয়াল</h2><span class="pf-count">{bn(chambers.length)}টি চেম্বার</span></div>
+          {chambers.map((c) => (
+            <div class="pf-chamber" id={c.key} data-chamber={c.key} data-days={c.days.map((x) => DAY_JS[x]).join(',')} data-start={c.start} data-end={c.end}>
+              <a class="pf-ch-hosp" href={c.href ?? c.map} target={c.href ? undefined : '_blank'} rel={c.href ? undefined : 'noopener'}>
+                <span class="pf-ch-no">{bn(c.i + 1)}</span>
+                <span class="pf-ch-txt"><b>{c.name}</b><span class="pf-ch-addr">{c.address}{c.room && ` · ${c.room}`}</span></span>
+                <span class="pf-ch-go"><Icon name="chev" size={16} w={2.4} /></span>
+              </a>
+              <div class="pf-row"><span class="pf-k">রোগী দেখার দিন</span>
+                <div class="pf-days">{DAYS.map((x) => <span class:list={['pf-day', { on: c.days.includes(x) }]} data-d={DAY_JS[x]}>{DAY_SHORT[x]}</span>)}</div>
+              </div>
+              <div class="pf-row"><span class="pf-k">সময়</span><span class="pf-v"><Icon name="clock" size={16} w={2.2} />{c.timeText}<span class="pf-live" data-live hidden></span></span></div>
+              {c.fee && (
+                <div class="pf-row"><span class="pf-k">ভিজিট ফি</span>
+                  <div class="pf-fees">
+                    {c.fee.new && <span><small>নতুন</small><b>{taka(c.fee.new)}</b></span>}
+                    {c.fee.old && <span><small>পুরনো</small><b>{taka(c.fee.old)}</b></span>}
+                    {c.fee.report && <span><small>রিপোর্ট</small><b>{taka(c.fee.report)}</b></span>}
+                  </div>
+                </div>
+              )}
+              <div class="pf-nums">{c.serials.map((s) => <NumRow label={s.label} number={s.number} note={s.note} />)}</div>
+              <a class="pf-maplink" href={c.map} target="_blank" rel="noopener"><Icon name="pin" size={16} />ম্যাপে দেখুন</a>
+            </div>
+          ))}
+        </section>
+
+        <Ad />
+
+        {d.banner && (
+          <section class="pf-card pf-bannercard" aria-labelledby="h-banner">
+            <div class="pf-card-head"><h2 id="h-banner">হাসপাতালের চেম্বার কার্ড</h2>{d.banner_month && <span class="pf-count">{bnMonth(d.banner_month)}</span>}</div>
+            <button class="pf-banner" type="button" data-zoom aria-label="চেম্বার কার্ড বড় করে দেখুন">
+              <Image src={d.banner} width={1000} alt={`${d.name} – ${spTitle}, ${first.name}, রোগী দেখার সময় ${first.timeText}, সিরিয়াল ${phoneShow(firstSerial.number)}`} />
+              <span class="pf-banner-z"><Icon name="zoom" size={16} w={2.2} />বড় করে দেখুন</span>
+            </button>
+            <p class="pf-banner-note">হাসপাতাল থেকে পাওয়া কার্ড। ওপরের তথ্য আমরা ফোন করে আলাদা করে যাচাই করি।</p>
+          </section>
+        )}
+
+        <section class="pf-card" aria-labelledby="h-about">
+          <h2 id="h-about">পরিচিতি</h2>
+          <p class="pf-text">{about}</p>
+          {d.treats.length > 0 && (<><h3 class="pf-h3">যে রোগের চিকিৎসা করেন</h3><div class="pf-chips">{d.treats.map((t) => <span>{t}</span>)}</div></>)}
+          <h3 class="pf-h3">শিক্ষাগত যোগ্যতা</h3>
+          <div class="pf-chips quiet">{d.degrees.map((t) => <span>{t}</span>)}</div>
+        </section>
+
+        <Faq items={faq} />
+
+        <Report placeholder="যেমন: চেম্বারের সময় বদলেছে" note="তথ্য পরিবর্তন হতে পারে। চেম্বারে যাওয়ার আগে ফোন করে নিশ্চিত হয়ে নিন।" />
+
+        <ShareRow />
+
+        <nav class="pf-tags" aria-label="সম্পর্কিত">
+          <a href={`/doctors/${d.city}/${d.specialty}/`}>{city.in} {sp.bn}</a>
+          {chambers.filter((c) => c.href).map((c) => <a href={c.href}>{c.name}</a>)}
+          <a href={`/doctors/${d.city}/`}>{city.of} সব ডাক্তার</a>
+        </nav>
+
+        <Ad />
+
+        {sameSp.length > 0 && (
+          <section class="pf-block" aria-labelledby="h-rel">
+            <div class="pf-block-head"><h2 id="h-rel">একই বিশেষজ্ঞতার অন্য ডাক্তার</h2><a class="see-all" href={`/doctors/${d.city}/${d.specialty}/`}>See all</a></div>
+            <div class="pf-minis">{sameSp.map((x) => <MiniDoctor doctor={x} place={placeOf(x)} />)}</div>
+          </section>
+        )}
+        {mainHosp && sameHosp.length > 0 && (
+          <section class="pf-block" aria-labelledby="h-same">
+            <div class="pf-block-head"><h2 id="h-same">{mainHosp.data.short ?? mainHosp.data.name}-এর অন্য ডাক্তার</h2><a class="see-all" href={hospitalUrl(mainHosp) + '#doctors'}>See all</a></div>
+            <div class="pf-minis">{sameHosp.map((x) => <MiniDoctor doctor={x} place={placeOf(x)} />)}</div>
+          </section>
+        )}
+      </article>
+
+      <aside class="pf-side" aria-label="সিরিয়াল নম্বর">
+        <div class="pf-side-in">
+          <div class="pf-sum">
+            <span class="pf-today" data-today hidden></span>
+            <b class="pf-sum-h">সিরিয়াল নম্বর</b>
+            {chambers.map((c) => (
+              <div class="pf-sheet-grp"><span class="pf-sheet-h">{c.name}</span>{c.serials.map((s) => <NumRow label={s.label} number={s.number} note={s.note} />)}</div>
+            ))}
+          </div>
+          <Ad side />
+          {nearHosp.length > 0 && (
+            <div class="pf-near">
+              <b>{city.of} অন্য হাসপাতাল</b>
+              {nearHosp.map((h) => <a href={hospitalUrl(h)}>{h.data.name}<Icon name="chev" size={14} w={2.4} /></a>)}
+            </div>
+          )}
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="pf-sticky" aria-label="দ্রুত যোগাযোগ">
+    <button class="pf-btn primary" type="button" data-sheet-open="numbers"><Icon name="phone" />সিরিয়াল নম্বর</button>
+    <a class="pf-btn" href="#chambers" aria-label="চেম্বার"><Icon name="pin" /></a>
+  </div>
+
+  <div class="pf-sheet" data-sheet="numbers" hidden>
+    <div class="pf-sheet-bg" data-sheet-close></div>
+    <div class="pf-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-h">
+      <div class="pf-sheet-grip"></div>
+      <div class="pf-sheet-top"><b id="sheet-h">সিরিয়াল নম্বর</b><button class="pf-sheet-x" type="button" data-sheet-close aria-label="বন্ধ করুন"><Icon name="x" w={2.4} /></button></div>
+      {chambers.map((c) => (
+        <div class="pf-sheet-grp"><span class="pf-sheet-h">{c.name}</span>{c.serials.map((s) => <NumRow label={s.label} number={s.number} note={s.note} />)}</div>
+      ))}
+    </div>
+  </div>
+
+  {d.banner && (
+    <div class="pf-zoom" data-zoombox hidden>
+      <button class="pf-zoom-x" type="button" data-zoom-close aria-label="বন্ধ করুন"><Icon name="x" size={22} w={2.4} /></button>
+      <img alt="" data-zoom-img />
+    </div>
+  )}
+</Base>
