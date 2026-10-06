@@ -473,7 +473,7 @@ const services = defineCollection({
       faq: extraFaq,
       sources,
       verified: date,
-      verified_by: verifiedOfficial,
+      verified_by: z.enum(['official', 'secondary', 'phone'], 'verified_by হবে official, secondary অথবা phone').default('secondary'), // official = read on the official portal; secondary = news/guides
     })
     .refine((x) => x.draft || x.sources.length > 0, 'অন্তত একটি sources দিন'),
 });

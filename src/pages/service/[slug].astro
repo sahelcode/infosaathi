@@ -21,9 +21,9 @@ export async function getStaticPaths() {
 const { svc } = Astro.props as { svc: Service };
 const d = svc.data;
 const path = serviceUrl(svc);
-const checked = `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
+const checked = d.verified_by === 'official' ? `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}` : d.verified_by === 'phone' ? `ফোনে যাচাই: ${bnDate(d.verified)}` : `অনলাইন সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
 const glance = [
-  d.time && { icon: 'clock', k: 'সময় লাগে', v: d.time },
+  d.time && { icon: 'clock', k: 'সময় লাগে', v: d.time.split(/[(;]/)[0].trim() },
   { icon: 'globe', k: 'অনলাইনে আবেদন', v: d.online ? 'করা যায়' : 'সরাসরি যেতে হয়' },
   d.fees.length > 0 && { icon: 'wallet', k: 'ফি', v: `${bn(d.fees.length)}টি ফি-র তালিকা` },
   { icon: 'users', k: 'দপ্তর', v: d.dept },
@@ -86,7 +86,7 @@ const jsonld = {
         )}
         {d.about && <section class="pf-card" aria-labelledby="h-ab"><h2 id="h-ab">সেবাটি সম্পর্কে</h2><p class="pf-text">{d.about}</p></section>}
         <Faq items={faq} />
-        <Report placeholder="যেমন: ফি বদলেছে" note="সরকারি ফি ও নিয়ম বদলায়। আবেদনের আগে অফিসিয়াল পোর্টালে মিলিয়ে নিন।">
+        <Report placeholder="যেমন: ফি বদলেছে" note={d.verified_by === 'secondary' ? 'এই তথ্য সংবাদ ও গাইড থেকে নেওয়া, সরকারি ঘোষণা নয়। ফি ও নিয়ম বদলায়, আবেদনের আগে অফিসিয়াল পোর্টালে মিলিয়ে নিন।' : 'সরকারি ফি ও নিয়ম বদলায়। আবেদনের আগে অফিসিয়াল পোর্টালে মিলিয়ে নিন।'}>
           {d.sources.length > 0 && (<div class="un-src"><b class="pf-h3" style="display:block;margin:4px 0 0">তথ্যসূত্র</b>
             <ul>{d.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>)}
         </Report>

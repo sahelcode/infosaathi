@@ -3,7 +3,7 @@
 import type { APIRoute } from 'astro';
 import { getImage } from 'astro:assets';
 import home from '../partials/home.html?raw';
-import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, scholarshipUrl, jobUrl, aiToolUrl, isClosed } from '../lib/data';
+import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, getServices, serviceUrl, scholarshipUrl, jobUrl, aiToolUrl, isClosed } from '../lib/data';
 import { CITIES } from '../lib/taxonomy';
 import { SPECIALTIES, HOTEL_FACILITIES } from '../lib/taxonomy';
 import { bn, bnDate } from '../lib/format';
@@ -105,12 +105,7 @@ export const GET: APIRoute = async () => {
     title: x.data.title, company: x.data.org, loc: x.data.sector, salary: `শেষ ${bnDate(x.data.close)}`, t: i, url: jobUrl(x),
   }));
   const aiRows = (await getAiTools()).slice(0, 4).map((x, i) => ({ name: x.data.name, cat: x.data.category, desc: x.data.summary, free: x.data.free_plan ? 'ফ্রি প্ল্যান আছে' : 'পেইড', t: i, url: aiToolUrl(x) }));
-  const govRows = [
-    { name: 'ই-পাসপোর্ট', dept: 'পাসপোর্ট অধিদপ্তর', url: 'https://www.epassport.gov.bd/', t: 0 },
-    { name: 'জাতীয় পরিচয়পত্র', dept: 'নির্বাচন কমিশন', url: 'https://services.nidw.gov.bd/', t: 1 },
-    { name: 'জন্ম ও মৃত্যু নিবন্ধন', dept: 'স্থানীয় সরকার বিভাগ', url: 'https://bdris.gov.bd/', t: 2 },
-    { name: 'ই-টিআইএন', dept: 'জাতীয় রাজস্ব বোর্ড', url: 'https://secure.incometax.gov.bd/', t: 3 },
-  ];
+  const govRows = (await getServices()).slice(0, 4).map((x, i) => ({ name: x.data.name, dept: x.data.dept, time: x.data.online ? 'অনলাইনে আবেদন' : 'সরাসরি আবেদন', url: serviceUrl(x), t: i }));
 
   let html = swapArray(home, 'doctorNames', docRows);
   html = swapArray(html, 'scholarships', schRows);
@@ -130,9 +125,9 @@ export const GET: APIRoute = async () => {
   html = swap(html, "<span>${icon('star',12,12)} ${a.rating}</span><span class=\"btn-text\">View<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></div>", "<span>${a.free}</span><span class=\"btn-text\">View<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></a>");
   html = swap(html, '<h2 style="font-size:28px;">14,000+ tools, tracked and rated</h2>', '<h2 style="font-size:28px;">Popular AI tools, with official prices</h2><p style="margin-top:8px"><a href="/ai-tools/" class="see-all">See all</a></p>');
   // government services: links to the official portals
-  html = swap(html, '<div class="feature-card"><div class="fc-top"><div class="cat-icn ${tint(g.t)}">${icon(\'govt\')}</div></div>', '<a class="feature-card" href="${g.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><div class="fc-top"><div class="cat-icn ${tint(g.t)}">${icon(\'govt\')}</div></div>');
-  html = swap(html, "<span>${icon('clock',12,12)} ${g.time}</span><span class=\"btn-text\">Start<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></div>", "<span>অফিসিয়াল পোর্টাল</span><span class=\"btn-text\">Open<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></a>");
-  html = swap(html, '<h2 style="font-size:28px;">Every civic process, in plain language</h2>', '<h2 style="font-size:28px;">Official portals for common government services</h2>');
+  html = swap(html, '<div class="feature-card"><div class="fc-top"><div class="cat-icn ${tint(g.t)}">${icon(\'govt\')}</div></div>', '<a class="feature-card" href="${g.url}" style="color:inherit;text-decoration:none"><div class="fc-top"><div class="cat-icn ${tint(g.t)}">${icon(\'govt\')}</div></div>');
+  html = swap(html, "<span>${icon('clock',12,12)} ${g.time}</span><span class=\"btn-text\">Start<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></div>", "<span>${icon('clock',12,12)} ${g.time}</span><span class=\"btn-text\">Start<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></a>");
+  html = swap(html, '<h2 style="font-size:28px;">Every civic process, in plain language</h2>', '<h2 style="font-size:28px;">Common government services, step by step</h2><p style="margin-top:8px"><a href="/services/" class="see-all">See all</a></p>');
   html = swapArray(html, 'hotels', hotelRows);
   html = swapArray(html, 'places', placeRows);
   html = swap(html, "put('placeRow', places.map(p=>`\n    <div class=\"org-card ix-card ix-place\">\n      <div class=\"ix-image\">${placeArt(p.kind)}",

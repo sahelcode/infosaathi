@@ -1,0 +1,14 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getServices, serviceUrl } from '../../lib/data';
+const list = await getServices();
+---
+<ListPage title="সরকারি সেবা: আবেদনের ধাপ, ফি ও কাগজপত্র | InfoSaathi" h1="সরকারি সেবা" path="/services/" crumbs={[['হোম', '/']]}
+  intro="পাসপোর্ট, NID, জন্মনিবন্ধন, ড্রাইভিং লাইসেন্স, টিআইএন ও নামজারি: আবেদনের ধাপ, ফি, কাগজপত্র আর অফিসিয়াল পোর্টালের লিংক এক জায়গায়।">
+  {list.map((s) => (
+    <a class="pf-mini" href={serviceUrl(s)}><span class="hp-near-i un-rel-i"><Icon name="gov" size={20} w={1.8} /></span>
+      <span class="pf-mini-txt"><b>{s.data.name}</b><span class="pf-mini-h">{s.data.dept}{s.data.online ? ' · অনলাইনে আবেদন' : ''}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>
