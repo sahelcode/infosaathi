@@ -1,0 +1,76 @@
+draft: false
+name: Shahjalal University of Science and Technology
+name_bn: শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়
+short: SUST
+type: সরকারি
+est: 1986
+city: sylhet
+address: কুমারগাঁও, সিলেট-৩১১৪
+web: https://www.sust.edu
+apply_url: https://admission.sust.edu.bd
+ugc: true
+campus: কুমারগাঁও, স্থায়ী ক্যাম্পাস
+students: "৮,৫০০+"
+teachers: "৫৬৬"
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: বিশ্ববিদ্যালয় পিএবিএক্স
+    number: "0821713491"
+  - label: ভর্তি হেল্পলাইন
+    number: "01555555002"
+    note: ২০২৫–২৬ ভর্তি পোর্টালে দেওয়া (০০২ থেকে ০০৪ পর্যন্ত), সকাল ১০টা–সন্ধ্যা ৬টা; ২০২৬–২৭ বিজ্ঞপ্তিতে বদলাতে পারে
+emails:
+  - { label: ভর্তি, email: admission@sust.edu }
+
+admission:
+  intake: ২০২৬–২৭ শিক্ষাবর্ষ (স্নাতক প্রথম বর্ষ)
+  requirement: যোগ্যতা, আবেদনের সময় ও ফি এখনো ঘোষণা হয়নি; বিশ্ববিদ্যালয় বলেছে বিস্তারিত বিজ্ঞপ্তি পরে প্রকাশ করা হবে।
+  exam: শাবিপ্রবির নিজস্ব ভর্তি পরীক্ষা, ২৬ ও ২৭ জানুয়ারি ২০২৭ (ইউনিটভিত্তিক সময়সূচি পরে জানানো হবে)
+
+programs:
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: স্থাপত্য, name_en: Architecture (ARC) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: প্রাণরসায়ন ও অণুপ্রাণ বিজ্ঞান, name_en: Biochemistry and Molecular Biology (BMB) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: জেনেটিক ইঞ্জিনিয়ারিং ও বায়োটেকনোলজি, name_en: Genetic Engineering and Biotechnology (GEB) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: সিভিল ও এনভায়রনমেন্টাল ইঞ্জিনিয়ারিং, name_en: Civil and Environmental Engineering (CEE) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: কেমিক্যাল ইঞ্জিনিয়ারিং ও পলিমার সায়েন্স, name_en: Chemical Engineering and Polymer Science (CEP) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: রসায়ন, name_en: Chemistry (CHE) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: ভূগোল ও পরিবেশ, name_en: Geography and Environment (GEE) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: সমুদ্রবিজ্ঞান, name_en: Oceanography (OCG) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: পেট্রোলিয়াম ও মাইনিং ইঞ্জিনিয়ারিং, name_en: Petroleum and Mining Engineering (PME) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিং, name_en: Computer Science and Engineering (CSE) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: ইলেকট্রিক্যাল ও ইলেকট্রনিক ইঞ্জিনিয়ারিং, name_en: Electrical and Electronic Engineering (EEE) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: ইন্ডাস্ট্রিয়াল ও প্রোডাকশন ইঞ্জিনিয়ারিং, name_en: Industrial and Production Engineering (IPE) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: মেকানিক্যাল ইঞ্জিনিয়ারিং, name_en: Mechanical Engineering (MEE) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: পদার্থবিজ্ঞান, name_en: Physics (PHY) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: সফটওয়্যার ইঞ্জিনিয়ারিং, name_en: Software Engineering (SWE) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: ফরেস্ট্রি ও এনভায়রনমেন্টাল সায়েন্স, name_en: Forestry and Environmental Science (FES) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: ফুড ইঞ্জিনিয়ারিং ও টি টেকনোলজি, name_en: Food Engineering and Tea Technology (FET) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: গণিত, name_en: Mathematics (MAT) }
+  - { faculty: এ ইউনিট (বিজ্ঞান ও প্রকৌশল), name: পরিসংখ্যান, name_en: Statistics (STA) }
+  - { faculty: বি ইউনিট (মানবিক, সমাজবিজ্ঞান ও ব্যবসায়), name: নৃবিজ্ঞান, name_en: Anthropology (ANP) }
+  - { faculty: বি ইউনিট (মানবিক, সমাজবিজ্ঞান ও ব্যবসায়), name: লোকপ্রশাসন, name_en: Public Administration (PAD) }
+  - { faculty: বি ইউনিট (মানবিক, সমাজবিজ্ঞান ও ব্যবসায়), name: রাজনীতি অধ্যয়ন, name_en: Political Studies (PSS) }
+  - { faculty: বি ইউনিট (মানবিক, সমাজবিজ্ঞান ও ব্যবসায়), name: সমাজকর্ম, name_en: Social Work (SCW) }
+  - { faculty: বি ইউনিট (মানবিক, সমাজবিজ্ঞান ও ব্যবসায়), name: সমাজবিজ্ঞান, name_en: Sociology (SOC) }
+  - { faculty: বি ইউনিট (মানবিক, সমাজবিজ্ঞান ও ব্যবসায়), name: বাংলা, name_en: Bangla (BNG) }
+  - { faculty: বি ইউনিট (মানবিক, সমাজবিজ্ঞান ও ব্যবসায়), name: ব্যবসায় প্রশাসন, name_en: Business Administration (BUS) }
+  - { faculty: বি ইউনিট (মানবিক, সমাজবিজ্ঞান ও ব্যবসায়), name: অর্থনীতি, name_en: Economics (ECO) }
+  - { faculty: বি ইউনিট (মানবিক, সমাজবিজ্ঞান ও ব্যবসায়), name: ইংরেজি, name_en: English (ENG) }
+
+about: শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয় (শাবিপ্রবি) ১৯৮৬ সালে প্রতিষ্ঠিত সিলেটের কুমারগাঁওয়ে অবস্থিত একটি সরকারি বিশ্ববিদ্যালয়, যার শিক্ষা কার্যক্রম শুরু হয় ১৯৯১ সালে। বিশ্ববিদ্যালয়ে ৭টি স্কুল ও ২৭টি বিভাগ রয়েছে। স্নাতক প্রথম বর্ষে ভর্তি হয় বিশ্ববিদ্যালয়ের নিজস্ব এ ও বি ইউনিটের ভর্তি পরীক্ষার মাধ্যমে।
+good:
+  - বিজ্ঞান ও প্রকৌশলের অনেক বিভাগ এক ক্যাম্পাসে
+  - নিজস্ব ভর্তি পরীক্ষা; ২০২৬–২৭ সালের পরীক্ষার তারিখ আগেই ঘোষিত
+think:
+  - ২০২৬–২৭ ভর্তির আবেদনের সময়, ফি ও যোগ্যতা এখনো ঘোষণা হয়নি; অফিসিয়াল বিজ্ঞপ্তির জন্য ভর্তি পোর্টাল দেখুন
+  - ভর্তি পরীক্ষায় প্রতিযোগিতা বেশি
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://www.sust.edu }
+  - { title: শাবিপ্রবি ভর্তি পোর্টাল, url: https://admission.sust.edu.bd }
+  - { title: শাবিপ্রবি লাইব্রেরি - যোগাযোগ, url: https://library.sust.edu/contact-us }
+  - { title: কালবেলা - শাবিপ্রবির প্রথম বর্ষের ভর্তি পরীক্ষার তারিখ ঘোষণা, url: https://www.kalbela.com/dainikshiksha/campus/324582 }
+  - { title: ইত্তেফাক - ২০২৬-২৭ শিক্ষাবর্ষের ভর্তি পরীক্ষার তারিখ ঘোষণা করলো শাবিপ্রবি, url: https://www.ittefaq.com.bd/807988/ }
+old_urls: []

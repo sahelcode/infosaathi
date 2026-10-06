@@ -1,0 +1,86 @@
+draft: false
+name: North South University
+name_bn: নর্থ সাউথ ইউনিভার্সিটি
+short: NSU
+type: বেসরকারি
+est: 1992
+city: dhaka
+address: প্লট ১৫, ব্লক বি, বসুন্ধরা আবাসিক এলাকা, ঢাকা-১২২৯
+web: https://www.northsouth.edu
+apply_url: https://admissions.northsouth.edu/applicant/login
+ugc: true
+campus: বসুন্ধরা আবাসিক এলাকা, ঢাকা
+students: "প্রায় ১৫,০০০"
+teachers: "৩২৯ জন পূর্ণকালীন"
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: মূল নম্বর
+    number: "0255668200"
+    note: স্নাতক ভর্তির জন্য এক্সটেনশন ৪০০১, ৬২৯৯
+  - label: স্নাতক ভর্তি (মোবাইল)
+    number: "01300222288"
+  - label: স্নাতকোত্তর ভর্তি (মোবাইল)
+    number: "01886271722"
+emails:
+  - { label: স্নাতক ভর্তি, email: ug-admissions@northsouth.edu }
+
+admission:
+  intake: স্প্রিং ২০২৭
+  close: 2026-11-22
+  requirement: SSC ও HSC মিলিয়ে মোট GPA ৮.০০, প্রতিটিতে কমপক্ষে ৩.৫০ (বা সমমানের O/A লেভেল); ইঞ্জিনিয়ারিং, আর্কিটেকচার, ফার্মেসি ইত্যাদিতে বিষয়ভিত্তিক বাড়তি শর্ত আছে
+  exam: আড়াই ঘণ্টার লিখিত ভর্তি পরীক্ষা (ইংরেজি, গাণিতিক দক্ষতা, রিডিং কম্প্রিহেনশন ও রচনা), ২৮ নভেম্বর ২০২৬ (সম্ভাব্য); আর্কিটেকচারে অতিরিক্ত ৩০ মিনিটের ড্রয়িং পরীক্ষা
+  app_fee: 2000
+  steps:
+    - { title: অনলাইনে আবেদন, text: admissions.northsouth.edu পোর্টালে অ্যাকাউন্ট খুলে ফর্ম পূরণ }
+    - { title: আবেদন ফি, text: ব্যাংকে ২,০০০ টাকা বা বিকাশে ২,০৩১ টাকা }
+    - { title: ভর্তি পরীক্ষা, text: লিখিত পরীক্ষায় অংশ নেওয়া, ফল পরে জানানো হবে }
+  documents: [SSC/O লেভেল ও HSC/A লেভেলের মার্কশিট ও সনদ, পাসপোর্ট সাইজ ছবি, শিক্ষার্থী ও অভিভাবকের NID/পাসপোর্টের কপি]
+
+programs:
+  - { faculty: ইঞ্জিনিয়ারিং ও ফিজিক্যাল সায়েন্সেস, name: আর্কিটেকচার, name_en: Bachelor of Architecture, years: 5, credits: 170, total_cost: 1517500 }
+  - { faculty: ইঞ্জিনিয়ারিং ও ফিজিক্যাল সায়েন্সেস, name: কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিং, name_en: BS in Computer Science & Engineering (CSE), years: 4, credits: 130, total_cost: 1166000 }
+  - { faculty: ইঞ্জিনিয়ারিং ও ফিজিক্যাল সায়েন্সেস, name: ইলেকট্রিক্যাল ও ইলেকট্রনিক ইঞ্জিনিয়ারিং, name_en: BS in Electrical and Electronic Engineering (EEE), years: 4, credits: 130, total_cost: 1166000 }
+  - { faculty: ইঞ্জিনিয়ারিং ও ফিজিক্যাল সায়েন্সেস, name: সিভিল ও এনভায়রনমেন্টাল ইঞ্জিনিয়ারিং, name_en: BS in Civil & Environmental Engineering (CEE), years: 4, credits: 149, total_cost: 1318000 }
+  - { faculty: বিজনেস ও ইকোনমিক্স, name: বিবিএ, name_en: Bachelor of Business Administration (BBA), years: 4, credits: 120, total_cost: 1056000 }
+  - { faculty: বিজনেস ও ইকোনমিক্স, name: অর্থনীতি, name_en: BS in Economics, years: 4, credits: 120, total_cost: 1056000 }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: ফার্মেসি, name_en: Bachelor of Pharmacy, years: 4, credits: 160, total_cost: 1416000 }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: বায়োকেমিস্ট্রি ও বায়োটেকনোলজি, name_en: BS in Biochemistry and Biotechnology, years: 4, credits: 120, total_cost: 1086000 }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: মাইক্রোবায়োলজি, name_en: BS in Microbiology, years: 4, credits: 120, total_cost: 1086000 }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: এনভায়রনমেন্টাল ম্যানেজমেন্ট, name_en: BS in Environmental Management, years: 4, credits: 130, total_cost: 1166000 }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: এনভায়রনমেন্টাল সায়েন্স, name_en: BS in Environmental Science, years: 4, credits: 130, total_cost: 1166000 }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: পাবলিক হেলথ, name_en: Bachelor of Public Health (BPH), years: 4, credits: 130, total_cost: 1166000 }
+  - { faculty: হিউম্যানিটিজ ও সোশ্যাল সায়েন্সেস, name: ইংরেজি, name_en: BA in English, years: 4, credits: 123, total_cost: 1080000 }
+  - { faculty: হিউম্যানিটিজ ও সোশ্যাল সায়েন্সেস, name: আইন (এলএলবি অনার্স), name_en: Bachelor of Laws (LLB Hons), years: 4, credits: 130, total_cost: 1136000 }
+  - { faculty: হিউম্যানিটিজ ও সোশ্যাল সায়েন্সেস, name: "মিডিয়া, কমিউনিকেশন ও জার্নালিজম", name_en: "BSS in Media, Communication and Journalism", years: 4, credits: 129, total_cost: 1128000 }
+  - { faculty: হিউম্যানিটিজ ও সোশ্যাল সায়েন্সেস, name: নৃবিজ্ঞান, name_en: BSS in Anthropology, years: 4, credits: 128, total_cost: 1120000 }
+  - { faculty: হিউম্যানিটিজ ও সোশ্যাল সায়েন্সেস, name: ইতিহাস ও গ্লোবাল স্টাডিজ, name_en: BSS in History & Global Studies, years: 4, credits: 120, total_cost: 1056000 }
+  - { faculty: হিউম্যানিটিজ ও সোশ্যাল সায়েন্সেস, name: সমাজবিজ্ঞান, name_en: BSS in Sociology, years: 4, credits: 122, total_cost: 1072000 }
+cost_note: মোট খরচ NSU-র অফিসিয়াল টিউশন ফি তালিকার আনুমানিক হিসাব (প্রতি ক্রেডিট ৮,০০০ টাকা, স্প্রিং ২০২৬ থেকে প্রযোজ্য, সাথে প্রতি সেমিস্টারের ফি)। এর বাইরে ভর্তির সময় একবার ভর্তি ফি ২৫,০০০ টাকা, ফেরতযোগ্য কশন মানি ১০,০০০ টাকা ও RFID কার্ড ১,০০০ টাকা লাগে। ওয়েভার ধরা হয়নি; কোর্স রিটেক বা দেরিতে শেষ করলে খরচ বাড়ে।
+
+waivers:
+  - { condition: NSU ভর্তি পরীক্ষায় প্রথম ১০ জনের মধ্যে থাকলে, amount: "১০০% টিউশন" }
+  - { condition: ভাই/বোন একসাথে NSU-তে পড়লে (যোগ্যতা সাপেক্ষে), amount: "প্রত্যেকে ২৫%" }
+  - { condition: মুক্তিযোদ্ধার সন্তান (মুক্তিযুদ্ধ বিষয়ক মন্ত্রণালয়ের কাগজসহ আবেদন), amount: "পূর্ণ ফ্রি স্টুডেন্টশিপ" }
+
+about: নর্থ সাউথ ইউনিভার্সিটি ১৯৯২ সালে বেসরকারি বিশ্ববিদ্যালয় আইন-১৯৯২-এর অধীনে প্রতিষ্ঠিত বাংলাদেশের প্রথম বেসরকারি বিশ্ববিদ্যালয়, আনুষ্ঠানিক উদ্বোধন ১০ ফেব্রুয়ারি ১৯৯৩। ঢাকার বসুন্ধরা আবাসিক এলাকায় এর ক্যাম্পাস। চারটি স্কুলের অধীনে আর্কিটেকচার, ইঞ্জিনিয়ারিং, বিজনেস, ফার্মেসি, আইনসহ বিভিন্ন বিষয়ে স্নাতক প্রোগ্রাম রয়েছে।
+good:
+  - দেশের প্রথম বেসরকারি বিশ্ববিদ্যালয়, প্রোগ্রামের সংখ্যা অনেক
+  - প্রোগ্রামভিত্তিক আনুমানিক মোট খরচ অফিসিয়ালি প্রকাশিত
+  - ভর্তি পরীক্ষায় প্রথম ১০ জনের জন্য পূর্ণ টিউশন ওয়েভার
+think:
+  - খরচ বেশি; বেশিরভাগ প্রোগ্রামে মোট ১০ লাখ টাকার ওপরে
+  - ভর্তির জন্য SSC ও HSC দুটোতেই ভালো GPA ও লিখিত পরীক্ষা লাগে
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট — যোগাযোগ, url: https://www.northsouth.edu/contact-us.html }
+  - { title: NSU ভর্তি — হোম, url: https://admissions.northsouth.edu/ }
+  - { title: NSU ভর্তি — যোগাযোগ, url: https://admissions.northsouth.edu/contact }
+  - { title: স্নাতক ভর্তির যোগ্যতা, url: https://admissions.northsouth.edu/undergraduate_requirement }
+  - { title: ভর্তির শেষ তারিখ, url: https://admissions.northsouth.edu/deadline }
+  - { title: টিউশন ফি, url: https://admissions.northsouth.edu/tuition }
+  - { title: প্রোগ্রাম তালিকা, url: https://admissions.northsouth.edu/program }
+  - { title: আর্থিক সহায়তা ও ওয়েভার, url: http://www.northsouth.edu/resources/fao.html }
+  - { title: ইতিহাস, url: https://admissions.northsouth.edu/history }
+old_urls: [/2025/11/north-south-university.html]

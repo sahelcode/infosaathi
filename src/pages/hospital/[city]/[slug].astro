@@ -16,6 +16,7 @@ import { CITIES, SPECIALTIES, FACILITIES, TEST_GROUPS } from '../../../lib/taxon
 import { bn, taka, phoneShow, phoneIntl, daysText, timeRange, bnDate, bnMonth } from '../../../lib/format';
 import { SITE } from '../../../lib/site';
 import '../../../styles/hospital.css';
+import '../../../styles/uni.css';
 
 export async function getStaticPaths() {
   const hospitals = await getHospitals();
@@ -108,7 +109,7 @@ const jsonld = {
               <span class="pf-badge">{h.type} হাসপাতাল</span>
               {h.certification && <span class="pf-badge ok"><Icon name="check" size={13} w={3} />{h.certification}</span>}
               {h.emergency_24h && <span class="pf-badge er"><Icon name="siren" size={13} w={2.2} />২৪/৭ জরুরি</span>}
-              <span class="pf-badge"><Icon name="clock" size={13} w={2.2} />শেষ যাচাই: {bnDate(h.verified)}</span>
+              <span class:list={['pf-badge', { src: h.verified_by === 'official' }]}><Icon name="clock" size={13} w={2.2} />{h.verified_by === 'phone' ? 'ফোনে যাচাই' : 'অফিসিয়াল সূত্রে হালনাগাদ'}: {bnDate(h.verified)}</span>
             </div>
           </div>
           <div class:list={['pf-actions hp-actions no-logo', { three: single }]}>
@@ -191,7 +192,12 @@ const jsonld = {
         </section>
 
         <Faq items={faq} />
-        <Report placeholder="যেমন: পরীক্ষার ফি বদলেছে" note="তথ্য পরিবর্তন হতে পারে। জরুরি প্রয়োজনে সরাসরি হাসপাতালে ফোন করুন।" />
+        <Report placeholder="যেমন: পরীক্ষার ফি বদলেছে" note="তথ্য পরিবর্তন হতে পারে। জরুরি প্রয়োজনে সরাসরি হাসপাতালে ফোন করুন।">
+          {h.sources.length > 0 && (
+            <div class="un-src"><b class="pf-h3" style="display:block;margin:4px 0 0">তথ্যসূত্র</b>
+              <ul>{h.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>
+          )}
+        </Report>
         <ShareRow />
 
         <nav class="pf-tags" aria-label="সম্পর্কিত">

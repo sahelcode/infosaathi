@@ -1,0 +1,32 @@
+draft: false
+name: সিলেট এম এ জি ওসমানী মেডিকেল কলেজ হাসপাতাল
+name_en: Sylhet MAG Osmani Medical College Hospital
+short: ওসমানী হাসপাতাল
+type: সরকারি
+city: sylhet
+address: কাজলশাহ, সিলেট
+emergency_24h: true
+beds: 900
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: অফিসিয়াল যোগাযোগ নম্বর
+    number: "01701248122"
+    kind: other
+  - label: ল্যান্ডফোন
+    number: "02996631213"
+    kind: other
+  - label: ল্যান্ডফোন (বিকল্প)
+    number: "01312130300"
+    kind: other
+
+facilities: [er, ot, pharmacy, ambulance]
+
+sources:
+  - title: SOMCH — About (official)
+    url: https://www.somch.gov.bd/hospital/page/bn/about/77
+  - title: SOMCH — About, English (official)
+    url: https://www.somch.gov.bd/hospital/page/en/about/77
+  - title: DGHS Facility Registry — Sylhet MAG Osmani Medical College Hospital
+    url: https://hris.mohfw.gov.bd/public/facility-registry/facilities/2186/profile?tab=detailed-information

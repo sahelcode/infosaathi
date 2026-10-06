@@ -1,0 +1,92 @@
+draft: false
+name: Leading University
+name_bn: লিডিং ইউনিভার্সিটি
+short: LU
+type: বেসরকারি
+est: 2001
+city: sylhet
+address: রাগিবনগর, কামাল বাজার, দক্ষিণ সুরমা, সিলেট
+web: https://lus.ac.bd
+apply_url: https://lus.ac.bd/admission/how-to-apply/
+ugc: true
+campus: রাগিবনগর, দক্ষিণ সুরমা, স্থায়ী ক্যাম্পাস
+students: "৫,০০০+"
+teachers: "২০০+"
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: ভর্তি হটলাইন
+    number: "01318247194"
+  - label: ভর্তি হটলাইন
+    number: "01755841864"
+  - label: প্রধান নম্বর (PABX)
+    number: "01313084499"
+    note: ভর্তি শাখা এক্সটেনশন ১৭০, রেজিস্ট্রার অফিস এক্সটেনশন ১৩০
+emails:
+  - { label: সাধারণ তথ্য, email: info@lus.ac.bd }
+
+admission:
+  intake: ভর্তির নিয়ম (তারিখ ভর্তি অফিসে জেনে নিন)
+  requirement: SSC ও HSC দুটোতেই কমপক্ষে GPA ২.৫০ অথবা মোট GPA ৬.০০; ইংরেজি মাধ্যমে O Level-এ ৫টি ও A Level-এ ২টি বিষয়, অন্তত ৪টিতে B গ্রেড
+  app_fee: 1000
+  steps:
+    - { title: ভর্তি অফিসে যোগাযোগ, text: ভর্তি কর্মকর্তার সাথে দেখা করে পরামর্শ নিন }
+    - { title: ফর্ম সংগ্রহ, text: আবেদন ফর্ম ও প্রসপেক্টাস কিনুন }
+    - { title: ফর্ম পূরণ ও জমা, text: প্রয়োজনীয় কাগজপত্রসহ পূরণ করা ফর্ম জমা দিন }
+  documents:
+    - SSC ও HSC সনদ ও মার্কশিটের সত্যায়িত ফটোকপি
+    - পাসপোর্ট সাইজ ছবি ৫ কপি
+    - জাতীয় পরিচয়পত্র বা জন্ম নিবন্ধনের কপি
+    - অভিভাবকের ছবি ও জাতীয় পরিচয়পত্রের কপি
+
+programs:
+  - { faculty: স্নাতক, name: কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিং, name_en: B.Sc. in CSE, credits: 160, total_cost: 515764 }
+  - { faculty: স্নাতক, name: ইলেকট্রিক্যাল ও ইলেকট্রনিক ইঞ্জিনিয়ারিং, name_en: B.Sc. in EEE, credits: 160, total_cost: 497764 }
+  - { faculty: স্নাতক, name: সিভিল ইঞ্জিনিয়ারিং, name_en: B.Sc. in Civil Engineering, credits: 164, total_cost: 566224 }
+  - { faculty: স্নাতক, name: আর্কিটেকচার, name_en: Bachelor of Architecture, credits: 198, total_cost: 701164 }
+  - { faculty: স্নাতক, name: বিজনেস অ্যাডমিনিস্ট্রেশন, name_en: BBA, credits: 141, total_cost: 490264 }
+  - { faculty: স্নাতক, name: আইন, name_en: LL.B. (Hons), credits: 141, total_cost: 447964 }
+  - { faculty: স্নাতক, name: ইংরেজি, name_en: BA (Hons) in English, credits: 140, total_cost: 403764 }
+  - { faculty: স্নাতক, name: ট্যুরিজম ও হসপিটালিটি ম্যানেজমেন্ট, name_en: BTHM, credits: 140, total_cost: 445764 }
+  - { faculty: স্নাতক, name: ইসলামিক স্টাডিজ, name_en: BA (Hons) in Islamic Studies, credits: 140, total_cost: 165764 }
+  - { faculty: স্নাতক, name: বাংলা, name_en: BA (Hons) in Bangla, credits: 122, total_cost: 240244 }
+  - { faculty: স্নাতকোত্তর, name: এমবিএ, name_en: MBA, credits: 61, total_cost: 136600 }
+  - { faculty: স্নাতকোত্তর, name: এক্সিকিউটিভ এমবিএ, name_en: EMBA, credits: 52, total_cost: 122200 }
+  - { faculty: স্নাতকোত্তর, name: ইংরেজিতে এমএ, name_en: MA in English, credits: 42, total_cost: 95000 }
+  - { faculty: স্নাতকোত্তর, name: এলএলএম, name_en: LL.M., credits: 42, total_cost: 101300 }
+  - { faculty: স্নাতকোত্তর, name: ইসলামিক স্টাডিজে এমএ, name_en: MA in Islamic Studies, credits: 60, total_cost: 57000 }
+  - { faculty: স্নাতকোত্তর, name: মাস্টার অব পাবলিক হেলথ, name_en: MPH, credits: 60, total_cost: 174000 }
+  - { faculty: স্নাতকোত্তর, name: কম্পিউটার সায়েন্সে এমএসসি (CSE ব্যাকগ্রাউন্ড), name_en: M.Sc. in CSE (CSE background), credits: 36, total_cost: 103200 }
+  - { faculty: স্নাতকোত্তর, name: কম্পিউটার সায়েন্সে এমএসসি (অন্য ব্যাকগ্রাউন্ড), name_en: M.Sc. in CSE (non-CSE background), credits: 57, total_cost: 154250 }
+cost_note: মোট খরচ অফিসিয়াল টিউশন ফি পাতায় ছাপানো মোট অঙ্ক (ভর্তি ফি, ক্রেডিট ফি, সেমিস্টার, ট্রান্সপোর্ট, ল্যাব, অ্যাক্টিভিটি ও লাইব্রেরি ফিসহ), কোনো ওয়েভার ছাড়া। স্নাতকে ভর্তি ফি ২২,০০০ টাকা (এককালীন)।
+
+waivers:
+  - { condition: SSC ও HSC দুটোতেই গোল্ডেন GPA ৫.০০, amount: "৬০%" }
+  - { condition: SSC ও HSC দুটোতেই GPA ৫.০০ (একটিতে গোল্ডেন), amount: "৪৫%" }
+  - { condition: SSC ও HSC দুটোতেই GPA ৫.০০, amount: "৪০%" }
+  - { condition: SSC ও HSC দুটোতেই GPA ৪.৫০, amount: "২৫%" }
+  - { condition: SSC ও HSC দুটোতেই GPA ৪.০০, amount: "১৫%" }
+  - { condition: SSC ও HSC দুটোতেই GPA ৩.৫০, amount: "১০%" }
+  - { condition: একই বাবা-মায়ের দ্বিতীয় সন্তান (প্রভিশনাল), amount: "৩০%" }
+  - { condition: ছাত্রী, amount: "১০%" }
+  - { condition: "শিক্ষকের সন্তান, আদিবাসী ও শারীরিক প্রতিবন্ধী শিক্ষার্থী", amount: "১০%" }
+
+about: লিডিং ইউনিভার্সিটি ২০০১ সালে প্রতিষ্ঠিত সিলেটের একটি বেসরকারি বিশ্ববিদ্যালয়, যার প্রতিষ্ঠাতা শিল্পপতি রাগীব আলী। ২০১৬ সালের ফেব্রুয়ারি থেকে দক্ষিণ সুরমার রাগিবনগরে স্থায়ী ক্যাম্পাসে কার্যক্রম চলছে। ইঞ্জিনিয়ারিং, আর্কিটেকচার, ব্যবসায় প্রশাসন, আইন ও কলা মিলিয়ে ১০টির বেশি বিভাগ আছে।
+good:
+  - নিজস্ব স্থায়ী ক্যাম্পাস
+  - ফলাফলভিত্তিক সর্বোচ্চ ৬০% টিউশন ওয়েভার
+  - ওয়েবসাইটে প্রতিটি প্রোগ্রামের মোট খরচ প্রকাশিত
+think:
+  - একাধিক ওয়েভারের যোগ্য হলেও শুধু সবচেয়ে বড়টি পাওয়া যায়
+  - ফি তালিকায় কোন সেশনের জন্য প্রযোজ্য তা লেখা নেই, ভর্তির আগে অফিসে মিলিয়ে নিন
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://lus.ac.bd/ }
+  - { title: টিউশন ফি, url: https://lus.ac.bd/admission/tution-fees/ }
+  - { title: ভর্তি প্রক্রিয়া, url: https://lus.ac.bd/admission/how-to-apply/ }
+  - { title: স্কলারশিপ ও ওয়েভার, url: https://lus.ac.bd/admission/scholarship-and-aid/ }
+  - { title: ভর্তি যোগাযোগ, url: https://lus.ac.bd/admission/contact/ }
+  - { title: যোগাযোগ, url: https://lus.ac.bd/contact/ }
+  - { title: উইকিপিডিয়া, url: https://en.wikipedia.org/wiki/Leading_University }
+old_urls: [/2025/05/leading-university-sylhet.html]

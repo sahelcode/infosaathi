@@ -1,0 +1,30 @@
+draft: false
+name: মাউন্ট এডোরা হাসপাতাল, নয়াসড়ক
+name_en: Mount Adora Hospital, Nayasarak
+short: মাউন্ট এডোরা নয়াসড়ক
+type: বেসরকারি
+city: sylhet
+address: মীরবক্সটুলা, নয়াসড়ক, সিলেট-৩১০০
+emergency_24h: true
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: সিরিয়াল ও তথ্য (নয়াসড়ক শাখা)
+    number: "09610858585"
+    kind: serial
+  - label: অ্যাম্বুলেন্স (নয়াসড়ক শাখা)
+    number: "01334912408"
+    kind: ambulance
+  - label: হোম স্যাম্পল কালেকশন
+    number: "01318210002"
+    note: বাসা থেকে পরীক্ষার নমুনা সংগ্রহ; বিকল্প নম্বর 01711407642
+    kind: other
+
+facilities: [er, ambulance]
+
+sources:
+  - title: Mount Adora Hospital — Contact (official)
+    url: https://mountadora.com/contact/
+  - title: Mount Adora Hospital — Home (official)
+    url: https://mountadora.com/

@@ -3,7 +3,8 @@
 import type { APIRoute } from 'astro';
 import { getImage } from 'astro:assets';
 import home from '../partials/home.html?raw';
-import { getDoctors, getHospitals, doctorUrl, hospitalUrl, doctorsAt } from '../lib/data';
+import { getDoctors, getHospitals, getUniversities, doctorUrl, hospitalUrl, universityUrl, doctorsAt } from '../lib/data';
+import { CITIES } from '../lib/taxonomy';
 import { SPECIALTIES } from '../lib/taxonomy';
 import { bn } from '../lib/format';
 
@@ -50,7 +51,30 @@ export const GET: APIRoute = async () => {
     url: hospitalUrl(h),
   }));
 
+  // Bangladesh first: public universities, then private, newest checks first within each
+  const unis = (await getUniversities()).sort((a, b) => (a.data.type === b.data.type ? 0 : a.data.type === 'সরকারি' ? -1 : 1));
+  const uniRows = unis.slice(0, 8).map((u, i) => ({
+    name: u.data.name,
+    sub: `${CITIES[u.data.city].bn}, বাংলাদেশ`,
+    tags: [u.data.type, `${u.data.type} বিশ্ববিদ্যালয়`],
+    t: i % 5,
+    est: u.data.est,
+    mono: (u.data.short ?? u.data.name.split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]).join('')).slice(0, 4),
+    url: universityUrl(u),
+  }));
+
   let html = swapArray(home, 'doctorNames', docRows);
+  html = swapArray(html, 'uniNames', uniRows);
+  html = swap(html, `uniNames.map(u=>\`
+  <div class="org-card uni-card">`, `uniNames.map(u=>\`
+  <a class="org-card uni-card" href="\${u.url}" style="color:inherit;text-decoration:none">`);
+  html = swap(html, `<span class="uni-est">Est. \${u.est}</span></div></div>
+  </div>
+\`).join('');`, `<span class="uni-est">Est. \${u.est}</span></div></div>
+  </a>
+\`).join('');`);
+  html = swap(html, "<div class=\"org-logo \${tint(u.t)}\">\${u.name.split(' ').map(w=>w[0]).slice(0,2).join('')}</div>", "<div class=\"org-logo \${tint(u.t)}\">\${u.mono}</div>");
+  html = swap(html, '<span class="eyebrow">Universities</span><a href="#" class="see-all">', '<span class="eyebrow">Universities</span><a href="/universities/" class="see-all">');
   html = swapArray(html, 'hospitalNames', hospRows);
   // cards become links to the real pages
   html = swap(html, '<a href="#" class="p-view">প্রোফাইল দেখুন</a>', '<a href="${d.url}" class="p-view">প্রোফাইল দেখুন</a>');

@@ -1,0 +1,44 @@
+draft: false
+name: নর্থ ইস্ট মেডিকেল কলেজ ও হাসপাতাল
+name_en: North East Medical College & Hospital, Sylhet
+short: নর্থ ইস্ট মেডিকেল
+type: বেসরকারি
+city: sylhet
+address: দক্ষিণ সুরমা, সিলেট-৩১০০
+beds: 800
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: হাসপাতাল হটলাইন
+    number: "01715944733"
+    note: অ্যাপয়েন্টমেন্ট, ভর্তি ও আইসিইউ অ্যাম্বুলেন্সের জন্যও
+    kind: other
+  - label: অ্যাপয়েন্টমেন্ট, ভর্তি ও আইসিইউ অ্যাম্বুলেন্স
+    number: "01794448905"
+    kind: ambulance
+  - label: সাধারণ তথ্য (ল্যান্ডফোন)
+    number: "02996635180"
+    note: বিকল্প 02996635181, 02996635182
+    kind: other
+  - label: ক্যান্সার হাসপাতাল
+    number: "01799456926"
+    kind: other
+  - label: ডেন্টাল ইউনিট
+    number: "01735603075"
+    kind: other
+  - label: কলেজ হটলাইন
+    number: "01786511305"
+    kind: other
+
+facilities: [er, icu, ccu, nicu, dialysis, pharmacy, ambulance]
+
+sources:
+  - title: NEMC — Contact Us (official)
+    url: https://archive.nemc.edu.bd/contact-us/
+  - title: NEMC — Home (official)
+    url: https://archive.nemc.edu.bd/
+  - title: NEMC — Ambulance (official)
+    url: https://archive.nemc.edu.bd/ambulance/
+  - title: DGME — North East Medical College, Sylhet
+    url: https://students.dgme.gov.bd/public/facilities/90

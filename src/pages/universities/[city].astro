@@ -1,0 +1,21 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getUniversities, universityUrl, type University } from '../../lib/data';
+import { CITIES, type City } from '../../lib/taxonomy';
+import { bn } from '../../lib/format';
+export async function getStaticPaths() {
+  const list = await getUniversities();
+  return [...new Set(list.map((u) => u.data.city))].map((city) => ({ params: { city }, props: { city, list: list.filter((u) => u.data.city === city) } }));
+}
+const { city, list } = Astro.props as { city: City; list: University[] };
+const c = CITIES[city];
+---
+<ListPage title={`${c.of} বিশ্ববিদ্যালয়: ভর্তি ও খরচ | InfoSaathi`} h1={`${c.of} বিশ্ববিদ্যালয়`} path={`/universities/${city}/`}
+  crumbs={[['হোম', '/'], ['বিশ্ববিদ্যালয়', '/universities/']]} intro={`${c.of} ${bn(list.length)}টি বিশ্ববিদ্যালয়ের ভর্তি, বিষয়, খরচ ও যোগাযোগ।`}>
+  {list.map((u) => (
+    <a class="pf-mini" href={universityUrl(u)}><span class="hp-near-i un-rel-i"><Icon name="cap" size={20} w={1.8} /></span>
+      <span class="pf-mini-txt"><b>{u.data.name}</b><span class="pf-mini-h">{u.data.name_bn} · {u.data.type}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>

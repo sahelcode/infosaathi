@@ -1,0 +1,75 @@
+draft: false
+name: International Islamic University Chittagong
+name_bn: ইন্টারন্যাশনাল ইসলামিক ইউনিভার্সিটি চট্টগ্রাম
+short: IIUC
+type: বেসরকারি
+est: 1995
+city: chattogram
+address: কুমিরা, চট্টগ্রাম-৪৩১৮
+web: https://www.iiuc.ac.bd
+apply_url: https://www.iiuc.ac.bd/web/admission/choose-apply
+ugc: true
+campus: কুমিরা, স্থায়ী ক্যাম্পাস; ছাত্রীদের জন্য আলাদা ক্যাম্পাস
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: প্রধান নম্বর
+    number: "09613230505"
+  - label: ভর্তি তথ্য
+    number: "01720478621"
+    note: সকাল ৮:৩০–বিকাল ৪টা
+  - label: ভর্তি তথ্য
+    number: "01894798994"
+    note: সকাল ৮:৩০–বিকাল ৪টা
+emails:
+  - { label: সাধারণ জিজ্ঞাসা, email: info@iiuc.ac.bd }
+  - { label: একাডেমিক অ্যাফেয়ার্স, email: acad@iiuc.ac.bd }
+  - { label: সনদ যাচাই (পরীক্ষা নিয়ন্ত্রক), email: coe@iiuc.ac.bd }
+
+admission:
+  intake: অটাম ২০২৬
+  close: 2026-07-27
+  requirement: ইঞ্জিনিয়ারিং (CSE, CCE, EEE, ETE) — SSC ও HSC-তে আলাদাভাবে কমপক্ষে GPA ৩.০০, মোট ৬.৫০; BBA, অর্থনীতি ও ইংরেজি — SSC ও HSC-তে আলাদাভাবে কমপক্ষে ২.৫০, মোট ৬.০০; ইসলামিক স্টাডিজ প্রোগ্রাম — দাখিল ও আলিমে আলাদাভাবে কমপক্ষে ২.৫০, মোট ৬.০০
+  exam: এমসিকিউ ভর্তি পরীক্ষা (অটাম ২০২৬-এ ২৯ ও ৩০ জুলাই ২০২৬ অনুষ্ঠিত)
+  steps:
+    - { title: অনলাইনে আবেদন, text: ভর্তি পোর্টালে প্রোগ্রাম বেছে ফর্ম পূরণ ও ফি জমা }
+    - { title: ভর্তি পরীক্ষা, text: নির্ধারিত দিনে এমসিকিউ পরীক্ষায় অংশ নেওয়া }
+
+programs:
+  - { faculty: ইসলামিক স্টাডিজ, name: কুরআনিক সায়েন্সেস ও ইসলামিক স্টাডিজ, name_en: "BA (Hons.) in Qur'anic Sciences & Islamic Studies", years: 4, credits: 150, total_cost: 138025 }
+  - { faculty: ইসলামিক স্টাডিজ, name: দাওয়াহ ও ইসলামিক স্টাডিজ, name_en: "BA (Hons.) in Da'wah & Islamic Studies" }
+  - { faculty: ইসলামিক স্টাডিজ, name: সায়েন্সেস অব হাদিস ও ইসলামিক স্টাডিজ, name_en: "BA (Hons.) in Sciences of Hadith & Islamic Studies" }
+  - { faculty: বিজ্ঞান ও প্রকৌশল, name: কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিং, name_en: B.Sc. in Computer Science and Engineering }
+  - { faculty: বিজ্ঞান ও প্রকৌশল, name: কম্পিউটার ও কমিউনিকেশন ইঞ্জিনিয়ারিং, name_en: B.Sc. in Computer and Communication Engineering }
+  - { faculty: বিজ্ঞান ও প্রকৌশল, name: ইলেকট্রিক্যাল ও ইলেকট্রনিক ইঞ্জিনিয়ারিং, name_en: B.Sc. in Electrical and Electronic Engineering }
+  - { faculty: বিজ্ঞান ও প্রকৌশল, name: ইলেকট্রনিক ও টেলিকমিউনিকেশন ইঞ্জিনিয়ারিং, name_en: B.Sc. in Electronic and Telecommunication Engineering }
+  - { faculty: বিজ্ঞান ও প্রকৌশল, name: সিভিল ইঞ্জিনিয়ারিং, name_en: B.Sc. in Civil Engineering }
+  - { faculty: ফার্মেসি, name: ফার্মেসি, name_en: Bachelor of Pharmacy (Hons.) }
+  - { faculty: ব্যবসায় ও অর্থনীতি, name: ব্যবসায় প্রশাসন, name_en: Bachelor of Business Administration }
+  - { faculty: ব্যবসায় ও অর্থনীতি, name: ব্যবসায় প্রশাসন (ফিন্যান্স), name_en: Bachelor of Business Administration in Finance }
+  - { faculty: ব্যবসায় ও অর্থনীতি, name: অর্থনীতি ও ব্যাংকিং, name_en: BSS (Hons.) in Economics and Banking }
+  - { faculty: ভাষা ও সাহিত্য, name: ইংরেজি ভাষা ও সাহিত্য, name_en: BA (Hons.) in English Language and Literature }
+  - { faculty: ভাষা ও সাহিত্য, name: আরবি ভাষা ও সাহিত্য, name_en: BA (Hons.) in Arabic Language & Literature }
+  - { faculty: আইন, name: আইন, name_en: Bachelor of Laws (Hons.) }
+cost_note: শুধু কুরআনিক সায়েন্সেস ও ইসলামিক স্টাডিজের মোট খরচ অফিসিয়াল ফি পাতায় পাওয়া গেছে (টিউশন ফি মওকুফ; ভর্তি, সেমিস্টার, পরীক্ষা, এস্টাবলিশমেন্ট, ডেভেলপমেন্ট ও অন্যান্য ফি মিলিয়ে)। অন্য প্রোগ্রামের খরচ বিশ্ববিদ্যালয়ের ফি পাতায় দেখে নিন।
+
+waivers:
+  - { condition: SSC ও HSC (বা সমমান) দুটোতেই GPA ৫.০০, amount: "ভর্তি ফি ১০০%" }
+  - { condition: প্রত্যেক ভাই-বোনের জন্য, amount: "টিউশন ফি ২৫%" }
+  - { condition: মুক্তিযোদ্ধার সন্তান/পোষ্য, amount: "টিউশন ফি ১০০%" }
+
+about: ইন্টারন্যাশনাল ইসলামিক ইউনিভার্সিটি চট্টগ্রাম (আইআইইউসি) ১৯৯৫ সালে প্রতিষ্ঠিত চট্টগ্রামের কুমিরায় অবস্থিত একটি বেসরকারি বিশ্ববিদ্যালয়। এখানে ইসলামিক স্টাডিজ, প্রকৌশল, ফার্মেসি, ব্যবসায়, অর্থনীতি, ভাষা ও আইন বিষয়ে স্নাতক ও স্নাতকোত্তর প্রোগ্রাম রয়েছে। ছাত্রীদের জন্য আলাদা ক্যাম্পাস আছে।
+good:
+  - ছাত্রীদের জন্য আলাদা ক্যাম্পাস
+  - SSC ও HSC-তে GPA ৫.০০ থাকলে ভর্তি ফি পুরো মওকুফ
+think:
+  - বেশিরভাগ প্রোগ্রামের মোট খরচ ওয়েবসাইটে সহজে পাওয়া যায় না; ভর্তি অফিস থেকে নিশ্চিত হোন
+  - বছরে নির্দিষ্ট সেমিস্টারে ভর্তি হয়; আবেদনের শেষ তারিখ খেয়াল রাখুন
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://www.iiuc.ac.bd }
+  - { title: যোগাযোগ, url: https://www.iiuc.ac.bd/web/about/contact }
+  - { title: ফি কাঠামো, url: https://www.iiuc.ac.bd/web/fee-structure }
+  - { title: স্নাতক ভর্তি নির্দেশনা (অটাম ২০২৬), url: "https://www.iiuc.ac.bd/web/admission/instruction-bn?tab=bachelor" }
+old_urls: [/2025/11/international-islamic-university-chittagong.html]

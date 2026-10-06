@@ -1,0 +1,287 @@
+---
+// University page. Everything comes from one file in src/content/universities/.
+import { Image, getImage } from 'astro:assets';
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import NumRow from '../../../components/NumRow.astro';
+import Faq from '../../../components/Faq.astro';
+import Report from '../../../components/Report.astro';
+import ShareRow from '../../../components/ShareRow.astro';
+import Ad from '../../../components/Ad.astro';
+import { getUniversities, universityUrl, type University } from '../../../lib/data';
+import { CITIES } from '../../../lib/taxonomy';
+import { bn, taka, phoneShow, phoneIntl, bnDate, isoDay } from '../../../lib/format';
+import { SITE } from '../../../lib/site';
+import '../../../styles/hospital.css';
+import '../../../styles/uni.css';
+
+export async function getStaticPaths() {
+  const list = await getUniversities();
+  return list.map((u) => ({ params: { city: u.data.city, slug: u.id }, props: { uni: u } }));
+}
+
+const { uni } = Astro.props as { uni: University };
+const u = uni.data;
+const city = CITIES[u.city];
+const path = universityUrl(uni);
+const short = u.short ?? u.name;
+const mono = (u.short ?? u.name.split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]).join('')).slice(0, 4);
+const A = u.admission;
+const applyUrl = u.apply_url ?? u.web;
+const progs = u.programs;
+const faculties = [...new Set(progs.map((p) => p.faculty))];
+const costs = progs.map((p) => p.total_cost).filter((x): x is number => !!x);
+const cheapest = costs.length ? Math.min(...costs) : undefined;
+const map = `https://maps.google.com/?q=${encodeURIComponent(u.name + ', ' + city.en)}`;
+const checkedBadge = u.verified_by === 'phone' ? `ফোনে যাচাই: ${bnDate(u.verified)}` : `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(u.verified)}`;
+
+const glance = [
+  A?.close && { icon: 'cal', k: 'আবেদনের শেষ তারিখ', v: bnDate(A.close) },
+  A?.app_fee && { icon: 'file', k: 'আবেদন ফি', v: taka(A.app_fee) },
+  cheapest && { icon: 'wallet', k: 'মোট খরচ শুরু', v: taka(cheapest) },
+  progs.length > 0 && { icon: 'cap', k: 'বিষয় / প্রোগ্রাম', v: `${bn(progs.length)}টি` },
+  { icon: 'build', k: 'প্রতিষ্ঠা', v: bn(u.est) },
+  { icon: 'pin', k: 'অবস্থান', v: city.bn },
+].filter(Boolean).slice(0, 4) as { icon: 'cal' | 'file' | 'wallet' | 'cap' | 'build' | 'pin'; k: string; v: string }[];
+
+const jump = [
+  A && ['admission', 'ভর্তি'],
+  progs.length && ['programs', cheapest ? 'খরচ ও বিষয়' : 'বিষয়'],
+  u.waivers.length && ['waiver', 'ওয়েভার'],
+  ['about', 'পরিচিতি'],
+  ['contact', 'যোগাযোগ'],
+].filter(Boolean) as string[][];
+
+const about =
+  u.about ??
+  `${u.name} (${u.name_bn}) ${bn(u.est)} সালে প্রতিষ্ঠিত ${city.of} একটি ${u.type} বিশ্ববিদ্যালয়।` +
+    (faculties.length ? ` ${faculties.slice(0, 5).join(', ')} অনুষদে পড়ানো হয়।` : '');
+const facts = [
+  { icon: 'build', k: 'প্রতিষ্ঠা', v: bn(u.est) },
+  { icon: 'cap', k: 'ধরন', v: `${u.type} বিশ্ববিদ্যালয়` },
+  u.students && { icon: 'users', k: 'শিক্ষার্থী', v: u.students },
+  u.teachers && { icon: 'users', k: 'শিক্ষক', v: u.teachers },
+  u.campus && { icon: 'pin', k: 'ক্যাম্পাস', v: u.campus },
+].filter(Boolean) as { icon: 'build' | 'cap' | 'users' | 'pin'; k: string; v: string }[];
+
+const mainNum = u.numbers[0];
+const faq = [
+  ...(u.ugc ? [{ q: `${u.name} কি UGC অনুমোদিত?`, a: `হ্যাঁ। ${u.name} বিশ্ববিদ্যালয় মঞ্জুরি কমিশনের (UGC) তালিকাভুক্ত ${u.type} বিশ্ববিদ্যালয়।` }] : []),
+  ...(A ? [{ q: `${u.name}-এ ভর্তির যোগ্যতা কী?`, a: A.requirement }] : []),
+  ...(A?.close ? [{ q: `${A.intake} ভর্তির আবেদনের শেষ তারিখ কবে?`, a: `${bnDate(A.close)}।` }] : []),
+  ...(A?.app_fee ? [{ q: 'আবেদন ফি কত?', a: `আবেদন ফি ${taka(A.app_fee)}।` }] : []),
+  ...(progs.length ? [{ q: `${u.name}-এ কোন কোন বিষয় পড়ানো হয়?`, a: progs.map((p) => p.name).join(', ') + '।' }] : []),
+  { q: `${u.name} কোথায়?`, a: `${u.address}।` },
+  { q: `${u.name}-এর যোগাযোগ নম্বর কী?`, a: `${mainNum.label}: ${phoneShow(mainNum.number)}।` },
+  ...u.faq,
+];
+
+const others = (await getUniversities()).filter((x) => x.id !== uni.id);
+const related = [...others.filter((x) => x.data.city === u.city), ...others.filter((x) => x.data.city !== u.city)].slice(0, 3);
+
+const photo = u.photo ? await getImage({ src: u.photo, width: 1200, format: 'webp' }) : undefined;
+const title = `${u.name} (${u.name_bn}) – ভর্তি, খরচ ও বিষয় | InfoSaathi`;
+const description = `${u.name} (${u.name_bn}), ${city.bn}: ${A ? 'ভর্তির যোগ্যতা ও শেষ তারিখ, ' : ''}${cheapest ? 'বিষয়ভিত্তিক মোট খরচ, ' : progs.length ? 'বিষয়ের তালিকা, ' : ''}যোগাযোগ ও ঠিকানা।`;
+const crumbs = [['হোম', '/'], ['বিশ্ববিদ্যালয়', '/universities/'], [city.bn, `/universities/${u.city}/`]];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollegeOrUniversity',
+      name: u.name,
+      alternateName: [u.name_bn, ...(u.short ? [u.short] : [])],
+      url: SITE + path,
+      sameAs: [u.web],
+      foundingDate: String(u.est),
+      telephone: phoneIntl(mainNum.number),
+      ...(u.emails[0] && { email: u.emails[0].email }),
+      ...(photo && { image: new URL(photo.src, SITE).href }),
+      address: { '@type': 'PostalAddress', streetAddress: u.address, addressLocality: city.en, addressCountry: 'BD' },
+    },
+    { '@type': 'BreadcrumbList', itemListElement: crumbs.map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) },
+    { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  ],
+};
+---
+<Base title={title} description={description} path={path} ogImage={photo?.src} jsonld={jsonld} draft={u.draft}>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{u.name}</a></nav>
+    <div class="pf-grid">
+      <article class="pf-main">
+        <section class="pf-hero hp-hero">
+          <div class:list={['hp-cover', u.photo ? 'has-photo' : 'un-cover']}>
+            {u.photo && <Image src={u.photo} alt={`${u.name} ক্যাম্পাস`} width={1200} loading="eager" fetchpriority="high" />}
+          </div>
+          <div class="pf-hero-body">
+            {u.logo ? <div class="hp-logo un-logo"><Image src={u.logo} alt={`${u.name} লোগো`} width={110} height={110} /></div>
+                    : <div class="hp-logo un-logo ed-mono" aria-hidden="true">{mono}</div>}
+            <h1 class="pf-name">{u.name}</h1>
+            <p class="pf-en">{u.name_bn}</p>
+            <p class="hp-addr"><Icon name="pin" size={15} w={2.2} />{u.address}</p>
+            <div class="pf-badges">
+              {u.ugc && <span class="pf-badge ok"><Icon name="check" size={13} w={3} />UGC অনুমোদিত</span>}
+              <span class="pf-badge">{u.type} বিশ্ববিদ্যালয়</span>
+              <span class="pf-badge">প্রতিষ্ঠা {bn(u.est)}</span>
+              <span class:list={['pf-badge', { src: u.verified_by === 'official' }]}><Icon name="clock" size={13} w={2.2} />{checkedBadge}</span>
+            </div>
+          </div>
+          <div class="pf-actions hp-actions un-actions">
+            <a class="pf-btn primary" href={applyUrl} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />{u.apply_url ? 'অনলাইনে আবেদন' : 'অফিসিয়াল ওয়েবসাইট'}</a>
+            <button class="pf-btn" type="button" data-sheet-open="numbers"><Icon name="phone" />কল</button>
+            <a class="pf-btn" href={u.web} target="_blank" rel="noopener" aria-label="অফিসিয়াল ওয়েবসাইট"><Icon name="globe" /></a>
+            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+          </div>
+          <nav class="hp-jump" aria-label="এই পেজে">{jump.map(([a, t]) => <a href={`#${a}`}>{t}</a>)}</nav>
+        </section>
+
+        <div class="un-glance">
+          {glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}
+        </div>
+
+        {A && (
+          <section class="pf-card" id="admission" aria-labelledby="h-adm">
+            <div class="pf-card-head"><h2 id="h-adm">ভর্তি · {A.intake}</h2>{A.close && <span class="pf-today" data-adm-status hidden></span>}</div>
+            <div class="un-adm" data-open={A.open && A.close ? isoDay(A.open) : undefined} data-close={A.close ? isoDay(A.close) : undefined}>
+              {A.close && <div class="un-adm-bar"><span data-adm-left></span><span class="un-adm-track"><i data-adm-fill></i></span></div>}
+              <dl class="un-adm-list">
+                {A.open && <div><dt>আবেদন শুরু</dt><dd>{bnDate(A.open)}</dd></div>}
+                {A.close && <div><dt>আবেদনের শেষ তারিখ</dt><dd>{bnDate(A.close)}</dd></div>}
+                <div><dt>ন্যূনতম যোগ্যতা</dt><dd>{A.requirement}</dd></div>
+                {A.exam && <div><dt>ভর্তি পরীক্ষা</dt><dd>{A.exam}</dd></div>}
+                {A.app_fee && <div><dt>আবেদন ফি</dt><dd>{taka(A.app_fee)}</dd></div>}
+                {A.classes_start && <div><dt>ক্লাস শুরু</dt><dd>{A.classes_start}</dd></div>}
+              </dl>
+            </div>
+            {A.steps.length > 0 && (<><h3 class="pf-h3">ভর্তির ধাপ</h3>
+              <ol class="un-steps">{A.steps.map((s, i) => <li><span class="un-step-n">{bn(i + 1)}</span><span><b>{s.title}</b><small>{s.text}</small></span></li>)}</ol></>)}
+            {A.documents.length > 0 && (<><h3 class="pf-h3">যে কাগজপত্র লাগবে</h3>
+              <ul class="un-docs">{A.documents.map((d) => <li><Icon name="check" size={15} w={2.6} />{d}</li>)}</ul></>)}
+            <a class="pf-btn primary un-apply" href={applyUrl} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />অফিসিয়াল সাইটে দেখুন</a>
+          </section>
+        )}
+
+        {progs.length > 0 && (
+          <section class="pf-card" id="programs" aria-labelledby="h-prog">
+            <div class="pf-card-head"><h2 id="h-prog">{cheapest ? 'বিষয় ও মোট খরচ' : 'বিষয় ও প্রোগ্রাম'}</h2><span class="pf-count">{bn(progs.length)}টি প্রোগ্রাম</span></div>
+            {progs.length > 6 && <label class="hp-search"><Icon name="search" w={2.2} /><input type="search" placeholder="বিষয় খুঁজুন, যেমন CSE বা BBA" data-prog-q enterkeyhint="search" /></label>}
+            {faculties.length > 1 && (
+              <div class="hp-chips">
+                <button class="hp-chip on" type="button" data-pfac="all">সব</button>
+                {faculties.map((f, i) => <button class="hp-chip" type="button" data-pfac={`f${i}`}>{f}</button>)}
+              </div>
+            )}
+            <ul class="un-progs">
+              {progs.map((p) => (
+                <li class="un-prog" data-fac={`f${faculties.indexOf(p.faculty)}`} data-q={(p.name + ' ' + p.name_en).toLowerCase()}>
+                  <span class="un-prog-t"><b>{p.name}</b><small>{p.name_en} · {p.faculty}</small>
+                    {(p.years || p.credits) && <span class="un-prog-m">{p.years && <span>{bn(p.years)} বছর</span>}{p.credits && <span>{bn(p.credits)} ক্রেডিট</span>}</span>}</span>
+                  {p.total_cost && <span class="un-prog-c"><small>মোট খরচ</small><strong>{taka(p.total_cost)}</strong></span>}
+                </li>
+              ))}
+            </ul>
+            <p class="hp-empty" data-prog-empty hidden>এই নামে কোনো বিষয় পাওয়া যায়নি</p>
+            {u.cost_note && <p class="pf-note">{u.cost_note}</p>}
+          </section>
+        )}
+
+        <Ad />
+
+        {u.waivers.length > 0 && (
+          <section class="pf-card" id="waiver" aria-labelledby="h-waiver">
+            <div class="pf-card-head"><h2 id="h-waiver">ওয়েভার ও স্কলারশিপ</h2></div>
+            <ul class="un-waivers">{u.waivers.map((w) => <li><span>{w.condition}</span><b>{w.amount}</b></li>)}</ul>
+          </section>
+        )}
+
+        <section class="pf-card" id="about" aria-labelledby="h-about">
+          <h2 id="h-about">পরিচিতি</h2>
+          <p class="pf-text">{about}</p>
+          <ul class="un-facts">{facts.map((f) => <li><span class="un-fact-i"><Icon name={f.icon} size={17} w={1.9} /></span><span class="pf-k">{f.k}</span><b>{f.v}</b></li>)}</ul>
+          {(u.good.length > 0 || u.think.length > 0) && (
+            <div class="un-pc">
+              {u.good.length > 0 && <div class="un-pc-b good"><b><Icon name="plus" size={16} w={2.6} />ভালো দিক</b><ul>{u.good.map((g) => <li>{g}</li>)}</ul></div>}
+              {u.think.length > 0 && <div class="un-pc-b think"><b><Icon name="minus" size={16} w={2.6} />যা জেনে নেবেন</b><ul>{u.think.map((t) => <li>{t}</li>)}</ul></div>}
+            </div>
+          )}
+        </section>
+
+        <section class="pf-card" id="contact" aria-labelledby="h-contact">
+          <h2 id="h-contact">যোগাযোগ</h2>
+          <div class="pf-nums">
+            {u.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}
+            {u.emails.map((m) => (
+              <div class="pf-num un-mail"><span class="pf-num-t"><small class="pf-num-l">ইমেইল · {m.label}</small><b>{m.email}</b></span>
+                <button class="pf-copy" type="button" data-copy-num={m.email} data-copy-msg="ইমেইল কপি হয়েছে" aria-label="ইমেইল কপি করুন"><Icon name="copy" size={17} w={1.9} /></button>
+                <a class="pf-call" href={`mailto:${m.email}`} aria-label="ইমেইল পাঠান"><Icon name="mail" size={17} /></a></div>
+            ))}
+          </div>
+          <div class="hp-info">
+            <div><span class="pf-k">ঠিকানা</span><b>{u.address}</b></div>
+            <div><span class="pf-k">ওয়েবসাইট</span><a class="un-web" href={u.web} target="_blank" rel="noopener">{u.web.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}<Icon name="ext" size={14} /></a></div>
+          </div>
+          <a class="pf-btn hp-mapbtn" href={map} target="_blank" rel="noopener"><Icon name="pin" />Google Maps-এ দেখুন</a>
+        </section>
+
+        <Faq items={faq} />
+
+        <Report placeholder="যেমন: আবেদনের শেষ তারিখ বদলেছে" note="ভর্তির নিয়ম ও ফি সময়ের সাথে বদলায়। চূড়ান্ত সিদ্ধান্তের আগে বিশ্ববিদ্যালয়ের ভর্তি অফিসে নিশ্চিত হয়ে নিন।">
+          {u.sources.length > 0 && (
+            <div class="un-src"><b class="pf-h3" style="display:block;margin:4px 0 0">তথ্যসূত্র</b>
+              <ul>{u.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>
+          )}
+        </Report>
+
+        <ShareRow />
+        <nav class="pf-tags" aria-label="সম্পর্কিত">
+          <a href={`/universities/${u.city}/`}>{city.of} বিশ্ববিদ্যালয়</a>
+          <a href="/universities/">বাংলাদেশের বিশ্ববিদ্যালয়</a>
+        </nav>
+        <Ad />
+
+        {related.length > 0 && (
+          <section class="pf-block" aria-labelledby="h-rel">
+            <div class="pf-block-head"><h2 id="h-rel">অন্য বিশ্ববিদ্যালয়</h2><a class="see-all" href="/universities/">See all</a></div>
+            <div class="pf-minis">
+              {related.map((x) => (
+                <a class="pf-mini" href={universityUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="cap" size={20} w={1.8} /></span>
+                  <span class="pf-mini-txt"><b>{x.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{CITIES[x.data.city].bn} · {x.data.type}</span></span>
+                  <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+
+      <aside class="pf-side" aria-label="সারাংশ">
+        <div class="pf-side-in">
+          <div class="pf-sum">
+            {A?.close && <span class="pf-today" data-adm-status hidden></span>}
+            <b class="pf-sum-h">{A ? `ভর্তি · ${A.intake}` : short}</b>
+            {A?.close && <span class="pf-sum-l"><Icon name="cal" size={14} w={2.2} />শেষ তারিখ: {bnDate(A.close)}</span>}
+            {A?.app_fee && <span class="pf-sum-l"><Icon name="file" size={14} w={2.2} />আবেদন ফি: {taka(A.app_fee)}</span>}
+            <a class="pf-btn primary" href={applyUrl} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />{u.apply_url ? 'অনলাইনে আবেদন' : 'অফিসিয়াল ওয়েবসাইট'}</a>
+            <div class="pf-sheet-grp">{u.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}</div>
+          </div>
+          <Ad side />
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="pf-sticky un-sticky" aria-label="দ্রুত যোগাযোগ">
+    <a class="pf-btn primary" href={applyUrl} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />{u.apply_url ? 'অনলাইনে আবেদন' : 'ওয়েবসাইট'}</a>
+    <button class="pf-btn" type="button" data-sheet-open="numbers" aria-label="কল"><Icon name="phone" /></button>
+  </div>
+  <div class="pf-sheet" data-sheet="numbers" hidden>
+    <div class="pf-sheet-bg" data-sheet-close></div>
+    <div class="pf-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-h">
+      <div class="pf-sheet-grip"></div>
+      <div class="pf-sheet-top"><b id="sheet-h">{short} · যোগাযোগ</b><button class="pf-sheet-x" type="button" data-sheet-close aria-label="বন্ধ করুন"><Icon name="x" w={2.4} /></button></div>
+      <div class="pf-sheet-grp">{u.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}</div>
+    </div>
+  </div>
+</Base>
+
+<script>
+  import '../../../scripts/uni.js';
+</script>

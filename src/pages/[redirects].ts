@@ -1,7 +1,7 @@
 // Builds the _redirects file: every old Blogger link listed in a published data file (old_urls)
 // is sent to its new page with a permanent (301) redirect, so search rankings carry over.
 import type { APIRoute } from 'astro';
-import { getDoctors, doctorUrl } from '../lib/data';
+import { getDoctors, doctorUrl, getUniversities, universityUrl } from '../lib/data';
 import { SHOW_DRAFTS } from '../lib/site';
 
 export function getStaticPaths() {
@@ -16,6 +16,10 @@ export const GET: APIRoute = async () => {
       lines.push(`${old} ${doctorUrl(d)} 301`);
       // Blogger also served the same post with ?m=1 on phones; Cloudflare matches the path without the query.
     }
+  }
+  for (const u of await getUniversities()) {
+    if (u.data.draft && !SHOW_DRAFTS) continue;
+    for (const old of u.data.old_urls) lines.push(`${old} ${universityUrl(u)} 301`);
   }
   return new Response(lines.join('\n') + '\n', { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 };

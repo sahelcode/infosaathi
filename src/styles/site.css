@@ -9,3 +9,8 @@
 .pf .hp-actions.three{grid-template-columns:1fr 1fr 46px;}
 @media (min-width:768px){.pf .hp-actions.three{grid-template-columns:auto auto 46px;}}
 @media (max-width:374px){.pf .hp-actions.three{grid-template-columns:1fr 46px;}}
+/* monogram in place of a logo (universities without a logo file) */
+.hp-logo.ed-mono,.ed-mono{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#16a34a,#065f46);color:#fff;font-family:'Inter',sans-serif;font-size:22px;font-weight:800;letter-spacing:.5px;}
+@media (min-width:768px){.ed-mono{font-size:30px;}}
+.hp-cover.un-cover{background:linear-gradient(120deg,#dcfce7,#ccfbf1 60%,#e0f2fe);}
+.pf-badge.src{background:#eff6ff;color:#1d4ed8;}

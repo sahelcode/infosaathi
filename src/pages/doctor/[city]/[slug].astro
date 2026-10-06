@@ -137,7 +137,7 @@ const jsonld = {
             {d.designation && <p class="pf-post">{d.designation}</p>}
             <div class="pf-badges">
               {d.bmdc && <span class="pf-badge ok"><Icon name="check" size={13} w={3} />BMDC {d.bmdc}</span>}
-              <span class="pf-badge"><Icon name="clock" size={13} w={2.2} />শেষ যাচাই: {bnDate(d.verified)}</span>
+              <span class="pf-badge"><Icon name="clock" size={13} w={2.2} />{d.verified_by === 'phone' ? 'ফোনে যাচাই' : 'অফিসিয়াল সূত্রে হালনাগাদ'}: {bnDate(d.verified)}</span>
             </div>
           </div>
           <div class="pf-actions">

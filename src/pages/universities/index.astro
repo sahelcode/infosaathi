@@ -1,0 +1,18 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getUniversities, universityUrl } from '../../lib/data';
+import { CITIES } from '../../lib/taxonomy';
+import { bn } from '../../lib/format';
+const list = await getUniversities();
+const cities = [...new Set(list.map((u) => u.data.city))];
+---
+<ListPage title="বাংলাদেশের বিশ্ববিদ্যালয়: ভর্তি, খরচ ও বিষয় | InfoSaathi" h1="বিশ্ববিদ্যালয়" path="/universities/" crumbs={[['হোম', '/']]}
+  intro="বাংলাদেশের সরকারি ও বেসরকারি বিশ্ববিদ্যালয়ের ভর্তি, বিষয়, খরচ ও যোগাযোগ।"
+  chips={cities.map((c) => ({ href: `/universities/${c}/`, label: CITIES[c].bn, n: bn(list.filter((u) => u.data.city === c).length) }))}>
+  {list.map((u) => (
+    <a class="pf-mini" href={universityUrl(u)}><span class="hp-near-i un-rel-i"><Icon name="cap" size={20} w={1.8} /></span>
+      <span class="pf-mini-txt"><b>{u.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{CITIES[u.data.city].bn} · {u.data.type}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>

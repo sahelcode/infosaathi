@@ -3,6 +3,7 @@
 import Base from '../layouts/Base.astro';
 import { SITE } from '../lib/site';
 import '../styles/hospital.css';
+import '../styles/uni.css';
 interface Props { title: string; h1: string; intro: string; path: string; crumbs: string[][]; chips?: { href: string; label: string; n?: string }[] }
 const { title, h1, intro, path, crumbs, chips = [] } = Astro.props;
 const jsonld = {

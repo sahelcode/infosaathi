@@ -1,0 +1,32 @@
+draft: false
+name: জালালাবাদ রাগীব-রাবেয়া মেডিকেল কলেজ ও হাসপাতাল
+name_en: Jalalabad Ragib-Rabeya Medical College & Hospital
+short: রাগীব-রাবেয়া হাসপাতাল
+type: বেসরকারি
+city: sylhet
+address: জালালাবাদ রাগীব-রাবেয়া মেডিকেল কলেজ রোড, পাঠানটুলা, সিলেট
+emergency_24h: true
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: ২৪ ঘণ্টা জরুরি হটলাইন
+    number: "01779900016"
+    note: কলেজের প্রধান অফিসের নম্বরও এটি
+    kind: emergency
+  - label: হিসাব শাখা
+    number: "01779900062"
+    kind: other
+  - label: অধ্যক্ষের অফিস
+    number: "01779900870"
+    kind: other
+
+facilities: [er, icu, ot]
+
+sources:
+  - title: JRRMC — Home (official)
+    url: https://www.jrrmc.edu.bd/
+  - title: JRRMC — Contact (official)
+    url: https://www.jrrmc.edu.bd/common/contact
+  - title: JRRMC — Medical College & Hospital (official)
+    url: https://jrrmc.edu.bd/Medical/Medical

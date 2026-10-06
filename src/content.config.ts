@@ -21,6 +21,9 @@ const day = z.enum(DAYS, 'দিনের নাম হবে: শনি, রব
 const days = z.preprocess((v) => (v === 'প্রতিদিন' ? [...DAYS] : v), z.array(day).min(1, 'অন্তত একটি দিন দিন'));
 const date = z.coerce.date();
 const city = z.enum(keysOf(CITIES), 'শহরের নাম src/lib/taxonomy.ts-এর তালিকা থেকে দিন (যেমন sylhet)');
+// phone = you called and checked; official = taken from the institution's own website or notice
+const verifiedBy = z.enum(['phone', 'official'], 'verified_by হবে phone অথবা official').default('phone');
+const sources = z.array(z.object({ title: z.string(), url: z.url() })).default([]);
 const extraFaq = z.array(z.object({ q: z.string(), a: z.string() })).default([]);
 
 const doctors = defineCollection({
@@ -41,6 +44,7 @@ const doctors = defineCollection({
         banner: image().optional(), // chamber card / banner from the hospital
         banner_month: date.optional(),
         verified: date, // the day you checked this information yourself
+        verified_by: verifiedBy,
         notice: z.object({ text: z.string(), from: date, to: date }).optional(),
         treats: z.array(z.string()).default([]),
         about: z.string().optional(),
@@ -109,8 +113,74 @@ const hospitals = defineCollection({
         .default([]),
       tests_updated: date.optional(),
       verified: date,
+      verified_by: verifiedBy,
+      sources: sources,
       faq: extraFaq,
-    }),
+    })
+    .refine((h) => h.draft || h.verified_by === 'phone' || h.sources.length > 0, 'official তথ্যের জন্য অন্তত একটি sources দিন'),
 });
 
-export const collections = { doctors, hospitals };
+const universities = defineCollection({
+  loader: files('universities'),
+  schema: ({ image }) =>
+    z
+      .object({
+        draft: z.boolean().default(false),
+        name: z.string().min(3), // English name, as the university writes it
+        name_bn: z.string().min(3),
+        short: z.string().optional(), // e.g. SUST, NSU
+        type: z.enum(['সরকারি', 'বেসরকারি'], 'type হবে সরকারি বা বেসরকারি'),
+        est: z.number().int().min(1800).max(2100),
+        city,
+        address: z.string(),
+        web: z.url(),
+        apply_url: z.url().optional(),
+        ugc: z.boolean().default(true), // listed by the University Grants Commission
+        logo: image().optional(),
+        photo: image().optional(),
+        campus: z.string().optional(), // e.g. "রাগিবনগর, ৬২ একর স্থায়ী ক্যাম্পাস"
+        students: z.string().optional(), // e.g. "১০,০০০+"
+        teachers: z.string().optional(),
+        verified: date,
+        verified_by: verifiedBy,
+        numbers: z.array(z.object({ label: z.string(), number: phone, note: z.string().optional() })).min(1, 'অন্তত একটি নম্বর দিন'),
+        emails: z.array(z.object({ label: z.string(), email: z.email() })).default([]),
+        admission: z
+          .object({
+            intake: z.string(), // e.g. "স্প্রিং ২০২৭" or "২০২৬–২৭ শিক্ষাবর্ষ"
+            open: date.optional(),
+            close: date.optional(),
+            requirement: z.string(),
+            exam: z.string().optional(),
+            app_fee: z.number().positive().optional(),
+            classes_start: z.string().optional(),
+            steps: z.array(z.object({ title: z.string(), text: z.string() })).default([]),
+            documents: z.array(z.string()).default([]),
+          })
+          .refine((a) => !a.open || !a.close || a.open <= a.close, 'admission.open তারিখ close-এর আগে হতে হবে')
+          .optional(),
+        programs: z
+          .array(
+            z.object({
+              faculty: z.string(),
+              name: z.string(), // Bangla
+              name_en: z.string(),
+              years: z.number().positive().optional(),
+              credits: z.number().positive().optional(),
+              total_cost: z.number().positive().optional(), // whole programme, taka
+            }),
+          )
+          .default([]),
+        cost_note: z.string().optional(),
+        waivers: z.array(z.object({ condition: z.string(), amount: z.string() })).default([]),
+        about: z.string().optional(),
+        good: z.array(z.string()).default([]),
+        think: z.array(z.string()).default([]),
+        faq: extraFaq,
+        sources: sources,
+        old_urls: z.array(z.string().startsWith('/')).default([]),
+      })
+      .refine((u) => u.draft || u.verified_by === 'phone' || u.sources.length > 0, 'official তথ্যের জন্য অন্তত একটি sources দিন'),
+});
+
+export const collections = { doctors, hospitals, universities };

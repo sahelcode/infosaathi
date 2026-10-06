@@ -1,0 +1,72 @@
+draft: false
+name: American International University-Bangladesh
+name_bn: আমেরিকান ইন্টারন্যাশনাল ইউনিভার্সিটি-বাংলাদেশ
+short: AIUB
+type: বেসরকারি
+est: 1994
+city: dhaka
+address: ৪০৮/১ (পুরাতন কেএ ৬৬/১), কুড়াতলী, খিলক্ষেত, ঢাকা-১২২৯
+web: https://www.aiub.edu
+apply_url: https://admission.aiub.edu/
+ugc: true
+campus: কুড়াতলী, খিলক্ষেত, ঢাকা
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: ভর্তি তথ্য
+    number: "01886566666"
+  - label: ভর্তি তথ্য
+    number: "01844515912"
+  - label: ভর্তি তথ্য
+    number: "01844115000"
+    note: এক্সটেনশন ২০১, ২০২
+  - label: ভর্তি বিভাগ
+    number: "01844515900"
+    note: এক্সটেনশন ২০৫
+  - label: ভর্তি বিভাগ
+    number: "01844515911"
+emails:
+  - { label: সাধারণ তথ্য, email: info@aiub.edu }
+  - { label: ভর্তি, email: apply@aiub.edu }
+
+programs:
+  - { faculty: সায়েন্স ও টেকনোলজি, name: কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিং, name_en: B.Sc. in Computer Science & Engineering (CSE), years: 4, credits: 148, total_cost: 1385000 }
+  - { faculty: সায়েন্স ও টেকনোলজি, name: ডেটা সায়েন্স, name_en: B.Sc. in Data Science }
+  - { faculty: সায়েন্স ও টেকনোলজি, name: কম্পিউটার নেটওয়ার্ক ও সাইবার সিকিউরিটি, name_en: B.Sc. in Computer Network & Cyber Security (CNCS) }
+  - { faculty: ইঞ্জিনিয়ারিং, name: ইলেকট্রিক্যাল ও ইলেকট্রনিক ইঞ্জিনিয়ারিং, name_en: B.Sc. in Electrical and Electronic Engineering (EEE), years: 4, credits: 148, total_cost: 1237000 }
+  - { faculty: ইঞ্জিনিয়ারিং, name: কম্পিউটার ইঞ্জিনিয়ারিং, name_en: B.Sc. in Computer Engineering (COE) }
+  - { faculty: ইঞ্জিনিয়ারিং, name: মেকানিক্যাল ইঞ্জিনিয়ারিং, name_en: B.Sc. in Mechanical Engineering (ME) }
+  - { faculty: ইঞ্জিনিয়ারিং, name: ইন্ডাস্ট্রিয়াল ও প্রোডাকশন ইঞ্জিনিয়ারিং, name_en: B.Sc. in Industrial & Production Engineering (IPE) }
+  - { faculty: ইঞ্জিনিয়ারিং, name: আর্কিটেকচার, name_en: Bachelor of Architecture (B.Arch.) }
+  - { faculty: বিজনেস অ্যাডমিনিস্ট্রেশন, name: বিবিএ, name_en: Bachelor of Business Administration (BBA), credits: 140 }
+  - { faculty: আর্টস ও সোশ্যাল সায়েন্সেস, name: ইংরেজি, name_en: BA in English }
+  - { faculty: আর্টস ও সোশ্যাল সায়েন্সেস, name: সাংবাদিকতা ও গণযোগাযোগ, name_en: BA in Journalism and Mass Communication }
+  - { faculty: আর্টস ও সোশ্যাল সায়েন্সেস, name: অর্থনীতি, name_en: BSS in Economics }
+  - { faculty: আর্টস ও সোশ্যাল সায়েন্সেস, name: আইন (এলএলবি), name_en: Bachelor of Law (LLB) }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: ফার্মেসি, name_en: Bachelor of Pharmacy (B.Pharm.) }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: বায়োকেমিস্ট্রি ও মলিকিউলার বায়োলজি, name_en: B.Sc. in Biochemistry and Molecular Biology (BMB) }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: মাইক্রোবায়োলজি, name_en: B.Sc. in Microbiology }
+cost_note: AIUB শুধু প্রতি ক্রেডিট ফি প্রকাশ করে, তাই CSE ও EEE-র মোট খরচ আমরা হিসাব করেছি — মোট ক্রেডিট × প্রতি ক্রেডিট ফি (CSE ৮,৫০০ টাকা, EEE ৭,৫০০ টাকা) + ভর্তি ফি ২৫,০০০ + ভেরিফিকেশন ফি ২,০০০ + ৮ সেমিস্টারে প্রতি সেমিস্টারে স্টুডেন্ট অ্যাক্টিভিটিজ ও ফ্যাসিলিটিজ ফি ১২,৫০০ টাকা। কারিকুলাম অনুযায়ী ল্যাব ফি (কম্পিউটার/ল্যাঙ্গুয়েজ ল্যাব ২,৫০০, সায়েন্স ল্যাব ২,০০০ টাকা ইত্যাদি) ও ওয়েভার ধরা হয়নি, তাই আসল খরচ কিছুটা বেশি হতে পারে। অন্য প্রোগ্রামের প্রতি ক্রেডিট ফি অফিসিয়াল টিউশন ফি পাতায় আছে।
+
+about: আমেরিকান ইন্টারন্যাশনাল ইউনিভার্সিটি-বাংলাদেশ (AIUB) ১৯৯৪ সালে ড. আনোয়ারুল আবেদীন প্রতিষ্ঠা করেন; ৬ নভেম্বর ১৯৯৫ সরকারের প্রাথমিক অনুমোদন এবং ২৫ অক্টোবর ২০২৩ স্থায়ী অনুমোদন পায়। ঢাকার খিলক্ষেতের কুড়াতলীতে এর ক্যাম্পাস। আর্টস ও সোশ্যাল সায়েন্সেস, বিজনেস, ইঞ্জিনিয়ারিং, হেলথ ও লাইফ সায়েন্সেস এবং সায়েন্স ও টেকনোলজি — পাঁচটি অনুষদে স্নাতক প্রোগ্রাম আছে।
+good:
+  - সরকারের স্থায়ী অনুমোদনপ্রাপ্ত (২০২৩)
+  - স্নাতক ভর্তিতে ন্যূনতম GPA শর্ত তুলনামূলক সহজ (SSC ও HSC মিলিয়ে ৫.০০, প্রতিটিতে কমপক্ষে ২.৫০)
+  - আবেদন ফি ১,০০০ টাকা
+think:
+  - প্রতি ক্রেডিট ফি প্রোগ্রামভেদে ৫,০০০ থেকে ৮,৫০০ টাকা; CSE-তে খরচ বেশি
+  - মেধাবৃত্তি ও ওয়েভারের শতাংশ নির্দিষ্ট করে প্রকাশিত নয়, কমিটি ঠিক করে
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://www.aiub.edu/ }
+  - { title: যোগাযোগ, url: https://www.aiub.edu/contact }
+  - { title: ভর্তি বিজ্ঞপ্তি, url: https://www.aiub.edu/admission }
+  - { title: EEE ভর্তি — ভর্তি অফিসের নম্বর, url: https://www.aiub.edu/faculties/engg/departments/eee/program/undergraduate-program/admission }
+  - { title: টিউশন ফি, url: https://www.aiub.edu/tuition-fee }
+  - { title: বৃত্তি ও ওয়েভার, url: https://www.aiub.edu/admission/scholarships }
+  - { title: পরিচিতি, url: https://www.aiub.edu/about/information }
+  - { title: B.Sc. in CSE প্রোগ্রাম, url: https://www.aiub.edu/faculties/fst/programs/under-graduate/bachelor-of-science-in-computer-science--engineering }
+  - { title: B.Sc. in EEE প্রোগ্রাম, url: https://www.aiub.edu/faculties/engg/programs/bsc-in-eee }
+  - { title: BBA প্রোগ্রাম, url: https://www.aiub.edu/faculties/fba/programs/undergraduate/bachelor-of-business-administration-bba }
+old_urls: [/2025/11/american-international-university.html]

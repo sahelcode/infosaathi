@@ -1,0 +1,30 @@
+draft: false
+name: আল হারামাইন হাসপাতাল প্রাইভেট লিমিটেড
+name_en: Al Haramain Hospital Pvt. Ltd.
+short: আল হারামাইন হাসপাতাল
+type: বেসরকারি
+city: sylhet
+address: কাজী টাওয়ার, সমতা-৩০, চালিবন্দর, বিশ্বরোড, সোবহানীঘাট, সিলেট-৩১০০
+emergency_24h: true
+beds: 250
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: জরুরি বিভাগ ও অ্যাপয়েন্টমেন্ট
+    number: "01931225555"
+    kind: emergency
+  - label: অ্যাপয়েন্টমেন্ট
+    number: "0821729981"
+    note: হটলাইন (শর্ট কোড) ১০৬০৭
+    kind: serial
+
+facilities: [er, icu, nicu, dialysis, ot, pharmacy, ambulance, canteen]
+
+sources:
+  - title: Al Haramain Hospital — Contact Details (official)
+    url: https://www.haramainhospital.com/contact-us/
+  - title: Al Haramain Hospital — About Us (official)
+    url: https://www.haramainhospital.com/about-us/
+  - title: Al Haramain Hospital — Home (official)
+    url: https://www.haramainhospital.com/

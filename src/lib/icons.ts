@@ -28,6 +28,14 @@ export const ICONS = {
   heart: "<path d=\"M20.8 8.6a4.6 4.6 0 0 0-7.8-3.3L12 6.3l-1-1a4.6 4.6 0 1 0-6.5 6.5l7.5 7.5 7.5-7.5c.9-.9 1.3-1.9 1.3-3.2Z\"/><path d=\"M7 12h3l1.5-3 2 5 1.5-2H17\"/>",
   steth: "<path d=\"M9 3v4a3 3 0 0 0 6 0V3\"/><path d=\"M12 14v7M9 21h6\"/><circle cx=\"12\" cy=\"14\" r=\"4\"/>",
   star: "<path d=\"m12 3 2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6L3.3 9.2l6.1-.6Z\"/>",
+  globe: "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9Z\"/>",
+  ext: "<path d=\"M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5\"/>",
+  cap: "<path d=\"M22 10 12 5 2 10l10 5 10-5Z\"/><path d=\"M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5\"/>",
+  wallet: "<rect x=\"3\" y=\"6\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 10h18M16 15h2\"/>",
+  file: "<path d=\"M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8Z\"/><path d=\"M14 3v5h5M9 13h6M9 17h4\"/>",
+  users: "<circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M3 20v-1a6 6 0 0 1 12 0v1\"/><path d=\"M16 4.5a3.5 3.5 0 0 1 0 7M21 20v-1a6 6 0 0 0-4-5.6\"/>",
+  plus: "<path d=\"M12 5v14M5 12h14\"/>",
+  minus: "<path d=\"M5 12h14\"/>",
 } as const;
 
 // Facility icons for the hospital page; er/icu/ccu reuse the general icons.

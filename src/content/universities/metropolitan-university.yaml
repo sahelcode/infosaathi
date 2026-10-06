@@ -1,0 +1,69 @@
+draft: false
+name: Metropolitan University
+name_bn: মেট্রোপলিটন ইউনিভার্সিটি
+short: MU
+type: বেসরকারি
+est: 2003
+city: sylhet
+address: বটেশ্বর, সিলেট-৩১০৪
+web: https://www.metrouni.edu.bd
+apply_url: https://metrouni.edu.bd/sites/admission/online-admission-form
+ugc: true
+campus: বটেশ্বর, স্থায়ী ক্যাম্পাস
+students: "৬,০০০+"
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: ভর্তি ও সাধারণ তথ্য
+    number: "01313050044"
+  - label: ভর্তি ও সাধারণ তথ্য
+    number: "01313050066"
+emails:
+  - { label: ভর্তি ও সাধারণ তথ্য, email: info@metrouni.edu.bd }
+  - { label: রেজিস্ট্রার অফিস, email: registrar@metrouni.edu.bd }
+  - { label: পরীক্ষা নিয়ন্ত্রক, email: exam@metrouni.edu.bd }
+
+programs:
+  - { faculty: বিজ্ঞান ও প্রযুক্তি, name: কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিং, name_en: B.Sc. in CSE }
+  - { faculty: বিজ্ঞান ও প্রযুক্তি, name: সফটওয়্যার ইঞ্জিনিয়ারিং, name_en: B.Sc. in Software Engineering }
+  - { faculty: বিজ্ঞান ও প্রযুক্তি, name: ডেটা সায়েন্স, name_en: B.Sc. in Data Science }
+  - { faculty: বিজ্ঞান ও প্রযুক্তি, name: ইলেকট্রিক্যাল ও ইলেকট্রনিক ইঞ্জিনিয়ারিং, name_en: B.Sc. in EEE }
+  - { faculty: ব্যবসায় ও অর্থনীতি, name: বিজনেস অ্যাডমিনিস্ট্রেশন, name_en: BBA }
+  - { faculty: ব্যবসায় ও অর্থনীতি, name: অর্থনীতি, name_en: BSS (Hons) in Economics }
+  - { faculty: আইন, name: আইন, name_en: LL.B. (Hons) }
+  - { faculty: মানবিক ও সামাজিক বিজ্ঞান, name: ইংরেজি, name_en: BA (Hons) in English }
+  - { faculty: স্নাতকোত্তর, name: এমবিএ, name_en: MBA }
+  - { faculty: স্নাতকোত্তর, name: ম্যানেজমেন্ট ইনফরমেশন সিস্টেমে এমএসসি, name_en: M.Sc. in MIS }
+  - { faculty: স্নাতকোত্তর, name: ইংরেজিতে এমএ, name_en: M.A. in English }
+  - { faculty: স্নাতকোত্তর, name: এলএলএম (প্রিলিমিনারি), name_en: LL.M. (Preliminary) }
+  - { faculty: স্নাতকোত্তর, name: এলএলএম (ফাইনাল), name_en: LL.M. (Final) }
+cost_note: অফিসিয়াল ফি তালিকায় পুরো কোর্সের মোট খরচ দেওয়া নেই। স্নাতকে ভর্তি ফি ২০,০০০ টাকা (এককালীন), রেজিস্ট্রেশন ফি প্রতি টার্মে ১০,০০০ টাকা, ক্যাম্পাস অ্যাক্টিভিটি মাসে ২,০০০ টাকা, আর ক্রেডিট ফির মাসিক কিস্তি প্রোগ্রামভেদে ৪,০০০ থেকে ৭,০০০ টাকা (CSE, সফটওয়্যার, ডেটা সায়েন্স ও LLB ৭,০০০; EEE ও BBA ৬,০০০; ইংরেজি ৫,০০০; অর্থনীতি ৪,০০০)। ভর্তি ফর্ম ৫০০ টাকা।
+
+waivers:
+  - { condition: SSC ও HSC দুটোতেই গোল্ডেন GPA ৫.০০, amount: "৫০%" }
+  - { condition: SSC ও HSC দুটোতেই GPA ৫.০০ (একটিতে গোল্ডেন), amount: "৩০%" }
+  - { condition: SSC ও HSC দুটোতেই GPA ৫.০০ (গোল্ডেন ছাড়া), amount: "২০%" }
+  - { condition: SSC ও HSC মিলিয়ে GPA ৯, amount: "১০%" }
+  - { condition: মুক্তিযোদ্ধার বংশধর, amount: "২০%" }
+  - { condition: একসাথে দুই ভাইবোন ভর্তি হলে, amount: "২০%" }
+  - { condition: ছাত্রী, amount: "১৫%" }
+
+about: মেট্রোপলিটন ইউনিভার্সিটি ২০০৩ সালে প্রতিষ্ঠিত সিলেটের একটি বেসরকারি বিশ্ববিদ্যালয়, যার প্রতিষ্ঠাতা তৌফিক রহমান চৌধুরী। বটেশ্বরে নিজস্ব স্থায়ী ক্যাম্পাসে কার্যক্রম চলে, এবং বিশ্ববিদ্যালয়ের ভাষ্য অনুযায়ী ২০২৪ সালের ৩ অক্টোবর সরকারের স্থায়ী সনদ পেয়েছে। প্রকৌশল, ব্যবসায়, অর্থনীতি, আইন ও ইংরেজিতে স্নাতক এবং কয়েকটি স্নাতকোত্তর প্রোগ্রাম আছে।
+good:
+  - সরকারের স্থায়ী সনদপ্রাপ্ত, নিজস্ব স্থায়ী ক্যাম্পাস
+  - ক্রেডিট ফি মাসিক কিস্তিতে দেওয়া যায়
+  - ফলাফলভিত্তিক মেধা বৃত্তি ৪ বছর পর্যন্ত বহাল
+think:
+  - ওয়েবসাইটে প্রোগ্রামের মোট খরচ দেওয়া নেই, ভর্তি অফিস থেকে জেনে নিন
+  - মেধা বৃত্তি আর ভাইবোন ওয়েভার একসাথে পাওয়া যায় না
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://www.metrouni.edu.bd }
+  - { title: যোগাযোগ, url: https://metrouni.edu.bd/sites/university/contact }
+  - { title: প্রোগ্রাম ফি, url: https://metrouni.edu.bd/sites/admission/programme-fee-structure }
+  - { title: স্কলারশিপ ও সহায়তা, url: https://metrouni.edu.bd/sites/admission/scholarship-aid }
+  - { title: স্নাতক ভর্তি, url: https://metrouni.edu.bd/sites/admission/undergraduate }
+  - { title: স্নাতকোত্তর ভর্তি, url: https://metrouni.edu.bd/sites/admission/graduate }
+  - { title: উইকিপিডিয়া, url: "https://en.wikipedia.org/wiki/Metropolitan_University,_Sylhet" }
+old_urls: [/2025/05/metropolitan-university-sylhet.html]

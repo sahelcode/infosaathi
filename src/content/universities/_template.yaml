@@ -1,0 +1,55 @@
+# ===== নতুন বিশ্ববিদ্যালয় যোগ করার নমুনা =====
+# ফাইলের নাম ইংরেজিতে ছোট হাতে, যেমন leading-university.yaml (এটাই লিংক: /university/sylhet/leading-university/)
+# * চিহ্ন দেওয়া ঘরগুলো লাগবেই, বাকিগুলো ঐচ্ছিক। ঐচ্ছিক ঘরের তথ্য না পেলে লাইনটা মুছে দিন, অনুমান করে লিখবেন না।
+
+draft: true
+name: Leading University                       # * ইংরেজি নাম, বিশ্ববিদ্যালয় যেভাবে লেখে
+name_bn: লিডিং ইউনিভার্সিটি                    # *
+short: LU
+type: বেসরকারি                                  # * সরকারি / বেসরকারি
+est: 2001                                      # * প্রতিষ্ঠার সাল
+city: sylhet                                   # * src/lib/taxonomy.ts-এর তালিকা থেকে
+address: রাগিবনগর, দক্ষিণ সুরমা, সিলেট-৩১১২       # *
+web: https://www.lus.ac.bd                     # *
+apply_url: https://admission.lus.ac.bd
+ugc: true                                      # UGC তালিকায় আছে
+# logo: ./images/leading-university-logo.png
+# photo: ./images/leading-university.jpg       # ক্যাম্পাসের ছবি (নিজের তোলা বা অনুমতি আছে এমন)
+campus: রাগিবনগর, স্থায়ী ক্যাম্পাস
+students: "৮,০০০+"
+teachers: "৩০০+"
+verified: 2026-10-06                           # * যেদিন তথ্য মিলিয়েছেন
+verified_by: official                          # phone = ফোনে যাচাই, official = অফিসিয়াল সাইট/বিজ্ঞপ্তি থেকে
+
+numbers:                                       # * অন্তত একটি
+  - label: ভর্তি তথ্য
+    number: "01700000000"
+emails:
+  - { label: ভর্তি, email: admission@example.edu.bd }
+
+admission:                                     # চলমান বা পরের ভর্তির তথ্য; না জানলে পুরো অংশ মুছুন
+  intake: স্প্রিং ২০২৭
+  open: 2026-10-01
+  close: 2026-12-20
+  requirement: SSC ও HSC দুটোতেই কমপক্ষে GPA ২.৫০
+  exam: ভর্তি পরীক্ষা ও ভাইভা
+  app_fee: 1000
+  classes_start: জানুয়ারি ২০২৭
+  steps:
+    - { title: অনলাইনে আবেদন, text: ভর্তি পোর্টালে ফর্ম পূরণ }
+  documents: [SSC ও HSC মার্কশিট, পাসপোর্ট সাইজ ছবি]
+
+programs:                                      # বিষয় ও খরচ; total_cost = পুরো কোর্সের আনুমানিক মোট খরচ (টাকা)
+  - { faculty: ইঞ্জিনিয়ারিং, name: কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিং, name_en: B.Sc. in CSE, years: 4, credits: 160, total_cost: 700000 }
+cost_note: মোট খরচ ওয়েভার ছাড়া, অফিসিয়াল টিউশন ফি তালিকা অনুযায়ী।
+
+waivers:
+  - { condition: SSC ও HSC দুটোতেই GPA ৫.০০, amount: "৫০%" }
+
+about: ছোট পরিচিতি, ২–৩ বাক্যে। না দিলে তথ্য থেকে নিজে তৈরি হয়।
+good: [শহর থেকে কাছে স্থায়ী ক্যাম্পাস]
+think: [ফি প্রোগ্রামভেদে বদলায়]
+
+sources:                                       # * official হলে কমপক্ষে একটি লিংক
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://www.lus.ac.bd }
+old_urls: []                                   # পুরনো Blogger লিংক থাকলে
