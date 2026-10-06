@@ -1,0 +1,27 @@
+---
+import Base from '../../../layouts/Base.astro';
+import BloodOrgs from '../../../components/BloodOrgs.astro';
+import { getBloodOrgs } from '../../../lib/data';
+import { districtBn, GROUPS, slugOf } from '../../../lib/blood';
+import { SITE } from '../../../lib/site';
+import '../../../styles/hospital.css';
+import '../../../styles/uni.css';
+import '../../../styles/blood.css';
+export async function getStaticPaths() {
+  const all = await getBloodOrgs();
+  return [...new Set(all.map((o) => o.data.district))].map((d) => ({ params: { district: d }, props: { orgs: all.filter((o) => o.data.district === d) } }));
+}
+const { orgs } = Astro.props;
+const d = districtBn(Astro.params.district!);
+const path = `/blood/district/${Astro.params.district}/`;
+const jsonld = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [['হোম', '/'], ['রক্তদাতা সংস্থা', '/blood/'], [d, path]].map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) };
+---
+<Base title={`${d} জেলার রক্তদাতা সংস্থা: ফোন, ঠিকানা ও ফেসবুক গ্রুপ | InfoSaathi`} description={`${d} জেলার উপজেলা অনুযায়ী রক্তদাতা সংস্থার ফোন নম্বর, ঠিকানা ও ফেসবুক গ্রুপ।`} path={path} jsonld={jsonld}>
+  <main class="pf"><div class="bo">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব"><a href="/">হোম</a><span>›</span><a href="/blood/">রক্তদাতা সংস্থা</a><span>›</span><a href={path}>{d}</a></nav>
+    <h1 class="pf-list-h">{d} জেলার রক্তদাতা সংস্থা</h1>
+    <p class="pf-list-intro">উপজেলা অনুযায়ী সাজানো। নম্বরে চাপ দিলে সরাসরি ফোন যাবে।</p>
+    <nav class="bo-dist" aria-label="রক্তের গ্রুপ">{GROUPS.map((g) => <a href={`/blood/${slugOf(g)}/`}>{g}</a>)}</nav>
+    <BloodOrgs orgs={orgs} />
+  </div></main>
+</Base>

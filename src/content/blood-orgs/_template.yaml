@@ -1,0 +1,14 @@
+# রক্তদাতা সংস্থার নমুনা। কপি করে নাম দিন, যেমন kanaighat-blood-helpline.yaml
+# নিয়ম: নিজে ফোন করে বা সংস্থার ফেসবুক পেজ দেখে যাচাই করে তারপর দিন।
+name: কানাইঘাট ব্লাড হেল্পলাইন
+district: sylhet                 # ইংরেজি নাম। তালিকা: src/lib/blood.ts (DISTRICTS)
+upazila: কানাইঘাট                # উপজেলা বা থানা
+address: "বাজার রোড, কানাইঘাট সদর"   # ঐচ্ছিক
+phones:                          # অন্তত একটি ফোন অথবা facebook লাগবে
+  - { number: "01700000000", who: "সভাপতি" }
+  - { number: "01800000000" }
+facebook: https://www.facebook.com/groups/example   # ঐচ্ছিক: গ্রুপ বা পেজের লিংক
+note: "২৪ ঘণ্টা সেবা"            # ঐচ্ছিক
+verified: 2026-10-07             # যে দিন যাচাই করেছেন
+verified_by: phone               # phone (ফোন করে) অথবা online (শুধু পেজ দেখে)
+# draft: true                    # প্রকাশ না করে রাখতে

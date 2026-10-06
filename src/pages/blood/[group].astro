@@ -2,6 +2,10 @@
 // One page per blood group: who can give to / receive from this group (standard red-cell compatibility).
 import Base from '../../layouts/Base.astro';
 import { GROUPS, slugOf, RECEIVE_FROM, DONATE_TO, type Group } from '../../lib/blood';
+import BloodOrgs from '../../components/BloodOrgs.astro';
+import { getBloodOrgs } from '../../lib/data';
+import { districtBn } from '../../lib/blood';
+import { bn } from '../../lib/format';
 import { SITE } from '../../lib/site';
 import '../../styles/hospital.css';
 import '../../styles/uni.css';
@@ -11,6 +15,10 @@ export function getStaticPaths() {
   return GROUPS.map((g) => ({ params: { group: slugOf(g) }, props: { g } }));
 }
 const { g } = Astro.props as { g: Group };
+const orgs = await getBloodOrgs();
+const counts = new Map<string, number>();
+for (const o of orgs) counts.set(o.data.district, (counts.get(o.data.district) ?? 0) + 1);
+const districts = [...counts].sort((a, b) => districtBn(a[0]).localeCompare(districtBn(b[0]), 'bn'));
 const recv = RECEIVE_FROM[g];
 const give = DONATE_TO(g);
 const path = `/blood/${slugOf(g)}/`;
@@ -50,6 +58,17 @@ const jsonld = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
           <li>দাতার রক্ত রোগীকে দেওয়ার আগে হাসপাতাল ক্রস-ম্যাচ ও সংক্রমণের পরীক্ষা করবে। এটা বাদ দেওয়া যায় না।</li>
         </ol>
         <p class="bd-sub">এটি সাধারণ নিয়ম। কাকে কোন রক্ত দেওয়া হবে, সেই সিদ্ধান্ত চিকিৎসক ও ব্লাড ব্যাংকের।</p>
+      </section>
+
+      <section class="bd-card" id="orgs">
+        <h2>{g} রক্ত দরকার? রক্তদাতা সংস্থায় যোগাযোগ করুন</h2>
+        {districts.length > 0 ? (
+          <>
+            <p class="bd-sub" style="margin:0 0 10px">জেলা বেছে নিন, তারপর উপজেলা অনুযায়ী ফোন নম্বর ও ফেসবুক গ্রুপ দেখুন।</p>
+            <nav class="bo-dist" aria-label="জেলা">{districts.map(([k, n]) => <a href={`/blood/district/${k}/`}>{districtBn(k)}<small>{bn(n)}</small></a>)}</nav>
+          </>
+        ) : <p class="bo-empty">রক্তদাতা সংস্থার তালিকা তৈরি হচ্ছে। যাচাই করা তথ্য পেলেই জেলা ও উপজেলা অনুযায়ী এখানে যোগ হবে।</p>}
+        <a class="bd-chip" style="margin-top:6px" href="/blood/">সব সংস্থা দেখুন</a>
       </section>
 
       <nav class="bd-all" aria-label="অন্য গ্রুপ"><span>অন্য গ্রুপ:</span>{GROUPS.filter((x) => x !== g).map((x) => <a href={`/blood/${slugOf(x)}/`}>{x}</a>)}</nav>

@@ -5,6 +5,7 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { CITIES, SPECIALTIES, FACILITIES, HOTEL_FACILITIES, TEST_GROUPS, keysOf } from './lib/taxonomy';
 import { DAYS } from './lib/format';
+import { DISTRICTS } from './lib/blood';
 
 // Files whose name starts with _ (like _template.yaml) are guides, never published.
 const files = (dir: string) => glob({ pattern: '**/[^_]*.yaml', base: `./src/content/${dir}` });
@@ -484,6 +485,22 @@ export const SERVICE_CATS = SERVICE_CATEGORIES;
 const apps = defineCollection({ loader: glob({ pattern: '**/[^_]*.yaml', base: './src/content/apps' }),
   schema: z.object({ draft: z.boolean().default(false), name: z.string(), desc: z.string(), url: z.url(), own: z.boolean().default(false), featured: z.boolean().default(false), order: z.number().default(99) }) });
 // Two kinds of item: (1) a headline that links out to the outlet (needs `url`), (2) our own weekly article (needs `body`, shown at /news/<file-name>/).
+// Blood donor organisations: a phone number and/or a Facebook group, with district and upazila (thana).
+const bloodOrgs = defineCollection({
+  loader: files('blood-orgs'),
+  schema: z.object({
+    draft: z.boolean().default(false),
+    name: z.string().min(3),
+    district: z.enum(Object.keys(DISTRICTS) as [string, ...string[]], 'district হবে ইংরেজি নামে, যেমন sylhet (তালিকা src/lib/blood.ts-এ)'),
+    upazila: z.string().min(2), // উপজেলা বা থানা, যেমন কানাইঘাট
+    address: z.string().optional(), // গ্রাম/এলাকা/রাস্তা
+    phones: z.array(z.object({ number: phone, who: z.string().optional() })).default([]), // who: যার নম্বর, যেমন সভাপতি
+    facebook: z.url().refine((u) => /(^|\.)(facebook\.com|fb\.com|fb\.me)$/.test(new URL(u).hostname), 'facebook লিংক facebook.com থেকে হতে হবে').optional(),
+    note: z.string().optional(), // যেমন "২৪ ঘণ্টা", "শুধু উপজেলার ভেতরে"
+    verified: date, // যে দিন আপনি যাচাই করেছেন
+    verified_by: z.enum(['phone', 'online'], 'verified_by হবে phone অথবা online').default('phone'),
+  }).refine((d) => d.phones.length > 0 || d.facebook, 'অন্তত একটি ফোন নম্বর অথবা facebook লিংক দিন'),
+});
 const news = defineCollection({
   loader: glob({ pattern: '**/[^_]*.yaml', base: './src/content/news' }),
   schema: ({ image }) => z.object({
@@ -527,4 +544,4 @@ const rankings = defineCollection({
   }),
 });
 
-export const collections = { doctors, hospitals, universities, institutions, places, hotels, scholarships, jobs, aiTools, services, news, rankings, apps };
+export const collections = { doctors, hospitals, universities, institutions, places, hotels, scholarships, jobs, aiTools, services, news, rankings, apps, bloodOrgs };

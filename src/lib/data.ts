@@ -71,3 +71,5 @@ export const getApps = async () => (await getCollection('apps', visible)).sort((
 export type NewsEntry = CollectionEntry<'news'>;
 export const newsUrl = (n: NewsEntry) => (n.data.body?.length ? `/news/${n.id}/` : n.data.url!);
 export const isOwnNews = (n: NewsEntry) => !!n.data.body?.length;
+export type BloodOrg = CollectionEntry<'bloodOrgs'>;
+export const getBloodOrgs = async (): Promise<BloodOrg[]> => (await getCollection('bloodOrgs', visible)).sort((a, b) => a.data.upazila.localeCompare(b.data.upazila, 'bn') || a.data.name.localeCompare(b.data.name, 'bn'));

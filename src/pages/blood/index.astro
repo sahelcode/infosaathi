@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import BloodOrgs from '../../components/BloodOrgs.astro';
+import { getBloodOrgs } from '../../lib/data';
+import { districtBn, GROUPS, slugOf } from '../../lib/blood';
+import { bn } from '../../lib/format';
+import { SITE } from '../../lib/site';
+import '../../styles/hospital.css';
+import '../../styles/uni.css';
+import '../../styles/blood.css';
+const orgs = await getBloodOrgs();
+const counts = new Map<string, number>();
+for (const o of orgs) counts.set(o.data.district, (counts.get(o.data.district) ?? 0) + 1);
+const districts = [...counts].sort((a, b) => districtBn(a[0]).localeCompare(districtBn(b[0]), 'bn'));
+const jsonld = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [['হোম', '/'], ['রক্তদাতা সংস্থা', '/blood/']].map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) };
+---
+<Base title="রক্তদাতা সংস্থা: জেলা ও উপজেলা অনুযায়ী ফোন ও ফেসবুক গ্রুপ | InfoSaathi" description="বাংলাদেশের জেলা ও উপজেলা অনুযায়ী রক্তদাতা সংস্থার ফোন নম্বর, ঠিকানা ও ফেসবুক গ্রুপ।" path="/blood/" jsonld={jsonld}>
+  <main class="pf"><div class="bo">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব"><a href="/">হোম</a><span>›</span><a href="/blood/">রক্তদাতা সংস্থা</a></nav>
+    <h1 class="pf-list-h">রক্তদাতা সংস্থা</h1>
+    <p class="pf-list-intro">জেলা ও উপজেলা অনুযায়ী রক্তদাতা সংস্থার ফোন নম্বর, ঠিকানা ও ফেসবুক গ্রুপ। প্রতিটি তথ্যের পাশে লেখা আছে কবে ও কীভাবে যাচাই হয়েছে।</p>
+    <nav class="bo-dist" aria-label="জেলা">{districts.map(([k, n]) => <a href={`/blood/district/${k}/`}>{districtBn(k)}<small>{bn(n)}</small></a>)}</nav>
+    <nav class="bo-dist" aria-label="রক্তের গ্রুপ">{GROUPS.map((g) => <a href={`/blood/${slugOf(g)}/`}>{g}</a>)}</nav>
+    {orgs.length > 0 ? <BloodOrgs orgs={orgs} showDistrict /> : <p class="bo-empty">রক্তদাতা সংস্থার তালিকা তৈরি হচ্ছে। যাচাই করা তথ্য পেলেই এখানে যোগ হবে।</p>}
+  </div></main>
+</Base>

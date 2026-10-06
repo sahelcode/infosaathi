@@ -1,0 +1,28 @@
+---
+// A list of blood donor organisations, grouped by upazila. Every number is a tap-to-call link.
+import Icon from './Icon.astro';
+import { districtBn } from '../lib/blood';
+import { bn, bnDate } from '../lib/format';
+import type { BloodOrg } from '../lib/data';
+interface Props { orgs: BloodOrg[]; showDistrict?: boolean }
+const { orgs, showDistrict = false } = Astro.props;
+const byUpazila = new Map<string, BloodOrg[]>();
+for (const o of orgs) byUpazila.set(o.data.upazila, [...(byUpazila.get(o.data.upazila) ?? []), o]);
+const show = (n: string) => n.replace(/^0/, '০').replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[+d]);
+---
+{[...byUpazila].map(([upz, list]) => (
+  <section class="bo-grp">
+    <h3>{upz}{showDistrict && <span> · {districtBn(list[0].data.district)}</span>}</h3>
+    {list.map((o) => (
+      <article class="bo-card">
+        <div class="bo-top"><b>{o.data.name}</b><span class:list={['bo-v', o.data.verified_by === 'online' && 'on']}>{o.data.verified_by === 'phone' ? 'ফোনে যাচাই' : 'অনলাইনে দেখা'} · {bnDate(o.data.verified)}</span></div>
+        <p class="bo-addr">{[o.data.address, o.data.upazila, districtBn(o.data.district)].filter(Boolean).join(', ')}</p>
+        {o.data.note && <p class="bo-note">{o.data.note}</p>}
+        <div class="bo-act">
+          {o.data.phones.map((p) => <a class="bo-call" href={`tel:${p.number}`}><Icon name="phone" size={16} w={2} />{show(p.number)}{p.who && <small>{p.who}</small>}</a>)}
+          {o.data.facebook && <a class="bo-fb" href={o.data.facebook} target="_blank" rel="noopener"><Icon name="fb" size={16} w={1.8} />ফেসবুক গ্রুপ/পেজ</a>}
+        </div>
+      </article>
+    ))}
+  </section>
+))}
