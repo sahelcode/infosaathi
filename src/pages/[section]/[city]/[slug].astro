@@ -1,0 +1,322 @@
+---
+// College / cadet college / school / school-and-college page. One file in src/content/institutions/ per institution.
+import { Image, getImage } from 'astro:assets';
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import NumRow from '../../../components/NumRow.astro';
+import Faq from '../../../components/Faq.astro';
+import Report from '../../../components/Report.astro';
+import ShareRow from '../../../components/ShareRow.astro';
+import Ad from '../../../components/Ad.astro';
+import EduCover from '../../../components/EduCover.astro';
+import { getInstitutions, institutionUrl, instSection, type Institution } from '../../../lib/data';
+import { CITIES } from '../../../lib/taxonomy';
+import { bn, taka, phoneShow, phoneIntl, bnDate, isoDay } from '../../../lib/format';
+import { SITE } from '../../../lib/site';
+import '../../../styles/hospital.css';
+import '../../../styles/uni.css';
+import '../../../styles/edu.css';
+
+export async function getStaticPaths() {
+  const list = await getInstitutions();
+  return list.map((i) => ({ params: { section: instSection(i), city: i.data.city, slug: i.id }, props: { inst: i } }));
+}
+
+const { inst } = Astro.props as { inst: Institution };
+const d = inst.data;
+const city = CITIES[d.city];
+const path = institutionUrl(inst);
+const section = instSection(inst);
+const KIND = { college: 'কলেজ', cadet: 'ক্যাডেট কলেজ', school: 'স্কুল', school_college: 'স্কুল অ্যান্ড কলেজ', madrasa: 'মাদরাসা' } as const;
+const LIST = { college: ['কলেজ', '/colleges/'], school: ['স্কুল', '/schools/'], madrasa: ['মাদরাসা', '/madrasas/'] } as const;
+const [listName, listUrl] = LIST[section];
+const isSchool = section === 'school';
+const short = d.short ?? d.name_bn;
+const mono = (d.short ?? d.name.split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]).join('')).slice(0, 4);
+const A = d.admission;
+const applyUrl = A?.apply_url ?? d.web;
+const map = `https://maps.google.com/?q=${encodeURIComponent(d.name + ', ' + city.en)}`;
+const checkedBadge = d.verified_by === 'phone' ? `ফোনে যাচাই: ${bnDate(d.verified)}` : `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
+const facs = [...new Set(d.subjects.map((s) => s.faculty))];
+const results = [...d.results].sort((a, b) => b.year - a.year);
+const latest = results[0];
+
+const glance = [
+  d.eiin && { icon: 'file', k: 'EIIN', v: bn(d.eiin) },
+  A?.close && { icon: 'cal', k: 'আবেদনের শেষ তারিখ', v: bnDate(A.close) },
+  d.levels.length > 0 && { icon: 'cap', k: isSchool ? 'শ্রেণি / স্তর' : 'স্তর', v: d.levels.join(', ') },
+  d.subjects.length > 0 && { icon: 'cap', k: 'অনার্স বিষয়', v: `${bn(d.subjects.length)}টি` },
+  d.shifts && { icon: 'clock', k: 'শিফট', v: d.shifts },
+  d.est && { icon: 'build', k: 'প্রতিষ্ঠা', v: bn(d.est) },
+  { icon: 'pin', k: 'অবস্থান', v: city.bn },
+].filter(Boolean).slice(0, 4) as { icon: 'file' | 'cal' | 'cap' | 'clock' | 'build' | 'pin'; k: string; v: string }[];
+
+const jump = [
+  A && ['admission', 'ভর্তি'],
+  d.subjects.length && ['subjects', 'বিষয়'],
+  results.length && ['results', 'ফলাফল'],
+  d.fees.length && ['fees', 'খরচ'],
+  ['about', 'পরিচিতি'],
+  ['contact', 'যোগাযোগ'],
+].filter(Boolean) as string[][];
+
+const about =
+  d.about ??
+  `${d.name_bn} ${d.est ? bn(d.est) + ' সালে প্রতিষ্ঠিত ' : ''}${city.of} একটি ${d.type} ${KIND[d.kind]}।` +
+    (d.levels.length ? ` এখানে ${d.levels.join(', ')} পড়ানো হয়।` : '');
+const facts = [
+  d.eiin && { icon: 'file', k: 'EIIN', v: bn(d.eiin) },
+  d.est && { icon: 'build', k: 'প্রতিষ্ঠা', v: bn(d.est) },
+  { icon: 'cap', k: 'ধরন', v: `${d.type} ${KIND[d.kind]}` },
+  d.gender && { icon: 'users', k: 'শিক্ষার্থী', v: d.gender === 'সহশিক্ষা' ? 'সহশিক্ষা (ছেলে ও মেয়ে)' : d.gender === 'বালক' ? 'শুধু ছেলে' : 'শুধু মেয়ে' },
+  d.levels.length > 0 && { icon: 'cap', k: 'স্তর', v: d.levels.join(', ') },
+  d.board && { icon: 'flag', k: 'শিক্ষা বোর্ড', v: d.board },
+  d.affiliation && { icon: 'flag', k: 'অধিভুক্ত', v: d.affiliation },
+  d.shifts && { icon: 'clock', k: 'শিফট', v: d.shifts },
+  d.versions && { icon: 'file', k: 'ভার্সন', v: d.versions },
+  d.students && { icon: 'users', k: 'শিক্ষার্থী সংখ্যা', v: d.students },
+  d.teachers && { icon: 'users', k: 'শিক্ষক', v: d.teachers },
+  d.campus && { icon: 'pin', k: 'ক্যাম্পাস', v: d.campus },
+].filter(Boolean) as { icon: 'file' | 'build' | 'cap' | 'users' | 'flag' | 'clock' | 'pin'; k: string; v: string }[];
+
+const mainNum = d.numbers[0];
+const faq = [
+  ...(d.eiin ? [{ q: `${d.name_bn}-এর EIIN নম্বর কত?`, a: `${bn(d.eiin)}।` }] : []),
+  ...(d.est ? [{ q: `${d.name_bn} কবে প্রতিষ্ঠিত?`, a: `${bn(d.est)} সালে।` }] : []),
+  ...(d.levels.length ? [{ q: `${d.name_bn}-এ কোন কোন স্তরে পড়ানো হয়?`, a: d.levels.join(', ') + '।' }] : []),
+  ...(A ? [{ q: `${A.intake} ভর্তির যোগ্যতা কী?`, a: A.requirement }] : []),
+  ...(d.subjects.length ? [{ q: `${d.name_bn}-এ কোন কোন বিষয়ে অনার্স আছে?`, a: d.subjects.map((s) => s.name).join(', ') + '।' }] : []),
+  { q: `${d.name_bn} কোথায়?`, a: `${d.address}।` },
+  { q: `${d.name_bn}-এর যোগাযোগ নম্বর কী?`, a: `${mainNum.label}: ${phoneShow(mainNum.number)}।` },
+  ...d.faq,
+];
+
+const all = await getInstitutions();
+const others = all.filter((x) => x.id !== inst.id && instSection(x) === section);
+const related = [...others.filter((x) => x.data.city === d.city), ...others.filter((x) => x.data.city !== d.city)].slice(0, 3);
+
+const photo = d.photo ? await getImage({ src: d.photo, width: 1200, format: 'webp' }) : undefined;
+const title = `${d.name_bn} (${d.name})${d.eiin ? ` – EIIN ${d.eiin}` : ''} | ভর্তি, তথ্য ও যোগাযোগ | InfoSaathi`;
+const description = `${d.name_bn} (${d.name}), ${city.bn}${d.eiin ? `, EIIN ${bn(d.eiin)}` : ''}: ${A ? 'ভর্তির তথ্য, ' : ''}${d.subjects.length ? 'বিষয়, ' : ''}${results.length ? 'ফলাফল, ' : ''}ঠিকানা ও যোগাযোগ নম্বর।`;
+const crumbs = [['হোম', '/'], [listName, listUrl], [city.bn, `${listUrl}${d.city}/`]];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': d.kind === 'school' ? 'HighSchool' : 'EducationalOrganization',
+      name: d.name,
+      alternateName: [d.name_bn, ...(d.short ? [d.short] : [])],
+      url: SITE + path,
+      ...(d.web && { sameAs: [d.web] }),
+      ...(d.est && { foundingDate: String(d.est) }),
+      telephone: phoneIntl(mainNum.number),
+      ...(photo && { image: new URL(photo.src, SITE).href }),
+      address: { '@type': 'PostalAddress', streetAddress: d.address, addressLocality: city.en, addressCountry: 'BD' },
+    },
+    { '@type': 'BreadcrumbList', itemListElement: crumbs.map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) },
+    { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  ],
+};
+---
+<Base title={title} description={description} path={path} ogImage={photo?.src} jsonld={jsonld} draft={d.draft}>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{d.name_bn}</a></nav>
+    <div class="pf-grid">
+      <article class="pf-main">
+        <section class="pf-hero hp-hero">
+          <div class:list={['hp-cover', d.photo ? 'has-photo' : isSchool ? 'ed-cover-s' : 'ed-cover-c']}>
+            {d.photo ? <Image src={d.photo} alt={d.name_bn} width={1200} loading="eager" fetchpriority="high" /> : <EduCover kind={isSchool ? 'school' : 'college'} />}
+          </div>
+          <div class="pf-hero-body">
+            {d.logo ? <div class="hp-logo un-logo"><Image src={d.logo} alt={`${d.name_bn} লোগো`} width={110} height={110} /></div>
+                    : <div class="hp-logo un-logo ed-mono" aria-hidden="true">{mono}</div>}
+            <h1 class="pf-name">{d.name_bn}</h1>
+            <p class="pf-en">{d.name}</p>
+            <p class="hp-addr"><Icon name="pin" size={15} w={2.2} />{d.address}</p>
+            <div class="pf-badges">
+              {d.eiin && <span class="pf-badge ok"><Icon name="check" size={13} w={3} />EIIN {bn(d.eiin)}</span>}
+              <span class="pf-badge">{d.type} {KIND[d.kind]}</span>
+              {d.est && <span class="pf-badge">প্রতিষ্ঠা {bn(d.est)}</span>}
+              <span class:list={['pf-badge', { src: d.verified_by === 'official' }]}><Icon name="clock" size={13} w={2.2} />{checkedBadge}</span>
+            </div>
+          </div>
+          <div class="pf-actions hp-actions un-actions">
+            {applyUrl ? <a class="pf-btn primary" href={applyUrl} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />{A?.apply_url ? 'ভর্তির আবেদন' : 'অফিসিয়াল ওয়েবসাইট'}</a>
+                      : <a class="pf-btn primary" href={`tel:${mainNum.number}`}><Icon name="phone" size={17} w={2.2} />কল করুন</a>}
+            <button class="pf-btn" type="button" data-sheet-open="numbers"><Icon name="phone" />কল</button>
+            <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
+            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+          </div>
+          <nav class="hp-jump" aria-label="এই পেজে">{jump.map(([a, t]) => <a href={`#${a}`}>{t}</a>)}</nav>
+        </section>
+
+        <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>
+
+        {A && (
+          <section class="pf-card" id="admission" aria-labelledby="h-adm">
+            <div class="pf-card-head"><h2 id="h-adm">ভর্তি · {A.intake}</h2>{A.close && <span class="pf-today" data-adm-status hidden></span>}</div>
+            <div class="un-adm" data-open={A.open && A.close ? isoDay(A.open) : undefined} data-close={A.close ? isoDay(A.close) : undefined}>
+              {A.close && <div class="un-adm-bar"><span data-adm-left></span><span class="un-adm-track"><i data-adm-fill></i></span></div>}
+              <dl class="un-adm-list">
+                {A.open && <div><dt>আবেদন শুরু</dt><dd>{bnDate(A.open)}</dd></div>}
+                {A.close && <div><dt>আবেদনের শেষ তারিখ</dt><dd>{bnDate(A.close)}</dd></div>}
+                <div><dt>যোগ্যতা</dt><dd>{A.requirement}</dd></div>
+                {A.exam && <div><dt>ভর্তি পদ্ধতি</dt><dd>{A.exam}</dd></div>}
+                {A.app_fee && <div><dt>আবেদন ফি</dt><dd>{taka(A.app_fee)}</dd></div>}
+              </dl>
+            </div>
+            {d.seats && (<><h3 class="pf-h3">{d.seats.title}</h3>
+              <div class="ed-tbl-wrap"><table class="ed-tbl"><thead><tr>{d.seats.head.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+                <tbody>{d.seats.rows.map((r) => <tr>{r.map((c) => <td>{c}</td>)}</tr>)}</tbody></table></div></>)}
+            {A.steps.length > 0 && (<><h3 class="pf-h3">ভর্তির ধাপ</h3>
+              <ol class="un-steps">{A.steps.map((s, i) => <li><span class="un-step-n">{bn(i + 1)}</span><span><b>{s.title}</b><small>{s.text}</small></span></li>)}</ol></>)}
+            {A.documents.length > 0 && (<><h3 class="pf-h3">যে কাগজপত্র লাগবে</h3>
+              <ul class="un-docs">{A.documents.map((x) => <li><Icon name="check" size={15} w={2.6} />{x}</li>)}</ul></>)}
+          </section>
+        )}
+        {!A && d.seats && (
+          <section class="pf-card" aria-labelledby="h-seats"><h2 id="h-seats">{d.seats.title}</h2>
+            <div class="ed-tbl-wrap"><table class="ed-tbl"><thead><tr>{d.seats.head.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+              <tbody>{d.seats.rows.map((r) => <tr>{r.map((c) => <td>{c}</td>)}</tr>)}</tbody></table></div>
+          </section>
+        )}
+
+        {d.subjects.length > 0 && (
+          <section class="pf-card" id="subjects" aria-labelledby="h-sub">
+            <div class="pf-card-head"><h2 id="h-sub">অনার্সের বিষয়</h2><span class="pf-count">{bn(d.subjects.length)}টি বিষয়</span></div>
+            {facs.length > 1 && (
+              <div class="hp-chips"><button class="hp-chip on" type="button" data-pfac="all">সব</button>
+                {facs.map((f, i) => <button class="hp-chip" type="button" data-pfac={`f${i}`}>{f}</button>)}</div>
+            )}
+            <ul class="un-progs">
+              {d.subjects.map((s) => (
+                <li class="un-prog" data-fac={`f${facs.indexOf(s.faculty)}`} data-q={(s.name + ' ' + (s.name_en ?? '')).toLowerCase()}>
+                  <span class="un-prog-t"><b>{s.name}</b><small>{[s.name_en, s.masters ? 'মাস্টার্স আছে' : ''].filter(Boolean).join(' · ')}</small></span>
+                  {s.seats && <span class="un-prog-c"><small>আসন</small><strong>{bn(s.seats)}</strong></span>}
+                </li>
+              ))}
+            </ul>
+            <p class="hp-empty" data-prog-empty hidden>এই বিভাগে কোনো বিষয় নেই</p>
+          </section>
+        )}
+
+        {latest && (
+          <section class="pf-card" id="results" aria-labelledby="h-res">
+            <div class="pf-card-head"><h2 id="h-res">পাবলিক পরীক্ষার ফলাফল</h2></div>
+            <div class="ed-res-top"><b>{bn(latest.pass_rate)}%</b><small>পাসের হার, {latest.exam} {bn(latest.year)}</small></div>
+            <ul class="ed-res">
+              {results.map((r) => (
+                <li><span class="ed-res-y">{r.exam} {bn(r.year)}</span><span class="ed-res-p">{bn(r.pass_rate)}%</span>
+                  <span class="ed-res-bar"><i style={`--w:${r.pass_rate}%`}></i></span>
+                  {(r.examinees || r.gpa5) && <span class="ed-res-m">{[r.examinees && `${bn(r.examinees)} জন পরীক্ষার্থী`, r.gpa5 !== undefined && `জিপিএ-৫ ${bn(r.gpa5)} জন`].filter(Boolean).join(' · ')}</span>}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <Ad />
+
+        {d.fees.length > 0 && (
+          <section class="pf-card" id="fees" aria-labelledby="h-fees">
+            <div class="pf-card-head"><h2 id="h-fees">খরচ</h2></div>
+            <ul class="un-waivers">{d.fees.map((f) => <li><span>{f.item}</span><b>{f.amount}</b></li>)}</ul>
+            {d.fee_note && <p class="pf-text">{d.fee_note}</p>}
+          </section>
+        )}
+
+        {d.facilities.length > 0 && (
+          <section class="pf-card" aria-labelledby="h-fac"><div class="pf-card-head"><h2 id="h-fac">সুযোগ-সুবিধা</h2></div>
+            <ul class="pf-chips" style="list-style:none">{d.facilities.map((f) => <li><span>{f}</span></li>)}</ul></section>
+        )}
+
+        <section class="pf-card" id="about" aria-labelledby="h-about">
+          <h2 id="h-about">পরিচিতি</h2>
+          <p class="pf-text">{about}</p>
+          <ul class="un-facts">{facts.map((f) => <li><span class="un-fact-i"><Icon name={f.icon} size={17} w={1.9} /></span><span class="pf-k">{f.k}</span><b>{f.v}</b></li>)}</ul>
+          {d.alumni.length > 0 && (<><h3 class="pf-h3">উল্লেখযোগ্য প্রাক্তন শিক্ষার্থী</h3>
+            <ul class="ed-alum">{d.alumni.map((a) => <li><b>{a.name}</b><small>{a.role}</small></li>)}</ul></>)}
+          {(d.good.length > 0 || d.think.length > 0) && (
+            <div class="un-pc">
+              {d.good.length > 0 && <div class="un-pc-b good"><b><Icon name="plus" size={16} w={2.6} />ভালো দিক</b><ul>{d.good.map((g) => <li>{g}</li>)}</ul></div>}
+              {d.think.length > 0 && <div class="un-pc-b think"><b><Icon name="minus" size={16} w={2.6} />যা জেনে নেবেন</b><ul>{d.think.map((t) => <li>{t}</li>)}</ul></div>}
+            </div>
+          )}
+        </section>
+
+        <section class="pf-card" id="contact" aria-labelledby="h-contact">
+          <h2 id="h-contact">যোগাযোগ</h2>
+          <div class="pf-nums">
+            {d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}
+            {d.emails.map((m) => (
+              <div class="pf-num un-mail"><span class="pf-num-t"><small class="pf-num-l">ইমেইল · {m.label}</small><b>{m.email}</b></span>
+                <button class="pf-copy" type="button" data-copy-num={m.email} data-copy-msg="ইমেইল কপি হয়েছে" aria-label="ইমেইল কপি করুন"><Icon name="copy" size={17} w={1.9} /></button>
+                <a class="pf-call" href={`mailto:${m.email}`} aria-label="ইমেইল পাঠান"><Icon name="mail" size={17} /></a></div>
+            ))}
+          </div>
+          <div class="hp-info">
+            <div><span class="pf-k">ঠিকানা</span><b>{d.address}</b></div>
+            {d.web && <div><span class="pf-k">ওয়েবসাইট</span><a class="un-web" href={d.web} target="_blank" rel="noopener">{d.web.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}<Icon name="ext" size={14} /></a></div>}
+          </div>
+          <a class="pf-btn hp-mapbtn" href={map} target="_blank" rel="noopener"><Icon name="pin" />Google Maps-এ দেখুন</a>
+        </section>
+
+        <Faq items={faq} />
+        <Report placeholder="যেমন: ভর্তির তারিখ বদলেছে" note="ভর্তির নিয়ম, আসন ও ফি প্রতি বছর বদলায়। সিদ্ধান্তের আগে প্রতিষ্ঠানে নিশ্চিত হয়ে নিন।">
+          {d.sources.length > 0 && (
+            <div class="un-src"><b class="pf-h3" style="display:block;margin:4px 0 0">তথ্যসূত্র</b>
+              <ul>{d.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>
+          )}
+        </Report>
+        <ShareRow />
+        <nav class="pf-tags" aria-label="সম্পর্কিত">
+          <a href={`${listUrl}${d.city}/`}>{city.of} {listName}</a><a href={listUrl}>বাংলাদেশের {listName}</a>
+        </nav>
+        <Ad />
+
+        {related.length > 0 && (
+          <section class="pf-block" aria-labelledby="h-rel">
+            <div class="pf-block-head"><h2 id="h-rel">অন্য {listName}</h2><a class="see-all" href={listUrl}>See all</a></div>
+            <div class="pf-minis">
+              {related.map((x) => (
+                <a class="pf-mini" href={institutionUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="cap" size={20} w={1.8} /></span>
+                  <span class="pf-mini-txt"><b>{x.data.name_bn}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{CITIES[x.data.city].bn} · {x.data.type}</span></span>
+                  <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+
+      <aside class="pf-side" aria-label="সারাংশ">
+        <div class="pf-side-in">
+          <div class="pf-sum">
+            {A?.close && <span class="pf-today" data-adm-status hidden></span>}
+            <b class="pf-sum-h">{A ? `ভর্তি · ${A.intake}` : short}</b>
+            {d.eiin && <span class="pf-sum-l"><Icon name="file" size={14} w={2.2} />EIIN: {bn(d.eiin)}</span>}
+            {A?.close && <span class="pf-sum-l"><Icon name="cal" size={14} w={2.2} />শেষ তারিখ: {bnDate(A.close)}</span>}
+            <div class="pf-sheet-grp">{d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}</div>
+          </div>
+          <Ad side />
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="pf-sticky un-sticky" aria-label="দ্রুত যোগাযোগ">
+    <button class="pf-btn primary" type="button" data-sheet-open="numbers"><Icon name="phone" />যোগাযোগ নম্বর</button>
+    <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
+  </div>
+  <div class="pf-sheet" data-sheet="numbers" hidden>
+    <div class="pf-sheet-bg" data-sheet-close></div>
+    <div class="pf-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-h">
+      <div class="pf-sheet-grip"></div>
+      <div class="pf-sheet-top"><b id="sheet-h">{short} · যোগাযোগ</b><button class="pf-sheet-x" type="button" data-sheet-close aria-label="বন্ধ করুন"><Icon name="x" w={2.4} /></button></div>
+      <div class="pf-sheet-grp">{d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}</div>
+    </div>
+  </div>
+</Base>
+
+<script>
+  import '../../../scripts/uni.js';
+  import '../../../scripts/edu.js';
+</script>

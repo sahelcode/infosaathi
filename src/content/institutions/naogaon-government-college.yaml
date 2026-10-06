@@ -1,0 +1,61 @@
+draft: false
+kind: college
+name: Naogaon Government College
+name_bn: নওগাঁ সরকারি কলেজ
+type: সরকারি
+est: 1962
+city: naogaon
+address: নওগাঁ শহরের উত্তর প্রান্ত, নওগাঁ
+web: https://naogc.edu.bd
+board: রাজশাহী শিক্ষা বোর্ড
+affiliation: জাতীয় বিশ্ববিদ্যালয়
+gender: সহশিক্ষা
+levels: [একাদশ–দ্বাদশ শ্রেণি, ডিগ্রি (পাস), অনার্স, মাস্টার্স]
+campus: ১১ একর
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - { label: সকল বিষয়ে যোগাযোগ, number: "01750169383" }
+  - { label: অফিস, number: "01774536294" }
+  - { label: পরীক্ষা ও ভর্তি, number: "01794213901" }
+  - { label: পরীক্ষা, number: "01747256094" }
+  - { label: বোর্ড বৃত্তি, number: "01746848378" }
+  - { label: উপবৃত্তি, number: "01782965624" }
+
+subjects:
+  - { faculty: বিজ্ঞান, name: গণিত, name_en: Mathematics }
+  - { faculty: বিজ্ঞান, name: পদার্থবিজ্ঞান, name_en: Physics }
+  - { faculty: বিজ্ঞান, name: রসায়ন, name_en: Chemistry }
+  - { faculty: বিজ্ঞান, name: উদ্ভিদবিজ্ঞান, name_en: Botany }
+  - { faculty: বিজ্ঞান, name: প্রাণিবিজ্ঞান, name_en: Zoology }
+  - { faculty: বিজ্ঞান, name: ভূগোল ও পরিবেশ, name_en: Geography and Environment }
+  - { faculty: বিজ্ঞান, name: কৃষিবিজ্ঞান, name_en: Agricultural Science }
+  - { faculty: বিজ্ঞান, name: তথ্য ও যোগাযোগ প্রযুক্তি, name_en: ICT }
+  - { faculty: কলা, name: বাংলা, name_en: Bangla }
+  - { faculty: কলা, name: ইংরেজি, name_en: English }
+  - { faculty: কলা, name: দর্শন, name_en: Philosophy }
+  - { faculty: কলা, name: ইসলামের ইতিহাস ও সংস্কৃতি, name_en: Islamic History and Culture }
+  - { faculty: কলা, name: ইসলামিক স্টাডিজ ও আরবি, name_en: Islamic and Arabic Studies }
+  - { faculty: ব্যবসায় শিক্ষা, name: হিসাববিজ্ঞান, name_en: Accounting }
+  - { faculty: ব্যবসায় শিক্ষা, name: ব্যবস্থাপনা, name_en: Management }
+  - { faculty: সামাজিক বিজ্ঞান, name: অর্থনীতি, name_en: Economics }
+  - { faculty: সামাজিক বিজ্ঞান, name: রাষ্ট্রবিজ্ঞান, name_en: Political Science }
+
+fees:
+  - { item: একাদশ শ্রেণি ভর্তি — সরকারি পাওনা, amount: "৳২৬০" }
+  - { item: একাদশ শ্রেণি ভর্তি — বোর্ড রেজিস্ট্রেশন, amount: "৳৩৩৫" }
+  - { item: একাদশ শ্রেণি ভর্তি — কলেজ ফি (নিয়মিত ছাত্র), amount: "৳৩,১৫৬" }
+  - { item: একাদশ শ্রেণি ভর্তি — কলেজ ফি (নিয়মিত ছাত্রী), amount: "৳২,৯১৬" }
+fee_note: ২০২৬–২০২৭ সেশনের একাদশ শ্রেণি ভর্তির অফিসিয়াল নোটিশ (১৬/০৯/২০২৬) অনুযায়ী; পরের সেশনে বদলাতে পারে।
+
+about: ১৯৫৯ সালে নওগাঁ শহরের উত্তর প্রান্তে ভিত্তিপ্রস্তর স্থাপনের পর ১৯৬২ সালে স্থানীয় জনসাধারণের অর্থে ডিগ্রি কলেজ হিসেবে যাত্রা শুরু; পরে উচ্চমাধ্যমিক যুক্ত হয় এবং ১৯৮০ সালে কলেজটি সরকারি হয়। ১৯৯৬ সালে এখানে অনার্স ও মাস্টার্স চালু হয়; বর্তমানে একাদশ–দ্বাদশ শ্রেণি, ডিগ্রি (পাস), অনার্স ও মাস্টার্স পড়ানো হয়। ক্যাম্পাসের আয়তন ১১ একর।
+faq:
+  - q: নওগাঁ সরকারি কলেজে একাদশ শ্রেণিতে ভর্তি কীভাবে হয়?
+    a: একাদশ শ্রেণির আবেদন হয় কেন্দ্রীয়ভাবে xiclassadmission.gov.bd-তে। মনোনীত হলে কলেজের নোটিশ অনুযায়ী অনলাইনে ফি জমা দিয়ে কাগজপত্রসহ কলেজে ভর্তি সম্পন্ন করতে হয়। সর্বশেষ নোটিশ কলেজের ওয়েবসাইটের ভর্তি সংক্রান্ত নোটিশ বোর্ডে দেওয়া হয়।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://naogc.edu.bd/ }
+  - { title: অফিসিয়াল ওয়েবসাইট — ভর্তি সংক্রান্ত নোটিশ, url: https://naogc.edu.bd/index.php/notisa-borda/bharti-sankranta }
+  - { title: একাদশ শ্রেণি ভর্তি নোটিশ ২০২৬–২০২৭ (PDF), url: "https://naogc.edu.bd/images/Notice%20Board/Admission/2026/Admission-Fee%20-notice-26-27.pdf" }
+old_urls: [/2025/08/naogaon-govt-college.html]

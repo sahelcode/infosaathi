@@ -13,7 +13,7 @@ const files = (dir: string) => glob({ pattern: '**/[^_]*.yaml', base: `./src/con
 // so a number that arrives as digits gets its 0 back here.
 const phone = z.preprocess(
   (v) => (typeof v === 'number' ? '0' + String(v) : typeof v === 'string' ? v.replace(/[\s-]/g, '') : v),
-  z.string().regex(/^0\d{9,10}$/, 'ফোন নম্বর ০ দিয়ে শুরু হবে, মোট ১০ বা ১১ সংখ্যা (যেমন 01712345678)'),
+  z.string().regex(/^0\d{8,10}$/, 'ফোন নম্বর ০ দিয়ে শুরু হবে, মোট ৯ থেকে ১১ সংখ্যা (যেমন 01712345678 বা 052163347)'),
 );
 // 24-hour time like 09:30 or 17:00
 const time = z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/, 'সময় ২৪ ঘণ্টার হিসাবে লিখুন, যেমন 09:30 বা 17:00');
@@ -183,4 +183,71 @@ const universities = defineCollection({
       .refine((u) => u.draft || u.verified_by === 'phone' || u.sources.length > 0, 'official তথ্যের জন্য অন্তত একটি sources দিন'),
 });
 
-export const collections = { doctors, hospitals, universities };
+// Colleges, cadet colleges, schools and school-and-colleges share one shape; `kind` decides the page and the homepage row.
+const institutions = defineCollection({
+  loader: files('institutions'),
+  schema: ({ image }) =>
+    z
+      .object({
+        draft: z.boolean().default(false),
+        kind: z.enum(['college', 'cadet', 'school', 'school_college', 'madrasa'], 'kind হবে college, cadet, school, school_college বা madrasa'),
+        name: z.string().min(3), // English
+        name_bn: z.string().min(3),
+        short: z.string().optional(),
+        type: z.enum(['সরকারি', 'বেসরকারি'], 'type হবে সরকারি বা বেসরকারি'),
+        est: z.number().int().min(1700).max(2100).optional(),
+        city,
+        address: z.string(),
+        web: z.url().optional(),
+        eiin: z.string().regex(/^\d{5,7}$/, 'EIIN শুধু সংখ্যা').optional(),
+        board: z.string().optional(), // e.g. সিলেট শিক্ষা বোর্ড
+        affiliation: z.string().optional(), // e.g. জাতীয় বিশ্ববিদ্যালয়
+        gender: z.enum(['বালক', 'বালিকা', 'সহশিক্ষা']).optional(),
+        levels: z.array(z.string()).default([]), // e.g. [HSC, অনার্স, মাস্টার্স] or [৩য় – ১০ম শ্রেণি]
+        shifts: z.string().optional(), // e.g. প্রভাতি ও দিবা
+        versions: z.string().optional(), // e.g. বাংলা ও ইংরেজি ভার্সন
+        logo: image().optional(),
+        photo: image().optional(),
+        campus: z.string().optional(),
+        students: z.string().optional(),
+        teachers: z.string().optional(),
+        verified: date,
+        verified_by: verifiedBy,
+        numbers: z.array(z.object({ label: z.string(), number: phone, note: z.string().optional() })).min(1, 'অন্তত একটি নম্বর দিন'),
+        emails: z.array(z.object({ label: z.string(), email: z.email() })).default([]),
+        admission: z
+          .object({
+            intake: z.string(),
+            open: date.optional(),
+            close: date.optional(),
+            requirement: z.string(),
+            exam: z.string().optional(),
+            app_fee: z.number().positive().optional(),
+            apply_url: z.url().optional(),
+            steps: z.array(z.object({ title: z.string(), text: z.string() })).default([]),
+            documents: z.array(z.string()).default([]),
+          })
+          .refine((a) => !a.open || !a.close || a.open <= a.close, 'admission.open তারিখ close-এর আগে হতে হবে')
+          .optional(),
+        seats: z.object({ title: z.string(), head: z.array(z.string()).min(2), rows: z.array(z.array(z.string())).min(1) }).optional(),
+        subjects: z
+          .array(z.object({ faculty: z.string(), name: z.string(), name_en: z.string().optional(), seats: z.number().optional(), masters: z.boolean().optional() }))
+          .default([]),
+        results: z
+          .array(z.object({ exam: z.string(), year: z.number().int(), pass_rate: z.number().min(0).max(100), examinees: z.number().optional(), gpa5: z.number().optional() }))
+          .default([]),
+        fees: z.array(z.object({ item: z.string(), amount: z.string() })).default([]),
+        fee_note: z.string().optional(),
+        facilities: z.array(z.string()).default([]),
+        alumni: z.array(z.object({ name: z.string(), role: z.string() })).default([]),
+        about: z.string().optional(),
+        good: z.array(z.string()).default([]),
+        think: z.array(z.string()).default([]),
+        faq: extraFaq,
+        sources: sources,
+        old_urls: z.array(z.string().startsWith('/')).default([]),
+      })
+      .refine((u) => u.draft || u.verified_by === 'phone' || u.sources.length > 0, 'official তথ্যের জন্য অন্তত একটি sources দিন'),
+});
+
+export const collections = { doctors, hospitals, universities, institutions };

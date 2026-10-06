@@ -1,0 +1,22 @@
+draft: true   # তথ্য কম: ঠিকানা, EIIN, প্রতিষ্ঠার সাল যোগ হলে প্রকাশ করুন
+kind: school
+name: Rangpur Government Girls' High School
+name_bn: রংপুর সরকারি বালিকা উচ্চ বিদ্যালয়
+type: সরকারি
+city: rangpur
+address: রংপুর সদর, রংপুর
+board: দিনাজপুর শিক্ষা বোর্ড
+gender: বালিকা
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: ল্যান্ডফোন
+    number: "052163347"
+    note: মাধ্যমিক ও উচ্চ শিক্ষা অধিদপ্তরের সরকারি বিদ্যালয়ের তালিকা অনুযায়ী
+
+about: রংপুর সরকারি বালিকা উচ্চ বিদ্যালয় রংপুর সদর উপজেলায় অবস্থিত মেয়েদের একটি সরকারি মাধ্যমিক বিদ্যালয়। এটি মাধ্যমিক ও উচ্চ শিক্ষা অধিদপ্তরের সরকারি বিদ্যালয়ের তালিকাভুক্ত।
+
+sources:
+  - { title: মাধ্যমিক ও উচ্চ শিক্ষা অধিদপ্তর – সরকারি স্কুলের তালিকা (রাজশাহী ও রংপুর বিভাগ), url: https://dshe.gov.bd/pages/static-pages/691997d6933eb65569ddf9c9 }
+old_urls: [/2025/08/rangpur-government-girls-high-school.html]

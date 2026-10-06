@@ -1,0 +1,42 @@
+/* ===== college + school pages ===== */
+/* monogram in place of a logo we do not own */
+.ed-cover-c{background:linear-gradient(#ecfdf5 0 83.6%,#dcfce7 83.6%);}
+.ed-cover-s{background:linear-gradient(#e0f2fe 0 74.5%,#dcfce7 74.5% 83.6%,#bae6fd 83.6%);}
+
+/* seats table */
+.ed-tbl-wrap{margin-top:12px;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+.ed-tbl{width:100%;border-collapse:collapse;font-size:13.5px;}
+.ed-tbl th{padding:9px 8px;background:#f6faf8;font-size:12px;font-weight:700;color:var(--muted);text-align:center;}
+.ed-tbl td{padding:10px 8px;border-top:1px solid #eef3f0;text-align:center;font-variant-numeric:tabular-nums;color:var(--ink-2);}
+.ed-tbl th:first-child,.ed-tbl td:first-child{text-align:left;padding-left:14px;}
+.ed-tbl td:first-child{font-weight:600;color:var(--ink);}
+
+/* a second, smaller admission block inside the same card */
+.ed-sub{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);}
+.ed-sub .un-adm-list{margin-top:0;}
+.ed-sub .un-adm-list div:first-child{border-top:none;padding-top:0;}
+
+/* results: pass rate per year */
+.ed-res-top{display:flex;align-items:baseline;gap:8px;margin-top:12px;}
+.ed-res-top b{font-size:34px;line-height:1;color:var(--green-d);font-variant-numeric:tabular-nums;}
+.ed-res-top small{font-size:13px;color:var(--muted);}
+.ed-res{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:14px;}
+.ed-res li{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px 10px;}
+.ed-res-y{font-size:14px;font-weight:700;}
+.ed-res-p{font-size:14px;font-weight:700;color:var(--green-d);font-variant-numeric:tabular-nums;}
+.ed-res-bar{grid-column:1 / -1;height:8px;border-radius:8px;background:#f1f5f9;overflow:hidden;}
+.ed-res-bar i{display:block;height:100%;width:var(--w);border-radius:8px;background:var(--green);transform-origin:left;}
+.ed-res.anim .ed-res-bar i{animation:hpGrow .9s cubic-bezier(.22,1,.36,1) both;}
+.ed-res li:not(:first-child) .ed-res-bar i{background:#86efac;}
+.ed-res-m{grid-column:1 / -1;font-size:12.5px;color:var(--muted);}
+
+/* notable alumni */
+.ed-alum{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+.ed-alum li{display:flex;flex-direction:column;padding:8px 12px;border-radius:14px;background:#f6faf8;border:1px solid var(--line);}
+.ed-alum b{font-size:13.5px;}
+.ed-alum small{font-size:11.5px;color:var(--muted);}
+
+@media (min-width:768px){
+  .ed-mono{font-size:32px;}
+}
+@media (prefers-reduced-motion:reduce){.ed-res.anim .ed-res-bar i{animation:none;}}

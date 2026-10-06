@@ -1,0 +1,18 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getInstitutions, institutionUrl, instSection } from '../../lib/data';
+import { CITIES } from '../../lib/taxonomy';
+import { bn } from '../../lib/format';
+const list = (await getInstitutions()).filter((i) => instSection(i) === 'college');
+const cities = [...new Set(list.map((i) => i.data.city))];
+---
+<ListPage title="বাংলাদেশের কলেজ: ভর্তি, EIIN ও যোগাযোগ | InfoSaathi" h1="কলেজ" path="/colleges/" crumbs={[['হোম', '/']]}
+  intro="সরকারি ও বেসরকারি কলেজ এবং ক্যাডেট কলেজের ভর্তি, বিষয়, EIIN ও যোগাযোগ।"
+  chips={cities.map((c) => ({ href: `/colleges/${c}/`, label: CITIES[c].bn, n: bn(list.filter((i) => i.data.city === c).length) }))}>
+  {list.map((i) => (
+    <a class="pf-mini" href={institutionUrl(i)}><span class="hp-near-i un-rel-i"><Icon name="cap" size={20} w={1.8} /></span>
+      <span class="pf-mini-txt"><b>{i.data.name_bn}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{CITIES[i.data.city].bn} · {i.data.type}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>

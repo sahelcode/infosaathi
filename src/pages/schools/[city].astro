@@ -1,0 +1,21 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getInstitutions, institutionUrl, instSection, type Institution } from '../../lib/data';
+import { CITIES, type City } from '../../lib/taxonomy';
+import { bn } from '../../lib/format';
+export async function getStaticPaths() {
+  const list = (await getInstitutions()).filter((i) => instSection(i) === 'school');
+  return [...new Set(list.map((i) => i.data.city))].map((city) => ({ params: { city }, props: { city, list: list.filter((i) => i.data.city === city) } }));
+}
+const { city, list } = Astro.props as { city: City; list: Institution[] };
+const c = CITIES[city];
+---
+<ListPage title={`${c.of} স্কুল: ভর্তি, EIIN ও যোগাযোগ | InfoSaathi`} h1={`${c.of} স্কুল`} path={`/schools/${city}/`}
+  crumbs={[['হোম', '/'], ['স্কুল', '/schools/']]} intro={`${c.of} ${bn(list.length)}টি স্কুলের তথ্য।`}>
+  {list.map((i) => (
+    <a class="pf-mini" href={institutionUrl(i)}><span class="hp-near-i un-rel-i"><Icon name="cap" size={20} w={1.8} /></span>
+      <span class="pf-mini-txt"><b>{i.data.name_bn}</b><span class="pf-mini-h">{i.data.name} · {i.data.type}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>

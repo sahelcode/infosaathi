@@ -1,0 +1,37 @@
+draft: false
+kind: school
+name: Sylhet Government Pilot High School
+name_bn: সিলেট সরকারি পাইলট উচ্চ বিদ্যালয়
+type: সরকারি
+est: 1836
+city: sylhet
+address: ডাক বাংলো রোড, কালীঘাট, সিলেট ৩১০০
+web: https://www.sylgovpilothss.edu.bd
+eiin: "130400"
+board: সিলেট শিক্ষা বোর্ড
+levels: [৩য় – ১০ম শ্রেণি]
+campus: কালীঘাট, সিলেট
+students: "১,৫৬৩"
+teachers: "৪৮"
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: বিদ্যালয়ের অফিস
+    number: "01346958969"
+  - label: বিদ্যালয়ের অফিস (বিকল্প)
+    number: "01711950711"
+  - label: ল্যান্ডফোন
+    number: "0821716382"
+    note: মাধ্যমিক ও উচ্চ শিক্ষা অধিদপ্তরের সরকারি বিদ্যালয়ের তালিকা অনুযায়ী
+emails:
+  - { label: প্রধান শিক্ষকের কার্যালয়, email: hmsylgovpilotschool@yahoo.com }
+
+facilities: [লাইব্রেরি, পদার্থবিজ্ঞান ল্যাব, রসায়ন ল্যাব, জীববিজ্ঞান ল্যাব, আইসিটি ল্যাব, খেলার মাঠ]
+about: সিলেট সরকারি পাইলট উচ্চ বিদ্যালয় ১৮৩৬ সালে প্রতিষ্ঠিত, দেশের প্রাচীনতম বিদ্যালয়গুলোর একটি। ব্রিটিশ আমলে আধুনিক শিক্ষানীতি বাস্তবায়নের অংশ হিসেবে এটি গড়ে ওঠে। বিদ্যালয়টি সিলেট শহরের কালীঘাটে ডাক বাংলো রোডে অবস্থিত এবং এখানে ৩য় থেকে ১০ম শ্রেণি পর্যন্ত পড়ানো হয়।
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://www.sylgovpilothss.edu.bd/ }
+  - { title: অফিসিয়াল ওয়েবসাইট – আমাদের সম্পর্কে, url: https://www.sylgovpilothss.edu.bd/about_us }
+  - { title: অফিসিয়াল ওয়েবসাইট – যোগাযোগ, url: https://www.sylgovpilothss.edu.bd/contact }
+  - { title: মাধ্যমিক ও উচ্চ শিক্ষা অধিদপ্তর – সরকারি স্কুলের তালিকা (চট্টগ্রাম ও সিলেট বিভাগ), url: https://dshe.gov.bd/pages/static-pages/691997be933eb65569ddeb69 }
+old_urls: []

@@ -1,0 +1,30 @@
+draft: false
+kind: college
+name: Rajshahi Government Women's College
+name_bn: রাজশাহী সরকারি মহিলা কলেজ
+type: সরকারি
+city: rajshahi
+address: রাজশাহী সরকারি মহিলা কলেজ, রাজশাহী-৬০০০
+web: https://rgwcollege.edu.bd
+board: রাজশাহী শিক্ষা বোর্ড
+affiliation: জাতীয় বিশ্ববিদ্যালয়
+gender: বালিকা
+levels: [HSC, ডিগ্রি (পাস), অনার্স, মাস্টার্স]
+students: "প্রায় ৯,০০০"
+teachers: "৮০"
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: কলেজ অফিস
+    number: "02588855694"
+emails:
+  - { label: অফিস, email: rgwcollegerajshahi@gmail.com }
+  - { label: অফিস (বিকল্প), email: info@rgwcollege.edu.bd }
+
+about: রাজশাহী শহরে অবস্থিত মেয়েদের একটি সরকারি কলেজ। এখানে উচ্চ মাধ্যমিক (একাদশ–দ্বাদশ) শ্রেণির পাশাপাশি জাতীয় বিশ্ববিদ্যালয়ের অধীনে ডিগ্রি (পাস), অনার্স ও মাস্টার্স কোর্স পড়ানো হয়। কলেজের ওয়েবসাইট অনুযায়ী এখানে কলা, বিজ্ঞান, সামাজিক বিজ্ঞান ও ব্যবসায় শিক্ষা অনুষদ রয়েছে।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://rgwcollege.edu.bd/ }
+  - { title: অফিসিয়াল ওয়েবসাইট – যোগাযোগ, url: https://rgwcollege.edu.bd/contact/ }
+old_urls: [/2025/08/rajshahi-govt-womens-college.html]

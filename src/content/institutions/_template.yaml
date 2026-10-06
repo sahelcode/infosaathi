@@ -1,0 +1,71 @@
+# ===== নতুন কলেজ, স্কুল বা মাদরাসা যোগ করার নমুনা =====
+# ফাইলের নাম ইংরেজিতে ছোট হাতে, যেমন sylhet-government-college.yaml
+# * চিহ্ন দেওয়া ঘর লাগবেই। ঐচ্ছিক ঘরের তথ্য নিশ্চিত না হলে লাইনটা মুছে দিন, অনুমান করবেন না।
+
+draft: true
+kind: college                       # * college, cadet, school, school_college বা madrasa
+name: Sylhet Government College     # * ইংরেজি নাম
+name_bn: সিলেট সরকারি কলেজ           # *
+short: SGC
+type: সরকারি                        # * সরকারি / বেসরকারি
+est: 1964
+eiin: "130000"                      # উদ্ধৃতিচিহ্নসহ
+city: sylhet                        # * src/lib/taxonomy.ts-এর তালিকা থেকে
+address: তেমুখী, সিলেট               # *
+web: https://example.edu.bd
+board: সিলেট শিক্ষা বোর্ড
+affiliation: জাতীয় বিশ্ববিদ্যালয়
+gender: সহশিক্ষা                    # বালক / বালিকা / সহশিক্ষা
+levels: [HSC, অনার্স, মাস্টার্স]      # স্কুলে যেমন [৩য় – ১০ম শ্রেণি]
+shifts: প্রভাতি ও দিবা
+versions: বাংলা ও ইংরেজি ভার্সন
+# logo: ./images/sylhet-government-college-logo.png
+# photo: ./images/sylhet-government-college.jpg
+campus: ২০ একর
+students: "৫,০০০+"
+teachers: "১০০+"
+verified: 2026-10-06                # * যেদিন তথ্য মিলিয়েছেন
+verified_by: official               # phone = ফোনে যাচাই, official = অফিসিয়াল সূত্র থেকে
+
+numbers:                            # * অন্তত একটি
+  - { label: অধ্যক্ষের কার্যালয়, number: "0821000000" }
+emails:
+  - { label: অফিস, email: info@example.edu.bd }
+
+admission:                          # চলমান/আসন্ন ভর্তির অফিসিয়াল তথ্য থাকলে; না থাকলে পুরো অংশ মুছুন
+  intake: একাদশ শ্রেণি ২০২৬–২৭
+  open: 2026-05-01
+  close: 2026-05-30
+  requirement: SSC-তে বিজ্ঞানে কমপক্ষে GPA ৪.৫০
+  exam: কেন্দ্রীয় অনলাইন আবেদন, মেধাতালিকা
+  app_fee: 220
+  apply_url: https://www.xiclassadmission.gov.bd
+  steps:
+    - { title: অনলাইনে আবেদন, text: কলেজ পছন্দ দিয়ে ফর্ম পূরণ }
+  documents: [SSC মার্কশিট, পাসপোর্ট সাইজ ছবি]
+
+seats:                              # আসনের টেবিল
+  title: বিভাগভিত্তিক আসন
+  head: [বিভাগ, আসন]
+  rows:
+    - [বিজ্ঞান, "৪০০"]
+
+subjects:                           # অনার্সের বিষয়
+  - { faculty: বিজ্ঞান, name: গণিত, name_en: Mathematics, seats: 100, masters: true }
+
+results:                            # পাবলিক পরীক্ষার ফল, শুধু বোর্ড/অফিসিয়াল/নির্ভরযোগ্য সংবাদ থেকে
+  - { exam: HSC, year: 2025, pass_rate: 95.5, gpa5: 120, examinees: 800 }
+
+fees:
+  - { item: ভর্তি ফি, amount: "৳৫,০০০" }
+fee_note: সরকারি নির্ধারিত হারে
+facilities: [লাইব্রেরি, বিজ্ঞানাগার, খেলার মাঠ]
+alumni:
+  - { name: নাম, role: পরিচয় }
+about: ২–৩ বাক্যের পরিচিতি। না দিলে তথ্য থেকে নিজে তৈরি হয়।
+good: []
+think: []
+
+sources:                            # * official হলে অন্তত একটি লিংক
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://example.edu.bd }
+old_urls: []                        # পুরনো Blogger লিংক থাকলে

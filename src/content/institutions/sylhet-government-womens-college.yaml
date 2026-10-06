@@ -1,0 +1,28 @@
+draft: false
+kind: college
+name: Sylhet Government Women's College
+name_bn: সিলেট সরকারি মহিলা কলেজ
+type: সরকারি
+est: 1939
+city: sylhet
+address: হযরত শাহজালাল রোড, চৌহাট্টা, সিলেট-৩১০০
+web: https://www.sgwc.edu.bd
+eiin: "130453"
+gender: বালিকা
+levels: [একাদশ–দ্বাদশ শ্রেণি, ডিগ্রি (পাস), অনার্স, মাস্টার্স]
+teachers: "৫০+"
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: কলেজ অফিস
+    number: "0821714564"
+emails:
+  - { label: অধ্যক্ষ, email: principal@sgwc.edu.bd }
+
+about: ১৯৩৯ সালে প্রতিষ্ঠিত সিলেট সরকারি মহিলা কলেজ সিলেট শহরের চৌহাট্টায় নারীদের উচ্চশিক্ষার একটি সরকারি প্রতিষ্ঠান। এখানে একাদশ–দ্বাদশ শ্রেণি, ডিগ্রি (পাস), অনার্স ও মাস্টার্স পড়ানো হয়; কলেজের ওয়েবসাইট অনুযায়ী অনার্স বিভাগ ১৪টি।
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://www.sgwc.edu.bd/en }
+  - { title: অফিসিয়াল ওয়েবসাইট — যোগাযোগ, url: https://www.sgwc.edu.bd/en/contact }
+  - { title: অফিসিয়াল ওয়েবসাইট — পরিচিতি, url: https://www.sgwc.edu.bd/en/about }
+old_urls: [/2025/07/sylhet-government-womens-college.html]

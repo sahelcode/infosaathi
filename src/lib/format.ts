@@ -6,11 +6,11 @@ export const bn = (v: string | number): string => String(v).replace(/\d/g, (d) =
 /** 1000 -> ৳১,০০০ */
 export const taka = (n: number): string => '৳' + bn(n.toLocaleString('en-US'));
 
-/** 09610009640 -> ০৯৬১০-০০৯৬৪০, 0241032671 -> ০২-৪১০৩২৬৭১, 0821716755 -> ০৮২১-৭১৬৭৫৫ */
+/** 09610009640 -> ০৯৬১০-০০৯৬৪০, 0241032671 -> ০২-৪১০৩২৬৭১, 0821716755 -> ০৮২১-৭১৬৭৫৫, 052163347 -> ০৫২১-৬৩৩৪৭ */
 export function phoneShow(num: string): string {
   let s: string;
   if (num.startsWith('02')) s = num.slice(0, 2) + '-' + num.slice(2);
-  else if (num.length === 10) s = num.slice(0, 4) + '-' + num.slice(4);
+  else if (num.length === 10 || num.length === 9) s = num.slice(0, 4) + '-' + num.slice(4); // district landlines: 0821-716755, 0521-63347
   else s = num.slice(0, 5) + '-' + num.slice(5);
   return bn(s);
 }

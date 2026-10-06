@@ -1,0 +1,35 @@
+draft: false
+kind: school_college
+name: Viqarunnisa Noon School & College
+name_bn: ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ
+short: VNSC
+type: বেসরকারি
+est: 1952
+eiin: "108357"
+city: dhaka
+address: বেইলি রোড, রমনা, ঢাকা-১০০০
+web: https://vnsc.edu.bd
+board: ঢাকা শিক্ষা বোর্ড
+gender: বালিকা
+levels: [স্কুল শাখা, একাদশ–দ্বাদশ শ্রেণি]
+shifts: প্রভাতি ও দিবা
+versions: বাংলা ও ইংরেজি ভার্সন
+students: "প্রায় ২৫,০০০"
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - { label: অফিস, number: "0258310500" }
+  - { label: হেল্পলাইন (মোবাইল), number: "01867268422" }
+  - { label: হেল্পলাইন (মোবাইল), number: "01866785183" }
+  - { label: হেল্পলাইন (মোবাইল), number: "01866785184" }
+  - { label: হেল্পলাইন (টেলিফোন), number: "0248317513" }
+  - { label: হেল্পলাইন (টেলিফোন), number: "0248317519" }
+
+about: ১৯৫২ সালের ১৪ জানুয়ারি ঢাকার বেইলি রোডে প্রতিষ্ঠিত ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ মেয়েদের একটি শিক্ষাপ্রতিষ্ঠান। মূল বেইলি রোড শাখা ছাড়াও ধানমন্ডি, বসুন্ধরা ও আজিমপুরে শাখা আছে; চার ক্যাম্পাসে প্রায় ২৫,০০০ শিক্ষার্থী পড়ে। বাংলা ভার্সনের পাশাপাশি ইংরেজি ভার্সনও চালু আছে।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট — যোগাযোগ, url: https://vnsc.edu.bd/contact }
+  - { title: অফিসিয়াল ওয়েবসাইট — ইতিহাস, url: https://vnsc.edu.bd/history }
+  - { title: ঢাকা শিক্ষা বোর্ড — প্রতিষ্ঠান পাতা (EIIN 108357), url: https://deb108357.dhakaeducationboard.gov.bd }
+  - { title: Wikipedia, url: https://en.wikipedia.org/wiki/Viqarunnisa_Noon_School_and_College }

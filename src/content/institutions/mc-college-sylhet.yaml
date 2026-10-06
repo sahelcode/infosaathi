@@ -1,0 +1,48 @@
+draft: false
+kind: college
+name: Murari Chand (MC) College
+name_bn: মুরারিচাঁদ (এম. সি.) কলেজ
+short: MC College
+type: সরকারি
+est: 1892
+city: sylhet
+address: মুরারিচাঁদ কলেজ, টিলাগড়, সিলেট-৩১০০
+web: https://mccollege.edu.bd
+eiin: "130457"
+board: সিলেট শিক্ষা বোর্ড
+affiliation: জাতীয় বিশ্ববিদ্যালয়
+levels: [HSC (শুধু বিজ্ঞান), ডিগ্রি (পাস), অনার্স, মাস্টার্স]
+campus: থ্যাকারে টিলা, টিলাগড়, সিলেট
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: কলেজ অফিস
+    number: "02996641634"
+emails:
+  - { label: কলেজ অফিস, email: m.c.college_sylhet@live.com }
+
+subjects:
+  - { faculty: কলা, name: বাংলা, name_en: Bangla, masters: true }
+  - { faculty: কলা, name: ইংরেজি, name_en: English, masters: true }
+  - { faculty: কলা, name: দর্শন, name_en: Philosophy, masters: true }
+  - { faculty: কলা, name: ইতিহাস, name_en: History, masters: true }
+  - { faculty: কলা, name: ইসলামের ইতিহাস ও সংস্কৃতি, name_en: Islamic History and Culture, masters: true }
+  - { faculty: সামাজিক বিজ্ঞান, name: রাষ্ট্রবিজ্ঞান, name_en: Political Science, masters: true }
+  - { faculty: সামাজিক বিজ্ঞান, name: অর্থনীতি, name_en: Economics, masters: true }
+  - { faculty: সামাজিক বিজ্ঞান, name: সমাজবিজ্ঞান, name_en: Sociology, masters: true }
+  - { faculty: বিজ্ঞান, name: মনোবিজ্ঞান, name_en: Psychology, masters: true }
+  - { faculty: বিজ্ঞান, name: গণিত, name_en: Mathematics, masters: true }
+  - { faculty: বিজ্ঞান, name: পদার্থবিজ্ঞান, name_en: Physics, masters: true }
+  - { faculty: বিজ্ঞান, name: রসায়ন, name_en: Chemistry, masters: true }
+  - { faculty: বিজ্ঞান, name: উদ্ভিদবিজ্ঞান, name_en: Botany, masters: true }
+  - { faculty: বিজ্ঞান, name: প্রাণিবিজ্ঞান, name_en: Zoology, masters: true }
+  - { faculty: বিজ্ঞান, name: পরিসংখ্যান, name_en: Statistics, masters: true }
+
+about: ১৮৮৬ সালে প্রতিষ্ঠিত একটি স্কুল ১৮৯২ সালে কলেজে উন্নীত হয়ে মুরারিচাঁদ কলেজের যাত্রা শুরু; বর্তমান ক্যাম্পাস সিলেট শহরের পূর্বে টিলাগড়ের থ্যাকারে টিলায়। কলেজটি ১৯৯২ সাল থেকে জাতীয় বিশ্ববিদ্যালয়ের অধিভুক্ত। উচ্চমাধ্যমিকে শুধু বিজ্ঞান বিভাগ চালু আছে; পাশাপাশি ডিগ্রি (পাস), ১৫টি বিষয়ে অনার্স ও মাস্টার্স এবং ইসলামিক স্টাডিজে মাস্টার্স পড়ানো হয়।
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট — About, url: https://mccollege.edu.bd/about-en }
+  - { title: অফিসিয়াল ওয়েবসাইট — যোগাযোগ, url: https://mccollege.edu.bd/contact }
+  - { title: অফিসিয়াল ওয়েবসাইট — বাংলা পরিচিতি, url: https://mccollege.edu.bd/about }
+  - { title: সিলেট শিক্ষা বোর্ড রেজিস্ট্রেশন কার্ড (EIIN 130457), url: https://files.mccollege.edu.bd/uploads/noticeFile/h24_regcard_130457.pdf55297.pdf }
+old_urls: [/2025/07/mc-college-sylhet.html]

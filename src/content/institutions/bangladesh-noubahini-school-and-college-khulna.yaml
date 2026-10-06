@@ -1,0 +1,30 @@
+draft: false
+kind: school_college
+name: Bangladesh Noubahini School and College, Khulna
+name_bn: বাংলাদেশ নৌবাহিনী স্কুল ও কলেজ, খুলনা
+type: বেসরকারি
+est: 1979
+eiin: "117112"
+city: khulna
+address: গোয়ালখালী, খালিশপুর, খুলনা ৯০০০ (খুলনা-যশোর মহাসড়কের পাশে, খুলনা স্পেশালাইজড হাসপাতালের বিপরীতে)
+web: https://bncollegekhulna.edu.bd
+board: যশোর শিক্ষা বোর্ড
+gender: সহশিক্ষা
+levels: [প্রাথমিক, ৬ষ্ঠ – ১০ম শ্রেণি, একাদশ – দ্বাদশ শ্রেণি]
+versions: বাংলা মাধ্যম
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - { label: যোগাযোগ, number: "01716031830" }
+  - { label: যোগাযোগ (বিকল্প), number: "01716079404" }
+  - { label: যোগাযোগ (বিকল্প), number: "01711243941" }
+
+about: বাংলাদেশ নৌবাহিনী স্কুল ও কলেজ, খুলনা ১৯৭৯ সালে বাংলাদেশ নৌবাহিনীর তত্ত্বাবধানে প্রতিষ্ঠিত এবং নৌবাহিনী পরিচালিত একটি শিক্ষাপ্রতিষ্ঠান। শুরুতে নৌবাহিনীর সদস্যদের সন্তানদের জন্য হলেও পরে বেসামরিক শিক্ষার্থীদের জন্যও ভর্তি উন্মুক্ত করা হয়। এখানে প্রাথমিক থেকে উচ্চ মাধ্যমিক পর্যন্ত বিজ্ঞান, ব্যবসায় শিক্ষা ও মানবিক বিভাগে পড়ানো হয়।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://bncollegekhulna.edu.bd/ }
+  - { title: অফিসিয়াল ওয়েবসাইট – আমাদের সম্পর্কে, url: https://bncollegekhulna.edu.bd/about-us/ }
+  - { title: অফিসিয়াল ওয়েবসাইট – যোগাযোগ, url: https://bncollegekhulna.edu.bd/contact-us/ }
+  - { title: Wikipedia – Bangladesh Noubahini School and College Khulna, url: https://en.wikipedia.org/wiki/Bangladesh_Noubahini_School_and_College_Khulna }
+old_urls: [/2025/08/bangladesh-noubahini-school-and-college.html]

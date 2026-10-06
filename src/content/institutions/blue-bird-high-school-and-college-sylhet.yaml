@@ -1,0 +1,33 @@
+draft: false
+kind: school_college
+name: Blue Bird High School and College
+name_bn: ব্লু বার্ড হাই স্কুল অ্যান্ড কলেজ
+short: BBHSC
+type: বেসরকারি
+city: sylhet
+address: মীরের ময়দান, সিলেট-৩১০০
+web: https://bbhsc.edu.bd
+eiin: "130401"
+board: সিলেট শিক্ষা বোর্ড
+levels: [প্রাক-প্রাথমিক ও নার্সারি – দশম শ্রেণি, একাদশ – দ্বাদশ শ্রেণি (HSC)]
+campus: মীরের ময়দান, সিলেট
+students: "৪,২০০"
+teachers: "৯৮"
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - label: অফিস (মোবাইল)
+    number: "01733377614"
+  - label: অফিস (টিঅ্যান্ডটি)
+    number: "0821716615"
+emails:
+  - { label: অফিস, email: info@bbhsc.edu.bd }
+
+about: ব্লু বার্ড হাই স্কুল অ্যান্ড কলেজ সিলেট শহরের মীরের ময়দানে অবস্থিত একটি বেসরকারি স্কুল অ্যান্ড কলেজ। এখানে প্রাক-প্রাথমিক ও নার্সারি থেকে উচ্চ মাধ্যমিক (একাদশ–দ্বাদশ শ্রেণি) পর্যন্ত পড়ানো হয়। প্রতিষ্ঠানের ওয়েবসাইট অনুযায়ী এখানে প্রায় ৪,২০০ শিক্ষার্থী ও ৯৮ জন শিক্ষক রয়েছেন।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://bbhsc.edu.bd/ }
+  - { title: যোগাযোগ (অফিসিয়াল), url: https://bbhsc.edu.bd/contact }
+  - { title: নোটিশ (অফিসিয়াল), url: https://bbhsc.edu.bd/allnotice }
+old_urls: []

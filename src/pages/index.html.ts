@@ -3,7 +3,7 @@
 import type { APIRoute } from 'astro';
 import { getImage } from 'astro:assets';
 import home from '../partials/home.html?raw';
-import { getDoctors, getHospitals, getUniversities, doctorUrl, hospitalUrl, universityUrl, doctorsAt } from '../lib/data';
+import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt } from '../lib/data';
 import { CITIES } from '../lib/taxonomy';
 import { SPECIALTIES } from '../lib/taxonomy';
 import { bn } from '../lib/format';
@@ -63,7 +63,28 @@ export const GET: APIRoute = async () => {
     url: universityUrl(u),
   }));
 
+  // colleges and schools: government first
+  const inst = (await getInstitutions()).sort((a, b) => (a.data.type === b.data.type ? 0 : a.data.type === 'সরকারি' ? -1 : 1));
+  const instRow = (section: 'college' | 'school') =>
+    inst.filter((i) => instSection(i) === section).slice(0, 8).map((i) => ({
+      name: i.data.name_bn,
+      loc: CITIES[i.data.city].bn,
+      type: i.data.type,
+      est: i.data.est ?? '',
+      tags: [...i.data.levels.slice(0, 2), ...(i.data.eiin ? [`EIIN ${bn(i.data.eiin)}`] : [])].slice(0, 3),
+      url: institutionUrl(i),
+    }));
+
   let html = swapArray(home, 'doctorNames', docRows);
+  html = swapArray(html, 'colleges', instRow('college'));
+  html = swapArray(html, 'schools', instRow('school'));
+  html = swap(html, "put('collegeRow', colleges.map((c,i)=>`\n    <div class=\"org-card ix-card\">", "put('collegeRow', colleges.map((c,i)=>`\n    <a class=\"org-card ix-card\" href=\"${c.url}\" style=\"color:inherit;text-decoration:none\">");
+  html = swap(html, "put('schoolRow', schools.map((c,i)=>`\n    <div class=\"org-card ix-card\">", "put('schoolRow', schools.map((c,i)=>`\n    <a class=\"org-card ix-card\" href=\"${c.url}\" style=\"color:inherit;text-decoration:none\">");
+  html = swap(html, "${tags(c.tags)}</div>\n    </div>`).join(''));", "${tags(c.tags)}</div>\n    </a>`).join(''));");
+  html = swap(html, "${tags(c.tags)}</div>\n    </div>`).join(''));", "${tags(c.tags)}</div>\n    </a>`).join(''));");
+  html = html.replace('<span class="ix-badge">Est. ${c.est}</span>', '${c.est ? `<span class="ix-badge">Est. ${c.est}</span>` : ""}');
+  html = swap(html, '<span class="eyebrow">Colleges</span><a href="#" class="see-all">', '<span class="eyebrow">Colleges</span><a href="/colleges/" class="see-all">');
+  html = swap(html, '<span class="eyebrow">Schools</span><a href="#" class="see-all">', '<span class="eyebrow">Schools</span><a href="/schools/" class="see-all">');
   html = swapArray(html, 'uniNames', uniRows);
   html = swap(html, `uniNames.map(u=>\`
   <div class="org-card uni-card">`, `uniNames.map(u=>\`

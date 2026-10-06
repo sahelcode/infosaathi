@@ -1,0 +1,30 @@
+draft: false
+kind: college
+name: Carmichael College, Rangpur
+name_bn: কারমাইকেল কলেজ, রংপুর
+short: Carmichael College
+type: সরকারি
+est: 1916
+city: rangpur
+address: লালবাগ, রংপুর
+web: https://carmichael.college.gov.bd
+affiliation: জাতীয় বিশ্ববিদ্যালয়
+levels: [একাদশ–দ্বাদশ শ্রেণি, অনার্স]
+verified: 2026-10-06
+verified_by: official
+
+numbers:
+  - { label: সার্বিক ব্যবস্থাপনা (প্রধান সহকারী), number: "01722553054" }
+  - { label: অধ্যক্ষ অফিস, number: "01720993079" }
+  - { label: একাডেমিক শাখা, number: "01558585613" }
+  - { label: অফিস, number: "01725569192" }
+  - { label: প্রশংসাপত্র ও চারিত্রিক সনদ, number: "01744608473" }
+  - { label: উচ্চ মাধ্যমিক শাখা, number: "01797946164" }
+
+about: ১৯১৬ সালে তৎকালীন বাংলার গভর্নর লর্ড কারমাইকেলের নামে রংপুর শহরের লালবাগে কারমাইকেল কলেজ প্রতিষ্ঠিত হয়; ১৯৬৩ সালের ১ জানুয়ারি কলেজটি সরকারি করা হয়। ১৯৯২ সাল পর্যন্ত রাজশাহী বিশ্ববিদ্যালয়ের অধীনে থাকার পর এটি এখন জাতীয় বিশ্ববিদ্যালয়ের অধিভুক্ত। কলেজে উচ্চ মাধ্যমিক ও স্নাতক (অনার্স) পর্যায়ে কলা, সামাজিক বিজ্ঞান, ব্যবসায় প্রশাসন ও বিজ্ঞান অনুষদে পড়ানো হয়।
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট — যোগাযোগ, url: https://carmichael.college.gov.bd/pages/static-pages/696ca8cc35ce18e1c05c90a2 }
+  - { title: অফিসিয়াল ওয়েবসাইট — এক নজরে, url: https://carmichael.college.gov.bd/pages/static-pages/696ca8cd35ce18e1c05c90f3 }
+  - { title: অফিসিয়াল ওয়েবসাইট — ইতিহাস, url: https://carmichael.college.gov.bd/pages/static-pages/696ca8cd35ce18e1c05c9135 }
+  - { title: অফিসিয়াল ওয়েবসাইট — বিভাগসমূহ, url: https://carmichael.college.gov.bd/pages/faculty/696ca8c4c4774958d7b9a973 }
+old_urls: [/2025/07/carmichael-college-rangpur.html]
