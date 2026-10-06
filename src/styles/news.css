@@ -18,3 +18,4 @@
 .nw-more a span{display:block;font-size:11.5px;color:#15803d;font-weight:700;margin-bottom:2px;}
 .nw-more a.nw-all{text-align:center;color:#15803d;font-weight:700;}
 @media (max-width:640px){.nw h1{font-size:25px;}.nw-body p{font-size:16.5px;}}
+.nw-art svg{width:100%;height:auto;aspect-ratio:16/9;border-radius:16px;display:block;}

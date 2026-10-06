@@ -1,0 +1,5 @@
+---
+import { ART, artKind } from '../lib/newsArt';
+const { cat } = Astro.props as { cat: string };
+---
+<Fragment set:html={ART[artKind(cat)]} />

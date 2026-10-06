@@ -6,6 +6,7 @@ import home from '../partials/home.html?raw';
 import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, getServices, serviceUrl, scholarshipUrl, jobUrl, aiToolUrl, isClosed, getNews, getRankings, getApps, newsUrl, isOwnNews } from '../lib/data';
 import { CITIES } from '../lib/taxonomy';
 import { SPECIALTIES, HOTEL_FACILITIES } from '../lib/taxonomy';
+import { ART, artKind } from '../lib/newsArt';
 import { bn, bnDate } from '../lib/format';
 
 const swap = (src: string, from: string, to: string) => {
@@ -107,7 +108,7 @@ export const GET: APIRoute = async () => {
   const aiRows = (await getAiTools()).slice(0, 4).map((x, i) => ({ name: x.data.name, cat: x.data.category, desc: x.data.summary, free: x.data.free_plan ? 'ফ্রি প্ল্যান আছে' : 'পেইড', t: i, url: aiToolUrl(x) }));
   const govRows = (await getServices()).slice(0, 4).map((x, i) => ({ name: x.data.name, dept: x.data.dept, time: x.data.online ? 'অনলাইনে আবেদন' : 'সরাসরি আবেদন', url: serviceUrl(x), t: i }));
 
-  const newsAll = (await getNews()).map((x, i) => ({ cat: x.data.cat, title: x.data.title, source: x.data.source ?? 'InfoSaathi', time: bnDate(x.data.date), url: newsUrl(x), own: isOwnNews(x), t: i }));
+  const newsAll = (await getNews()).map((x, i) => ({ cat: x.data.cat, title: x.data.title, source: x.data.source ?? 'InfoSaathi', time: bnDate(x.data.date), url: newsUrl(x), own: isOwnNews(x), kind: artKind(x.data.cat), t: i }));
   const rk = (await getRankings())[0];
   const uniById = new Map((await getUniversities()).map((u) => [u.id, u]));
   const rankRows = rk.data.rows.slice(0, 5).map((r, i) => ({
@@ -123,6 +124,9 @@ export const GET: APIRoute = async () => {
   html = swap(html, '<span class="app-desc">${a.desc}</span>', '<span class="app-desc">${a.desc}</span>');
   html = swap(html, '</svg>Download</a>', '</svg>${a.own?\'Play Store\':\'খুঁজুন\'}</a>');
   html = swapArray(html, 'newsData', newsAll.slice(1));
+  html = swap(html, 'const newsFeatureData = {', `const NEWS_ART = ${JSON.stringify(ART)};\nconst newsFeatureData = {`);
+  html = swap(html, "${icon('news',44,44)}</div>\n  <div class=\"news-feature-body\">", "${NEWS_ART[newsFeatureData.kind]||icon('news',44,44)}</div>\n  <div class=\"news-feature-body\">");
+  html = swap(html, '.news-feature-img svg{', '.news-feature-img:has(svg.na){height:auto;aspect-ratio:16/9;}\n.news-feature-img svg.na{width:100%;height:100%;opacity:1;color:inherit;}\n.news-feature-img svg:not(.na){');
   html = swapArray(html, 'rankData', rankRows);
   html = swap(html, 'const newsFeatureData = {', `const newsFeatureData = ${JSON.stringify(newsAll[0])}; const _unused = {`);
   html = swap(html, 'const rankData =', `const rankInfo = ${JSON.stringify(rankInfo)};\nconst rankData =`);

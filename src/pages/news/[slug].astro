@@ -3,6 +3,7 @@
 import Base from '../../layouts/Base.astro';
 import { Image } from 'astro:assets';
 import ShareRow from '../../components/ShareRow.astro';
+import NewsArt from '../../components/NewsArt.astro';
 import Ad from '../../components/Ad.astro';
 import { getNews, isOwnNews } from '../../lib/data';
 import { bnDate } from '../../lib/format';
@@ -39,6 +40,7 @@ const jsonld = {
         <figure class="nw-fig"><Image src={d.image} alt={d.image_caption ?? d.title} widths={[480, 800, 1200]} sizes="(max-width:800px) 100vw, 760px" loading="eager" />
           {d.image_caption && <figcaption>{d.image_caption}</figcaption>}</figure>
       )}
+      {!d.image && <figure class="nw-fig nw-art"><NewsArt cat={d.cat} /><figcaption>প্রতীকী চিত্র</figcaption></figure>}
       <div class="nw-body">{d.body.map((p: string) => <p>{p}</p>)}</div>
       <section class="nw-src"><h2>সূত্র</h2>
         <ul>{d.sources.map((s: any) => <li><a href={s.url} target="_blank" rel="noopener">{s.title}</a></li>)}</ul>
