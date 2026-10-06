@@ -18,6 +18,14 @@
 
 ছবি: `src/content/doctors/images/` ফোল্ডারে রাখুন, ফাইলে `photo: ./images/নাম.webp` লিখুন। সাইট নিজেই ছবি ছোট করে নেয়।
 
+দর্শনীয় স্থান: `src/content/places/jaflong.yaml` কপি করে নমুনা হিসেবে ব্যবহার করুন। লিংক হবে `infosaathi.com/place/sylhet/jaflong/`।
+নিজের তোলা ২–৩টি ছবি `src/content/places/images/`-এ রেখে লিখুন:
+```yaml
+photos:
+  - { src: ./images/jaflong-1.jpg, caption: "পিয়াইন নদী ও পাথরের চর", sub: "জিরো পয়েন্ট", label: "জিরো পয়েন্ট" }
+```
+ছবি না থাকলে `kind` অনুযায়ী আঁকা ছবি দেখায়। নিজে ঘুরে এসে তথ্য মিলালে `verified_by: visited` দিন।
+
 ## পুরনো Blogger পোস্ট
 
 `src/content/doctors/`-এর বেশিরভাগ ফাইল পুরনো পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (`draft: true`)।

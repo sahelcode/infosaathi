@@ -1,0 +1,21 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getPlaces, placeUrl, type Place } from '../../lib/data';
+import { CITIES, type City } from '../../lib/taxonomy';
+import { bn } from '../../lib/format';
+export async function getStaticPaths() {
+  const list = await getPlaces();
+  return [...new Set(list.map((p) => p.data.city))].map((city) => ({ params: { city }, props: { city, list: list.filter((p) => p.data.city === city) } }));
+}
+const { city, list } = Astro.props as { city: City; list: Place[] };
+const c = CITIES[city];
+---
+<ListPage title={`${c.of} দর্শনীয় স্থান: কীভাবে যাবেন ও খরচ | InfoSaathi`} h1={`${c.of} দর্শনীয় স্থান`} path={`/places/${city}/`}
+  crumbs={[['হোম', '/'], ['দর্শনীয় স্থান', '/places/']]} intro={`${c.of} ${bn(list.length)}টি ঘোরার জায়গার তথ্য।`}>
+  {list.map((p) => (
+    <a class="pf-mini" href={placeUrl(p)}><span class="hp-near-i un-rel-i"><Icon name="mount" size={20} w={1.8} /></span>
+      <span class="pf-mini-txt"><b>{p.data.name}</b><span class="pf-mini-h">{p.data.name_en} · {p.data.area}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>

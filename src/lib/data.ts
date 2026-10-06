@@ -6,6 +6,7 @@ export type Doctor = CollectionEntry<'doctors'>;
 export type Hospital = CollectionEntry<'hospitals'>;
 export type University = CollectionEntry<'universities'>;
 export type Institution = CollectionEntry<'institutions'>;
+export type Place = CollectionEntry<'places'>;
 
 const visible = (e: { data: { draft: boolean } }) => SHOW_DRAFTS || !e.data.draft;
 const byName = (a: { data: { name: string } }, b: { data: { name: string } }) => a.data.name.localeCompare(b.data.name, 'bn');
@@ -39,6 +40,8 @@ export const instSection = (i: Institution): 'college' | 'school' | 'madrasa' =>
 export const doctorUrl = (d: Doctor) => `/doctor/${d.data.city}/${d.id}/`;
 export const hospitalUrl = (h: Hospital) => `/hospital/${h.data.city}/${h.id}/`;
 export const institutionUrl = (i: Institution) => `/${instSection(i)}/${i.data.city}/${i.id}/`;
+export const getPlaces = async (): Promise<Place[]> => (await getCollection('places', visible)).sort(byName);
+export const placeUrl = (p: Place) => `/place/${p.data.city}/${p.id}/`;
 export const universityUrl = (u: University) => `/university/${u.data.city}/${u.id}/`;
 
 /** Doctors who sit in a chamber at this hospital. */

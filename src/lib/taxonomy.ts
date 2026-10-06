@@ -16,6 +16,9 @@ export const CITIES = {
   barishal: { bn: 'বরিশাল', en: 'Barishal', in: 'বরিশালে', of: 'বরিশালের' },
   rangpur: { bn: 'রংপুর', en: 'Rangpur', in: 'রংপুরে', of: 'রংপুরের' },
   mymensingh: { bn: 'ময়মনসিংহ', en: 'Mymensingh', in: 'ময়মনসিংহে', of: 'ময়মনসিংহের' },
+  coxsbazar: { bn: 'কক্সবাজার', en: "Cox's Bazar", in: 'কক্সবাজারে', of: 'কক্সবাজারের' },
+  rangamati: { bn: 'রাঙামাটি', en: 'Rangamati', in: 'রাঙামাটিতে', of: 'রাঙামাটির' },
+  bandarban: { bn: 'বান্দরবান', en: 'Bandarban', in: 'বান্দরবানে', of: 'বান্দরবানের' },
 } as const;
 export type City = keyof typeof CITIES;
 

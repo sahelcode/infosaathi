@@ -1,0 +1,257 @@
+---
+// Famous place page. One file in src/content/places/ per place.
+// Photos first (2-5, crossfading with story bars, names underneath); without photos a drawn scene of `kind`.
+import { Image, getImage } from 'astro:assets';
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import Faq from '../../../components/Faq.astro';
+import Report from '../../../components/Report.astro';
+import ShareRow from '../../../components/ShareRow.astro';
+import Ad from '../../../components/Ad.astro';
+import PlaceArt from '../../../components/PlaceArt.astro';
+import { getPlaces, placeUrl, type Place } from '../../../lib/data';
+import { CITIES } from '../../../lib/taxonomy';
+import { bn, bnDate } from '../../../lib/format';
+import { SITE } from '../../../lib/site';
+import '../../../styles/hospital.css';
+import '../../../styles/uni.css';
+import '../../../styles/place.css';
+
+export async function getStaticPaths() {
+  const list = await getPlaces();
+  return list.map((p) => ({ params: { city: p.data.city, slug: p.id }, props: { place: p } }));
+}
+
+const { place } = Astro.props as { place: Place };
+const d = place.data;
+const city = CITIES[d.city];
+const path = placeUrl(place);
+const G = d.glance;
+const photos = d.photos;
+const map = `https://maps.google.com/?q=${encodeURIComponent(d.map_query)}`;
+const dir = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(d.map_query)}`;
+const checked = d.verified_by === 'visited' ? `নিজে ঘুরে যাচাই: ${bnDate(d.verified)}` : `অনলাইন সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
+const freeEntry = /^নেই/.test(G.fee);
+const MONTHS = ['জানু', 'ফেব্রু', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টে', 'অক্টো', 'নভে', 'ডিসে'];
+
+const glance = [
+  { icon: 'route', k: G.from, v: G.distance },
+  { icon: 'clock', k: 'যেতে সময়', v: G.time },
+  { icon: 'ticket', k: 'প্রবেশ ফি', v: G.fee },
+  { icon: 'sun', k: 'সেরা সময়', v: G.best },
+] as const;
+
+const jump = [
+  ['see', 'কী দেখবেন'],
+  ['route', 'যাবেন কীভাবে'],
+  ['season', 'কখন যাবেন'],
+  d.cost.length > 0 && ['cost', 'খরচ'],
+  d.tips.length > 0 && ['safety', 'সতর্কতা'],
+].filter(Boolean) as string[][];
+
+const faq = [
+  { q: `${d.name} কোথায়?`, a: `${d.area}। ${G.from} ${G.distance}।` },
+  { q: `${G.from} ${d.name} যেতে কত সময় লাগে?`, a: `${G.time}।` },
+  { q: `${d.name}-এ প্রবেশ ফি আছে?`, a: freeEntry ? `না, ${d.name}-এ ঢুকতে কোনো ফি লাগে না।` : `${G.fee}।` },
+  { q: `${d.name} যাওয়ার সবচেয়ে ভালো সময় কখন?`, a: `${G.best}।${d.seasons[0] ? ' ' + d.seasons[0].text : ''}` },
+  ...(d.cost_total ? [{ q: `${d.name} ঘুরতে কত টাকা লাগে?`, a: `${d.cost_from ? d.cost_from + ' ' : ''}আনুমানিক ${d.cost_total}।` }] : []),
+  ...d.faq,
+];
+
+const all = await getPlaces();
+const picked = d.nearby.map((r) => all.find((p) => p.id === r.id)).filter(Boolean) as Place[];
+const others = all.filter((p) => p.id !== place.id && !picked.includes(p));
+const related = [...picked, ...others.filter((p) => p.data.city === d.city), ...others.filter((p) => p.data.city !== d.city)].slice(0, 3);
+
+const cover = photos[0] ? await getImage({ src: photos[0].src, width: 1200, format: 'webp' }) : undefined;
+const title = `${d.name} (${d.name_en}) ভ্রমণ – কীভাবে যাবেন, খরচ ও কী দেখবেন | InfoSaathi`;
+const description = `${d.name} (${d.name_en}) ভ্রমণ গাইড: কী কী দেখবেন, ${G.from.replace(/ থেকে$/, '')} থেকে কীভাবে যাবেন ও ভাড়া, কখন যাবেন, খরচ আর সতর্কতা।`;
+const crumbs = [['হোম', '/'], ['দর্শনীয় স্থান', '/places/'], [city.bn, `/places/${d.city}/`]];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'TouristAttraction',
+      name: d.name,
+      alternateName: [d.name_en],
+      url: SITE + path,
+      description: d.intro,
+      isAccessibleForFree: freeEntry,
+      ...(cover && { image: new URL(cover.src, SITE).href }),
+      ...(d.geo && { geo: { '@type': 'GeoCoordinates', latitude: d.geo.lat, longitude: d.geo.lng } }),
+      address: { '@type': 'PostalAddress', addressLocality: d.area, addressRegion: city.en, addressCountry: 'BD' },
+      containsPlace: d.spots.map((s) => ({ '@type': 'TouristAttraction', name: s.title })),
+    },
+    { '@type': 'BreadcrumbList', itemListElement: crumbs.map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) },
+    { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  ],
+};
+---
+<Base title={title} description={description} path={path} ogImage={cover?.src} jsonld={jsonld} draft={d.draft}>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{d.name}</a></nav>
+    <div class="pf-grid">
+      <article class="pf-main">
+        <section class="pf-hero">
+          {photos.length > 0 ? (
+            <>
+              <div class="pl-gal" data-gal tabindex="0" aria-roledescription="carousel" aria-label={`${d.name}-এর ছবি`}>
+                {photos.length > 1 && <div class="pl-bars" aria-hidden="true">{photos.map(() => <span><i></i></span>)}</div>}
+                {photos.map((p, i) => (
+                  <figure class="pl-slide" aria-roledescription="slide" aria-label={`${bn(i + 1)} / ${bn(photos.length)}`}>
+                    <Image src={p.src} alt={`${d.name}: ${p.caption}`} width={1200} loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} draggable="false" />
+                    <figcaption>{p.caption}{p.sub && <small>{p.sub}</small>}</figcaption>
+                  </figure>
+                ))}
+                {photos.length > 1 && (<>
+                  <span class="pl-count" data-count aria-hidden="true"></span>
+                  <button class="pl-nav prev" type="button" aria-label="আগের ছবি"><Icon name="chevl" size={20} w={2.4} /></button>
+                  <button class="pl-nav next" type="button" aria-label="পরের ছবি"><Icon name="chev" size={20} w={2.4} /></button>
+                </>)}
+              </div>
+              {photos.length > 1 && (
+                <div class="pl-thumbs">
+                  {photos.map((p, i) => (
+                    <button class="pl-th" type="button" data-go={i} aria-label={p.caption}>
+                      <span class="pl-th-img"><Image src={p.src} alt="" width={340} loading="lazy" /></span><span>{p.label ?? p.caption}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </>
+          ) : (
+            <div class="pl-gal art"><PlaceArt kind={d.kind} /></div>
+          )}
+          <div class="pf-hero-body pl-hero-body">
+            <h1 class="pf-name">{d.name}</h1>
+            <p class="pf-en">{d.name_en}</p>
+            <p class="hp-addr"><Icon name="pin" size={15} w={2.2} />{d.area}</p>
+            <div class="pf-badges">
+              {freeEntry && <span class="pf-badge ok"><Icon name="check" size={13} w={3} />প্রবেশ ফি নেই</span>}
+              {d.tags.map((t) => <span class="pf-badge">{t}</span>)}
+              <span class:list={['pf-badge', { src: d.verified_by === 'sources' }]}><Icon name="clock" size={13} w={2.2} />{checked}</span>
+            </div>
+            <p class="pl-intro">{d.intro}</p>
+          </div>
+          <div class="pf-actions pl-actions">
+            <a class="pf-btn primary" href={dir} target="_blank" rel="noopener"><Icon name="route" size={17} w={2.2} />Google Maps-এ পথ দেখুন</a>
+            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+          </div>
+          <nav class="hp-jump" aria-label="এই পেজে">{jump.map(([a, t]) => <a href={`#${a}`}>{t}</a>)}</nav>
+        </section>
+
+        <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>
+
+        <section class="pf-card" id="see" aria-labelledby="h-see">
+          <div class="pf-card-head"><h2 id="h-see">কী কী দেখবেন</h2><span class="pf-count">{bn(d.spots.length)}টি জায়গা</span></div>
+          <ul class="pl-spots">
+            {d.spots.map((s) => (
+              <li class:list={['pl-spot', { noimg: !s.photo }]}>
+                {s.photo && <Image class="pl-spot-img" src={s.photo} alt={s.title} width={480} loading="lazy" />}
+                <span><b>{s.title}</b><p>{s.text}</p>{s.meta && <em>{s.meta}</em>}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section class="pf-card" id="route" aria-labelledby="h-route">
+          <h2 id="h-route">যাবেন কীভাবে</h2>
+          {d.routes.map((r) => (
+            <>
+              <h3 class="pl-from">{r.from}</h3>
+              <ul class="un-progs">
+                {r.rows.map((x) => (
+                  <li class="un-prog">
+                    <span class="pl-route-l"><span class="pl-route-i"><Icon name={x.mode} size={18} /></span><span class="un-prog-t"><b>{x.name}</b><small>{x.text}</small></span></span>
+                    <span class="un-prog-c"><small>ভাড়া</small><strong>{x.fare}</strong></span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ))}
+          <p class="pf-note">ভাড়া আনুমানিক, সময় ও মৌসুমভেদে বদলায়। রিজার্ভ গাড়ি বা নৌকার ভাড়া আগে ঠিক করে নিন।</p>
+        </section>
+
+        <Ad />
+
+        <section class="pf-card" id="season" aria-labelledby="h-season">
+          <h2 id="h-season">কখন যাবেন</h2>
+          <ol class="pl-months">{MONTHS.map((m, i) => <li class={`m${d.months[i]}`}><i></i>{m}</li>)}</ol>
+          <div class="pl-legend"><span><i style="background:var(--green)"></i>সবচেয়ে ভালো</span><span><i style="background:#86efac"></i>ভালো</span><span><i style="background:#cbd5e1"></i>মোটামুটি</span></div>
+          {d.seasons.length > 0 && <div class="pl-seasons">{d.seasons.map((s) => <div class="pl-season"><b>{s.title}</b><p>{s.text}</p></div>)}</div>}
+        </section>
+
+        {d.cost.length > 0 && (
+          <section class="pf-card" id="cost" aria-labelledby="h-cost">
+            <div class="pf-card-head"><h2 id="h-cost">খরচ{d.cost_from && ` (${d.cost_from})`}</h2></div>
+            <ul class="un-waivers">{d.cost.map((c) => <li><span>{c.item}</span><b>{c.amount}</b></li>)}</ul>
+            {d.cost_total && <div class="pl-total"><span>মোট আনুমানিক</span><b>{d.cost_total}</b></div>}
+          </section>
+        )}
+
+        {d.tips.length > 0 && (
+          <section class="pf-card" id="safety" aria-labelledby="h-safety">
+            <h2 id="h-safety">সতর্কতা</h2>
+            <ul class="pl-tips">{d.tips.map((t) => <li><Icon name="warn" size={18} /><span><b>{t.title}</b> {t.text}</span></li>)}</ul>
+          </section>
+        )}
+
+        {d.stay && (
+          <section class="pf-card" aria-labelledby="h-stay">
+            <h2 id="h-stay">থাকা ও খাওয়া</h2>
+            <p class="pf-text">{d.stay}</p>
+          </section>
+        )}
+
+        <Faq items={faq} />
+        <Report placeholder="যেমন: বাস ভাড়া বেড়েছে" note="ভাড়া, ফি ও সময় মৌসুমভেদে বদলায়। যাওয়ার আগে স্থানীয়ভাবে নিশ্চিত হয়ে নিন।">
+          {d.sources.length > 0 && (
+            <div class="un-src"><b class="pf-h3" style="display:block;margin:4px 0 0">তথ্যসূত্র</b>
+              <ul>{d.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>
+          )}
+        </Report>
+        <ShareRow />
+        <nav class="pf-tags" aria-label="সম্পর্কিত">
+          <a href={`/places/${d.city}/`}>{city.of} দর্শনীয় স্থান</a><a href="/places/">বাংলাদেশের দর্শনীয় স্থান</a>
+        </nav>
+        <Ad />
+
+        {related.length > 0 && (
+          <section class="pf-block" aria-labelledby="h-rel">
+            <div class="pf-block-head"><h2 id="h-rel">{picked.length ? 'কাছাকাছি আরও যা দেখবেন' : 'আরও দর্শনীয় স্থান'}</h2><a class="see-all" href="/places/">See all</a></div>
+            <div class="pf-minis">
+              {related.map((x) => (
+                <a class="pf-mini" href={placeUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="mount" size={20} w={1.8} /></span>
+                  <span class="pf-mini-txt"><b>{x.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{x.data.area}</span></span>
+                  <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+
+      <aside class="pf-side" aria-label="এক নজরে">
+        <div class="pf-side-in">
+          <div class="pf-sum">
+            <b class="pf-sum-h">{d.name} · এক নজরে</b>
+            <span class="pf-sum-l"><Icon name="route" size={14} w={2.2} />{G.from} {G.distance}</span>
+            <span class="pf-sum-l"><Icon name="sun" size={14} w={2.2} />সেরা সময়: {G.best}</span>
+            {d.cost_total && <span class="pf-sum-l"><Icon name="wallet" size={14} w={2.2} />খরচ আনুমানিক {d.cost_total}</span>}
+            <a class="pf-btn primary" href={dir} target="_blank" rel="noopener"><Icon name="route" size={17} w={2.2} />Google Maps-এ পথ</a>
+            <a class="pf-btn" href={map} target="_blank" rel="noopener"><Icon name="pin" />ম্যাপে দেখুন</a>
+          </div>
+          <Ad side />
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="pf-sticky" aria-label="দ্রুত কাজ">
+    <a class="pf-btn primary" href={dir} target="_blank" rel="noopener"><Icon name="route" size={17} w={2.2} />Google Maps-এ পথ দেখুন</a>
+    <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+  </div>
+</Base>
+
+<script>
+  import '../../../scripts/place.js';
+</script>

@@ -250,4 +250,56 @@ const institutions = defineCollection({
       .refine((u) => u.draft || u.verified_by === 'phone' || u.sources.length > 0, 'official তথ্যের জন্য অন্তত একটি sources দিন'),
 });
 
-export const collections = { doctors, hospitals, universities, institutions };
+// Famous place. Photos come first on the page (2-3 animated, names underneath); without photos a drawn scene of `kind` is shown.
+// visited = you went there yourself; sources = taken from the district portal and travel guides (sources required).
+const PLACE_KINDS = ['river', 'swamp', 'beach', 'tea', 'clouds', 'waterfall', 'forest', 'heritage', 'lake'] as const;
+const places = defineCollection({
+  loader: files('places'),
+  schema: ({ image }) =>
+    z
+      .object({
+        draft: z.boolean().default(false),
+        name: z.string().min(2), // Bangla
+        name_en: z.string().min(2),
+        city, // the district, for /places/<city>/
+        area: z.string(), // e.g. গোয়াইনঘাট, সিলেট
+        kind: z.enum(PLACE_KINDS, `kind হবে: ${PLACE_KINDS.join(', ')}`),
+        tags: z.array(z.string()).max(3).default([]), // short, e.g. [নদী ও পাহাড়, একদিনের ভ্রমণ]
+        verified: date,
+        verified_by: z.enum(['visited', 'sources'], 'verified_by হবে visited অথবা sources').default('sources'),
+        map_query: z.string(), // what to search on Google Maps, e.g. "Jaflong Zero Point"
+        geo: z.object({ lat: z.number(), lng: z.number() }).optional(),
+        photos: z.array(z.object({ src: image(), caption: z.string(), sub: z.string().optional(), label: z.string().optional() })).max(5).default([]),
+        intro: z.string(), // 1-2 sentences
+        glance: z.object({
+          from: z.string(), // e.g. সিলেট শহর থেকে
+          distance: z.string(), // e.g. প্রায় ৬০ কিমি
+          time: z.string(), // e.g. ২ – ২.৫ ঘণ্টা
+          fee: z.string(), // e.g. নেই, or ৳৫০
+          best: z.string(), // e.g. জুন – নভেম্বর
+        }),
+        spots: z.array(z.object({ title: z.string(), text: z.string(), meta: z.string().optional(), photo: image().optional() })).min(1, 'অন্তত একটি spots দিন'),
+        routes: z
+          .array(
+            z.object({
+              from: z.string(),
+              rows: z.array(z.object({ mode: z.enum(['bus', 'car', 'train', 'boat', 'walk', 'plane']), name: z.string(), text: z.string(), fare: z.string() })).min(1),
+            }),
+          )
+          .min(1),
+        months: z.array(z.number().int().min(1).max(3)).length(12, 'months-এ ১২টি সংখ্যা দিন (জানুয়ারি থেকে ডিসেম্বর; ৩ সেরা, ২ ভালো, ১ মোটামুটি)'),
+        seasons: z.array(z.object({ title: z.string(), text: z.string() })).default([]),
+        cost_from: z.string().optional(), // e.g. সিলেট থেকে, জনপ্রতি
+        cost: z.array(z.object({ item: z.string(), amount: z.string() })).default([]),
+        cost_total: z.string().optional(),
+        tips: z.array(z.object({ title: z.string(), text: z.string() })).default([]),
+        stay: z.string().optional(),
+        nearby: z.array(reference('places')).default([]),
+        faq: extraFaq,
+        sources: sources,
+        old_urls: z.array(z.string().startsWith('/')).default([]),
+      })
+      .refine((p) => p.draft || p.verified_by === 'visited' || p.sources.length > 0, 'sources থেকে নেওয়া তথ্যের জন্য অন্তত একটি sources দিন'),
+});
+
+export const collections = { doctors, hospitals, universities, institutions, places };

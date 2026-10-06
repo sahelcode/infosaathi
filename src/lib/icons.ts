@@ -1,5 +1,17 @@
 // Line icons (24x24, stroke). Use with <Icon name="phone" />.
 export const ICONS = {
+  bus: '<rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 21v-3M16 21v-3"/><circle cx="8" cy="14.5" r="1"/><circle cx="16" cy="14.5" r="1"/>',
+  car: '<path d="M5 16V11l2-5h10l2 5v5"/><path d="M3 16h18v2H3zM7 18v2M17 18v2M5 11h14"/>',
+  train: '<rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M8 21l2-4M16 21l-2-4"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/>',
+  boat: '<path d="M3 15h18l-2 4H5Z"/><path d="M12 3v12M12 4l6 9h-6"/>',
+  walk: '<circle cx="13" cy="4" r="2"/><path d="m9 21 2-6 3 2v4M7 12l3-4 4 1 2 4M11 15l-1-5"/>',
+  plane: '<path d="M10.5 3.5a1.5 1.5 0 0 1 3 0V9l7 4v2l-7-2v4l2 1.5V20l-3.5-1-3.5 1v-1.5L10.5 17v-4l-7 2v-2l7-4Z"/>',
+  route: '<circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/>',
+  warn: '<path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17v.5"/>',
+  ticket: '<path d="M3 8a2 2 0 0 0 0 4v4h18v-4a2 2 0 0 0 0-4V4H3Z"/><path d="M13 4v3M13 10v2M13 15v1"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  mount: '<path d="m3 20 6-10 4 6 3-4 5 8Z"/>',
+  chevl: '<path d="M15 6l-6 6 6 6"/>',
   phone: "<path d=\"M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2\"/>",
   pin: "<path d=\"M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z\"/><circle cx=\"12\" cy=\"9\" r=\"2.5\"/>",
   share: "<circle cx=\"18\" cy=\"5\" r=\"3\"/><circle cx=\"6\" cy=\"12\" r=\"3\"/><circle cx=\"18\" cy=\"19\" r=\"3\"/><path d=\"m8.6 13.5 6.8 4M15.4 6.5l-6.8 4\"/>",

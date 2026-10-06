@@ -1,9 +1,9 @@
 // Homepage. The design is the finished prototype (src/partials/home.html) exactly as it was;
-// only the doctor and hospital rows are filled from the published data files at build time.
+// the rows (doctors, hospitals, universities, colleges, schools, places) are filled from the published data files at build time.
 import type { APIRoute } from 'astro';
 import { getImage } from 'astro:assets';
 import home from '../partials/home.html?raw';
-import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt } from '../lib/data';
+import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl } from '../lib/data';
 import { CITIES } from '../lib/taxonomy';
 import { SPECIALTIES } from '../lib/taxonomy';
 import { bn } from '../lib/format';
@@ -75,7 +75,24 @@ export const GET: APIRoute = async () => {
       url: institutionUrl(i),
     }));
 
+  // famous places: the first photo if there is one, otherwise the drawn scene of its kind
+  const placeRows = await Promise.all(
+    (await getPlaces()).slice(0, 8).map(async (p) => ({
+      name: p.data.name,
+      loc: p.data.area,
+      kind: p.data.kind,
+      tags: p.data.tags.slice(0, 2),
+      url: placeUrl(p),
+      img: p.data.photos[0] ? (await getImage({ src: p.data.photos[0].src, width: 480, format: 'webp' })).src : '',
+    })),
+  );
+
   let html = swapArray(home, 'doctorNames', docRows);
+  html = swapArray(html, 'places', placeRows);
+  html = swap(html, "put('placeRow', places.map(p=>`\n    <div class=\"org-card ix-card ix-place\">\n      <div class=\"ix-image\">${placeArt(p.kind)}",
+    "put('placeRow', places.map(p=>`\n    <a class=\"org-card ix-card ix-place\" href=\"${p.url}\" style=\"color:inherit;text-decoration:none\">\n      <div class=\"ix-image\">${p.img ? `<img src=\"${p.img}\" alt=\"\" loading=\"lazy\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\">` : placeArt(p.kind)}");
+  html = swap(html, "<div class=\"ix-body\">${tags(p.tags)}</div>\n    </div>`).join(''));", "<div class=\"ix-body\">${tags(p.tags)}</div>\n    </a>`).join(''));");
+  html = swap(html, '<span class="eyebrow">Famous places</span><a href="#" class="see-all">', '<span class="eyebrow">Famous places</span><a href="/places/" class="see-all">');
   html = swapArray(html, 'colleges', instRow('college'));
   html = swapArray(html, 'schools', instRow('school'));
   html = swap(html, "put('collegeRow', colleges.map((c,i)=>`\n    <div class=\"org-card ix-card\">", "put('collegeRow', colleges.map((c,i)=>`\n    <a class=\"org-card ix-card\" href=\"${c.url}\" style=\"color:inherit;text-decoration:none\">");
