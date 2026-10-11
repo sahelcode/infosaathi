@@ -182,7 +182,7 @@ export const GET: APIRoute = async () => {
     mk('news', 'সংবাদ', '/news/', newsAll.length, 'খবর'),
     mk('banks', 'ব্যাংক', '/banks/', 0, ''),
   ]);
-  html = swap(html, '<span class="eyebrow">AI tools</span>', '<span class="eyebrow">এআই টুল · AI tools</span>');
+  html = swap(html, '<span class="eyebrow">AI tools</span>', '<span class="eyebrow">AI tools</span>');
   html = swapArray(html, 'hotels', hotelRows);
   html = swapArray(html, 'places', placeRows);
   html = swap(html, "put('placeRow', places.map(p=>`\n    <div class=\"org-card ix-card ix-place\">\n      <div class=\"ix-image\">${placeArt(p.kind)}",
