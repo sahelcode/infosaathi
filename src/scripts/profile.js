@@ -98,11 +98,11 @@
       if(!img.complete) await new Promise((ok,no)=>{ img.onload=ok; img.onerror=no; });
       const w=img.naturalWidth, h=img.naturalHeight, c=document.createElement('canvas'); c.width=w; c.height=h;
       const g=c.getContext('2d'); g.drawImage(img,0,0,w,h);
-      const fs=Math.max(14,Math.round(w*0.036)), pad=Math.round(fs*0.55), txt='infosaathi.com';
-      g.font='700 '+fs+'px Inter, Arial, sans-serif'; const tw=g.measureText(txt).width;
-      const bw=tw+pad*2, bh=fs+pad*1.2, x=w-bw-pad*0.8, y=h-bh-pad*0.8, r=bh/2;
-      g.globalAlpha=.78; g.fillStyle='#0b2a1c'; g.beginPath(); g.moveTo(x+r,y); g.arcTo(x+bw,y,x+bw,y+bh,r); g.arcTo(x+bw,y+bh,x,y+bh,r); g.arcTo(x,y+bh,x,y,r); g.arcTo(x,y,x+bw,y,r); g.fill();
-      g.globalAlpha=1; g.fillStyle='#fff'; g.textBaseline='middle'; g.fillText(txt,x+pad,y+bh/2+fs*0.04);
+      /* diagonal mark across the middle: light fill with a soft dark edge so it reads on any card */
+      const fs=Math.max(18,Math.round(w*0.1)), txt='infosaathi.com';
+      g.save(); g.translate(w/2,h/2); g.rotate(-Math.PI/9); g.textAlign='center'; g.textBaseline='middle';
+      g.font='800 '+fs+'px Inter, Arial, sans-serif'; g.lineJoin='round'; g.lineWidth=Math.max(2,fs*0.07);
+      g.strokeStyle='rgba(0,0,0,.28)'; g.strokeText(txt,0,0); g.fillStyle='rgba(255,255,255,.42)'; g.fillText(txt,0,0); g.restore();
       const blob=await new Promise(res=>c.toBlob(res,'image/jpeg',.92));
       const file=new File([blob],(btn.dataset.name||'infosaathi').replace(/[^\w.-]+/g,'-')+'.jpg',{type:'image/jpeg'});
       if(navigator.canShare&&navigator.canShare({files:[file]})){ try{ await navigator.share({files:[file],title:document.title,text:document.title+'\n'+url}); return; }catch(err){ if(err&&err.name==='AbortError') return; } }
