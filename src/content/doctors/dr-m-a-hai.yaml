@@ -1,0 +1,29 @@
+# Imported from the old blog post /2025/10/dr-m-a-hai.html; updated from the chamber card and checked by phone on 2026-10-12.
+name: "ডা. এম. এ. হাই"
+name_en: "Dr. M. A. Hai"
+specialty: pediatrics
+title: "নিওনেটোলজিস্ট ও শিশু রোগ বিশেষজ্ঞ"
+photo: ./images/dr-m-a-hai.jpg
+banner: ./images/dr-m-a-hai-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "FCPS (Pediatrics)", "MCPS (Pediatrics)", "MD (Neonatology)"]
+designation: "সহযোগী অধ্যাপক, নিওনেটোলজি বিভাগ; চীফ কনসালট্যান্ট ও ইনচার্জ, শেখ রাসেল SCANU — সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-27552
+city: sylhet
+verified: 2026-10-12
+verified_by: phone
+old_urls: [/2025/10/dr-m-a-hai.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৩ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01937529287"
+        note: "সকাল ৮টা থেকে"
