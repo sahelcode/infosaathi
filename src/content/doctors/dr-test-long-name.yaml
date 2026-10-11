@@ -1,0 +1,39 @@
+# TEST ONLY: a draft with very long text to check the layout. draft: true keeps it off the published site. Delete before the final design is done.
+draft: true
+name: "অধ্যাপক ডা. মোহাম্মদ আবদুল্লাহ আল মামুন চৌধুরী খান"
+name_en: "Prof. Dr. Mohammad Abdullah Al Mamun Chowdhury Khan"
+specialty: pediatrics
+title: "শিশু ও নবজাতক রোগ, শিশু হৃদরোগ এবং শিশুদের কিডনি রোগ বিশেষজ্ঞ ও কনসালট্যান্ট"
+photo: ./images/test-long.jpeg
+degrees: ["MBBS (Dhaka)", "DCH (Dhaka)", "MD (Pediatrics)", "FCPS (Pediatrics)", "MRCPCH (UK)", "Fellowship in Pediatric Cardiology"]
+designation: "Professor and Head, Department of Pediatric Medicine — Sylhet MAG Osmani Medical College and Hospital, Sylhet"
+bmdc: A-123456
+whatsapp: "01712345678"
+area: "জিন্দাবাজার"
+aliases: ["Dr Abdullah Al Mamun"]
+city: sylhet
+verified: 2026-10-06
+treats: ["নবজাতকের পরিচর্যা", "টিকাদান", "নিউমোনিয়া", "ডায়রিয়া", "ইউরিনারি ইনফেকশন", "অ্যালার্জি ও হাঁপানি", "অপুষ্টি ও অ্যানিমিয়া", "বৃদ্ধি ও বিকাশজনিত সমস্যা", "জন্মগত হৃদরোগ", "শিশুদের কিডনি রোগ", "খিঁচুনি", "জন্ডিস"]
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: রুম নং ২১০ (২য় তলা, নতুন ভবন)
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ]
+    start: "17:00"
+    end: "21:00"
+    fee: { new: 1000, old: 700, report: 500 }
+    serials:
+      - label: "ব্যক্তিগত সিরিয়াল"
+        number: "01937529287"
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+      - label: "সহকারীর নম্বর"
+        number: "01712345678"
+  - name: "নিজস্ব চেম্বার, শিশু স্বাস্থ্য ও পরামর্শ কেন্দ্র"
+    address: "হাউস ১২, রোড ৩, উপশহর ব্লক বি, সিলেট সদর, সিলেট ৩১০০"
+    days: [বৃহস্পতি, শুক্র]
+    start: "09:00"
+    end: "13:00"
+    fee: { new: 800 }
+    serials:
+      - label: "চেম্বার"
+        number: "01812345678"

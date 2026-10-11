@@ -92,9 +92,12 @@ const faq = [
 
 // ---- related lists ----
 const others = doctors.filter((x) => x.id !== doctor.id);
-const sameSp = others.filter((x) => x.data.specialty === d.specialty && x.data.city === d.city).slice(0, 3);
+const evenCut = <T,>(a: T[], max: number) => { const r = a.slice(0, max); return r.length % 2 && r.length > 1 ? r.slice(0, -1) : r; };
+const sameSpAll = others.filter((x) => x.data.specialty === d.specialty && x.data.city === d.city);
+const sameSp = evenCut(sameSpAll, 6);
+const sideSp = sameSpAll.slice(0, 3);
 const mainHosp = chambers.find((c) => c.href)?.h;
-const sameHosp = mainHosp ? doctorsAt(others, mainHosp.id).slice(0, 3) : [];
+const sameHosp = mainHosp ? evenCut(doctorsAt(others, mainHosp.id), 6) : [];
 const usedHosp = new Set(chambers.map((c) => c.h?.id));
 const nearHosp = visibleHospitals.filter((h) => h.data.city === d.city && !usedHosp.has(h.id)).slice(0, 3);
 const placeOf = (x: Doctor) => {
@@ -116,6 +119,7 @@ const crumbs = [
   [city.bn, `/doctors/${d.city}/`],
   [sp.bn, `/doctors/${d.city}/${d.specialty}/`],
 ];
+const heroNums = [...new Map(chambers.flatMap((c) => c.serials).map((s) => [s.number, s])).values()].slice(0, 2);
 const waNum = d.whatsapp ? phoneIntl(d.whatsapp).replace(/\D/g, '') : undefined;
 const jsonld = {
   '@context': 'https://schema.org',
@@ -180,13 +184,16 @@ const jsonld = {
           <div class="dx-meta">
             <span class="dx-chip"><Icon name="pin" size={13} />{d.area ? `${d.area}, ` : ''}{city.bn} <i lang="en">{city.en}</i></span>
             {d.bmdc && <span class="dx-chip ok"><Icon name="check" size={13} w={3} />BMDC {d.bmdc}</span>}
-            <span class="dx-chip"><Icon name="clock" size={13} w={2.2} />{d.verified_by === 'phone' ? 'ফোনে যাচাই' : 'অফিসিয়াল সূত্রে'} {bnDate(d.verified)}</span>
           </div>
-          <div class="dx-cta">
-            <a class="pf-btn primary" href={`tel:${firstSerial.number}`}><Icon name="phone" />কল করুন<span class="dx-cta-n">{phoneShow(firstSerial.number)}</span></a>
-            <a class="pf-btn" href={first.map} target="_blank" rel="noopener"><Icon name="route" />দিকনির্দেশ</a>
-            {waNum && <a class="pf-btn wa" href={`https://wa.me/${waNum}`} target="_blank" rel="noopener" aria-label="WhatsApp-এ মেসেজ"><Icon name="wa" size={19} w={1.8} /><span>WhatsApp</span></a>}
-            <button class="pf-btn dx-share" type="button" data-share aria-label="শেয়ার করুন"><Icon name="share" /></button>
+          <div class="dx-nums">
+            {heroNums.map((n) => (
+              <a class="dx-num" href={`tel:${n.number}`} aria-label={`${n.label}: ${phoneShow(n.number)} নম্বরে কল`}><Icon name="phone" size={17} /><span><small>{n.label}</small><b>{phoneShow(n.number)}</b></span></a>
+            ))}
+          </div>
+          <div class="dx-acts">
+            <a class="dx-act" href={first.map} target="_blank" rel="noopener"><Icon name="route" size={17} />দিকনির্দেশ</a>
+            {waNum && <a class="dx-act wa" href={`https://wa.me/${waNum}`} target="_blank" rel="noopener"><Icon name="wa" size={18} w={1.8} />WhatsApp</a>}
+            <button class="dx-act ic" type="button" data-share aria-label="শেয়ার করুন"><Icon name="share" size={18} /></button>
           </div>
         </section>
 
@@ -224,6 +231,14 @@ const jsonld = {
               <a class="pf-maplink" href={c.map} target="_blank" rel="noopener"><Icon name="route" size={16} />ম্যাপে দেখুন · Get directions</a>
             </div>
           ))}
+          <p class="dx-verified"><Icon name="check" size={14} w={2.8} />{d.verified_by === 'phone' ? 'ফোনে যাচাই করা' : 'অফিসিয়াল সূত্রে হালনাগাদ'} · {bnDate(d.verified)}</p>
+        </section>
+
+        <section class="pf-card dx-card" aria-labelledby="h-about">
+          <h2 id="h-about">পরিচিতি <small lang="en">About</small></h2>
+          <p class="pf-text">{about}</p>
+          <p class="pf-text dx-enp" lang="en">{enAbout}</p>
+          {d.treats.length > 0 && (<><h3 class="pf-h3">যে রোগের চিকিৎসা করেন</h3><div class="pf-chips">{d.treats.map((t) => <span>{t}</span>)}</div></>)}
         </section>
 
         {d.banner && (
@@ -237,20 +252,11 @@ const jsonld = {
           </section>
         )}
 
-        <Ad />
-
-        <section class="pf-card dx-card" aria-labelledby="h-about">
-          <h2 id="h-about">পরিচিতি <small lang="en">About</small></h2>
-          <p class="pf-text">{about}</p>
-          <p class="pf-text dx-enp" lang="en">{enAbout}</p>
-          {d.treats.length > 0 && (<><h3 class="pf-h3">যে রোগের চিকিৎসা করেন</h3><div class="pf-chips">{d.treats.map((t) => <span>{t}</span>)}</div></>)}
-        </section>
-
         <Faq items={faq} />
 
         <Report placeholder="যেমন: চেম্বারের সময় বদলেছে" note="তথ্য পরিবর্তন হতে পারে। চেম্বারে যাওয়ার আগে ফোন করে নিশ্চিত হয়ে নিন।" />
 
-        <ShareRow />
+        <ShareRow copy />
 
         <nav class="pf-tags" aria-label="সম্পর্কিত">
           <a href={`/doctors/${d.city}/${d.specialty}/`}>{city.in} {sp.bn}</a>
@@ -261,7 +267,7 @@ const jsonld = {
         <Ad />
 
         {sameSp.length > 0 && (
-          <section class="pf-block" aria-labelledby="h-rel">
+          <section class="pf-block dx-mob" aria-labelledby="h-rel">
             <div class="pf-block-head"><h2 id="h-rel">একই বিশেষজ্ঞতার অন্য ডাক্তার</h2><a class="see-all" href={`/doctors/${d.city}/${d.specialty}/`}>See all</a></div>
             <div class="pf-minis">{sameSp.map((x) => <MiniDoctor doctor={x} place={placeOf(x)} />)}</div>
           </section>
@@ -276,7 +282,13 @@ const jsonld = {
 
       <aside class="pf-side" aria-label="আরও">
         <div class="pf-side-in">
-          <Ad side />
+          {sideSp.length > 0 && (
+            <section class="dx-side-card" aria-labelledby="h-side-sp">
+              <b id="h-side-sp">{city.in} আরও {sp.bn}</b>
+              <div class="pf-minis">{sideSp.map((x) => <MiniDoctor doctor={x} place={placeOf(x)} />)}</div>
+              <a class="dx-side-all" href={`/doctors/${d.city}/${d.specialty}/`}>সব {sp.bn} দেখুন<Icon name="chev" size={15} w={2.4} /></a>
+            </section>
+          )}
           {nearHosp.length > 0 && (
             <div class="pf-near">
               <b>{city.of} অন্য হাসপাতাল</b>
@@ -289,7 +301,7 @@ const jsonld = {
   </main>
 
   <div class="pf-sticky dx-bar" aria-label="দ্রুত যোগাযোগ">
-    <a class="pf-btn primary" href={`tel:${firstSerial.number}`}><Icon name="phone" />কল করুন</a>
+    <a class="pf-btn primary" href={`tel:${firstSerial.number}`}><Icon name="phone" />কল করুন <span class="dx-bar-n">{phoneShow(firstSerial.number)}</span></a>
     <a class="pf-btn" href={first.map} target="_blank" rel="noopener"><Icon name="route" />দিকনির্দেশ</a>
     {waNum && <a class="pf-btn wa" href={`https://wa.me/${waNum}`} target="_blank" rel="noopener" aria-label="WhatsApp"><Icon name="wa" size={20} w={1.8} /></a>}
   </div>
