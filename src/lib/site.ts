@@ -10,5 +10,5 @@ export const SHOW_DRAFTS = import.meta.env.DEV || process.env.SHOW_DRAFTS === '1
 export const ADSENSE_CLIENT = '';
 
 // Public contact address shown on the contact, privacy and policy pages. Change it here only.
-export const CONTACT_EMAIL = 'contact@sahelahmed.dev';
+export const CONTACT_EMAIL = 'contact@infosaathi.com';
 export const UPDATED = '১২ অক্টোবর ২০২৬';
