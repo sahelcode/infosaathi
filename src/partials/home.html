@@ -649,26 +649,23 @@ body.menu-open{overflow:hidden;}
 @media (hover:hover){.pill-card:hover{background:#fff;border-color:#86d9a5;}.pill-card:hover .pill-icn{transform:none;background:#e3f6ea;}}
 
 
-/* contact form (home): light, compact */
-.cx{max-width:760px;margin:0 auto;padding:22px 20px 16px;background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:0 1px 2px rgba(6,60,35,.04);}
-.cx-head h2{font-size:19px;line-height:1.35;margin:0;color:#0f2a1c;font-weight:700;}
+/* contact (home): open layout, underline fields, floating labels */
+.cx{max-width:640px;margin:0 auto;padding:6px 0;}
+.cx-head h2{font-size:20px;line-height:1.3;margin:0;color:#0f2a1c;font-weight:700;}
 .cx-head h2 small{font-size:12.5px;font-weight:500;color:#7a9486;margin-left:6px;}
 .cx-head p{margin:4px 0 0;font-size:13.5px;line-height:1.6;color:#5b6b63;}
-.cx-form{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px;}
-.cx-form input,.cx-form select,.cx-form textarea{width:100%;box-sizing:border-box;border:1px solid #dbe7e0;background:#fafdfb;color:#0f2a1c;border-radius:10px;padding:0 12px;height:42px;font:inherit;font-size:14.5px;outline:none;transition:border-color .2s,box-shadow .2s;}
-.cx-form textarea{height:auto;min-height:76px;padding:10px 12px;line-height:1.55;resize:vertical;}
-.cx-form input::placeholder,.cx-form textarea::placeholder{color:#8a9c92;}
-.cx-form input:focus,.cx-form select:focus,.cx-form textarea:focus{border-color:#16a34a;box-shadow:0 0 0 3px rgba(22,163,74,.12);background:#fff;}
-.cx-btn{border:0;cursor:pointer;height:42px;background:#16a34a;color:#fff;font:inherit;font-weight:700;font-size:14.5px;padding:0 24px;border-radius:10px;transition:background .2s,transform .15s;}
-.cx-btn:hover{background:#15803d;}.cx-btn:active{transform:scale(.97);}
-.cx-hint{margin:10px 0 0;font-size:12px;color:#7a8a82;}
+.cx-form{display:grid;grid-template-columns:1fr;gap:6px;margin-top:10px;}
+.cx-field{position:relative;padding-top:18px;}
+.cx-field input,.cx-field textarea{display:block;width:100%;box-sizing:border-box;border:0;border-bottom:1.5px solid #cfdcd4;background:transparent;border-radius:0;padding:8px 0 8px;font:inherit;font-size:15.5px;color:#0f2a1c;outline:none;resize:none;overflow:hidden;line-height:1.5;transition:border-color .25s;}
+.cx-field textarea{min-height:40px;max-height:160px;}
+.cx-field label{position:absolute;left:0;top:27px;font-size:15px;color:#7d9186;pointer-events:none;transform-origin:left top;transition:transform .22s cubic-bezier(.22,1,.36,1),color .22s;}
+.cx-field input:focus,.cx-field textarea:focus{border-bottom-color:#16a34a;}
+.cx-field input:focus + label,.cx-field textarea:focus + label,.cx-field input:not(:placeholder-shown) + label,.cx-field textarea:not(:placeholder-shown) + label{transform:translateY(-22px) scale(.82);color:#15803d;font-weight:600;}
+.cx-btn{justify-self:start;margin-top:14px;display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;height:42px;background:#16a34a;color:#fff;font:inherit;font-weight:700;font-size:14.5px;padding:0 22px;border-radius:999px;transition:background .2s,transform .15s,gap .2s;}
+.cx-btn:hover{background:#15803d;gap:11px;}.cx-btn:active{transform:scale(.97);}
+.cx-hint{margin:12px 0 0;font-size:12px;color:#7a8a82;}
 .cx-hint a{color:#15803d;text-decoration:underline;text-underline-offset:3px;}
-@media(min-width:640px){
-  .cx{padding:22px 26px 16px;}
-  .cx-form{grid-template-columns:1fr 1fr;}
-  .cx-form textarea{grid-column:1 / -1;}
-  .cx-btn{grid-column:1 / -1;justify-self:end;}
-}
+@media(min-width:640px){.cx-form{grid-template-columns:1fr 1.6fr;gap:22px;align-items:end;}.cx-btn{grid-column:1 / -1;margin-top:6px;}}
 
 /* ===== v11: emergency strip, blood bank, admission/exam ===== */
 .blood-card{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:26px 14px;}
@@ -704,6 +701,20 @@ body.menu-open{overflow:hidden;}
 .blood-cta-arrow{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:#fff;color:#e11d48;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(225,29,72,.25);transition:transform .2s;}
 .blood-cta:active .blood-cta-arrow{transform:translateX(3px);}
 @media (prefers-reduced-motion:reduce){.blood-cta-icn{animation:none;}}
+
+/* blood: no box, no colour block */
+.blood-panel{background:none;border:0;border-radius:0;box-shadow:none;max-width:640px;margin:0 auto;overflow:visible;}
+.blood-panel::before{display:none;}
+.bp-copy{padding:0;color:#0f2a1c;}
+.bp-eyebrow{display:none;}
+.bp-copy h2{margin:0 0 10px;font-size:17px;line-height:1.35;color:#0f2a1c;display:flex;align-items:center;gap:8px;}
+.bp-copy h2::before{content:"";width:9px;height:12px;border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;background:#e11d48;flex:0 0 auto;}
+.bp-copy p{display:none;}
+.bp-groups{grid-template-columns:repeat(4,1fr);gap:8px;max-width:none;}
+.bp-g{border:1px solid #e6dde0;background:#fff;color:#9f1239;font:700 14px var(--font-body);padding:8px 0;border-radius:10px;}
+.bp-g:hover{background:#fff5f7;border-color:#f3b8c4;transform:none;}
+.bp-orgs{margin-top:10px;color:#15803d;font-size:12.5px;font-weight:600;text-decoration:underline;text-underline-offset:3px;}
+@media (min-width:640px){.bp-groups{grid-template-columns:repeat(8,1fr);}}
 
 /* ===== v13: hospital card ===== */
 .hosp-card{padding:0;overflow:hidden;background:var(--surface);}
@@ -1116,31 +1127,25 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
   <div class="container">
     <div class="cx reveal" id="contact-home">
       <div class="cx-head">
-        <h2>আমাদের সঙ্গে যোগাযোগ করুন <small>Contact us</small></h2>
-        <p>পরামর্শ, তথ্য সংশোধন বা ডাক্তার হিসেবে যুক্ত হওয়ার অনুরোধ লিখুন। আমরা পড়ে দেখব।</p>
+        <h2>যোগাযোগ <small>Contact</small></h2>
+        <p>পরামর্শ, তথ্যে ভুল, বা ডাক্তার হিসেবে যুক্ত হওয়ার অনুরোধ, সবই লিখুন।</p>
       </div>
       <form class="cx-form" id="homeContact" data-email="__CONTACT_EMAIL__">
-        <input name="name" type="text" autocomplete="name" placeholder="আপনার নাম" aria-label="আপনার নাম" required>
-        <select name="topic" aria-label="কী বিষয়ে">
-          <option>তথ্যে ভুল জানাতে চাই</option>
-          <option>ডাক্তার বা হাসপাতাল হিসেবে যুক্ত হতে চাই</option>
-          <option>পরামর্শ দিতে চাই</option>
-          <option>অন্য বিষয়</option>
-        </select>
-        <textarea name="msg" rows="3" placeholder="আপনার বার্তা (পেজের ভুল হলে নাম বা লিংক দিন)" aria-label="আপনার বার্তা" required></textarea>
-        <button type="submit" class="cx-btn">ইমেইলে পাঠান</button>
+        <div class="cx-field"><input id="cxName" name="name" type="text" autocomplete="name" placeholder=" " required><label for="cxName">আপনার নাম</label></div>
+        <div class="cx-field"><textarea id="cxMsg" name="msg" rows="1" placeholder=" " required></textarea><label for="cxMsg">আপনার বার্তা</label></div>
+        <button type="submit" class="cx-btn">পাঠান <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </form>
-      <p class="cx-hint">বোতাম চাপলে আপনার ইমেইল অ্যাপে লেখা তৈরি হয়ে খুলবে। <a href="/contact/">যোগাযোগের পাতা</a></p>
+      <p class="cx-hint">আপনার ইমেইল অ্যাপ খুলে লেখা তৈরি থাকবে, সেখান থেকে পাঠান। <a href="/contact/">আরও জানুন</a></p>
     </div>
   </div>
 </section>
 
 <script>
-(function(){var f=document.getElementById('homeContact'); if(!f) return;
+(function(){var f=document.getElementById('homeContact'); if(!f) return; var ta=f.querySelector('textarea'); ta.addEventListener('input',function(){ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,160)+'px';});
   f.addEventListener('submit',function(e){e.preventDefault();
     var d=new FormData(f), to=f.dataset.email; if(!to) return;
-    var sub=encodeURIComponent('InfoSaathi: '+d.get('topic'));
-    var body=encodeURIComponent('নাম: '+d.get('name')+'\nবিষয়: '+d.get('topic')+'\n\n'+d.get('msg')+'\n');
+    var sub=encodeURIComponent('InfoSaathi থেকে বার্তা');
+    var body=encodeURIComponent('নাম: '+d.get('name')+'\n\n'+d.get('msg')+'\n');
     location.href='mailto:'+to+'?subject='+sub+'&body='+body;
   });
 })();
