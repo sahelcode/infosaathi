@@ -243,7 +243,7 @@ const jsonld = {
 
         {d.banner && (
           <section class="pf-card dx-card pf-bannercard" aria-labelledby="h-banner">
-            <div class="pf-card-head"><h2 id="h-banner">হাসপাতালের চেম্বার কার্ড</h2>{d.banner_month && <span class="pf-count">{bnMonth(d.banner_month)}</span>}</div>
+            <div class="pf-card-head"><h2 id="h-banner">ভিজিটিং কার্ড <small lang="en">Visiting card</small></h2>{d.banner_month && <span class="pf-count">{bnMonth(d.banner_month)}</span>}</div>
             <button class="pf-banner" type="button" data-zoom aria-label="চেম্বার কার্ড বড় করে দেখুন">
               <Image src={d.banner} width={1000} alt={`${d.name} (${d.name_en}) – ${spTitle}, ${first.name}, রোগী দেখার সময় ${first.timeText}, সিরিয়াল ${phoneShow(firstSerial.number)}`} />
               <span class="pf-banner-z"><Icon name="zoom" size={16} w={2.2} />বড় করে দেখুন</span>
@@ -261,7 +261,7 @@ const jsonld = {
         <nav class="pf-tags" aria-label="সম্পর্কিত">
           <a href={`/doctors/${d.city}/${d.specialty}/`}>{city.in} {sp.bn}</a>
           {mainHosp && <a href={hospitalUrl(mainHosp)}>{mainHosp.data.short ?? mainHosp.data.name}</a>}
-          {mainHosp && <a href={hospitalUrl(mainHosp) + '#doctors'}>{mainHosp.data.short ?? mainHosp.data.name}-এর সব ডাক্তার</a>}
+          {mainHosp && <a href={hospitalUrl(mainHosp) + '#doctors'}>এই হাসপাতালের ডাক্তার</a>}
           <a href={`/doctors/${d.city}/`}>{city.of} সব ডাক্তার</a>
         </nav>
 
