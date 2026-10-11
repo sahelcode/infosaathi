@@ -1,16 +1,17 @@
 ---
-// "Wrong information? Tell us" box. The form has no backend yet; it thanks the visitor.
+// "Wrong information? Tell us" box. There is no backend: it opens the visitor's email app with the page link filled in.
 import Icon from './Icon.astro';
+import { CONTACT_EMAIL } from '../lib/site';
 interface Props { placeholder: string; note: string }
 const { placeholder, note } = Astro.props;
 ---
 <section class="pf-card pf-trust" aria-label="তথ্য সংশোধন">
   <details class="pf-report">
-    <summary><span class="pf-trust-icn"><Icon name="flag" /></span><span><b>তথ্য ভুল? জানান</b><small>৪৮ ঘণ্টার মধ্যে যাচাই করে ঠিক করা হয়</small></span></summary>
-    <form class="pf-form" data-report>
+    <summary><span class="pf-trust-icn"><Icon name="flag" /></span><span><b>তথ্য ভুল? জানান</b><small>ইমেইলে জানালে আমরা যাচাই করে ঠিক করি</small></span></summary>
+    <form class="pf-form" data-report data-email={CONTACT_EMAIL}>
       <label>কী ভুল আছে?<textarea rows="3" required placeholder={placeholder}></textarea></label>
-      <label>আপনার ফোন (ঐচ্ছিক)<input type="tel" inputmode="tel" placeholder="01XXXXXXXXX" /></label>
-      <button class="pf-btn primary" type="submit">পাঠান</button>
+      <button class="pf-btn primary" type="submit">ইমেইলে পাঠান</button>
+      <p class="pf-note">বোতাম চাপলে আপনার ইমেইল অ্যাপ খুলবে, পাতার লিংকসহ লেখা তৈরি থাকবে। সেখান থেকে পাঠিয়ে দিন।</p>
     </form>
   </details>
   <slot />

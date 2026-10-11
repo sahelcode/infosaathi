@@ -112,7 +112,7 @@
   }));
 
   /* ---- correction form (no backend yet) ---- */
-  $$('[data-report]').forEach(f=>f.addEventListener('submit',e=>{ e.preventDefault(); f.reset(); const d=f.closest('details'); if(d) d.open=false; toast('ধন্যবাদ! যাচাই করে ঠিক করা হবে'); }));
+  $$('[data-report]').forEach(f=>f.addEventListener('submit',e=>{ e.preventDefault(); const t=f.querySelector('textarea').value.trim(); const to=f.dataset.email; if(!to||!t) return; const sub=encodeURIComponent('তথ্য সংশোধন: '+document.title); const body=encodeURIComponent('পাতার লিংক: '+location.href+'\n\nকী ভুল আছে:\n'+t+'\n'); location.href='mailto:'+to+'?subject='+sub+'&body='+body; toast('ইমেইল অ্যাপ খুলছে, সেখান থেকে পাঠিয়ে দিন'); }));
 
   /* ---- sticky bar steps aside at the footer ---- */
   const bar=$('.pf-sticky'), foot=$('footer');

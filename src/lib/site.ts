@@ -8,3 +8,7 @@ export const SHOW_DRAFTS = import.meta.env.DEV || process.env.SHOW_DRAFTS === '1
 // AdSense: put your publisher id here (ca-pub-XXXXXXXXXXXXXXXX) when the new site is approved.
 // Until then the published site shows no ad boxes; previews show grey placeholders.
 export const ADSENSE_CLIENT = '';
+
+// Public contact address shown on the contact, privacy and policy pages. Change it here only.
+export const CONTACT_EMAIL = 'contact@sahelahmed.dev';
+export const UPDATED = '১২ অক্টোবর ২০২৬';
