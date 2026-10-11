@@ -128,3 +128,12 @@
 .pf-sheet .pf-call{background:#1d7a4d;box-shadow:none;}
 .pf-sheet .pf-call:hover{background:#17653f;}
 .pf-sheet .pf-btn.wa{background:#22a559;border-color:#22a559;}
+
+/* serial-taking time ("সকাল ৮টা থেকে") is the note under each number: make it readable */
+.dx .pf-num small:not(.pf-num-l),.pf-sheet .pf-num small:not(.pf-num-l){margin-top:2px;font-size:12px;font-weight:600;color:#17653f;}
+/* seven day chips always fit one row on phones */
+@media (max-width:639px){
+  .dx-facts>div:first-child{grid-template-columns:minmax(0,1fr);gap:6px;}
+  .dx .pf-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;}
+  .dx .pf-day{padding:5px 0;text-align:center;font-size:12px;}
+}

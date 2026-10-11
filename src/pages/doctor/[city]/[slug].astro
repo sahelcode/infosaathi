@@ -182,6 +182,8 @@ const jsonld = {
           {d.designation && <p class="dx-post">{d.designation}</p>}
           <div class="dx-meta">
             <span class="dx-chip"><Icon name="pin" size={13} />{d.area ? `${d.area}, ` : ''}{city.bn} <i lang="en">{city.en}</i></span>
+            {first.start && <span class="dx-chip"><Icon name="clock" size={13} w={2.2} />{first.timeText}</span>}
+            {feeChamber?.fee?.new && <span class="dx-chip"><Icon name="cash" size={13} w={2} />ভিজিট {taka(feeChamber.fee.new)}</span>}
             {d.bmdc && <span class="dx-chip ok"><Icon name="check" size={13} w={3} />BMDC {d.bmdc}</span>}
           </div>
           <div class="dx-acts">
