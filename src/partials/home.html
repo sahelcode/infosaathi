@@ -649,22 +649,26 @@ body.menu-open{overflow:hidden;}
 @media (hover:hover){.pill-card:hover{background:#fff;border-color:#86d9a5;}.pill-card:hover .pill-icn{transform:none;background:#e3f6ea;}}
 
 
-/* contact form band (home) */
-.contact-band{text-align:center;}
-.contact-band p{max-width:520px;}
-.cf-form{display:grid;grid-template-columns:1fr;gap:14px;max-width:560px;margin:26px auto 0;text-align:left;}
-@media(min-width:640px){.cf-form{grid-template-columns:1fr 1fr;}.cf-wide{grid-column:1 / -1;}}
-.cf-f{display:flex;flex-direction:column;gap:6px;}
-.cf-f span{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.82);}
-.cf-f input,.cf-f select,.cf-f textarea{width:100%;box-sizing:border-box;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);color:#fff;border-radius:12px;padding:13px 14px;font:inherit;font-size:15px;outline:none;transition:border-color .2s,background .2s;}
-.cf-f textarea{resize:vertical;min-height:110px;line-height:1.6;}
-.cf-f input::placeholder,.cf-f textarea::placeholder{color:rgba(255,255,255,.45);}
-.cf-f select option{color:#0f2a1c;background:#fff;}
-.cf-f input:focus,.cf-f select:focus,.cf-f textarea:focus{border-color:#4ade80;background:rgba(255,255,255,.11);}
-.cf-btn{border:0;cursor:pointer;background:#22c55e;color:#052e16;font:inherit;font-weight:700;font-size:15.5px;padding:14px 20px;border-radius:12px;transition:background .2s,transform .15s;}
-.cf-btn:hover{background:#4ade80;}.cf-btn:active{transform:scale(.97);}
-.cf-hint{margin:0;font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.62);text-align:center;}
-.cf-hint a{color:#86efac;text-decoration:underline;text-underline-offset:3px;}
+/* contact form (home): light, compact */
+.cx{max-width:760px;margin:0 auto;padding:22px 20px 16px;background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:0 1px 2px rgba(6,60,35,.04);}
+.cx-head h2{font-size:19px;line-height:1.35;margin:0;color:#0f2a1c;font-weight:700;}
+.cx-head h2 small{font-size:12.5px;font-weight:500;color:#7a9486;margin-left:6px;}
+.cx-head p{margin:4px 0 0;font-size:13.5px;line-height:1.6;color:#5b6b63;}
+.cx-form{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px;}
+.cx-form input,.cx-form select,.cx-form textarea{width:100%;box-sizing:border-box;border:1px solid #dbe7e0;background:#fafdfb;color:#0f2a1c;border-radius:10px;padding:0 12px;height:42px;font:inherit;font-size:14.5px;outline:none;transition:border-color .2s,box-shadow .2s;}
+.cx-form textarea{height:auto;min-height:76px;padding:10px 12px;line-height:1.55;resize:vertical;}
+.cx-form input::placeholder,.cx-form textarea::placeholder{color:#8a9c92;}
+.cx-form input:focus,.cx-form select:focus,.cx-form textarea:focus{border-color:#16a34a;box-shadow:0 0 0 3px rgba(22,163,74,.12);background:#fff;}
+.cx-btn{border:0;cursor:pointer;height:42px;background:#16a34a;color:#fff;font:inherit;font-weight:700;font-size:14.5px;padding:0 24px;border-radius:10px;transition:background .2s,transform .15s;}
+.cx-btn:hover{background:#15803d;}.cx-btn:active{transform:scale(.97);}
+.cx-hint{margin:10px 0 0;font-size:12px;color:#7a8a82;}
+.cx-hint a{color:#15803d;text-decoration:underline;text-underline-offset:3px;}
+@media(min-width:640px){
+  .cx{padding:22px 26px 16px;}
+  .cx-form{grid-template-columns:1fr 1fr;}
+  .cx-form textarea{grid-column:1 / -1;}
+  .cx-btn{grid-column:1 / -1;justify-self:end;}
+}
 
 /* ===== v11: emergency strip, blood bank, admission/exam ===== */
 .blood-card{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:26px 14px;}
@@ -1110,23 +1114,23 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <!-- ============================================================ 25. NEWSLETTER ============================================================ -->
 <section class="tight">
   <div class="container">
-    <div class="newsletter-band contact-band reveal" id="contact-home">
-      <span class="nl-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>
-      <h2>আমাদের সঙ্গে যোগাযোগ করুন</h2>
-      <p>পরামর্শ, তথ্য সংশোধন বা ডাক্তার হিসেবে যুক্ত হওয়ার অনুরোধ, যা-ই হোক, লিখুন। আমরা পড়ে দেখব।</p>
-      <form class="cf-form" id="homeContact" data-email="__CONTACT_EMAIL__">
-        <label class="cf-f"><span>আপনার নাম</span><input name="name" type="text" autocomplete="name" placeholder="যেমন: রহিম উদ্দিন" required></label>
-        <label class="cf-f"><span>কী বিষয়ে</span>
-          <select name="topic">
-            <option>তথ্যে ভুল জানাতে চাই</option>
-            <option>ডাক্তার বা হাসপাতাল হিসেবে যুক্ত হতে চাই</option>
-            <option>পরামর্শ দিতে চাই</option>
-            <option>অন্য বিষয়</option>
-          </select></label>
-        <label class="cf-f cf-wide"><span>আপনার বার্তা</span><textarea name="msg" rows="4" placeholder="এখানে লিখুন। কোনো পেজের তথ্য ভুল হলে পেজের নাম বা লিংকও দিন।" required></textarea></label>
-        <button type="submit" class="cf-btn cf-wide">ইমেইলে পাঠান</button>
-        <p class="cf-hint cf-wide">বোতাম চাপলে আপনার ইমেইল অ্যাপ খুলবে, লেখা তৈরি থাকবে। সেখান থেকে পাঠিয়ে দিন। বিস্তারিত: <a href="/contact/">যোগাযোগের পাতা</a></p>
+    <div class="cx reveal" id="contact-home">
+      <div class="cx-head">
+        <h2>আমাদের সঙ্গে যোগাযোগ করুন <small>Contact us</small></h2>
+        <p>পরামর্শ, তথ্য সংশোধন বা ডাক্তার হিসেবে যুক্ত হওয়ার অনুরোধ লিখুন। আমরা পড়ে দেখব।</p>
+      </div>
+      <form class="cx-form" id="homeContact" data-email="__CONTACT_EMAIL__">
+        <input name="name" type="text" autocomplete="name" placeholder="আপনার নাম" aria-label="আপনার নাম" required>
+        <select name="topic" aria-label="কী বিষয়ে">
+          <option>তথ্যে ভুল জানাতে চাই</option>
+          <option>ডাক্তার বা হাসপাতাল হিসেবে যুক্ত হতে চাই</option>
+          <option>পরামর্শ দিতে চাই</option>
+          <option>অন্য বিষয়</option>
+        </select>
+        <textarea name="msg" rows="3" placeholder="আপনার বার্তা (পেজের ভুল হলে নাম বা লিংক দিন)" aria-label="আপনার বার্তা" required></textarea>
+        <button type="submit" class="cx-btn">ইমেইলে পাঠান</button>
       </form>
+      <p class="cx-hint">বোতাম চাপলে আপনার ইমেইল অ্যাপে লেখা তৈরি হয়ে খুলবে। <a href="/contact/">যোগাযোগের পাতা</a></p>
     </div>
   </div>
 </section>
