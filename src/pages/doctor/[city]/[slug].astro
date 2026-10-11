@@ -119,6 +119,7 @@ const crumbs = [
   [city.bn, `/doctors/${d.city}/`],
   [sp.bn, `/doctors/${d.city}/${d.specialty}/`],
 ];
+const daysShort = first.daysTxt.replace('বৃহস্পতি', 'বৃহঃ').replace(/\s*–\s*/g, '–');
 const waNum = d.whatsapp ? phoneIntl(d.whatsapp).replace(/\D/g, '') : undefined;
 const jsonld = {
   '@context': 'https://schema.org',
@@ -181,10 +182,11 @@ const jsonld = {
           </div>
           {d.designation && <p class="dx-post">{d.designation}</p>}
           <div class="dx-meta">
-            <span class="dx-chip"><Icon name="pin" size={13} />{d.area ? `${d.area}, ` : ''}{city.bn} <i lang="en">{city.en}</i></span>
-            {first.start && <span class="dx-chip"><Icon name="clock" size={13} w={2.2} />{first.timeText}</span>}
-            {feeChamber?.fee?.new && <span class="dx-chip"><Icon name="cash" size={13} w={2} />ভিজিট {taka(feeChamber.fee.new)}</span>}
-            {d.bmdc && <span class="dx-chip ok"><Icon name="check" size={13} w={3} />BMDC {d.bmdc}</span>}
+            <span class="dx-chip">{d.area ? `${d.area}, ` : ''}{city.bn} <i lang="en">{city.en}</i></span>
+            {first.days.length > 0 && <span class="dx-chip">{daysShort}</span>}
+            {first.start && <span class="dx-chip">{first.timeText}</span>}
+            {feeChamber?.fee?.new && <span class="dx-chip">ভিজিট {taka(feeChamber.fee.new)}</span>}
+            {d.bmdc && <span class="dx-chip ok">BMDC {d.bmdc}</span>}
           </div>
           <div class="dx-acts">
             <button class="dx-act pri" type="button" data-sheet-open="numbers"><Icon name="phone" size={16} />সিরিয়াল নিন</button>
