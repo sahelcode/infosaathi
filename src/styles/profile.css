@@ -173,7 +173,7 @@
   font-family:'Inter','Noto Sans Bengali',sans-serif;}
 .pf-sticky .pf-btn{padding:0;}
 .pf-sticky.hide,.menu-open .pf-sticky{transform:translateY(110%);}
-@media (max-width:1023px){body{padding-bottom:72px;}}
+@media (max-width:1023px){body:has(.pf-sticky){padding-bottom:72px;}}
 @media (min-width:1024px){.pf-sticky{display:none;}}
 
 /* toast */
