@@ -647,6 +647,24 @@ body.menu-open{overflow:hidden;}
 .pill-card.is-soon .pill-icn{background:#fff8ec;border-color:#f3dfb8;color:#b45309;}
 @media (hover:hover){.pill-card:hover{background:#fff;border-color:#86d9a5;}.pill-card:hover .pill-icn{transform:none;background:#e3f6ea;}}
 
+
+/* contact form band (home) */
+.contact-band{text-align:center;}
+.contact-band p{max-width:520px;}
+.cf-form{display:grid;grid-template-columns:1fr;gap:14px;max-width:560px;margin:26px auto 0;text-align:left;}
+@media(min-width:640px){.cf-form{grid-template-columns:1fr 1fr;}.cf-wide{grid-column:1 / -1;}}
+.cf-f{display:flex;flex-direction:column;gap:6px;}
+.cf-f span{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.82);}
+.cf-f input,.cf-f select,.cf-f textarea{width:100%;box-sizing:border-box;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);color:#fff;border-radius:12px;padding:13px 14px;font:inherit;font-size:15px;outline:none;transition:border-color .2s,background .2s;}
+.cf-f textarea{resize:vertical;min-height:110px;line-height:1.6;}
+.cf-f input::placeholder,.cf-f textarea::placeholder{color:rgba(255,255,255,.45);}
+.cf-f select option{color:#0f2a1c;background:#fff;}
+.cf-f input:focus,.cf-f select:focus,.cf-f textarea:focus{border-color:#4ade80;background:rgba(255,255,255,.11);}
+.cf-btn{border:0;cursor:pointer;background:#22c55e;color:#052e16;font:inherit;font-weight:700;font-size:15.5px;padding:14px 20px;border-radius:12px;transition:background .2s,transform .15s;}
+.cf-btn:hover{background:#4ade80;}.cf-btn:active{transform:scale(.97);}
+.cf-hint{margin:0;font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.62);text-align:center;}
+.cf-hint a{color:#86efac;text-decoration:underline;text-underline-offset:3px;}
+
 /* ===== v11: emergency strip, blood bank, admission/exam ===== */
 .blood-card{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:26px 14px;}
 .blood-badge{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:18px;color:#fff;box-shadow:0 6px 14px -6px rgba(15,23,42,.3);}
@@ -939,7 +957,7 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <section class="top-feature-section">
   <div class="container">
     <div class="doc-head reveal">
-      <div class="doc-head-top"><span class="eyebrow">Doctors</span><a href="#" class="see-all">See all<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div>
+      <div class="doc-head-top"><span class="eyebrow">Doctors</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div>
       <h2>Specialists you trust</h2>
     </div>
     <div class="row-scroll reveal" id="doctorRow"></div>
@@ -950,7 +968,7 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <!-- ============================================================ 7. FEATURED UNIVERSITIES ============================================================ -->
 <section class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Universities</span><a href="#" class="see-all">See all<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Shaping bright futures</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Universities</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Shaping bright futures</h2></div>
     <div class="row-scroll reveal" id="uniRow"></div>
   </div>
 </section>
@@ -958,7 +976,7 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <!-- ============================================================ 6. FEATURED HOSPITALS ============================================================ -->
 <section class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Hospitals</span><a href="#" class="see-all">See all<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">World-class, verified</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Hospitals</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">World-class, verified</h2></div>
     <div class="row-scroll reveal" id="hospitalRow"></div>
   </div>
 </section>
@@ -982,28 +1000,28 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <div id="allCategories">
 <section class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Colleges</span><a href="#" class="see-all">See all<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Where ambitions grow</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Colleges</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Where ambitions grow</h2></div>
     <div class="row-scroll reveal" id="collegeRow"></div>
   </div>
 </section>
 
 <section class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Schools</span><a href="#" class="see-all">See all<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Strong foundations</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Schools</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Strong foundations</h2></div>
     <div class="row-scroll reveal" id="schoolRow"></div>
   </div>
 </section>
 
 <section class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Famous places</span><a href="#" class="see-all">See all<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Places worth the trip</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Famous places</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Places worth the trip</h2></div>
     <div class="row-scroll reveal" id="placeRow"></div>
   </div>
 </section>
 
 <section class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Hotels</span><a href="#" class="see-all">See all<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Stay in comfort</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Hotels</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Stay in comfort</h2></div>
     <div class="row-scroll reveal" id="hotelRow"></div>
   </div>
 </section>
@@ -1028,7 +1046,7 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <!-- ============================================================ 10. JOBS ============================================================ -->
 <section id="jobs" class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Jobs</span><a href="#" class="see-all">See all<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Careers worldwide</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Jobs</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Careers worldwide</h2></div>
     <div class="simple-list reveal" id="jobList"></div>
   </div>
 </section>
@@ -1091,17 +1109,37 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <!-- ============================================================ 25. NEWSLETTER ============================================================ -->
 <section class="tight">
   <div class="container">
-    <div class="newsletter-band reveal">
+    <div class="newsletter-band contact-band reveal" id="contact-home">
       <span class="nl-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>
-      <h2>Get the week's most useful information</h2>
-      <p>Curated updates on rankings, scholarships, jobs, and research — once a week, no spam.<span class="bn" style="display:block;margin-top:6px;">সপ্তাহে একবার, সবচেয়ে জরুরি তথ্য — স্প্যাম ছাড়া।</span></p>
-      <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed ✓';">
-        <input type="email" placeholder="you@email.com" required>
-        <button type="submit">Subscribe</button>
+      <h2>আমাদের সঙ্গে যোগাযোগ করুন</h2>
+      <p>পরামর্শ, তথ্য সংশোধন বা ডাক্তার হিসেবে যুক্ত হওয়ার অনুরোধ, যা-ই হোক, লিখুন। আমরা পড়ে দেখব।</p>
+      <form class="cf-form" id="homeContact" data-email="__CONTACT_EMAIL__">
+        <label class="cf-f"><span>আপনার নাম</span><input name="name" type="text" autocomplete="name" placeholder="যেমন: রহিম উদ্দিন" required></label>
+        <label class="cf-f"><span>কী বিষয়ে</span>
+          <select name="topic">
+            <option>তথ্যে ভুল জানাতে চাই</option>
+            <option>ডাক্তার বা হাসপাতাল হিসেবে যুক্ত হতে চাই</option>
+            <option>পরামর্শ দিতে চাই</option>
+            <option>অন্য বিষয়</option>
+          </select></label>
+        <label class="cf-f cf-wide"><span>আপনার বার্তা</span><textarea name="msg" rows="4" placeholder="এখানে লিখুন। কোনো পেজের তথ্য ভুল হলে পেজের নাম বা লিংকও দিন।" required></textarea></label>
+        <button type="submit" class="cf-btn cf-wide">ইমেইলে পাঠান</button>
+        <p class="cf-hint cf-wide">বোতাম চাপলে আপনার ইমেইল অ্যাপ খুলবে, লেখা তৈরি থাকবে। সেখান থেকে পাঠিয়ে দিন। বিস্তারিত: <a href="/contact/">যোগাযোগের পাতা</a></p>
       </form>
     </div>
   </div>
 </section>
+
+<script>
+(function(){var f=document.getElementById('homeContact'); if(!f) return;
+  f.addEventListener('submit',function(e){e.preventDefault();
+    var d=new FormData(f), to=f.dataset.email; if(!to) return;
+    var sub=encodeURIComponent('InfoSaathi: '+d.get('topic'));
+    var body=encodeURIComponent('নাম: '+d.get('name')+'\nবিষয়: '+d.get('topic')+'\n\n'+d.get('msg')+'\n');
+    location.href='mailto:'+to+'?subject='+sub+'&body='+body;
+  });
+})();
+</script>
 
 <!-- ============================================================ 26. FOOTER ============================================================ -->
 <footer>
@@ -1323,7 +1361,7 @@ const usefulApps = [
 
 /* ============================================================ RENDER ============================================================ */
 const searchPills = document.querySelector('.search-pills');
-if(searchPills) searchPills.insertAdjacentHTML('beforeend', ['Doctors','Universities','Companies','Jobs','Scholarships','Government'].map(p=>`<span class="search-pill">${p}</span>`).join(''));
+if(searchPills) searchPills.insertAdjacentHTML('beforeend', ['ডাক্তার','বিশ্ববিদ্যালয়','হাসপাতাল','চাকরি','বৃত্তি','সরকারি সেবা'].map(p=>`<span class="search-pill">${p}</span>`).join(''));
 
 const statsGrid = document.getElementById('statsGrid');
 if(statsGrid) statsGrid.innerHTML = stats.map(s=>`<div class="stat-item"><div class="stat-num" data-target="${s.n}">0</div><div class="stat-label">${s.l}</div></div>`).join('');
