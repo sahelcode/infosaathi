@@ -649,23 +649,24 @@ body.menu-open{overflow:hidden;}
 @media (hover:hover){.pill-card:hover{background:#fff;border-color:#86d9a5;}.pill-card:hover .pill-icn{transform:none;background:#e3f6ea;}}
 
 
-/* contact (home): open layout, underline fields, floating labels */
-.cx{max-width:640px;margin:0 auto;padding:6px 0;}
-.cx-head h2{font-size:20px;line-height:1.3;margin:0;color:#0f2a1c;font-weight:700;}
-.cx-head h2 small{font-size:12.5px;font-weight:500;color:#7a9486;margin-left:6px;}
-.cx-head p{margin:4px 0 0;font-size:13.5px;line-height:1.6;color:#5b6b63;}
-.cx-form{display:grid;grid-template-columns:1fr;gap:6px;margin-top:10px;}
-.cx-field{position:relative;padding-top:18px;}
-.cx-field input,.cx-field textarea{display:block;width:100%;box-sizing:border-box;border:0;border-bottom:1.5px solid #cfdcd4;background:transparent;border-radius:0;padding:8px 0 8px;font:inherit;font-size:15.5px;color:#0f2a1c;outline:none;resize:none;overflow:hidden;line-height:1.5;transition:border-color .25s;}
-.cx-field textarea{min-height:40px;max-height:160px;}
-.cx-field label{position:absolute;left:0;top:27px;font-size:15px;color:#7d9186;pointer-events:none;transform-origin:left top;transition:transform .22s cubic-bezier(.22,1,.36,1),color .22s;}
-.cx-field input:focus,.cx-field textarea:focus{border-bottom-color:#16a34a;}
-.cx-field input:focus + label,.cx-field textarea:focus + label,.cx-field input:not(:placeholder-shown) + label,.cx-field textarea:not(:placeholder-shown) + label{transform:translateY(-22px) scale(.82);color:#15803d;font-weight:600;}
-.cx-btn{justify-self:start;margin-top:14px;display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;height:42px;background:#16a34a;color:#fff;font:inherit;font-weight:700;font-size:14.5px;padding:0 22px;border-radius:999px;transition:background .2s,transform .15s,gap .2s;}
-.cx-btn:hover{background:#15803d;gap:11px;}.cx-btn:active{transform:scale(.97);}
-.cx-hint{margin:12px 0 0;font-size:12px;color:#7a8a82;}
+/* contact (home): smooth boxed fields, floating labels */
+.cx{max-width:640px;margin:0 auto;}
+.cx-head h2{font-size:22px;line-height:1.3;margin:0;color:#0f2a1c;font-weight:700;}
+.cx-head p{margin:4px 0 0;font-size:14px;line-height:1.6;color:#5b6b63;}
+.cx-form{display:grid;grid-template-columns:1fr;gap:12px;margin-top:16px;}
+.cx-field{position:relative;}
+.cx-field input,.cx-field textarea{display:block;width:100%;box-sizing:border-box;border:1.5px solid #d6e3db;background:#fff;border-radius:14px;padding:22px 14px 8px;font:inherit;font-size:15.5px;line-height:1.5;color:#0f2a1c;outline:none;resize:vertical;transition:border-color .25s,box-shadow .25s;}
+.cx-field input{height:54px;}
+.cx-field textarea{min-height:110px;}
+.cx-field label{position:absolute;left:15px;top:16px;font-size:15px;color:#7d9186;pointer-events:none;transform-origin:left top;transition:transform .22s cubic-bezier(.22,1,.36,1),color .22s;}
+.cx-field input:hover,.cx-field textarea:hover{border-color:#b9d0c2;}
+.cx-field input:focus,.cx-field textarea:focus{border-color:#16a34a;box-shadow:0 0 0 4px rgba(22,163,74,.12);}
+.cx-field input:focus + label,.cx-field textarea:focus + label,.cx-field input:not(:placeholder-shown) + label,.cx-field textarea:not(:placeholder-shown) + label{transform:translateY(-11px) scale(.8);color:#15803d;font-weight:600;}
+.cx-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;height:50px;background:#16a34a;color:#fff;font:inherit;font-weight:700;font-size:15.5px;padding:0 26px;border-radius:14px;box-shadow:0 10px 20px -12px rgba(22,163,74,.7);transition:background .2s,transform .15s,gap .2s;}
+.cx-btn:hover{background:#15803d;gap:12px;}.cx-btn:active{transform:scale(.98);}
+.cx-hint{margin:12px 0 0;font-size:12.5px;color:#7a8a82;}
 .cx-hint a{color:#15803d;text-decoration:underline;text-underline-offset:3px;}
-@media(min-width:640px){.cx-form{grid-template-columns:1fr 1.6fr;gap:22px;align-items:end;}.cx-btn{grid-column:1 / -1;margin-top:6px;}}
+@media(min-width:640px){.cx-form{grid-template-columns:1fr 1fr;}.cx-wide{grid-column:1 / -1;}.cx-btn{justify-self:start;}}
 
 /* ===== v11: emergency strip, blood bank, admission/exam ===== */
 .blood-card{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:26px 14px;}
@@ -1127,25 +1128,26 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
   <div class="container">
     <div class="cx reveal" id="contact-home">
       <div class="cx-head">
-        <h2>যোগাযোগ <small>Contact</small></h2>
-        <p>পরামর্শ, তথ্যে ভুল, বা ডাক্তার হিসেবে যুক্ত হওয়ার অনুরোধ, সবই লিখুন।</p>
+        <h2>Contact us</h2>
+        <p>Feedback, a correction, or a request to be listed. Write to us.</p>
       </div>
       <form class="cx-form" id="homeContact" data-email="__CONTACT_EMAIL__">
-        <div class="cx-field"><input id="cxName" name="name" type="text" autocomplete="name" placeholder=" " required><label for="cxName">আপনার নাম</label></div>
-        <div class="cx-field"><textarea id="cxMsg" name="msg" rows="1" placeholder=" " required></textarea><label for="cxMsg">আপনার বার্তা</label></div>
-        <button type="submit" class="cx-btn">পাঠান <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="cx-field"><input id="cxName" name="name" type="text" autocomplete="name" placeholder=" " required><label for="cxName">Name</label></div>
+        <div class="cx-field"><input id="cxEmail" name="email" type="email" autocomplete="email" placeholder=" " required><label for="cxEmail">Email</label></div>
+        <div class="cx-field cx-wide"><textarea id="cxMsg" name="msg" rows="3" placeholder=" " required></textarea><label for="cxMsg">Message</label></div>
+        <button type="submit" class="cx-btn cx-wide">Send message <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </form>
-      <p class="cx-hint">আপনার ইমেইল অ্যাপ খুলে লেখা তৈরি থাকবে, সেখান থেকে পাঠান। <a href="/contact/">আরও জানুন</a></p>
+      <p class="cx-hint">Your email app will open with the message ready to send. <a href="/contact/">Learn more</a></p>
     </div>
   </div>
 </section>
 
 <script>
-(function(){var f=document.getElementById('homeContact'); if(!f) return; var ta=f.querySelector('textarea'); ta.addEventListener('input',function(){ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,160)+'px';});
+(function(){var f=document.getElementById('homeContact'); if(!f) return;
   f.addEventListener('submit',function(e){e.preventDefault();
     var d=new FormData(f), to=f.dataset.email; if(!to) return;
-    var sub=encodeURIComponent('InfoSaathi থেকে বার্তা');
-    var body=encodeURIComponent('নাম: '+d.get('name')+'\n\n'+d.get('msg')+'\n');
+    var sub=encodeURIComponent('Message from InfoSaathi: '+d.get('name'));
+    var body=encodeURIComponent('Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\n\n'+d.get('msg')+'\n');
     location.href='mailto:'+to+'?subject='+sub+'&body='+body;
   });
 })();
