@@ -93,11 +93,13 @@ const faq = [
 // ---- related lists ----
 const others = doctors.filter((x) => x.id !== doctor.id);
 const evenCut = <T,>(a: T[], max: number) => { const r = a.slice(0, max); return r.length % 2 && r.length > 1 ? r.slice(0, -1) : r; };
-const sameSpAll = others.filter((x) => x.data.specialty === d.specialty && x.data.city === d.city);
-const sameSp = evenCut(sameSpAll, 6);
+// No view counts exist yet, so the order is: most recently phone-verified first (fair, and it rewards checked data).
+const fresh = (a: Doctor[]) => [...a].sort((x, y) => +y.data.verified - +x.data.verified);
+const sameSpAll = fresh(others.filter((x) => x.data.specialty === d.specialty && x.data.city === d.city));
+const sameSp = evenCut(sameSpAll, 4);
 const sideSp = sameSpAll.slice(0, 3);
 const mainHosp = chambers.find((c) => c.href)?.h;
-const sameHosp = mainHosp ? evenCut(doctorsAt(others, mainHosp.id), 6) : [];
+const sameHosp = mainHosp ? evenCut(fresh(doctorsAt(others, mainHosp.id)), 4) : [];
 const usedHosp = new Set(chambers.map((c) => c.h?.id));
 const nearHosp = visibleHospitals.filter((h) => h.data.city === d.city && !usedHosp.has(h.id)).slice(0, 3);
 const placeOf = (x: Doctor) => {
@@ -258,7 +260,8 @@ const jsonld = {
 
         <nav class="pf-tags" aria-label="সম্পর্কিত">
           <a href={`/doctors/${d.city}/${d.specialty}/`}>{city.in} {sp.bn}</a>
-          {chambers.filter((c) => c.href).map((c) => <a href={c.href}>{c.name}</a>)}
+          {mainHosp && <a href={hospitalUrl(mainHosp)}>{mainHosp.data.short ?? mainHosp.data.name}</a>}
+          {mainHosp && <a href={hospitalUrl(mainHosp) + '#doctors'}>{mainHosp.data.short ?? mainHosp.data.name}-এর সব ডাক্তার</a>}
           <a href={`/doctors/${d.city}/`}>{city.of} সব ডাক্তার</a>
         </nav>
 
