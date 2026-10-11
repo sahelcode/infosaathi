@@ -636,6 +636,17 @@ body.menu-open{overflow:hidden;}
 .pill-count{font-size:12.5px;font-weight:600;color:#5f8f80;font-family:var(--font-mono);letter-spacing:.01em;margin-top:1px;}
 @media (prefers-reduced-motion:reduce){.pill-row{animation:none;overflow-x:auto;}}
 
+
+/* pill cards: calm white icon chip, no gradient circles */
+.pill-card{padding:8px 22px 8px 8px;background:#fff;border:1px solid #e3efe8;box-shadow:0 1px 2px rgba(6,60,35,.04),0 8px 20px -14px rgba(6,60,35,.22);}
+.pill-icn,.pill-icn[class]{width:44px;height:44px;background:#f1faf5;color:#15803d;border:1px solid #d3eede;box-shadow:none;}
+.pill-icn svg{stroke-width:1.7;}
+.pill-text b{font-size:15px;font-weight:700;color:#0f2a1c;}
+.pill-count{font-family:var(--font-body);font-size:12.5px;font-weight:600;color:#5b7a69;}
+.pill-card.is-soon .pill-count{color:#b45309;}
+.pill-card.is-soon .pill-icn{background:#fff8ec;border-color:#f3dfb8;color:#b45309;}
+@media (hover:hover){.pill-card:hover{background:#fff;border-color:#86d9a5;}.pill-card:hover .pill-icn{transform:none;background:#e3f6ea;}}
+
 /* ===== v11: emergency strip, blood bank, admission/exam ===== */
 .blood-card{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:26px 14px;}
 .blood-badge{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:18px;color:#fff;box-shadow:0 6px 14px -6px rgba(15,23,42,.3);}
@@ -1896,9 +1907,10 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     {k:'events',name:'Events',count:'190K+'},{k:'startup',name:'Startups',count:'480K+'},
   ];
   const dest = {doctor:'#doctorRow',university:'#uniRow',hospital:'#hospitalRow'};
-  const pill = (c,i) => `<a href="${dest[c.k]||'#allCategories'}" class="pill-card" style="--d:${(i%6)*.35}s"><span class="pill-icn tint-${i%6}">${icon(c.k,22,22)}</span><span class="pill-text"><b>${c.name}</b><span class="pill-count">${c.count}</span></span></a>`;
-  rowA.innerHTML = setA.map(pill).join('') + setA.map(pill).join('');
-  rowB.innerHTML = setB.map(pill).join('') + setB.map(pill).join('');
+  const pill = (c,i) => `<a href="${c.href}" class="pill-card${c.soon?' is-soon':''}"><span class="pill-icn">${icon(c.k,22,22)}</span><span class="pill-text"><b>${c.name}</b><span class="pill-count">${c.count}</span></span></a>`;
+  const rep = (arr) => arr.concat(arr).map(pill).join('');
+  rowA.innerHTML = rep(setA) + rep(setA);
+  rowB.innerHTML = rep(setB) + rep(setB);
 })();
 
 

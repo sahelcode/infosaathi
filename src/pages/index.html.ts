@@ -162,6 +162,24 @@ export const GET: APIRoute = async () => {
   html = swap(html, '<div class="feature-card"><div class="fc-top"><div class="cat-icn ${tint(g.t)}">${icon(\'govt\')}</div></div>', '<a class="feature-card" href="${g.url}" style="color:inherit;text-decoration:none"><div class="fc-top"><div class="cat-icn ${tint(g.t)}">${icon(\'govt\')}</div></div>');
   html = swap(html, "<span>${icon('clock',12,12)} ${g.time}</span><span class=\"btn-text\">Start<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></div>", "<span>${icon('clock',12,12)} ${g.time}</span><span class=\"btn-text\">Start<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></a>");
   html = swap(html, '<h2 style="font-size:28px;">Every civic process, in plain language</h2>', '<h2 style="font-size:28px;">Common government services, step by step</h2><p style="margin-top:8px"><a href="/services/" class="see-all">See all</a></p>');
+  // Category pills: real counts from the published data. A category with nothing yet links to its "coming soon" page.
+  const nHotels = (await getHotels()).length;
+  const nSch = (await getScholarships()).length;
+  const nJobs = (await getJobs()).length;
+  const unit = (n: number, u: string) => (n > 0 ? `${bn(n)}টি ${u}` : 'শীঘ্রই আসছে');
+  const mk = (k: string, name: string, href: string, n: number, u: string) => ({ k, name, href, count: unit(n, u), soon: n === 0 });
+  html = swapArray(html, 'setA', [
+    { k: 'doctor', name: 'ডাক্তার', href: '/doctors/', count: doctors.length ? `${bn(doctors.length)} জন যাচাই করা` : 'শীঘ্রই আসছে', soon: !doctors.length },
+    mk('hospital', 'হাসপাতাল', '/hospitals/', hospitals.length, 'প্রোফাইল'),
+    mk('university', 'বিশ্ববিদ্যালয়', '/universities/', (await getUniversities()).length, 'প্রোফাইল'),
+    mk('hotels', 'হোটেল', '/hotels/', nHotels, 'হোটেল'),
+  ]);
+  html = swapArray(html, 'setB', [
+    mk('scholarship', 'বৃত্তি', '/scholarships/', nSch, 'বৃত্তি'),
+    mk('jobs', 'চাকরি', '/jobs/', nJobs, 'বিজ্ঞপ্তি'),
+    mk('news', 'সংবাদ', '/news/', newsAll.length, 'খবর'),
+    mk('banks', 'ব্যাংক', '/banks/', 0, ''),
+  ]);
   html = swapArray(html, 'hotels', hotelRows);
   html = swapArray(html, 'places', placeRows);
   html = swap(html, "put('placeRow', places.map(p=>`\n    <div class=\"org-card ix-card ix-place\">\n      <div class=\"ix-image\">${placeArt(p.kind)}",

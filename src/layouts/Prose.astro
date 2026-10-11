@@ -13,8 +13,9 @@ interface Props {
   type?: 'WebPage' | 'AboutPage' | 'ContactPage';
   toc?: { id: string; label: string }[];
   showDate?: boolean;
+  noindex?: boolean;
 }
-const { title, description, path, kicker, lead, type = 'WebPage', toc = [], showDate = true } = Astro.props;
+const { title, description, path, kicker, lead, type = 'WebPage', toc = [], showDate = true, noindex = false } = Astro.props;
 const url = SITE + path;
 const jsonld = {
   '@context': 'https://schema.org',
@@ -27,7 +28,7 @@ const jsonld = {
   ],
 };
 ---
-<Base title={`${title} | InfoSaathi`} description={description} path={path} jsonld={jsonld}>
+<Base title={`${title} | InfoSaathi`} description={description} path={path} jsonld={jsonld} noindex={noindex}>
   <main class="ps">
     <div class="ps-wrap">
       <nav class="ps-crumb" aria-label="breadcrumb"><a href="/">হোম</a> › <span>{title}</span></nav>

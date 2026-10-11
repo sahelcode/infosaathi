@@ -17,8 +17,9 @@ interface Props {
   ogImage?: string; // absolute or site-relative URL
   jsonld?: object;
   draft?: boolean;
+  noindex?: boolean; // keep a thin or unfinished page out of search results
 }
-const { title, description, path, ogType = 'website', ogImage, jsonld, draft = false } = Astro.props;
+const { title, description, path, ogType = 'website', ogImage, jsonld, draft = false, noindex = false } = Astro.props;
 const url = SITE + path;
 const image = ogImage ? new URL(ogImage, SITE).href : undefined;
 ---
@@ -30,7 +31,7 @@ const image = ogImage ? new URL(ogImage, SITE).href : undefined;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={url} />
-    {draft && <meta name="robots" content="noindex" />}
+    {(draft || noindex) && <meta name="robots" content="noindex" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={ogType} />
