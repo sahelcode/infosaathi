@@ -161,3 +161,16 @@ body:has(.dx){padding-bottom:0;}
 .dx-avcol{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:6px;}
 .dx-bmdc{font-size:11px;font-weight:600;line-height:1;letter-spacing:0;color:var(--muted);white-space:nowrap;}
 @media (max-width:359px){.dx-bmdc{font-size:10px;}}
+
+/* several chambers: each is a folded row; the first one starts open */
+.dx-multi>summary{list-style:none;cursor:pointer;position:relative;padding:12px 40px 12px 12px;border:1px solid var(--dx-line);border-radius:14px;background:#fff;-webkit-tap-highlight-color:transparent;}
+.dx-multi>summary::-webkit-details-marker{display:none;}
+.dx-multi[open]>summary{border-color:#cfe6d7;background:#f7fbf8;}
+.dx-ch-toggle{position:absolute;right:12px;top:14px;color:var(--muted);transition:transform .2s;}
+.dx-multi[open] .dx-ch-toggle{transform:rotate(180deg);}
+.dx-ch-sub{flex:1 0 100%;margin-left:0;font-size:12.5px;font-weight:600;color:var(--dx-green-d);}
+.dx-multi[open] .dx-ch-sub{display:none;}
+.dx-multi>.dx-facts,.dx-multi>.pf-nums,.dx-multi>.pf-maplink{margin-left:2px;margin-right:2px;}
+.dx .dx-multi{margin-top:10px;}
+.dx .dx-multi + .dx-multi{padding-top:0;border-top:none;}
+@media (prefers-reduced-motion:reduce){.dx-ch-toggle{transition:none;}}

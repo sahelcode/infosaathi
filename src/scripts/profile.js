@@ -99,10 +99,10 @@
       const w=img.naturalWidth, h=img.naturalHeight, c=document.createElement('canvas'); c.width=w; c.height=h;
       const g=c.getContext('2d'); g.drawImage(img,0,0,w,h);
       /* diagonal mark across the middle: light fill with a soft dark edge so it reads on any card */
-      const fs=Math.max(18,Math.round(w*0.1)), txt='infosaathi.com';
+      const fs=Math.max(12,Math.round(w*0.052)), txt='infosaathi.com';
       g.save(); g.translate(w/2,h/2); g.rotate(-Math.PI/9); g.textAlign='center'; g.textBaseline='middle';
-      g.font='800 '+fs+'px Inter, Arial, sans-serif'; g.lineJoin='round'; g.lineWidth=Math.max(2,fs*0.07);
-      g.strokeStyle='rgba(0,0,0,.28)'; g.strokeText(txt,0,0); g.fillStyle='rgba(255,255,255,.42)'; g.fillText(txt,0,0); g.restore();
+      g.font='800 '+fs+'px Inter, Arial, sans-serif'; g.lineJoin='round'; g.lineWidth=Math.max(1.5,fs*0.06);
+      g.strokeStyle='rgba(0,0,0,.16)'; g.strokeText(txt,0,0); g.fillStyle='rgba(255,255,255,.26)'; g.fillText(txt,0,0); g.restore();
       const blob=await new Promise(res=>c.toBlob(res,'image/jpeg',.92));
       const file=new File([blob],(btn.dataset.name||'infosaathi').replace(/[^\w.-]+/g,'-')+'.jpg',{type:'image/jpeg'});
       if(navigator.canShare&&navigator.canShare({files:[file]})){ try{ await navigator.share({files:[file],title:document.title,text:document.title+'\n'+url}); return; }catch(err){ if(err&&err.name==='AbortError') return; } }

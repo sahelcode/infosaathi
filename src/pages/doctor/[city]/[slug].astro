@@ -124,6 +124,10 @@ const crumbs = [
   [city.bn, `/doctors/${d.city}/`],
   [sp.bn, `/doctors/${d.city}/${d.specialty}/`],
 ];
+const multi = chambers.length > 1;
+const Wrap: any = multi ? 'details' : 'div';
+const Head: any = multi ? 'summary' : 'div';
+const daysEn3 = (c: (typeof chambers)[number]) => c.daysTxt.replace('বৃহস্পতি', 'বৃহঃ').replace(/\s*–\s*/g, '–');
 const daysShort = first.daysTxt.replace('বৃহস্পতি', 'বৃহঃ').replace(/\s*–\s*/g, '–');
 const waNum = d.whatsapp ? phoneIntl(d.whatsapp).replace(/\D/g, '') : undefined;
 const jsonld = {
@@ -191,8 +195,12 @@ const jsonld = {
           {d.designation && <p class="dx-post">{d.designation}</p>}
           <div class="dx-meta">
             <span class="dx-chip">{d.area ? `${d.area}, ` : ''}{city.bn} <i lang="en">{city.en}</i></span>
-            {first.days.length > 0 && <span class="dx-chip">{daysShort}</span>}
-            {first.start && <span class="dx-chip">{first.timeText}</span>}
+            {chambers.length > 1
+              ? <span class="dx-chip">{bn(chambers.length)}টি চেম্বার</span>
+              : <>
+                  {first.days.length > 0 && <span class="dx-chip">{daysShort}</span>}
+                  {first.start && <span class="dx-chip">{first.timeText}</span>}
+                </>}
           </div>
           <div class="dx-acts">
             <button class="dx-act pri" type="button" data-sheet-open="numbers"><Icon name="phone" size={16} />সিরিয়াল নিন</button>
@@ -211,15 +219,17 @@ const jsonld = {
         <section class="pf-card dx-card" id="chambers" aria-labelledby="h-chamber">
           <div class="pf-card-head"><h2 id="h-chamber">চেম্বার ও সিরিয়াল <small lang="en">Chamber &amp; Appointment</small></h2></div>
           {chambers.map((c) => (
-            <div class="pf-chamber dx-ch" id={c.key} data-chamber={c.key} data-days={c.start ? c.days.map((x) => DAY_JS[x]).join(',') : undefined} data-start={c.start} data-end={c.end}>
-              <div class="dx-ch-head">
+            <Wrap class:list={['pf-chamber', 'dx-ch', { 'dx-multi': multi }]} open={multi && c.i === 0 ? true : undefined} id={c.key} data-chamber={c.key} data-days={c.start ? c.days.map((x) => DAY_JS[x]).join(',') : undefined} data-start={c.start} data-end={c.end}>
+              <Head class="dx-ch-head">
                 {chambers.length > 1 && <span class="pf-ch-no">{bn(c.i + 1)}</span>}
                 <div class="dx-ch-txt">
                   <a class="dx-ch-name" href={c.href ?? c.map} target={c.href ? undefined : '_blank'} rel={c.href ? undefined : 'noopener'}><b>{c.name}</b>{c.href && <Icon name="chev" size={15} w={2.4} />}</a>
                   <span class="pf-ch-addr">{c.address}{c.room && ` · ${c.room}`}</span>
                 </div>
                 <span class="pf-live" data-live hidden></span>
-              </div>
+                {multi && <span class="dx-ch-toggle" aria-hidden="true"><Icon name="down" size={18} w={2.2} /></span>}
+                {multi && <span class="dx-ch-sub">{c.days.length > 0 ? daysEn3(c) : ''}{c.start ? ` · ${c.timeText}` : ''}</span>}
+              </Head>
               <dl class="dx-facts">
                 <div><dt><Icon name="cal" size={15} />দিন</dt><dd><div class="pf-days">{DAYS.map((x) => <span class:list={['pf-day', { on: c.days.includes(x) }]} data-d={DAY_JS[x]}>{DAY_SHORT[x]}</span>)}</div></dd></div>
                 <div><dt><Icon name="clock" size={15} />সময়</dt><dd class="pf-v">{c.timeText}</dd></div>
@@ -233,7 +243,7 @@ const jsonld = {
               </dl>
               <div class="pf-nums">{c.serials.map((s) => <NumRow label={s.label} number={s.number} note={s.note} />)}</div>
               <a class="pf-maplink" href={c.map} target="_blank" rel="noopener"><Icon name="route" size={16} />ম্যাপে দেখুন · Get directions</a>
-            </div>
+            </Wrap>
           ))}
           <p class="dx-verified"><Icon name="check" size={14} w={2.8} />{d.verified_by === 'phone' ? 'ফোনে যাচাই করা' : 'অফিসিয়াল সূত্রে হালনাগাদ'} · {bnDate(d.verified)}</p>
         </section>
