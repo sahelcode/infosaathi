@@ -97,11 +97,9 @@ const evenCut = <T,>(a: T[], max: number) => { const r = a.slice(0, max); return
 const fresh = (a: Doctor[]) => [...a].sort((x, y) => +y.data.verified - +x.data.verified);
 const mainHosp = chambers.find((c) => c.href)?.h;
 const sameSpAll = fresh(others.filter((x) => x.data.specialty === d.specialty && x.data.city === d.city));
-// "Related" comes first and always shows 4 when the city has them: same specialty first, then the freshest-verified doctors of the city.
-const relMixed = sameSpAll.length < 4;
-const relFill = fresh(others.filter((x) => x.data.city === d.city && x.data.specialty !== d.specialty));
-const sameSp = relMixed ? [...sameSpAll, ...relFill].slice(0, 4) : sameSpAll.slice(0, 4);
-const sideSp = relMixed ? [] : sameSpAll.slice(0, 3);
+// "Related" = same specialty in the same city, up to 4, shown before the hospital's doctors. Hidden while there are none.
+const sameSp = sameSpAll.slice(0, 4);
+const sideSp = sameSpAll.slice(0, 3);
 const shown = new Set(sameSp.map((x) => x.id));
 const sameHosp = mainHosp ? evenCut(fresh(doctorsAt(others, mainHosp.id)).filter((x) => !shown.has(x.id)), 4) : [];
 const usedHosp = new Set(chambers.map((c) => c.h?.id));
@@ -272,8 +270,8 @@ const jsonld = {
         <Ad />
 
         {sameSp.length > 0 && (
-          <section class:list={['pf-block', { 'dx-mob': !relMixed }]} aria-labelledby="h-rel">
-            <div class="pf-block-head"><h2 id="h-rel">{relMixed ? `${city.of} আরও ডাক্তার` : 'একই বিশেষজ্ঞতার অন্য ডাক্তার'}</h2><a class="see-all" href={relMixed ? `/doctors/${d.city}/` : `/doctors/${d.city}/${d.specialty}/`}>See all</a></div>
+          <section class="pf-block dx-mob" aria-labelledby="h-rel">
+            <div class="pf-block-head"><h2 id="h-rel">একই বিশেষজ্ঞতার অন্য ডাক্তার</h2><a class="see-all" href={`/doctors/${d.city}/${d.specialty}/`}>See all</a></div>
             <div class="pf-minis">{sameSp.map((x) => <MiniDoctor doctor={x} place={placeOf(x)} />)}</div>
           </section>
         )}

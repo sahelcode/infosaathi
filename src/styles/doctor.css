@@ -153,3 +153,6 @@ body:has(.dx){padding-bottom:0;}
 .dx-imgshare{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;height:44px;margin-top:10px;border-radius:12px;border:1px solid var(--dx-line);background:#fff;color:var(--ink);font:inherit;font-size:14px;font-weight:600;cursor:pointer;}
 .dx-imgshare svg{color:var(--dx-green);}
 .dx-imgshare:hover{border-color:#bcd9c8;background:#fafdfb;}
+
+/* disease chips: plain white, quiet */
+.dx .pf-chips span{background:#fff;border:1px solid var(--dx-line);color:var(--ink-2);font-weight:500;}
