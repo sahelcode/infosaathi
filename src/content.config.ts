@@ -40,6 +40,9 @@ const doctors = defineCollection({
         degrees: z.array(z.string()).min(1),
         designation: z.string().optional(),
         bmdc: z.string().optional(),
+        whatsapp: phone.optional(), // only if the doctor's chamber really takes WhatsApp messages
+        aliases: z.array(z.string()).default([]), // other spellings people search, e.g. "Dr Mohammad Abdul Hai"
+        area: z.string().optional(), // locality, e.g. "জিন্দাবাজার"
         city,
         photo: image().optional(),
         banner: image().optional(), // chamber card / banner from the hospital
