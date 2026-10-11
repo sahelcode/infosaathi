@@ -246,8 +246,8 @@ const jsonld = {
             <div class="pf-card-head"><h2 id="h-banner">ভিজিটিং কার্ড <small lang="en">Visiting card</small></h2>{d.banner_month && <span class="pf-count">{bnMonth(d.banner_month)}</span>}</div>
             <button class="pf-banner" type="button" data-zoom aria-label="চেম্বার কার্ড বড় করে দেখুন">
               <Image src={d.banner} width={1000} alt={`${d.name} (${d.name_en}) – ${spTitle}, ${first.name}, রোগী দেখার সময় ${first.timeText}, সিরিয়াল ${phoneShow(firstSerial.number)}`} />
-              <span class="pf-banner-z"><Icon name="zoom" size={16} w={2.2} />বড় করে দেখুন</span>
             </button>
+            <button class="dx-imgshare" type="button" data-img-share data-name={`${d.name_en} visiting card`}><Icon name="share" size={17} />শেয়ার করুন</button>
             <p class="pf-banner-note">হাসপাতাল থেকে পাওয়া কার্ড। ওপরের তথ্য আমরা ফোন করে আলাদা করে যাচাই করি।</p>
           </section>
         )}

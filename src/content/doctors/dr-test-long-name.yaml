@@ -5,6 +5,8 @@ name_en: "Prof. Dr. Mohammad Abdullah Al Mamun Chowdhury Khan"
 specialty: pediatrics
 title: "শিশু ও নবজাতক রোগ, শিশু হৃদরোগ এবং শিশুদের কিডনি রোগ বিশেষজ্ঞ ও কনসালট্যান্ট"
 photo: ./images/test-long.jpeg
+banner: ./images/test-long.jpeg
+banner_month: 2026-10-01
 degrees: ["MBBS (Dhaka)", "DCH (Dhaka)", "MD (Pediatrics)", "FCPS (Pediatrics)", "MRCPCH (UK)", "Fellowship in Pediatric Cardiology"]
 designation: "Professor and Head, Department of Pediatric Medicine — Sylhet MAG Osmani Medical College and Hospital, Sylhet"
 bmdc: A-123456

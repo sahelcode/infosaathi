@@ -90,6 +90,27 @@
     openSheet('share');
   }));
 
+
+  /* ---- share the visiting-card image with an infosaathi.com mark added to the copy (the page keeps the clean image) ---- */
+  $$('[data-img-share]').forEach(btn=>btn.addEventListener('click',async()=>{
+    const img=$('img',btn.closest('section')); if(!img) return;
+    try{
+      if(!img.complete) await new Promise((ok,no)=>{ img.onload=ok; img.onerror=no; });
+      const w=img.naturalWidth, h=img.naturalHeight, c=document.createElement('canvas'); c.width=w; c.height=h;
+      const g=c.getContext('2d'); g.drawImage(img,0,0,w,h);
+      const fs=Math.max(14,Math.round(w*0.036)), pad=Math.round(fs*0.55), txt='infosaathi.com';
+      g.font='700 '+fs+'px Inter, Arial, sans-serif'; const tw=g.measureText(txt).width;
+      const bw=tw+pad*2, bh=fs+pad*1.2, x=w-bw-pad*0.8, y=h-bh-pad*0.8, r=bh/2;
+      g.globalAlpha=.78; g.fillStyle='#0b2a1c'; g.beginPath(); g.moveTo(x+r,y); g.arcTo(x+bw,y,x+bw,y+bh,r); g.arcTo(x+bw,y+bh,x,y+bh,r); g.arcTo(x,y+bh,x,y,r); g.arcTo(x,y,x+bw,y,r); g.fill();
+      g.globalAlpha=1; g.fillStyle='#fff'; g.textBaseline='middle'; g.fillText(txt,x+pad,y+bh/2+fs*0.04);
+      const blob=await new Promise(res=>c.toBlob(res,'image/jpeg',.92));
+      const file=new File([blob],(btn.dataset.name||'infosaathi').replace(/[^\w.-]+/g,'-')+'.jpg',{type:'image/jpeg'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){ try{ await navigator.share({files:[file],title:document.title,text:document.title+'\n'+url}); return; }catch(err){ if(err&&err.name==='AbortError') return; } }
+      const a=document.createElement('a'); a.href=URL.createObjectURL(file); a.download=file.name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+      toast('ছবি ডাউনলোড হয়েছে');
+    }catch(_){ toast('ছবি শেয়ার করা গেল না'); }
+  }));
+
   /* ---- correction form (no backend yet) ---- */
   $$('[data-report]').forEach(f=>f.addEventListener('submit',e=>{ e.preventDefault(); f.reset(); const d=f.closest('details'); if(d) d.open=false; toast('ধন্যবাদ! যাচাই করে ঠিক করা হবে'); }));
 
