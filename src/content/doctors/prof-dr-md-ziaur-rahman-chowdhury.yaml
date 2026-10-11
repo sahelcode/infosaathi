@@ -1,0 +1,41 @@
+draft: true
+name: "অধ্যাপক ডা. মোঃ জিয়াউর রহমান চৌধুরী"
+name_en: "Prof. Dr. Md. Ziaur Rahman Chowdhury"
+specialty: pediatrics
+title: "নবজাতক, শিশু ও কিশোর রোগ বিশেষজ্ঞ"
+photo: ./images/prof-dr-md-ziaur-rahman-chowdhury.jpg
+banner: ./images/prof-dr-md-ziaur-rahman-chowdhury-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (Dhaka)", "BCS (Health)", "DCH (BSMMU)", "MD"]
+designation: "সহকারী অধ্যাপক (শিশু বিভাগ), সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ"
+city: sylhet
+verified: 2026-10-12
+
+chambers:
+  - name: "পপুলার মেডিকেল সেন্টার লিঃ, সিলেট"
+    address: "নিউ মেডিকেল রোড, কাজলশাহ, সিলেট-৩১০০"
+    room: "রুম নং ৪০৬ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01772442004"
+
+  - name: "পপুলার মেডিকেল সেন্টার অ্যান্ড হাসপাতাল, সিলেট"
+    address: "সোবহানীঘাট, সিলেট"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "15:00"
+    end: "17:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01773035138"
+
+  - name: "পপুলার মেডিকেল সেন্টার অ্যান্ড হাসপাতাল, সিলেট"
+    address: "সোবহানীঘাট, সিলেট"
+    days: [শুক্র]
+    start: "10:00"
+    end: "12:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01773035138"
