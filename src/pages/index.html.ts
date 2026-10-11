@@ -168,9 +168,10 @@ export const GET: APIRoute = async () => {
   const nSch = (await getScholarships()).length;
   const nJobs = (await getJobs()).length;
   const unit = (n: number, u: string) => (n > 0 ? `${bn(n)}টি ${u}` : 'শীঘ্রই আসছে');
-  const mk = (k: string, name: string, href: string, n: number, u: string) => ({ k, name, href, count: unit(n, u), soon: n === 0 });
+  const EN: Record<string, string> = { hospital: 'Hospitals', university: 'Universities', hotels: 'Hotels', scholarship: 'Scholarships', jobs: 'Jobs', news: 'News', banks: 'Banks' };
+  const mk = (k: string, name: string, href: string, n: number, u: string) => ({ k, name, en: EN[k], href, count: unit(n, u), soon: n === 0 });
   html = swapArray(html, 'setA', [
-    { k: 'doctor', name: 'ডাক্তার', href: '/doctors/', count: doctors.length ? `${bn(doctors.length)} জন যাচাই করা` : 'শীঘ্রই আসছে', soon: !doctors.length },
+    { k: 'doctor', name: 'ডাক্তার', en: 'Doctors', href: '/doctors/', count: doctors.length ? `${bn(doctors.length)} জন যাচাই করা` : 'শীঘ্রই আসছে', soon: !doctors.length },
     mk('hospital', 'হাসপাতাল', '/hospitals/', hospitals.length, 'প্রোফাইল'),
     mk('university', 'বিশ্ববিদ্যালয়', '/universities/', (await getUniversities()).length, 'প্রোফাইল'),
     mk('hotels', 'হোটেল', '/hotels/', nHotels, 'হোটেল'),
@@ -181,7 +182,7 @@ export const GET: APIRoute = async () => {
     mk('news', 'সংবাদ', '/news/', newsAll.length, 'খবর'),
     mk('banks', 'ব্যাংক', '/banks/', 0, ''),
   ]);
-  html = swap(html, '<span class="eyebrow">AI tools</span>', '<span class="eyebrow">এআই টুল</span>');
+  html = swap(html, '<span class="eyebrow">AI tools</span>', '<span class="eyebrow">এআই টুল · AI tools</span>');
   html = swapArray(html, 'hotels', hotelRows);
   html = swapArray(html, 'places', placeRows);
   html = swap(html, "put('placeRow', places.map(p=>`\n    <div class=\"org-card ix-card ix-place\">\n      <div class=\"ix-image\">${placeArt(p.kind)}",

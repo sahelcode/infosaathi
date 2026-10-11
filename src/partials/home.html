@@ -643,6 +643,7 @@ body.menu-open{overflow:hidden;}
 .pill-icn svg{stroke-width:1.7;}
 .pill-text b{font-size:15px;font-weight:700;color:#0f2a1c;}
 .pill-count{font-family:var(--font-body);font-size:12.5px;font-weight:600;color:#5b7a69;}
+.pill-en{font-size:11.5px;font-weight:500;color:#7a9486;margin-left:2px;}
 .pill-card.is-soon .pill-count{color:#b45309;}
 .pill-card.is-soon .pill-icn{background:#fff8ec;border-color:#f3dfb8;color:#b45309;}
 @media (hover:hover){.pill-card:hover{background:#fff;border-color:#86d9a5;}.pill-card:hover .pill-icn{transform:none;background:#e3f6ea;}}
@@ -1361,7 +1362,7 @@ const usefulApps = [
 
 /* ============================================================ RENDER ============================================================ */
 const searchPills = document.querySelector('.search-pills');
-if(searchPills) searchPills.insertAdjacentHTML('beforeend', ['ডাক্তার','বিশ্ববিদ্যালয়','হাসপাতাল','চাকরি','বৃত্তি','সরকারি সেবা'].map(p=>`<span class="search-pill">${p}</span>`).join(''));
+if(searchPills) searchPills.insertAdjacentHTML('beforeend', [['ডাক্তার','Doctors'],['হাসপাতাল','Hospitals'],['বিশ্ববিদ্যালয়','Universities'],['চাকরি','Jobs'],['বৃত্তি','Scholarships'],['সরকারি সেবা','Services']].map(p=>`<span class="search-pill">${p[0]} <small style="opacity:.6;font-weight:500">${p[1]}</small></span>`).join(''));
 
 const statsGrid = document.getElementById('statsGrid');
 if(statsGrid) statsGrid.innerHTML = stats.map(s=>`<div class="stat-item"><div class="stat-num" data-target="${s.n}">0</div><div class="stat-label">${s.l}</div></div>`).join('');
@@ -1927,7 +1928,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     {k:'events',name:'Events',count:'190K+'},{k:'startup',name:'Startups',count:'480K+'},
   ];
   const dest = {doctor:'#doctorRow',university:'#uniRow',hospital:'#hospitalRow'};
-  const pill = (c,i) => `<a href="${c.href}" class="pill-card${c.soon?' is-soon':''}"><span class="pill-icn">${icon(c.k,22,22)}</span><span class="pill-text"><b>${c.name}</b><span class="pill-count">${c.count}</span></span></a>`;
+  const pill = (c,i) => `<a href="${c.href}" class="pill-card${c.soon?' is-soon':''}"><span class="pill-icn">${icon(c.k,22,22)}</span><span class="pill-text"><b>${c.name} <small class="pill-en">${c.en}</small></b><span class="pill-count">${c.count}</span></span></a>`;
   const rep = (arr) => arr.concat(arr).map(pill).join('');
   rowA.innerHTML = rep(setA) + rep(setA);
   rowB.innerHTML = rep(setB) + rep(setB);
