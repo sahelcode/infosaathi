@@ -1,0 +1,26 @@
+# Checked on the hospital's official website on 2026-10-12, not by phone yet: keep draft until a phone check.
+draft: true
+name: "অধ্যাপক ডা. এ. কে. ফজলুল হক"
+name_en: "Prof. Dr. A. K. Fazlul Haque"
+specialty: cardiology
+title: "ক্লিনিক্যাল এন্ড ইন্টারভেনশনাল কার্ডিওলজিস্ট"
+photo: ./images/prof-dr-a-k-fazlul-haque.jpg
+banner: ./images/prof-dr-a-k-fazlul-haque-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "MD (Cardiology)", "Fellowship in Interventional Cardiology", "Interventional Cardiology Training (USA, UK)"]
+designation: "প্রাক্তন অধ্যাপক (কার্ডিওলজি), নর্থ ইস্ট মেডিকেল কলেজ, সিলেট"
+bmdc: A-26902
+city: sylhet
+verified: 2026-10-12
+verified_by: official
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৪৫ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "11:30"
+    end: "13:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
