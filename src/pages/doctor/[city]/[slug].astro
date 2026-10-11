@@ -176,7 +176,7 @@ const jsonld = {
             <div class="dx-id">
               <span class="pf-today dx-status" data-today hidden></span>
               <h1 id="dx-name" class="dx-name">{d.name}<span class="dx-en" lang="en">{d.name_en}</span></h1>
-              <p class="dx-sp"><b>{spTitle}</b><span lang="en">{sp.en}</span></p>
+              <p class="dx-sp"><b>{spTitle}</b> <em lang="en">{sp.en}</em></p>
               <p class="dx-deg">{d.degrees.join(' · ')}</p>
             </div>
           </div>
@@ -187,7 +187,7 @@ const jsonld = {
           </div>
           <div class="dx-nums">
             {heroNums.map((n) => (
-              <a class="dx-num" href={`tel:${n.number}`} aria-label={`${n.label}: ${phoneShow(n.number)} নম্বরে কল`}><Icon name="phone" size={17} /><span><small>{n.label}</small><b>{phoneShow(n.number)}</b></span></a>
+              <a class="dx-num" href={`tel:${n.number}`} aria-label={`${n.label}: ${phoneShow(n.number)} নম্বরে কল`}><span><small>{n.label}</small><b>{phoneShow(n.number)}</b></span></a>
             ))}
           </div>
           <div class="dx-acts">
