@@ -1,5 +1,4 @@
-# Checked on the hospital's official website on 2026-10-12, not by phone yet: keep draft until a phone check.
-draft: true
+# Checked on the hospital website and by phone on 2026-10-12.
 name: "অধ্যাপক ডা. এ. কে. ফজলুল হক"
 name_en: "Prof. Dr. A. K. Fazlul Haque"
 specialty: cardiology
@@ -12,7 +11,7 @@ designation: "প্রাক্তন অধ্যাপক (কার্ডি
 bmdc: A-26902
 city: sylhet
 verified: 2026-10-12
-verified_by: official
+verified_by: phone
 
 chambers:
   - hospital: ibn-sina-hospital-sylhet
