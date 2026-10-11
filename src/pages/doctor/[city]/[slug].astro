@@ -115,7 +115,8 @@ const photo = d.photo ? await getImage({ src: d.photo, width: 400, height: 400, 
 const banner = d.banner ? await getImage({ src: d.banner, width: 1000, format: 'webp' }) : undefined;
 const enAbout = `${d.name_en} is a ${sp.en} specialist in ${city.en}, Bangladesh.${d.bmdc ? ` BMDC registration: ${d.bmdc}.` : ''} Chamber: ${chambers.map(enLine).join('; ')}. For an appointment call ${phoneShow(firstSerial.number).replace(/[০-৯]/g, (x) => '০১২৩৪৫৬৭৮৯'.indexOf(x) + '')}.`;
 // Title: both names + both specialty words, so Bangla and English searches both match. Description repeats the real chamber facts.
-const title = `${d.name} (${d.name_en}) – ${sp.bn} | ${sp.en}, ${city.en}`;
+const titleSp = spTitle.length <= 40 ? spTitle : sp.bn; // the card's own wording (e.g. "মেডিসিন ও হৃদরোগ বিশেষজ্ঞ") finds more searches
+const title = `${d.name} (${d.name_en}) – ${titleSp} | ${sp.en}, ${city.en}`;
 const description = `${d.name} (${d.name_en}), ${spTitle} (${sp.en}), ${city.bn}। চেম্বার: ${first.name}, ${first.address}${first.start ? ` · ${first.daysTxt} ${first.timeText}` : ''}। সিরিয়াল: ${phoneShow(firstSerial.number)}। Chamber, appointment & phone number.`;
 const crumbs = [
   ['হোম', '/'],

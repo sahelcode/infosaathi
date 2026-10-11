@@ -1,32 +1,32 @@
-# পুরনো ব্লগ পোস্ট থেকে স্বয়ংক্রিয়ভাবে তৈরি খসড়া (/2025/04/prof-dr-k-m-akhtaruzzaman-sylhet.html, গত ১২ মাসে Google থেকে 248 ক্লিক)।
-# ফোন করে নিচের সব তথ্য যাচাই করুন, verified-এ যাচাইয়ের তারিখ দিন, তারপর draft: true লাইনটা মুছুন।
-# যা বিশেষভাবে দেখতে হবে:
-#   - সময়সূচিতে বিরোধ: উপরে 'রবিবার-বৃহস্পতিবার (6pm - 11pm)', কিন্তু ইংরেজি ও বাংলা পরিচিতিতে 'শনিবার–বৃহস্পতিবার, সন্ধ্যা ৫টা–৮টা' — দিন ও সময় ফাঁকা রাখা হয়েছে, ফোনে যাচাই করুন।
-#   - উপরের বাটনে Personal ও Hospital লেখা কিন্তু নম্বর তিনটি; কোন নম্বর কোন ধরনের তা স্পষ্ট নয়।
-draft: true
-name: "প্রফেসর ডা. কে. এম. আখতারুজ্জামান"
+# Phone-verified by Sahel on 2026-10-12. Degrees, designation and room are from the doctor's own visiting card.
+# The visiting card file (images/prof-dr-k-m-akhtaruzzaman-card.jpg) carries another site's watermark, so it is NOT shown. Add `banner:` when a clean copy exists.
+name: "অধ্যাপক ডা. কে এম আখতারুজ্জামান"
 name_en: "Prof. Dr. K M Akhtaruzzaman"
 specialty: medicine
-title: "মেডিসিন ও কার্ডিওলজি বিশেষজ্ঞ"
-degrees: ["MBBS", "FCPS (Medicine)", "MD (Cardiology)"]
-designation: "Professor, Department of Medicine & Cardiology — Mount Adora Hospital, Sylhet"
+title: "মেডিসিন ও হৃদরোগ বিশেষজ্ঞ"
+photo: ./images/prof-dr-k-m-akhtaruzzaman.jpg
+degrees: ["MBBS", "DCM", "MCPS (Medicine)", "MD (Cardiology)"]
+designation: "Professor & Head (Cardiology), Sylhet Women's Medical College & Hospital, Sylhet"
 city: sylhet
-verified: 2026-10-06   # যাচাইয়ের দিন বসান
+verified: 2026-10-12
+verified_by: phone
 old_urls: [/2025/04/prof-dr-k-m-akhtaruzzaman-sylhet.html]
-treats: ["উচ্চ রক্তচাপ", "ইস্কেমিক হার্ট ডিজিজ", "হার্ট ফেইলিউর", "হৃৎস্পন্দনের অনিয়ম", "কোলেস্টেরল সমস্যা", "ডায়াবেটিসজনিত জটিলতা", "বুকের ব্যথা", "মাথা ঘোরা"]
 
 chambers:
-  # পোস্টে সময় যেভাবে লেখা: রবিবার-বৃহস্পতিবার (6pm - 11pm) | পরিচিতিতে: শনিবার থেকে বৃহস্পতিবার সন্ধ্যা ৫টা–৮টা পর্যন্ত; শুক্রবার বন্ধ
-  - name: "Mount Adora Hospital"
-    address: "Akhalia, Sylhet-3100"
-    room: "২০১, ২য় তলা"
-    # days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]   <- যাচাই করে দিন
-    # start: "17:00"   <- যাচাই করে দিন
-    # end: "21:00"
+  - name: "মাউন্ট এডোরা হাসপাতাল (Mount Adora Hospital)"
+    address: "আখালিয়া, সিলেট"
+    room: "রুম ২০১"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "18:00"
+    end: "22:00"
     serials:
       - label: "সিরিয়াল"
         number: "01714000770"
+        note: "সিরিয়াল নেওয়ার সময়: সকাল ৯টা – ১০টা"
       - label: "সিরিয়াল"
         number: "01911739510"
-      - label: "সিরিয়াল"
-        number: "09610848484"
+        note: "সিরিয়াল নেওয়ার সময়: সকাল ৯টা – ১০টা"
+      - label: "অনুসন্ধান"
+        number: "01707079716"
+      - label: "অনুসন্ধান"
+        number: "01707079717"
