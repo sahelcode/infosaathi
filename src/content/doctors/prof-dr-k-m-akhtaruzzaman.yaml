@@ -1,10 +1,12 @@
 # Phone-verified by Sahel on 2026-10-12. Degrees, designation and room are from the doctor's own visiting card.
-# The visiting card file (images/prof-dr-k-m-akhtaruzzaman-card.jpg) carries another site's watermark, so it is NOT shown. Add `banner:` when a clean copy exists.
+# NOTE: the visiting card below carries a daktars.com watermark. Shown at Sahel's request; replace with a clean photo when available.
 name: "অধ্যাপক ডা. কে এম আখতারুজ্জামান"
 name_en: "Prof. Dr. K M Akhtaruzzaman"
 specialty: medicine
 title: "মেডিসিন ও হৃদরোগ বিশেষজ্ঞ"
 photo: ./images/prof-dr-k-m-akhtaruzzaman.jpg
+banner: ./images/prof-dr-k-m-akhtaruzzaman-card.jpg
+banner_month: 2026-10-01
 degrees: ["MBBS", "DCM", "MCPS (Medicine)", "MD (Cardiology)"]
 designation: "Professor & Head (Cardiology), Sylhet Women's Medical College & Hospital, Sylhet"
 city: sylhet
