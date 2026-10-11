@@ -156,3 +156,8 @@ body:has(.dx){padding-bottom:0;}
 
 /* disease chips: plain white, quiet */
 .dx .pf-chips span{background:#fff;border:1px solid var(--dx-line);color:var(--ink-2);font-weight:500;}
+
+/* BMDC number: small, under the profile photo */
+.dx-avcol{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.dx-bmdc{font-size:11px;font-weight:600;line-height:1;letter-spacing:0;color:var(--muted);white-space:nowrap;}
+@media (max-width:359px){.dx-bmdc{font-size:10px;}}

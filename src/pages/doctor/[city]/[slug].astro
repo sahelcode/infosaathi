@@ -177,7 +177,10 @@ const jsonld = {
             <svg class="f6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.2 6 10.5a6 6 0 0 1-12 0C6 9.2 12 3 12 3Z"/></svg>
           </div>
           <div class="dx-top">
-            <div class="dx-av">{d.photo ? <Image src={d.photo} alt={`${d.name} (${d.name_en})`} width={112} height={112} loading="eager" fetchpriority="high" /> : <Avatar seed={d.name} size={112} />}</div>
+            <div class="dx-avcol">
+              <div class="dx-av">{d.photo ? <Image src={d.photo} alt={`${d.name} (${d.name_en})`} width={112} height={112} loading="eager" fetchpriority="high" /> : <Avatar seed={d.name} size={112} />}</div>
+              {d.bmdc && <span class="dx-bmdc">BMDC {d.bmdc}</span>}
+            </div>
             <div class="dx-id">
               <span class="pf-today dx-status" data-today hidden></span>
               <h1 id="dx-name" class="dx-name">{d.name}<span class="dx-en" lang="en">{d.name_en}</span></h1>
@@ -190,7 +193,6 @@ const jsonld = {
             <span class="dx-chip">{d.area ? `${d.area}, ` : ''}{city.bn} <i lang="en">{city.en}</i></span>
             {first.days.length > 0 && <span class="dx-chip">{daysShort}</span>}
             {first.start && <span class="dx-chip">{first.timeText}</span>}
-            {d.bmdc && <span class="dx-chip ok">BMDC {d.bmdc}</span>}
           </div>
           <div class="dx-acts">
             <button class="dx-act pri" type="button" data-sheet-open="numbers"><Icon name="phone" size={16} />সিরিয়াল নিন</button>
