@@ -1210,17 +1210,6 @@ if(mobileMenu && menuOverlay){
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 }
 
-/* Search: Enter key or button click goes to results page */
-function runSearch(){
-  const input = document.getElementById('heroSearch');
-  if(!input) return;
-  const q = input.value.trim();
-  if(q) window.location.href = '/search/?q=' + encodeURIComponent(q);
-}
-const heroSearch = document.getElementById('heroSearch');
-const searchSubmit = document.querySelector('.search-submit');
-
-
 /* ============================================================ ICON LIBRARY ============================================================ */
 const ICONS = {
   doctor:'<path d="M9 3v4a3 3 0 0 0 6 0V3"/><path d="M12 14v7M9 21h6"/><circle cx="12" cy="14" r="4"/><path d="M9 5H7a2 2 0 0 0-2 2v3a5 5 0 0 0 5 5"/>',
