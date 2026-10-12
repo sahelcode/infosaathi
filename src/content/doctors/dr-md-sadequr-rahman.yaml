@@ -1,0 +1,28 @@
+name: "ডা. মো. সাদেকুর রহমান"
+name_en: "Dr. Md. Sadequr Rahman"
+specialty: medicine
+title: "মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-md-sadequr-rahman.jpg
+banner: ./images/dr-md-sadequr-rahman-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "MD (Medicine, BSMMU)"]
+designation: "সহযোগী অধ্যাপক, মেডিসিন বিভাগ, নর্থ-ইস্ট মেডিকেল কলেজ, সিলেট"
+bmdc: A-64467
+city: sylhet
+verified: 2026-10-12
+verified_by: phone
+old_urls: [/2025/08/dr-md-sadekur-rahman.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২১ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "15:00"
+    end: "18:30"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01757595058"
+        note: "সকাল ৮টা থেকে"
