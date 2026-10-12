@@ -1,5 +1,7 @@
 ---
 import ListPage from '../../components/ListPage.astro';
+import ListFilter from '../../components/ListFilter.astro';
+import { cityField, placeTypeField, placeGroup } from '../../lib/filters';
 import Icon from '../../components/Icon.astro';
 import { getPlaces, placeUrl } from '../../lib/data';
 import { CITIES } from '../../lib/taxonomy';
@@ -9,9 +11,10 @@ const cities = [...new Set(list.map((p) => p.data.city))];
 ---
 <ListPage title="বাংলাদেশের দর্শনীয় স্থান: কীভাবে যাবেন, খরচ ও কখন যাবেন | InfoSaathi" h1="দর্শনীয় স্থান" path="/places/" crumbs={[['হোম', '/']]}
   intro="বাংলাদেশের ঘোরার জায়গা: কী দেখবেন, কীভাবে যাবেন, ভাড়া, খরচ আর কখন যাওয়া ভালো।"
-  chips={cities.map((c) => ({ href: `/places/${c}/`, label: CITIES[c].bn, n: bn(list.filter((p) => p.data.city === c).length) }))}>
+  >
+  <ListFilter slot="filter" fields={[cityField(cities), placeTypeField(list.map((p) => p.data.kind))]} />
   {list.map((p) => (
-    <a class="pf-mini" href={placeUrl(p)}><span class="hp-near-i un-rel-i"><Icon name="mount" size={20} w={1.8} /></span>
+    <a class="pf-mini" href={placeUrl(p)} data-city={p.data.city} data-type={placeGroup(p.data.kind)}><span class="hp-near-i un-rel-i"><Icon name="mount" size={20} w={1.8} /></span>
       <span class="pf-mini-txt"><b>{p.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{p.data.area}</span></span>
       <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
   ))}
