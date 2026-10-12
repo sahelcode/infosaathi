@@ -55,17 +55,21 @@
       });
     }
     function open() {
+      if (!layer.hidden) return;
+      try { history.pushState({ sx: 1 }, ''); } catch (e) {}
       load(); layer.hidden = false; document.documentElement.classList.add('sx-lock');
       inp.value = hero.value; hero.blur(); inp.focus(); render();
     }
-    function close() {
+    function close(fromPop) {
+      if (layer.hidden) return;
+      if (fromPop !== true && history.state && history.state.sx) { history.back(); return; }
       layer.hidden = true; document.documentElement.classList.remove('sx-lock'); inp.blur(); hero.value = '';
     }
     hero.addEventListener('focus', open);
     hero.addEventListener('click', open);
     var btn = hero.closest('.search-box') && hero.closest('.search-box').querySelector('.search-btn');
     if (btn) btn.addEventListener('click', open);
-    layer.querySelector('.sx-x').addEventListener('click', close);
+    layer.querySelector('.sx-x').addEventListener('click', function () { close(); });
     inp.addEventListener('input', render);
     inp.addEventListener('keydown', function (e) {
       var it = items();
@@ -75,7 +79,8 @@
       else if (e.key === 'Escape') close();
     });
     layer.addEventListener('click', function (e) { if (e.target === layer) close(); });
-    window.addEventListener('pageshow', function () { if (!layer.hidden) close(); });
+    window.addEventListener('pageshow', function () { close(true); });
+    window.addEventListener('popstate', function () { close(true); });
   }
 
   document.addEventListener('DOMContentLoaded', function () {
