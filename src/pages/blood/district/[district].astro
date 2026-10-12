@@ -2,7 +2,7 @@
 import Base from '../../../layouts/Base.astro';
 import BloodOrgs from '../../../components/BloodOrgs.astro';
 import { getBloodOrgs } from '../../../lib/data';
-import { districtBn, GROUPS, slugOf } from '../../../lib/blood';
+import { districtBn } from '../../../lib/blood';
 import { SITE } from '../../../lib/site';
 import '../../../styles/hospital.css';
 import '../../../styles/uni.css';
@@ -21,7 +21,6 @@ const jsonld = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
     <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব"><a href="/">হোম</a><span>›</span><a href="/blood/">রক্তদাতা সংস্থা</a><span>›</span><a href={path}>{d}</a></nav>
     <h1 class="pf-list-h">{d} জেলার রক্তদাতা সংস্থা</h1>
     <p class="pf-list-intro">উপজেলা অনুযায়ী সাজানো। নম্বরে চাপ দিলে সরাসরি ফোন যাবে।</p>
-    <nav class="bo-dist" aria-label="রক্তের গ্রুপ">{GROUPS.map((g) => <a href={`/blood/${slugOf(g)}/`}>{g}</a>)}</nav>
     <BloodOrgs orgs={orgs} />
   </div></main>
 </Base>

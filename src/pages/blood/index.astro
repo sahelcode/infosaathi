@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import BloodOrgs from '../../components/BloodOrgs.astro';
 import { getBloodOrgs } from '../../lib/data';
-import { districtBn, GROUPS, slugOf } from '../../lib/blood';
+import { districtBn } from '../../lib/blood';
 import { bn } from '../../lib/format';
 import { SITE } from '../../lib/site';
 import '../../styles/hospital.css';
@@ -28,7 +28,7 @@ const jsonld = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
       <label class="bo-sel"><span>উপজেলা</span>
         <select id="boUpa" aria-label="উপজেলা" disabled><option value="">সব উপজেলা</option></select></label>
     </form>
-    <nav class="bo-dist bo-groupnav" aria-label="রক্তের গ্রুপ">{GROUPS.map((g) => <a href={`/blood/${slugOf(g)}/`}>{g}</a>)}</nav>
+    <p class="bo-groups"><span>A+  A-  B+  B-</span><span>O+  O-  AB+  AB-</span></p>
     {orgs.length > 0 ? <BloodOrgs orgs={orgs} showDistrict /> : <p class="bo-empty">রক্তদাতা সংস্থার তালিকা তৈরি হচ্ছে। যাচাই করা তথ্য পেলেই এখানে যোগ হবে।</p>}
     <p class="bo-empty" id="boNone" hidden>এই এলাকার যাচাই করা তথ্য এখনও যোগ হয়নি, ইনশাআল্লাহ শীঘ্রই আসছে।</p>
   </div></main>
