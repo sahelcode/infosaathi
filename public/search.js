@@ -33,7 +33,7 @@
     return res.slice(0, limit || 50).map(function (x) { return x[1]; });
   }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  function row(r) { return '<a class="sr-row" href="' + esc(r.u) + '"><span class="sr-k">' + esc(r.k) + '</span><span class="sr-t"><b>' + esc(r.t) + '</b><small>' + esc(r.s) + '</small></span></a>'; }
+  function row(r) { return '<a class="sr-row" href="' + esc(r.u) + '"><span class="sr-t"><em class="sr-k">' + esc(r.k) + '</em><b>' + esc(r.t) + '</b>' + (r.s ? '<small>' + esc(r.s) + '</small>' : '') + '</span><svg class="sr-go" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>'; }
 
   /* full-screen search layer: tapping the homepage search box opens it, results show there, closing returns to the page */
   function attach(hero) {
