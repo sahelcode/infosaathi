@@ -35,37 +35,47 @@
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function row(r) { return '<a class="sr-row" href="' + esc(r.u) + '"><span class="sr-k">' + esc(r.k) + '</span><span class="sr-t"><b>' + esc(r.t) + '</b><small>' + esc(r.s) + '</small></span></a>'; }
 
-  /* dropdown under an input */
-  function attach(input) {
-    var box = input.closest('.search-box') || input.parentNode;
-    box.style.position = 'relative';
-    var panel = document.createElement('div'); panel.className = 'sr-panel'; panel.hidden = true; box.appendChild(panel);
-    var cur = -1;
-    function items() { return [].slice.call(panel.querySelectorAll('.sr-row')); }
+  /* full-screen search layer: tapping the homepage search box opens it, results show there, closing returns to the page */
+  function attach(hero) {
+    var layer = document.createElement('div'); layer.className = 'sx'; layer.hidden = true;
+    layer.innerHTML = '<div class="sx-bar"><div class="sx-field"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><input class="sx-in" type="search" autocomplete="off" enterkeyhint="search" placeholder="' + esc(hero.placeholder || '') + '" aria-label="খুঁজুন"></div><button type="button" class="sx-x">বাতিল</button></div><div class="sx-res" role="listbox"></div>';
+    document.body.appendChild(layer);
+    var inp = layer.querySelector('.sx-in'), res = layer.querySelector('.sx-res'), cur = -1;
+    function items() { return [].slice.call(res.querySelectorAll('.sr-row')); }
     function mark() { items().forEach(function (a, i) { a.classList.toggle('on', i === cur); }); }
+    function hint() { res.innerHTML = '<p class="sx-hint">ডাক্তার, হাসপাতাল, বিশ্ববিদ্যালয়, হোটেল বা জায়গার নাম লিখুন।</p>'; }
     function render() {
-      var q = input.value.trim();
-      if (!q) { panel.hidden = true; return; }
+      var q = inp.value.trim();
+      if (!q) { hint(); return; }
       load().then(function () {
-        if (input.value.trim() !== q) return;
-        var r = search(q, 12);
-        panel.innerHTML = r.length ? r.map(row).join('')
-          : '<p class="sr-none">"' + esc(q) + '" নামে কিছু পাওয়া যায়নি। অন্য শব্দে চেষ্টা করুন।</p>';
-        panel.hidden = false; cur = -1;
+        if (inp.value.trim() !== q) return;
+        var r = search(q, 20);
+        res.innerHTML = r.length ? r.map(row).join('') : '<p class="sx-hint">"' + esc(q) + '" নামে কিছু পাওয়া যায়নি। অন্য শব্দে চেষ্টা করুন, যেমন ডাক্তারের নাম, বিশেষজ্ঞ বিভাগ বা জেলা।</p>';
+        cur = -1; res.scrollTop = 0;
       });
     }
-    input.addEventListener('focus', function () { load(); });
-    input.addEventListener('input', render);
-    input.addEventListener('keydown', function (e) {
+    function open() {
+      load(); layer.hidden = false; document.documentElement.classList.add('sx-lock');
+      inp.value = hero.value; hero.blur(); inp.focus(); render();
+    }
+    function close() {
+      layer.hidden = true; document.documentElement.classList.remove('sx-lock'); inp.blur(); hero.value = '';
+    }
+    hero.addEventListener('focus', open);
+    hero.addEventListener('click', open);
+    var btn = hero.closest('.search-box') && hero.closest('.search-box').querySelector('.search-btn');
+    if (btn) btn.addEventListener('click', open);
+    layer.querySelector('.sx-x').addEventListener('click', close);
+    inp.addEventListener('input', render);
+    inp.addEventListener('keydown', function (e) {
       var it = items();
-      if (e.key === 'ArrowDown' && it.length) { e.preventDefault(); cur = (cur + 1) % it.length; mark(); }
-      else if (e.key === 'ArrowUp' && it.length) { e.preventDefault(); cur = (cur - 1 + it.length) % it.length; mark(); }
-      else if (e.key === 'Enter') { e.preventDefault(); if (cur >= 0 && it[cur]) location.href = it[cur].getAttribute('href'); else { input.blur(); } }
-      else if (e.key === 'Escape') { panel.hidden = true; }
+      if (e.key === 'ArrowDown' && it.length) { e.preventDefault(); cur = (cur + 1) % it.length; mark(); it[cur].scrollIntoView({ block: 'nearest' }); }
+      else if (e.key === 'ArrowUp' && it.length) { e.preventDefault(); cur = (cur - 1 + it.length) % it.length; mark(); it[cur].scrollIntoView({ block: 'nearest' }); }
+      else if (e.key === 'Enter') { e.preventDefault(); if (cur >= 0 && it[cur]) location.href = it[cur].getAttribute('href'); else inp.blur(); }
+      else if (e.key === 'Escape') close();
     });
-    document.addEventListener('click', function (e) { if (!box.contains(e.target)) panel.hidden = true; });
-    var btn = box.querySelector('.search-btn');
-    if (btn) btn.addEventListener('click', function () { input.focus(); render(); });
+    layer.addEventListener('click', function (e) { if (e.target === layer) close(); });
+    window.addEventListener('pageshow', function () { if (!layer.hidden) close(); });
   }
 
   document.addEventListener('DOMContentLoaded', function () {
