@@ -3,7 +3,9 @@
 import { districtBn } from '../lib/blood';
 import '../styles/filter.css';
 interface Props { districts: [string, number][]; upaMap: Record<string, string[]> }
-const { districts, upaMap } = Astro.props;
+const { upaMap } = Astro.props;
+// "সব জেলা" stays first, then Sylhet, then the rest in alphabetical order.
+const districts = [...Astro.props.districts].sort((a, b) => (a[0] === 'sylhet' ? -1 : b[0] === 'sylhet' ? 1 : districtBn(a[0]).localeCompare(districtBn(b[0]), 'bn')));
 ---
 <form class="bo-filter" id="boFilter" onsubmit="return false" data-map={JSON.stringify(upaMap)}>
   <label class="bo-sel"><span>জেলা</span>

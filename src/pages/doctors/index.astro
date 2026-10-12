@@ -4,6 +4,7 @@ import ListFilter from '../../components/ListFilter.astro';
 import MiniDoctor from '../../components/MiniDoctor.astro';
 import { getDoctors } from '../../lib/data';
 import { CITIES, SPECIALTIES } from '../../lib/taxonomy';
+import { cityField } from '../../lib/filters';
 const doctors = await getDoctors();
 const cities = [...new Set(doctors.map((d) => d.data.city))].sort((a, b) => CITIES[a].bn.localeCompare(CITIES[b].bn, 'bn'));
 const sps = [...new Set(doctors.map((d) => d.data.specialty))].sort((a, b) => SPECIALTIES[a].bn.localeCompare(SPECIALTIES[b].bn, 'bn'));
@@ -11,7 +12,7 @@ const sps = [...new Set(doctors.map((d) => d.data.specialty))].sort((a, b) => SP
 <ListPage title="ডাক্তারের তালিকা ও সিরিয়াল নম্বর | InfoSaathi" h1="ডাক্তার" path="/doctors/" crumbs={[['হোম', '/']]}
   intro="জেলা ও বিশেষজ্ঞের বিভাগ বেছে নিন। প্রতিটি ডাক্তারের চেম্বার, রোগী দেখার সময় ও সিরিয়াল নম্বর যাচাই করে দেওয়া।">
   <ListFilter slot="filter" fields={[
-    { key: 'city', label: 'জেলা', all: 'সব জেলা', options: cities.map((c) => ({ v: c, l: CITIES[c].bn })) },
+    cityField(cities),
     { key: 'sp', label: 'বিশেষজ্ঞ', all: 'সব বিভাগ', options: sps.map((s) => ({ v: s, l: SPECIALTIES[s].bn })) },
   ]} />
   {doctors.map((d) => <MiniDoctor doctor={d} place={CITIES[d.data.city].bn} />)}
