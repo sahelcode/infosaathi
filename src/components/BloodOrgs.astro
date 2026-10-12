@@ -7,11 +7,11 @@ import type { BloodOrg } from '../lib/data';
 interface Props { orgs: BloodOrg[]; showDistrict?: boolean }
 const { orgs, showDistrict = false } = Astro.props;
 const byUpazila = new Map<string, BloodOrg[]>();
-for (const o of orgs) byUpazila.set(o.data.upazila, [...(byUpazila.get(o.data.upazila) ?? []), o]);
+for (const o of orgs) { const k = `${o.data.district}|${o.data.upazila}`; byUpazila.set(k, [...(byUpazila.get(k) ?? []), o]); }
 const show = (n: string) => n.replace(/^0/, '০').replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[+d]);
 ---
-{[...byUpazila].map(([upz, list]) => (
-  <section class="bo-grp">
+{[...byUpazila].map(([key, list]) => { const upz = list[0].data.upazila; return (
+  <section class="bo-grp" data-d={list[0].data.district} data-u={upz}>
     <h3>{upz}{showDistrict && <span> · {districtBn(list[0].data.district)}</span>}</h3>
     {list.map((o) => (
       <article class="bo-card">
@@ -20,10 +20,10 @@ const show = (n: string) => n.replace(/^0/, '০').replace(/\d/g, (d) => '০১
         {o.data.note && <p class="bo-note">{o.data.note}</p>}
         {o.data.source_url && <p class="bo-note" style="color:var(--text-muted,#6b7280)">সূত্র: <a href={o.data.source_url} target="_blank" rel="noopener" style="text-decoration:underline">অফিসিয়াল ওয়েবসাইট</a></p>}
         <div class="bo-act">
-          {o.data.phones.map((p) => <a class="bo-call" href={`tel:${p.number}`}><Icon name="phone" size={16} w={2} />{show(p.number)}{p.who && <small>{p.who}</small>}</a>)}
+          {o.data.phones[0] && <a class="bo-call" href={`tel:${o.data.phones[0].number}`}><Icon name="phone" size={16} w={2} />{show(o.data.phones[0].number)}{o.data.phones[0].who && <small>{o.data.phones[0].who}</small>}</a>}
           {o.data.facebook && <a class="bo-fb" href={o.data.facebook} target="_blank" rel="noopener"><Icon name="fb" size={16} w={1.8} />ফেসবুক গ্রুপ/পেজ</a>}
         </div>
       </article>
     ))}
   </section>
-))}
+); })}
