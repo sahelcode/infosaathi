@@ -1,0 +1,35 @@
+name: "অধ্যাপক ডা. মোহাম্মদ নুরুল আফসার (বদরুল)"
+name_en: "Prof. Dr. Mohammod Nurul Afsar (Badrul)"
+specialty: cardiology
+title: "হৃদরোগ বিশেষজ্ঞ, ক্লিনিক্যাল এন্ড ইন্টারভেনশনাল কার্ডিওলজিস্ট"
+photo: ./images/prof-dr-mohammod-nurul-afsar-badrul.jpg
+banner: ./images/prof-dr-mohammod-nurul-afsar-badrul-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (SOMC)", "MD (Cardiology)", "D-Card (Dhaka)", "FACC"]
+designation: "অধ্যাপক ও বিভাগীয় প্রধান (হৃদরোগ বিভাগ), ডায়াবেটিক এসোসিয়েশন মেডিকেল কলেজ, ঢাকা; প্রশিক্ষক (সিসিডি), ডিএলপি, বারডেম, ঢাকা"
+bmdc: A-25477
+city: sylhet
+verified: 2026-10-12
+verified_by: phone
+treats: [হৃদরোগ, বাতজ্বর, ডায়াবেটিস]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪২১ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "11:00"
+    end: "14:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+
+  - name: "ইবনে সিনা ডায়াগনস্টিক সেন্টার, সিলেট"
+    address: "নিউ মেডিকেল কলেজ রোড, রিকাবীবাজার, সিলেট"
+    room: "রুম নং ৪০৯ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "13:00"
+    end: "19:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01708399305"
