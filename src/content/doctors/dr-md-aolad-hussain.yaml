@@ -1,0 +1,39 @@
+name: "ডা. মোঃ আওলাদ হুসাইন"
+name_en: "Dr. Md. Aolad Hussain"
+specialty: neurology
+title: "নিউরোলজি ও মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-md-aolad-hussain.jpg
+banner: ./images/dr-md-aolad-hussain-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (DU)", "MD (Neurology, BSMMU)"]
+designation: "সহযোগী অধ্যাপক ও বিভাগীয় প্রধান (নিউরোলজি বিভাগ), জালালাবাদ রাগিব-রাবেয়া মেডিকেল কলেজ ও হাসপাতাল, সিলেট"
+bmdc: A-61763
+city: sylhet
+verified: 2026-10-12
+verified_by: phone
+old_urls: [/2025/08/dr-md-aolad-hussain-neuromedicine.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪২৩ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:30"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01972832741"
+
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪২৩ (৪র্থ তলা)"
+    days: [শুক্র]
+    start: "10:00"
+    end: "13:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01972832741"
