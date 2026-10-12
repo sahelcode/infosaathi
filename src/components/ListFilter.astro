@@ -1,7 +1,7 @@
 ---
 // Dropdown filters for a doctor list on the same page (client side). Items are .pf-mini[data-city][data-sp].
 import '../styles/filter.css';
-interface Field { key: 'city' | 'sp'; label: string; all: string; options: { v: string; l: string }[] }
+interface Field { key: 'city' | 'sp' | 'type'; label: string; all: string; options: { v: string; l: string }[] }
 interface Props { fields: Field[] }
 const { fields } = Astro.props;
 ---
@@ -11,7 +11,7 @@ const { fields } = Astro.props;
       <select data-key={f.key} aria-label={f.label}><option value="">{f.all}</option>{f.options.map((o) => <option value={o.v}>{o.l}</option>)}</select></label>
   ))}
 </form>
-<p class="bo-empty" id="lfNone" hidden>এই বাছাইয়ে এখনও কোনো যাচাই করা ডাক্তার যোগ হয়নি, ইনশাআল্লাহ শীঘ্রই আসছে।</p>
+<p class="bo-empty" id="lfNone" hidden>এই বাছাইয়ে এখনও কোনো যাচাই করা তথ্য যোগ হয়নি, ইনশাআল্লাহ শীঘ্রই আসছে।</p>
 <script>
   import '../scripts/dropdown.js';
   const form = document.getElementById('lfForm');

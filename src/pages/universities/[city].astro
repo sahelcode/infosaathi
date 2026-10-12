@@ -1,5 +1,7 @@
 ---
 import ListPage from '../../components/ListPage.astro';
+import ListFilter from '../../components/ListFilter.astro';
+import { typeField } from '../../lib/filters';
 import Icon from '../../components/Icon.astro';
 import { getUniversities, universityUrl, type University } from '../../lib/data';
 import { CITIES, type City } from '../../lib/taxonomy';
@@ -13,8 +15,9 @@ const c = CITIES[city];
 ---
 <ListPage title={`${c.of} বিশ্ববিদ্যালয়: ভর্তি ও খরচ | InfoSaathi`} h1={`${c.of} বিশ্ববিদ্যালয়`} path={`/universities/${city}/`}
   crumbs={[['হোম', '/'], ['বিশ্ববিদ্যালয়', '/universities/']]} intro={`${c.of} ${bn(list.length)}টি বিশ্ববিদ্যালয়ের ভর্তি, বিষয়, খরচ ও যোগাযোগ।`}>
+  <ListFilter slot="filter" fields={[typeField('ধরন', 'সব ধরন', list.map((u) => u.data.type))]} />
   {list.map((u) => (
-    <a class="pf-mini" href={universityUrl(u)}><span class="hp-near-i un-rel-i"><Icon name="cap" size={20} w={1.8} /></span>
+    <a class="pf-mini" href={universityUrl(u)} data-city={u.data.city} data-type={u.data.type}><span class="hp-near-i un-rel-i"><Icon name="cap" size={20} w={1.8} /></span>
       <span class="pf-mini-txt"><b>{u.data.name}</b><span class="pf-mini-h">{u.data.name_bn} · {u.data.type}</span></span>
       <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
   ))}

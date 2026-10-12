@@ -1,5 +1,7 @@
 ---
 import ListPage from '../../components/ListPage.astro';
+import ListFilter from '../../components/ListFilter.astro';
+import { typeField } from '../../lib/filters';
 import Icon from '../../components/Icon.astro';
 import { getHotels, hotelUrl, type HotelEntry } from '../../lib/data';
 import { CITIES, type City } from '../../lib/taxonomy';
@@ -13,8 +15,9 @@ const c = CITIES[city];
 ---
 <ListPage title={`${c.of} হোটেল ও রিসোর্ট: রুম ভাড়া ও বুকিং নম্বর | InfoSaathi`} h1={`${c.of} হোটেল`} path={`/hotels/${city}/`}
   crumbs={[['হোম', '/'], ['হোটেল', '/hotels/']]} intro={`${c.of} ${bn(list.length)}টি হোটেল ও রিসোর্টের তথ্য।`}>
+  <ListFilter slot="filter" fields={[typeField('ধরন', 'হোটেল ও রিসোর্ট', list.map((h) => h.data.kind), { hotel: 'হোটেল', resort: 'রিসোর্ট' })]} />
   {list.map((h) => (
-    <a class="pf-mini" href={hotelUrl(h)}><span class="hp-near-i un-rel-i"><Icon name="bed" size={20} w={1.8} /></span>
+    <a class="pf-mini" href={hotelUrl(h)} data-city={h.data.city} data-type={h.data.kind}><span class="hp-near-i un-rel-i"><Icon name="bed" size={20} w={1.8} /></span>
       <span class="pf-mini-txt"><b>{h.data.name_bn}</b><span class="pf-mini-h">{h.data.name}</span></span>
       <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
   ))}

@@ -1,11 +1,17 @@
 ---
 import ListPage from '../../components/ListPage.astro';
-import { getHospitals } from '../../lib/data';
-import { CITIES } from '../../lib/taxonomy';
-import { bn } from '../../lib/format';
+import ListFilter from '../../components/ListFilter.astro';
+import Icon from '../../components/Icon.astro';
+import { getHospitals, hospitalUrl } from '../../lib/data';
+import { cityField, typeField } from '../../lib/filters';
 const hospitals = await getHospitals();
-const cities = [...new Set(hospitals.map((h) => h.data.city))];
 ---
 <ListPage title="হাসপাতালের তালিকা, ডাক্তার ও নম্বর | InfoSaathi" h1="হাসপাতাল" path="/hospitals/" crumbs={[['হোম', '/']]}
-  intro="শহর বেছে নিন। প্রতিটি হাসপাতালের ডাক্তার, যোগাযোগের নম্বর ও সুবিধা।"
-  chips={cities.map((c) => ({ href: `/hospitals/${c}/`, label: CITIES[c].bn, n: bn(hospitals.filter((h) => h.data.city === c).length) }))} />
+  intro="জেলা ও ধরন বেছে নিন। প্রতিটি হাসপাতালের ডাক্তার, যোগাযোগের নম্বর ও সুবিধা।">
+  <ListFilter slot="filter" fields={[cityField(hospitals.map((h) => h.data.city)), typeField('ধরন', 'সব ধরন', hospitals.map((h) => h.data.type))]} />
+  {hospitals.map((h) => (
+    <a class="pf-mini" href={hospitalUrl(h)} data-city={h.data.city} data-type={h.data.type}><span class="hp-near-i"><Icon name="build" size={20} w={1.8} /></span>
+      <span class="pf-mini-txt"><b>{h.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{h.data.address}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>
