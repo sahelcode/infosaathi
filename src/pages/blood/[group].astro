@@ -1,0 +1,103 @@
+---
+// One SEO page per blood group: what the group means, who can give to / receive from it, and a district + upazila finder for donor organisations.
+import Base from '../../layouts/Base.astro';
+import BloodOrgs from '../../components/BloodOrgs.astro';
+import BloodFinder from '../../components/BloodFinder.astro';
+import { GROUPS, slugOf, RECEIVE_FROM, DONATE_TO, districtBn, type Group } from '../../lib/blood';
+import { getBloodOrgs } from '../../lib/data';
+import { bn } from '../../lib/format';
+import { SITE, UPDATED } from '../../lib/site';
+import '../../styles/hospital.css';
+import '../../styles/uni.css';
+import '../../styles/blood.css';
+
+export function getStaticPaths() {
+  return GROUPS.map((g) => ({ params: { group: slugOf(g) }, props: { g } }));
+}
+const { g } = Astro.props as { g: Group };
+const orgs = await getBloodOrgs();
+const counts = new Map<string, number>();
+for (const o of orgs) counts.set(o.data.district, (counts.get(o.data.district) ?? 0) + 1);
+const districts = [...counts].sort((a, b) => districtBn(a[0]).localeCompare(districtBn(b[0]), 'bn')) as [string, number][];
+const upaMap: Record<string, string[]> = {};
+for (const o of orgs) { const a = (upaMap[o.data.district] ??= []); if (!a.includes(o.data.upazila)) a.push(o.data.upazila); }
+for (const k in upaMap) upaMap[k].sort((x, y) => x.localeCompare(y, 'bn'));
+
+const recv = RECEIVE_FROM[g];
+const give = DONATE_TO(g);
+const path = `/blood/${slugOf(g)}/`;
+const abo = g.startsWith('AB') ? 'AB' : g[0];
+const rh = g.endsWith('+') ? 'পজিটিভ' : 'নেগেটিভ';
+const aboNote = abo === 'O' ? 'O গ্রুপের লাল রক্তকণিকায় A বা B অ্যান্টিজেন থাকে না' : abo === 'AB' ? 'AB গ্রুপের লাল রক্তকণিকায় A ও B দুটো অ্যান্টিজেনই থাকে' : `${abo} গ্রুপের লাল রক্তকণিকায় ${abo} অ্যান্টিজেন থাকে`;
+const special = g === 'O-' ? 'O নেগেটিভ প্রায় সব গ্রুপের রোগীকে লাল রক্তকণিকা দিতে পারে, তাই জরুরি অবস্থায় এই গ্রুপের চাহিদা বেশি থাকে।'
+  : g === 'AB+' ? 'AB পজিটিভ রোগী সব গ্রুপ থেকে লাল রক্তকণিকা নিতে পারেন।' : '';
+
+const faq = [
+  { q: `${g} রক্ত কোথায় পাওয়া যায়?`, a: `${g} রক্তের জন্য প্রথমে রোগী যে হাসপাতালে ভর্তি আছেন সেখানকার ব্লাড ব্যাংকে জানান। এছাড়া জেলা ও উপজেলার রক্তদাতা সংস্থা, রেড ক্রিসেন্ট ব্লাড সেন্টার ও স্বেচ্ছাসেবী সংগঠনে যোগাযোগ করা যায়। এই পাতার তালিকায় জেলা ও উপজেলা বেছে সংস্থার ফোন নম্বর দেখতে পারেন।` },
+  { q: `${g} গ্রুপের রোগী কোন কোন গ্রুপের রক্ত নিতে পারেন?`, a: `সাধারণ লাল রক্তকণিকা সঞ্চালনের নিয়মে ${g} গ্রুপের রোগী ${recv.join(', ')} গ্রুপ থেকে নিতে পারেন। নিজের গ্রুপের দাতা সবচেয়ে ভালো। চূড়ান্ত সিদ্ধান্ত চিকিৎসক ও ব্লাড ব্যাংকের।` },
+  { q: `${g} গ্রুপের দাতা কোন কোন গ্রুপের রোগীকে রক্ত দিতে পারেন?`, a: `সাধারণ নিয়মে ${g} গ্রুপের দাতা ${give.join(', ')} গ্রুপের রোগীকে লাল রক্তকণিকা দিতে পারেন।` },
+  { q: 'রক্ত দেওয়ার আগে কী জানা দরকার?', a: 'সাধারণত সুস্থ প্রাপ্তবয়স্ক ব্যক্তি রক্ত দিতে পারেন, এবং একবার দেওয়ার পর কয়েক মাস বিরতি রাখতে হয়। কে রক্ত দিতে পারবেন, সেটা রক্ত সংগ্রহকেন্দ্র পরীক্ষা করে ঠিক করে। রোগীকে দেওয়ার আগে হাসপাতাল ক্রস-ম্যাচ ও সংক্রমণের পরীক্ষা করে।' },
+];
+const crumbs = [['হোম', '/'], ['রক্তদাতা সংস্থা', '/blood/']];
+const jsonld = { '@context': 'https://schema.org', '@graph': [
+  { '@type': 'BreadcrumbList', itemListElement: [...crumbs, [`${g} রক্ত`, path]].map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) },
+  { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+] };
+---
+<Base title={`${g} রক্ত লাগবে? ${g} রক্তদাতা সংস্থা: জেলা ও উপজেলা অনুযায়ী ফোন নম্বর | InfoSaathi`} description={`${g} (${abo} ${rh}) রক্ত লাগলে কী করবেন, কে ${g} রক্ত দিতে পারেন, কার রক্ত নিতে পারেন। জেলা ও উপজেলা বেছে রক্তদাতা সংস্থার ফোন নম্বর খুঁজুন।`} path={path} jsonld={jsonld}>
+  <main class="pf"><div class="bo">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{g}</a></nav>
+    <article class="bd">
+      <header class="bd-hero">
+        <span class="bd-badge">{g}</span>
+        <div><h1>{g} রক্ত লাগবে?</h1><p>{g} ({abo} {rh}) গ্রুপের রক্তের জন্য কোথায় যোগাযোগ করবেন</p></div>
+      </header>
+
+      <section class="bd-card bd-text">
+        <p>রক্ত দরকার হলে সময় সবচেয়ে বড় বিষয়। নিচে জেলা ও উপজেলা বেছে নিলে সেই এলাকার রক্তদাতা সংস্থার ফোন নম্বর ও ঠিকানা দেখতে পাবেন। প্রতিটি তথ্যের সঙ্গে যাচাইয়ের তারিখ দেওয়া আছে।</p>
+        <p style="margin:0;font-size:13px;color:#6b7a72">আমরা ব্যক্তিগত দাতার নাম বা নম্বর রাখি না। এখানে শুধু সংগঠন ও ব্লাড সেন্টারের তথ্য আছে। হালনাগাদ: {UPDATED}</p>
+      </section>
+
+      <section class="bd-card" id="orgs">
+        <h2>{g} রক্তের জন্য সংস্থা খুঁজুন</h2>
+        <BloodFinder districts={districts} upaMap={upaMap} />
+        <BloodOrgs orgs={orgs} showDistrict />
+      </section>
+
+      <section class="bd-card bd-text">
+        <h2>{g} গ্রুপ বলতে কী বোঝায়</h2>
+        <p>রক্তের গ্রুপ দুটি বিষয় দিয়ে ঠিক হয়: ABO গ্রুপ ও Rh ফ্যাক্টর। {aboNote}, আর Rh {rh} মানে {g.endsWith('+') ? 'Rh ফ্যাক্টর আছে' : 'Rh ফ্যাক্টর নেই'}। এই কারণে {g} গ্রুপের জন্য কোন দাতার রক্ত মিলবে তার একটা নির্দিষ্ট নিয়ম আছে।</p>
+      </section>
+
+      <section class="bd-card">
+        <h2>{g} গ্রুপের রোগী যাঁদের রক্ত নিতে পারেন</h2>
+        <div class="bd-chips">{recv.map((x) => <a href={`/blood/${slugOf(x)}/`} class:list={['bd-chip', x === g && 'self']}>{x}</a>)}</div>
+        <p class="bd-sub">নিজের গ্রুপের দাতা সবচেয়ে ভালো। না পেলে বাকি গ্রুপগুলো থেকেও নেওয়া যায়।</p>
+      </section>
+
+      <section class="bd-card">
+        <h2>{g} গ্রুপের দাতা যাঁদের রক্ত দিতে পারেন</h2>
+        <div class="bd-chips">{give.map((x) => <a href={`/blood/${slugOf(x)}/`} class:list={['bd-chip', x === g && 'self']}>{x}</a>)}</div>
+        {special && <p class="bd-sub">{special}</p>}
+      </section>
+
+      <section class="bd-card">
+        <h2>{g} রক্ত দরকার হলে ধাপে ধাপে</h2>
+        <ol class="bd-steps">
+          <li>হাসপাতালের ব্লাড ব্যাংকে আগে জানান। সেখানে মজুত থাকতে পারে।</li>
+          <li>রোগীর গ্রুপ নিশ্চিত করুন। ল্যাব রিপোর্টে লেখা গ্রুপ মিলিয়ে নিন।</li>
+          <li>প্রথমে একই গ্রুপের দাতা খুঁজুন, তারপর উপরের তালিকার অন্য গ্রুপ।</li>
+          <li>দাতার রক্ত রোগীকে দেওয়ার আগে হাসপাতাল ক্রস-ম্যাচ ও সংক্রমণের পরীক্ষা করবে। এটা বাদ দেওয়া যায় না।</li>
+        </ol>
+        <p class="bd-sub">এটি সাধারণ নিয়ম। কাকে কোন রক্ত দেওয়া হবে, সেই সিদ্ধান্ত চিকিৎসক ও ব্লাড ব্যাংকের। জরুরি হলে সরাসরি হাসপাতালে যান। <a href="/disclaimer/" style="text-decoration:underline">চিকিৎসা তথ্যের দায়মুক্তি</a></p>
+      </section>
+
+      <section class="bd-card bd-faq">
+        <h2>প্রশ্ন ও উত্তর</h2>
+        {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+      </section>
+
+      <nav class="bo-gnav" aria-label="অন্য গ্রুপ">{GROUPS.map((x) => <a href={`/blood/${slugOf(x)}/`} class:list={[x === g && 'on']}>{x}</a>)}</nav>
+    </article>
+  </div></main>
+</Base>

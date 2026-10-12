@@ -711,9 +711,9 @@ body.menu-open{overflow:hidden;}
 .bp-copy h2{margin:0 0 10px;font-size:17px;line-height:1.35;color:#0f2a1c;display:flex;align-items:center;gap:8px;}
 .bp-copy h2::before{content:"";width:9px;height:12px;border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;background:#e11d48;flex:0 0 auto;}
 .bp-copy p{display:none;}
-.bp-groups{display:flex;flex-direction:column;gap:2px;font-size:15px;font-weight:700;color:#3d5247;letter-spacing:.04em;white-space:pre;}
-.bp-g{border:1px solid #e6dde0;background:#fff;color:#9f1239;font:700 14px var(--font-body);padding:8px 0;border-radius:10px;}
-.bp-g:hover{background:#fff5f7;border-color:#f3b8c4;transform:none;}
+.bp-groups{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:360px;}
+.bp-g{border:1px solid #dbe7e0;background:#fff;color:#2f4a3c;font:700 14px var(--font-body);padding:8px 0;border-radius:10px;}
+.bp-g:hover{background:#e3f6ea;border-color:#16a34a;transform:none;}
 .bp-orgs{margin-top:10px;color:#15803d;font-size:12.5px;font-weight:600;text-decoration:underline;text-underline-offset:3px;}
 
 
@@ -1950,7 +1950,8 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 (function(){
   const box=document.getElementById('bpGroups'); if(!box) return;
-  box.innerHTML='<span>A+  A-  B+  B-</span><span>O+  O-  AB+  AB-</span>';
+  var G=[['A+','a-positive'],['A-','a-negative'],['B+','b-positive'],['B-','b-negative'],['O+','o-positive'],['O-','o-negative'],['AB+','ab-positive'],['AB-','ab-negative']];
+  box.innerHTML=G.map(function(x){return '<a class="bp-g" href="/blood/'+x[1]+'/" aria-label="রক্তের গ্রুপ '+x[0]+'">'+x[0]+'</a>';}).join('');
 })();
 </script>
 </body>

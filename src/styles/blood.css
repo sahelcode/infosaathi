@@ -47,4 +47,25 @@
 .bo-fb{background:#fff;color:#2f5d8a;border:1px solid #d3e0ec;}
 .bo-empty{padding:16px 18px;border:1px dashed #cfdcd4;border-radius:14px;background:#fafdfb;color:#4a5f54;font-size:14px;line-height:1.7;}
 
-.bo-groups{display:flex;flex-direction:column;gap:2px;margin:0 0 14px;font-size:15px;font-weight:700;color:#3d5247;letter-spacing:.04em;white-space:pre;}
+.bo-gnav{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:360px;margin:0 0 16px;}
+.bo-gnav a{display:block;text-align:center;padding:9px 0;border-radius:10px;border:1px solid #dbe7e0;background:#fff;color:#2f4a3c;font-weight:700;font-size:14.5px;text-decoration:none;transition:background .2s,border-color .2s;}
+.bo-gnav a:hover,.bo-gnav a.on{background:#e3f6ea;border-color:#16a34a;color:#14532d;}
+/* group page (SEO post), calm colours */
+.bd-hero{background:#fff;color:#0f2a1c;border:1px solid #e3ebe6;padding:16px 18px;border-radius:18px;gap:14px;}
+.bd-badge{width:64px;height:64px;font-size:24px;background:#f1faf5;color:#14532d;border:1px solid #cfe8da;box-shadow:none;}
+.bd-hero h1{color:#0f2a1c;font-size:23px;}
+.bd-hero p{color:#5b6b63;}
+.bd-card{padding:16px 18px;margin-bottom:12px;border-radius:16px;border-color:#e3ebe6;}
+.bd-card h2{font-size:16px;color:#0f2a1c;}
+.bd-chip{background:#fff;border:1px solid #dbe7e0;color:#2f4a3c;font-size:15px;min-width:54px;padding:7px 14px;}
+.bd-chip:hover{background:#f1faf5;}
+.bd-chip.self{background:#e3f6ea;color:#14532d;border-color:#16a34a;}
+.bd-special{background:#f4f9f6;border-color:#d3e6da;color:#2b4a3a;}
+.bd-all a{color:#2f4a3c;}
+.bd-text p{margin:0 0 10px;font-size:15px;line-height:1.85;color:#2b3440;}
+.bd-faq details{border-top:1px solid #edf2ef;padding:11px 0;}
+.bd-faq details:first-of-type{border-top:0;}
+.bd-faq summary{cursor:pointer;font-weight:700;font-size:15px;color:#0f2a1c;list-style:none;}
+.bd-faq summary::-webkit-details-marker{display:none;}
+.bd-faq p{margin:8px 0 0;font-size:14.5px;line-height:1.8;color:#3a4a42;}
+@media (max-width:640px){.bd-hero{padding:14px;}.bd-badge{width:54px;height:54px;font-size:20px;}.bd-hero h1{font-size:19px;}}

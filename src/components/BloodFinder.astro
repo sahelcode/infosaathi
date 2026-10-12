@@ -1,0 +1,30 @@
+---
+// District + upazila selects. Filters the .bo-grp sections of the BloodOrgs list on the same page (client side).
+import { districtBn } from '../lib/blood';
+interface Props { districts: [string, number][]; upaMap: Record<string, string[]> }
+const { districts, upaMap } = Astro.props;
+---
+<form class="bo-filter" id="boFilter" onsubmit="return false" data-map={JSON.stringify(upaMap)}>
+  <label class="bo-sel"><span>জেলা</span>
+    <select id="boDist" aria-label="জেলা"><option value="">সব জেলা</option>{districts.map(([k]) => <option value={k}>{districtBn(k)}</option>)}</select></label>
+  <label class="bo-sel"><span>উপজেলা</span>
+    <select id="boUpa" aria-label="উপজেলা" disabled><option value="">সব উপজেলা</option></select></label>
+</form>
+<p class="bo-empty" id="boNone" hidden>এই এলাকার যাচাই করা তথ্য এখনও যোগ হয়নি, ইনশাআল্লাহ শীঘ্রই আসছে।</p>
+<script is:inline>
+  (function(){
+    var f=document.getElementById('boFilter'); if(!f) return;
+    var map=JSON.parse(f.dataset.map||'{}'), d=document.getElementById('boDist'), u=document.getElementById('boUpa'), none=document.getElementById('boNone');
+    function apply(){
+      var groups=[].slice.call(document.querySelectorAll('.bo-grp')), dv=d.value, uv=u.value, shown=0;
+      groups.forEach(function(g){ var ok=(!dv||g.dataset.d===dv)&&(!uv||g.dataset.u===uv); g.hidden=!ok; if(ok) shown++; });
+      none.hidden=shown>0;
+    }
+    d.addEventListener('change',function(){
+      u.innerHTML='<option value="">সব উপজেলা</option>';
+      (map[d.value]||[]).forEach(function(x){ var o=document.createElement('option'); o.value=x; o.textContent=x; u.appendChild(o); });
+      u.disabled=!d.value; apply();
+    });
+    u.addEventListener('change',apply);
+  })();
+</script>
