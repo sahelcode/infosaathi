@@ -1,0 +1,25 @@
+draft: true
+name: "অধ্যাপক ডা. বিপ্লব কুমার রায়"
+name_en: "Prof. Dr. Biplob Kumar Roy"
+specialty: neurology
+title: "মেডিসিন ও নিউরোমেডিসিন বিশেষজ্ঞ"
+photo: ./images/prof-dr-biplob-kumar-roy.jpg
+banner: ./images/prof-dr-biplob-kumar-roy-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "MPH", "MCPS (Medicine)", "MD (Neurology)"]
+designation: "অধ্যাপক (অবসরপ্রাপ্ত), নিউরোলজি বিভাগ, সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-18873
+city: sylhet
+verified: 2026-10-12
+
+chambers:
+  - name: "পপুলার মেডিকেল সেন্টার লিঃ, সিলেট"
+    address: "নিউ মেডিকেল রোড, কাজলশাহ, সিলেট"
+    room: "রুম নং ৫০২ (৫ম তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ]
+    start: "15:00"
+    end: "21:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01400177347"
+        note: "সকাল ৮টা থেকে ৯টা"
