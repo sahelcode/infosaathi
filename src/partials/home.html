@@ -1104,7 +1104,7 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Useful apps</span>
-      <h2 style="font-size:28px;">Apps worth having on your phone<span class="bn" style="display:block;font-size:15px;font-weight:400;color:var(--text-muted);margin-top:6px;">কাজে লাগবে এমন কিছু অ্যাপ</span></h2>
+      <h2 style="font-size:28px;">কাজে লাগবে এমন কিছু অ্যাপ<span class="bn" style="display:block;font-size:15px;font-weight:400;color:var(--text-muted);margin-top:6px;">Useful apps for your phone</span></h2>
     </div>
     <div class="app-marquee-wrap reveal"><div class="app-marquee" id="appMarquee"></div></div>
   </div>
@@ -1268,8 +1268,6 @@ function initials(str){ return str.replace(/^Dr\\.\\s*/,'').split(' ').map(w=>w[
 function tint(t){ return `tint-${t%6}`; }
 
 /* ============================================================ DATA ============================================================ */
-const stats = [{n:'4.2M+',l:'Doctors'},{n:'18.9K',l:'Universities'},{n:'2,300+',l:'Hospitals'},{n:'6.8M',l:'Companies'},{n:'9.4M',l:'Articles'},{n:'190',l:'Countries'}];
-const trends = ['AI regulation 2026','Ivy League admissions','Remote-first companies','Universal health coverage','Climate research grants','Visa-free travel updates','Central bank rates','Open-access journals','Govt subsidy portals','Top MBA programs','Cybersecurity jobs surge','New scholarship deadlines'];
 
 
 /* ===== v4: illustrated doctor avatars (photo:'URL' দিলে আসল ছবি দেখাবে) ===== */
@@ -1393,11 +1391,6 @@ const usefulApps = [
 const searchPills = document.querySelector('.search-pills');
 if(searchPills) searchPills.insertAdjacentHTML('beforeend', [['ডাক্তার','Doctors'],['হাসপাতাল','Hospitals'],['বিশ্ববিদ্যালয়','Universities'],['চাকরি','Jobs'],['বৃত্তি','Scholarships'],['সরকারি সেবা','Services']].map(p=>`<span class="search-pill">${p[0]} <small style="opacity:.6;font-weight:500">${p[1]}</small></span>`).join(''));
 
-const statsGrid = document.getElementById('statsGrid');
-if(statsGrid) statsGrid.innerHTML = stats.map(s=>`<div class="stat-item"><div class="stat-num" data-target="${s.n}">0</div><div class="stat-label">${s.l}</div></div>`).join('');
-
-const trendScroll = document.getElementById('trendScroll');
-if(trendScroll) trendScroll.innerHTML = trends.map((t,i)=>`<span class="trend-chip"><span class="rank">#${i+1}</span>${t}</span>`).join('');
 
 document.getElementById('doctorRow').innerHTML = doctorNames.map((d,i)=>`
   <div class="p-card">
@@ -1527,7 +1520,7 @@ document.getElementById('uniRow').innerHTML = uniNames.map(u=>`
     {name:'Srimangal Tea Gardens',loc:'Moulvibazar',kind:'tea',tags:['Tea gardens','Nature walk']},
     {name:'Sajek Valley',loc:'Rangamati',kind:'clouds',tags:['Hills & clouds','Resorts']},
   ];
-  /* Demo ratings: replace with real data before launch */
+  
   const hotels = [
     {name:'Grand Sylhet Hotel & Resort',loc:'Airport Road, Sylhet',rating:4.7,tags:['Pool','Spa']},
     {name:'Noorjahan Grand',loc:'Dargah Gate, Sylhet',rating:4.5,tags:['Restaurant','Free Wi-Fi']},
