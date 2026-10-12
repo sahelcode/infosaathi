@@ -1,0 +1,28 @@
+name: "ডা. কাজী মাঈনুল ইসলাম মাহফুজ"
+name_en: "Dr. Kazi Mainul Islam Mahfuz"
+specialty: medicine
+title: "মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-kazi-mainul-islam-mahfuz.jpg
+banner: ./images/dr-kazi-mainul-islam-mahfuz-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (SOMC)", "BCS (Health)", "FCPS (Medicine)", "MCPS (Medicine)"]
+designation: "মেডিসিন বিশেষজ্ঞ, সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ হাসপাতাল"
+bmdc: A-54461
+city: sylhet
+verified: 2026-10-12
+verified_by: phone
+old_urls: [/2025/05/blog-post_24.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪৩২ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "14:30"
+    end: "17:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01787852080"
+        note: "সকাল ৮টা থেকে"
