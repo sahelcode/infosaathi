@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/hospital.css';
+import '../styles/uni.css';
+import '../styles/prose.css';
+---
+<Base title="খুঁজুন | InfoSaathi" description="InfoSaathi-তে ডাক্তার, হাসপাতাল, বিশ্ববিদ্যালয়, হোটেল ও জায়গা খুঁজুন।" path="/search/" noindex>
+  <main class="pf">
+    <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব"><a href="/">হোম</a><span>›</span><a href="/search/">খুঁজুন</a></nav>
+    <h1 class="pf-list-h">খুঁজুন</h1>
+    <div class="search-box sr-page"><input id="srQ" type="search" class="search-input" placeholder="ডাক্তার, হাসপাতাল, ভার্সিটি বা জায়গার নাম..." autocomplete="off"></div>
+    <div id="srList" class="sr-list"></div>
+  </main>
+  <script is:inline src="/search.js" defer></script>
+</Base>

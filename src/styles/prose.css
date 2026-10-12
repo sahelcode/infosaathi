@@ -45,3 +45,14 @@
 .ps-body ol{list-style:decimal;}
 .ps-body li::marker{color:#16a34a;}
 .ps-toc ol{list-style:decimal;}
+
+.sr-page{max-width:640px;margin:0 0 14px;}
+.sr-list{max-width:640px;display:flex;flex-direction:column;gap:2px;margin-bottom:40px;}
+.sr-count{margin:4px 0 8px;font-size:13px;color:#6b7a72;}
+.sr-list .sr-row{background:#fff;border:1px solid #e3ebe6;border-radius:12px;margin-bottom:6px;padding:11px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.sr-list .sr-row:hover{background:#f1faf5;}
+.sr-list .sr-k{font-size:11px;font-weight:600;color:#3d6b52;background:#eef7f1;border-radius:999px;padding:3px 9px;white-space:nowrap;}
+.sr-list .sr-t{display:flex;flex-direction:column;min-width:0;}
+.sr-list .sr-t b{font-size:15px;color:#0f2a1c;}
+.sr-list .sr-t small{font-size:12.5px;color:#6b7a72;}
+.sr-none{padding:14px 2px;font-size:14px;color:#5b6b63;}

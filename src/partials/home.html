@@ -674,6 +674,18 @@ body.menu-open{overflow:hidden;}
 .cx-hint a{color:#15803d;text-decoration:underline;text-underline-offset:3px;}
 @media(min-width:640px){.cx-form{grid-template-columns:1fr 1fr;}.cx-wide{grid-column:1 / -1;}.cx-btn{justify-self:start;}}
 
+
+/* search results */
+.sr-panel{position:absolute;z-index:60;left:0;right:0;top:calc(100% + 6px);background:#fff;border:1px solid #dbe7e0;border-radius:14px;box-shadow:0 18px 40px -16px rgba(6,60,35,.28);padding:6px;text-align:left;max-height:70vh;overflow-y:auto;}
+.sr-row{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;text-decoration:none;color:inherit;}
+.sr-row:hover,.sr-row.on{background:#f1faf5;}
+.sr-k{flex:0 0 auto;font-size:11px;font-weight:600;color:#3d6b52;background:#eef7f1;border-radius:999px;padding:3px 9px;white-space:nowrap;}
+.sr-t{display:flex;flex-direction:column;min-width:0;}
+.sr-t b{font-size:14.5px;color:#0f2a1c;line-height:1.4;}
+.sr-t small{font-size:12px;color:#6b7a72;line-height:1.4;}
+.sr-all{display:block;text-align:center;padding:10px;font-size:13px;font-weight:700;color:#15803d;text-decoration:none;border-top:1px solid #edf2ef;margin-top:4px;}
+.sr-none{margin:0;padding:12px;font-size:13.5px;color:#5b6b63;}
+
 /* ===== v11: emergency strip, blood bank, admission/exam ===== */
 .blood-card{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:26px 14px;}
 .blood-badge{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:18px;color:#fff;box-shadow:0 6px 14px -6px rgba(15,23,42,.3);}
@@ -1203,12 +1215,11 @@ function runSearch(){
   const input = document.getElementById('heroSearch');
   if(!input) return;
   const q = input.value.trim();
-  if(q) window.location.href = '/search?q=' + encodeURIComponent(q);
+  if(q) window.location.href = '/search/?q=' + encodeURIComponent(q);
 }
 const heroSearch = document.getElementById('heroSearch');
 const searchSubmit = document.querySelector('.search-submit');
-if(searchSubmit) searchSubmit.addEventListener('click', runSearch);
-if(heroSearch) heroSearch.addEventListener('keydown', e => { if(e.key==='Enter') runSearch(); });
+
 
 /* ============================================================ ICON LIBRARY ============================================================ */
 const ICONS = {
@@ -1960,5 +1971,6 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   box.innerHTML=G.map(function(x){return '<a class="bp-g" href="/blood/'+x[1]+'/" aria-label="রক্তের গ্রুপ '+x[0]+'">'+x[0]+'</a>';}).join('');
 })();
 </script>
+<script src="/search.js" defer></script>
 </body>
 </html>
