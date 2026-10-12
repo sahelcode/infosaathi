@@ -1,0 +1,32 @@
+---
+// Dropdown filters for a doctor list on the same page (client side). Items are .pf-mini[data-city][data-sp].
+import '../styles/filter.css';
+interface Field { key: 'city' | 'sp'; label: string; all: string; options: { v: string; l: string }[] }
+interface Props { fields: Field[] }
+const { fields } = Astro.props;
+---
+<form class:list={['bo-filter', fields.length === 1 && 'one']} id="lfForm" onsubmit="return false">
+  {fields.map((f) => (
+    <label class="bo-sel"><span>{f.label}</span>
+      <select data-key={f.key} aria-label={f.label}><option value="">{f.all}</option>{f.options.map((o) => <option value={o.v}>{o.l}</option>)}</select></label>
+  ))}
+</form>
+<p class="bo-empty" id="lfNone" hidden>এই বাছাইয়ে এখনও কোনো যাচাই করা ডাক্তার যোগ হয়নি, ইনশাআল্লাহ শীঘ্রই আসছে।</p>
+<script>
+  import '../scripts/dropdown.js';
+  const form = document.getElementById('lfForm');
+  if (form) {
+    const sels = [...form.querySelectorAll('select')] as HTMLSelectElement[];
+    const none = document.getElementById('lfNone')!;
+    const apply = () => {
+      const items = [...document.querySelectorAll<HTMLElement>('.pf-minis .pf-mini')];
+      let shown = 0;
+      items.forEach((it) => {
+        const ok = sels.every((s) => !s.value || it.dataset[s.dataset.key!] === s.value);
+        it.hidden = !ok; if (ok) shown++;
+      });
+      none.hidden = shown > 0;
+    };
+    sels.forEach((s) => s.addEventListener('change', apply));
+  }
+</script>

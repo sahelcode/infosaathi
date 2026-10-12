@@ -17,6 +17,7 @@ const jsonld = {
     <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, u]) => (<><a href={u}>{n}</a><span>›</span></>))}<a href={path}>{h1}</a></nav>
     <h1 class="pf-list-h">{h1}</h1>
     <p class="pf-list-intro">{intro}</p>
+    <slot name="filter" />
     {chips.length > 0 && <nav class="pf-list-chips">{chips.map((c) => <a href={c.href}>{c.label}{c.n && <span>{c.n}</span>}</a>)}</nav>}
     <div class="pf-minis">
       <slot />
