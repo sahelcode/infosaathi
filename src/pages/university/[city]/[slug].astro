@@ -45,11 +45,13 @@ for (const r of await getRankings()) {
   const row = r.data.rows.find((x) => x.university?.id === uni.id);
   if (row) { qsRank = `${row.rank} (QS ${bn(r.data.year)})`; break; }
 }
+// "... · গত বছর" is shown as a small tag next to the value
+const split = (v: string) => { const m = v.match(/^(.*?)\s*(?:\(গত বছর\)|·\s*গত বছর)\s*$/); return m ? { t: m[1], n: 'গত বছর' } : { t: v, n: '' }; };
 const glance: { k: string; v?: string }[] = [
   { k: 'আবেদন শুরু', v: Q.open ?? (A?.open ? bnDate(A.open) : undefined) },
   { k: 'আবেদনের শেষ তারিখ', v: Q.close ?? (A?.close ? bnDate(A.close) : undefined) },
   { k: 'ভর্তি পরীক্ষা', v: Q.exam },
-  { k: 'ন্যূনতম জিপিএ', v: Q.elig },
+  { k: 'ন্যূনতম জিপিএ (মোট)', v: Q.elig },
   { k: 'আবেদন ফি', v: Q.app_fee ?? (A?.app_fee ? taka(A.app_fee) : undefined) },
   { k: 'ভর্তি ফি', v: Q.admission_fee },
   { k: 'আসন সংখ্যা', v: Q.seats },
@@ -120,7 +122,7 @@ const jsonld = {
 };
 ---
 <Base title={title} description={description} path={path} ogImage={photo?.src} jsonld={jsonld} draft={u.draft}>
-  <main class="pf">
+  <main class="pf un-page">
     <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{u.name}</a></nav>
     <div class="pf-grid">
       <article class="pf-main">
@@ -149,9 +151,15 @@ const jsonld = {
           <nav class="hp-jump" aria-label="এই পেজে">{jump.map(([a, t]) => <a href={`#${a}`}>{t}</a>)}</nav>
         </section>
 
-        <div class="un-glance">
-          {glance.map((g) => <div class:list={['un-g', { na: !g.v }]}><small>{g.k}</small><b>{g.v ?? NA}</b></div>)}
-        </div>
+        <section class="un-fact" aria-labelledby="h-fact">
+          <h2 id="h-fact">এক নজরে</h2>
+          <dl>
+            {glance.map((g) => {
+              const s = g.v ? split(g.v) : undefined;
+              return <div class:list={['un-row', { na: !g.v }]}><dt>{g.k}</dt><dd>{s ? <>{s.t}{s.n && <em>{s.n}</em>}</> : NA}</dd></div>;
+            })}
+          </dl>
+        </section>
 
         {A && (
           <section class="pf-card" id="admission" aria-labelledby="h-adm">
@@ -239,8 +247,14 @@ const jsonld = {
 
         <Report placeholder="যেমন: আবেদনের শেষ তারিখ বদলেছে" note="ভর্তির নিয়ম ও ফি সময়ের সাথে বদলায়। চূড়ান্ত সিদ্ধান্তের আগে বিশ্ববিদ্যালয়ের ভর্তি অফিসে নিশ্চিত হয়ে নিন।">
           {u.sources.length > 0 && (
-            <div class="un-src"><b class="pf-h3" style="display:block;margin:4px 0 0">তথ্যসূত্র</b>
-              <ul>{u.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>
+            <div class="un-src">
+              <p class="un-src-main"><span>তথ্যসূত্র</span><a href={u.sources[0].url} target="_blank" rel="noopener nofollow">{u.sources[0].title}<Icon name="ext" size={13} /></a></p>
+              {u.sources.length > 1 && (
+                <details class="un-src-more"><summary>আরও সূত্র ({bn(u.sources.length - 1)})</summary>
+                  <ul>{u.sources.slice(1).map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={12} /></a></li>)}</ul>
+                </details>
+              )}
+            </div>
           )}
         </Report>
 
@@ -280,7 +294,7 @@ const jsonld = {
     </div>
   </main>
 
-  <div class="pf-sheet" data-sheet="numbers" hidden>
+  <div class="pf-sheet un-page" data-sheet="numbers" hidden>
     <div class="pf-sheet-bg" data-sheet-close></div>
     <div class="pf-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-h">
       <div class="pf-sheet-grip"></div>

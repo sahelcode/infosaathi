@@ -9,17 +9,20 @@
 .pf-today.soon{background:#fef3c7;color:#92400e;}
 
 /* at a glance: the four answers people search first */
-.un-glance{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px;}
-.un-g{display:flex;flex-direction:column;gap:1px;padding:8px 11px;border-radius:12px;background:#fff;border:1px solid var(--line);min-width:0;}
-.un-g small{font-size:11.5px;color:var(--muted);line-height:1.3;}
-.un-g b{font-size:13.5px;font-weight:700;line-height:1.35;color:var(--ink);}
-.un-g.na b{font-size:12px;font-weight:500;color:#94a3b8;}
+.un-fact{margin-top:12px;padding:4px 16px 6px;background:#fff;border:1px solid #e4ece7;border-radius:18px;box-shadow:0 1px 2px rgba(15,42,28,.04),0 14px 30px -22px rgba(15,42,28,.28);}
+.un-fact h2{margin:12px 0 2px;font-size:11.5px;font-weight:700;letter-spacing:.06em;color:#2f8f5b;}
+.un-row{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:9px 0;border-top:1px solid #eef3ef;}
+.un-fact h2 + dl .un-row:first-child{border-top:0;}
+.un-row dt{flex:0 0 auto;font-size:12.5px;color:#6b7a72;}
+.un-row dd{min-width:0;text-align:right;font-size:13.5px;font-weight:700;line-height:1.4;color:#0f2a1c;}
+.un-row dd em{font-style:normal;font-weight:500;font-size:10.5px;color:#6f8179;background:#f0f5f2;border-radius:999px;padding:1px 7px;margin-left:6px;white-space:nowrap;vertical-align:1px;}
+.un-row.na dd{font-weight:500;font-size:12px;color:#a3afa8;}
 .un-badges{gap:6px;margin-top:10px;flex-wrap:nowrap;}
 .un-badges .pf-badge{font-size:11.5px;padding:3px 9px;white-space:nowrap;}
 .un-checked{display:flex;align-items:center;justify-content:center;gap:5px;margin:8px 0 0;font-size:11.5px;color:#64748b;}
 .un-checked svg{flex:0 0 auto;}
 @media (max-width:359px){.un-badges{flex-wrap:wrap;}}
-@media (min-width:768px){.un-glance{grid-template-columns:repeat(4,1fr);gap:8px;}.un-badges{justify-content:flex-start;}.un-checked{justify-content:flex-start;}}
+@media (min-width:768px){.un-fact dl{display:grid;grid-template-columns:1fr 1fr;column-gap:36px;}.un-fact h2 + dl .un-row:nth-child(2){border-top:0;}.un-badges{justify-content:flex-start;}.un-checked{justify-content:flex-start;}}
 
 /* admission */
 .un-adm{margin-top:8px;}
@@ -109,3 +112,16 @@
 .un-docs{flex-direction:row;flex-wrap:wrap;gap:6px;}
 .un-docs li{align-items:center;gap:5px;padding:5px 11px;border-radius:999px;background:#f1f7f3;font-size:12.5px;line-height:1.4;}
 .un-docs svg{margin-top:0;}
+
+/* softer call button on university pages */
+.un-page .pf-call{background:#eaf6ef;color:#1d7a4d;box-shadow:none;border:1px solid #cfe8d9;}
+.un-page .pf-call:hover{background:#dcf0e5;}
+/* single source line */
+.un-src{margin-top:4px;}
+.un-src-main{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0;font-size:12.5px;color:#6b7a72;}
+.un-src-main span{font-weight:700;color:#0f2a1c;}
+.un-src-main a,.un-src-more a{color:#1d7a4d;text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.un-src-more{margin-top:6px;font-size:12px;color:#6b7a72;}
+.un-src-more summary{cursor:pointer;list-style:none;color:#6b7a72;}
+.un-src-more summary::-webkit-details-marker{display:none;}
+.un-src-more ul{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:6px;}
