@@ -47,19 +47,19 @@ for (const r of await getRankings()) {
 }
 // "... · গত বছর" is shown as a small tag next to the value
 const split = (v: string) => { const m = v.match(/^(.*?)\s*(?:\(গত বছর\)|·\s*গত বছর)\s*$/); return m ? { t: m[1], n: 'গত বছর' } : { t: v, n: '' }; };
-const glance: { k: string; v?: string }[] = [
-  { k: 'আবেদন শুরু', v: Q.open ?? (A?.open ? bnDate(A.open) : undefined) },
-  { k: 'আবেদনের শেষ তারিখ', v: Q.close ?? (A?.close ? bnDate(A.close) : undefined) },
-  { k: 'ভর্তি পরীক্ষা', v: Q.exam },
-  { k: 'ন্যূনতম জিপিএ (মোট)', v: Q.elig },
-  { k: 'আবেদন ফি', v: Q.app_fee ?? (A?.app_fee ? taka(A.app_fee) : undefined) },
-  { k: 'ভর্তি ফি', v: Q.admission_fee },
-  { k: 'আসন সংখ্যা', v: Q.seats },
-  { k: 'প্রতিযোগিতা', v: Q.competition },
-  { k: 'মোট খরচ', v: Q.cost ?? (cheapest ? `${taka(cheapest)} থেকে` : undefined) },
-  { k: 'র‍্যাংকিং', v: Q.rank ?? qsRank },
-  { k: 'ক্লাস শুরু', v: Q.classes ?? A?.classes_start },
-  { k: 'বিষয় / প্রোগ্রাম', v: progs.length ? `${bn(progs.length)}টি` : undefined },
+const glance: { id: string; k: string; v?: string }[] = [
+  { id: 'open', k: 'আবেদন শুরু', v: Q.open ?? (A?.open ? bnDate(A.open) : undefined) },
+  { id: 'close', k: 'আবেদনের শেষ তারিখ', v: Q.close ?? (A?.close ? bnDate(A.close) : undefined) },
+  { id: 'exam', k: 'ভর্তি পরীক্ষা', v: Q.exam },
+  { id: 'elig', k: 'ন্যূনতম জিপিএ (মোট)', v: Q.elig },
+  { id: 'app_fee', k: 'আবেদন ফি', v: Q.app_fee ?? (A?.app_fee ? taka(A.app_fee) : undefined) },
+  { id: 'admission_fee', k: 'ভর্তি ফি', v: Q.admission_fee },
+  { id: 'seats', k: 'আসন সংখ্যা', v: Q.seats },
+  { id: 'competition', k: 'প্রতিযোগিতা', v: Q.competition },
+  { id: 'cost', k: 'মোট খরচ', v: Q.cost ?? (cheapest ? `${taka(cheapest)} থেকে` : undefined) },
+  { id: 'rank', k: 'র‍্যাংকিং', v: Q.rank ?? qsRank },
+  { id: 'classes', k: 'ক্লাস শুরু', v: Q.classes ?? A?.classes_start },
+  { id: 'programs', k: 'বিষয় / প্রোগ্রাম', v: progs.length ? `${bn(progs.length)}টি` : undefined },
 ];
 
 const jump = [
@@ -177,7 +177,7 @@ const jsonld = {
               <ol class="un-steps">{A.steps.map((s, i) => <li><span class="un-step-n">{bn(i + 1)}</span><span><b>{s.title}</b><small>{s.text}</small></span></li>)}</ol></>)}
             {A.documents.length > 0 && (<><h3 class="pf-h3">যে কাগজপত্র লাগবে</h3>
               <ul class="un-docs">{A.documents.map((d) => <li><Icon name="check" size={15} w={2.6} />{d}</li>)}</ul></>)}
-            <a class="pf-btn primary un-apply" href={applyUrl} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />{applyLabel}</a>
+            {applyOpen && <a class="pf-btn primary un-apply" href={applyUrl} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />{applyLabel}</a>}
           </section>
         )}
 
@@ -192,13 +192,16 @@ const jsonld = {
               </div>
             )}
             <ul class="un-progs">
-              {progs.map((p) => (
-                <li class="un-prog" data-fac={`f${faculties.indexOf(p.faculty)}`} data-q={(p.name + ' ' + p.name_en).toLowerCase()}>
-                  <span class="un-prog-t"><b>{p.name}</b><small>{faculties.length > 1 ? p.name_en : `${p.name_en} · ${p.faculty}`}</small>
-                    {(p.years || p.credits) && <span class="un-prog-m">{p.years && <span>{bn(p.years)} বছর</span>}{p.credits && <span>{bn(p.credits)} ক্রেডিট</span>}</span>}</span>
-                  {p.total_cost && <span class="un-prog-c"><small>মোট খরচ</small><strong>{taka(p.total_cost)}</strong></span>}
-                </li>
-              ))}
+              {progs.map((p) => {
+                const code = p.name_en.match(/\(([A-Za-z]{2,6})\)\s*$/)?.[1];
+                return (
+                  <li class="un-prog" data-fac={`f${faculties.indexOf(p.faculty)}`} data-q={(p.name + ' ' + p.name_en).toLowerCase()}>
+                    <span class="un-prog-t"><b>{p.name}</b>
+                      {(p.years || p.credits) && <span class="un-prog-m">{p.years && <span>{bn(p.years)} বছর</span>}{p.credits && <span>{bn(p.credits)} ক্রেডিট</span>}</span>}</span>
+                    {p.total_cost ? <span class="un-prog-c"><small>মোট খরচ</small><strong>{taka(p.total_cost)}</strong></span> : code ? <span class="un-code">{code}</span> : null}
+                  </li>
+                );
+              })}
             </ul>
             <p class="hp-empty" data-prog-empty hidden>এই নামে কোনো বিষয় পাওয়া যায়নি</p>
             {u.cost_note && <p class="pf-note">{u.cost_note}</p>}
@@ -224,6 +227,13 @@ const jsonld = {
               {u.think.length > 0 && <div class="un-pc-b think"><b><Icon name="minus" size={16} w={2.6} />যা জেনে নেবেন</b><ul>{u.think.map((t) => <li>{t}</li>)}</ul></div>}
             </div>
           )}
+        </section>
+
+        <section class="pf-card" id="details" aria-labelledby="h-det">
+          <h2 id="h-det">তথ্য বিস্তারিত</h2>
+          <dl class="un-det">
+            {glance.map((g) => <div><dt>{g.k}</dt><dd>{u.detail?.[g.id] ?? `${short}-এর ${g.k} নিয়ে আমরা সঠিক তথ্য পাইনি।`}</dd></div>)}
+          </dl>
         </section>
 
         <section class="pf-card" id="contact" aria-labelledby="h-contact">

@@ -178,6 +178,7 @@ const universities = defineCollection({
         cost_note: z.string().optional(),
         waivers: z.array(z.object({ condition: z.string(), amount: z.string() })).default([]),
         // short text for the quick-facts grid; anything missing shows "আমরা সঠিক তথ্য পাইনি"
+        detail: z.record(z.string(), z.string()).optional(), // one short sentence (70-80 characters) per quick-fact key
         quick: z
           .object({ open: z.string(), close: z.string(), exam: z.string(), elig: z.string(), app_fee: z.string(), admission_fee: z.string(), seats: z.string(), competition: z.string(), cost: z.string(), rank: z.string(), classes: z.string() })
           .partial()
