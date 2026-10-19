@@ -177,6 +177,11 @@ const universities = defineCollection({
           .default([]),
         cost_note: z.string().optional(),
         waivers: z.array(z.object({ condition: z.string(), amount: z.string() })).default([]),
+        // short text for the quick-facts grid; anything missing shows "সঠিক তথ্য পাওয়া যায়নি"
+        quick: z
+          .object({ close: z.string(), app_fee: z.string(), admission_fee: z.string(), exam: z.string(), seats: z.string(), cost: z.string(), rank: z.string() })
+          .partial()
+          .optional(),
         about: z.string().optional(),
         good: z.array(z.string()).default([]),
         think: z.array(z.string()).default([]),

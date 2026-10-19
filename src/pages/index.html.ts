@@ -55,15 +55,17 @@ export const GET: APIRoute = async () => {
 
   // Bangladesh first: public universities, then private, newest checks first within each
   const unis = (await getUniversities()).sort((a, b) => (a.data.type === b.data.type ? 0 : a.data.type === 'সরকারি' ? -1 : 1));
-  const uniRows = unis.slice(0, 8).map((u, i) => ({
+  const uniRows = await Promise.all(unis.slice(0, 8).map(async (u, i) => ({
     name: u.data.name,
+    img: u.data.photo ? (await getImage({ src: u.data.photo, width: 640, format: 'webp' })).src : '',
+    logo: u.data.logo ? (await getImage({ src: u.data.logo, width: 140, format: 'webp' })).src : '',
     sub: `${CITIES[u.data.city].bn}, বাংলাদেশ`,
     tags: [u.data.type, `${u.data.type} বিশ্ববিদ্যালয়`],
     t: i % 5,
     est: u.data.est,
     mono: (u.data.short ?? u.data.name.split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]).join('')).slice(0, 4),
     url: universityUrl(u),
-  }));
+  })));
 
   // colleges and schools: government first
   const inst = (await getInstitutions()).sort((a, b) => (a.data.type === b.data.type ? 0 : a.data.type === 'সরকারি' ? -1 : 1));
@@ -207,7 +209,9 @@ export const GET: APIRoute = async () => {
 \`).join('');`, `<span class="uni-est">Est. \${u.est}</span></div></div>
   </a>
 \`).join('');`);
-  html = swap(html, "<div class=\"org-logo \${tint(u.t)}\">\${u.name.split(' ').map(w=>w[0]).slice(0,2).join('')}</div>", "<div class=\"org-logo \${tint(u.t)}\">\${u.mono}</div>");
+  html = swap(html, "<div class=\"org-logo \${tint(u.t)}\">\${u.name.split(' ').map(w=>w[0]).slice(0,2).join('')}</div>", "<div class=\"org-logo \${u.logo?'has-img':tint(u.t)}\">\${u.logo?`<img src=\"\${u.logo}\" alt=\"\" loading=\"lazy\">`:u.mono}</div>");
+  html = swap(html, '<div class="org-image">${uniBuilding(u.t)}</div>', '<div class="org-image">${u.img?`<img src="${u.img}" alt="" loading="lazy">`:uniBuilding(u.t)}</div>');
+  html = swap(html, '.uni-card .org-image svg{display:block;width:100%;height:100%;}', '.uni-card .org-image svg,.uni-card .org-image img{display:block;width:100%;height:100%;}\n.uni-card .org-image img{object-fit:cover;}\n.uni-card .org-logo.has-img{background:#fff;overflow:hidden;}\n.uni-card .org-logo.has-img img{display:block;width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;}');
   html = swap(html, '<span class="eyebrow">Universities</span><a href="#" class="see-all">', '<span class="eyebrow">Universities</span><a href="/universities/" class="see-all">');
   html = swapArray(html, 'hospitalNames', hospRows);
   // cards become links to the real pages
