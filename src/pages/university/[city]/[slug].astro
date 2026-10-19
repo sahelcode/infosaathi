@@ -38,7 +38,7 @@ const map = `https://maps.google.com/?q=${encodeURIComponent(u.name + ', ' + cit
 const checkedBadge = u.verified_by === 'phone' ? `ফোনে যাচাই: ${bnDate(u.verified)}` : `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(u.verified)}`;
 
 // quick facts: every question gets an answer, or an honest "not found"
-const NA = 'সঠিক তথ্য পাওয়া যায়নি';
+const NA = 'আমরা সঠিক তথ্য পাইনি';
 const Q = u.quick ?? {};
 let qsRank: string | undefined;
 for (const r of await getRankings()) {
@@ -46,14 +46,18 @@ for (const r of await getRankings()) {
   if (row) { qsRank = `${row.rank} (QS ${bn(r.data.year)})`; break; }
 }
 const glance: { k: string; v?: string }[] = [
+  { k: 'আবেদন শুরু', v: Q.open ?? (A?.open ? bnDate(A.open) : undefined) },
   { k: 'আবেদনের শেষ তারিখ', v: Q.close ?? (A?.close ? bnDate(A.close) : undefined) },
+  { k: 'ভর্তি পরীক্ষা', v: Q.exam },
+  { k: 'ন্যূনতম জিপিএ', v: Q.elig },
   { k: 'আবেদন ফি', v: Q.app_fee ?? (A?.app_fee ? taka(A.app_fee) : undefined) },
   { k: 'ভর্তি ফি', v: Q.admission_fee },
-  { k: 'ভর্তি পরীক্ষা', v: Q.exam },
   { k: 'আসন সংখ্যা', v: Q.seats },
+  { k: 'প্রতিযোগিতা', v: Q.competition },
   { k: 'মোট খরচ', v: Q.cost ?? (cheapest ? `${taka(cheapest)} থেকে` : undefined) },
   { k: 'র‍্যাংকিং', v: Q.rank ?? qsRank },
-  { k: 'বিষয়', v: progs.length ? `${bn(progs.length)}টি` : undefined },
+  { k: 'ক্লাস শুরু', v: Q.classes ?? A?.classes_start },
+  { k: 'বিষয় / প্রোগ্রাম', v: progs.length ? `${bn(progs.length)}টি` : undefined },
 ];
 
 const jump = [
@@ -154,14 +158,12 @@ const jsonld = {
             <div class="pf-card-head"><h2 id="h-adm">ভর্তি · {A.intake}</h2>{A.close && <span class="pf-today" data-adm-status hidden></span>}</div>
             <div class="un-adm" data-open={A.open && A.close ? isoDay(A.open) : undefined} data-close={A.close ? isoDay(A.close) : undefined}>
               {A.close && <div class="un-adm-bar"><span data-adm-left></span><span class="un-adm-track"><i data-adm-fill></i></span></div>}
-              <dl class="un-adm-list">
-                {A.open && <div><dt>আবেদন শুরু</dt><dd>{bnDate(A.open)}</dd></div>}
-                {A.close && <div><dt>আবেদনের শেষ তারিখ</dt><dd>{bnDate(A.close)}</dd></div>}
-                <div><dt>ন্যূনতম যোগ্যতা</dt><dd>{A.requirement}</dd></div>
-                {A.exam && <div><dt>ভর্তি পরীক্ষা</dt><dd>{A.exam}</dd></div>}
-                {A.app_fee && <div><dt>আবেদন ফি</dt><dd>{taka(A.app_fee)}</dd></div>}
-                {A.classes_start && <div><dt>ক্লাস শুরু</dt><dd>{A.classes_start}</dd></div>}
-              </dl>
+              <details class="un-more"><summary>যোগ্যতা ও পরীক্ষার বিস্তারিত</summary>
+                <dl class="un-adm-list">
+                  <div><dt>ন্যূনতম যোগ্যতা</dt><dd>{A.requirement}</dd></div>
+                  {A.exam && <div><dt>ভর্তি পরীক্ষা</dt><dd>{A.exam}</dd></div>}
+                </dl>
+              </details>
             </div>
             {A.steps.length > 0 && (<><h3 class="pf-h3">ভর্তির ধাপ</h3>
               <ol class="un-steps">{A.steps.map((s, i) => <li><span class="un-step-n">{bn(i + 1)}</span><span><b>{s.title}</b><small>{s.text}</small></span></li>)}</ol></>)}
@@ -184,7 +186,7 @@ const jsonld = {
             <ul class="un-progs">
               {progs.map((p) => (
                 <li class="un-prog" data-fac={`f${faculties.indexOf(p.faculty)}`} data-q={(p.name + ' ' + p.name_en).toLowerCase()}>
-                  <span class="un-prog-t"><b>{p.name}</b><small>{p.name_en} · {p.faculty}</small>
+                  <span class="un-prog-t"><b>{p.name}</b><small>{faculties.length > 1 ? p.name_en : `${p.name_en} · ${p.faculty}`}</small>
                     {(p.years || p.credits) && <span class="un-prog-m">{p.years && <span>{bn(p.years)} বছর</span>}{p.credits && <span>{bn(p.credits)} ক্রেডিট</span>}</span>}</span>
                   {p.total_cost && <span class="un-prog-c"><small>মোট খরচ</small><strong>{taka(p.total_cost)}</strong></span>}
                 </li>
