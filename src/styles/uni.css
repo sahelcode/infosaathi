@@ -159,5 +159,5 @@
 .un-maplink:hover{text-decoration:underline;}
 
 /* call / website / share row sits under the About section */
-.un-actions-row{padding:0;margin:-4px 0 0;}
+.un-actions-row{padding:0;margin:14px 0 0;}
 @media (min-width:1024px){.un-actions-row{padding:0;}}
