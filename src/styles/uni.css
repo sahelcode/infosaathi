@@ -157,3 +157,7 @@
 
 .un-maplink{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12.5px;font-weight:500;color:#1d7a4d;text-decoration:none;}
 .un-maplink:hover{text-decoration:underline;}
+
+/* call / website / share row sits under the About section */
+.un-actions-row{padding:0;margin:-4px 0 0;}
+@media (min-width:1024px){.un-actions-row{padding:0;}}

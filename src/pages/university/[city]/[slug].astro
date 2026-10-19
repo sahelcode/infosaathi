@@ -136,11 +136,6 @@ const jsonld = {
             </div>
             <p class="un-checked"><Icon name="clock" size={12} w={2.2} />{checkedBadge}</p>
           </div>
-          <div class="pf-actions hp-actions un-actions">
-            <button class="pf-btn" type="button" data-sheet-open="numbers"><Icon name="phone" />কল</button>
-            <a class="pf-btn" href={u.web} target="_blank" rel="noopener" aria-label="অফিসিয়াল ওয়েবসাইট"><Icon name="globe" /></a>
-            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
-          </div>
         </section>
 
         <section class="un-fact" aria-labelledby="h-fact">
@@ -148,7 +143,7 @@ const jsonld = {
           <dl>
             {glance.map((g) => {
               const s = g.v ? split(g.v) : undefined;
-              return <div class:list={['un-row', { na: !g.v }]}><dt>{g.k}</dt><dd>{s ? <>{s.t}{s.n && <em>{s.n}</em>}</> : NA}</dd></div>;
+              return <div class:list={['un-row', { na: !g.v }]}><dt>{g.k}</dt><dd>{s ? s.t : NA}</dd></div>;
             })}
           </dl>
         </section>
@@ -219,6 +214,12 @@ const jsonld = {
             </div>
           )}
         </section>
+
+        <div class="pf-actions hp-actions un-actions un-actions-row">
+          <button class="pf-btn" type="button" data-sheet-open="numbers"><Icon name="phone" />কল</button>
+          <a class="pf-btn" href={u.web} target="_blank" rel="noopener" aria-label="অফিসিয়াল ওয়েবসাইট"><Icon name="globe" /></a>
+          <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+        </div>
 
         <section class="pf-card" id="details" aria-labelledby="h-det">
           <h2 id="h-det">তথ্য বিস্তারিত</h2>
