@@ -27,6 +27,7 @@
     const term=(q&&q.value||'').trim().toLowerCase(); let shown=0, first=true;
     rows.forEach(r=>{ const ok=(fac==='all'||r.dataset.fac===fac)&&(!term||r.dataset.q.indexOf(term)>-1);
       r.hidden=!ok; r.classList.toggle('is-first',ok&&first); if(ok){ shown++; first=false; } });
+    $$('.un-grp').forEach(g=>{ g.hidden=!rows.some(r=>!r.hidden&&r.dataset.fac===g.dataset.grp); });
     if(empty) empty.hidden=shown>0; if(list) list.hidden=shown===0;
   };
   chips.forEach(c=>c.addEventListener('click',()=>{ chips.forEach(x=>x.classList.toggle('on',x===c)); fac=c.dataset.pfac; run(); }));

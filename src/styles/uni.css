@@ -145,3 +145,12 @@
 .un-det div:first-child{border-top:0;}
 .un-det dt{font-size:12px;font-weight:700;color:#2f8f5b;}
 .un-det dd{margin-top:2px;font-size:13px;line-height:1.55;color:#4b5b53;}
+
+/* documents: plain list, no pills */
+.un-docs{gap:8px 18px;}
+.un-docs li{padding:0;border-radius:0;background:none;font-size:13.5px;color:var(--ink-2);}
+/* programme group label (replaces the unit buttons) */
+.un-grp{padding:10px 14px 6px;border-top:1px solid #eef3f0;background:#fff;font-size:11.5px;font-weight:700;letter-spacing:.02em;color:#2f8f5b;}
+.un-grp:first-child{border-top:0;}
+.un-prog-m{margin-top:2px;}
+.un-prog-m span{padding:0;background:none;font-size:11.5px;color:#7a8a82;}

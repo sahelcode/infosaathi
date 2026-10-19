@@ -185,22 +185,18 @@ const jsonld = {
           <section class="pf-card" id="programs" aria-labelledby="h-prog">
             <div class="pf-card-head"><h2 id="h-prog">{cheapest ? 'বিষয় ও মোট খরচ' : 'বিষয় ও প্রোগ্রাম'}</h2><span class="pf-count">{bn(progs.length)}টি প্রোগ্রাম</span></div>
             {progs.length > 6 && <label class="hp-search"><Icon name="search" w={2.2} /><input type="search" placeholder="বিষয় খুঁজুন, যেমন CSE বা BBA" data-prog-q enterkeyhint="search" /></label>}
-            {faculties.length > 1 && (
-              <div class="hp-chips">
-                <button class="hp-chip on" type="button" data-pfac="all">সব</button>
-                {faculties.map((f, i) => <button class="hp-chip" type="button" data-pfac={`f${i}`}>{f}</button>)}
-              </div>
-            )}
             <ul class="un-progs">
-              {progs.map((p) => {
+              {progs.map((p, i) => {
+                const newGrp = faculties.length > 1 && (i === 0 || progs[i - 1].faculty !== p.faculty);
                 const code = p.name_en.match(/\(([A-Za-z]{2,6})\)\s*$/)?.[1];
-                return (
+                return (<>
+                  {newGrp && <li class="un-grp" data-grp={`f${faculties.indexOf(p.faculty)}`}>{p.faculty}</li>}
                   <li class="un-prog" data-fac={`f${faculties.indexOf(p.faculty)}`} data-q={(p.name + ' ' + p.name_en).toLowerCase()}>
                     <span class="un-prog-t"><b>{p.name}</b>
                       {(p.years || p.credits) && <span class="un-prog-m">{p.years && <span>{bn(p.years)} বছর</span>}{p.credits && <span>{bn(p.credits)} ক্রেডিট</span>}</span>}</span>
                     {p.total_cost ? <span class="un-prog-c"><small>মোট খরচ</small><strong>{taka(p.total_cost)}</strong></span> : code ? <span class="un-code">{code}</span> : null}
                   </li>
-                );
+                </>);
               })}
             </ul>
             <p class="hp-empty" data-prog-empty hidden>এই নামে কোনো বিষয় পাওয়া যায়নি</p>
