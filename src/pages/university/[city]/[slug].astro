@@ -28,6 +28,8 @@ const short = u.short ?? u.name;
 const mono = (u.short ?? u.name.split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]).join('')).slice(0, 4);
 const A = u.admission;
 const applyUrl = u.apply_url ?? u.web;
+const applyOpen = !!(A?.open || A?.close); // only say 'online application' while a window is announced
+const applyLabel = u.apply_url ? (applyOpen ? 'অনলাইনে আবেদন' : 'অফিসিয়াল ভর্তি পোর্টাল') : 'অফিসিয়াল ওয়েবসাইট';
 const progs = u.programs;
 const faculties = [...new Set(progs.map((p) => p.faculty))];
 const costs = progs.map((p) => p.total_cost).filter((x): x is number => !!x);
@@ -126,7 +128,6 @@ const jsonld = {
             </div>
           </div>
           <div class="pf-actions hp-actions un-actions">
-            <a class="pf-btn primary" href={applyUrl} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />{u.apply_url ? 'অনলাইনে আবেদন' : 'অফিসিয়াল ওয়েবসাইট'}</a>
             <button class="pf-btn" type="button" data-sheet-open="numbers"><Icon name="phone" />কল</button>
             <a class="pf-btn" href={u.web} target="_blank" rel="noopener" aria-label="অফিসিয়াল ওয়েবসাইট"><Icon name="globe" /></a>
             <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
@@ -156,7 +157,7 @@ const jsonld = {
               <ol class="un-steps">{A.steps.map((s, i) => <li><span class="un-step-n">{bn(i + 1)}</span><span><b>{s.title}</b><small>{s.text}</small></span></li>)}</ol></>)}
             {A.documents.length > 0 && (<><h3 class="pf-h3">যে কাগজপত্র লাগবে</h3>
               <ul class="un-docs">{A.documents.map((d) => <li><Icon name="check" size={15} w={2.6} />{d}</li>)}</ul></>)}
-            <a class="pf-btn primary un-apply" href={applyUrl} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />অফিসিয়াল সাইটে দেখুন</a>
+            <a class="pf-btn primary un-apply" href={applyUrl} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />{applyLabel}</a>
           </section>
         )}
 
@@ -259,7 +260,6 @@ const jsonld = {
             <b class="pf-sum-h">{A ? `ভর্তি · ${A.intake}` : short}</b>
             {A?.close && <span class="pf-sum-l"><Icon name="cal" size={14} w={2.2} />শেষ তারিখ: {bnDate(A.close)}</span>}
             {A?.app_fee && <span class="pf-sum-l"><Icon name="file" size={14} w={2.2} />আবেদন ফি: {taka(A.app_fee)}</span>}
-            <a class="pf-btn primary" href={applyUrl} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />{u.apply_url ? 'অনলাইনে আবেদন' : 'অফিসিয়াল ওয়েবসাইট'}</a>
             <div class="pf-sheet-grp">{u.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}</div>
           </div>
           <Ad side />
@@ -268,10 +268,6 @@ const jsonld = {
     </div>
   </main>
 
-  <div class="pf-sticky un-sticky" aria-label="দ্রুত যোগাযোগ">
-    <a class="pf-btn primary" href={applyUrl} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />{u.apply_url ? 'অনলাইনে আবেদন' : 'ওয়েবসাইট'}</a>
-    <button class="pf-btn" type="button" data-sheet-open="numbers" aria-label="কল"><Icon name="phone" /></button>
-  </div>
   <div class="pf-sheet" data-sheet="numbers" hidden>
     <div class="pf-sheet-bg" data-sheet-close></div>
     <div class="pf-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-h">

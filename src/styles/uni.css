@@ -3,7 +3,9 @@
 /* phones: apply button gets its own row, call + icons below */
 .un-actions{grid-template-columns:1fr 46px 46px;}
 .un-actions .pf-btn{min-width:0;}
-.un-actions .pf-btn.primary{grid-column:1 / -1;}
+.un-actions .pf-btn:first-child{grid-column:auto;}
+.un-logo img{padding:6px;box-sizing:border-box;}
+
 .pf-today.soon{background:#fef3c7;color:#92400e;}
 
 /* at a glance: the four answers people search first */
@@ -85,10 +87,8 @@
 .un-src li a:hover{color:var(--green-d);}
 .un-src li svg{color:#94a3b8;}
 .un-rel-i{background:#ede9fe;color:#6d28d9;}
-.un-sticky{grid-template-columns:1fr 52px;}
 
 @media (min-width:768px){
-  .un-actions{grid-template-columns:auto auto 46px 46px;}
-  .un-actions .pf-btn.primary{grid-column:auto;}
+  .un-actions{grid-template-columns:auto 46px 46px;}
 }
 @media (prefers-reduced-motion:reduce){.un-adm-track i{transition:none;}}
