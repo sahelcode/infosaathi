@@ -179,7 +179,6 @@ const jsonld = {
             {progs.length > 6 && <label class="hp-search"><Icon name="search" w={2.2} /><input type="search" placeholder="বিষয় খুঁজুন, যেমন CSE বা BBA" data-prog-q enterkeyhint="search" /></label>}
             {faculties.length > 1 && (
               <div class="hp-chips">
-                <button class="hp-chip on" type="button" data-pfac="all">সব</button>
                 {faculties.map((f, i) => <button class="hp-chip" type="button" data-pfac={`f${i}`}>{f}</button>)}
               </div>
             )}
@@ -242,7 +241,7 @@ const jsonld = {
             <div><span class="pf-k">ঠিকানা</span><b>{u.address}</b></div>
             <div><span class="pf-k">ওয়েবসাইট</span><a class="un-web" href={u.web} target="_blank" rel="noopener">{u.web.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}<Icon name="ext" size={14} /></a></div>
           </div>
-          <a class="pf-btn hp-mapbtn" href={map} target="_blank" rel="noopener"><Icon name="pin" />Google Maps-এ দেখুন</a>
+          <a class="un-maplink" href={map} target="_blank" rel="noopener"><Icon name="pin" size={13} w={2.2} />Google Maps-এ দেখুন</a>
         </section>
 
         <Faq items={faq} />

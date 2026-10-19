@@ -30,6 +30,6 @@
     $$('.un-grp').forEach(g=>{ g.hidden=!rows.some(r=>!r.hidden&&r.dataset.fac===g.dataset.grp); });
     if(empty) empty.hidden=shown>0; if(list) list.hidden=shown===0;
   };
-  chips.forEach(c=>c.addEventListener('click',()=>{ chips.forEach(x=>x.classList.toggle('on',x===c)); fac=c.dataset.pfac; run(); }));
+  chips.forEach(c=>c.addEventListener('click',()=>{ const was=c.classList.contains('on'); chips.forEach(x=>x.classList.remove('on')); if(!was) c.classList.add('on'); fac=was?'all':c.dataset.pfac; run(); }));
   if(q) q.addEventListener('input',run);
 })();
