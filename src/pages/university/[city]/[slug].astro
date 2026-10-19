@@ -62,13 +62,6 @@ const glance: { id: string; k: string; v?: string }[] = [
   { id: 'programs', k: 'বিষয় / প্রোগ্রাম', v: progs.length ? `${bn(progs.length)}টি` : undefined },
 ];
 
-const jump = [
-  A && ['admission', 'ভর্তি'],
-  progs.length && ['programs', cheapest ? 'খরচ ও বিষয়' : 'বিষয়'],
-  u.waivers.length && ['waiver', 'ওয়েভার'],
-  ['about', 'পরিচিতি'],
-  ['contact', 'যোগাযোগ'],
-].filter(Boolean) as string[][];
 
 const about =
   u.about ??
@@ -148,7 +141,6 @@ const jsonld = {
             <a class="pf-btn" href={u.web} target="_blank" rel="noopener" aria-label="অফিসিয়াল ওয়েবসাইট"><Icon name="globe" /></a>
             <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
           </div>
-          <nav class="hp-jump" aria-label="এই পেজে">{jump.map(([a, t]) => <a href={`#${a}`}>{t}</a>)}</nav>
         </section>
 
         <section class="un-fact" aria-labelledby="h-fact">
@@ -185,12 +177,16 @@ const jsonld = {
           <section class="pf-card" id="programs" aria-labelledby="h-prog">
             <div class="pf-card-head"><h2 id="h-prog">{cheapest ? 'বিষয় ও মোট খরচ' : 'বিষয় ও প্রোগ্রাম'}</h2><span class="pf-count">{bn(progs.length)}টি প্রোগ্রাম</span></div>
             {progs.length > 6 && <label class="hp-search"><Icon name="search" w={2.2} /><input type="search" placeholder="বিষয় খুঁজুন, যেমন CSE বা BBA" data-prog-q enterkeyhint="search" /></label>}
+            {faculties.length > 1 && (
+              <div class="hp-chips">
+                <button class="hp-chip on" type="button" data-pfac="all">সব</button>
+                {faculties.map((f, i) => <button class="hp-chip" type="button" data-pfac={`f${i}`}>{f}</button>)}
+              </div>
+            )}
             <ul class="un-progs">
-              {progs.map((p, i) => {
-                const newGrp = faculties.length > 1 && (i === 0 || progs[i - 1].faculty !== p.faculty);
+              {progs.map((p) => {
                 const code = p.name_en.match(/\(([A-Za-z]{2,6})\)\s*$/)?.[1];
                 return (<>
-                  {newGrp && <li class="un-grp" data-grp={`f${faculties.indexOf(p.faculty)}`}>{p.faculty}</li>}
                   <li class="un-prog" data-fac={`f${faculties.indexOf(p.faculty)}`} data-q={(p.name + ' ' + p.name_en).toLowerCase()}>
                     <span class="un-prog-t"><b>{p.name}</b>
                       {(p.years || p.credits) && <span class="un-prog-m">{p.years && <span>{bn(p.years)} বছর</span>}{p.credits && <span>{bn(p.credits)} ক্রেডিট</span>}</span>}</span>
