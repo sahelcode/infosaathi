@@ -41,6 +41,12 @@ admission:                                     # চলমান বা পর�
 
 programs:                                      # বিষয় ও খরচ; total_cost = পুরো কোর্সের আনুমানিক মোট খরচ (টাকা)
   - { faculty: ইঞ্জিনিয়ারিং, name: কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিং, name_en: B.Sc. in CSE, years: 4, credits: 160, total_cost: 700000 }
+detail:                                        # প্রতি কী-তে একটি ৭০–৮০ অক্ষরের তথ্যবাক্য (SEO)। গত বছরের সংখ্যা হলে "গত বছর" লিখুন
+  exam: ভর্তি পরীক্ষার তারিখ ও পদ্ধতি এক বাক্যে।
+  seats: মোট আসন সংখ্যা এক বাক্যে।
+quick:                                         # "এক নজরে" কার্ড; না থাকলে "আমরা সঠিক তথ্য পাইনি" দেখায়
+  # keys: open, close, exam, elig, app_fee, admission_fee, seats, competition, cost, rank, classes
+  exam: ২৬–২৭ জানুয়ারি ২০২৭
 cost_note: মোট খরচ ওয়েভার ছাড়া, অফিসিয়াল টিউশন ফি তালিকা অনুযায়ী।
 
 waivers:
