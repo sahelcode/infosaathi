@@ -5,10 +5,24 @@ short: রাগীব-রাবেয়া হাসপাতাল
 type: বেসরকারি
 city: sylhet
 address: জালালাবাদ রাগীব-রাবেয়া মেডিকেল কলেজ রোড, পাঠানটুলা, সিলেট
+photo: ./images/jalalabad-ragib-rabeya-medical-college-hospital.jpg
 emergency_24h: true
-verified: 2026-10-06
+# অফিসিয়াল "Brief history" পাতায় ৮০০ বেড; হোমপেজের পুরনো বার্তায় ৭৫০ বেডের কথা আছে
+beds: 800
+verified: 2026-10-20
 verified_by: official
 
+about: সিলেটের পাঠানটুলায় ১৯৯৫ সালে প্রতিষ্ঠিত বেসরকারি মেডিকেল কলেজ হাসপাতাল। ৮০০ বেডের এই হাসপাতালে ২৪ ঘণ্টা জরুরি বিভাগ, আইসিইউ, ব্লাড ব্যাংক ও অ্যাম্বুলেন্স আছে।
+
+quick:
+  beds: ৮০০টি (১০% ফ্রি বেড)
+  icu: আইসিইউ আছে
+  emergency: ২৪ ঘণ্টা খোলা
+  ambulance: আছে, ০১৭৭৯-৯০০০১৬
+  doctors: মেডিসিন, সার্জারি, গাইনি, শিশু, কার্ডিওলজিসহ বিভিন্ন বিভাগ
+  diagnostics: রেডিওলজি ও ইমেজিং, প্যাথলজি, ব্লাড ব্যাংক
+
+# নম্বর ও লেবেল অফিসিয়াল Contact পাতা (jrrmc.edu.bd/common/contact) ও হোমপেজ থেকে
 numbers:
   - label: ২৪ ঘণ্টা জরুরি হটলাইন
     number: "01779900016"
@@ -16,15 +30,27 @@ numbers:
     kind: emergency
   - label: হিসাব শাখা
     number: "01779900062"
+    note: সোম–শনি, সকাল ৯টা – সন্ধ্যা ৭টা
     kind: other
   - label: অধ্যক্ষের অফিস
     number: "01779900870"
+    note: সোম–শনি, সকাল ৯টা – সন্ধ্যা ৭টা
     kind: other
 
-facilities: [er, icu, ot]
+facilities: [er, icu, ot, pharmacy, ambulance]
+
+faq:
+  - q: রাগীব-রাবেয়া মেডিকেল কলেজ হাসপাতালে কতটি বেড আছে?
+    a: "৮০০ বেড। এর ১০% বেড ফ্রি রোগীদের জন্য। আইসিইউ আছে।"
+  - q: রাগীব-রাবেয়া হাসপাতালে অ্যাম্বুলেন্স সেবা আছে কি?
+    a: "হ্যাঁ, অ্যাম্বুলেন্স সেবা আছে। আলাদা নম্বর নেই, ২৪ ঘণ্টা হটলাইন ০১৭৭৯-৯০০০১৬ নম্বরে ফোন করুন।"
+  - q: রাগীব-রাবেয়া হাসপাতালে কোন কোন বিভাগে ডাক্তার বসেন?
+    a: "মেডিসিন, সার্জারি, গাইনি ও প্রসূতি, শিশু, কার্ডিওলজি, নিউরোলজি, অর্থোপেডিক্স, ইউরোলজি, অনকোলজি, চক্ষু, নাক-কান-গলা, চর্ম, মানসিক রোগ ও ডেন্টাল বিভাগ আছে। সিরিয়ালের আগে ফোনে সময় জেনে নিন।"
+  - q: রাগীব-রাবেয়া হাসপাতালে ব্লাড ব্যাংক আছে কি?
+    a: "হ্যাঁ, হাসপাতালের নিজস্ব ব্লাড ব্যাংক ও ট্রান্সফিউশন মেডিসিন বিভাগ আছে।"
 
 sources:
-  - title: JRRMC — Home (official)
-    url: https://www.jrrmc.edu.bd/
-  - title: JRRMC — Contact (official)
-    url: https://www.jrrmc.edu.bd/common/contact
+  - title: JRRMC — Brief history of the Medical College Hospital (official)
+    url: https://www.jrrmc.edu.bd/common/about
+  - title: JRRMC — 24 Hours Emergency Service (official)
+    url: https://jrrmc.edu.bd/Medical/Emergency_Care

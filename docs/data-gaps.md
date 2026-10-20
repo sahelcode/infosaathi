@@ -29,3 +29,9 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | university | metropolitan-university | Spring 2027 dates (open, close, exam) | not announced yet; last semester (Autumn 2026) class start is labelled | 2026-10-20 |
 | university | north-south-university | seats, competition per seat, classes start | official admission, FAQ, deadline and tuition pages, Fall 2026 test news, search (bn/en) | 2026-10-20 |
 | university | north-south-university | Spring 2027 dates (open, close, exam) | not announced yet; last semester (Fall 2026) test date is labelled | 2026-10-20 |
+| hospital | jalalabad-ragib-rabeya-medical-college-hospital | ICU bed count, CCU/NICU/HDU units | official departments and emergency pages, 4 searches (bn/en); official site lists an ICU department without bed numbers | 2026-10-20 |
+| hospital | jalalabad-ragib-rabeya-medical-college-hospital | MRI / CT scan, dialysis | official Radiology and Nephrology department pages have no equipment list; only an old directory mentions CT/MRI, not used | 2026-10-20 |
+| hospital | jalalabad-ragib-rabeya-medical-college-hospital | separate ambulance number | official Emergency Care page lists ambulance service but no own number; hotline 01779900016 used | 2026-10-20 |
+| hospital | jalalabad-ragib-rabeya-medical-college-hospital | doctor count, visiting hours | official doctor list not readable from workspace (site blocked); no visiting hours published | 2026-10-20 |
+| hospital | jalalabad-ragib-rabeya-medical-college-hospital | test price list, cabin/ICU rates, room types | official site has no prices | 2026-10-20 |
+| hospital | jalalabad-ragib-rabeya-medical-college-hospital | bed count (confirm) | official history page says 800, homepage message says 750; 800 used | 2026-10-20 |
