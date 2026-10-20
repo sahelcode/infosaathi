@@ -63,7 +63,7 @@ Trigger: Sahel sends a university name plus images. Do ONLY this task in that se
    - `quick:` short values for the "এক নজরে" card, keys: open, close, exam, elig, app_fee, admission_fee, seats, competition, cost, rank, classes. Short (a few words each). Missing key = "আমরা সঠিক তথ্য পাইনি".
    - `detail:` one sentence per key (same keys plus `programs`), 70-80 characters, factual, written for search. Any last-year number must say "গত বছর". `competition` per seat is computed (applicants / seats) and must be labelled "আমাদের হিসাব".
    - `programs`: every programme with `faculty`, `name`, `name_en`; add `years`, `credits`, `total_cost` only when published. Do not assume 4 years.
-   - `faq`: 4-6 real questions people search (exam date, fee, seats, GPA, cost), answers consistent with `detail`.
+   - `faq`: 5-7 real questions people search, answers consistent with `detail`. Always include, with a direct answer in the first sentence: যোগাযোগ/ফোন নম্বর কত, ভর্তি ফি কত, ভর্তির যোগ্যতা (GPA), আসন সংখ্যা (if published), ঠিকানা/কোথায়. Phone numbers in the answer must equal `numbers`.
    - `about`: 2-3 factual sentences. `good`/`think`: short, honest.
 6. Sources: the first source is the official website (shown alone on the page). Add other sources (news circular, UGC, ranking page) ONLY when they are real pages you used and that help SEO or trust; otherwise keep just the official one. Every other number must be traceable to a listed source.
 7. `verified:` = today; `verified_by: official` (from official site/notices) unless Sahel confirmed by phone. Set `draft: true` only if the data is too thin to publish; say why.
