@@ -25,3 +25,5 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | hospital | ibn-sina-hospital-sylhet | MRI / CT scan | official site gallery shows an MRI but does not say which branch | 2026-10-20 |
 | hospital | ibn-sina-hospital-sylhet | doctor count, visiting hours | official consultant list not readable from workspace | 2026-10-20 |
 | hospital | ibn-sina-hospital-sylhet | test price list, cabin/ICU rates, room types | official site has no prices | 2026-10-20 |
+| university | metropolitan-university | seats, competition per seat, total programme cost and credits | official admission, fee and calendar pages, news (bn/en) | 2026-10-20 |
+| university | metropolitan-university | Spring 2027 dates (open, close, exam) | not announced yet; last semester (Autumn 2026) class start is labelled | 2026-10-20 |
