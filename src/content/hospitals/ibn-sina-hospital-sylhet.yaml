@@ -1,5 +1,4 @@
-# Real: name, address, ISO certificate (on the hospital banner), serial number.
-# Still to collect: emergency and ambulance numbers, beds, ICU, facilities, test fees, visiting hours.
+draft: false
 name: ইবনে সিনা হাসপাতাল সিলেট লিঃ
 name_en: Ibn Sina Hospital Sylhet Ltd.
 short: ইবনে সিনা হাসপাতাল
@@ -7,11 +6,48 @@ type: বেসরকারি
 city: sylhet
 address: সোবহানীঘাট পয়েন্ট, সিলেট
 map: https://maps.google.com/?q=Ibn+Sina+Hospital+Sylhet
+photo: ./images/ibn-sina-hospital-sylhet.jpg
 certification: ISO 9001:2015
-verified: 2026-09-25
+verified: 2026-10-20
+verified_by: official
 
+about: ইবনে সিনা ট্রাস্টের বেসরকারি হাসপাতাল, সিলেটের সোবহানীঘাট পয়েন্টে। ক্রিটিক্যাল কেয়ার, ডায়ালাইসিস, ফিজিওথেরাপি ও ডেন্টাল সেবা আছে।
+
+quick:
+  icu: ক্রিটিক্যাল কেয়ার ইউনিট আছে
+  emergency: জরুরি কল ০৯৬১০-০০৯৬৪০
+  doctors: মেডিসিন, কার্ডিওলজি, গাইনিসহ বিভিন্ন বিভাগ
+  diagnostics: ডায়াগনস্টিক সেবা ও ল্যাব
+
+# অফিসিয়াল সাইটে হটলাইন আর "Emergency Call" একই নম্বর (০৯৬১০০০৯৬৪০)
 numbers:
+  - label: হটলাইন ও জরুরি কল
+    number: "09610009640"
+    kind: emergency
   - label: ডাক্তারের সিরিয়াল
     number: "09610009640"
     note: সকাল ৮টা থেকে
     kind: serial
+  - label: পিএবিএক্স
+    number: "02996640010"
+    note: ০২-৯৯৬৬৪০০১০ থেকে ০১৯ পর্যন্ত লাইন
+
+facilities: [icu, dialysis, pharmacy, canteen]
+
+faq:
+  - q: ইবনে সিনা হাসপাতাল সিলেটে আইসিইউ আছে কি?
+    a: "হ্যাঁ, ক্রিটিক্যাল কেয়ার ইউনিট আছে। বেড খালি আছে কি না জানতে ০৯৬১০-০০৯৬৪০ নম্বরে ফোন করুন।"
+  - q: ইবনে সিনা হাসপাতাল সিলেটে ডায়ালাইসিস হয় কি?
+    a: "হ্যাঁ, ডায়ালাইসিস সেবা আছে। সময় জানতে ০৯৬১০-০০৯৬৪০ নম্বরে ফোন করুন।"
+  - q: ইবনে সিনা হাসপাতাল সিলেটে কোন কোন বিভাগে ডাক্তার বসেন?
+    a: "মেডিসিন, কার্ডিওলজি, গাইনি ও প্রসূতিসহ বিভিন্ন বিভাগে ডাক্তার বসেন। পুরো তালিকা হাসপাতালের ওয়েবসাইটে আছে। সিরিয়ালের আগে ফোনে সময় জেনে নিন।"
+  - q: ইবনে সিনা হাসপাতাল সিলেটে আর কী কী সেবা আছে?
+    a: "ডায়াগনস্টিক, কনসালটেশন, ফিজিওথেরাপি, ডেন্টাল, ফ্রি মেডিকেল সেবা ও ২৪ ঘণ্টা ফার্মেসি আছে।"
+  - q: ইবনে সিনা হাসপাতাল সিলেটের ইমেইল কী?
+    a: "info@ibnsinahospitalsylhet.com.bd"
+
+sources:
+  - title: Ibn Sina Hospital Sylhet Limited (official)
+    url: https://ibnsinahospitalsylhet.com.bd/
+  - title: Ibn Sina Hospital Sylhet — Our Services (official)
+    url: https://www.ibnsinahospitalsylhet.com.bd/our-services.php
