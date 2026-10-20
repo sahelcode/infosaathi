@@ -52,26 +52,18 @@ const DEFAULT_TESTS = [
   { group: 'imaging', name: 'আল্ট্রাসনোগ্রাম (পুরো পেট)', name_en: 'USG Whole Abdomen' },
   { group: 'heart', name: 'ইসিজি', name_en: 'ECG' },
 ] as { group: keyof typeof TEST_GROUPS; name: string; name_en?: string; price?: number }[];
-const DEFAULT_RATES = [
-  { group: 'cabin', name: 'জেনারেল ওয়ার্ড বেড' },
-  { group: 'cabin', name: 'নন-এসি কেবিন' },
-  { group: 'cabin', name: 'এসি কেবিন' },
-  { group: 'cabin', name: 'ভিআইপি কেবিন' },
-  ...(h.facilities.includes('icu') ? [{ group: 'icu', name: 'আইসিইউ বেড' }] : []),
-  ...(h.facilities.includes('nicu') ? [{ group: 'icu', name: 'এনআইসিইউ (নবজাতক)' }] : []),
-] as { group: 'cabin' | 'icu' | 'other'; name: string; price?: number; unit?: string; note?: string }[];
 const testRows = h.tests.length ? h.tests : DEFAULT_TESTS;
-const rateRows = h.rates.length ? h.rates : DEFAULT_RATES;
+const rateRows = h.rates; // only room types the hospital really has; no defaults
 const testsKnown = testRows.some((x) => x.price);
 const groups = Object.entries(TEST_GROUPS).filter(([k]) => testRows.some((t) => t.group === k));
 const NOT_ADDED = 'যুক্ত হয়নি';
 const NA = 'আমরা সঠিক তথ্য পাইনি';
-const RATE_GROUPS = { cabin: 'কেবিন ও বেড', icu: 'আইসিইউ ও ক্রিটিক্যাল কেয়ার', other: 'অন্যান্য' } as const;
+const RATE_GROUPS = { cabin: 'ওয়ার্ড, কেবিন ও রুম', icu: 'আইসিইউ ও ক্রিটিক্যাল কেয়ার', other: 'অন্যান্য' } as const;
 const rateGroups = (Object.keys(RATE_GROUPS) as (keyof typeof RATE_GROUPS)[]).map((k) => [k, rateRows.filter((r) => r.group === k)] as const).filter(([, rs]) => rs.length);
 const rateRange = (g: string) => { const ps = rateRows.filter((r) => r.group === g && r.price).map((r) => r.price as number); return ps.length ? (Math.min(...ps) === Math.max(...ps) ? taka(ps[0]) : `${taka(Math.min(...ps))} থেকে ${taka(Math.max(...ps))}`) : ''; };
 const q = h.quick ?? {};
 const glance = [
-  { k: 'শয্যা', v: q.beds ?? (h.beds ? `${bn(h.beds)}টি` : '') },
+  { k: 'বেড (শয্যা)', v: q.beds ?? (h.beds ? `${bn(h.beds)}টি` : '') },
   { k: 'আইসিইউ ও ক্রিটিক্যাল কেয়ার', v: q.icu ?? (h.icu_beds ? `${bn(h.icu_beds)}টি আইসিইউ বেড` : '') },
   { k: 'জরুরি বিভাগ', v: q.emergency ?? (h.emergency_24h ? '২৪ ঘণ্টা খোলা' : '') },
   { k: 'অ্যাম্বুলেন্স', v: q.ambulance ?? '' },

@@ -48,7 +48,7 @@ export const GET: APIRoute = async () => {
   const hospRows = hospitals.slice(0, 8).map((h, i) => ({
     name: h.data.name,
     sub: h.data.address,
-    tags: [h.data.beds && `${bn(h.data.beds)} শয্যা`, `${bn(doctorsAt(doctors, h.id).length)} জন ডাক্তার`, h.data.emergency_24h && '২৪/৭ জরুরি'].filter(Boolean),
+    tags: [h.data.beds && `${bn(h.data.beds)} বেড`, `${bn(doctorsAt(doctors, h.id).length)} জন ডাক্তার`, h.data.emergency_24h && '২৪/৭ জরুরি'].filter(Boolean),
     t: i,
     url: hospitalUrl(h),
   }));
