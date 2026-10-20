@@ -32,6 +32,30 @@ numbers:
 
 facilities: [er, icu, ccu, nicu, dialysis, ot, lab, pharmacy, ambulance, canteen]
 
+# PLACEHOLDER-UI-PREVIEW-START: random numbers for UI preview only, NOT real prices. Remove this block (git revert) before launch.
+tests_updated: 2026-10-01
+tests:
+  - { group: lab, name: সিবিসি (রক্তের পূর্ণাঙ্গ পরীক্ষা), name_en: CBC, price: 500 }
+  - { group: lab, name: ব্লাড সুগার (খালি পেটে), name_en: Fasting Blood Sugar, price: 120 }
+  - { group: lab, name: লিপিড প্রোফাইল, name_en: Lipid Profile, price: 1200 }
+  - { group: lab, name: থাইরয়েড (TSH), name_en: TSH, price: 900 }
+  - { group: imaging, name: বুকের এক্স-রে, name_en: X-Ray Chest P/A, price: 600 }
+  - { group: imaging, name: আল্ট্রাসনোগ্রাম (পুরো পেট), name_en: USG Whole Abdomen, price: 1600 }
+  - { group: imaging, name: সিটি স্ক্যান (মাথা), name_en: CT Scan Brain, price: 6500 }
+  - { group: imaging, name: এমআরআই (মস্তিষ্ক), name_en: MRI Brain, price: 11000 }
+  - { group: heart, name: ইসিজি, name_en: ECG, price: 400 }
+  - { group: heart, name: ইকোকার্ডিওগ্রাম, name_en: Echocardiogram, price: 2500 }
+rates_updated: 2026-10-01
+rates:
+  - { group: cabin, name: জেনারেল ওয়ার্ড বেড, price: 1000 }
+  - { group: cabin, name: নন-এসি কেবিন, price: 3000 }
+  - { group: cabin, name: এসি কেবিন, price: 5000, note: এটাচড বাথরুমসহ }
+  - { group: cabin, name: ভিআইপি স্যুট, price: 9000 }
+  - { group: icu, name: আইসিইউ বেড, price: 20000 }
+  - { group: icu, name: এইচডিইউ বেড, price: 10000 }
+  - { group: icu, name: এনআইসিইউ (নবজাতক), price: 14000 }
+# PLACEHOLDER-UI-PREVIEW-END
+
 faq:
   - q: আল হারামাইন হাসপাতালে কতটি শয্যা আছে?
     a: "অফিসিয়াল সাইট অনুযায়ী ২৫০ শয্যা। সাইটে ৫০০ শয্যায় সম্প্রসারণের পরিকল্পনার কথাও আছে। আইসিইউ, এইচডিইউ, সিসিইউ, এনআইসিইউ ও পিআইসিইউ ইউনিট আছে, তবে প্রতি ইউনিটের শয্যা সংখ্যা সাইটে দেওয়া নেই।"
