@@ -1,0 +1,28 @@
+name: "ডা. মো. তানভীর রহমান চৌধুরী"
+name_en: "Dr. Md. Tanvir Rahman Chowdhury"
+specialty: medicine
+title: "মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-md-tanvir-rahman-chowdhury.jpg
+banner: ./images/dr-md-tanvir-rahman-chowdhury-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (SOMC)", "BCS (Health)", "FCPS (Medicine)", "Advanced Training in Gastroenterology"]
+designation: "সহকারী অধ্যাপক (মেডিসিন বিভাগ), সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-51072
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/08/dr-tanvir-r-chowdhury-medicine.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪২৫ (৪র্থ তলা)"
+    days: [শনি, রবি, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "18:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01701148617"
+        note: "সকাল ৮টা থেকে"
