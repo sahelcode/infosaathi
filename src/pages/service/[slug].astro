@@ -94,7 +94,7 @@ const jsonld = {
         <nav class="pf-tags" aria-label="সম্পর্কিত"><a href="/services/">সব সরকারি সেবা</a></nav>
         <Ad />
         {related.length > 0 && (
-          <section class="pf-block" aria-labelledby="h-rel"><div class="pf-block-head"><h2 id="h-rel">আরও সরকারি সেবা</h2><a class="see-all" href="/services/">See all</a></div>
+          <section class="pf-block" aria-labelledby="h-rel"><div class="pf-block-head"><h2 id="h-rel">আরও সরকারি সেবা</h2><a class="see-all" href="/services/">See All</a></div>
             <div class="pf-minis">{related.map((x) => (
               <a class="pf-mini" href={serviceUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="gov" size={20} w={1.8} /></span>
                 <span class="pf-mini-txt"><b>{x.data.name}</b><span class="pf-mini-h">{x.data.dept}</span></span>

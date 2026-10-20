@@ -923,6 +923,13 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 .js-marquee .is-dragging{cursor:grabbing;}
 .js-marquee .is-dragging a{pointer-events:none;}
 .js-marquee .pill-row a,.js-marquee .pill-row img,.js-marquee .app-marquee a,.js-marquee .app-marquee img{-webkit-user-drag:none;user-drag:none;}
+
+/* See All: same size as the section name, sits right next to it; arrows stay at the far right */
+.see-all{font-size:14px;}
+.doc-head-top{justify-content:flex-start;gap:12px;}
+.doc-head-top .see-all{margin-left:0;}
+.row-nav{margin-left:auto;}
+@media (min-width:1024px){.doc-head-top .see-all{margin-left:0;}.row-nav{margin-left:auto;}}
 </style>
 </head>
 <body>
@@ -1004,7 +1011,7 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <section class="top-feature-section">
   <div class="container">
     <div class="doc-head reveal">
-      <div class="doc-head-top"><span class="eyebrow">Doctors</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div>
+      <div class="doc-head-top"><span class="eyebrow">Doctors</span><a href="#" class="see-all">See All<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div>
       <h2>Specialists you trust</h2>
     </div>
     <div class="row-scroll reveal" id="doctorRow"></div>
@@ -1015,7 +1022,7 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <!-- ============================================================ 7. FEATURED UNIVERSITIES ============================================================ -->
 <section class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Universities</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Shaping bright futures</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Universities</span><a href="#" class="see-all">See All<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Shaping bright futures</h2></div>
     <div class="row-scroll reveal" id="uniRow"></div>
   </div>
 </section>
@@ -1023,7 +1030,7 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <!-- ============================================================ 6. FEATURED HOSPITALS ============================================================ -->
 <section class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Hospitals</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">World-class, verified</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Hospitals</span><a href="#" class="see-all">See All<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">World-class, verified</h2></div>
     <div class="row-scroll reveal" id="hospitalRow"></div>
   </div>
 </section>
@@ -1047,28 +1054,28 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <div id="allCategories">
 <section class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Colleges</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Where ambitions grow</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Colleges</span><a href="#" class="see-all">See All<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Where ambitions grow</h2></div>
     <div class="row-scroll reveal" id="collegeRow"></div>
   </div>
 </section>
 
 <section class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Schools</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Strong foundations</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Schools</span><a href="#" class="see-all">See All<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Strong foundations</h2></div>
     <div class="row-scroll reveal" id="schoolRow"></div>
   </div>
 </section>
 
 <section class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Famous places</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Places worth the trip</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Famous places</span><a href="#" class="see-all">See All<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Places worth the trip</h2></div>
     <div class="row-scroll reveal" id="placeRow"></div>
   </div>
 </section>
 
 <section class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Hotels</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Stay in comfort</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Hotels</span><a href="#" class="see-all">See All<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Stay in comfort</h2></div>
     <div class="row-scroll reveal" id="hotelRow"></div>
   </div>
 </section>
@@ -1093,7 +1100,7 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <!-- ============================================================ 10. JOBS ============================================================ -->
 <section id="jobs" class="tight">
   <div class="container">
-    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Jobs</span><a href="#" class="see-all">সব দেখুন<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Careers worldwide</h2></div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Jobs</span><a href="#" class="see-all">See All<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Careers worldwide</h2></div>
     <div class="simple-list reveal" id="jobList"></div>
   </div>
 </section>

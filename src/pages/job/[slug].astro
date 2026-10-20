@@ -101,7 +101,7 @@ const jsonld = {
         <nav class="pf-tags" aria-label="সম্পর্কিত"><a href="/jobs/">চলমান চাকরির বিজ্ঞপ্তি</a></nav>
         <Ad />
         {related.length > 0 && (
-          <section class="pf-block" aria-labelledby="h-rel"><div class="pf-block-head"><h2 id="h-rel">আরও বিজ্ঞপ্তি</h2><a class="see-all" href="/jobs/">See all</a></div>
+          <section class="pf-block" aria-labelledby="h-rel"><div class="pf-block-head"><h2 id="h-rel">আরও বিজ্ঞপ্তি</h2><a class="see-all" href="/jobs/">See All</a></div>
             <div class="pf-minis">{related.map((x) => (
               <a class="pf-mini" href={jobUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="brief" size={20} w={1.8} /></span>
                 <span class="pf-mini-txt"><b>{x.data.title}</b><span class="pf-mini-h">{x.data.org} · শেষ {bnDate(x.data.close)}</span></span>

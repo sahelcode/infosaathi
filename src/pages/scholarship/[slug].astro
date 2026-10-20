@@ -101,7 +101,7 @@ const jsonld = {
         <nav class="pf-tags" aria-label="সম্পর্কিত"><a href="/scholarships/">বাংলাদেশিদের জন্য স্কলারশিপ</a></nav>
         <Ad />
         {related.length > 0 && (
-          <section class="pf-block" aria-labelledby="h-rel"><div class="pf-block-head"><h2 id="h-rel">আরও স্কলারশিপ</h2><a class="see-all" href="/scholarships/">See all</a></div>
+          <section class="pf-block" aria-labelledby="h-rel"><div class="pf-block-head"><h2 id="h-rel">আরও স্কলারশিপ</h2><a class="see-all" href="/scholarships/">See All</a></div>
             <div class="pf-minis">{related.map((x) => (
               <a class="pf-mini" href={scholarshipUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="award" size={20} w={1.8} /></span>
                 <span class="pf-mini-txt"><b>{x.data.name_bn ?? x.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{x.data.country} · {x.data.levels.join(', ')}</span></span>

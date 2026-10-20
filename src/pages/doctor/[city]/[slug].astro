@@ -283,13 +283,13 @@ const jsonld = {
 
         {sameSp.length > 0 && (
           <section class="pf-block dx-mob" aria-labelledby="h-rel">
-            <div class="pf-block-head"><h2 id="h-rel">একই বিশেষজ্ঞতার অন্য ডাক্তার</h2><a class="see-all" href={`/doctors/${d.city}/${d.specialty}/`}>See all</a></div>
+            <div class="pf-block-head"><h2 id="h-rel">একই বিশেষজ্ঞতার অন্য ডাক্তার</h2><a class="see-all" href={`/doctors/${d.city}/${d.specialty}/`}>See All</a></div>
             <div class="pf-minis">{sameSp.map((x) => <MiniDoctor doctor={x} place={placeOf(x)} />)}</div>
           </section>
         )}
         {mainHosp && sameHosp.length > 0 && (
           <section class="pf-block" aria-labelledby="h-same">
-            <div class="pf-block-head"><h2 id="h-same">{mainHosp.data.short ?? mainHosp.data.name}-এর অন্য ডাক্তার</h2><a class="see-all" href={hospitalUrl(mainHosp) + '#doctors'}>See all</a></div>
+            <div class="pf-block-head"><h2 id="h-same">{mainHosp.data.short ?? mainHosp.data.name}-এর অন্য ডাক্তার</h2><a class="see-all" href={hospitalUrl(mainHosp) + '#doctors'}>See All</a></div>
             <div class="pf-minis">{sameHosp.map((x) => <MiniDoctor doctor={x} place={placeOf(x)} />)}</div>
           </section>
         )}
