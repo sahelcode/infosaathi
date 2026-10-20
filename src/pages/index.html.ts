@@ -45,13 +45,14 @@ export const GET: APIRoute = async () => {
         };
       }),
   );
-  const hospRows = hospitals.slice(0, 8).map((h, i) => ({
+  const hospRows = await Promise.all(hospitals.slice(0, 8).map(async (h, i) => ({
     name: h.data.name,
     sub: h.data.address,
-    tags: [h.data.beds && `${bn(h.data.beds)} বেড`, `${bn(doctorsAt(doctors, h.id).length)} জন ডাক্তার`, h.data.emergency_24h && '২৪/৭ জরুরি'].filter(Boolean),
+    img: h.data.photo ? (await getImage({ src: h.data.photo, width: 640, format: 'webp' })).src : '',
+    tags: [h.data.type, `${bn(doctorsAt(doctors, h.id).length)} জন ডাক্তার`],
     t: i,
     url: hospitalUrl(h),
-  }));
+  })));
 
   // Bangladesh first: public universities, then private, newest checks first within each
   const unis = (await getUniversities()).sort((a, b) => (a.data.type === b.data.type ? 0 : a.data.type === 'সরকারি' ? -1 : 1));
@@ -223,6 +224,8 @@ export const GET: APIRoute = async () => {
     `<div class="org-tags">\${h.tags.map(x=>\`<span>\${x}</span>\`).join('')}</div></div>
   </a>`,
   );
+  html = swap(html, '<div class="org-image hosp-image">${hospBuilding(h.t)}</div>', '<div class="org-image hosp-image">${h.img?`<img src="${h.img}" alt="" loading="lazy">`:hospBuilding(h.t)}</div>');
+  html = swap(html, '.hosp-image svg{display:block;width:100%;height:100%;}', '.hosp-image svg,.hosp-image img{display:block;width:100%;height:100%;}\n.hosp-image img{object-fit:cover;object-position:center 70%;}');
   html = swap(html, '<div class="org-card hosp-card">', '<a class="org-card hosp-card" href="${h.url}" style="color:inherit;text-decoration:none">');
   // "See all" in the two section heads
   html = swap(html, '<span class="eyebrow">Doctors</span><a href="#" class="see-all">', '<span class="eyebrow">Doctors</span><a href="/doctors/" class="see-all">');
