@@ -97,7 +97,7 @@ const jsonld = {
   ],
 };
 ---
-<Base title={title} description={description} path={path} ogImage={photo?.src} jsonld={jsonld} draft={h.draft}>
+<Base title={title} description={description} path={path} ogImage={photo?.src} jsonld={jsonld} draft={h.draft} noindex={h.name_en.startsWith('Example')}>
   <main class="pf un-page">
     <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">
       {crumbs.map(([n, u]) => (<><a href={u}>{n}</a><span>›</span></>))}<a href={path}>{short}</a>

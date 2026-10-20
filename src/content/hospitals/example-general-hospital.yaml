@@ -1,6 +1,6 @@
-# EXAMPLE ONLY: shows every field the hospital page can use. It stays a draft, so it is never published.
+# EXAMPLE ONLY (placeholder numbers). TEMPORARILY published for UI preview, noindex. Set draft: true again after the preview.
 # Delete this file once real hospitals are in.
-draft: true
+draft: false
 name: নমুনা জেনারেল হাসপাতাল
 name_en: Example General Hospital
 type: বেসরকারি
