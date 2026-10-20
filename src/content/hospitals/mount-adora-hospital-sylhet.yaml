@@ -5,12 +5,24 @@ short: মাউন্ট এডোরা নয়াসড়ক
 type: বেসরকারি
 city: sylhet
 address: মীরবক্সটুলা, নয়াসড়ক, সিলেট-৩১০০
+map: https://maps.google.com/?q=Mount+Adora+Hospital+Nayasarak+Mirboxtula+Sylhet
+photo: ./images/mount-adora-hospital-sylhet.jpg
 emergency_24h: true
-verified: 2026-10-06
+beds: 100
+verified: 2026-10-20
 verified_by: official
 
+about: মাউন্ট এডোরা হাসপাতালের নয়াসড়ক শাখা, সিলেটের মীরবক্সটুলায় ১০০ বেডের বেসরকারি হাসপাতাল। নিউরোলজি উইং, ইকোনমি ওয়ার্ড, বহির্বিভাগ ও ১০ বেডের ডায়ালাইসিস ইউনিট আছে।
+
+quick:
+  beds: ১০০টি
+  emergency: ২৪ ঘণ্টা খোলা
+  ambulance: ২৪ ঘণ্টা, ০১৩৩৪-৯১২৪০৮
+  doctors: নিউরোলজি উইং ও বহির্বিভাগ (OPD)
+
+# অফিসিয়াল সাইটে ০৯৬১০৮৫৮৫৮৫ নয়াসড়ক শাখার "Medical Care & Hotline"; ডাক্তারদের পেজেও নয়াসড়কের সিরিয়াল নম্বর এটি
 numbers:
-  - label: সিরিয়াল ও তথ্য (নয়াসড়ক শাখা)
+  - label: হটলাইন ও সিরিয়াল (নয়াসড়ক শাখা)
     number: "09610858585"
     kind: serial
   - label: অ্যাম্বুলেন্স (নয়াসড়ক শাখা)
@@ -21,10 +33,28 @@ numbers:
     note: বাসা থেকে পরীক্ষার নমুনা সংগ্রহ; বিকল্প নম্বর 01711407642
     kind: other
 
-facilities: [er, ambulance]
+facilities: [er, dialysis, ambulance]
+
+rates:
+  - { group: cabin, name: ইকোনমি ওয়ার্ড }
+  - { group: other, name: ডায়ালাইসিস, price: 2200, unit: প্রতি সেশন }
+
+faq:
+  - q: মাউন্ট এডোরা হাসপাতাল নয়াসড়কে কতটি বেড আছে?
+    a: "১০০ বেড (অফিসিয়াল সাইট)। নিউরোলজি উইং ও ইকোনমি ওয়ার্ড আছে। আখালিয়া শাখায় আরও ৩০০ বেড আছে।"
+  - q: মাউন্ট এডোরা নয়াসড়কে ডায়ালাইসিস হয় কি? খরচ কত?
+    a: "হ্যাঁ। নয়াসড়কে ১০টি ডায়ালাইসিস বেড আছে। প্রতি সেশন ২,২০০ টাকা (অফিসিয়াল সাইট)। জরুরি ডায়ালাইসিস ২৪ ঘণ্টা হয়।"
+  - q: মাউন্ট এডোরা হাসপাতাল নয়াসড়কের অ্যাম্বুলেন্স নম্বর কী?
+    a: "০১৩৩৪-৯১২৪০৮। অ্যাম্বুলেন্স সেবা ২৪ ঘণ্টা। হটলাইন ০৯৬১০-৮৫৮৫৮৫-এও ফোন করতে পারেন।"
+  - q: মাউন্ট এডোরা নয়াসড়কে কি নিউরোলজির ডাক্তার বসেন?
+    a: "হ্যাঁ। নয়াসড়ক শাখায় নিউরোলজি উইং আছে। নিউরোলজি বিশেষজ্ঞরা নিয়মিত বসেন। সিরিয়ালের জন্য ০৯৬১০-৮৫৮৫৮৫ নম্বরে ফোন করুন।"
+  - q: মাউন্ট এডোরা নয়াসড়কে বাসা থেকে টেস্টের নমুনা নেয় কি?
+    a: "হ্যাঁ। হোম স্যাম্পল কালেকশনের জন্য ০১৩১৮-২১০০০২ বা ০১৭১১-৪০৭৬৪২ নম্বরে ফোন করুন।"
+  - q: মাউন্ট এডোরা হাসপাতাল নয়াসড়কের ইমেইল কী?
+    a: "adorahospital@gmail.com"
 
 sources:
+  - title: Mount Adora Hospital — Services (official)
+    url: https://mountadora.com/services/
   - title: Mount Adora Hospital — Contact (official)
     url: https://mountadora.com/contact/
-  - title: Mount Adora Hospital — Home (official)
-    url: https://mountadora.com/

@@ -44,3 +44,8 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | hospital | mount-adora-hospital-akhalia-sylhet | visiting hours | official site, searches; not published | 2026-10-20 |
 | hospital | mount-adora-hospital-akhalia-sylhet | doctor count for Akhalia only | official Services page gives 32 departments / 138 consultants for the hospital, not per branch | 2026-10-20 |
 | hospital | mount-adora-hospital-akhalia-sylhet | main phone (confirm) | official homepage structured data shows +8809678225566, visible pages say 09610848484; visible number used | 2026-10-20 |
+| hospital | mount-adora-hospital-sylhet | ICU/CCU/HDU/NICU at Nayasarak, bed counts | official Services, Home, Department pages, 6 searches (bn/en); site lists critical care for the hospital but not per branch; only 2020-21 Covid news counts, not used | 2026-10-20 |
+| hospital | mount-adora-hospital-sylhet | MRI / CT scan at Nayasarak | official site lists 1.5T MRI and 128-slice CT under the hospital, not tied to the Nayasarak branch | 2026-10-20 |
+| hospital | mount-adora-hospital-sylhet | doctor count for Nayasarak, visiting hours | official site gives counts for the hospital only; no visiting hours published | 2026-10-20 |
+| hospital | mount-adora-hospital-sylhet | test price list, ward/cabin rent, room types besides economy ward | official site publishes only the dialysis price (2,200 per session) | 2026-10-20 |
+| hospital | mount-adora-hospital-sylhet | signboard phone numbers | cover photo signboard shows numbers but too blurry to read; official numbers used | 2026-10-20 |
