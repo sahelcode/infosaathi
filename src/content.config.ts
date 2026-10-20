@@ -24,7 +24,7 @@ const date = z.coerce.date();
 const city = z.enum(keysOf(CITIES), 'শহরের নাম src/lib/taxonomy.ts-এর তালিকা থেকে দিন (যেমন sylhet)');
 // phone = you called and checked; official = taken from the institution's own website or notice
 const verifiedBy = z.enum(['phone', 'official'], 'verified_by হবে phone অথবা official').default('phone');
-const sources = z.array(z.object({ title: z.string(), url: z.url() })).default([]);
+const sources = z.array(z.object({ title: z.string(), url: z.url() })).max(2, 'তথ্যসূত্র সর্বোচ্চ ২টি (অফিসিয়াল সাইট + সবচেয়ে কাজের একটি)').default([]);
 const extraFaq = z.array(z.object({ q: z.string(), a: z.string() })).default([]);
 
 const doctors = defineCollection({

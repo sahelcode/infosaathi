@@ -19,6 +19,5 @@ steps:
 sources:
   - { title: "Türkiye Scholarships", url: "https://turkiyeburslari.gov.tr/" }
   - { title: "Türkiye Scholarships · Criteria and programs", url: "https://turkiyeburslari.gov.tr/scholarshipsprograms" }
-  - { title: "Türkiye Scholarships · Calendar", url: "https://turkiyeburslari.gov.tr/calendar" }
 verified: 2026-10-07
 verified_by: official

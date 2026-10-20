@@ -65,7 +65,7 @@ Trigger: Sahel sends a university name plus images. Do ONLY this task in that se
    - `programs`: every programme with `faculty`, `name`, `name_en`; add `years`, `credits`, `total_cost` only when published. Do not assume 4 years.
    - `faq`: 5-7 real questions people search, answers consistent with `detail`. Always include, with a direct answer in the first sentence: যোগাযোগ/ফোন নম্বর কত, ভর্তি ফি কত, ভর্তির যোগ্যতা (GPA), আসন সংখ্যা (if published), ঠিকানা/কোথায়. Phone numbers in the answer must equal `numbers`.
    - `about`: 2-3 factual sentences. `good`/`think`: short, honest.
-6. Sources: the first source is the official website (shown alone on the page). Add other sources (news circular, UGC, ranking page) ONLY when they are real pages you used and that help SEO or trust; otherwise keep just the official one. Every other number must be traceable to a listed source.
+6. Sources: maximum 2 (see SOURCES RULE): the official website first, then one more only if it helps SEO or trust. Every number must be traceable to a page you actually read.
 7. `verified:` = today; `verified_by: official` (from official site/notices) unless Sahel confirmed by phone. Set `draft: true` only if the data is too thin to publish; say why.
 8. `npm run build` must pass. Open `dist/university/<city>/<slug>/index.html`: title/description sensible, one h1, JSON-LD (CollegeOrUniversity, FAQPage, BreadcrumbList) present, phones match the data. Homepage row shows the logo and cover (the first 8 universities, government first).
 9. Playwright check at 360 and 390 px: no horizontal overflow, no JS error, the numbers sheet opens on "কল". Look at one screenshot of the top and of the "এক নজরে" card.
@@ -91,8 +91,8 @@ Trigger: Sahel sends a hospital name plus a photo. Do ONLY this task in that ses
 3. Photo: save as `src/content/hospitals/images/<slug>.jpg` (JPEG, max 1600 px wide, quality 85, never enlarge). LOOK at it. If it shows another site's watermark, tell Sahel before publishing.
 4. YAML: `name`, `name_en`, `short`, `type`, `city`, `address`, `photo`, `emergency_24h`, `beds`, `numbers`, `facilities` (keys from `src/lib/taxonomy.ts` only), `about` (1-2 factual sentences), `quick` (short values: beds, icu, emergency, ambulance, doctors, visiting, diagnostics; a missing key shows "আমরা সঠিক তথ্য পাইনি"), `tests` only from a published price list (with `tests_updated`), `sources`, `verified: <today>`, `verified_by: official`.
    - "রোগী দেখার সময়" shows "ডাক্তারের সময় অনুযায়ী" by default; set `visiting_hours` only if the hospital publishes real visiting hours for patients' relatives.
-5. FAQ (`faq:`) 4-6 extra questions people search, direct answer in the first sentence, consistent with the data. The page already adds: যোগাযোগ নম্বর ও হটলাইন নাম্বার কী, সিরিয়াল, ঠিকানা, জরুরি বিভাগ, রোগী দেখার সময়, কোন বিশেষজ্ঞ বসেন. Add from: শয্যা/ICU, MRI-CT আছে কি, কোন কোন বিভাগে ডাক্তার, অ্যাম্বুলেন্স, পরীক্ষার ফি (only if published), ভর্তি/কেবিন ভাড়া (only if published).
-6. Sources: only official pages actually used (+ other pages that were really used).
+5. FAQ (`faq:`) 4-6 extra questions (the page already adds honest "আমরা সঠিক তথ্য পাইনি" answers for পরীক্ষার ফি, কেবিন ভাড়া, আইসিইউ খরচ unless you add your own sourced answer to the same question; when you find the figure, write it in `faq:`/`tests`) people search, direct answer in the first sentence, consistent with the data. The page already adds: যোগাযোগ নম্বর ও হটলাইন নাম্বার কী, সিরিয়াল, ঠিকানা, জরুরি বিভাগ, রোগী দেখার সময়, কোন বিশেষজ্ঞ বসেন. Add from: শয্যা/ICU, MRI-CT আছে কি, কোন কোন বিভাগে ডাক্তার, অ্যাম্বুলেন্স, পরীক্ষার ফি (only if published), ভর্তি/কেবিন ভাড়া (only if published).
+6. Sources: maximum 2 (see SOURCES RULE), official pages first.
 7. Build, open `dist/hospital/<city>/<slug>/index.html` (title, one h1, JSON-LD Hospital/FAQPage/Breadcrumb, phones equal the data). Playwright 360/390: no overflow, no JS error, the "কল করুন" sheet opens. Look at a screenshot.
 8. One commit, `git pull --rebase`, `git push`. Report in Bengali: files, live path `https://infosaathi.com/hospital/<city>/<slug>/`, gaps written to `docs/data-gaps.md`, mismatches found.
 
@@ -101,6 +101,10 @@ Trigger: Sahel sends a hospital name plus a photo. Do ONLY this task in that ses
 - Every missing field is recorded in `docs/data-gaps.md`: one row per item with `type | file | field | what was searched | date`. Update the row instead of duplicating.
 - When Sahel later sends new data for doctors, universities or hospitals in one batch: read `docs/data-gaps.md` first, update every named file, fill the gaps he covered, set `verified:` to today's date ONLY on files whose data changed, remove the resolved rows from `docs/data-gaps.md`, then build, test and push once.
 - A gap that research can fill is not a gap: fill it before writing the row.
+
+## SOURCES RULE (all content types)
+- Maximum 2 sources per file (enforced by the schema): the official website (or the official page that holds the facts) first, then the single most useful second page (the official fee/admission/notice page, or one reputable news article), only if it helps trust or SEO. Never more than 2. Prefer the official page that holds the most numbers.
+- If more pages were used, keep the facts but list only the 2 best; every number must still be consistent with those pages.
 
 ## Other rules
 - AI-researched data must carry sources and honest badges; Sahel verifies by phone.

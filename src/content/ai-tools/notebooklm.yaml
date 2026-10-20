@@ -27,6 +27,5 @@ alternatives: ["gemini", "claude", "perplexity"]
 sources:
   - { title: "Gemini Notebook (NotebookLM)", url: "https://notebook.google/" }
   - { title: "Notebook plan upgrades · Google Help", url: "https://support.google.com/notebooklm/answer/16213268" }
-  - { title: "Google AI plans · Gemini", url: "https://gemini.google/subscriptions/" }
 verified: 2026-10-07
 verified_by: official

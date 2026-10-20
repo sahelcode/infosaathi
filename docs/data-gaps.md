@@ -16,3 +16,4 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | university | shahjalal-university-of-science-and-technology | years of study for programmes other than Architecture | not found | 2026-10-19 |
 | university | leading-university | seats, competition per seat, QS rank, classes start | official site, news | 2026-10-20 |
 | university | american-international-university-bangladesh | seats, competition per seat | official site, news | 2026-10-20 |
+| hospital | al-haramain-hospital-sylhet | cabin/bed rent, ICU daily cost | official site has no prices (page shows an honest "not found" answer) | 2026-10-21 |

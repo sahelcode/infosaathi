@@ -76,11 +76,4 @@ think:
 sources:
   - { title: অফিসিয়াল ওয়েবসাইট — যোগাযোগ, url: https://www.northsouth.edu/contact-us.html }
   - { title: NSU ভর্তি — হোম, url: https://admissions.northsouth.edu/ }
-  - { title: NSU ভর্তি — যোগাযোগ, url: https://admissions.northsouth.edu/contact }
-  - { title: স্নাতক ভর্তির যোগ্যতা, url: https://admissions.northsouth.edu/undergraduate_requirement }
-  - { title: ভর্তির শেষ তারিখ, url: https://admissions.northsouth.edu/deadline }
-  - { title: টিউশন ফি, url: https://admissions.northsouth.edu/tuition }
-  - { title: প্রোগ্রাম তালিকা, url: https://admissions.northsouth.edu/program }
-  - { title: আর্থিক সহায়তা ও ওয়েভার, url: http://www.northsouth.edu/resources/fao.html }
-  - { title: ইতিহাস, url: https://admissions.northsouth.edu/history }
 old_urls: [/2025/11/north-south-university.html]

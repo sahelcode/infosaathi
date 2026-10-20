@@ -61,9 +61,4 @@ think:
 sources:
   - { title: অফিসিয়াল ওয়েবসাইট, url: https://www.metrouni.edu.bd }
   - { title: যোগাযোগ, url: https://metrouni.edu.bd/sites/university/contact }
-  - { title: প্রোগ্রাম ফি, url: https://metrouni.edu.bd/sites/admission/programme-fee-structure }
-  - { title: স্কলারশিপ ও সহায়তা, url: https://metrouni.edu.bd/sites/admission/scholarship-aid }
-  - { title: স্নাতক ভর্তি, url: https://metrouni.edu.bd/sites/admission/undergraduate }
-  - { title: স্নাতকোত্তর ভর্তি, url: https://metrouni.edu.bd/sites/admission/graduate }
-  - { title: উইকিপিডিয়া, url: "https://en.wikipedia.org/wiki/Metropolitan_University,_Sylhet" }
 old_urls: [/2025/05/metropolitan-university-sylhet.html]

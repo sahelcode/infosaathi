@@ -116,10 +116,4 @@ faq:
 sources:
   - { title: অফিসিয়াল ওয়েবসাইট, url: https://lus.ac.bd/ }
   - { title: টিউশন ফি, url: https://lus.ac.bd/admission/tution-fees/ }
-  - { title: ভর্তি প্রক্রিয়া, url: https://lus.ac.bd/admission/how-to-apply/ }
-  - { title: স্কলারশিপ ও ওয়েভার, url: https://lus.ac.bd/admission/scholarship-and-aid/ }
-  - { title: ভর্তি যোগাযোগ, url: https://lus.ac.bd/admission/contact/ }
-  - { title: ভর্তি কর্মকর্তা, url: https://lus.ac.bd/online-admission/ }
-  - { title: যোগাযোগ, url: https://lus.ac.bd/contact/ }
-  - { title: উইকিপিডিয়া, url: https://en.wikipedia.org/wiki/Leading_University }
 old_urls: [/2025/05/leading-university-sylhet.html]

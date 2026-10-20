@@ -64,6 +64,10 @@ const faq = [
   { q: `${short}-এ রোগী দেখার (ভিজিটিং) সময় কখন?`, a: h.visiting_hours ? `${h.visiting_hours}।` : `চিকিৎসকের সময় অনুযায়ী। প্রতিটি ডাক্তারের বসার দিন ও সময় আলাদা, তাই সিরিয়াল নেওয়ার আগে ${phoneShow(serial.number)} নম্বরে ফোন করে জেনে নিন।` },
   ...(doctors.length ? [{ q: `${h.name}-এ কোন কোন বিশেষজ্ঞ ডাক্তার বসেন?`, a: spChips.map(([k, n]) => `${SPECIALTIES[k as keyof typeof SPECIALTIES].bn} (${bn(n)} জন)`).join(', ') + '।' }] : []),
   ...h.faq,
+  // questions people search a lot; honest "not found" until the hospital publishes the figure
+  ...(h.faq.some((f) => /পরীক্ষার ফি|টেস্টের/.test(f.q)) ? [] : [{ q: `${short}-এ পরীক্ষার (টেস্টের) ফি কত?`, a: h.tests.length ? `${short}-এর পরীক্ষার ফির তালিকা এই পেজের "পরীক্ষার ফি" অংশে আছে।${h.tests_updated ? ` তালিকা হালনাগাদ: ${bnMonth(h.tests_updated)}।` : ''} ফি বদলাতে পারে, পরীক্ষার আগে হাসপাতালে জেনে নিন।` : `${short}-এর পরীক্ষার ফির সঠিক তথ্য আমরা এখনো পাইনি। হালনাগাদ ফি জানতে ${phoneShow(serial.number)} নম্বরে ফোন করুন।` }]),
+  ...(h.faq.some((f) => /কেবিন|বেড ভাড়া|সিট ভাড়া/.test(f.q)) ? [] : [{ q: `${short}-এ কেবিন বা বেডের ভাড়া কত?`, a: `${short}-এর কেবিন ও বেড ভাড়ার সঠিক তথ্য আমরা এখনো পাইনি। হাসপাতালের সাথে যোগাযোগ করুন: ${phoneShow(serial.number)}।` }]),
+  ...(h.faq.some((f) => /আইসিইউ.*খরচ|আইসিইউ.*ভাড়া|ICU.*(খরচ|ভাড়া)/.test(f.q)) ? [] : [{ q: `${short}-এ আইসিইউ-র খরচ কত?`, a: `${short}-এর আইসিইউ খরচের সঠিক তথ্য আমরা এখনো পাইনি। প্রতিদিনের খরচ জানতে ${phoneShow(serial.number)} নম্বরে ফোন করুন।` }]),
 ];
 
 const near = (await getHospitals()).filter((x) => x.data.city === h.city && x.id !== hospital.id).slice(0, 3);

@@ -119,14 +119,5 @@ faq:
 
 sources:
   - { title: অফিসিয়াল ওয়েবসাইট, url: https://www.aiub.edu/ }
-  - { title: যোগাযোগ, url: https://www.aiub.edu/contact }
   - { title: ভর্তি বিজ্ঞপ্তি, url: https://www.aiub.edu/admission }
-  - { title: EEE ভর্তি — ভর্তি অফিসের নম্বর, url: https://www.aiub.edu/faculties/engg/departments/eee/program/undergraduate-program/admission }
-  - { title: টিউশন ফি, url: https://www.aiub.edu/tuition-fee }
-  - { title: বৃত্তি ও ওয়েভার, url: https://www.aiub.edu/admission/scholarships }
-  - { title: QS ওয়ার্ল্ড র‍্যাংকিং ২০২৭ — AIUB বিজ্ঞপ্তি, url: https://aiub.edu/aiub-ranked-4th-among-private-and-6th-among-all-universities-in-bangladesh-in-qs-world-university-rankings-2027 }
-  - { title: পরিচিতি, url: https://www.aiub.edu/about/information }
-  - { title: B.Sc. in CSE প্রোগ্রাম, url: https://www.aiub.edu/faculties/fst/programs/under-graduate/bachelor-of-science-in-computer-science--engineering }
-  - { title: B.Sc. in EEE প্রোগ্রাম, url: https://www.aiub.edu/faculties/engg/programs/bsc-in-eee }
-  - { title: BBA প্রোগ্রাম, url: https://www.aiub.edu/faculties/fba/programs/undergraduate/bachelor-of-business-administration-bba }
 old_urls: [/2025/11/american-international-university.html]
