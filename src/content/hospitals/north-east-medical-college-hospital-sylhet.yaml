@@ -5,6 +5,7 @@ short: নর্থ ইস্ট মেডিকেল
 type: বেসরকারি
 city: sylhet
 address: দক্ষিণ সুরমা, সিলেট-৩১০০
+photo: ./images/north-east-medical-college-hospital-sylhet.jpg
 # সাইটে "Emergency & Casualty" বিভাগ আছে, কিন্তু জরুরি বিভাগ ২৪ ঘণ্টা খোলা, এমন কথা হাসপাতালের পাতায় নেই; তাই emergency_24h দেওয়া হয়নি
 # অফিসিয়াল হোমপেজে ৮০০ বেড; একটি পুরনো পাতায় ৬০০ বেড লেখা ছিল
 beds: 800

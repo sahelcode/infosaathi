@@ -35,7 +35,6 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | hospital | jalalabad-ragib-rabeya-medical-college-hospital | doctor count, visiting hours | official doctor list not readable from workspace (site blocked); no visiting hours published | 2026-10-20 |
 | hospital | jalalabad-ragib-rabeya-medical-college-hospital | test price list, cabin/ICU rates, room types | official site has no prices | 2026-10-20 |
 | hospital | jalalabad-ragib-rabeya-medical-college-hospital | bed count (confirm) | official history page says 800, homepage message says 750; 800 used | 2026-10-20 |
-| hospital | north-east-medical-college-hospital-sylhet | cover photo | photo sent was North South Medical College Hospital (wrong hospital), not used; asked Sahel for a correct one | 2026-10-20 |
 | hospital | north-east-medical-college-hospital-sylhet | 24-hour emergency statement | official site has "Emergency & Casualty" section; only Surgery dept and Biochemistry lab say 24/7 | 2026-10-20 |
 | hospital | north-east-medical-college-hospital-sylhet | ICU/CCU/NICU bed counts, doctor count, visiting hours | official home, ICU, CCU, indoor services pages, 8 searches (bn/en); only a 2020 Covid news count (20 ICU), not used | 2026-10-20 |
 | hospital | north-east-medical-college-hospital-sylhet | test prices | official "Laboratory & Investigation" page has an undated price list, but the site is not reachable from the workspace to read it exactly | 2026-10-20 |
