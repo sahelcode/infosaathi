@@ -103,6 +103,13 @@ Trigger: Sahel sends a hospital name plus a photo. Do ONLY this task in that ses
 - When Sahel later sends new data for doctors, universities or hospitals in one batch: read `docs/data-gaps.md` first, update every named file, fill the gaps he covered, set `verified:` to today's date ONLY on files whose data changed, remove the resolved rows from `docs/data-gaps.md`, then build, test and push once.
 - A gap that research can fill is not a gap: fill it before writing the row.
 
+## BATCH WORK AND RESEARCH DEPTH (universities, hospitals, doctors)
+- Sahel may send 5-10 items at once. Do them one by one in this order: research, YAML, images, then ONE build, test pass and push for the batch (one commit per item). For universities and hospitals use one sub-agent per item for the research step so each item gets full attention; the main session merges, runs the build, checks every page and pushes. If a batch is too big to do well, say so and split it.
+- Research depth per university/hospital: the official site first, then up to 10 other pages (UGC or ministry, ranking pages, hospital/university notices, reputable newspapers, Wikipedia only for background). A number goes live only when the official site states it, or when two independent pages agree. If sources disagree, prefer the official and newest one, otherwise leave the field as a gap. Only the best 2 are listed as sources (SOURCES RULE).
+- Research text pasted by Sahel from another AI (Gemini, ChatGPT, etc.) is a lead, not a source: verify each fact on an official or reputable page before using it, and never copy it as is.
+- Claude Code cannot call Gemini or ChatGPT; it researches with web search and page fetching only.
+- At the end, report per item: filled, gaps (also written to `docs/data-gaps.md`), conflicts found.
+
 ## WRITING STYLE (all pages)
 - Plain, short, everyday Bangla. One fact per sentence. No scholarly or wordy phrasing, no extra explanations, no filler such as "সাইটে দেওয়া নেই"; if a fact is missing, the page already shows "আমরা সঠিক তথ্য পাইনি" or "যুক্ত হয়নি".
 - Never remove a field because data is missing: keep every field/row and let the page show "আমরা সঠিক তথ্য পাইনি" / "যুক্ত হয়নি".
