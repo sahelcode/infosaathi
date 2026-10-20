@@ -97,6 +97,9 @@ const hospitals = defineCollection({
       map: z.url().optional(),
       photo: image().optional(),
       certification: z.string().optional(), // e.g. ISO 9001:2015
+      about: z.string().optional(), // 1-2 factual sentences under the hero
+      // short values for the plain "এক নজরে" card; a missing key shows "আমরা সঠিক তথ্য পাইনি"
+      quick: z.object({ beds: z.string(), icu: z.string(), emergency: z.string(), ambulance: z.string(), doctors: z.string(), visiting: z.string(), diagnostics: z.string() }).partial().optional(),
       emergency_24h: z.boolean().default(false),
       visiting_hours: z.string().optional(),
       beds: z.number().int().positive().optional(),

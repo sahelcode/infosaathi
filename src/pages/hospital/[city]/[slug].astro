@@ -44,24 +44,23 @@ doctors.forEach(({ d }) => spCount.set(d.data.specialty, (spCount.get(d.data.spe
 const spChips = [...spCount].sort((a, b) => b[1] - a[1]);
 
 const groups = Object.entries(TEST_GROUPS).filter(([k]) => h.tests.some((t) => t.group === k));
-const facts = [
-  h.beds && { icon: 'bed', v: bn(h.beds), t: 'শয্যা' },
-  h.icu_beds && { icon: 'heart', v: bn(h.icu_beds), t: 'আইসিইউ বেড' },
-  doctors.length > 0 && { icon: 'steth', v: bn(doctors.length), t: 'ডাক্তার' },
-  h.emergency_24h && { icon: 'clock', v: '২৪/৭', t: 'জরুরি বিভাগ' },
-].filter(Boolean) as { icon: 'bed' | 'heart' | 'steth' | 'clock'; v: string; t: string }[];
-
-const jump = [
-  doctors.length && ['doctors', 'ডাক্তার'],
-  h.tests.length && ['fees', 'পরীক্ষার ফি'],
-  h.facilities.length && ['facilities', 'সুবিধা'],
-  ['visit', 'ঠিকানা'],
-].filter(Boolean) as string[][];
+const NA = 'আমরা সঠিক তথ্য পাইনি';
+const q = h.quick ?? {};
+const glance = [
+  { k: 'শয্যা', v: q.beds ?? (h.beds ? `${bn(h.beds)}টি` : '') },
+  { k: 'আইসিইউ ও ক্রিটিক্যাল কেয়ার', v: q.icu ?? (h.icu_beds ? `${bn(h.icu_beds)}টি আইসিইউ বেড` : '') },
+  { k: 'জরুরি বিভাগ', v: q.emergency ?? (h.emergency_24h ? '২৪ ঘণ্টা খোলা' : '') },
+  { k: 'অ্যাম্বুলেন্স', v: q.ambulance ?? '' },
+  { k: 'বিশেষজ্ঞ ডাক্তার', v: q.doctors ?? (doctors.length ? `${bn(doctors.length)} জন (আমাদের তালিকায়)` : '') },
+  { k: 'রোগী দেখার সময়', v: q.visiting ?? h.visiting_hours ?? '' },
+  { k: 'পরীক্ষা ও স্ক্যান', v: q.diagnostics ?? '' },
+];
 
 const faq = [
+  { q: `${short}-এর যোগাযোগ নম্বর ও হটলাইন নাম্বার কী?`, a: h.numbers.map((n) => `${n.label} ${phoneShow(n.number)}${n.note ? ' (' + n.note + ')' : ''}`).join('; ') + '।' },
   { q: `${h.name}-এ ডাক্তারের সিরিয়াল কীভাবে নেব?`, a: `${phoneShow(serial.number)} নম্বরে ${serial.note ? serial.note + ' ' : ''}কল করে সিরিয়াল নিন।` },
   { q: `${h.name} কোথায়?`, a: `${h.address}।` },
-  ...(h.emergency_24h ? [{ q: 'জরুরি বিভাগ কি ২৪ ঘণ্টা খোলা?', a: `হ্যাঁ, জরুরি বিভাগ ২৪ ঘণ্টা খোলা থাকে।${er ? ` জরুরি নম্বর ${phoneShow(er.number)}।` : ''}` }] : []),
+  ...(h.emergency_24h ? [{ q: 'জরুরি বিভাগ কি ২৪ ঘণ্টা খোলা?', a: `হ্যাঁ, জরুরি বিভাগ ২৪ ঘণ্টা খোলা থাকে।${er ? ` জরুরি নম্বর ${phoneShow(er.number)}।` : ` যোগাযোগের নম্বর ${phoneShow(serial.number)}।`}` }] : []),
   ...(h.visiting_hours ? [{ q: 'রোগী দেখার (ভিজিটিং) সময় কখন?', a: `${h.visiting_hours}।` }] : []),
   ...(doctors.length ? [{ q: `${h.name}-এ কোন কোন বিশেষজ্ঞ ডাক্তার বসেন?`, a: spChips.map(([k, n]) => `${SPECIALTIES[k as keyof typeof SPECIALTIES].bn} (${bn(n)} জন)`).join(', ') + '।' }] : []),
   ...h.faq,
@@ -91,7 +90,7 @@ const jsonld = {
 };
 ---
 <Base title={title} description={description} path={path} ogImage={photo?.src} jsonld={jsonld} draft={h.draft}>
-  <main class="pf">
+  <main class="pf un-page">
     <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">
       {crumbs.map(([n, u]) => (<><a href={u}>{n}</a><span>›</span></>))}<a href={path}>{short}</a>
     </nav>
@@ -99,42 +98,30 @@ const jsonld = {
       <article class="pf-main">
         <section class="pf-hero hp-hero">
           <div class:list={['hp-cover', { 'has-photo': h.photo }]}>
-            {h.photo ? <Image src={h.photo} alt={h.name} width={1200} loading="eager" fetchpriority="high" /> : <HospitalCover />}
+            {h.photo ? <Image src={h.photo} alt={h.name} width={Math.min(1200, h.photo.width)} loading="eager" fetchpriority="high" /> : <HospitalCover />}
           </div>
           <div class="pf-hero-body no-logo">
             <h1 class="pf-name">{h.name}</h1>
             <p class="pf-en">{h.name_en}</p>
-            <p class="hp-addr"><Icon name="pin" size={15} w={2.2} />{h.address}</p>
-            <div class="pf-badges">
-              <span class="pf-badge">{h.type} হাসপাতাল</span>
-              {h.certification && <span class="pf-badge ok"><Icon name="check" size={13} w={3} />{h.certification}</span>}
-              {h.emergency_24h && <span class="pf-badge er"><Icon name="siren" size={13} w={2.2} />২৪/৭ জরুরি</span>}
-              <span class:list={['pf-badge', { src: h.verified_by === 'official' }]}><Icon name="clock" size={13} w={2.2} />{h.verified_by === 'phone' ? 'ফোনে যাচাই' : 'অফিসিয়াল সূত্রে হালনাগাদ'}: {bnDate(h.verified)}</span>
-            </div>
+            <p class="hp-addr">{h.address}</p>
+            <p class="hp-meta">{h.type} হাসপাতাল{h.emergency_24h && ' · ২৪/৭ জরুরি'}{h.certification && ` · ${h.certification}`}</p>
           </div>
-          <div class:list={['pf-actions hp-actions no-logo', { three: single }]}>
-            {er ? <a class="pf-btn danger" href={`tel:${er.number}`}><Icon name="siren" />জরুরি কল</a>
-                : <a class="pf-btn primary" href={`tel:${serial.number}`}><Icon name="phone" />কল করুন</a>}
-            {single ? <a class="pf-btn" href={map} target="_blank" rel="noopener"><Icon name="pin" />ম্যাপ</a> : (
-              <>
-                <button class:list={['pf-btn', { primary: er }]} type="button" data-sheet-open="numbers"><Icon name="phone" />{er ? 'সিরিয়াল' : 'সব নম্বর'}</button>
-                <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
-              </>
-            )}
+          <div class="pf-actions hp-actions un-actions no-logo">
+            {single ? <a class="pf-btn" href={`tel:${serial.number}`}><Icon name="phone" />কল করুন</a>
+                    : <button class="pf-btn" type="button" data-sheet-open="numbers"><Icon name="phone" />কল করুন</button>}
+            <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
             <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
           </div>
-          <nav class="hp-jump" aria-label="এই পেজে">{jump.map(([a, t]) => <a href={`#${a}`}>{t}</a>)}</nav>
         </section>
 
-        {facts.length > 1 && (
-          <div class="hp-facts" style={`--n:${facts.length}`}>
-            {facts.map((f) => <div class="hp-fact"><span class="hp-fact-i"><Icon name={f.icon} size={20} w={1.9} /></span><b>{f.v}</b><small>{f.t}</small></div>)}
-          </div>
-        )}
+        {h.about && <p class="hp-about">{h.about}</p>}
 
-        <section class="pf-card" aria-labelledby="h-nums">
-          <div class="pf-card-head"><h2 id="h-nums">যোগাযোগের নম্বর</h2></div>
-          <div class="pf-nums">{h.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} er={n.kind === 'emergency'} />)}</div>
+        <section class="un-fact" aria-labelledby="h-fact"><h2 id="h-fact">এক নজরে</h2>
+          <dl>{glance.map((g) => <div class:list={['un-row', { na: !g.v }]}><dt>{g.k}</dt><dd>{g.v || NA}</dd></div>)}</dl>
+        </section>
+
+        <section class="un-fact" aria-labelledby="h-nums"><h2 id="h-nums">যোগাযোগের নম্বর</h2>
+          <dl>{h.numbers.map((n) => <div class="un-row"><dt>{n.label}{n.note && <small class="hp-nnote">{n.note}</small>}</dt><dd><a class="hp-tel" href={`tel:${n.number}`}>{phoneShow(n.number)}</a></dd></div>)}</dl>
         </section>
 
         {doctors.length > 0 && (
@@ -189,6 +176,7 @@ const jsonld = {
             {h.emergency_24h && <div><span class="pf-k">জরুরি বিভাগ</span><b>২৪ ঘণ্টা খোলা</b></div>}
           </div>
           <a class="pf-btn hp-mapbtn" href={map} target="_blank" rel="noopener"><Icon name="pin" />Google Maps-এ দেখুন</a>
+          <p class="un-checked"><Icon name="clock" size={13} w={2.2} />{h.verified_by === 'phone' ? 'ফোনে যাচাই' : 'অফিসিয়াল সূত্রে হালনাগাদ'}: {bnDate(h.verified)}</p>
         </section>
 
         <Faq items={faq} />
@@ -234,13 +222,7 @@ const jsonld = {
     </div>
   </main>
 
-  <div class:list={['pf-sticky', { 'hp-sticky': er }]} aria-label="দ্রুত যোগাযোগ">
-    {er && <a class="pf-btn danger" href={`tel:${er.number}`}><Icon name="siren" />জরুরি</a>}
-    <button class="pf-btn primary" type="button" data-sheet-open="numbers"><Icon name="phone" />সব নম্বর</button>
-    {!er && <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>}
-  </div>
-
-  <div class="pf-sheet" data-sheet="numbers" hidden>
+  <div class="pf-sheet un-page" data-sheet="numbers" hidden>
     <div class="pf-sheet-bg" data-sheet-close></div>
     <div class="pf-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-h">
       <div class="pf-sheet-grip"></div>

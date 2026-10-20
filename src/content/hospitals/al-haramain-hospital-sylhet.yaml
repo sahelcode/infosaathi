@@ -5,26 +5,51 @@ short: আল হারামাইন হাসপাতাল
 type: বেসরকারি
 city: sylhet
 address: কাজী টাওয়ার, সমতা-৩০, চালিবন্দর, বিশ্বরোড, সোবহানীঘাট, সিলেট-৩১০০
+photo: ./images/al-haramain-hospital-sylhet.jpg
 emergency_24h: true
 beds: 250
-verified: 2026-10-06
+verified: 2026-10-21
 verified_by: official
 
+about: আল হারামাইন হাসপাতাল সিলেটের সোবহানীঘাটে এগারোতলা ভবনের ২৫০ শয্যার বহুবিভাগীয় বেসরকারি হাসপাতাল। জরুরি বিভাগ, আইসিইউ, ডায়ালাইসিস, এমআরআই ও সিটি স্ক্যান আছে।
+
+quick:
+  beds: ২৫০টি
+  icu: ICU, HDU, CCU, NICU, PICU
+  emergency: ২৪ ঘণ্টা খোলা
+  ambulance: ২৪ ঘণ্টা সেবা
+  doctors: ২৪টি বিভাগে ৫২ জন (অফিসিয়াল তালিকা)
+  diagnostics: এমআরআই, সিটি স্ক্যান, এক্স-রে, ল্যাব
+
+# অফিসিয়াল সাইটে কোনো নম্বরকে "জরুরি" লেখা নেই; তাই কোনোটাকে জরুরি নম্বর দেখানো হয়নি
 numbers:
-  - label: জরুরি বিভাগ ও অ্যাপয়েন্টমেন্ট
-    number: "01931225555"
-    kind: emergency
   - label: অ্যাপয়েন্টমেন্ট
+    number: "01931225555"
+    kind: serial
+  - label: প্রধান নম্বর
     number: "0821729981"
     note: হটলাইন (শর্ট কোড) ১০৬০৭
-    kind: serial
 
-facilities: [er, icu, nicu, dialysis, ot, pharmacy, ambulance, canteen]
+facilities: [er, icu, ccu, nicu, dialysis, ot, lab, pharmacy, ambulance, canteen]
+
+faq:
+  - q: আল হারামাইন হাসপাতালে কতটি শয্যা আছে?
+    a: "অফিসিয়াল সাইট অনুযায়ী ২৫০ শয্যা। সাইটে ৫০০ শয্যায় সম্প্রসারণের পরিকল্পনার কথাও আছে। আইসিইউ, এইচডিইউ, সিসিইউ, এনআইসিইউ ও পিআইসিইউ ইউনিট আছে, তবে প্রতি ইউনিটের শয্যা সংখ্যা সাইটে দেওয়া নেই।"
+  - q: আল হারামাইন হাসপাতালে এমআরআই ও সিটি স্ক্যান আছে কি?
+    a: "হ্যাঁ। অফিসিয়াল সাইটে ৩ টেসলা এমআরআই, ২৫৬-স্লাইস সিটি স্ক্যান, ডিজিটাল এক্স-রে ও প্যাথলজি ল্যাবের কথা আছে, এগুলো ২৪ ঘণ্টা চালু বলা হয়েছে। পরীক্ষার ফি সাইটে দেওয়া নেই, হাসপাতালে জেনে নিন।"
+  - q: আল হারামাইন হাসপাতালে কোন কোন বিভাগে ডাক্তার বসেন?
+    a: "অফিসিয়াল তালিকায় (অক্টোবর ২০২৬) ২৪টি বিভাগে ৫২ জন চিকিৎসক আছেন: মেডিসিন, শিশু, গাইনি ও প্রসূতি, কার্ডিওলজি, নিউরোলজি, নিউরোসার্জারি, অর্থোপেডিক্স, ইউরোলজি, নেফ্রোলজি, গ্যাস্ট্রোএন্টারোলজি, চর্ম, ইএনটি, চক্ষু, ডেন্টাল ও আরও কয়েকটি। ডাক্তারের সময়সূচি বদলাতে পারে, সিরিয়ালের আগে ফোনে জেনে নিন।"
+  - q: আল হারামাইন হাসপাতালে অ্যাম্বুলেন্স সেবা আছে কি?
+    a: "হ্যাঁ, অফিসিয়াল সাইট অনুযায়ী ২৪ ঘণ্টা অ্যাম্বুলেন্স সেবা আছে। অ্যাম্বুলেন্সের আলাদা নম্বর সাইটে নেই, তাই প্রধান নম্বর ০৮২১-৭২৯৯৮১ বা ০১৯৩১-২২৫৫৫৫-এ ফোন করুন।"
 
 sources:
   - title: Al Haramain Hospital — Contact Details (official)
     url: https://www.haramainhospital.com/contact-us/
   - title: Al Haramain Hospital — About Us (official)
     url: https://www.haramainhospital.com/about-us/
+  - title: Al Haramain Hospital — Services (official)
+    url: https://www.haramainhospital.com/services/
+  - title: Al Haramain Hospital — Specialists (official)
+    url: https://www.haramainhospital.com/specialties/find-a-doctor/all-doctors-2/
   - title: Al Haramain Hospital — Home (official)
     url: https://www.haramainhospital.com/

@@ -129,3 +129,17 @@
   .hp-actions{grid-template-columns:1fr 46px 46px;}
   .hp-actions .pf-btn:first-child{grid-column:1 / -1;}
 }
+
+/* plain hero text (no pills) and the lighter blocks below it */
+.pf-hero-body.no-logo{padding-top:14px;padding-bottom:12px;}
+.hp-addr{display:block;margin:6px 0 0;font-size:13px;line-height:1.5;color:#6b7a72;}
+.hp-meta{margin:6px 0 0;font-size:12.5px;font-weight:600;color:#3f5a4c;}
+.hp-actions.un-actions{grid-template-columns:1fr 46px 46px;}
+.hp-about{margin:12px 2px 0;font-size:14px;line-height:1.65;color:#334a3d;}
+.hp-nnote{display:block;margin-top:2px;font-size:11px;font-weight:400;color:#8a9a92;}
+.hp-tel{color:#0f2a1c;text-decoration:none;letter-spacing:.01em;}
+.hp-tel:hover{color:#1d7a4d;}
+.un-page .un-fact dd a{font-weight:700;}
+@media (min-width:768px){.hp-actions.un-actions{grid-template-columns:auto 46px 46px;padding-left:24px;}}
+@media (max-width:374px){.hp-actions.un-actions{grid-template-columns:1fr 46px 46px;}.hp-actions.un-actions .pf-btn:first-child{grid-column:auto;}}
+.hp-cover.has-photo img{object-position:center 72%;}
