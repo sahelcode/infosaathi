@@ -11,7 +11,7 @@
   }));
 
   /* test fees: category tabs + search box, both at once */
-  const q=$('[data-fee-q]'), tabs=$$('[data-feetab]'), rows=$$('.hp-fee'), empty=$('[data-fee-empty]');
+  const q=$('[data-fee-q]'), tabs=$$('[data-feetab]'), rows=$$('#fees .hp-fee'), empty=$('[data-fee-empty]');
   let cat='all';
   const run=()=>{
     const term=(q&&q.value||'').trim().toLowerCase(); let shown=0, first=true;
@@ -20,7 +20,7 @@
       r.hidden=!ok; r.classList.toggle('is-first',ok&&first); if(ok){ shown++; first=false; }
     });
     if(empty) empty.hidden=shown>0;
-    const list=$('.hp-fees'); if(list) list.hidden=shown===0;
+    const list=$('#fees .hp-fees'); if(list) list.hidden=shown===0;
   };
   tabs.forEach(t=>t.addEventListener('click',()=>{ tabs.forEach(x=>x.classList.toggle('on',x===t)); cat=t.dataset.feetab; run(); }));
   if(q) q.addEventListener('input',run);

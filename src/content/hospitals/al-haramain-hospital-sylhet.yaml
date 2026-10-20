@@ -42,7 +42,7 @@ tests:
   - { group: imaging, name: বুকের এক্স-রে, name_en: X-Ray Chest P/A, price: 600 }
   - { group: imaging, name: আল্ট্রাসনোগ্রাম (পুরো পেট), name_en: USG Whole Abdomen, price: 1600 }
   - { group: imaging, name: সিটি স্ক্যান (মাথা), name_en: CT Scan Brain, price: 6500 }
-  - { group: imaging, name: এমআরআই (মস্তিষ্ক), name_en: MRI Brain, price: 11000 }
+  - { group: imaging, name: এমআরআই (মস্তিষ্ক), name_en: MRI Brain }
   - { group: heart, name: ইসিজি, name_en: ECG, price: 400 }
   - { group: heart, name: ইকোকার্ডিওগ্রাম, name_en: Echocardiogram, price: 2500 }
 rates_updated: 2026-10-01
@@ -50,7 +50,7 @@ rates:
   - { group: cabin, name: জেনারেল ওয়ার্ড বেড, price: 1000 }
   - { group: cabin, name: নন-এসি কেবিন, price: 3000 }
   - { group: cabin, name: এসি কেবিন, price: 5000, note: এটাচড বাথরুমসহ }
-  - { group: cabin, name: ভিআইপি স্যুট, price: 9000 }
+  - { group: cabin, name: ভিআইপি স্যুট }
   - { group: icu, name: আইসিইউ বেড, price: 20000 }
   - { group: icu, name: এইচডিইউ বেড, price: 10000 }
   - { group: icu, name: এনআইসিইউ (নবজাতক), price: 14000 }

@@ -43,11 +43,32 @@ const spCount = new Map<string, number>();
 doctors.forEach(({ d }) => spCount.set(d.data.specialty, (spCount.get(d.data.specialty) ?? 0) + 1));
 const spChips = [...spCount].sort((a, b) => b[1] - a[1]);
 
-const groups = Object.entries(TEST_GROUPS).filter(([k]) => h.tests.some((t) => t.group === k));
+// Common items shown with "যুক্ত হয়নি" until the hospital's own price list is added.
+const DEFAULT_TESTS = [
+  { group: 'lab', name: 'সিবিসি (রক্তের পূর্ণাঙ্গ পরীক্ষা)', name_en: 'CBC' },
+  { group: 'lab', name: 'ব্লাড সুগার', name_en: 'Blood Sugar' },
+  { group: 'lab', name: 'লিপিড প্রোফাইল', name_en: 'Lipid Profile' },
+  { group: 'imaging', name: 'বুকের এক্স-রে', name_en: 'X-Ray Chest' },
+  { group: 'imaging', name: 'আল্ট্রাসনোগ্রাম (পুরো পেট)', name_en: 'USG Whole Abdomen' },
+  { group: 'heart', name: 'ইসিজি', name_en: 'ECG' },
+] as { group: keyof typeof TEST_GROUPS; name: string; name_en?: string; price?: number }[];
+const DEFAULT_RATES = [
+  { group: 'cabin', name: 'জেনারেল ওয়ার্ড বেড' },
+  { group: 'cabin', name: 'নন-এসি কেবিন' },
+  { group: 'cabin', name: 'এসি কেবিন' },
+  { group: 'cabin', name: 'ভিআইপি কেবিন' },
+  ...(h.facilities.includes('icu') ? [{ group: 'icu', name: 'আইসিইউ বেড' }] : []),
+  ...(h.facilities.includes('nicu') ? [{ group: 'icu', name: 'এনআইসিইউ (নবজাতক)' }] : []),
+] as { group: 'cabin' | 'icu' | 'other'; name: string; price?: number; unit?: string; note?: string }[];
+const testRows = h.tests.length ? h.tests : DEFAULT_TESTS;
+const rateRows = h.rates.length ? h.rates : DEFAULT_RATES;
+const testsKnown = testRows.some((x) => x.price);
+const groups = Object.entries(TEST_GROUPS).filter(([k]) => testRows.some((t) => t.group === k));
+const NOT_ADDED = 'যুক্ত হয়নি';
 const NA = 'আমরা সঠিক তথ্য পাইনি';
 const RATE_GROUPS = { cabin: 'কেবিন ও বেড', icu: 'আইসিইউ ও ক্রিটিক্যাল কেয়ার', other: 'অন্যান্য' } as const;
-const rateGroups = (Object.keys(RATE_GROUPS) as (keyof typeof RATE_GROUPS)[]).map((k) => [k, h.rates.filter((r) => r.group === k)] as const).filter(([, rs]) => rs.length);
-const rateRange = (g: string) => { const ps = h.rates.filter((r) => r.group === g).map((r) => r.price); return ps.length ? (Math.min(...ps) === Math.max(...ps) ? taka(ps[0]) : `${taka(Math.min(...ps))} থেকে ${taka(Math.max(...ps))}`) : ''; };
+const rateGroups = (Object.keys(RATE_GROUPS) as (keyof typeof RATE_GROUPS)[]).map((k) => [k, rateRows.filter((r) => r.group === k)] as const).filter(([, rs]) => rs.length);
+const rateRange = (g: string) => { const ps = rateRows.filter((r) => r.group === g && r.price).map((r) => r.price as number); return ps.length ? (Math.min(...ps) === Math.max(...ps) ? taka(ps[0]) : `${taka(Math.min(...ps))} থেকে ${taka(Math.max(...ps))}`) : ''; };
 const q = h.quick ?? {};
 const glance = [
   { k: 'শয্যা', v: q.beds ?? (h.beds ? `${bn(h.beds)}টি` : '') },
@@ -68,7 +89,7 @@ const faq = [
   ...(doctors.length ? [{ q: `${h.name}-এ কোন কোন বিশেষজ্ঞ ডাক্তার বসেন?`, a: spChips.map(([k, n]) => `${SPECIALTIES[k as keyof typeof SPECIALTIES].bn} (${bn(n)} জন)`).join(', ') + '।' }] : []),
   ...h.faq,
   // questions people search a lot; honest "not found" until the hospital publishes the figure
-  ...(h.faq.some((f) => /পরীক্ষার ফি|টেস্টের/.test(f.q)) ? [] : [{ q: `${short}-এ পরীক্ষার (টেস্টের) ফি কত?`, a: h.tests.length ? `${short}-এর পরীক্ষার ফির তালিকা এই পেজের "পরীক্ষার ফি" অংশে আছে।${h.tests_updated ? ` তালিকা হালনাগাদ: ${bnMonth(h.tests_updated)}।` : ''} ফি বদলাতে পারে, পরীক্ষার আগে হাসপাতালে জেনে নিন।` : `${short}-এর পরীক্ষার ফির সঠিক তথ্য আমরা এখনো পাইনি। হালনাগাদ ফি জানতে ${phoneShow(serial.number)} নম্বরে ফোন করুন।` }]),
+  ...(h.faq.some((f) => /পরীক্ষার ফি|টেস্টের/.test(f.q)) ? [] : [{ q: `${short}-এ পরীক্ষার (টেস্টের) ফি কত?`, a: testsKnown ? `${short}-এর পরীক্ষার ফির তালিকা এই পেজের "পরীক্ষার ফি" অংশে আছে।${h.tests_updated ? ` তালিকা হালনাগাদ: ${bnMonth(h.tests_updated)}।` : ''} ফি বদলাতে পারে, পরীক্ষার আগে হাসপাতালে জেনে নিন।` : `${short}-এর পরীক্ষার ফির সঠিক তথ্য আমরা এখনো পাইনি। হালনাগাদ ফি জানতে ${phoneShow(serial.number)} নম্বরে ফোন করুন।` }]),
   ...(h.faq.some((f) => /কেবিন|বেড ভাড়া|সিট ভাড়া/.test(f.q)) ? [] : [{ q: `${short}-এ কেবিন বা বেডের ভাড়া কত?`, a: rateRange('cabin') ? `${short}-এর কেবিন ও বেডের ভাড়া ${rateRange('cabin')} (প্রতিটির হিসাব এই পেজের খরচের তালিকায় আছে)। ভাড়া বদলাতে পারে, ভর্তির আগে ${phoneShow(serial.number)} নম্বরে জেনে নিন।` : `${short}-এর কেবিন ও বেড ভাড়ার সঠিক তথ্য আমরা এখনো পাইনি। হাসপাতালের সাথে যোগাযোগ করুন: ${phoneShow(serial.number)}।` }]),
   ...(h.faq.some((f) => /আইসিইউ.*খরচ|আইসিইউ.*ভাড়া|ICU.*(খরচ|ভাড়া)/.test(f.q)) ? [] : [{ q: `${short}-এ আইসিইউ-র খরচ কত?`, a: rateRange('icu') ? `${short}-এ আইসিইউ ও ক্রিটিক্যাল কেয়ারের খরচ ${rateRange('icu')} (ইউনিটভেদে আলাদা, এই পেজের খরচের তালিকায় দেখুন)। বদলাতে পারে, জানতে ${phoneShow(serial.number)} নম্বরে ফোন করুন।` : `${short}-এর আইসিইউ খরচের সঠিক তথ্য আমরা এখনো পাইনি। প্রতিদিনের খরচ জানতে ${phoneShow(serial.number)} নম্বরে ফোন করুন।` }]),
 ];
@@ -77,7 +98,7 @@ const near = (await getHospitals()).filter((x) => x.data.city === h.city && x.id
 
 const photo = h.photo ? await getImage({ src: h.photo, width: 1200, format: 'webp' }) : undefined;
 const title = `${h.name} (${h.name_en}) | ডাক্তার, সিরিয়াল, যোগাযোগ নম্বর`;
-const description = `${h.name} (${h.name_en}), ${h.address}। ডাক্তারের তালিকা ও সিরিয়াল নম্বর${h.tests.length ? ', পরীক্ষার ফি' : ''}${h.facilities.length ? ', সুবিধা' : ''}${er ? ' ও জরুরি নম্বর' : ''}।`;
+const description = `${h.name} (${h.name_en}), ${h.address}। ডাক্তারের তালিকা ও সিরিয়াল নম্বর', পরীক্ষার ফি'${h.facilities.length ? ', সুবিধা' : ''}${er ? ' ও জরুরি নম্বর' : ''}।`;
 const crumbs = [['হোম', '/'], ['হাসপাতাল', '/hospitals/'], [city.bn, `/hospitals/${h.city}/`]];
 const jsonld = {
   '@context': 'https://schema.org',
@@ -145,7 +166,14 @@ const jsonld = {
           </section>
         )}
 
-        {h.tests.length > 0 && (
+        {h.facilities.length > 0 && (
+          <section class="pf-card" id="facilities" aria-labelledby="h-fac">
+            <div class="pf-card-head"><h2 id="h-fac">সুবিধাসমূহ</h2></div>
+            <ul class="hp-facs">{h.facilities.map((f) => <li class="hp-fac"><span class="hp-fac-i"><Icon facility={f} size={20} w={1.8} /></span><span>{FACILITIES[f]}</span></li>)}</ul>
+          </section>
+        )}
+
+        {testRows.length > 0 && (
           <section class="pf-card" id="fees" aria-labelledby="h-fees">
             <div class="pf-card-head"><h2 id="h-fees">পরীক্ষার ফি</h2>{h.tests_updated && <span class="pf-count">হালনাগাদ: {bnMonth(h.tests_updated)}</span>}</div>
             <label class="hp-search"><Icon name="search" w={2.2} /><input type="search" placeholder="পরীক্ষার নাম লিখুন, যেমন CBC" data-fee-q enterkeyhint="search" /></label>
@@ -156,14 +184,14 @@ const jsonld = {
               </div>
             )}
             <ul class="hp-fees">
-              {h.tests.map((t) => (
+              {testRows.map((t) => (
                 <li class="hp-fee" data-cat={t.group} data-q={(t.name + ' ' + (t.name_en ?? '')).toLowerCase()}>
-                  <span><b>{t.name}</b>{t.name_en && <small>{t.name_en}</small>}</span><strong>{taka(t.price)}</strong>
+                  <span><b>{t.name}</b>{t.name_en && <small>{t.name_en}</small>}</span><strong class:list={{ na: !t.price }}>{t.price ? taka(t.price) : NOT_ADDED}</strong>
                 </li>
               ))}
             </ul>
             <p class="hp-empty" data-fee-empty hidden>এই নামে কোনো পরীক্ষা পাওয়া যায়নি</p>
-            <p class="pf-note">ফি পরিবর্তন হতে পারে। পরীক্ষা করানোর আগে হাসপাতালে জেনে নিন।</p>
+            <p class="pf-note">{testsKnown ? 'ফি পরিবর্তন হতে পারে। পরীক্ষা করানোর আগে হাসপাতালে জেনে নিন।' : 'এই হাসপাতালের ফি আমরা এখনো যুক্ত করিনি। জানতে হাসপাতালে ফোন করুন।'}</p>
           </section>
         )}
 
@@ -173,7 +201,7 @@ const jsonld = {
             {rateGroups.map(([k, rs]) => (
               <div class="hp-rate-grp">
                 <h3>{RATE_GROUPS[k]}</h3>
-                <ul class="hp-fees">{rs.map((r) => <li class="hp-fee"><span><b>{r.name}</b>{r.note && <small>{r.note}</small>}</span><strong>{taka(r.price)}<small class="hp-unit">{r.unit}</small></strong></li>)}</ul>
+                <ul class="hp-fees">{rs.map((r) => <li class="hp-fee"><span><b>{r.name}</b>{r.note && <small>{r.note}</small>}</span><strong class:list={{ na: !r.price }}>{r.price ? <>{taka(r.price)}<small class="hp-unit">{r.unit ?? 'প্রতিদিন'}</small></> : NOT_ADDED}</strong></li>)}</ul>
               </div>
             ))}
             <p class="pf-note">ভাড়া ও খরচ বদলাতে পারে। ভর্তির আগে হাসপাতালে জেনে নিন।</p>
@@ -181,13 +209,6 @@ const jsonld = {
         )}
 
         <Ad />
-
-        {h.facilities.length > 0 && (
-          <section class="pf-card" id="facilities" aria-labelledby="h-fac">
-            <div class="pf-card-head"><h2 id="h-fac">সুবিধাসমূহ</h2></div>
-            <ul class="hp-facs">{h.facilities.map((f) => <li class="hp-fac"><span class="hp-fac-i"><Icon facility={f} size={20} w={1.8} /></span><span>{FACILITIES[f]}</span></li>)}</ul>
-          </section>
-        )}
 
         <section class="pf-card" id="visit" aria-labelledby="h-visit">
           <h2 id="h-visit">ঠিকানা ও সময়</h2>

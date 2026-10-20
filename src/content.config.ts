@@ -116,11 +116,11 @@ const hospitals = defineCollection({
         .min(1, 'অন্তত একটি নম্বর দিন'),
       facilities: z.array(z.enum(keysOf(FACILITIES), 'সুবিধার নাম src/lib/taxonomy.ts-এর তালিকা থেকে দিন')).default([]),
       tests: z
-        .array(z.object({ group: z.enum(keysOf(TEST_GROUPS)), name: z.string(), name_en: z.string().optional(), price: z.number().positive() }))
+        .array(z.object({ group: z.enum(keysOf(TEST_GROUPS)), name: z.string(), name_en: z.string().optional(), price: z.number().positive().optional() }))
         .default([]),
       tests_updated: date.optional(),
       // cabin / bed / ICU rates, only from a published price list
-      rates: z.array(z.object({ group: z.enum(['cabin', 'icu', 'other']), name: z.string(), price: z.number().positive(), unit: z.string().default('প্রতিদিন'), note: z.string().optional() })).default([]),
+      rates: z.array(z.object({ group: z.enum(['cabin', 'icu', 'other']), name: z.string(), price: z.number().positive().optional(), unit: z.string().default('প্রতিদিন'), note: z.string().optional() })).default([]),
       rates_updated: date.optional(),
       verified: date,
       verified_by: verifiedBy,
