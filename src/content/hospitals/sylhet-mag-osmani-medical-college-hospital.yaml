@@ -4,27 +4,44 @@ name_en: Sylhet MAG Osmani Medical College Hospital
 short: ওসমানী হাসপাতাল
 type: সরকারি
 city: sylhet
-address: কাজলশাহ, সিলেট
+address: মেডিকেল রোড, কাজলশাহ, সিলেট
+photo: ./images/sylhet-mag-osmani-medical-college-hospital.jpg
 emergency_24h: true
 beds: 900
-verified: 2026-10-06
+verified: 2026-10-20
 verified_by: official
 
-numbers:
-  - label: অফিসিয়াল যোগাযোগ নম্বর
-    number: "01701248122"
-    kind: other
-  - label: ল্যান্ডফোন
-    number: "02996631213"
-    kind: other
-  - label: ল্যান্ডফোন (বিকল্প)
-    number: "01312130300"
-    kind: other
+about: সিলেটের কাজলশাহে ৯০০ বেডের সরকারি মেডিকেল কলেজ হাসপাতাল। ১৯৬২ সালে ৩০০ বেড নিয়ে যাত্রা শুরু, ১৯৯৮ সালে ৯০০ বেড হয়। ২৪ ঘণ্টা জরুরি বিভাগ, আইসিইউ, সিসিইউ, ডায়ালাইসিস ও অ্যাম্বুলেন্স সেবা আছে।
 
-facilities: [er, ot, pharmacy, ambulance]
+quick:
+  beds: ৯০০টি
+  icu: আইসিইউ ও সিসিইউ আছে
+  emergency: ২৪ ঘণ্টা খোলা
+  ambulance: আছে, আলাদা নম্বর নেই
+  doctors: মেডিসিন, সার্জারি, গাইনি, শিশু, কার্ডিওলজি, নিউরোলজিসহ অনেক বিভাগ
+  diagnostics: রেডিওলজি ও ইমেজিং, প্যাথলজি ল্যাব
+
+# অফিসিয়াল সাইটে একটাই নম্বর: হোমপেজে "Emergency Contact", যোগাযোগ পাতায় "জরুরী প্রয়োজনেঃ" ও "Call us"
+numbers:
+  - label: জরুরি প্রয়োজনে (প্রধান নম্বর)
+    number: "02996631213"
+    note: ইমেইল magomch@hospi.dghs.gov.bd
+    kind: emergency
+
+facilities: [er, icu, ccu, dialysis, ot, pharmacy, ambulance]
+
+faq:
+  - q: ওসমানী মেডিকেল কলেজ হাসপাতালে কতটি বেড (শয্যা) আছে?
+    a: "৯০০ বেড। ১৯৬২ সালে ৩০০ বেড নিয়ে শুরু, ১৯৯৮ সালে ৯০০ বেড হয়। আইসিইউ ও সিসিইউ আছে।"
+  - q: ওসমানী মেডিকেলে কোন কোন বিভাগে ডাক্তার আছেন?
+    a: "মেডিসিন, সার্জারি, গাইনি, শিশু, কার্ডিওলজি, নিউরোমেডিসিন, নিউরোসার্জারি, নেফ্রোলজি, অর্থোপেডিক্স, ইউরোলজি, চর্ম, চক্ষু, মানসিক রোগ, অনকোলজি, বার্ন ও প্লাস্টিক সার্জারি এবং ডেন্টাল বিভাগ আছে।"
+  - q: ওসমানী মেডিকেলে ডায়ালাইসিস হয় কি?
+    a: "হ্যাঁ, হাসপাতালে আলাদা ডায়ালাইসিস বিভাগ ও নেফ্রোলজি বিভাগ আছে। সিরিয়ালের জন্য ০২৯৯৬৬৩১২১৩ নম্বরে ফোন করুন।"
+  - q: ওসমানী মেডিকেলে অ্যাম্বুলেন্স সেবা আছে কি?
+    a: "হ্যাঁ, জরুরি রোগীর জন্য অ্যাম্বুলেন্স সেবা আছে। আলাদা নম্বর নেই, ০২৯৯৬৬৩১২১৩ নম্বরে ফোন করুন।"
 
 sources:
   - title: SOMCH — About (official)
     url: https://www.somch.gov.bd/hospital/page/bn/about/77
-  - title: SOMCH — About, English (official)
-    url: https://www.somch.gov.bd/hospital/page/en/about/77
+  - title: SOMCH — Contact (official)
+    url: https://www.somch.gov.bd/hospital/contact/bn

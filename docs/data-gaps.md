@@ -49,3 +49,10 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | hospital | mount-adora-hospital-sylhet | doctor count for Nayasarak, visiting hours | official site gives counts for the hospital only; no visiting hours published | 2026-10-20 |
 | hospital | mount-adora-hospital-sylhet | test price list, ward/cabin rent, room types besides economy ward | official site publishes only the dialysis price (2,200 per session) | 2026-10-20 |
 | hospital | mount-adora-hospital-sylhet | signboard phone numbers | cover photo signboard shows numbers but too blurry to read; official numbers used | 2026-10-20 |
+| hospital | sylhet-mag-osmani-medical-college-hospital | ICU/CCU/NICU bed counts | official About, Departments, ICU pages, 6 searches (bn/en), news; official site lists ICU dept without beds; only a measles-outbreak news count (20 ICU beds), not used | 2026-10-20 |
+| hospital | sylhet-mag-osmani-medical-college-hospital | MRI / CT scan working | official Radiology & Imaging page has no equipment list; news search found nothing current | 2026-10-20 |
+| hospital | sylhet-mag-osmani-medical-college-hospital | separate ambulance number | official site says ambulance service exists, lists only 02996631213 | 2026-10-20 |
+| hospital | sylhet-mag-osmani-medical-college-hospital | mobile numbers 01701248122, 01312130300 (removed) | were in the old file; not found on official About/Contact pages or any search; removed until confirmed by phone | 2026-10-20 |
+| hospital | sylhet-mag-osmani-medical-college-hospital | doctor count, visiting hours, OPD hours | official doctor list not readable from workspace; OPD hours on official pages conflict (8am-6pm vs 12am-12pm) | 2026-10-20 |
+| hospital | sylhet-mag-osmani-medical-college-hospital | test price list, cabin/paying ward rent, room types | official site has no prices | 2026-10-20 |
+| hospital | sylhet-mag-osmani-medical-college-hospital | current bed count (confirm) | official About page says 900 (since 1998); old news says upgrade to 2,000 planned; 900 used | 2026-10-20 |
