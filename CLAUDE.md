@@ -87,6 +87,7 @@ Trigger: Sahel sends a hospital name plus a photo. Do ONLY this task in that ses
 
 ### Steps
 1. Read `src/content/hospitals/_template.yaml`, `al-haramain-hospital-sylhet.yaml` (finished example) and the hospitals schema in `src/content.config.ts`.
+   WARNING: `al-haramain-hospital-sylhet.yaml` contains a block between `PLACEHOLDER-UI-PREVIEW-START` and `-END` with RANDOM prices for a UI preview. They are not real: never copy that block or those numbers into any file, and never treat them as sourced data.
 2. Slug = English name lowercase hyphenated + city (e.g. `al-haramain-hospital-sylhet`). If the file exists, update in place.
 3. Photo: save as `src/content/hospitals/images/<slug>.jpg` (JPEG, max 1600 px wide, quality 85, never enlarge). LOOK at it. If it shows another site's watermark, tell Sahel before publishing.
 4. YAML: `name`, `name_en`, `short`, `type`, `city`, `address`, `photo`, `emergency_24h`, `beds`, `numbers`, `facilities` (keys from `src/lib/taxonomy.ts` only), `about` (1-2 factual sentences), `quick` (short values: beds, icu, emergency, ambulance, doctors, visiting, diagnostics; a missing key shows "আমরা সঠিক তথ্য পাইনি"), `tests` only from a published price list (with `tests_updated`), `sources`, `verified: <today>`, `verified_by: official`.
