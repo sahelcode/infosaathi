@@ -924,12 +924,11 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 .js-marquee .is-dragging a{pointer-events:none;}
 .js-marquee .pill-row a,.js-marquee .pill-row img,.js-marquee .app-marquee a,.js-marquee .app-marquee img{-webkit-user-drag:none;user-drag:none;}
 
-/* See All: same size as the section name, sits right next to it; arrows stay at the far right */
+/* See All: same size as the section name, at the right edge of the section; on desktop the arrows follow it */
 .see-all{font-size:14px;}
-.doc-head-top{justify-content:flex-start;gap:12px;}
-.doc-head-top .see-all{margin-left:0;}
-.row-nav{margin-left:auto;}
-@media (min-width:1024px){.doc-head-top .see-all{margin-left:0;}.row-nav{margin-left:auto;}}
+.doc-head-top{justify-content:space-between;gap:12px;}
+.doc-head-top .see-all{margin-left:auto;}
+.row-nav{margin-left:0;}
 </style>
 </head>
 <body>

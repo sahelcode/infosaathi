@@ -127,7 +127,7 @@
 
 /* related doctors */
 .pf-block{margin-top:26px;}
-.pf-block-head{display:flex;align-items:center;justify-content:flex-start;gap:12px;margin-bottom:10px;}
+.pf-block-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;}
 .pf-minis{display:grid;gap:10px;}
 @media (min-width:700px){.pf-minis{grid-template-columns:1fr 1fr;}}
 .pf-mini{display:flex;align-items:center;gap:12px;padding:10px 12px 10px 10px;border-radius:16px;background:#fff;border:1px solid var(--line);transition:border-color .2s,transform .2s,box-shadow .2s;}
