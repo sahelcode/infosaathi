@@ -27,3 +27,5 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | hospital | ibn-sina-hospital-sylhet | test price list, cabin/ICU rates, room types | official site has no prices | 2026-10-20 |
 | university | metropolitan-university | seats, competition per seat, total programme cost and credits | official admission, fee and calendar pages, news (bn/en) | 2026-10-20 |
 | university | metropolitan-university | Spring 2027 dates (open, close, exam) | not announced yet; last semester (Autumn 2026) class start is labelled | 2026-10-20 |
+| university | north-south-university | seats, competition per seat, classes start | official admission, FAQ, deadline and tuition pages, Fall 2026 test news, search (bn/en) | 2026-10-20 |
+| university | north-south-university | Spring 2027 dates (open, close, exam) | not announced yet; last semester (Fall 2026) test date is labelled | 2026-10-20 |
