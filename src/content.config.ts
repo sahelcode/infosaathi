@@ -119,6 +119,9 @@ const hospitals = defineCollection({
         .array(z.object({ group: z.enum(keysOf(TEST_GROUPS)), name: z.string(), name_en: z.string().optional(), price: z.number().positive() }))
         .default([]),
       tests_updated: date.optional(),
+      // cabin / bed / ICU rates, only from a published price list
+      rates: z.array(z.object({ group: z.enum(['cabin', 'icu', 'other']), name: z.string(), price: z.number().positive(), unit: z.string().default('প্রতিদিন'), note: z.string().optional() })).default([]),
+      rates_updated: date.optional(),
       verified: date,
       verified_by: verifiedBy,
       sources: sources,

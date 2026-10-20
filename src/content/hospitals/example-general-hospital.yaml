@@ -36,3 +36,12 @@ tests:
   - { group: imaging, name: আল্ট্রাসনোগ্রাম (পুরো পেট), name_en: USG Whole Abdomen, price: 1500 }
   - { group: heart, name: ইসিজি, name_en: ECG, price: 400 }
   - { group: heart, name: ইকোকার্ডিওগ্রাম, name_en: Echocardiogram, price: 2500 }
+rates_updated: 2026-09-01
+rates:
+  - { group: cabin, name: জেনারেল ওয়ার্ড বেড, price: 800 }
+  - { group: cabin, name: নন-এসি কেবিন, price: 2500 }
+  - { group: cabin, name: এসি কেবিন, price: 4000, note: এটাচড বাথরুমসহ }
+  - { group: cabin, name: ভিআইপি কেবিন, price: 7500 }
+  - { group: icu, name: আইসিইউ বেড, price: 18000 }
+  - { group: icu, name: এইচডিইউ বেড, price: 9000 }
+  - { group: icu, name: এনআইসিইউ (নবজাতক), price: 12000 }

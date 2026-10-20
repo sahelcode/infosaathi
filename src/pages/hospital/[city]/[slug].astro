@@ -45,6 +45,9 @@ const spChips = [...spCount].sort((a, b) => b[1] - a[1]);
 
 const groups = Object.entries(TEST_GROUPS).filter(([k]) => h.tests.some((t) => t.group === k));
 const NA = 'আমরা সঠিক তথ্য পাইনি';
+const RATE_GROUPS = { cabin: 'কেবিন ও বেড', icu: 'আইসিইউ ও ক্রিটিক্যাল কেয়ার', other: 'অন্যান্য' } as const;
+const rateGroups = (Object.keys(RATE_GROUPS) as (keyof typeof RATE_GROUPS)[]).map((k) => [k, h.rates.filter((r) => r.group === k)] as const).filter(([, rs]) => rs.length);
+const rateRange = (g: string) => { const ps = h.rates.filter((r) => r.group === g).map((r) => r.price); return ps.length ? (Math.min(...ps) === Math.max(...ps) ? taka(ps[0]) : `${taka(Math.min(...ps))} থেকে ${taka(Math.max(...ps))}`) : ''; };
 const q = h.quick ?? {};
 const glance = [
   { k: 'শয্যা', v: q.beds ?? (h.beds ? `${bn(h.beds)}টি` : '') },
@@ -66,8 +69,8 @@ const faq = [
   ...h.faq,
   // questions people search a lot; honest "not found" until the hospital publishes the figure
   ...(h.faq.some((f) => /পরীক্ষার ফি|টেস্টের/.test(f.q)) ? [] : [{ q: `${short}-এ পরীক্ষার (টেস্টের) ফি কত?`, a: h.tests.length ? `${short}-এর পরীক্ষার ফির তালিকা এই পেজের "পরীক্ষার ফি" অংশে আছে।${h.tests_updated ? ` তালিকা হালনাগাদ: ${bnMonth(h.tests_updated)}।` : ''} ফি বদলাতে পারে, পরীক্ষার আগে হাসপাতালে জেনে নিন।` : `${short}-এর পরীক্ষার ফির সঠিক তথ্য আমরা এখনো পাইনি। হালনাগাদ ফি জানতে ${phoneShow(serial.number)} নম্বরে ফোন করুন।` }]),
-  ...(h.faq.some((f) => /কেবিন|বেড ভাড়া|সিট ভাড়া/.test(f.q)) ? [] : [{ q: `${short}-এ কেবিন বা বেডের ভাড়া কত?`, a: `${short}-এর কেবিন ও বেড ভাড়ার সঠিক তথ্য আমরা এখনো পাইনি। হাসপাতালের সাথে যোগাযোগ করুন: ${phoneShow(serial.number)}।` }]),
-  ...(h.faq.some((f) => /আইসিইউ.*খরচ|আইসিইউ.*ভাড়া|ICU.*(খরচ|ভাড়া)/.test(f.q)) ? [] : [{ q: `${short}-এ আইসিইউ-র খরচ কত?`, a: `${short}-এর আইসিইউ খরচের সঠিক তথ্য আমরা এখনো পাইনি। প্রতিদিনের খরচ জানতে ${phoneShow(serial.number)} নম্বরে ফোন করুন।` }]),
+  ...(h.faq.some((f) => /কেবিন|বেড ভাড়া|সিট ভাড়া/.test(f.q)) ? [] : [{ q: `${short}-এ কেবিন বা বেডের ভাড়া কত?`, a: rateRange('cabin') ? `${short}-এর কেবিন ও বেডের ভাড়া ${rateRange('cabin')} (প্রতিটির হিসাব এই পেজের খরচের তালিকায় আছে)। ভাড়া বদলাতে পারে, ভর্তির আগে ${phoneShow(serial.number)} নম্বরে জেনে নিন।` : `${short}-এর কেবিন ও বেড ভাড়ার সঠিক তথ্য আমরা এখনো পাইনি। হাসপাতালের সাথে যোগাযোগ করুন: ${phoneShow(serial.number)}।` }]),
+  ...(h.faq.some((f) => /আইসিইউ.*খরচ|আইসিইউ.*ভাড়া|ICU.*(খরচ|ভাড়া)/.test(f.q)) ? [] : [{ q: `${short}-এ আইসিইউ-র খরচ কত?`, a: rateRange('icu') ? `${short}-এ আইসিইউ ও ক্রিটিক্যাল কেয়ারের খরচ ${rateRange('icu')} (ইউনিটভেদে আলাদা, এই পেজের খরচের তালিকায় দেখুন)। বদলাতে পারে, জানতে ${phoneShow(serial.number)} নম্বরে ফোন করুন।` : `${short}-এর আইসিইউ খরচের সঠিক তথ্য আমরা এখনো পাইনি। প্রতিদিনের খরচ জানতে ${phoneShow(serial.number)} নম্বরে ফোন করুন।` }]),
 ];
 
 const near = (await getHospitals()).filter((x) => x.data.city === h.city && x.id !== hospital.id).slice(0, 3);
@@ -161,6 +164,19 @@ const jsonld = {
             </ul>
             <p class="hp-empty" data-fee-empty hidden>এই নামে কোনো পরীক্ষা পাওয়া যায়নি</p>
             <p class="pf-note">ফি পরিবর্তন হতে পারে। পরীক্ষা করানোর আগে হাসপাতালে জেনে নিন।</p>
+          </section>
+        )}
+
+        {rateGroups.length > 0 && (
+          <section class="pf-card" id="rates" aria-labelledby="h-rates">
+            <div class="pf-card-head"><h2 id="h-rates">কেবিন, বেড ও আইসিইউ খরচ</h2>{h.rates_updated && <span class="pf-count">হালনাগাদ: {bnMonth(h.rates_updated)}</span>}</div>
+            {rateGroups.map(([k, rs]) => (
+              <div class="hp-rate-grp">
+                <h3>{RATE_GROUPS[k]}</h3>
+                <ul class="hp-fees">{rs.map((r) => <li class="hp-fee"><span><b>{r.name}</b>{r.note && <small>{r.note}</small>}</span><strong>{taka(r.price)}<small class="hp-unit">{r.unit}</small></strong></li>)}</ul>
+              </div>
+            ))}
+            <p class="pf-note">ভাড়া ও খরচ বদলাতে পারে। ভর্তির আগে হাসপাতালে জেনে নিন।</p>
           </section>
         )}
 
