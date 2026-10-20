@@ -52,7 +52,7 @@ const glance = [
   { k: 'জরুরি বিভাগ', v: q.emergency ?? (h.emergency_24h ? '২৪ ঘণ্টা খোলা' : '') },
   { k: 'অ্যাম্বুলেন্স', v: q.ambulance ?? '' },
   { k: 'বিশেষজ্ঞ ডাক্তার', v: q.doctors ?? (doctors.length ? `${bn(doctors.length)} জন (আমাদের তালিকায়)` : '') },
-  { k: 'রোগী দেখার সময়', v: q.visiting ?? h.visiting_hours ?? '' },
+  { k: 'রোগী দেখার সময়', v: q.visiting ?? h.visiting_hours ?? 'ডাক্তারের সময় অনুযায়ী' },
   { k: 'পরীক্ষা ও স্ক্যান', v: q.diagnostics ?? '' },
 ];
 
@@ -61,7 +61,7 @@ const faq = [
   { q: `${h.name}-এ ডাক্তারের সিরিয়াল কীভাবে নেব?`, a: `${phoneShow(serial.number)} নম্বরে ${serial.note ? serial.note + ' ' : ''}কল করে সিরিয়াল নিন।` },
   { q: `${h.name} কোথায়?`, a: `${h.address}।` },
   ...(h.emergency_24h ? [{ q: 'জরুরি বিভাগ কি ২৪ ঘণ্টা খোলা?', a: `হ্যাঁ, জরুরি বিভাগ ২৪ ঘণ্টা খোলা থাকে।${er ? ` জরুরি নম্বর ${phoneShow(er.number)}।` : ` যোগাযোগের নম্বর ${phoneShow(serial.number)}।`}` }] : []),
-  ...(h.visiting_hours ? [{ q: 'রোগী দেখার (ভিজিটিং) সময় কখন?', a: `${h.visiting_hours}।` }] : []),
+  { q: `${short}-এ রোগী দেখার (ভিজিটিং) সময় কখন?`, a: h.visiting_hours ? `${h.visiting_hours}।` : `চিকিৎসকের সময় অনুযায়ী। প্রতিটি ডাক্তারের বসার দিন ও সময় আলাদা, তাই সিরিয়াল নেওয়ার আগে ${phoneShow(serial.number)} নম্বরে ফোন করে জেনে নিন।` },
   ...(doctors.length ? [{ q: `${h.name}-এ কোন কোন বিশেষজ্ঞ ডাক্তার বসেন?`, a: spChips.map(([k, n]) => `${SPECIALTIES[k as keyof typeof SPECIALTIES].bn} (${bn(n)} জন)`).join(', ') + '।' }] : []),
   ...h.faq,
 ];
@@ -69,7 +69,7 @@ const faq = [
 const near = (await getHospitals()).filter((x) => x.data.city === h.city && x.id !== hospital.id).slice(0, 3);
 
 const photo = h.photo ? await getImage({ src: h.photo, width: 1200, format: 'webp' }) : undefined;
-const title = `${h.name} (${h.name_en}) | ডাক্তার, সিরিয়াল, পরীক্ষার ফি`;
+const title = `${h.name} (${h.name_en}) | ডাক্তার, সিরিয়াল, যোগাযোগ নম্বর`;
 const description = `${h.name} (${h.name_en}), ${h.address}। ডাক্তারের তালিকা ও সিরিয়াল নম্বর${h.tests.length ? ', পরীক্ষার ফি' : ''}${h.facilities.length ? ', সুবিধা' : ''}${er ? ' ও জরুরি নম্বর' : ''}।`;
 const crumbs = [['হোম', '/'], ['হাসপাতাল', '/hospitals/'], [city.bn, `/hospitals/${h.city}/`]];
 const jsonld = {
@@ -81,6 +81,7 @@ const jsonld = {
       alternateName: [h.name],
       url: SITE + path,
       telephone: phoneIntl(serial.number),
+      ...(h.beds && { numberOfBeds: h.beds }),
       ...(photo && { image: new URL(photo.src, SITE).href }),
       address: { '@type': 'PostalAddress', streetAddress: h.address, addressLocality: city.en, addressCountry: 'BD' },
     },
