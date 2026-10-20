@@ -1,0 +1,28 @@
+name: "ডা. শেখ কবির আহম্মেদ"
+name_en: "Dr. Shaikh Kabir Ahmed"
+specialty: medicine
+title: "মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-shaikh-kabir-ahmed.jpg
+banner: ./images/dr-shaikh-kabir-ahmed-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "MD (Internal Medicine)", "MACP (USA)"]
+designation: "প্রাক্তন কনসালটেন্ট (মেডিসিন), সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ; কনসালটেন্ট, বক্ষব্যাধি হাসপাতাল, সিলেট"
+bmdc: A-45106
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/08/dr-sk-kabir-ahmmed-sylhet.html, /2025/08/dr-sk-kabir-ahmmed-medicine-specialist.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪২২ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "21:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01711705368"
+        note: "সকাল ৮টা থেকে"
