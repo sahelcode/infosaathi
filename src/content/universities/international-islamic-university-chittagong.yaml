@@ -10,7 +10,9 @@ web: https://www.iiuc.ac.bd
 apply_url: https://www.iiuc.ac.bd/web/admission/choose-apply
 ugc: true
 campus: কুমিরা, স্থায়ী ক্যাম্পাস; ছাত্রীদের জন্য আলাদা ক্যাম্পাস
-verified: 2026-10-06
+logo: ./images/international-islamic-university-chittagong-logo.png
+photo: ./images/international-islamic-university-chittagong-campus.jpg
+verified: 2026-10-20
 verified_by: official
 
 numbers:
@@ -28,34 +30,60 @@ emails:
   - { label: সনদ যাচাই (পরীক্ষা নিয়ন্ত্রক), email: coe@iiuc.ac.bd }
 
 admission:
-  intake: অটাম ২০২৬
+  intake: গত সেমিস্টার অটাম ২০২৬ (স্প্রিং ২০২৭-এর বিজ্ঞপ্তি এখনো আসেনি)
   close: 2026-07-27
-  requirement: ইঞ্জিনিয়ারিং (CSE, CCE, EEE, ETE) — SSC ও HSC-তে আলাদাভাবে কমপক্ষে GPA ৩.০০, মোট ৬.৫০; BBA, অর্থনীতি ও ইংরেজি — SSC ও HSC-তে আলাদাভাবে কমপক্ষে ২.৫০, মোট ৬.০০; ইসলামিক স্টাডিজ প্রোগ্রাম — দাখিল ও আলিমে আলাদাভাবে কমপক্ষে ২.৫০, মোট ৬.০০
-  exam: এমসিকিউ ভর্তি পরীক্ষা (অটাম ২০২৬-এ ২৯ ও ৩০ জুলাই ২০২৬ অনুষ্ঠিত)
+  requirement: ইঞ্জিনিয়ারিং (CSE, CCE, EEE, ETE) — SSC ও HSC-তে আলাদাভাবে কমপক্ষে GPA ৩.০০, মোট ৬.৫০, HSC-তে পদার্থ ও উচ্চতর গণিত; BBA, অর্থনীতি ও ব্যাংকিং এবং ইংরেজি — আলাদাভাবে কমপক্ষে ২.৫০, মোট ৬.০০; ইসলামিক স্টাডিজ ও আরবি — দাখিল ও আলিমে আলাদাভাবে কমপক্ষে ২.৫০, মোট ৬.০০; HSC/আলিম ২০২১ বা পরে পাস; GED গ্রহণযোগ্য নয়
+  exam: এমসিকিউ ভর্তি পরীক্ষা (দেড় ঘণ্টা) ও ভাইভা; গত সেমিস্টারে (অটাম ২০২৬) ২৯ ও ৩০ জুলাই ২০২৬
+  app_fee: 1000
   steps:
-    - { title: অনলাইনে আবেদন, text: ভর্তি পোর্টালে প্রোগ্রাম বেছে ফর্ম পূরণ ও ফি জমা }
-    - { title: ভর্তি পরীক্ষা, text: নির্ধারিত দিনে এমসিকিউ পরীক্ষায় অংশ নেওয়া }
+    - { title: অনলাইনে আবেদন, text: অফিসিয়াল সাইটের Admission মেনু থেকে Apply Online-এ গিয়ে ফর্ম পূরণ, ছবি ও স্বাক্ষর আপলোড }
+    - { title: আবেদন ফি, text: "১,০০০ টাকা বিকাশে (মার্চেন্ট ০১৯৭৩২০৯০৩০) বা ক্যাম্পাসের হিসাব শাখায় জমা দিয়ে তথ্য ফর্মে লিখুন" }
+    - { title: অ্যাডমিট কার্ড, text: SMS-এ পাওয়া ইউজারনেম-পাসওয়ার্ড দিয়ে অ্যাডমিট কার্ড ও ফর্ম প্রিন্ট করুন }
+    - { title: ভর্তি পরীক্ষা, text: নির্ধারিত দিনে এমসিকিউ পরীক্ষা ও ভাইভায় অংশ নিন }
+  documents:
+    - প্রিন্ট করা অ্যাডমিট কার্ড ও ভর্তি ফর্ম
+    - SSC ও HSC (বা দাখিল ও আলিম) সনদের ফটোকপি
 
 programs:
   - { faculty: ইসলামিক স্টাডিজ, name: কুরআনিক সায়েন্সেস ও ইসলামিক স্টাডিজ, name_en: "BA (Hons.) in Qur'anic Sciences & Islamic Studies", years: 4, credits: 150, total_cost: 138025 }
-  - { faculty: ইসলামিক স্টাডিজ, name: দাওয়াহ ও ইসলামিক স্টাডিজ, name_en: "BA (Hons.) in Da'wah & Islamic Studies" }
-  - { faculty: ইসলামিক স্টাডিজ, name: সায়েন্সেস অব হাদিস ও ইসলামিক স্টাডিজ, name_en: "BA (Hons.) in Sciences of Hadith & Islamic Studies" }
-  - { faculty: বিজ্ঞান ও প্রকৌশল, name: কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিং, name_en: B.Sc. in Computer Science and Engineering }
-  - { faculty: বিজ্ঞান ও প্রকৌশল, name: কম্পিউটার ও কমিউনিকেশন ইঞ্জিনিয়ারিং, name_en: B.Sc. in Computer and Communication Engineering }
-  - { faculty: বিজ্ঞান ও প্রকৌশল, name: ইলেকট্রিক্যাল ও ইলেকট্রনিক ইঞ্জিনিয়ারিং, name_en: B.Sc. in Electrical and Electronic Engineering }
-  - { faculty: বিজ্ঞান ও প্রকৌশল, name: ইলেকট্রনিক ও টেলিকমিউনিকেশন ইঞ্জিনিয়ারিং, name_en: B.Sc. in Electronic and Telecommunication Engineering }
-  - { faculty: বিজ্ঞান ও প্রকৌশল, name: সিভিল ইঞ্জিনিয়ারিং, name_en: B.Sc. in Civil Engineering }
+  - { faculty: ইসলামিক স্টাডিজ, name: দাওয়াহ ও ইসলামিক স্টাডিজ, name_en: "BA (Hons.) in Da'wah & Islamic Studies", total_cost: 138025 }
+  - { faculty: ইসলামিক স্টাডিজ, name: সায়েন্সেস অব হাদিস ও ইসলামিক স্টাডিজ, name_en: "BA (Hons.) in Sciences of Hadith & Islamic Studies", total_cost: 138025 }
+  - { faculty: বিজ্ঞান ও প্রকৌশল, name: কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিং, name_en: B.Sc. in Computer Science and Engineering, total_cost: 717725 }
+  - { faculty: বিজ্ঞান ও প্রকৌশল, name: কম্পিউটার ও কমিউনিকেশন ইঞ্জিনিয়ারিং, name_en: B.Sc. in Computer and Communication Engineering, total_cost: 596525 }
+  - { faculty: বিজ্ঞান ও প্রকৌশল, name: ইলেকট্রিক্যাল ও ইলেকট্রনিক ইঞ্জিনিয়ারিং, name_en: B.Sc. in Electrical and Electronic Engineering, total_cost: 691075 }
+  - { faculty: বিজ্ঞান ও প্রকৌশল, name: ইলেকট্রনিক ও টেলিকমিউনিকেশন ইঞ্জিনিয়ারিং, name_en: B.Sc. in Electronic and Telecommunication Engineering, total_cost: 588925 }
+  - { faculty: বিজ্ঞান ও প্রকৌশল, name: সিভিল ইঞ্জিনিয়ারিং, name_en: B.Sc. in Civil Engineering, total_cost: 705325 }
   - { faculty: ফার্মেসি, name: ফার্মেসি, name_en: Bachelor of Pharmacy (Hons.) }
-  - { faculty: ব্যবসায় ও অর্থনীতি, name: ব্যবসায় প্রশাসন, name_en: Bachelor of Business Administration }
+  - { faculty: ব্যবসায় ও অর্থনীতি, name: ব্যবসায় প্রশাসন, name_en: Bachelor of Business Administration, total_cost: 530245 }
   - { faculty: ব্যবসায় ও অর্থনীতি, name: ব্যবসায় প্রশাসন (ফিন্যান্স), name_en: Bachelor of Business Administration in Finance }
-  - { faculty: ব্যবসায় ও অর্থনীতি, name: অর্থনীতি ও ব্যাংকিং, name_en: BSS (Hons.) in Economics and Banking }
-  - { faculty: ভাষা ও সাহিত্য, name: ইংরেজি ভাষা ও সাহিত্য, name_en: BA (Hons.) in English Language and Literature }
-  - { faculty: ভাষা ও সাহিত্য, name: আরবি ভাষা ও সাহিত্য, name_en: BA (Hons.) in Arabic Language & Literature }
+  - { faculty: ব্যবসায় ও অর্থনীতি, name: অর্থনীতি ও ব্যাংকিং, name_en: BSS (Hons.) in Economics and Banking, total_cost: 404825 }
+  - { faculty: ভাষা ও সাহিত্য, name: ইংরেজি ভাষা ও সাহিত্য, name_en: BA (Hons.) in English Language and Literature, total_cost: 384165 }
+  - { faculty: ভাষা ও সাহিত্য, name: আরবি ভাষা ও সাহিত্য, name_en: "BA (Hons.) in Arabic Language & Literature", total_cost: 136025 }
   - { faculty: আইন, name: আইন, name_en: Bachelor of Laws (Hons.) }
-cost_note: শুধু কুরআনিক সায়েন্সেস ও ইসলামিক স্টাডিজের মোট খরচ অফিসিয়াল ফি পাতায় পাওয়া গেছে (টিউশন ফি মওকুফ; ভর্তি, সেমিস্টার, পরীক্ষা, এস্টাবলিশমেন্ট, ডেভেলপমেন্ট ও অন্যান্য ফি মিলিয়ে)। অন্য প্রোগ্রামের খরচ বিশ্ববিদ্যালয়ের ফি পাতায় দেখে নিন।
+detail:
+  open: স্প্রিং ২০২৭ সেমিস্টারের ভর্তি বিজ্ঞপ্তি আইআইইউসি এখনো প্রকাশ করেনি।
+  close: গত সেমিস্টারে (অটাম ২০২৬) অনলাইনে আবেদন ও ফি জমার শেষ তারিখ ছিল ২৭ জুলাই ২০২৬।
+  exam: গত সেমিস্টারে (অটাম ২০২৬) এমসিকিউ ভর্তি পরীক্ষা হয় ২৯ ও ৩০ জুলাই ২০২৬, সকাল ১০টায়।
+  elig: ইঞ্জিনিয়ারিংয়ে SSC ও HSC-তে ৩.০০ করে মোট ৬.৫০; অন্য প্রোগ্রামে ২.৫০ করে মোট ৬.০০।
+  app_fee: আইআইইউসিতে স্নাতক ভর্তির আবেদন ফি ১,০০০ টাকা, বিকাশ বা ক্যাম্পাসে জমা দেওয়া যায়।
+  admission_fee: ভর্তি ফি বেশিরভাগ প্রোগ্রামে ৩০,০০০ টাকা; ইসলামিক স্টাডিজ ও আরবিতে ১০,০০০ টাকা।
+  cost: অটাম ২০২৬-এর হিসাবে মোট খরচ ১,৩৬,০২৫ (আরবি) থেকে ৭,১৭,৭২৫ টাকা (CSE) পর্যন্ত।
+  rank: QS ওয়ার্ল্ড র‍্যাংকিং ২০২৭-এর বাংলাদেশি তালিকায় আইআইইউসির নাম নেই।
+  programs: ছয় অনুষদে ১৫টি স্নাতক প্রোগ্রাম; CSE, EEE, সিভিল, ফার্মেসি, BBA, আইন, ইসলামিক স্টাডিজসহ।
+quick:
+  open: স্প্রিং ২০২৭-এর বিজ্ঞপ্তি আসেনি
+  close: গত সেমিস্টারে ২৭ জুলাই ২০২৬
+  exam: গত সেমিস্টারে ২৯–৩০ জুলাই ২০২৬
+  elig: মোট GPA ৬.০০ (ইঞ্জিনিয়ারিং ৬.৫০)
+  app_fee: ১,০০০ টাকা
+  admission_fee: ৩০,০০০ টাকা (ইসলামিক স্টাডিজে ১০,০০০)
+  cost: ১.৩৬–৭.১৮ লাখ টাকা (অটাম ২০২৬)
+  rank: QS ২০২৭ তালিকায় নেই
+cost_note: মোট খরচ অটাম ২০২৬ ভর্তি নির্দেশিকায় আইআইইউসির ছাপানো অঙ্ক, কোনো ওয়েভার ছাড়া। ভর্তির সময় প্রথম কিস্তি দিতে হয়, যেমন CSE-তে ১,১০,৯২৫ টাকা, ইসলামিক স্টাডিজে ৩১,৩২৫ টাকা। ইসলামিক স্টাডিজে টিউশন ফি মওকুফ। ফার্মেসি, BBA (ফিন্যান্স) ও আইনের মোট খরচ নির্দেশিকায় নেই।
 
 waivers:
-  - { condition: SSC ও HSC (বা সমমান) দুটোতেই GPA ৫.০০, amount: "ভর্তি ফি ১০০%" }
+  - { condition: SSC ও HSC (বা সমমান) দুটোতেই GPA ৫.০০ (ঐচ্ছিক বিষয় ছাড়া), amount: "ভর্তি ফি ১০০%" }
+  - { condition: ভর্তি পরীক্ষায় প্রতি অনুষদে সর্বোচ্চ নম্বর পাওয়া একজন, amount: "ভর্তি ফি ১০০%" }
   - { condition: প্রত্যেক ভাই-বোনের জন্য, amount: "টিউশন ফি ২৫%" }
   - { condition: মুক্তিযোদ্ধার সন্তান/পোষ্য, amount: "টিউশন ফি ১০০%" }
 
@@ -63,11 +91,28 @@ about: ইন্টারন্যাশনাল ইসলামিক ইউ�
 good:
   - ছাত্রীদের জন্য আলাদা ক্যাম্পাস
   - SSC ও HSC-তে GPA ৫.০০ থাকলে ভর্তি ফি পুরো মওকুফ
+  - ইসলামিক স্টাডিজে টিউশন ফি নেই, মোট খরচ প্রায় ১.৩৮ লাখ টাকা
+  - প্রতিটি প্রোগ্রামের মোট খরচ ভর্তি নির্দেশিকায় ছাপানো থাকে
 think:
-  - বেশিরভাগ প্রোগ্রামের মোট খরচ ওয়েবসাইটে সহজে পাওয়া যায় না; ভর্তি অফিস থেকে নিশ্চিত হোন
+  - অটাম ২০২৬ নির্দেশিকায় CSE, CCE, EEE, ETE, BBA ও ইংরেজি "Male Only" লেখা; ছাত্রীরা কোন প্রোগ্রামে পড়তে পারে ভর্তি অফিসে জেনে নিন
+  - HSC/আলিম ২০২১-এর আগে পাস হলে আবেদন করা যায় না
   - বছরে নির্দিষ্ট সেমিস্টারে ভর্তি হয়; আবেদনের শেষ তারিখ খেয়াল রাখুন
+
+faq:
+  - q: আইআইইউসির যোগাযোগ নম্বর ও ভর্তি হটলাইন নাম্বার কী?
+    a: "প্রধান নম্বর ০৯৬১৩২৩০৫০৫। ভর্তি তথ্যের জন্য ০১৭২০৪৭৮৬২১ ও ০১৮৯৪৭৯৮৯৯৪, অফিস সময়ে সকাল ৮:৩০ থেকে বিকাল ৪টা পর্যন্ত।"
+  - q: আইআইইউসিতে ভর্তি ফি কত?
+    a: "ভর্তি ফি বেশিরভাগ প্রোগ্রামে ৩০,০০০ টাকা; কুরআনিক সায়েন্সেস, দাওয়াহ, হাদিস ও আরবিতে ১০,০০০ টাকা। আবেদন ফি আলাদা, ১,০০০ টাকা।"
+  - q: আইআইইউসিতে ভর্তি হতে কত জিপিএ লাগে?
+    a: "CSE, CCE, EEE ও ETE-তে SSC ও HSC-তে আলাদাভাবে ৩.০০ ও মোট ৬.৫০ লাগে। BBA, অর্থনীতি, ইংরেজি, ইসলামিক স্টাডিজ ও আরবিতে আলাদাভাবে ২.৫০ ও মোট ৬.০০। HSC বা আলিম ২০২১ বা পরে পাস হতে হবে।"
+  - q: আইআইইউসিতে CSE পড়তে মোট কত খরচ?
+    a: "অটাম ২০২৬ নির্দেশিকা অনুযায়ী CSE-তে মোট ৭,১৭,৭২৫ টাকা, ভর্তির সময় প্রথম কিস্তি ১,১০,৯২৫ টাকা। ওয়েভার পেলে খরচ কমে।"
+  - q: আইআইইউসিতে পরবর্তী ভর্তি কবে?
+    a: "স্প্রিং ২০২৭ সেমিস্টারের ভর্তি বিজ্ঞপ্তি এখনো আসেনি। গত সেমিস্টারে (অটাম ২০২৬) আবেদনের শেষ তারিখ ছিল ২৭ জুলাই, পরীক্ষা ২৯–৩০ জুলাই ২০২৬।"
+  - q: আইআইইউসি কোথায় অবস্থিত?
+    a: "আইআইইউসির স্থায়ী ক্যাম্পাস চট্টগ্রামের কুমিরায়, চট্টগ্রাম-৪৩১৮। ছাত্রীদের জন্য আলাদা ক্যাম্পাস আছে।"
 
 sources:
   - { title: অফিসিয়াল ওয়েবসাইট, url: https://www.iiuc.ac.bd }
-  - { title: যোগাযোগ, url: https://www.iiuc.ac.bd/web/about/contact }
+  - { title: ভর্তি নির্দেশিকা (অটাম ২০২৬), url: https://www.iiuc.ac.bd/web/admission/instruction-bn?tab=bachelor }
 old_urls: [/2025/11/international-islamic-university-chittagong.html]

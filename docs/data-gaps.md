@@ -16,6 +16,9 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | university | shahjalal-university-of-science-and-technology | years of study for programmes other than Architecture | not found | 2026-10-19 |
 | university | leading-university | seats, competition per seat, QS rank, classes start | official site, news | 2026-10-20 |
 | university | american-international-university-bangladesh | seats, competition per seat | official site, news | 2026-10-20 |
+| university | international-islamic-university-chittagong | seats, competition per seat, classes start | official admission page, Autumn 2026 instruction PDFs, news (bn/en) | 2026-10-20 |
+| university | international-islamic-university-chittagong | Spring 2027 dates (open, close, exam) | not announced yet; last semester (Autumn 2026) figures are labelled | 2026-10-20 |
+| university | international-islamic-university-chittagong | total cost and credits for Pharmacy, BBA Finance, LLB | not in Autumn 2026 instruction or fee page | 2026-10-20 |
 | hospital | al-haramain-hospital-sylhet | cabin/bed rent, ICU daily cost | official site has no prices (page shows an honest "not found" answer) | 2026-10-21 |
 | hospital | ibn-sina-hospital-sylhet | beds, ICU bed count | official home and services pages, Ibn Sina Trust site, 4 searches (bn/en); only a directory says 50 beds, not used | 2026-10-20 |
 | hospital | ibn-sina-hospital-sylhet | 24-hour emergency, ambulance number | official site lists only hotline/"Emergency Call" 09610009640 and PABX; no 24h or ambulance statement | 2026-10-20 |
