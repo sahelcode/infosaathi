@@ -39,3 +39,8 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | hospital | north-east-medical-college-hospital-sylhet | ICU/CCU/NICU bed counts, doctor count, visiting hours | official home, ICU, CCU, indoor services pages, 8 searches (bn/en); only a 2020 Covid news count (20 ICU), not used | 2026-10-20 |
 | hospital | north-east-medical-college-hospital-sylhet | test prices | official "Laboratory & Investigation" page has an undated price list, but the site is not reachable from the workspace to read it exactly | 2026-10-20 |
 | hospital | north-east-medical-college-hospital-sylhet | cabin/ICU daily rates | official site has no rates | 2026-10-20 |
+| hospital | mount-adora-hospital-akhalia-sylhet | ICU/CCU/NICU bed counts per unit | official Services and Home pages, 5 searches (bn/en); only 2020-21 Covid news counts, not used | 2026-10-20 |
+| hospital | mount-adora-hospital-akhalia-sylhet | test price list, cabin/ward types and rent, ICU daily cost | official site publishes only the dialysis price (2,200 per session) | 2026-10-20 |
+| hospital | mount-adora-hospital-akhalia-sylhet | visiting hours | official site, searches; not published | 2026-10-20 |
+| hospital | mount-adora-hospital-akhalia-sylhet | doctor count for Akhalia only | official Services page gives 32 departments / 138 consultants for the hospital, not per branch | 2026-10-20 |
+| hospital | mount-adora-hospital-akhalia-sylhet | main phone (confirm) | official homepage structured data shows +8809678225566, visible pages say 09610848484; visible number used | 2026-10-20 |
