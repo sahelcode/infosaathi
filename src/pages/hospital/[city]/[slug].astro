@@ -121,7 +121,7 @@ const jsonld = {
         </section>
 
         <section class="un-fact" aria-labelledby="h-nums"><h2 id="h-nums">যোগাযোগের নম্বর</h2>
-          <dl>{h.numbers.map((n) => <div class="un-row"><dt>{n.label}{n.note && <small class="hp-nnote">{n.note}</small>}</dt><dd><a class="hp-tel" href={`tel:${n.number}`}>{phoneShow(n.number)}</a></dd></div>)}</dl>
+          <div class="pf-nums hp-nums">{h.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} er={n.kind === 'emergency'} />)}</div>
         </section>
 
         {doctors.length > 0 && (
@@ -188,7 +188,7 @@ const jsonld = {
         </Report>
         <ShareRow />
 
-        <nav class="pf-tags" aria-label="সম্পর্কিত">
+        <nav class="pf-tags hp-tags" aria-label="সম্পর্কিত">
           <a href={`/hospitals/${h.city}/`}>{city.of} সব হাসপাতাল</a>
           <a href={`/doctors/${h.city}/`}>{city.of} ডাক্তার</a>
         </nav>

@@ -143,3 +143,7 @@
 @media (min-width:768px){.hp-actions.un-actions{grid-template-columns:auto 46px 46px;padding-left:24px;}}
 @media (max-width:374px){.hp-actions.un-actions{grid-template-columns:1fr 46px 46px;}.hp-actions.un-actions .pf-btn:first-child{grid-column:auto;}}
 .hp-cover.has-photo img{object-position:center 72%;}
+
+.hp-nums{display:flex;flex-direction:column;gap:8px;padding:6px 0 12px;}
+.hp-tags{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.hp-tags a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:8px 10px;line-height:1.35;}
