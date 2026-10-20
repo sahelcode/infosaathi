@@ -87,7 +87,6 @@ Trigger: Sahel sends a hospital name plus a photo. Do ONLY this task in that ses
 
 ### Steps
 1. Read `src/content/hospitals/_template.yaml`, `al-haramain-hospital-sylhet.yaml` (finished example) and the hospitals schema in `src/content.config.ts`.
-   WARNING: `al-haramain-hospital-sylhet.yaml` contains a block between `PLACEHOLDER-UI-PREVIEW-START` and `-END` with RANDOM prices for a UI preview. They are not real: never copy that block or those numbers into any file, and never treat them as sourced data.
 2. Slug = English name lowercase hyphenated + city (e.g. `al-haramain-hospital-sylhet`). If the file exists, update in place.
 3. Photo: save as `src/content/hospitals/images/<slug>.jpg` (JPEG, max 1600 px wide, quality 85, never enlarge). LOOK at it. If it shows another site's watermark, tell Sahel before publishing.
 4. YAML: `name`, `name_en`, `short`, `type`, `city`, `address`, `photo`, `emergency_24h`, `beds`, `numbers`, `facilities` (keys from `src/lib/taxonomy.ts` only), `about` (1-2 factual sentences), `quick` (short values: beds, icu, emergency, ambulance, doctors, visiting, diagnostics; a missing key shows "আমরা সঠিক তথ্য পাইনি"), `tests` only from a published price list (with `tests_updated`), `sources`, `verified: <today>`, `verified_by: official`.
@@ -103,6 +102,10 @@ Trigger: Sahel sends a hospital name plus a photo. Do ONLY this task in that ses
 - Every missing field is recorded in `docs/data-gaps.md`: one row per item with `type | file | field | what was searched | date`. Update the row instead of duplicating.
 - When Sahel later sends new data for doctors, universities or hospitals in one batch: read `docs/data-gaps.md` first, update every named file, fill the gaps he covered, set `verified:` to today's date ONLY on files whose data changed, remove the resolved rows from `docs/data-gaps.md`, then build, test and push once.
 - A gap that research can fill is not a gap: fill it before writing the row.
+
+## WRITING STYLE (all pages)
+- Plain, short, everyday Bangla. One fact per sentence. No scholarly or wordy phrasing, no extra explanations, no filler such as "সাইটে দেওয়া নেই"; if a fact is missing, the page already shows "আমরা সঠিক তথ্য পাইনি" or "যুক্ত হয়নি".
+- Never remove a field because data is missing: keep every field/row and let the page show "আমরা সঠিক তথ্য পাইনি" / "যুক্ত হয়নি".
 
 ## SOURCES RULE (all content types)
 - Maximum 2 sources per file (enforced by the schema): the official website (or the official page that holds the facts) first, then the single most useful second page (the official fee/admission/notice page, or one reputable news article), only if it helps trust or SEO. Never more than 2. Prefer the official page that holds the most numbers.
