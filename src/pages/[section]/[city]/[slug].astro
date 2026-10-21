@@ -38,18 +38,29 @@ const map = `https://maps.google.com/?q=${encodeURIComponent(d.name + ', ' + cit
 const checkedBadge = d.verified_by === 'phone' ? `ফোনে যাচাই: ${bnDate(d.verified)}` : `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
 const facs = [...new Set(d.subjects.map((s) => s.faculty))];
 const facList = d.faculties.length ? d.faculties : facs;
-const levelRows = d.levels.map((l) => {
-  const key = /একাদশ|HSC|উচ্চ/i.test(l) ? 'hsc' : /ডিগ্রি/.test(l) ? 'degree' : /অনার্স/.test(l) ? 'hons' : /মাস্টার্স/.test(l) ? 'masters' : 'other';
-  const groups = key === 'hsc' ? d.streams : key === 'hons' ? facList : [];
-  return { name: l, groups };
-});
+const isHsc = (l: string) => /একাদশ|HSC|উচ্চ/i.test(l);
+const isHons = (l: string) => /অনার্স|সম্মান/.test(l);
+const isMasters = (l: string) => /মাস্টার্স|স্নাতকোত্তর/.test(l);
+const isDegree = (l: string) => /ডিগ্রি|পাস/.test(l) && !isHons(l);
+const has = (f: (l: string) => boolean) => d.levels.some(f);
+const honsSub = d.subjects.length ? `${bn(d.subjects.length)}টি বিষয়` : facList.join(' · ');
+// A college page always shows the 4 common levels (offered or not yet added) plus any extra level the college lists (diploma, BM, professional masters...).
+const tiles: { t: string; sub: string; on: boolean }[] =
+  d.kind === 'college'
+    ? [
+        { t: 'এইচএসসি', sub: d.streams.join(' · '), on: has(isHsc) },
+        { t: 'ডিগ্রি (পাস)', sub: '', on: has(isDegree) },
+        { t: 'অনার্স', sub: honsSub, on: has(isHons) },
+        { t: 'মাস্টার্স', sub: '', on: has(isMasters) },
+        ...d.levels.filter((l) => !isHsc(l) && !isHons(l) && !isMasters(l) && !isDegree(l)).map((l) => ({ t: l, sub: '', on: true })),
+      ]
+    : d.levels.map((l) => ({ t: l, sub: '', on: true }));
 const results = [...d.results].sort((a, b) => b.year - a.year);
 const latest = results[0];
 
 const NA = 'আমরা সঠিক তথ্য পাইনি';
 const genderText = d.gender === 'সহশিক্ষা' ? 'সহশিক্ষা (ছেলে ও মেয়ে)' : d.gender === 'বালক' ? 'শুধু ছেলে' : d.gender === 'বালিকা' ? 'শুধু মেয়ে' : '';
 const glance: { k: string; v: string }[] = [
-  { k: isSchool ? 'শ্রেণি' : 'স্তর', v: d.levels.join(', ') },
   { k: 'ধরন', v: `${d.type} ${KIND[d.kind]}` },
   { k: 'প্রতিষ্ঠা', v: d.est ? bn(d.est) : '' },
   { k: 'EIIN', v: d.eiin ? bn(d.eiin) : '' },
@@ -59,7 +70,7 @@ const glance: { k: string; v: string }[] = [
   ...(A?.close ? [{ k: 'আবেদনের শেষ তারিখ', v: bnDate(A.close) }] : []),
   ...(d.shifts ? [{ k: 'শিফট', v: d.shifts }] : []),
   ...(d.versions ? [{ k: 'ভার্সন', v: d.versions }] : []),
-  ...(d.students ? [{ k: 'শিক্ষার্থী সংখ্যা', v: d.students }] : []),
+  ...(d.students ? [{ k: 'মোট শিক্ষার্থী', v: d.students }] : []),
   ...(d.teachers ? [{ k: 'শিক্ষক', v: d.teachers }] : []),
   ...(d.campus ? [{ k: 'ক্যাম্পাস', v: d.campus }] : []),
 ];
@@ -143,10 +154,13 @@ const jsonld = {
           <dl>{glance.map((g) => <div class:list={['un-row', { na: !g.v }]}><dt>{g.k}</dt><dd>{g.v || NA}</dd></div>)}</dl>
         </section>
 
-        {levelRows.length > 0 && (
+        {tiles.length > 0 && (
           <section class="un-fact" id="levels" aria-labelledby="h-levels"><h2 id="h-levels">বিভাগসমূহ</h2>
-            <ul class="ed-levels">{levelRows.map((r) => (
-              <li><b>{r.name}</b>{r.groups.length > 0 ? <span class="ed-lv-g">{r.groups.map((g) => <i>{g}</i>)}</span> : <span class="ed-lv-ok"><Icon name="check" size={13} w={3} />আছে</span>}</li>
+            <ul class="ed-tiles">{tiles.map((x) => (
+              <li class:list={['ed-tile', { off: !x.on }]}>
+                <span class="ed-tile-t">{x.t}{x.on && <Icon name="check" size={13} w={3} />}</span>
+                <small>{x.on ? (x.sub || 'আছে') : 'যুক্ত হয়নি'}</small>
+              </li>
             ))}</ul>
           </section>
         )}

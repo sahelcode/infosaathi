@@ -9,8 +9,11 @@ city: rangpur
 address: লালবাগ, রংপুর
 web: https://carmichael.college.gov.bd
 affiliation: জাতীয় বিশ্ববিদ্যালয়
-levels: [একাদশ–দ্বাদশ শ্রেণি, অনার্স]
-faculties: [কলা, সামাজিক বিজ্ঞান, ব্যবসায় প্রশাসন, বিজ্ঞান]
+eiin: "127489"
+gender: সহশিক্ষা
+levels: [একাদশ–দ্বাদশ শ্রেণি, ডিগ্রি (পাস), অনার্স, মাস্টার্স]
+streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+students: "প্রায় ২৪,০০০"
 logo: ./images/carmichael-college-rangpur-logo.png
 photo: ./images/carmichael-college-rangpur.jpg
 verified: 2026-10-06
@@ -28,4 +31,25 @@ about: ১৯১৬ সালে তৎকালীন বাংলার গভ
 sources:
   - { title: অফিসিয়াল ওয়েবসাইট — যোগাযোগ, url: https://carmichael.college.gov.bd/pages/static-pages/696ca8cc35ce18e1c05c90a2 }
   - { title: অফিসিয়াল ওয়েবসাইট — এক নজরে, url: https://carmichael.college.gov.bd/pages/static-pages/696ca8cd35ce18e1c05c90f3 }
+subjects:
+  - { faculty: কলা, name: বাংলা, name_en: Bangla }
+  - { faculty: কলা, name: ইংরেজি, name_en: English }
+  - { faculty: কলা, name: ইতিহাস, name_en: History }
+  - { faculty: কলা, name: ইসলামের ইতিহাস ও সংস্কৃতি, name_en: Islamic History and Culture }
+  - { faculty: কলা, name: দর্শন, name_en: Philosophy }
+  - { faculty: কলা, name: আরবি ও ইসলামিক স্টাডিজ, name_en: Arabic and Islamic Studies }
+  - { faculty: কলা, name: উর্দু, name_en: Urdu }
+  - { faculty: সামাজিক বিজ্ঞান, name: অর্থনীতি, name_en: Economics }
+  - { faculty: সামাজিক বিজ্ঞান, name: রাষ্ট্রবিজ্ঞান, name_en: Political Science }
+  - { faculty: সামাজিক বিজ্ঞান, name: সমাজবিজ্ঞান, name_en: Sociology }
+  - { faculty: ব্যবসায় প্রশাসন, name: হিসাববিজ্ঞান, name_en: Accounting }
+  - { faculty: ব্যবসায় প্রশাসন, name: ব্যবস্থাপনা, name_en: Management }
+  - { faculty: ব্যবসায় প্রশাসন, name: ফিন্যান্স ও ব্যাংকিং, name_en: Finance and Banking }
+  - { faculty: ব্যবসায় প্রশাসন, name: মার্কেটিং, name_en: Marketing }
+  - { faculty: বিজ্ঞান, name: পদার্থবিজ্ঞান, name_en: Physics }
+  - { faculty: বিজ্ঞান, name: রসায়ন, name_en: Chemistry }
+  - { faculty: বিজ্ঞান, name: গণিত, name_en: Mathematics }
+  - { faculty: বিজ্ঞান, name: উদ্ভিদবিজ্ঞান, name_en: Botany }
+  - { faculty: বিজ্ঞান, name: প্রাণিবিজ্ঞান, name_en: Zoology }
+  - { faculty: বিজ্ঞান, name: তথ্য ও যোগাযোগ প্রযুক্তি, name_en: ICT }
 old_urls: [/2025/07/carmichael-college-rangpur.html]

@@ -190,5 +190,5 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | university | university-of-global-village | students and teachers counts | official About page has none; only uniRank range (3,000–3,999), not used | 2026-10-21 |
 | university | university-of-global-village | GPA waiver conflict: admission page says full tuition waiver for GPA 5.00 in SSC and HSC, fee page tops out at 50% | official admission and fee pages | 2026-10-21 |
 | university | university-of-global-village | BA in Islamic Studies credits, years, cost | department page empty, not in fee table | 2026-10-21 |
-| college | carmichael-college-rangpur | eiin, board, gender | official site pages read for contact and about only; not stated there | 2026-10-21 |
-| college | carmichael-college-rangpur | streams (HSC groups), degree pass, masters in levels | not confirmed on the official site; Wikipedia lists science/humanities/commerce, degree pass and masters but is unreliable here | 2026-10-21 |
+| college | carmichael-college-rangpur | board | official pages and directories do not name the HSC board | 2026-10-21 |
+| college | carmichael-college-rangpur | HSC groups, degree pass and masters not on the official এক নজরে page (menu shows only উচ্চ মাধ্যমিক and স্নাতক (সম্মান)); added from Prothom Alo, eduportalbd (up to Masters) and Wikipedia agreeing | confirm with the college | 2026-10-21 |

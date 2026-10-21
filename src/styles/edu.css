@@ -41,16 +41,16 @@
 }
 @media (prefers-reduced-motion:reduce){.ed-res.anim .ed-res-bar i{animation:none;}}
 
-/* বিভাগসমূহ: levels offered and their groups */
-.ed-levels{list-style:none;margin:0;padding:0;}
-.ed-levels li{display:flex;flex-direction:column;gap:7px;padding:10px 0;border-top:1px solid #eef3ef;}
-.ed-levels li:first-child{border-top:0;}
-.ed-levels b{font-size:13.5px;color:#0f2a1c;}
-.ed-lv-g{display:flex;flex-wrap:wrap;gap:6px;}
-.ed-lv-g i{font-style:normal;font-size:12.5px;font-weight:600;color:#1d5a3a;background:#f1f7f3;border:1px solid #dcebe2;border-radius:999px;padding:3px 10px;}
-.ed-lv-ok{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#2f8f5b;}
+/* বিভাগসমূহ: common levels as small tiles (2 columns on phones, 4 on desktop) */
+.ed-tiles{list-style:none;margin:6px 0 12px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.ed-tile{display:flex;flex-direction:column;gap:3px;padding:11px 12px;border:1px solid #e1eae4;border-radius:14px;background:#fff;min-width:0;}
+.ed-tile-t{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:13.5px;font-weight:700;color:#0f2a1c;}
+.ed-tile-t svg{flex:0 0 auto;color:#2f8f5b;}
+.ed-tile small{font-size:12px;line-height:1.4;color:#5b6f64;overflow-wrap:anywhere;}
+.ed-tile.off{border-style:dashed;background:transparent;}
+.ed-tile.off .ed-tile-t{color:#8a9a91;font-weight:600;}
+.ed-tile.off small{color:#a3afa8;}
+@media (min-width:768px){.ed-tiles{grid-template-columns:repeat(4,1fr);}}
 @media (min-width:768px){
   .hp-actions.un-actions.has-logo{padding-left:154px;}
-  .ed-levels li{flex-direction:row;align-items:center;justify-content:space-between;gap:16px;}
-  .ed-lv-g{justify-content:flex-end;}
 }
