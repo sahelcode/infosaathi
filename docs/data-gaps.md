@@ -205,3 +205,11 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | sylhet-cadet-college | labelled phone numbers (adjutant, principal office) | official site lists one general number; directory mobiles not used | 2026-10-21 |
 | college | sylhet-cadet-college | 2027 application fee, exam date, seats, monthly fee | Prothom Alo bn/en, official admission site not reachable; fee 2,500 vs 1,600 only from weak sources; exam date from one news site | 2026-10-21 |
 | college | sylhet-cadet-college | SSC/HSC results for this college | Sylhet board, news (bn/en); only all-cadet-college totals found | 2026-10-21 |
+| college | mc-college-sylhet | HSC results (pass rate, GPA-5) | Sylhet board, Prothom Alo, Dainik Shiksha, Bangla Tribune, banglanews24, 5 searches (bn/en); only the college's own 2021-22 report (100% pass), not used | 2026-10-21 |
+| college | mc-college-sylhet | XI 2026-27 admission fees and dates | official notice (17/09/2026) is a scanned PDF, not readable from the workspace | 2026-10-21 |
+| college | mc-college-sylhet | HSC and honours seat counts | not published on official pages; lists imply about 300 XI students a year, not used | 2026-10-21 |
+| college | mc-college-sylhet | teacher count | annual report 2021-22 says 119, Prothom Alo 2023 says 130; official teachers page incomplete | 2026-10-21 |
+| college | mc-college-sylhet | student count (confirm) | Principal's message ~15,000 (used); 2021-22 annual report ~27,000; Prothom Alo 2023 ~13,500 | 2026-10-21 |
+| college | mc-college-sylhet | campus area | official history ~150 acres (1920s), report/risingbd 144, Prothom Alo/Wikipedia 124; left out | 2026-10-21 |
+| college | mc-college-sylhet | honours faculty grouping | official site does not group subjects; NU faculty names used (Botany, Zoology, Psychology under জীব ও ভূবিজ্ঞান) | 2026-10-21 |
+| college | mc-college-sylhet | principal's phone number | official contact, teachers and home pages | 2026-10-21 |
