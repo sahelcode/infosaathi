@@ -1,0 +1,27 @@
+name: "ডা. মোঃ মিজানুর রহমান"
+name_en: "Dr. Md. Mizanur Rahman"
+specialty: neurology
+title: "নিউরোলজি ও মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-md-mizanur-rahman.jpg
+banner: ./images/dr-md-mizanur-rahman-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "MD (Neuromedicine)", "MACP (USA)"]
+designation: "সহকারী অধ্যাপক (নিউরোলজি বিভাগ), ঢাকা মেডিকেল কলেজ ও হাসপাতাল, ঢাকা"
+bmdc: A-59638
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪১৭ (৪র্থ তলা)"
+    days: [শনি, বুধ]
+    start: "15:00"
+    end: "20:30"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01824580059"
+        note: "সকাল ৮টা থেকে"
