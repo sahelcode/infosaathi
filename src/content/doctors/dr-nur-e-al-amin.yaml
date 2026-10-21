@@ -1,0 +1,27 @@
+name: "ডা. নূর-এ-আল-আমিন"
+name_en: "Dr. Nur-E-Al-Amin"
+specialty: surgery
+title: "ভাস্কুলার ও এন্ডোভাস্কুলার সার্জন"
+photo: ./images/dr-nur-e-al-amin.jpg
+banner: ./images/dr-nur-e-al-amin-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (DMC)", "MS (Vascular Surgery, BSMMU)", "MRCS (Edinburgh, UK)"]
+designation: "কনসালট্যান্ট, ভাস্কুলার ও এন্ডোভাস্কুলার সার্জন"
+bmdc: A-77375
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৮ (৩য় তলা)"
+    days: [বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01343900929"
+        note: "সকাল ৮টা থেকে"

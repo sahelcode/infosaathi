@@ -1,0 +1,27 @@
+name: "অধ্যাপক কর্নেল ডা. সালাহ্ উদ্দিন আহম্মেদ"
+name_en: "Prof. Col. Dr. Salah Uddin Ahmed"
+specialty: ent
+title: "নাক, কান ও গলারোগ বিশেষজ্ঞ, সাইনাস, থাইরয়েড ও হেড-নেক সার্জন"
+photo: ./images/prof-col-dr-salah-uddin-ahmed.jpg
+banner: ./images/prof-col-dr-salah-uddin-ahmed-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS (ENT)", "MCPS", "DLO", "FACS (USA)", "FRCS (Glasgow)", "Fellow, Ear Microsurgery & Implant Otology (India)", "Fellow, Endoscopic Sinus Surgery (India)"]
+designation: "বিভাগীয় প্রধান, সিএমএইচ, সিলেট"
+bmdc: A-29087
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৪৫ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "15:30"
+    end: "19:30"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01760969509"
+        note: "সকাল ৮টা থেকে"

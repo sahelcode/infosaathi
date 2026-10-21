@@ -1,0 +1,25 @@
+draft: true
+name: "ডা. মোঃ ইফতেখারুল আলম"
+name_en: "Dr. Md. Iftekharul Alam"
+specialty: medicine
+title: "ফিজিক্যাল মেডিসিন, ডায়াবেটিস ও মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-md-iftekharul-alam.jpg
+banner: ./images/dr-md-iftekharul-alam-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (Dhaka)", "MD (Physical Medicine & Rehabilitation)", "CCD (BIRDEM)", "FCPS (Medicine) Final Part", "Advanced Training in Medicine", "Fellowship in Pain Management (India)"]
+designation: "সহকারী অধ্যাপক ও বিভাগীয় প্রধান (ফিজিক্যাল মেডিসিন), পার্ক ভিউ মেডিকেল কলেজ হাসপাতাল, সিলেট"
+bmdc: A-62615
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  # কার্ডে শুধু "রবিবার - বুধবার, বিকাল ৩টা পর্যন্ত" লেখা, শুরুর সময় নেই। শুরুর সময় জানলে start দিয়ে draft সরান।
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৭ (৩য় তলা)"
+    days: [রবি, সোম, মঙ্গল, বুধ]
+    end: "15:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

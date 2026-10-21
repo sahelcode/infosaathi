@@ -1,0 +1,27 @@
+name: "ডা. আশরাফুল ইসলাম রানা"
+name_en: "Dr. Ashraful Islam Rana"
+specialty: urology
+title: "ইউরোলজিস্ট ও এন্ড্রোলজিস্ট"
+photo: ./images/dr-ashraful-islam-rana.jpg
+banner: ./images/dr-ashraful-islam-rana-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "MS (Urology)"]
+designation: "সহকারী অধ্যাপক (ইউরোলজিস্ট ও এন্ড্রোলজিস্ট), সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ হাসপাতাল"
+bmdc: A-42061
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৩৫ (৩য় তলা)"
+    days: [শনি, রবি, সোম, বুধ, বৃহস্পতি]
+    start: "16:00"
+    end: "19:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01643215294"
+        note: "সকাল ৮টা থেকে"

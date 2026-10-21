@@ -1,0 +1,27 @@
+name: "লে. কর্নেল ডা. এ কে এম মিজানুর রহমান"
+name_en: "Lt. Col. Dr. A K M Mizanur Rahman"
+specialty: diabetes
+title: "ডায়াবেটিস, থাইরয়েড, হরমোন এবং মেডিসিন বিশেষজ্ঞ"
+photo: ./images/lt-col-dr-akm-mizanur-rahman.jpg
+banner: ./images/lt-col-dr-akm-mizanur-rahman-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "Grading Course in Medicine (AFMI, Dhaka)", "DEM (BIRDEM)", "MACE (USA)"]
+designation: "সহযোগী অধ্যাপক, এন্ডোক্রাইনোলজি বিভাগ, সিএমএইচ, সিলেট"
+bmdc: A-36508
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৫০৭ (৫ম তলা)"
+    days: [শনি, সোম, বুধ, বৃহস্পতি, শুক্র]
+    start: "17:30"
+    end: "21:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01344355086"
+        note: "সকাল ৮টা থেকে"

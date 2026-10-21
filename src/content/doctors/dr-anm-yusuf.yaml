@@ -1,0 +1,27 @@
+name: "ডা. এ. এন. এম. ইউসুফ"
+name_en: "Dr. A.N.M. Yusuf"
+specialty: eye
+title: "চক্ষু বিশেষজ্ঞ ও ফ্যাকো সার্জন"
+photo: ./images/dr-anm-yusuf.jpg
+banner: ./images/dr-anm-yusuf-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "FCPS (Eye)", "MS (Eye)"]
+designation: "সহযোগী অধ্যাপক (চক্ষু বিভাগ), সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-32893
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ২১৩ (২য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ]
+    start: "16:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01317259399"
+        note: "সকাল ৮টা থেকে"

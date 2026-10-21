@@ -1,0 +1,33 @@
+name: "ডা. চৌধুরী মনজুর মুনতাহী"
+name_en: "Dr. Chowdhury Monjur Muntahi"
+specialty: oncology
+title: "ক্যান্সার রোগ (রেডিয়েশন অনকোলজি) বিশেষজ্ঞ"
+photo: ./images/dr-chowdhury-monjur-muntahi.jpg
+banner: ./images/dr-chowdhury-monjur-muntahi-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "MD (Radiation Oncology)"]
+designation: "ক্লিনিক্যাল এন্ড রেডিয়েশন অনকোলজিস্ট, কুর্মিটোলা মাল্টিকেয়ার স্পেশালাইজড হাসপাতাল, ক্যান্টনমেন্ট, ঢাকা"
+bmdc: A-65097
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪১৮ (৪র্থ তলা)"
+    days: [বৃহস্পতি]
+    start: "18:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪১৮ (৪র্থ তলা)"
+    days: [শুক্র]
+    start: "10:00"
+    end: "13:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

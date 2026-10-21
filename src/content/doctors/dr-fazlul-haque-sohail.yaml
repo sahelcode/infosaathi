@@ -1,0 +1,27 @@
+name: "ডা. ফজলুল হক সোহাইল"
+name_en: "Dr. Fazlul Haque Sohail"
+specialty: medicine
+title: "বাত, ব্যথা, প্যারালাইসিস, স্পাইন রিহ্যাব ও রিজেনারেটিভ মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-fazlul-haque-sohail.jpg
+banner: ./images/dr-fazlul-haque-sohail-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (Dhaka)", "BCS (Health)", "CCD (Diabetology), BIRDEM", "MD (Physical Medicine & Rehabilitation), BMU (PG Hospital)", "FIPM (Pain Management, India)"]
+designation: "সহকারী অধ্যাপক (ফিজিক্যাল মেডিসিন এন্ড রিহ্যাবিলিটেশন বিভাগ); প্রাক্তন কনসালটেন্ট, নিটোর (পঙ্গু হাসপাতাল), ঢাকা"
+bmdc: A-52605
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৯ (৩য় তলা)"
+    days: [শনি, রবি, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "16:00"
+    end: "18:30"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01601631736"
+        note: "সকাল ৮টা থেকে"

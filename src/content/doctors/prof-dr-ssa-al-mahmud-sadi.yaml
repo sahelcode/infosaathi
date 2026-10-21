@@ -1,0 +1,27 @@
+name: "অধ্যাপক ডা. এস.এস.এ. আল-মাহমুদ সাদী"
+name_en: "Prof. Dr. S.S.A. Al-Mahmud Sadi"
+specialty: ent
+title: "নাক, কান, গলা রোগ বিশেষজ্ঞ ও সার্জন"
+photo: ./images/prof-dr-ssa-al-mahmud-sadi.jpg
+banner: ./images/prof-dr-ssa-al-mahmud-sadi-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS", "MS (ENT)"]
+designation: "অধ্যাপক ও বিভাগীয় প্রধান, জালালাবাদ রাগীব-রাবেয়া মেডিকেল কলেজ ও হাসপাতাল, সিলেট"
+bmdc: A-17052
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৩৩ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01726096699"
+        note: "সকাল ৮টা থেকে"

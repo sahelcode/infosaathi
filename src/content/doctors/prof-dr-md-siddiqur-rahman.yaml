@@ -1,0 +1,27 @@
+name: "অধ্যাপক ডা. মোঃ ছিদ্দিকুর রহমান"
+name_en: "Prof. Dr. Md. Siddiqur Rahman"
+specialty: urology
+title: "ইউরোলজিস্ট ও এন্ড্রোলজিস্ট, জেনারেল ল্যাপারোস্কোপিক সার্জন"
+photo: ./images/prof-dr-md-siddiqur-rahman.jpg
+banner: ./images/prof-dr-md-siddiqur-rahman-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "DA (DU)", "FCPS (Surgery)", "MS (Urology)"]
+designation: "অধ্যাপক ও বিভাগীয় প্রধান (ইউরোলজি বিভাগ), সিলেট উইমেন্স মেডিকেল কলেজ"
+bmdc: A-24554
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩০৯ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "16:30"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01773300246"
+        note: "সকাল ৮টা থেকে"

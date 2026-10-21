@@ -1,0 +1,24 @@
+name: "ডা. মোঃ সাইফুর রহমান"
+name_en: "Dr. Md. Saifur Rahman"
+specialty: surgery
+title: "বার্ন, প্লাস্টিক, রি-কনস্ট্রাকটিভ ও কসমেটিক সার্জারী বিশেষজ্ঞ"
+photo: ./images/dr-md-saifur-rahman.jpg
+banner: ./images/dr-md-saifur-rahman-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (KMC)", "BCS (Health)", "MS (Plastic Surgery)"]
+designation: "সহকারী অধ্যাপক (বার্ন এন্ড প্লাস্টিক সার্জারী ইউনিট), সিলেট এমএজি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-63791
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৪ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:30"
+    end: "19:30"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

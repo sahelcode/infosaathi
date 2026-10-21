@@ -1,0 +1,26 @@
+name: "ডা. তাসনীম আহমেদ খান (রাতুল)"
+name_en: "Dr. Tasnim Ahmed Khan (Ratul)"
+specialty: surgery
+title: "ভাস্কুলার ও এন্ডোভাস্কুলার সার্জন"
+photo: ./images/dr-tasnim-ahmed-khan-ratul.jpg
+banner: ./images/dr-tasnim-ahmed-khan-ratul-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "CCD (BIRDEM)", "MS (Vascular Surgery, BSMMU)"]
+bmdc: A-88690
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৮ (৩য় তলা)"
+    days: [শুক্র]
+    start: "10:00"
+    end: "12:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01343900929"
+        note: "সকাল ৮টা থেকে"

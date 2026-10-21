@@ -129,3 +129,23 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | doctor | sadia-arifin-runa | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | md-mostafizur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | prof-dr-abm-younus | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | lt-col-dr-akm-mizanur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-habibur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-ashraful-islam-rana | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-md-siddiqur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-saifur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-col-dr-salah-uddin-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-ssa-al-mahmud-sadi | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-md-mozammel-haque-faruk | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-syed-nafi-mahdi | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-azizul-haque-manik | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-asm-mainul-hasan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-fazlul-haque-sohail | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-iftekharul-alam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-anm-yusuf | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-ahmed-faruk | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-nur-e-al-amin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-tasnim-ahmed-khan-ratul | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-chowdhury-monjur-muntahi | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | kawsar-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-iftekharul-alam | chambers.start | card says only "রবিবার - বুধবার, বিকাল ৩টা পর্যন্ত"; no start time; web search found nothing; kept draft | 2026-10-21 |

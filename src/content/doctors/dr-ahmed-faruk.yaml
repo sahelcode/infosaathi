@@ -1,0 +1,27 @@
+name: "ডা. আহমেদ ফারুক"
+name_en: "Dr. Ahmed Faruk"
+specialty: eye
+title: "চক্ষু বিশেষজ্ঞ ও ফ্যাকো সার্জন"
+photo: ./images/dr-ahmed-faruk.jpg
+banner: ./images/dr-ahmed-faruk-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (CU)", "MS (Eye)", "Higher Training (Eye), Japan"]
+designation: "সহযোগী অধ্যাপক, পার্কভিউ মেডিকেল কলেজ ও হাসপাতাল, সিলেট"
+bmdc: A-22980
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১১ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01316172133"
+        note: "সকাল ৮টা থেকে"

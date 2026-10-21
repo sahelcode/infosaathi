@@ -1,0 +1,27 @@
+name: "ডা. মোঃ আজিজুল হক মানিক"
+name_en: "Dr. Md. Azizul Haque Manik"
+specialty: ent
+title: "নাক, কান, গলা রোগ বিশেষজ্ঞ ও হেড-নেক সার্জন"
+photo: ./images/dr-md-azizul-haque-manik.jpg
+banner: ./images/dr-md-azizul-haque-manik-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "FCPS", "DLO", "MCPS", "FICS", "Advanced Fellowship in Head-Neck Surgery"]
+designation: "ঢাকা মেডিকেল কলেজ হাসপাতাল"
+bmdc: A-54110
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৮ (৩য় তলা)"
+    days: [শুক্র]
+    start: "10:00"
+    end: "13:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01304920522"
+        note: "সকাল ৮টা থেকে"
