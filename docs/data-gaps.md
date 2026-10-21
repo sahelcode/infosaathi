@@ -125,7 +125,7 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | doctor | dr-md-fakhruzzaman-shaheed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | dr-md-mubin-uddin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | dr-abu-yousuf-md-nazim | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | sadia-arifin-runa | draft | psychologist, not a doctor; the site has no specialty for non-doctor practitioners | 2026-10-21 |
-| doctor | md-mostafizur-rahman | draft | child development therapist, not a doctor; no fitting specialty; card has no room number | 2026-10-21 |
-| doctor | prof-dr-abm-younus | chambers.days | sits only on the 2nd and 4th Friday of the month; the days field can only show every Friday, so kept draft | 2026-10-21 |
 | doctor | prof-dr-md-shafiqur-rahman | old_urls | docs/old-doctor-urls.tsv has /2025/12/dr-md-shafiqur-rahman.html but no specialty to confirm it is the same doctor | 2026-10-21 |
+| doctor | sadia-arifin-runa | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | md-mostafizur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-abm-younus | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
