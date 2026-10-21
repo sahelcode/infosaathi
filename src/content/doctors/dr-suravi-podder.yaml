@@ -1,0 +1,29 @@
+name: "ডা. সুরভী পোদ্দার"
+name_en: "Dr. Suravi Podder"
+specialty: surgery
+title: "জেনারেল ও ল্যাপারোস্কোপিক সার্জন"
+photo: ./images/dr-suravi-podder.jpg
+banner: ./images/dr-suravi-podder-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "MS (Surgery)"]
+designation: "সহকারী অধ্যাপক (সার্জারি বিভাগ), সিলেট উইমেন্স মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-69331
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+aliases: ["ডা. সুরাভী পোদ্দার"]
+old_urls: [/2025/12/dr-suravi-podder.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪২৫ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "15:00"
+    end: "17:30"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01314778081"
+        note: "সকাল ৮টা থেকে"

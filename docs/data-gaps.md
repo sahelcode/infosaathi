@@ -167,3 +167,5 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | doctor | dr-mst-latifa-yasmin | chambers.room | card gives only ডেন্টাল কেয়ার ইউনিট, no room number | 2026-10-21 |
 | doctor | dr-m-a-shahed | chambers.room | card gives only ডেন্টাল কেয়ার ইউনিট, no room number | 2026-10-21 |
 | doctor | prof-dr-md-fayzul-islam-chowdhury | chambers.room | card has no room number | 2026-10-21 |
+| doctor | dr-habibur-rahman | chambers.fee | visiting card and Sahel's data give no fee | 2026-10-21 |
+| doctor | dr-suravi-podder | chambers.fee | visiting card and Sahel's data give no fee | 2026-10-21 |
