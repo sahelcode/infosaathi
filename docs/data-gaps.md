@@ -148,4 +148,3 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | doctor | dr-tasnim-ahmed-khan-ratul | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | dr-chowdhury-monjur-muntahi | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | kawsar-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-iftekharul-alam | chambers.start | card says only "রবিবার - বুধবার, বিকাল ৩টা পর্যন্ত"; no start time; web search found nothing; kept draft | 2026-10-21 |

@@ -1,4 +1,3 @@
-draft: true
 name: "ডা. মোঃ ইফতেখারুল আলম"
 name_en: "Dr. Md. Iftekharul Alam"
 specialty: medicine
@@ -14,10 +13,10 @@ verified: 2026-10-21
 verified_by: phone
 
 chambers:
-  # কার্ডে শুধু "রবিবার - বুধবার, বিকাল ৩টা পর্যন্ত" লেখা, শুরুর সময় নেই। শুরুর সময় জানলে start দিয়ে draft সরান।
   - hospital: ibn-sina-hospital-sylhet
     room: "রুম নং ৩১৭ (৩য় তলা)"
     days: [রবি, সোম, মঙ্গল, বুধ]
+    start: "12:00"
     end: "15:00"
     serials:
       - label: "হাসপাতাল হটলাইন"
