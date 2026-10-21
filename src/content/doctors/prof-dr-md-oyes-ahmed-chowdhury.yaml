@@ -1,0 +1,28 @@
+name: "অধ্যাপক ডা. মোঃ ওয়েছ আহমদ চৌধুরী"
+name_en: "Prof. Dr. Md. Oyes Ahmed Chowdhury"
+specialty: pediatric_surgery
+title: "ল্যাপারোস্কোপিক ও শিশু সার্জন"
+photo: ./images/prof-dr-md-oyes-ahmed-chowdhury.jpg
+banner: ./images/prof-dr-md-oyes-ahmed-chowdhury-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "MS (Paediatric Surgery)", "DMCH & FP (Dhaka)", "MHP (Edu), Australia"]
+designation: "অধ্যাপক ও বিভাগীয় প্রধান (শিশু সার্জারি বিভাগ), সিলেট উইমেন্স মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-13919
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/09/prof-dr-oyes-ahmed-choudhury-sylhet-ibn.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৯ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "18:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01613044916"
+        note: "সকাল ৮টা থেকে"
