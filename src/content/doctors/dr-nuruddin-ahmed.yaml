@@ -1,0 +1,28 @@
+name: "ডা. নূরুদ্দীন আহমেদ"
+name_en: "Dr. Nuruddin Ahmed"
+specialty: orthopedics
+title: "অর্থোপেডিক ও স্পাইন সার্জন"
+photo: ./images/dr-nuruddin-ahmed.jpg
+banner: ./images/dr-nuruddin-ahmed-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "MPH", "MS (Ortho) (Pongu Hospital, Dhaka)", "Fellow, Spine Surgery (Mahidol University, Bangkok)", "Certified in PSG (Toronto, Canada)"]
+designation: "সহযোগী অধ্যাপক (অবঃ), সিলেট এম.এ.জি. ওসমানী মেডিকেল কলেজ; মেম্বার, আমেরিকান একাডেমি অব অর্থোপেডিক সার্জন"
+bmdc: A-17183
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/08/dr-nuruddin-ahmed-orthopedic-spine.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪৩১ (৪র্থ তলা)"
+    days: [রবি, সোম, মঙ্গল, বুধ]
+    start: "11:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01747297070"
+        note: "সকাল ৮টা থেকে"
