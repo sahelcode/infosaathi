@@ -1,0 +1,27 @@
+name: "ডা. ফারহানা হক"
+name_en: "Dr. Farhana Haque"
+specialty: skin
+title: "চর্ম, যৌন, এলার্জি বিশেষজ্ঞ ও সার্জন"
+photo: ./images/dr-farhana-haque.jpg
+banner: ./images/dr-farhana-haque-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "DDV (Dhaka)", "CCD (BIRDEM)"]
+designation: "সহযোগী অধ্যাপক (চর্ম ও যৌনরোগ বিভাগ), সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-25539
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৩৬ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01783819939"
+        note: "সকাল ৮টা থেকে"

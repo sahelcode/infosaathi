@@ -1,0 +1,24 @@
+name: "অধ্যাপক ডা. সৈয়দ মামুন মুহাম্মদ"
+name_en: "Prof. Dr. Syed Mamun Muhammad"
+specialty: skin
+title: "চর্ম, যৌন, এলার্জি ও সেক্স বিশেষজ্ঞ"
+photo: ./images/prof-dr-syed-mamun-muhammad.jpg
+banner: ./images/prof-dr-syed-mamun-muhammad-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "DDV", "MD (Dermatology & Venereology)"]
+designation: "বিভাগীয় প্রধান (প্রাক্তন), চর্ম ও যৌনরোগ বিভাগ, সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ"
+bmdc: A-17753
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৬ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "16:00"
+    end: "21:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

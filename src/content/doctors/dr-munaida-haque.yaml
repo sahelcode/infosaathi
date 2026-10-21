@@ -1,0 +1,26 @@
+name: "ডা. মুনাইদা হক"
+name_en: "Dr. Munaida Haque"
+specialty: skin
+title: "চর্ম, যৌন, এলার্জি বিশেষজ্ঞ ও সার্জন"
+photo: ./images/dr-munaida-haque.jpg
+banner: ./images/dr-munaida-haque-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (SUST)", "DDV (BMU)"]
+bmdc: A-89430
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৩৯ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "10:00"
+    end: "13:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01799711923"
+        note: "সকাল ৮টা থেকে"

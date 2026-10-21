@@ -148,3 +148,22 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | doctor | dr-tasnim-ahmed-khan-ratul | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | dr-chowdhury-monjur-muntahi | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | kawsar-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-ahmad-zahid-al-kadir | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-sudeshna-sinha | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-chowdhury-mohammad-omar-faruk | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-md-fayzul-islam-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-ayesha-rafiq-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-munaida-haque | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-ummehani-islam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-farhana-haque | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-albabur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-saleh-ahmed-shahin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-syed-mamun-muhammad | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-aminul-islam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-mst-latifa-yasmin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-m-a-shahed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | abida-sultana | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-aminul-islam | bmdc | visiting card has no BMDC number; web search found no reliable source | 2026-10-21 |
+| doctor | dr-mst-latifa-yasmin | chambers.room | card gives only ডেন্টাল কেয়ার ইউনিট, no room number | 2026-10-21 |
+| doctor | dr-m-a-shahed | chambers.room | card gives only ডেন্টাল কেয়ার ইউনিট, no room number | 2026-10-21 |
+| doctor | prof-dr-md-fayzul-islam-chowdhury | chambers.room | card has no room number | 2026-10-21 |

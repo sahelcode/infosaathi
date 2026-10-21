@@ -1,0 +1,24 @@
+name: "ডা. সুদেষ্ণা সিনহা"
+name_en: "Dr. Sudeshna Sinha"
+specialty: medicine
+title: "বাত-ব্যথা-আর্থ্রাইটিস (রিউমাটোলজি) বিশেষজ্ঞ"
+photo: ./images/dr-sudeshna-sinha.jpg
+banner: ./images/dr-sudeshna-sinha-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "MD (Rheumatology)", "APLAR Fellow Rheumatology (UK)"]
+designation: "সহকারী অধ্যাপক, সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-52973
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৪০ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "15:00"
+    end: "16:30"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

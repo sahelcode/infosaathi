@@ -1,0 +1,27 @@
+name: "অধ্যাপক ডা. আয়েশা রফিক চৌধুরী"
+name_en: "Prof. Dr. Ayesha Rafiq Chowdhury"
+specialty: cardiology
+title: "মেডিসিন ও হৃদরোগ বিশেষজ্ঞ"
+photo: ./images/prof-dr-ayesha-rafiq-chowdhury.jpg
+banner: ./images/prof-dr-ayesha-rafiq-chowdhury-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "MRCP (London)", "FRCP (Glasgow)", "FCPS (Medicine)", "MD (Cardiology), BSMMU (Dhaka)", "Fellow in Interventional Cardiology"]
+designation: "অধ্যাপক ও বিভাগীয় প্রধান (কার্ডিওলজি বিভাগ), জালালাবাদ রাগিব-রাবেয়া মেডিকেল কলেজ ও হাসপাতাল, সিলেট"
+bmdc: A-26794
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৪৬ (৩য় তলা, সি-ব্লক)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "16:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01957661190"
+        note: "সকাল ৮টা থেকে"

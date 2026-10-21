@@ -1,0 +1,27 @@
+name: "ডা. চৌধুরী মোহাম্মদ ওমর ফারুক"
+name_en: "Dr. Chowdhury Mohammad Omar Faruk"
+specialty: cardiology
+title: "মেডিসিন ও হৃদরোগ বিশেষজ্ঞ"
+photo: ./images/dr-chowdhury-mohammad-omar-faruk.jpg
+banner: ./images/dr-chowdhury-mohammad-omar-faruk-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (DMC)", "BCS (Health)", "MD (Cardiology)", "CCD (BIRDEM)", "Advanced Training in Medicine", "Fellow, European Society of Cardiology", "Fellow, American College of Cardiology"]
+designation: "সহযোগী অধ্যাপক, সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-33934
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৭ (৩য় তলা)"
+    days: প্রতিদিন
+    start: "16:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01707180298"
+        note: "সকাল ৮টা থেকে"

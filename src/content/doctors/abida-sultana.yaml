@@ -1,0 +1,25 @@
+name: "পুষ্টিবিদ আবিদা সুলতানা"
+name_en: "Nutritionist Abida Sultana"
+specialty: medicine
+title: "নিউট্রিশনিস্ট (পুষ্টিবিদ)"
+photo: ./images/abida-sultana.jpg
+banner: ./images/abida-sultana-card.jpg
+banner_month: 2026-10-01
+degrees: ["মাস্টার্স অব পাবলিক হেলথ (এমপিএইচ), নর্থ ইস্ট ইউনিভার্সিটি বাংলাদেশ", "ফুড টেকনোলজি অ্যান্ড নিউট্রিশনাল সায়েন্স (অনার্স), নোয়াখালী বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়", "চাইল্ড নিউট্রিশন (বিএডিএন)", "থেরাপিউটিক নিউট্রিশন অ্যান্ড ডায়েটেটিক্স, ডায়েট ফর হেলদি লাইফ, কনসালটেন্সি অ্যান্ড ট্রেনিং সেন্টার"]
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১২ (৩য় তলা)"
+    days: [রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "10:00"
+    end: "14:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01670415983"
+        note: "সকাল ৮টা থেকে"

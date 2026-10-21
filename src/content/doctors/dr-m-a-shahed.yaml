@@ -1,0 +1,24 @@
+name: "ডা. এম এ শাহেদ"
+name_en: "Dr. M A Shahed"
+specialty: dental
+title: "দন্তরোগ বিশেষজ্ঞ"
+photo: ./images/dr-m-a-shahed.jpg
+banner: ./images/dr-m-a-shahed-card.jpg
+banner_month: 2026-10-01
+degrees: ["BDS (Dhaka)", "MPH (LU)", "PGT (Oral & Maxillofacial Surgery), BSMMU, Dhaka", "Training in Aesthetic Dentistry (Madrid, Spain)"]
+designation: "ওরাল এন্ড ডেন্টো এলভিউলার সার্জন, ইবনে সিনা হাসপাতাল সিলেট লিঃ; সিলেট সেন্ট্রাল ডেন্টাল কলেজ"
+bmdc: A-1741
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "ডেন্টাল কেয়ার ইউনিট"
+    days: [শনি, সোম, বুধ]
+    start: "15:00"
+    end: "21:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

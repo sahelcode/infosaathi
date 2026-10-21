@@ -1,0 +1,27 @@
+name: "অধ্যাপক ডা. সালেহ্ আহমেদ শাহীন"
+name_en: "Prof. Dr. Saleh Ahmed Shahin"
+specialty: skin
+title: "চর্ম, যৌন, এলার্জি, সেক্স ও লেজার বিশেষজ্ঞ"
+photo: ./images/prof-dr-saleh-ahmed-shahin.jpg
+banner: ./images/prof-dr-saleh-ahmed-shahin-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "MD (BSMMU)", "Higher Training (Karl Eberhard University, Germany)"]
+designation: "অধ্যাপক ও বিভাগীয় প্রধান (চর্ম ও যৌনরোগ বিভাগ), সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ"
+bmdc: A-23186
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪৩৩ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "15:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01726384761"
+        note: "সকাল ৮টা থেকে"

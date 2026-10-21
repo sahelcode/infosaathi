@@ -1,0 +1,32 @@
+name: "ডা. মোঃ আমিনুল ইসলাম"
+name_en: "Dr. Md. Aminul Islam"
+specialty: dental
+title: "মুখের টিউমার, ক্যান্সার ও ফেসিয়াল ট্রমা বিশেষজ্ঞ"
+photo: ./images/dr-md-aminul-islam.jpg
+banner: ./images/dr-md-aminul-islam-card.jpg
+banner_month: 2026-10-01
+degrees: ["BDS (Sylhet MAG Osmani Medical College & Hospital)", "FCPS (Oral & Maxillofacial Surgery)"]
+designation: "ম্যাক্সিলোফেসিয়াল এন্ড ডেন্টাল সার্জন; সহকারী অধ্যাপক ও বিভাগীয় প্রধান, ডেন্টাল এন্ড ম্যাক্সিলোফেসিয়াল সার্জারি বিভাগ, সিলেট উইমেন্স মেডিকেল কলেজ হাসপাতাল"
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৯ ও ২১৮ (সি-ব্লক)"
+    days: [সোম]
+    start: "15:00"
+    end: "18:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৯ ও ২১৮ (সি-ব্লক)"
+    days: [বৃহস্পতি]
+    start: "20:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

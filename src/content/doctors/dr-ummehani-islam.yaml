@@ -1,0 +1,27 @@
+name: "ডা. উম্মেহানি ইসলাম"
+name_en: "Dr. Ummehani Islam"
+specialty: skin
+title: "চর্ম, যৌন, এলার্জি বিশেষজ্ঞ ও সার্জন"
+photo: ./images/dr-ummehani-islam.jpg
+banner: ./images/dr-ummehani-islam-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "MD (Dermatology & Venereology), BSMMU"]
+designation: "সহকারী অধ্যাপক, সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-65615
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৩২ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ]
+    start: "16:00"
+    end: "18:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01335897315"
+        note: "সকাল ৮টা থেকে"

@@ -1,0 +1,27 @@
+name: "অধ্যাপক ডা. মোঃ ফয়জুল ইসলাম চৌধুরী"
+name_en: "Prof. Dr. Md. Fayzul Islam Chowdhury"
+specialty: medicine
+title: "মেডিসিন ও হৃদরোগ বিশেষজ্ঞ"
+photo: ./images/prof-dr-md-fayzul-islam-chowdhury.jpg
+banner: ./images/prof-dr-md-fayzul-islam-chowdhury-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS (Medicine)", "WHO Fellow (Thailand)", "Member, American College of Physicians"]
+designation: "অধ্যাপক, মেডিসিন ও ইউনিট প্রধান, মেডিসিন ইউনিট-৩ (এক্স), ঢাকা মেডিকেল কলেজ ও হাসপাতাল, ঢাকা; মহাসচিব, বাংলাদেশ সোসাইটি অব মেডিসিন"
+bmdc: A-13255
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+notice:
+  text: "প্রতি মাসের যে কোনো শুক্রবার রোগী দেখেন, আগে যোগাযোগ করে সিরিয়াল নিন।"
+  from: 2026-10-21
+  to: 2099-12-31
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শুক্র]
+    start: "09:00"
+    end: "12:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
