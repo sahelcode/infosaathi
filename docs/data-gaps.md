@@ -171,3 +171,6 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | doctor | dr-suravi-podder | chambers.fee | visiting card and Sahel's data give no fee | 2026-10-21 |
 | university | teesta-university | application open/close dates, application fee, admission exam, seats, competition per seat | official site (admission notice, leaflet images not readable, apply page), news (bn/en) | 2026-10-21 |
 | university | teesta-university | students, teachers, rank, emails (obfuscated on site) | official site, Wikipedia, uniRank, news | 2026-10-21 |
+| university | trust-university-barishal | admission dates, eligibility (GPA), application and admission fee, tuition/total cost, credits, waivers | official site is a JS app that cannot be read from the workspace (all pages blank); uniRank, Trust Group page, UGC listing (blocked), Facebook (blocked), 8 searches (bn/en), no news circulars found | 2026-10-21 |
+| university | trust-university-barishal | seats, competition per seat, students/teachers count, classes start | same as above | 2026-10-21 |
+| university | trust-university-barishal | master's programmes (MBA, MA in English) and second phone 01844902013 | only our old Blogger post lists them; not confirmed by a second page, left out | 2026-10-21 |
