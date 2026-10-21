@@ -97,6 +97,24 @@ Trigger: Sahel sends a hospital name plus a photo. Do ONLY this task in that ses
 7. Build, open `dist/hospital/<city>/<slug>/index.html` (title, one h1, JSON-LD Hospital/FAQPage/Breadcrumb, phones equal the data). Playwright 360/390: no overflow, no JS error, the "কল করুন" sheet opens. Look at a screenshot.
 8. One commit, `git pull --rebase`, `git push`. Report in Bengali: files, live path `https://infosaathi.com/hospital/<city>/<slug>/`, gaps written to `docs/data-gaps.md`, mismatches found.
 
+## Task type: ADD A COLLEGE / SCHOOL / CADET COLLEGE (`src/content/institutions/`)
+
+Trigger: Sahel sends a college/school name (often with the old Blogger link) plus images. Do ONLY this task in that session (no layout/CSS/template changes, no other features).
+
+### Input and research
+- Name, city/district, old Blogger link (also listed in `docs/old-posts-plan.csv`). Images: FIRST = logo, SECOND = cover photo (look; if content contradicts the order trust the content and say so). No images: build without `logo`/`photo` and say so.
+- Research the same way as universities: official website first (admission notices, contact, about), then education board / DSHE / reputable news for facts the site lacks. Collect: address, est., EIIN, board, affiliation (National University for degree/honours colleges), levels, gender, phone numbers WITH the college's own labels, email, subjects (honours), seats, fees from the latest official admission notice, HSC results only from the board or reputable news. Every number must be traceable; last-year figures only if labelled "গত বছর".
+- Missing facts: never delete the field. The page shows "আমরা সঠিক তথ্য পাইনি". Record each gap in `docs/data-gaps.md`.
+
+### Steps
+1. Read `src/content/institutions/_template.yaml` and `naogaon-government-college.yaml` (finished example) and the `institutions` schema in `src/content.config.ts`.
+2. `kind` college | cadet | school | school_college | madrasa. Slug = English name lowercase hyphenated (+ city if needed). If the file exists, update in place.
+3. Images: logo PNG max 400 px (do not crop the emblem), cover JPEG max 1600 px wide, quality 82; save under `src/content/institutions/images/<slug>-logo.png` and `<slug>.jpg`; set `logo:` and `photo:` as `./images/...`. LOOK at both. Tell Sahel about any watermark before publishing.
+4. YAML per the template. `old_urls: [/2025/07/....html]` = the old Blogger path (path only, no domain; take it from `docs/old-posts-plan.csv`, never guess). `about`: 2-3 plain factual sentences (the page shows it right under the header). `faq`: 3-5 extra real questions with direct first-sentence answers, consistent with the data (the page already adds EIIN, founded, levels, honours subjects, address, contact number).
+5. Sources: maximum 2, official first. `verified:` today, `verified_by: official` (or phone if Sahel confirmed). Use `draft: true` only if the data is too thin to publish, and say why.
+6. `npm run build` must pass BEFORE pushing. Open `dist/college/<city>/<slug>/index.html` (or `dist/school/...`): one h1, JSON-LD, phones equal the data. Playwright at 360 and 390 px: no overflow, no JS error; look at one screenshot (header, "এক নজরে", contact rows).
+7. One commit per item, `git pull --rebase`, `git push`. Report in Bengali: files, live path, gaps, conflicts, anything unopened.
+
 ## DATA GAPS (applies to doctors, universities, hospitals)
 - Before marking any field missing, do maximum research: official site, at least 3 searches in Bangla and English, news. Only then leave it out (the page shows "আমরা সঠিক তথ্য পাইনি").
 - Every missing field is recorded in `docs/data-gaps.md`: one row per item with `type | file | field | what was searched | date`. Update the row instead of duplicating.
