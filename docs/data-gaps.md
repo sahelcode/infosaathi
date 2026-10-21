@@ -180,3 +180,4 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | university | r-p-shaha-university | eligibility (minimum GPA), application fee, seats, competition per seat | official admission requirement pages (details load blank), international guidelines, admission portal (bot check), search (bn/en) | 2026-10-21 |
 | university | r-p-shaha-university | Spring 2027 dates (open, close, exam) | not announced yet; last semester (Fall 2026) figures are labelled | 2026-10-21 |
 | university | r-p-shaha-university | students, teachers, rank, email, main phone | official about/administration pages; only Wikipedia/uniRank (single source each) | 2026-10-21 |
+| university | green-university-of-bangladesh | seats, competition per seat, Spring 2027 dates (open, close, exam) | official admission, FAQ, fee, calendar pages, applyonline portal, news (bn/en); Spring 2027 not announced | 2026-10-21 |
