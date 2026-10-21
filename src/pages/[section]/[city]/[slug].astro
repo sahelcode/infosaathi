@@ -37,6 +37,12 @@ const A = d.admission;
 const map = `https://maps.google.com/?q=${encodeURIComponent(d.name + ', ' + city.en)}`;
 const checkedBadge = d.verified_by === 'phone' ? `ফোনে যাচাই: ${bnDate(d.verified)}` : `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
 const facs = [...new Set(d.subjects.map((s) => s.faculty))];
+const facList = d.faculties.length ? d.faculties : facs;
+const levelRows = d.levels.map((l) => {
+  const key = /একাদশ|HSC|উচ্চ/i.test(l) ? 'hsc' : /ডিগ্রি/.test(l) ? 'degree' : /অনার্স/.test(l) ? 'hons' : /মাস্টার্স/.test(l) ? 'masters' : 'other';
+  const groups = key === 'hsc' ? d.streams : key === 'hons' ? facList : [];
+  return { name: l, groups };
+});
 const results = [...d.results].sort((a, b) => b.year - a.year);
 const latest = results[0];
 
@@ -70,6 +76,10 @@ const faq = [
   ...(d.levels.length ? [{ q: `${d.name_bn}-এ কোন কোন স্তরে পড়ানো হয়?`, a: d.levels.join(', ') + '।' }] : []),
   ...(A ? [{ q: `${A.intake} ভর্তির যোগ্যতা কী?`, a: A.requirement }] : []),
   ...(d.subjects.length ? [{ q: `${d.name_bn}-এ কোন কোন বিষয়ে অনার্স আছে?`, a: d.subjects.map((s) => s.name).join(', ') + '।' }] : []),
+  ...(d.board || d.affiliation ? [{ q: `${d.name_bn}-এর ${d.affiliation && !d.board ? 'অধিভুক্তি' : 'শিক্ষা বোর্ড'} কী?`, a: `${[d.board, d.affiliation && `অধিভুক্ত: ${d.affiliation}`].filter(Boolean).join('; ')}।` }] : []),
+  ...(d.streams.length || facList.length ? [{ q: `${d.name_bn}-এ কোন কোন বিভাগে পড়ানো হয়?`, a: [d.streams.length && `একাদশ–দ্বাদশে ${d.streams.join(', ')}`, facList.length && `অনার্সে ${facList.join(', ')} অনুষদ`].filter(Boolean).join('। ') + '।' }] : []),
+  ...(d.fees.length ? [] : [{ q: `${d.name_bn}-এ ভর্তির খরচ কত?`, a: 'আমরা এখনো সঠিক তথ্য পাইনি। ভর্তির আগে কলেজের নোটিশ বা অফিসে জেনে নিন।' }]),
+  ...(d.web ? [{ q: `${d.name_bn}-এর অফিসিয়াল ওয়েবসাইট কী?`, a: `${d.web.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}।` }] : []),
   { q: `${d.name_bn} কোথায়?`, a: `${d.address}।` },
   { q: `${d.name_bn}-এর যোগাযোগ নম্বর কী?`, a: `${mainNum.label}: ${phoneShow(mainNum.number)}।` },
   ...d.faq,
@@ -119,7 +129,7 @@ const jsonld = {
             <p class="hp-addr">{d.address}</p>
             <p class="hp-meta">{d.type} {KIND[d.kind]}{d.est && ` · প্রতিষ্ঠা ${bn(d.est)}`}</p>
           </div>
-          <div class="pf-actions hp-actions un-actions">
+          <div class:list={['pf-actions', 'hp-actions', 'un-actions', { 'has-logo': true }]}>
             {single ? <a class="pf-btn" href={`tel:${mainNum.number}`}><Icon name="phone" />কল করুন</a>
                     : <button class="pf-btn" type="button" data-sheet-open="numbers"><Icon name="phone" />কল করুন</button>}
             <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
@@ -132,6 +142,14 @@ const jsonld = {
         <section class="un-fact" aria-labelledby="h-fact"><h2 id="h-fact">এক নজরে</h2>
           <dl>{glance.map((g) => <div class:list={['un-row', { na: !g.v }]}><dt>{g.k}</dt><dd>{g.v || NA}</dd></div>)}</dl>
         </section>
+
+        {levelRows.length > 0 && (
+          <section class="un-fact" id="levels" aria-labelledby="h-levels"><h2 id="h-levels">বিভাগসমূহ</h2>
+            <ul class="ed-levels">{levelRows.map((r) => (
+              <li><b>{r.name}</b>{r.groups.length > 0 ? <span class="ed-lv-g">{r.groups.map((g) => <i>{g}</i>)}</span> : <span class="ed-lv-ok"><Icon name="check" size={13} w={3} />আছে</span>}</li>
+            ))}</ul>
+          </section>
+        )}
 
         {A && (
           <section class="pf-card" id="admission" aria-labelledby="h-adm">

@@ -224,6 +224,8 @@ const institutions = defineCollection({
         versions: z.string().optional(), // e.g. বাংলা ও ইংরেজি ভার্সন
         logo: image().optional(),
         photo: image().optional(),
+        streams: z.array(z.string()).default([]), // একাদশ–দ্বাদশের বিভাগ, e.g. [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+        faculties: z.array(z.string()).default([]), // অনার্সের অনুষদ, used when `subjects` is not listed
         campus: z.string().optional(),
         students: z.string().optional(),
         teachers: z.string().optional(),
