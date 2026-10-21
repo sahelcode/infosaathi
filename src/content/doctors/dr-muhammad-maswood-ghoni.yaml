@@ -1,0 +1,27 @@
+name: "ডা. মোহাম্মদ মাসউদ গনি"
+name_en: "Dr. Muhammad Maswood Ghoni"
+specialty: medicine
+title: "মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-muhammad-maswood-ghoni.jpg
+banner: ./images/dr-muhammad-maswood-ghoni-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (SOMC)", "MRCP (Ireland)"]
+designation: "মেডিসিন বিশেষজ্ঞ, আইসিইউ ও সিসিইউ কনসালটেন্ট, ইবনে সিনা হাসপাতাল সিলেট লিঃ; প্রাক্তন কনসালটেন্ট ও আইসিইউ স্পেশালিস্ট, কিং ফাহাদ স্পেশালাইজড হাসপাতাল, সৌদি আরব"
+bmdc: A-24606
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/08/dr-maswood-ghoni-medicine-specialist-in.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "11:00"
+    end: "14:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01401617876"
+        note: "সকাল ৮টা থেকে"
