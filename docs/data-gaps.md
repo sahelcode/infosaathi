@@ -74,3 +74,6 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | doctor | dr-md-mizanur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | dr-md-mazharul-islam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | prof-dr-iqbal-ahmed-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-zia-uddin-ahmed-sami | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-md-oyes-ahmed-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-mostak-uddin-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
