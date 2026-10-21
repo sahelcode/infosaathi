@@ -71,14 +71,17 @@ export const GET: APIRoute = async () => {
   // colleges and schools: government first
   const inst = (await getInstitutions()).sort((a, b) => (a.data.type === b.data.type ? 0 : a.data.type === 'সরকারি' ? -1 : 1));
   const instRow = (section: 'college' | 'school') =>
-    inst.filter((i) => instSection(i) === section).slice(0, 8).map((i) => ({
-      name: i.data.name_bn,
-      loc: CITIES[i.data.city].bn,
-      type: i.data.type,
-      est: i.data.est ?? '',
-      tags: [...i.data.levels.slice(0, 2), ...(i.data.eiin ? [`EIIN ${bn(i.data.eiin)}`] : [])].slice(0, 3),
-      url: institutionUrl(i),
-    }));
+    Promise.all(
+      inst.filter((i) => instSection(i) === section).slice(0, 8).map(async (i) => ({
+        name: i.data.name_bn,
+        addr: i.data.address,
+        type: i.data.type,
+        est: i.data.est ?? '',
+        tags: [i.data.type === 'সরকারি' ? 'Government' : 'Private', ...(i.data.est ? [`Est. ${i.data.est}`] : []), ...(i.data.eiin ? [`EIIN ${i.data.eiin}`] : [])],
+        img: i.data.photo ? (await getImage({ src: i.data.photo, width: 640, format: 'webp' })).src : '',
+        url: institutionUrl(i),
+      })),
+    );
 
   // famous places: the first photo if there is one, otherwise the drawn scene of its kind
   const placeRows = await Promise.all(
@@ -192,13 +195,14 @@ export const GET: APIRoute = async () => {
     "put('placeRow', places.map(p=>`\n    <a class=\"org-card ix-card ix-place\" href=\"${p.url}\" style=\"color:inherit;text-decoration:none\">\n      <div class=\"ix-image\">${p.img ? `<img src=\"${p.img}\" alt=\"\" loading=\"lazy\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\">` : placeArt(p.kind)}");
   html = swap(html, "<div class=\"ix-body\">${tags(p.tags)}</div>\n    </div>`).join(''));", "<div class=\"ix-body\">${tags(p.tags)}</div>\n    </a>`).join(''));");
   html = swap(html, '<span class="eyebrow">Famous places</span><a href="#" class="see-all">', '<span class="eyebrow">Famous places</span><a href="/places/" class="see-all">');
-  html = swapArray(html, 'colleges', instRow('college'));
-  html = swapArray(html, 'schools', instRow('school'));
-  html = swap(html, "put('collegeRow', colleges.map((c,i)=>`\n    <div class=\"org-card ix-card\">", "put('collegeRow', colleges.map((c,i)=>`\n    <a class=\"org-card ix-card\" href=\"${c.url}\" style=\"color:inherit;text-decoration:none\">");
-  html = swap(html, "put('schoolRow', schools.map((c,i)=>`\n    <div class=\"org-card ix-card\">", "put('schoolRow', schools.map((c,i)=>`\n    <a class=\"org-card ix-card\" href=\"${c.url}\" style=\"color:inherit;text-decoration:none\">");
-  html = swap(html, "${tags(c.tags)}</div>\n    </div>`).join(''));", "${tags(c.tags)}</div>\n    </a>`).join(''));");
-  html = swap(html, "${tags(c.tags)}</div>\n    </div>`).join(''));", "${tags(c.tags)}</div>\n    </a>`).join(''));");
-  html = html.replace('<span class="ix-badge">Est. ${c.est}</span>', '${c.est ? `<span class="ix-badge">Est. ${c.est}</span>` : ""}');
+  html = swapArray(html, 'colleges', await instRow('college'));
+  html = swapArray(html, 'schools', await instRow('school'));
+  // colleges and schools: photo (no text on it), then name, address and 2-3 small facts
+  html = swap(html, "put('collegeRow', colleges.map((c,i)=>`\n    <div class=\"org-card ix-card\">\n      <div class=\"ix-image\">${collegeArt(i+2)}<span class=\"ix-type\">${c.type}</span><span class=\"ix-badge\">Est. ${c.est}</span></div>\n      <div class=\"ix-body\"><b>${c.name}</b><div class=\"sub\">${pin}${c.loc}</div>${tags(c.tags)}</div>\n    </div>`",
+    "put('collegeRow', colleges.map((c,i)=>`\n    <a class=\"org-card ix-card ix-inst\" href=\"${c.url}\" style=\"color:inherit;text-decoration:none\">\n      <div class=\"ix-image\">${c.img?`<img src=\"${c.img}\" alt=\"\" loading=\"lazy\">`:collegeArt(i+2)}</div>\n      <div class=\"ix-body\"><b>${c.name}</b><div class=\"sub\">${pin}${c.addr}</div>${tags(c.tags)}</div>\n    </a>`");
+  html = swap(html, "put('schoolRow', schools.map((c,i)=>`\n    <div class=\"org-card ix-card\">\n      <div class=\"ix-image\">${schoolArt(i+5)}<span class=\"ix-type\">${c.type}</span></div>\n      <div class=\"ix-body\"><b>${c.name}</b><div class=\"sub\">${pin}${c.loc}</div>${tags(c.tags)}</div>\n    </div>`",
+    "put('schoolRow', schools.map((c,i)=>`\n    <a class=\"org-card ix-card ix-inst\" href=\"${c.url}\" style=\"color:inherit;text-decoration:none\">\n      <div class=\"ix-image\">${c.img?`<img src=\"${c.img}\" alt=\"\" loading=\"lazy\">`:schoolArt(i+5)}</div>\n      <div class=\"ix-body\"><b>${c.name}</b><div class=\"sub\">${pin}${c.addr}</div>${tags(c.tags)}</div>\n    </a>`");
+  html = swap(html, '.ix-body .sub svg,.ix-cap span svg{', '.ix-inst .ix-image img{display:block;width:100%;height:100%;object-fit:cover;}\n.ix-inst .ix-body .sub{align-items:flex-start;line-height:1.35;}\n.ix-inst .ix-body .sub svg{margin-top:3px;}\n.ix-inst .ix-body{padding:14px 14px 16px;}\n.ix-inst .org-tags{display:flex;flex-wrap:wrap;gap:5px;padding-top:12px;}\n.ix-inst .org-tags span{font-size:11px;padding:4px 7px;white-space:nowrap;}\n.ix-body .sub svg,.ix-cap span svg{');
   html = swap(html, '<span class="eyebrow">Colleges</span><a href="#" class="see-all">', '<span class="eyebrow">Colleges</span><a href="/colleges/" class="see-all">');
   html = swap(html, '<span class="eyebrow">Schools</span><a href="#" class="see-all">', '<span class="eyebrow">Schools</span><a href="/schools/" class="see-all">');
   html = swapArray(html, 'uniNames', uniRows);

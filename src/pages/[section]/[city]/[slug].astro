@@ -286,8 +286,8 @@ const jsonld = {
           )}
         </Report>
         <ShareRow />
-        <nav class="pf-tags" aria-label="সম্পর্কিত">
-          <a href={`${listUrl}${d.city}/`}>{city.of} {listName}</a><a href={listUrl}>বাংলাদেশের {listName}</a>
+        <nav class="pf-tags hp-tags" aria-label="সম্পর্কিত">
+          {[[`${listUrl}${d.city}/`, `${city.of} ${listName}`], [listUrl, `বাংলাদেশের ${listName}`]].map(([h, t]) => <a href={h} class:list={{ sm: t.length > 17 }}>{t}</a>)}
         </nav>
         <Ad />
 
@@ -296,7 +296,8 @@ const jsonld = {
             <div class="pf-block-head"><h2 id="h-rel">অন্য {listName}</h2><a class="see-all" href={listUrl}>See All</a></div>
             <div class="pf-minis">
               {related.map((x) => (
-                <a class="pf-mini" href={institutionUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="cap" size={20} w={1.8} /></span>
+                <a class="pf-mini" href={institutionUrl(x)}>{x.data.logo ? <span class="hp-near-i un-rel-i has-logo"><Image src={x.data.logo} alt="" width={88} height={88} /></span>
+                                  : <span class="hp-near-i un-rel-i"><Icon name="cap" size={20} w={1.8} /></span>}
                   <span class="pf-mini-txt"><b>{x.data.name_bn}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{CITIES[x.data.city].bn} · {x.data.type}</span></span>
                   <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
               ))}
