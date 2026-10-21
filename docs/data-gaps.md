@@ -169,3 +169,5 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | doctor | prof-dr-md-fayzul-islam-chowdhury | chambers.room | card has no room number | 2026-10-21 |
 | doctor | dr-habibur-rahman | chambers.fee | visiting card and Sahel's data give no fee | 2026-10-21 |
 | doctor | dr-suravi-podder | chambers.fee | visiting card and Sahel's data give no fee | 2026-10-21 |
+| university | teesta-university | application open/close dates, application fee, admission exam, seats, competition per seat | official site (admission notice, leaflet images not readable, apply page), news (bn/en) | 2026-10-21 |
+| university | teesta-university | students, teachers, rank, emails (obfuscated on site) | official site, Wikipedia, uniRank, news | 2026-10-21 |
