@@ -1,0 +1,25 @@
+name: "অধ্যাপক ডা. ইকবাল আহমদ চৌধুরী"
+name_en: "Prof. Dr. Iqbal Ahmed Chowdhury"
+specialty: medicine
+title: "মেডিসিন ও বাত-ব্যথা বিশেষজ্ঞ"
+photo: ./images/prof-dr-iqbal-ahmed-chowdhury.jpg
+banner: ./images/prof-dr-iqbal-ahmed-chowdhury-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (Dhaka)", "BCS (Health)", "FCPS (Medicine)", "Trained in Rheumatology (BSMMU, Dhaka)"]
+designation: "অধ্যাপক (মেডিসিন বিভাগ), সিলেট এম.এ.জি. ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-30502
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/05/dr-iqbal-ahmed-chowdhury.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৫ (৩য় তলা)"
+    days: [শনি, রবি, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "15:00"
+    end: "20:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01712196280"
+        note: "সকাল ৯:৩০টা থেকে"
