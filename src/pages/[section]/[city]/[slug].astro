@@ -148,8 +148,6 @@ const jsonld = {
           </div>
         </section>
 
-        <p class="hp-about">{about}</p>
-
         <section class="un-fact" aria-labelledby="h-fact"><h2 id="h-fact">এক নজরে</h2>
           <dl>{glance.map((g) => <div class:list={['un-row', { na: !g.v }]}><dt>{g.k}</dt><dd>{g.v || NA}</dd></div>)}</dl>
         </section>
@@ -243,19 +241,18 @@ const jsonld = {
             <ul class="pf-chips" style="list-style:none">{d.facilities.map((f) => <li><span>{f}</span></li>)}</ul></section>
         )}
 
-        {(d.alumni.length > 0 || d.good.length > 0 || d.think.length > 0) && (
-          <section class="pf-card" id="about" aria-labelledby="h-about">
-            <h2 id="h-about">আরও জানুন</h2>
-            {d.alumni.length > 0 && (<><h3 class="pf-h3">উল্লেখযোগ্য প্রাক্তন শিক্ষার্থী</h3>
-              <ul class="ed-alum">{d.alumni.map((a) => <li><b>{a.name}</b><small>{a.role}</small></li>)}</ul></>)}
-            {(d.good.length > 0 || d.think.length > 0) && (
-              <div class="un-pc">
-                {d.good.length > 0 && <div class="un-pc-b good"><b><Icon name="plus" size={16} w={2.6} />ভালো দিক</b><ul>{d.good.map((g) => <li>{g}</li>)}</ul></div>}
-                {d.think.length > 0 && <div class="un-pc-b think"><b><Icon name="minus" size={16} w={2.6} />যা জেনে নেবেন</b><ul>{d.think.map((t) => <li>{t}</li>)}</ul></div>}
-              </div>
-            )}
-          </section>
-        )}
+        <section class="pf-card" id="about" aria-labelledby="h-about">
+          <h2 id="h-about">পরিচিতি</h2>
+          <p class="pf-text">{about}</p>
+          {d.alumni.length > 0 && (<><h3 class="pf-h3">উল্লেখযোগ্য প্রাক্তন শিক্ষার্থী</h3>
+            <ul class="ed-alum">{d.alumni.map((a) => <li><b>{a.name}</b><small>{a.role}</small></li>)}</ul></>)}
+          {(d.good.length > 0 || d.think.length > 0) && (
+            <div class="un-pc">
+              {d.good.length > 0 && <div class="un-pc-b good"><b><Icon name="plus" size={16} w={2.6} />ভালো দিক</b><ul>{d.good.map((g) => <li>{g}</li>)}</ul></div>}
+              {d.think.length > 0 && <div class="un-pc-b think"><b><Icon name="minus" size={16} w={2.6} />যা জেনে নেবেন</b><ul>{d.think.map((t) => <li>{t}</li>)}</ul></div>}
+            </div>
+          )}
+        </section>
 
         <section class="un-fact" id="contact" aria-labelledby="h-nums"><h2 id="h-nums">যোগাযোগের নম্বর</h2>
           <div class="pf-nums hp-nums">
