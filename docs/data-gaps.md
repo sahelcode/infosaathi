@@ -177,3 +177,6 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | university | daffodil-international-university | seats, competition per seat, classes start, Spring 2027 application open date | official admission, tuition and contact pages, news (bn/en); only an aggregator gives 4,000 seats, not used | 2026-10-21 |
 | university | daffodil-international-university | students and teachers count | only Wikipedia (undated), not on official pages read | 2026-10-21 |
 | university | daffodil-international-university | admission test format (subjects, marks) | official admission page links a schedule only | 2026-10-21 |
+| university | r-p-shaha-university | eligibility (minimum GPA), application fee, seats, competition per seat | official admission requirement pages (details load blank), international guidelines, admission portal (bot check), search (bn/en) | 2026-10-21 |
+| university | r-p-shaha-university | Spring 2027 dates (open, close, exam) | not announced yet; last semester (Fall 2026) figures are labelled | 2026-10-21 |
+| university | r-p-shaha-university | students, teachers, rank, email, main phone | official about/administration pages; only Wikipedia/uniRank (single source each) | 2026-10-21 |

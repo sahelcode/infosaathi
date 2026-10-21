@@ -8,6 +8,7 @@ export const CITIES = {
   habiganj: { bn: 'হবিগঞ্জ', en: 'Habiganj', in: 'হবিগঞ্জে', of: 'হবিগঞ্জের' },
   sunamganj: { bn: 'সুনামগঞ্জ', en: 'Sunamganj', in: 'সুনামগঞ্জে', of: 'সুনামগঞ্জের' },
   dhaka: { bn: 'ঢাকা', en: 'Dhaka', in: 'ঢাকায়', of: 'ঢাকার' },
+  narayanganj: { bn: 'নারায়ণগঞ্জ', en: 'Narayanganj', in: 'নারায়ণগঞ্জে', of: 'নারায়ণগঞ্জের' },
   chattogram: { bn: 'চট্টগ্রাম', en: 'Chattogram', in: 'চট্টগ্রামে', of: 'চট্টগ্রামের' },
   naogaon: { bn: 'নওগাঁ', en: 'Naogaon', in: 'নওগাঁয়', of: 'নওগাঁর' },
   bogura: { bn: 'বগুড়া', en: 'Bogura', in: 'বগুড়ায়', of: 'বগুড়ার' },
