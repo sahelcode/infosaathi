@@ -1,0 +1,27 @@
+name: "ডা. মোঃ জসিম উদ্দিন"
+name_en: "Dr. Md. Jasim Uddin"
+specialty: neurology
+title: "নিউরোলজি ও মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-md-jasim-uddin.jpg
+banner: ./images/dr-md-jasim-uddin-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "MD (Neurology, BSMMU)"]
+designation: "সহকারী অধ্যাপক (নিউরোলজি বিভাগ), সিলেট এম.এ.জি. ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/08/dr-md-jasim-uddin-neuromedicine.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪১৬ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ]
+    start: "18:00"
+    end: "21:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01705553868"
+        note: "সকাল ৮টা থেকে"
