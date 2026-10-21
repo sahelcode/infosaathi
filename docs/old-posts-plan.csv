@@ -1,0 +1,321 @@
+type,clicks_12m,impressions,action,old_path
+app,12137,541276,DELETE (decided),2025/06/sportzfy-download-for-pc-781011.html
+doctor,758,28273,DONE,2025/08/dr-md-aolad-hussain-neuromedicine.html
+doctor,546,19996,DONE,2025/10/dr-m-a-hai.html
+doctor,382,18396,DONE,2025/09/dr-md-muhibur-rahman-gastro-liver.html
+doctor,364,14074,ADD (priority),2025/10/dr-habibur-rahman-diabetes-hormone.html
+doctor,360,12404,DONE,2025/08/dr-nuruddin-ahmed-orthopedic-spine.html
+college/school,352,23294,DONE,2025/07/sylhet-govt-model-school-college.html
+university,346,15661,DONE,2025/05/leading-university-sylhet.html
+doctor,261,7813,DONE,2025/08/dr-tanvir-r-chowdhury-medicine.html
+doctor,257,12093,DONE,2025/08/dr-md-tanvir-muhit-medicine-sylhet.html
+doctor,249,11710,DONE,2025/08/dr-sk-kabir-ahmmed-medicine-specialist.html
+doctor,232,22630,ADD (priority),2025/08/prof-dr-shishir-chakraborty-medicine.html
+university,230,22984,DONE,2025/11/international-islamic-university-chittagong.html
+doctor,227,12364,DONE,2025/09/dr-mostak-uddin-ahmed.html
+college/school,223,17130,ADD (priority),2025/07/sylhet-cadet-college.html
+doctor,215,11800,ADD (priority),2025/08/dr-md-mizanur-rahman-ibn-sina-hospital.html
+doctor,208,9261,ADD (priority),2025/04/prof-dr-k-m-akhtaruzzaman-sylhet.html
+college/school,197,11500,ADD (priority),2025/07/sylhet-government-college.html
+doctor,197,8307,DONE,2025/09/prof-dr-jahanara-begum-gynecology.html
+university,187,7467,ADD (priority),2025/06/teesta-university.html
+doctor,186,7734,DONE,2025/05/dr-iqbal-ahmed-chowdhury.html
+other,181,14836,ADD (priority),2025/05/anjumane-talimul-quran-bangladesh.html
+doctor,178,4259,DONE,2025/10/dr-ashrafee-noor-badrunnesa-gynecology.html
+doctor,175,10080,DONE,2025/10/prof-dr-jamila-alam-gynecology.html
+college/school,161,12975,DONE,2025/08/bangladesh-noubahini-school-and-college.html
+doctor,161,8138,DONE,2025/08/prof.dr.afzal-momin.html
+college/school,158,27024,DONE,2025/08/naogaon-govt-college.html
+doctor,151,6776,ADD (priority),2025/08/prof-dr-d-hassan-chowdhury-surgeon.html
+doctor,146,10357,DONE,2025/08/dr-mashiur-rahman-majumder-neuro-spine.html
+doctor,144,7569,DONE,2025/09/prof-dr-oyes-ahmed-choudhury-sylhet-ibn.html
+doctor,140,4252,ADD (priority),2025/08/prof-dr-wazir-ahmed-chowdhury.html
+college/school,137,24122,DONE,2025/08/rangpur-government-girls-high-school.html
+doctor,131,7116,ADD (priority),2025/04/professor-dr-shamima-akhter.html
+university,122,30593,DONE,2025/11/north-south-university.html
+college/school,120,30144,DONE,2025/08/rajshahi-govt-womens-college.html
+doctor,119,8220,DONE,2025/10/dr-md-abdul-hannan-tareq-diabetes.html
+college/school,118,11363,ADD (priority),2025/07/rajshahi-cadet-college.html
+college/school,111,9222,ADD (priority),2025/08/barishal-cadet-college.html
+college/school,109,16271,DONE,2025/07/sylhet-government-womens-college.html
+college/school,108,16862,ADD (priority),2025/08/chittagong-govt-womens-college.html
+doctor,107,8022,DONE,2025/10/dr-rashedul-haque-pediatric-medicine.html
+college/school,106,11706,ADD (priority),2025/08/bogra-cantonment-public-school-college.html
+college/school,103,13668,ADD (priority),2025/07/joypurhat-girls-cadet-college.html
+doctor,103,4747,DONE,2025/11/dr-monirul-islam-sylhet.html
+doctor,103,3654,DONE,2025/08/dr-kamrul-alam-orthopedic-surgeon-ibn.html
+doctor,99,5011,DONE,2025/08/dr-mazharul-islam-neuro-medicine.html
+doctor,97,3905,DONE,2025/08/dr-chowdhury-foyzur-rob-zubayer.html
+university,94,5230,ADD (priority),2025/06/trust-university-barishal.html
+doctor,94,3012,DONE,2025/10/dr-ummey-sayeeda-bilkis-ilora.html
+page,93,258,SKIP (not a post),
+doctor,91,4823,DONE,2025/08/prof-dr-syed-abdus-subhan-rahin.html
+college/school,90,17157,ADD (priority),2025/08/rajshahi-govt-city-college.html
+college/school,88,20585,ADD (priority),2025/08/cantonment-public-school-and-college.html
+doctor,88,3214,DONE,2025/05/dr-md-abdur-rauf-munna.html
+doctor,87,4400,DONE,2025/08/dr-md-jasim-uddin-neuromedicine.html
+doctor,83,7604,DONE,2025/10/dr-shamima-akhter-shipa-gynecology.html
+other,82,2905,DONE,2025/05/blog-post_24.html
+doctor,82,1337,DONE,2025/08/dr-lt-col-saifur-bayejid-medicine.html
+college/school,80,15524,ADD (priority),2025/08/sirajganj-government-college.html
+usa,76,12160,"SKIP (foreign, not Bangladesh-first)",2025/11/american-international-university.html
+college/school,74,20578,ADD (priority),2025/08/government-sundarban-adarsha-college-khulna.html
+university,70,7951,DONE,2025/05/metropolitan-university-sylhet.html
+doctor,68,3083,DONE,2025/12/dr-md-mubin-uddin-psychiatry-specialist.html
+university,67,28373,ADD (priority),2025/11/daffodil-international-university.html
+doctor,66,3384,DONE,2025/08/dr-sk-kabir-ahmmed-sylhet.html
+university,64,13397,ADD (priority),2025/10/national-university-bangladesh.html
+college/school,63,14645,ADD (priority),2025/08/chattogram-government-city-college.html
+college/school,63,8206,DONE,2025/07/carmichael-college-rangpur.html
+doctor,62,3213,ADD (priority),2025/10/prof-dr-syed-moosa-ma-quaium-pediatric.html
+college/school,59,6902,DONE,2025/07/mc-college-sylhet.html
+college/school,57,13734,ADD (priority),2025/08/hathazari-government-college.html
+doctor,57,1854,DONE,2025/10/dr-mostakima-begum-eti-gynecology.html
+doctor,54,3442,DONE,2025/11/dr-mohammad-iqbal-ahmed.html
+college/school,54,3047,ADD (priority),2025/08/mirsarai-college.html
+university,54,2734,ADD (priority),2025/07/ranada-prasad-shaha-university.html
+university,52,11525,ADD (priority),2025/11/green-university-of-bangladesh.html
+doctor,52,1986,ADD (priority),2025/12/dr-suravi-podder.html
+doctor,52,1119,DONE,2025/12/dr-md-abdullah-yusuf-jamil-surgical.html
+university,49,11422,ADD (priority),2026/02/university-of-asia-pacific.html
+college/school,49,5127,ADD (priority),2025/08/fatikchhari-government-college.html
+university,49,3843,ADD (priority),2025/06/global-university-bangladesh.html
+doctor,49,3514,DONE,2025/10/dr-rabeya-begum-gynecology.html
+college/school,47,5937,ADD (priority),2025/09/rangpur-city-college.html
+university,47,4446,ADD (priority),2025/06/university-of-global-village.html
+college/school,45,27680,ADD (priority),2025/05/baf-shaheen-college-dhaka.html.html
+usa,44,13940,"SKIP (foreign, not Bangladesh-first)",2025/09/whitney-high-school-cerritos-ca.html
+college/school,42,7985,ADD (priority),2025/08/government-begum-rokeya-college.html
+college/school,41,7032,ADD (priority),2025/08/govt-majeed-memorial-city-college.html
+college/school,41,6195,ADD (priority),2025/07/brindaban-govt-college.html
+doctor,41,2377,DONE,2025/11/dr-mahbub-alam-jiban.html
+doctor,41,1475,DONE,2025/11/dr-m-ahad-cardiology-specialist-sylhet.html
+doctor,41,1244,DONE,2025/12/dr-md-fakhruzzaman-shaheed-psychiatry.html
+college/school,40,4806,ADD (priority),2025/07/moulvibazar-government-college.html
+doctor,40,1721,DONE,2025/08/dr-md-sadekur-rahman.html
+doctor,40,806,DONE,2025/11/dr-ma-majid-nephrology-specialist-sylhet.html
+university,39,4353,ADD (later),2025/07/naogaon-university.html
+university,39,3593,ADD (later),2025/05/sylhet-international-university.html
+doctor,38,1615,DONE,2025/11/dr-md-ibrahim-khalil-nephrology.html
+doctor,38,1447,ADD (later),2025/12/dr-jahir-ahmed-general-laparoscopic.html
+other,38,1060,REDIRECT to list,2025/06/air-flex-blogger-template-review.html
+usa,36,11814,"SKIP (foreign, not Bangladesh-first)",2025/09/california-academy-of-mathematics.html
+college/school,36,5121,REDIRECT to list,2025/07/pabna-cadet-college.html
+doctor,36,695,ADD (later),2025/12/dr-sadia-arifin-tania-sylhet-ibn-sina.html
+college/school,35,5496,REDIRECT to list,2025/08/rangpur-government-college.html
+doctor,34,2091,DONE,2025/11/dr-mohammad-shohel-pediatric-medicine.html
+doctor,34,1940,DONE,2025/11/dr-ruhul-amin-pediatric-medicine.html
+doctor,33,1580,ADD (later),2026/02/professor-dr-guljar-ahmed.html
+college/school,32,6464,REDIRECT to list,2025/08/nawab-siraj-ud-dowla-government-college.html
+usa,31,13988,"SKIP (foreign, not Bangladesh-first)",2025/09/lowell-high-school-san-francisco-ca.html
+university,31,9020,ADD (later),2025/11/united-international-university.html
+other,31,2645,REDIRECT to list,2025/04/blog-post.html
+doctor,31,1487,DONE,2026/02/prof-dr-abu-yousuf-md-nazim-sylhet.html
+other,30,3040,REDIRECT to list,2025/06/pirojpur-science-and-technology.html
+doctor,30,2500,DONE,2025/10/dr-milia-tamanna-rahman-gynecology.html
+doctor,30,1988,DONE,2025/11/dr-shamsul-haque-chowdhury-psychiatry.html
+university,29,2401,ADD (later),2025/06/kurigram-agricultural-university.html
+university,28,8650,ADD (later),2025/11/brac-university.html
+other,28,1868,REDIRECT to list,2025/04/blog-post_53.html
+doctor,28,1698,ADD (later),2025/12/dr-md-shafiqur-rahman.html
+university,27,8346,ADD (later),2025/10/university-of-chittagong.html
+doctor,27,1678,DONE,2026/01/dr-ahmad-nasim-hasan-lavlu-sylhet.html
+university,26,9611,ADD (later),2025/10/jahangirnagar-university.html
+other,26,5248,REDIRECT to list,2026/01/noakhali-science-and-technology.html
+university,26,1359,ADD (later),2025/06/teesta-university_15.html
+college/school,25,7055,REDIRECT to list,2025/08/govt-syed-hatem-ali-college.html
+college/school,25,5685,REDIRECT to list,2025/07/azam-khan-govt-commerce-college.html
+college/school,25,5209,REDIRECT to list,2025/07/government-college-of-commerce.html
+other,24,1491,REDIRECT to list,2025/04/blog-post_10.html
+other,24,1377,REDIRECT to list,2025/05/shahbag-jamia-madania-qasimul-uloom.html
+college/school,23,3938,REDIRECT to list,2025/07/sunamgonj-government-women-college.html
+university,23,1281,ADD (later),2025/06/sylhet-medical-university.html
+university,22,6178,ADD (later),2025/05/sylhet-agricultural-university.html
+university,22,3300,ADD (later),2025/11/khulna-university.html
+doctor,22,698,ADD (later),2025/11/dr-at-reza-ahmed-pediatric-medicine.html
+doctor,19,938,ADD (later),2025/12/dr-md-mazedur-rahman.html
+page,19,299,SKIP (not a post),p/blood-donor.html
+college/school,18,2748,REDIRECT to list,2025/07/government-brajalal-college-khulna.html
+doctor,18,1788,DONE,2025/11/dr-m-delwar-hossain.html
+college/school,18,1144,REDIRECT to list,2025/07/sreemangal-govt-college.html
+college/school,17,3661,REDIRECT to list,2025/08/khulna-government-womens-college.html
+college/school,17,2127,REDIRECT to list,2025/06/dhaka-college-dhaka.html
+doctor,17,1849,DONE,2025/11/dr-abu-ahmed-golam-akbar-nephrology.html
+doctor,17,1395,ADD (later),2025/05/dr-md-mahbubul-alam.html
+college/school,16,4385,REDIRECT to list,2025/05/httpswww.infosaathi.com202505viqarunnisa-noon-school-college.html.html
+doctor,16,1275,DONE,2026/02/prof-dr-abm-yunus-sylhet.html
+university,15,12122,ADD (later),2025/10/bangladesh-university-of-engineering.html
+college/school,15,3983,REDIRECT to list,2025/07/government-brojomohun-college-barisal.html
+university,15,3807,ADD (later),2025/06/habiganj-agricultural-university.html
+college/school,15,2101,REDIRECT to list,2025/08/rajshahi-college.html
+doctor,15,552,ADD (later),2025/12/dr-mohammad-mozaharul-islam-sylhet.html
+college/school,13,3659,REDIRECT to list,2025/07/chattogram-cantonment-public-college.html
+college/school,13,1142,REDIRECT to list,2025/07/adamjee-cantonment-college.html
+college/school,12,4061,REDIRECT to list,2025/05/national-ideal-college-dhaka.html.html
+university,12,3933,ADD (later),2026/01/stamford-university-bangladesh.html
+college/school,12,2762,REDIRECT to list,2025/07/baf-shaheen-college-dhaka.html
+page,12,69,SKIP (not a post),p/contact-us.html
+doctor,11,441,DONE,2026/01/major-dr-md-mahtabul-hasan-general.html
+university,10,3301,ADD (later),2025/06/pabna-university-of-science-technology.html
+doctor,10,1070,DONE,2025/12/prof-dr-jamal-ahmed-chowdhury-general.html
+doctor,10,585,DONE,2025/11/dr-md-saiful-islam-nephrology.html
+university,9,1741,REDIRECT to list,2025/06/habiganj-agricultural-university_20.html
+college/school,9,1531,REDIRECT to list,2025/04/madrasatulabrarkunagram.html
+college/school,8,1052,REDIRECT to list,2025/07/ideal-school-and-college.html
+university,8,907,REDIRECT to list,2025/06/rtm-alkabir-technical-university-sylhet.html
+other,8,245,REDIRECT to list,2025/05/jamia-darul-azhar-dargah-baharpur.html
+college/school,7,2957,REDIRECT to list,2025/07/govt-hazi-muhammad-mohsin-college.html
+college/school,7,1384,REDIRECT to list,2025/07/faujdarhat-cadet-college.html
+university,7,1187,REDIRECT to list,2025/06/north-bengal-international-university.html
+college/school,7,728,REDIRECT to list,2025/07/milestone-college.html
+other,7,49,REDIRECT to list,2025/04/blog-post_16.html
+other,6,4804,REDIRECT to list,2025/04/blog-post_6.html
+college/school,6,3139,REDIRECT to list,2025/07/chittagong-college.html
+college/school,6,1939,REDIRECT to list,2025/05/httpswww.infosaathi.com202505rajuk-uttara-model-college.html.html
+other,6,1628,REDIRECT to list,2025/06/ssc-result-2025-date.html
+college/school,6,1465,REDIRECT to list,2025/05/httpswww.infosaathi.com202505notre-dame-college-dhaka.html.html
+college/school,6,329,REDIRECT to list,2025/05/genius-islamic-school-college.html
+page,6,138,SKIP (not a post),p/about.html
+university,5,2673,REDIRECT to list,2025/10/rajshahi-university.html
+doctor,5,911,REDIRECT to list,2025/10/professor-dr-syed-shahidul-islam.html
+other,4,1062,REDIRECT to list,2025/05/anjumane-talimul-quran-result-2025.html
+university,4,267,REDIRECT to list,2025/07/naogaon-university.html
+doctor,4,155,DONE,2025/08/dr-maswood-ghoni-medicine-specialist-in.html
+other,3,1593,REDIRECT to list,2025/05/darul-uloom-deoband.html
+usa,3,1463,"SKIP (foreign, not Bangladesh-first)",2025/11/downtown-business-high-school-los.html
+page,3,1184,SKIP (not a post),2025/08
+other,3,1028,REDIRECT to list,2025/11/girls-academic-leadership-academy-los.html
+other,3,702,REDIRECT to list,2025/11/about-los-angeles.html
+doctor,3,675,REDIRECT to list,2025/08/dr-shoma-sharker-endocrinologist.html
+other,3,464,REDIRECT to list,2025/04/blog-post_73.html
+university,3,454,DONE,2025/05/shahjalal-university-of-science-and-technology.html
+college/school,3,371,REDIRECT to list,2025/05/motherland-school-and-college.html
+college/school,3,166,REDIRECT to list,2025/05/an-noor-school-and-college.html
+other,3,61,REDIRECT to list,2025/04/albert-einstein.html
+college/school,3,31,REDIRECT to list,"2025/05/ 
+barthakuri-shitalangia-madrasa-profile.html"
+college/school,2,535,REDIRECT to list,2025/07/holy-cross-college.html
+other,2,508,REDIRECT to list,2025/07/birshreshtha-noor-mohammad-public.html
+doctor,2,482,DONE,2026/01/dr-reza-ahmed-general-laparoscopic.html
+other,2,426,REDIRECT to list,2025/04/mother-teresa-biography.html
+university,2,362,REDIRECT to list,2025/06/begum-rokeya-university-rangpur.html
+page,2,324,SKIP (not a post),search/label/Gynecology & Obstetrics
+other,2,300,REDIRECT to list,2025/05/madinatul-ulum-darussunnah-profile.html
+other,2,250,REDIRECT to list,2025/04/blog-post_64.html
+other,2,65,REDIRECT to list,2026/07/ssc-gpa-calculator-2026.html
+college/school,2,25,REDIRECT to list,2025/04/madrasatulabrarkunagram.html
+other,1,972,REDIRECT to list,2025/06/hajee-mohammad-danesh-science.html
+university,1,587,REDIRECT to list,2025/06/rajshahi-university-ruet.html
+university,1,531,REDIRECT to list,2025/06/north-east-university-bangladesh.html
+page,1,343,SKIP (not a post),2025/10
+university,1,273,REDIRECT to list,2025/06/khwaja-yunus-ali-university.html
+university,1,152,REDIRECT to list,2025/06/ahsania-mission-university-of-science.html
+page,1,116,SKIP (not a post),search
+university,1,87,REDIRECT to list,2025/05/princeton-university.html
+other,1,62,REDIRECT to list,2025/05/taalimul-quran-mahila-academy.html
+doctor,1,61,DONE,2025/08/dr-ma-gaffar-khan-adil-orthopedic.html
+university,1,36,REDIRECT to list,2025/06/pundra-university-of-science-technology.html
+page,1,18,SKIP (not a post),search/label/News
+other,1,11,REDIRECT to list,2025/04/doctorlist.html
+other,0,602,REDIRECT to list,2025/11/los-angeles-center-for-enriched-studies.html
+university,0,450,REDIRECT to list,2025/06/rabindra-university-bangladesh.html
+usa,0,379,"SKIP (foreign, not Bangladesh-first)",2025/05/california-institute-of-technology.html
+page,0,370,SKIP (not a post),search/label/Neuro Medicine
+university,0,358,REDIRECT to list,2025/05/university-of-cambridge.html.html
+other,0,335,REDIRECT to list,2025/06/ssc-result-2025-published.html
+usa,0,315,"SKIP (foreign, not Bangladesh-first)",2025/05/yale-university.html
+university,0,290,REDIRECT to list,2025/06/rajshahi-medical-university-profile.html
+page,0,275,SKIP (not a post),search/label/Medicine
+usa,0,271,"SKIP (foreign, not Bangladesh-first)",2025/05/university-of-california-berkeley.html.html
+university,0,235,REDIRECT to list,2025/10/university-of-dhaka.html
+other,0,231,REDIRECT to list,2025/05/blog-post.html
+college/school,0,186,REDIRECT to list,2025/07/jalalabad-cantonment-public-school.html
+page,0,185,SKIP (not a post),search/label/Doctor
+page,0,182,SKIP (not a post),search/label/College
+page,0,137,SKIP (not a post),search/label/Sylhet
+other,0,128,REDIRECT to list,2025/05/blog-post_940.html
+page,0,117,SKIP (not a post),2025/09
+usa,0,94,"SKIP (foreign, not Bangladesh-first)",2025/05/harvard-university.html.html
+page,0,90,SKIP (not a post),search/label/Cardiology
+page,0,89,SKIP (not a post),p/e-apps.html
+page,0,88,SKIP (not a post),2025/05
+other,0,87,REDIRECT to list,2025/05/blog-post_22.html
+page,0,81,SKIP (not a post),search/label/Institutes
+usa,0,79,"SKIP (foreign, not Bangladesh-first)",2025/06/massachusetts-institute-of-technology.html
+page,0,74,SKIP (not a post),search/label/Rangpur
+usa,0,70,"SKIP (foreign, not Bangladesh-first)",2025/11/about-california.html
+usa,0,65,"SKIP (foreign, not Bangladesh-first)",2025/05/stanford-university.html.html
+page,0,64,SKIP (not a post),2025/04
+page,0,63,SKIP (not a post),search/label/Top 10 University in Bangladesh
+page,0,62,SKIP (not a post),2025/06
+university,0,62,REDIRECT to list,2025/07/exim-bank-agricultural-university.html
+other,0,62,REDIRECT to list,2025/05/madinatul-uloom-al-islamiya-mtu.html
+page,0,61,SKIP (not a post),2025/06
+page,0,49,SKIP (not a post),search/label/Gastroenterology
+page,0,48,SKIP (not a post),search/label/e-Learn
+page,0,38,SKIP (not a post),search/label/Pediatric Surgery
+page,0,37,SKIP (not a post),search/label/University
+university,0,36,REDIRECT to list,2026/01/stamford-university-bangladesh.html#sub-admission
+university,0,36,REDIRECT to list,2026/01/stamford-university-bangladesh.html#sub-facilities
+university,0,36,REDIRECT to list,2026/01/stamford-university-bangladesh.html#sub-fees
+university,0,36,REDIRECT to list,2026/01/stamford-university-bangladesh.html#sub-programs
+usa,0,34,"SKIP (foreign, not Bangladesh-first)",2025/05/yale-university.html
+page,0,28,SKIP (not a post),search/label/Top 10
+university,0,27,REDIRECT to list,2025/05/columbia-university.html
+page,0,26,SKIP (not a post),search/label/Rajshahi
+other,0,25,REDIRECT to list,2025/04/e-e-application.html
+page,0,25,SKIP (not a post),search/label/শিক্ষাপ্রতিষ্ঠান
+page,0,24,SKIP (not a post),p/terms-conditions.html
+university,0,24,REDIRECT to list,2025/06/university-of-barisal.html
+page,0,23,SKIP (not a post),search/label/মাদরাসা
+page,0,22,SKIP (not a post),search/label/Diabetes & Hormone
+other,0,22,REDIRECT to list,2025/04/blog-post_95.html
+page,0,21,SKIP (not a post),p/privacy-policy.html
+page,0,17,SKIP (not a post),search/label/Gaza
+other,0,16,REDIRECT to list,2025/09/top-10-best-t-shirts-to-buy-in.html
+page,0,15,SKIP (not a post),2025/07
+page,0,15,SKIP (not a post),search/label/Products
+other,0,14,REDIRECT to list,2025/05/blog-post_22.html
+other,0,12,REDIRECT to list,2025/05/blog-post.html
+page,0,12,SKIP (not a post),search/label/Neuro & Spine Surgery
+page,0,11,SKIP (not a post),search/label/Blogger Template
+page,0,10,SKIP (not a post),p/hotline.html
+page,0,10,SKIP (not a post),search/label/Psychiatry
+usa,0,10,"SKIP (foreign, not Bangladesh-first)",2025/05/massachusetts-institute-of-technology.html.html
+page,0,9,SKIP (not a post),search/label/সরকারি স্কুল
+page,0,9,SKIP (not a post),search/label/কলেজ
+page,0,7,SKIP (not a post),search/label/বিখ্যাত ব্যক্তিত্ব
+college/school,0,7,REDIRECT to list,2025/07/government-brojomohun-college-barisal.html
+page,0,7,SKIP (not a post),search/label/IBN Sina
+doctor,0,6,DONE,2025/08/dr-khan-asaduzzaman.html
+page,0,6,SKIP (not a post),search/label/Dhaka
+page,0,6,SKIP (not a post),search/label/General Surgery
+other,0,5,REDIRECT to list,2025/04/blog-post_66.html
+page,0,5,SKIP (not a post),p/doctors.html
+page,0,5,SKIP (not a post),search/label/Nephrology
+page,0,5,SKIP (not a post),search/label/Orthopedic Surgery
+page,0,4,SKIP (not a post),search/label/Bangladesh
+other,0,4,REDIRECT to list,2025/04/blog-post_51.html
+university,0,4,REDIRECT to list,2025/06/north-east-university-bangladesh.html
+page,0,4,SKIP (not a post),p/government-sheba-infosaathi.html
+page,0,4,SKIP (not a post),search/label/Gazipur
+page,0,3,SKIP (not a post),search/label/High School
+university,0,3,REDIRECT to list,2025/06/varendra-university-rangpur.html
+other,0,3,REDIRECT to list,2025/05/madinatul-uloom-al-islamiya-mtu.html
+other,0,3,REDIRECT to list,2025/04/professor-muhammad-yunus-biograph.html
+page,0,2,SKIP (not a post),search/label/Los Angeles
+page,0,2,SKIP (not a post),search/label/Colorectal Surgeon
+university,0,2,REDIRECT to list,2025/06/university-of-rajshahi.html
+page,0,1,SKIP (not a post),search/label/সরকারি স্কুল
+page,0,1,SKIP (not a post),search/label/App
+page,0,1,SKIP (not a post),search/label/Khulna
+other,0,1,REDIRECT to list,2025/04/blog-post_12.html
+page,0,1,SKIP (not a post),search/label/Teesta
+other,0,1,REDIRECT to list,2025/04/blog-post_72.html
+other,0,1,REDIRECT to list,2025/04/blog-post_27.html
+page,0,1,SKIP (not a post),search/label/Result
+page,0,1,SKIP (not a post),search/label/হাসপাতাল
+page,0,1,SKIP (not a post),search/label/Chattogram
+page,0,1,SKIP (not a post),search/label/Pediatric Medicine
+page,0,1,SKIP (not a post),search/label/Magnet Schools USA
+other,0,1,REDIRECT to list,2025/04/albert-einstein.html
