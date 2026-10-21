@@ -1,0 +1,27 @@
+name: "অধ্যাপক ডা. মোঃ শফিকুর রহমান"
+name_en: "Prof. Dr. Md. Shafiqur Rahman"
+specialty: psychiatry
+title: "মনোরোগ ও স্নায়ুরোগ বিশেষজ্ঞ"
+photo: ./images/prof-dr-md-shafiqur-rahman.jpg
+banner: ./images/prof-dr-md-shafiqur-rahman-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "MPhil (Psychiatry)"]
+designation: "অধ্যাপক ও বিভাগীয় প্রধান (অব.), মানসিক বিভাগ, সিলেট উইমেন্স মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-8406
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৩৮ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "16:30"
+    end: "19:30"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01601526793"
+        note: "সকাল ৯টা থেকে ১২টা"

@@ -1,0 +1,27 @@
+draft: true
+name: "সাদিয়া আরিফিন রুনা"
+name_en: "Sadia Arifin Runa"
+specialty: psychiatry
+title: "সাইকোলজিস্ট ও সাইকোথেরাপিস্ট (চাইল্ড সাইকোলজিস্ট)"
+photo: ./images/sadia-arifin-runa.jpg
+banner: ./images/sadia-arifin-runa-card.jpg
+banner_month: 2026-10-01
+degrees: ["এমএস (ক্লিনিক্যাল সাইকোলজি, ঢাবি)", "বি.এস.সি (সাইকোলজি, জবি)"]
+designation: "চাইল্ড সাইকোলজিস্ট, শিশু বিকাশ কেন্দ্র, সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৪ (৩য় তলা)"
+    days: [শুক্র]
+    start: "10:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01408501694"
+        note: "সকাল ৮টা থেকে"

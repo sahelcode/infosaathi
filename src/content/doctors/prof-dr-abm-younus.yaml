@@ -1,0 +1,25 @@
+draft: true
+name: "প্রফেসর ডা. এ.বি.এম. ইউনুস"
+name_en: "Prof. Dr. A.B.M. Younus"
+specialty: hematology
+title: "ব্লাড ক্যান্সার ও রক্তরোগ বিশেষজ্ঞ"
+photo: ./images/prof-dr-abm-younus.jpg
+banner: ./images/prof-dr-abm-younus-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (India)", "MPhil (Honours)", "FCPS (Hematology)", "WHO Fellow in Hemato-Oncology (Singapore)", "WHO Research Fellow (Thailand)", "Member, American Society of Hematology", "Member, European Hematology Association"]
+designation: "অধ্যাপক ও সাবেক চেয়ারম্যান, হেমাটোলজি বিভাগ, বঙ্গবন্ধু শেখ মুজিব মেডিক্যাল বিশ্ববিদ্যালয়, ঢাকা"
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2026/02/prof-dr-abm-yunus-sylhet.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩০৯ (৩য় তলা)"
+    days: [শুক্র]
+    start: "10:00"
+    end: "16:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

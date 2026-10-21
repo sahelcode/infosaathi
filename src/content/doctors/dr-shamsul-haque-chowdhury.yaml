@@ -1,0 +1,25 @@
+name: "ডা. এম. শামছুল হক চৌধুরী"
+name_en: "Dr. M. Shamsul Haque Chowdhury"
+specialty: psychiatry
+title: "মনোরোগ ও স্নায়ুরোগ বিশেষজ্ঞ"
+photo: ./images/dr-shamsul-haque-chowdhury.jpg
+banner: ./images/dr-shamsul-haque-chowdhury-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "MPhil (Psychiatry)"]
+designation: "সহযোগী অধ্যাপক (অব.), মনোরোগ বিভাগ, সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-36489
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/11/dr-shamsul-haque-chowdhury-psychiatry.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩০৪ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "11:00"
+    end: "13:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

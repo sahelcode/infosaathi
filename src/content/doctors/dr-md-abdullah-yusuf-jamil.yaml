@@ -1,0 +1,28 @@
+name: "ডা. মোঃ আব্দুল্লাহ ইউসুফ জামিল"
+name_en: "Dr. Md. Abdullah Yusuf Jamil"
+specialty: surgery
+title: "জেনারেল, ল্যাপারস্কপিক ও ক্যান্সার সার্জন"
+photo: ./images/dr-md-abdullah-yusuf-jamil.jpg
+banner: ./images/dr-md-abdullah-yusuf-jamil-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "FCPS (Surgery)", "MS (Surgical Oncology)", "Fellowship in GI, Hepatobiliary & Colorectal Cancer Surgery, Tata Memorial Cancer Hospital, India", "Higher training in Oncoplastic Breast Surgery, India"]
+designation: "সহকারী অধ্যাপক (ক্যান্সার সার্জারি), জাতীয় ক্যান্সার গবেষণা ইনস্টিটিউট ও হাসপাতাল, ঢাকা"
+bmdc: A-55803
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/12/dr-md-abdullah-yusuf-jamil-surgical.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪৩৬ (৪র্থ তলা)"
+    days: [বৃহস্পতি, শুক্র]
+    start: "16:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01603017885"
+        note: "সকাল ৮টা থেকে"

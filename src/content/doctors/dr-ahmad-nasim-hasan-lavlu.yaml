@@ -1,0 +1,28 @@
+name: "ডা. আহমদ নাসিম হাসান (লাভলু)"
+name_en: "Dr. Ahmad Nasim Hasan (Lavlu)"
+specialty: surgery
+title: "অ্যাডভান্স ল্যাপারোস্কোপিক জেনারেল ও কলোরেক্টাল সার্জন"
+photo: ./images/dr-ahmad-nasim-hasan-lavlu.jpg
+banner: ./images/dr-ahmad-nasim-hasan-lavlu-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "FCPS (Surgery)"]
+designation: "সহকারী অধ্যাপক, সার্জারি, সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-32718
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2026/01/dr-ahmad-nasim-hasan-lavlu-sylhet.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৪৩ (৩য় তলা, সি-ব্লক)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01787480541"
+        note: "সকাল ৮টা থেকে"

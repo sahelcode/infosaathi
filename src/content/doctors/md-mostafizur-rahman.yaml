@@ -1,0 +1,26 @@
+draft: true
+name: "মোঃ মোস্তাফিজুর রহমান"
+name_en: "Md. Mostafizur Rahman"
+specialty: pediatrics
+title: "চাইল্ড ডেভেলপমেন্ট থেরাপিস্ট"
+photo: ./images/md-mostafizur-rahman.jpg
+banner: ./images/md-mostafizur-rahman-card.jpg
+banner_month: 2026-10-01
+degrees: ["বিপিটি (বিএইচপিআই-ডিইউ)", "এমডি ডিজঅ্যাবিলিটি ম্যানেজমেন্ট অ্যান্ড রিহ্যাবিলিটেশন (বাউবি)", "আরএনডিএ এবং অটিজম ম্যানেজমেন্ট বিশেষ প্রশিক্ষণপ্রাপ্ত (ঢাকা শিশু হাসপাতাল)"]
+designation: "ডেভেলপমেন্টাল থেরাপিস্ট, শিশু বিকাশ কেন্দ্র, সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    days: [শুক্র]
+    start: "10:00"
+    end: "16:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01515202134"
+        note: "সকাল ৮টা থেকে"

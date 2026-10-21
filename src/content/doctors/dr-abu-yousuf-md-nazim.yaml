@@ -1,0 +1,25 @@
+name: "ডা. আবু ইউসুফ মোঃ নাজিম"
+name_en: "Dr. Abu Yousuf Md. Nazim"
+specialty: hematology
+title: "রক্ত রোগ, থ্যালাসেমিয়া ও ব্লাড ক্যান্সার বিশেষজ্ঞ"
+photo: ./images/dr-abu-yousuf-md-nazim.jpg
+banner: ./images/dr-abu-yousuf-md-nazim-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS (Hematology)", "MACP (USA)", "CCD"]
+designation: "সহকারী অধ্যাপক ও বিভাগীয় প্রধান (হেমাটোলজি), নর্থ ইস্ট মেডিকেল কলেজ ও হাসপাতাল, সিলেট"
+bmdc: A-39846
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2026/02/prof-dr-abu-yousuf-md-nazim-sylhet.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪১৮ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "16:00"
+    end: "17:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

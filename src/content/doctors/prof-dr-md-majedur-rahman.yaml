@@ -1,0 +1,39 @@
+name: "অধ্যাপক ডা. মোঃ মাজেদুর রহমান"
+name_en: "Prof. Dr. Md. Majedur Rahman"
+specialty: surgery
+title: "জেনারেল, ল্যাপারোস্কোপিক এন্ড লেজার প্রক্টো সার্জন"
+photo: ./images/prof-dr-md-majedur-rahman.jpg
+banner: ./images/prof-dr-md-majedur-rahman-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "MS (General Surgery)"]
+designation: "অধ্যাপক (সার্জারি বিভাগ), নর্থ ইস্ট মেডিকেল কলেজ ও হাসপাতাল, সিলেট"
+bmdc: A-18031
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২০ (৩য় তলা)"
+    days: [শনি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "18:30"
+    end: "21:30"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01724110812"
+        note: "সকাল ৮টা থেকে"
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২০ (৩য় তলা)"
+    days: [শুক্র]
+    start: "10:00"
+    end: "13:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01724110812"
+        note: "সকাল ৮টা থেকে"

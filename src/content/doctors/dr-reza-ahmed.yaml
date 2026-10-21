@@ -1,0 +1,40 @@
+name: "ডা. রেজা আহমদ"
+name_en: "Dr. Reza Ahmed"
+specialty: surgery
+title: "জেনারেল ও ল্যাপারোস্কোপিক সার্জন"
+photo: ./images/dr-reza-ahmed.jpg
+banner: ./images/dr-reza-ahmed-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (DMC)", "FCPS (General Surgery)"]
+designation: "কনসালটেন্ট (জেনারেল ও ল্যাপারোস্কোপিক সার্জারি), ইবনে সিনা হাসপাতাল সিলেট লিঃ; এক্স-এসোসিয়েট কনসালটেন্ট, আজগর আলী হাসপাতাল, ঢাকা"
+bmdc: A-46361
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2026/01/dr-reza-ahmed-general-laparoscopic.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৪ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "10:00"
+    end: "14:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01338608440"
+        note: "সকাল ৮টা থেকে"
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৪ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "18:30"
+    end: "21:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01338608440"
+        note: "সকাল ৮টা থেকে"

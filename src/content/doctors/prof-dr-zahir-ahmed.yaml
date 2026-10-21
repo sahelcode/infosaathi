@@ -1,0 +1,27 @@
+name: "অধ্যাপক ডা. জহির আহমদ"
+name_en: "Prof. Dr. Zahir Ahmed"
+specialty: surgery
+title: "জেনারেল ও ল্যাপারোস্কোপিক সার্জন"
+photo: ./images/prof-dr-zahir-ahmed.jpg
+banner: ./images/prof-dr-zahir-ahmed-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "FCPS (Surgery)"]
+designation: "সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-30887
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪৩২ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01787936280"
+        note: "সকাল ৮টা থেকে"

@@ -1,0 +1,28 @@
+name: "ডা. মোঃ মুবিন উদ্দিন"
+name_en: "Dr. Md. Mubin Uddin"
+specialty: psychiatry
+title: "মনোরোগ ও স্নায়ুরোগ বিশেষজ্ঞ (ব্রেইন এন্ড মাইন্ড স্পেশালিস্ট)"
+photo: ./images/dr-md-mubin-uddin.jpg
+banner: ./images/dr-md-mubin-uddin-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (DMC)", "BCS (Health)", "MCPS (Psychiatry)", "FCPS (Psychiatry)"]
+designation: "সহযোগী অধ্যাপক (সাইকিয়াট্রি বিভাগ), সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-38482
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/12/dr-md-mubin-uddin-psychiatry-specialist.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪১৮ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01740022855"
+        note: "সকাল ৮টা থেকে"

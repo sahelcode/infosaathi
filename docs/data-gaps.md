@@ -110,3 +110,22 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | doctor | prof-dr-m-delowar-hossain | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | dr-aziza-jahan | photo | visiting card shows only the Ibn Sina logo, no portrait | 2026-10-21 |
 | doctor | dr-tafhima-tarin | photo | visiting card shows only the Ibn Sina logo, no portrait | 2026-10-21 |
+| doctor | prof-dr-gulzar-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-jamal-ahmed-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-md-majedur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-abdullah-yusuf-jamil | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-zahir-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-surovi-poddar | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-reza-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | major-dr-md-mahtabul-hasan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-ahmad-nasim-hasan-lavlu | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-ahmed-maksud-hasan-laskar | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-shamsul-haque-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-md-shafiqur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-fakhruzzaman-shaheed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-mubin-uddin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-abu-yousuf-md-nazim | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | sadia-arifin-runa | draft | psychologist, not a doctor; the site has no specialty for non-doctor practitioners | 2026-10-21 |
+| doctor | md-mostafizur-rahman | draft | child development therapist, not a doctor; no fitting specialty; card has no room number | 2026-10-21 |
+| doctor | prof-dr-abm-younus | chambers.days | sits only on the 2nd and 4th Friday of the month; the days field can only show every Friday, so kept draft | 2026-10-21 |
+| doctor | prof-dr-md-shafiqur-rahman | old_urls | docs/old-doctor-urls.tsv has /2025/12/dr-md-shafiqur-rahman.html but no specialty to confirm it is the same doctor | 2026-10-21 |

@@ -1,0 +1,24 @@
+name: "ডা. আহমদ মকসুদ হাসান লস্কর"
+name_en: "Dr. Ahmed Maksud Hasan Laskar"
+specialty: surgery
+title: "জেনারেল ও ল্যাপারোস্কপিক সার্জন"
+photo: ./images/dr-ahmed-maksud-hasan-laskar.jpg
+banner: ./images/dr-ahmed-maksud-hasan-laskar-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS (Surgery)"]
+designation: "অধ্যাপক ও বিভাগীয় প্রধান, সার্জারি বিভাগ, পার্ক ভিউ মেডিকেল কলেজ ও হাসপাতাল, সিলেট"
+bmdc: A-41880
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৩৩ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "19:00"
+    end: "21:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

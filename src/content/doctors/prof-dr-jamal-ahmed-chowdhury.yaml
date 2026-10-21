@@ -1,0 +1,40 @@
+name: "অধ্যাপক ডা. জামাল আহমেদ চৌধুরী"
+name_en: "Prof. Dr. Jamal Ahmed Chowdhury"
+specialty: surgery
+title: "জেনারেল, কোলোরেক্টাল ও ল্যাপারোস্কোপিক সার্জন"
+photo: ./images/prof-dr-jamal-ahmed-chowdhury.jpg
+banner: ./images/prof-dr-jamal-ahmed-chowdhury-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS (Surgery)"]
+designation: "বিভাগীয় প্রধান (অব.) (সার্জারি বিভাগ), সিলেট উইমেন্স মেডিকেল কলেজ (প্রাক্তন)"
+bmdc: A-23704
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/12/prof-dr-jamal-ahmed-chowdhury-general.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৮ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "11:00"
+    end: "13:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01717847532"
+        note: "সকাল ৮টা থেকে"
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৮ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01717847532"
+        note: "সকাল ৮টা থেকে"

@@ -1,0 +1,25 @@
+name: "ডা. মোঃ ফখরুজ্জামান শহীদ"
+name_en: "Dr. Md. Fakhruzzaman Shaheed"
+specialty: psychiatry
+title: "মানসিক রোগ ও মাদকাশক্তি নিরাময় বিশেষজ্ঞ"
+photo: ./images/dr-md-fakhruzzaman-shaheed.jpg
+banner: ./images/dr-md-fakhruzzaman-shaheed-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "MD (Psychiatry), BSMMU", "DHPE (Australia)", "DCM (Dhaka)"]
+designation: "সহকারী অধ্যাপক (অব.), সাইকিয়াট্রি, জাতীয় মানসিক স্বাস্থ্য ইনস্টিটিউট ও হাসপাতাল, ঢাকা"
+bmdc: A-14426
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/12/dr-md-fakhruzzaman-shaheed-psychiatry.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৮ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "11:00"
+    end: "13:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
