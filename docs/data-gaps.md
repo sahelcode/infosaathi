@@ -181,3 +181,6 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | university | r-p-shaha-university | Spring 2027 dates (open, close, exam) | not announced yet; last semester (Fall 2026) figures are labelled | 2026-10-21 |
 | university | r-p-shaha-university | students, teachers, rank, email, main phone | official about/administration pages; only Wikipedia/uniRank (single source each) | 2026-10-21 |
 | university | green-university-of-bangladesh | seats, competition per seat, Spring 2027 dates (open, close, exam) | official admission, FAQ, fee, calendar pages, applyonline portal, news (bn/en); Spring 2027 not announced | 2026-10-21 |
+| university | university-of-asia-pacific | seats, competition per seat, application open date | official admission info, test schedule, admission notice (image could not be opened), news and search (bn/en) | 2026-10-21 |
+| university | university-of-asia-pacific | students, teachers (only QS profile gives 7,607 / 274, no second page) | official site, QS profile, search | 2026-10-21 |
+| university | university-of-asia-pacific | campus cover photo (the one sent was of the Philippines university) | waiting for Sahel | 2026-10-21 |
