@@ -201,3 +201,7 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | rajshahi-government-womens-college | HSC results | no board or news figure for this college (only board-wide totals) | 2026-10-21 |
 | college | rajshahi-government-womens-college | HSC seats (current), admission fees 2026-27 | board seat list only for 2018-19; 2026-27 notice title only, text not readable | 2026-10-21 |
 | college | rajshahi-government-womens-college | year made government | only Sohopathi and a 2016 blog (1968), not used | 2026-10-21 |
+| college | sylhet-cadet-college | HSC streams, teacher count, campus area | official about/campus/administration pages (snippets only; site not reachable from workspace); 52 acres only on Wikipedia | 2026-10-21 |
+| college | sylhet-cadet-college | labelled phone numbers (adjutant, principal office) | official site lists one general number; directory mobiles not used | 2026-10-21 |
+| college | sylhet-cadet-college | 2027 application fee, exam date, seats, monthly fee | Prothom Alo bn/en, official admission site not reachable; fee 2,500 vs 1,600 only from weak sources; exam date from one news site | 2026-10-21 |
+| college | sylhet-cadet-college | SSC/HSC results for this college | Sylhet board, news (bn/en); only all-cadet-college totals found | 2026-10-21 |
