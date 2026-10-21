@@ -1,0 +1,26 @@
+name: "প্রফেসর ডা. ডি. এ. হাসান চৌধুরী"
+name_en: "Prof. Dr. D. A. Hassan Chowdhury"
+specialty: surgery
+title: "জেনারেল সার্জারী ও ল্যাপারোস্কপিক সার্জন"
+photo: ./images/prof-dr-d-a-hassan-chowdhury.jpg
+banner: ./images/prof-dr-d-a-hassan-chowdhury-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS (Surgery)", "FRCS (Edin)", "FRCS (Glasgow)", "FRCS (Ireland)"]
+designation: "প্রাক্তন অধ্যাপক ও বিভাগীয় প্রধান, সার্জারি বিভাগ, সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - name: "ল্যাবএইড ডায়াগনস্টিক, সিলেট"
+    address: "মেডিকেল রোড, কাজলশাহ, সিলেট"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "16:00"
+    end: "21:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "0821721521"
+      - label: "সিরিয়াল"
+        number: "01766662728"
+
+old_urls: [/2025/08/prof-dr-d-hassan-chowdhury-surgeon.html]

@@ -1,0 +1,27 @@
+name: "প্রফেসর ডা. শিশির চক্রবর্তী"
+name_en: "Prof. Dr. Shishir Chakraborty"
+specialty: medicine
+title: "মেডিসিন বিশেষজ্ঞ"
+photo: ./images/prof-dr-shishir-chakraborty.jpg
+banner: ./images/prof-dr-shishir-chakraborty-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS (Medicine)"]
+designation: "অধ্যাপক, মেডিসিন বিভাগ, সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ"
+aliases: ["প্রফেসর ডা. শিষির চক্রবর্তী"]
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - name: "পপুলার মেডিকেল সেন্টার লিঃ, সিলেট"
+    address: "নিউ মেডিকেল রোড, কাজলশাহ, সিলেট"
+    room: "রুম নং ৬০৭ (৬ষ্ঠ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "22:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01719374087"
+        note: "রোগী দেখার দিন সকাল ৯টা থেকে"
+
+old_urls: [/2025/08/prof-dr-shishir-chakraborty-medicine.html]

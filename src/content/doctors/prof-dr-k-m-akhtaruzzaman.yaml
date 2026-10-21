@@ -1,0 +1,34 @@
+name: "অধ্যাপক ডা. কে এম আখতারুজ্জামান"
+name_en: "Prof. Dr. K M Akhtaruzzaman"
+specialty: cardiology
+title: "মেডিসিন ও হৃদরোগ বিশেষজ্ঞ"
+photo: ./images/prof-dr-k-m-akhtaruzzaman.jpg
+banner: ./images/prof-dr-k-m-akhtaruzzaman-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "DCM", "MCPS (Medicine)", "MD (Cardiology)"]
+designation: "অধ্যাপক ও বিভাগীয় প্রধান (কার্ডিওলজি), সিলেট উইমেন্স মেডিকেল কলেজ ও হাসপাতাল"
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: mount-adora-hospital-akhalia-sylhet
+    room: "রুম নং ২০১ (২য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "18:00"
+    end: "22:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01714000770"
+        note: "সকাল ৯টা থেকে ১০টা"
+      - label: "সিরিয়াল"
+        number: "01911739510"
+        note: "সকাল ৯টা থেকে ১০টা"
+      - label: "অনুসন্ধান"
+        number: "01707079716"
+      - label: "অনুসন্ধান"
+        number: "01707079717"
+      - label: "হাসপাতালের সিরিয়াল (আখালিয়া শাখা)"
+        number: "09610848484"
+
+old_urls: [/2025/04/prof-dr-k-m-akhtaruzzaman-sylhet.html]

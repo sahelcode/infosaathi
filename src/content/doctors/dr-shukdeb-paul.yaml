@@ -1,0 +1,26 @@
+name: "ডা. শুকদেব পাল"
+name_en: "Dr. Shukdeb Paul"
+specialty: medicine
+title: "মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-shukdeb-paul.jpg
+banner: ./images/dr-shukdeb-paul-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "FCPS (Medicine)"]
+designation: "সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: mount-adora-hospital-sylhet
+    room: "রুম নং ২০৩"
+    days: [শনি, রবি, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "21:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01314911038"
+      - label: "মোবাইল"
+        number: "01718030124"
+
+old_urls: [/2025/08/prof-dr-wazir-ahmed-chowdhury.html]
