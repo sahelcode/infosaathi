@@ -1,0 +1,28 @@
+name: "ডা. তানভীর মোহিত"
+name_en: "Dr. Md. Tanvir Mohit"
+specialty: medicine
+title: "মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-md-tanvir-mohit.jpg
+banner: ./images/dr-md-tanvir-mohit-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "FCPS (Medicine)"]
+designation: "সহকারী অধ্যাপক (মেডিসিন বিভাগ), সিলেট এম.এ.জি. ওসমানী মেডিকেল কলেজ"
+bmdc: A-38830
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/08/dr-md-tanvir-muhit-medicine-sylhet.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৩১ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01785255629"
+        note: "সকাল ৮টা থেকে"
