@@ -192,3 +192,8 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | university | university-of-global-village | BA in Islamic Studies credits, years, cost | department page empty, not in fee table | 2026-10-21 |
 | college | carmichael-college-rangpur | board | official pages and directories do not name the HSC board | 2026-10-21 |
 | college | carmichael-college-rangpur | HSC groups, degree pass and masters not on the official এক নজরে page (menu shows only উচ্চ মাধ্যমিক and স্নাতক (সম্মান)); added from Prothom Alo, eduportalbd (up to Masters) and Wikipedia agreeing | confirm with the college | 2026-10-21 |
+| college | naogaon-government-college | students, teachers count | official site (counter shows 0), 6+ searches bn/en; only undated Wikipedia figures (16,000 vs 20,000), not used | 2026-10-21 |
+| college | naogaon-government-college | official email | official teacher list has only personal gmail/yahoo entries; info@ only on a third-party directory | 2026-10-21 |
+| college | naogaon-government-college | HSC results | no board or news figure for this college; official HSC 2025 notice (82.39%, GPA-5 189) found via search, not used per rule; site not reachable from workspace | 2026-10-21 |
+| college | naogaon-government-college | HSC seats per stream | admission notices, district portal, searches bn/en | 2026-10-21 |
+| college | naogaon-government-college | which honours subjects have masters | official dept pages, NU seat-plan notices not reachable from workspace | 2026-10-21 |

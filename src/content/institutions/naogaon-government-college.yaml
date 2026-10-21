@@ -4,6 +4,7 @@ name: Naogaon Government College
 name_bn: নওগাঁ সরকারি কলেজ
 type: সরকারি
 est: 1962
+eiin: "123488"
 city: naogaon
 address: নওগাঁ শহরের উত্তর প্রান্ত, নওগাঁ
 web: https://naogc.edu.bd
@@ -11,8 +12,11 @@ board: রাজশাহী শিক্ষা বোর্ড
 affiliation: জাতীয় বিশ্ববিদ্যালয়
 gender: সহশিক্ষা
 levels: [একাদশ–দ্বাদশ শ্রেণি, ডিগ্রি (পাস), অনার্স, মাস্টার্স]
+streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
 campus: ১১ একর
-verified: 2026-10-06
+logo: ./images/naogaon-government-college-logo.png
+photo: ./images/naogaon-government-college.jpg
+verified: 2026-10-21
 verified_by: official
 
 numbers:
