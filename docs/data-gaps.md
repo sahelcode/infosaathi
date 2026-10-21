@@ -197,3 +197,7 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | naogaon-government-college | HSC results | no board or news figure for this college; official HSC 2025 notice (82.39%, GPA-5 189) found via search, not used per rule; site not reachable from workspace | 2026-10-21 |
 | college | naogaon-government-college | HSC seats per stream | admission notices, district portal, searches bn/en | 2026-10-21 |
 | college | naogaon-government-college | which honours subjects have masters | official dept pages, NU seat-plan notices not reachable from workspace | 2026-10-21 |
+| college | rajshahi-government-womens-college | honours subjects with faculty, which have masters | official Annual Report 2023 PDF (garbled snippet only), NU seat plan, 6+ searches bn/en; site not reachable from workspace | 2026-10-21 |
+| college | rajshahi-government-womens-college | HSC results | no board or news figure for this college (only board-wide totals) | 2026-10-21 |
+| college | rajshahi-government-womens-college | HSC seats (current), admission fees 2026-27 | board seat list only for 2018-19; 2026-27 notice title only, text not readable | 2026-10-21 |
+| college | rajshahi-government-womens-college | year made government | only Sohopathi and a 2016 blog (1968), not used | 2026-10-21 |
