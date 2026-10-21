@@ -1,0 +1,28 @@
+name: "ডা. সৈয়দ আব্দুস সুবহান (রাহিন)"
+name_en: "Dr. Syed Abdus Subhan (Rahin)"
+specialty: orthopedics
+title: "অর্থোপেডিক্স ও ট্রমা বিশেষজ্ঞ সার্জন"
+photo: ./images/dr-syed-abdus-subhan-rahin.jpg
+banner: ./images/dr-syed-abdus-subhan-rahin-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "MS (Orthopaedic Surgery)", "Fellow in Paediatric Orthopaedics"]
+designation: "সহযোগী অধ্যাপক, সিলেট এম.এ.জি. ওসমানী মেডিকেল কলেজ"
+bmdc: A-34818
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/08/prof-dr-syed-abdus-subhan-rahin.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৩৪ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "15:00"
+    end: "21:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01758408030"
+        note: "সকাল ৮:৩০টা থেকে ১০টা"
