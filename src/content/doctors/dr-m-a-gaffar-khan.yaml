@@ -1,0 +1,28 @@
+name: "ডা. এম. এ. গাফফার খান (আদিল)"
+name_en: "Dr. M. A. Gaffar Khan (Adil)"
+specialty: orthopedics
+title: "অর্থোপেডিক্স, ট্রমা বিশেষজ্ঞ ও সার্জন"
+photo: ./images/dr-m-a-gaffar-khan.jpg
+banner: ./images/dr-m-a-gaffar-khan-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (SU)", "MS (Orthopaedics)", "FACS (USA)"]
+designation: "সহযোগী অধ্যাপক (অর্থোপেডিক্স বিভাগ), জালালাবাদ রাগীব-রাবেয়া মেডিকেল কলেজ"
+bmdc: A-43426
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/08/dr-ma-gaffar-khan-adil-orthopedic.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪২৯ (৪র্থ তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "16:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01837505315"
+        note: "সকাল ৮টা থেকে"
