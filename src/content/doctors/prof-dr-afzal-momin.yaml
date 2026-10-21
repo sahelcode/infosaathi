@@ -1,0 +1,36 @@
+name: "অধ্যাপক ডা. আফজাল মমিন"
+name_en: "Prof. Dr. Afzal Momin"
+specialty: neurology
+title: "নিউরোলজি ও মেডিসিন বিশেষজ্ঞ"
+photo: ./images/prof-dr-afzal-momin.jpg
+banner: ./images/prof-dr-afzal-momin-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (Dhaka)", "BCS (Health)", "MD (Neurology)"]
+designation: "অধ্যাপক, ন্যাশনাল ইনস্টিটিউট অব নিউরোসায়েন্সেস ও হাসপাতাল, ঢাকা"
+bmdc: A-27017
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/08/prof.dr.afzal-momin.html]
+notice:
+  text: "শুধু প্রতি মাসের ১ম ও ৪র্থ শুক্রবার রোগী দেখেন, অন্য শুক্রবার বসেন না।"
+  from: 2026-10-21
+  to: 2027-10-20
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৬ (৩য় তলা)"
+    days: [শুক্র]
+    start: "09:00"
+    end: "18:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01777507096"
+        note: "সকাল ৮টা থেকে"
+
+faq:
+  - q: "অধ্যাপক ডা. আফজাল মমিন কোন শুক্রবার বসেন?"
+    a: "প্রতি মাসের ১ম ও ৪র্থ শুক্রবার, সকাল ৯টা থেকে সন্ধ্যা ৬টা। অন্য শুক্রবার বসেন না।"
