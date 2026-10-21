@@ -88,3 +88,25 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | doctor | prof-dr-jahanara-begum | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | dr-mohammad-rashedul-hasan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | dr-roushon-ara | bmdc | card has no BMDC number; web search found no reliable source | 2026-10-21 |
+| doctor | dr-monirul-islam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-mohammad-iqbal-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-m-a-ahad | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-jalal-uddin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-m-a-majid | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-saiful-islam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-abu-ahmed-golam-akbar | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-ibrahim-khalil | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-syed-musa-m-a-kaiyum | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-md-rashedul-haque | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-mohammad-shohel | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-a-t-reza-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-ruhul-amin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-aziza-jahan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-tafhima-tarin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-abdul-hannan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-soma-sarkar | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-mahbub-alam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-monowarul-islam-bhuiyan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-m-delowar-hossain | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-aziza-jahan | photo | visiting card shows only the Ibn Sina logo, no portrait | 2026-10-21 |
+| doctor | dr-tafhima-tarin | photo | visiting card shows only the Ibn Sina logo, no portrait | 2026-10-21 |

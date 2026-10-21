@@ -1,0 +1,27 @@
+name: "ডা. মোঃ মনোয়ারুল ইসলাম ভূঁইয়া"
+name_en: "Dr. Md. Monowarul Islam Bhuiyan"
+specialty: chest
+title: "অ্যাজমা, শ্বাসরোগ, যক্ষ্মা ও বক্ষব্যাধি মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-md-monowarul-islam-bhuiyan.jpg
+banner: ./images/dr-md-monowarul-islam-bhuiyan-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "DTCD"]
+designation: "সহযোগী অধ্যাপক (সিসি), সিলেট উইমেন্স মেডিকেল কলেজ হাসপাতাল, সিলেট"
+bmdc: A-39045
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৩৫ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "15:00"
+    end: "17:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01340209507"
+        note: "সকাল ৮টা থেকে"

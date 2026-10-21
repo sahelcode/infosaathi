@@ -1,0 +1,24 @@
+name: "অধ্যাপক ডা. জালাল উদ্দিন"
+name_en: "Prof. Dr. Jalal Uddin"
+specialty: surgery
+title: "সিনিয়র কার্ডিওভাসকুলার সার্জন (ঢাকা থেকে আগত)"
+photo: ./images/prof-dr-jalal-uddin.jpg
+banner: ./images/prof-dr-jalal-uddin-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "PhD", "MS"]
+designation: "সিনিয়র কনসালট্যান্ট (কার্ডিওভাসকুলার বিভাগ), গ্রীন লাইফ মেডিকেল কলেজ অ্যান্ড হাসপাতাল, ঢাকা"
+bmdc: A-12639
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৬ (৩য় তলা)"
+    days: [সোম]
+    start: "10:00"
+    end: "14:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

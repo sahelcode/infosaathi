@@ -1,0 +1,28 @@
+name: "ডা. মোহাম্মদ ইকবাল আহমদ"
+name_en: "Dr. Mohammad Iqbal Ahmed"
+specialty: cardiology
+title: "হৃদরোগ বিশেষজ্ঞ"
+photo: ./images/dr-mohammad-iqbal-ahmed.jpg
+banner: ./images/dr-mohammad-iqbal-ahmed-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (Dhaka)", "MD (Cardiology)"]
+designation: "সহযোগী অধ্যাপক, ক্লিনিক্যাল অ্যান্ড ইন্টারভেনশনাল কার্ডিওলজিস্ট, নর্থইস্ট মেডিকেল কলেজ হাসপাতাল, সিলেট"
+bmdc: A-35142
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/11/dr-mohammad-iqbal-ahmed.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৩৭ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01783819939"
+        note: "সকাল ৮টা থেকে"

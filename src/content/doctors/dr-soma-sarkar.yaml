@@ -1,0 +1,27 @@
+name: "ডা. সোমা সরকার"
+name_en: "Dr. Soma Sarkar"
+specialty: medicine
+title: "মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-soma-sarkar.jpg
+banner: ./images/dr-soma-sarkar-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS (Medicine)", "MRCP (UK)", "DEM (BIRDEM)"]
+designation: "সহযোগী অধ্যাপক (মেডিসিন বিভাগ), সিলেট উইমেন্স মেডিকেল কলেজ হাসপাতাল"
+bmdc: A-49250
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১০ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "16:00"
+    end: "19:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01870339506"
+        note: "সকাল ৮টা থেকে"

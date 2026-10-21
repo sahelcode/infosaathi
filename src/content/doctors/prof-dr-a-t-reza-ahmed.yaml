@@ -1,0 +1,40 @@
+name: "অধ্যাপক ডা. এ টি রেজা আহমদ"
+name_en: "Prof. Dr. A T Reza Ahmed"
+specialty: pediatrics
+title: "নবজাতক ও শিশুরোগ বিশেষজ্ঞ"
+photo: ./images/prof-dr-a-t-reza-ahmed.jpg
+banner: ./images/prof-dr-a-t-reza-ahmed-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (CU)", "DCH (BSMMU)", "MD (Pediatrics)", "PGPN (Boston University, USA)", "IPPN (Western University, Australia)"]
+designation: "কনসালট্যান্ট, ইবনে সিনা হাসপাতাল সিলেট লিঃ; প্রাক্তন সহযোগী অধ্যাপক, নর্থ ইস্ট মেডিকেল কলেজ অ্যান্ড হাসপাতাল"
+bmdc: A-27310
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৯ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "10:00"
+    end: "13:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01777612240"
+        note: "সকাল ৮টা থেকে"
+
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৯ (৩য় তলা)"
+    days: [শুক্র]
+    start: "16:00"
+    end: "18:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01777612240"
+        note: "সকাল ৮টা থেকে"

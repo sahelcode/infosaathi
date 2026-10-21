@@ -1,0 +1,28 @@
+name: "ডা. মোঃ আব্দুল হান্নান (তারেক)"
+name_en: "Dr. Md. Abdul Hannan (Tarek)"
+specialty: diabetes
+title: "ডায়াবেটিস, থাইরয়েড, হরমোন ও মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-md-abdul-hannan.jpg
+banner: ./images/dr-md-abdul-hannan-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "DEM (Endocrinology), BIRDEM", "FCPS (Endocrinology)", "MACE (USA)"]
+designation: "সহযোগী অধ্যাপক (এন্ডোক্রাইনোলজি বিভাগ), নর্থইস্ট মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-38151
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/10/dr-md-abdul-hannan-tareq-diabetes.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৪ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ]
+    start: "19:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01715203550"
+        note: "সকাল ৮টা থেকে"

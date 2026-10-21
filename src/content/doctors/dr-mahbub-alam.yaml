@@ -1,0 +1,31 @@
+name: "ডা. মোঃ মাহবুব আলম (জীবন)"
+name_en: "Dr. Md. Mahbub Alam (Jibon)"
+specialty: cardiology
+title: "হৃদরোগ বিশেষজ্ঞ"
+photo: ./images/dr-mahbub-alam.jpg
+banner: ./images/dr-mahbub-alam-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "MD (Cardiology), NICVD"]
+designation: "সহযোগী অধ্যাপক (হৃদরোগ বিভাগ), সিলেট এম.এ.জি ওসমানী মেডিকেল কলেজ"
+bmdc: A-28216
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/11/dr-mahbub-alam-jiban.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ২১২ (২য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01751954373"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01727683925"
+        note: "সকাল ৮টা থেকে"

@@ -1,0 +1,28 @@
+name: "ডা. মোঃ মনিরুল ইসলাম"
+name_en: "Dr. Md. Monirul Islam"
+specialty: chest
+title: "অ্যাজমা, বক্ষব্যাধি ও মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-monirul-islam.jpg
+banner: ./images/dr-monirul-islam-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "DTCD (Dhaka)", "DTCE (Japan)", "Fellow WHO (Korea)", "MRIT (Japan)", "FCCP (USA)"]
+designation: "সিনিয়র কনসালট্যান্ট (অবঃ), বক্ষব্যাধি হাসপাতাল, সিলেট"
+bmdc: "6856"
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/11/dr-monirul-islam-sylhet.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৫ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "12:00"
+    end: "14:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01762052163"
+        note: "সকাল ৮টা থেকে"

@@ -1,0 +1,25 @@
+name: "অধ্যাপক ডা. মোঃ রাশেদুল হক"
+name_en: "Prof. Dr. Md. Rashedul Haque"
+specialty: pediatrics
+title: "নবজাতক ও শিশুরোগ বিশেষজ্ঞ"
+photo: ./images/prof-dr-md-rashedul-haque.jpg
+banner: ./images/prof-dr-md-rashedul-haque-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS (Pediatrics)"]
+designation: "অধ্যাপক ও বিভাগীয় প্রধান (শিশু বিভাগ), সিলেট উইমেন্স মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-27499
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/10/dr-rashedul-haque-pediatric-medicine.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৮ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ]
+    start: "15:00"
+    end: "17:00"
+    serials:
+      - label: "সিরিয়াল"
+        number: "01710081775"
+        note: "সকাল ৮:৩০টা থেকে ৯টা"

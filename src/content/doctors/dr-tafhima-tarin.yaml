@@ -1,0 +1,26 @@
+name: "ডা. তাফহীমা তারিন"
+name_en: "Dr. Tafhima Tarin"
+specialty: pediatrics
+title: "নবজাতক ও শিশুরোগ বিশেষজ্ঞ"
+banner: ./images/dr-tafhima-tarin-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (JRRMC)", "MD (Pediatrics), BMU Dhaka"]
+designation: "সহকারী অধ্যাপক, সিলেট উইমেন্স মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-53535
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৪৪ (৩য় তলা, সি-ব্লক)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "15:00"
+    end: "18:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01316343687"
+        note: "সকাল ৮টা থেকে"

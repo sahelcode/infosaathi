@@ -1,0 +1,25 @@
+name: "ডা. এম. এ. মাজিদ"
+name_en: "Dr. M. A. Majid"
+specialty: pediatrics
+title: "নবজাতক ও শিশুরোগ বিশেষজ্ঞ, শিশু কিডনীরোগ বিশেষজ্ঞ"
+photo: ./images/dr-m-a-majid.jpg
+banner: ./images/dr-m-a-majid-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (DU)", "FRCPCH (London)", "MRCPCH (UK)", "DCH (Dublin)", "DTM&H (UK)"]
+designation: "হেড অব পেডিয়াট্রিক নেফ্রোলজি (এক্স.), সহযোগী অধ্যাপক, দুবাই হেলথ অথোরিটি, দুবাই"
+bmdc: A-12376
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/11/dr-ma-majid-nephrology-specialist-sylhet.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪১৬ (৪র্থ তলা)"
+    days: [শনি, মঙ্গল]
+    start: "10:00"
+    end: "13:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

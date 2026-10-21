@@ -1,0 +1,26 @@
+name: "ডা. আজিজা জাহান"
+name_en: "Dr. Aziza Jahan"
+specialty: pediatrics
+title: "নবজাতক ও শিশুরোগ বিশেষজ্ঞ"
+banner: ./images/dr-aziza-jahan-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "MD (Pediatrics)"]
+designation: "সহকারী অধ্যাপক, সিলেট এমএজি ওসমানী মেডিকেল কলেজ হাসপাতাল"
+bmdc: A-56632
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩৪৫ (৩য় তলা, সি-ব্লক)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ]
+    start: "20:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01322680910"
+        note: "সকাল ৮টা থেকে"

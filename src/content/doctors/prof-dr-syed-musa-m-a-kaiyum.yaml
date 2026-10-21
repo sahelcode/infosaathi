@@ -1,0 +1,27 @@
+name: "অধ্যাপক ডা. সৈয়দ মুসা এম.এ. কাইয়ুম"
+name_en: "Prof. Dr. Syed Musa M.A. Kaiyum"
+specialty: pediatrics
+title: "নবজাতক ও শিশুরোগ বিশেষজ্ঞ"
+photo: ./images/prof-dr-syed-musa-m-a-kaiyum.jpg
+banner: ./images/prof-dr-syed-musa-m-a-kaiyum-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "DCH", "RPC&S (Ireland)", "FCPS (Pediatrics)"]
+designation: "প্রাক্তন বিভাগীয় প্রধান (শিশুরোগ বিভাগ), নর্থ-ইস্ট মেডিকেল কলেজ হাসপাতাল ও রাগিব রাবেয়া মেডিকেল কলেজ হাসপাতাল"
+bmdc: A-7356
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১২ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "15:00"
+    end: "21:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01767799841"
+        note: "সকাল ৮টা থেকে"
