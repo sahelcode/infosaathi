@@ -174,3 +174,6 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | university | trust-university-barishal | admission dates, eligibility (GPA), application and admission fee, tuition/total cost, credits, waivers | official site is a JS app that cannot be read from the workspace (all pages blank); uniRank, Trust Group page, UGC listing (blocked), Facebook (blocked), 8 searches (bn/en), no news circulars found | 2026-10-21 |
 | university | trust-university-barishal | seats, competition per seat, students/teachers count, classes start | same as above | 2026-10-21 |
 | university | trust-university-barishal | master's programmes (MBA, MA in English) and second phone 01844902013 | only our old Blogger post lists them; not confirmed by a second page, left out | 2026-10-21 |
+| university | daffodil-international-university | seats, competition per seat, classes start, Spring 2027 application open date | official admission, tuition and contact pages, news (bn/en); only an aggregator gives 4,000 seats, not used | 2026-10-21 |
+| university | daffodil-international-university | students and teachers count | only Wikipedia (undated), not on official pages read | 2026-10-21 |
+| university | daffodil-international-university | admission test format (subjects, marks) | official admission page links a schedule only | 2026-10-21 |

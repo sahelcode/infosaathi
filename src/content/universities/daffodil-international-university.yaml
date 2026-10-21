@@ -1,0 +1,133 @@
+draft: false
+name: Daffodil International University
+name_bn: ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি
+short: DIU
+type: বেসরকারি
+est: 2002
+city: dhaka
+address: ড্যাফোডিল স্মার্ট সিটি, বিরুলিয়া, সাভার, ঢাকা-১২১৬
+web: https://daffodilvarsity.edu.bd
+apply_url: https://admission.daffodilvarsity.edu.bd/
+ugc: true
+logo: ./images/daffodil-international-university-logo.png
+photo: ./images/daffodil-international-university-campus.jpg
+campus: ড্যাফোডিল স্মার্ট সিটি, বিরুলিয়া, সাভার
+verified: 2026-10-21
+verified_by: official
+
+numbers:
+  - label: ভর্তি হেল্পলাইন
+    number: "09617901212"
+  - label: ভর্তি অফিস (মোবাইল)
+    number: "01847140094"
+  - label: ভর্তি কাউন্সেলিং (মোবাইল)
+    number: "01713493050"
+    note: উপপরিচালক, স্টুডেন্ট কাউন্সেলিং ও অ্যাডমিশন
+emails:
+  - { label: ভর্তি, email: admission@daffodilvarsity.edu.bd }
+
+admission:
+  intake: স্প্রিং ২০২৭ (বাই ও ট্রাই সেমিস্টার)
+  close: 2026-12-22
+  requirement: SSC ও HSC দুটোতেই কমপক্ষে GPA ২.৫০; ইঞ্জিনিয়ারিং ও CSE-তে পদার্থ, গণিত ও ইংরেজিতে কমপক্ষে C; ফার্মেসিতে SSC ও HSC মিলিয়ে GPA ৮.০০ (প্রতিটিতে কমপক্ষে ৩.৫০)
+  exam: স্প্রিং ২০২৭-এর ভর্তি পরীক্ষা ২৬ ডিসেম্বর ২০২৬
+  app_fee: 1000
+  steps:
+    - { title: অনলাইনে আবেদন, text: admission.daffodilvarsity.edu.bd পোর্টালে ফর্ম পূরণ করুন }
+    - { title: ভর্তি পরীক্ষা, text: ২৬ ডিসেম্বর ২০২৬ তারিখের ভর্তি পরীক্ষায় অংশ নিন }
+    - { title: কাগজ জমা ও ভর্তি, text: মূল সনদ ও মার্কশিট দেখিয়ে ভর্তির সময়ের টাকা জমা দিন }
+  documents: [SSC/দাখিল/O লেভেল বা ডিপ্লোমার সনদ ও মার্কশিট (বোর্ডের কপি), HSC/আলিম/A লেভেলের সনদ ও মার্কশিট (বোর্ডের কপি), "শিক্ষার্থী, বাবা ও মায়ের NID", শিক্ষার্থীর দুই কপি ছবি]
+
+programs:
+  - { faculty: বিজনেস ও এন্টারপ্রেনারশিপ, name: বিবিএ, name_en: Bachelor of Business Administration (BBA), years: 4, credits: 130, total_cost: 851550 }
+  - { faculty: বিজনেস ও এন্টারপ্রেনারশিপ, name: বিবিএ ইন ম্যানেজমেন্ট, name_en: BBA in Management, years: 4, credits: 133, total_cost: 813100 }
+  - { faculty: বিজনেস ও এন্টারপ্রেনারশিপ, name: বিবিএ ইন অ্যাকাউন্টিং, name_en: BBA in Accounting, years: 4, credits: 133, total_cost: 813100 }
+  - { faculty: বিজনেস ও এন্টারপ্রেনারশিপ, name: বিবিএ ইন ফিন্যান্স ও ব্যাংকিং, name_en: BBA in Finance & Banking, years: 4, credits: 133, total_cost: 813100 }
+  - { faculty: বিজনেস ও এন্টারপ্রেনারশিপ, name: বিবিএ ইন মার্কেটিং, name_en: BBA in Marketing, years: 4, credits: 133, total_cost: 813100 }
+  - { faculty: বিজনেস ও এন্টারপ্রেনারশিপ, name: রিয়েল এস্টেট, name_en: Bachelor of Real Estate, years: 4, credits: 130, total_cost: 761100 }
+  - { faculty: বিজনেস ও এন্টারপ্রেনারশিপ, name: ট্যুরিজম ও হসপিটালিটি ম্যানেজমেন্ট, name_en: Bachelor of Tourism & Hospitality Management (BTHM), years: 4, credits: 130, total_cost: 798600 }
+  - { faculty: বিজনেস ও এন্টারপ্রেনারশিপ, name: এন্টারপ্রেনারশিপ, name_en: Bachelor of Entrepreneurship (BE), years: 4, credits: 130, total_cost: 781500 }
+  - { faculty: সায়েন্স ও ইনফরমেশন টেকনোলজি, name: কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিং, name_en: B.Sc. in Computer Science and Engineering (CSE), years: 4, credits: 154.5, total_cost: 1080800 }
+  - { faculty: সায়েন্স ও ইনফরমেশন টেকনোলজি, name: সফটওয়্যার ইঞ্জিনিয়ারিং, name_en: B.Sc. in Software Engineering (SWE), years: 4, credits: 147, total_cost: 1000100 }
+  - { faculty: সায়েন্স ও ইনফরমেশন টেকনোলজি, name: সফটওয়্যার ইঞ্জিনিয়ারিং (সাইবার সিকিউরিটি), name_en: B.Sc. in Software Engineering (Major in Cyber Security), years: 4, credits: 147, total_cost: 1012100 }
+  - { faculty: সায়েন্স ও ইনফরমেশন টেকনোলজি, name: সফটওয়্যার ইঞ্জিনিয়ারিং (ডেটা সায়েন্স), name_en: B.Sc. in Software Engineering (Major in Data Science), years: 4, credits: 147, total_cost: 1012700 }
+  - { faculty: সায়েন্স ও ইনফরমেশন টেকনোলজি, name: সফটওয়্যার ইঞ্জিনিয়ারিং (রোবোটিক্স), name_en: B.Sc. in Software Engineering (Major in Robotics), years: 4, credits: 147, total_cost: 1015700 }
+  - { faculty: সায়েন্স ও ইনফরমেশন টেকনোলজি, name: আর্টিফিশিয়াল ইন্টেলিজেন্স ও ডেটা ইঞ্জিনিয়ারিং, name_en: B.Sc. in Artificial Intelligence and Data Engineering (AIDE), years: 4, credits: 153, total_cost: 1073600 }
+  - { faculty: সায়েন্স ও ইনফরমেশন টেকনোলজি, name: রোবোটিক্স ও মেকাট্রনিক্স ইঞ্জিনিয়ারিং, name_en: B.Sc. in Robotics and Mechatronics Engineering, years: 4, credits: 154, total_cost: 958450 }
+  - { faculty: সায়েন্স ও ইনফরমেশন টেকনোলজি, name: মাল্টিমিডিয়া ও ক্রিয়েটিভ টেকনোলজি, name_en: B.Sc. in Multimedia & Creative Technology (MCT), years: 4, credits: 147, total_cost: 795500 }
+  - { faculty: সায়েন্স ও ইনফরমেশন টেকনোলজি, name: কম্পিউটিং ও ইনফরমেশন সিস্টেম, name_en: B.Sc. in Computing and Information System (CIS), years: 4, credits: 142, total_cost: 805100 }
+  - { faculty: সায়েন্স ও ইনফরমেশন টেকনোলজি, name: ইনফরমেশন টেকনোলজি ও ম্যানেজমেন্ট, name_en: B.Sc. in Information Technology & Management (ITM), years: 4, credits: 142, total_cost: 807800 }
+  - { faculty: ইঞ্জিনিয়ারিং, name: ইলেকট্রিক্যাল ও ইলেকট্রনিক ইঞ্জিনিয়ারিং, name_en: B.Sc. in Electrical and Electronic Engineering (EEE), years: 4, credits: 144, total_cost: 950200 }
+  - { faculty: ইঞ্জিনিয়ারিং, name: সিভিল ইঞ্জিনিয়ারিং, name_en: B.Sc. in Civil Engineering (CE), years: 4, credits: 147, total_cost: 934875 }
+  - { faculty: ইঞ্জিনিয়ারিং, name: আর্কিটেকচার, name_en: Bachelor of Architecture (B.Arch), years: 5, credits: 177, total_cost: 1055600 }
+  - { faculty: ইঞ্জিনিয়ারিং, name: টেক্সটাইল ইঞ্জিনিয়ারিং, name_en: B.Sc. in Textile Engineering (TE), years: 4, credits: 154, total_cost: 891200 }
+  - { faculty: ইঞ্জিনিয়ারিং, name: ইনফরমেশন ও কমিউনিকেশন ইঞ্জিনিয়ারিং, name_en: B.Sc. in Information & Communication Engineering (ICE), years: 4, credits: 145, total_cost: 752000 }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: ফার্মেসি, name_en: Bachelor of Pharmacy (B.Pharm), years: 4, credits: 165, total_cost: 1250650 }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: জেনেটিক ইঞ্জিনিয়ারিং ও বায়োটেকনোলজি, name_en: B.Sc. (Hons) in Genetic Engineering and Biotechnology, years: 4, credits: 145, total_cost: 1006000 }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: নিউট্রিশন ও ফুড ইঞ্জিনিয়ারিং, name_en: Bachelor of Nutrition and Food Engineering (NFE), years: 4, credits: 151, total_cost: 797450 }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: পাবলিক হেলথ, name_en: Bachelor of Public Health (BPH), years: 4, credits: 142, total_cost: 800800 }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: এনভায়রনমেন্টাল সায়েন্স ও ডিজাস্টার ম্যানেজমেন্ট, name_en: B.Sc. in Environmental Science and Disaster Management (ESDM), years: 4, credits: 146, total_cost: 758500 }
+  - { faculty: হেলথ ও লাইফ সায়েন্সেস, name: ফিজিক্যাল এডুকেশন ও স্পোর্টস সায়েন্স, name_en: B.Sc. (Hons) in Physical Education and Sports Science (PESS), years: 4, credits: 144, total_cost: 695200 }
+  - { faculty: হিউম্যানিটিজ ও সোশ্যাল সায়েন্সেস, name: আইন (এলএলবি অনার্স), name_en: LL.B. (Hons.), years: 4, credits: 144, total_cost: 1085000 }
+  - { faculty: হিউম্যানিটিজ ও সোশ্যাল সায়েন্সেস, name: ইংরেজি, name_en: B.A. (Hons) in English, years: 4, credits: 130, total_cost: 797000 }
+  - { faculty: হিউম্যানিটিজ ও সোশ্যাল সায়েন্সেস, name: "জার্নালিজম, মিডিয়া ও কমিউনিকেশন", name_en: "BSS in Journalism, Media and Communication (JMC)", years: 4, credits: 142, total_cost: 710800 }
+  - { faculty: এগ্রিকালচারাল সায়েন্সেস, name: কৃষি বিজ্ঞান, name_en: Bachelor of Agricultural Science, years: 4, credits: 150, total_cost: 765500 }
+  - { faculty: এগ্রিকালচারাল সায়েন্সেস, name: ফিশারিজ, name_en: B.Sc. (Hons.) in Fisheries, years: 4, credits: 144, total_cost: 738300 }
+detail:
+  open: ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটিতে স্প্রিং ২০২৭ সেমিস্টারের স্নাতক ভর্তির আবেদন চলছে।
+  close: স্প্রিং ২০২৭-এ আবেদনের শেষ তারিখ ২২ ডিসেম্বর ২০২৬; আবেদন হয় admission.daffodilvarsity.edu.bd-তে।
+  exam: স্প্রিং ২০২৭ সেমিস্টারের ভর্তি পরীক্ষা হবে ২৬ ডিসেম্বর ২০২৬ তারিখে, অফিসিয়াল ভর্তি পাতা অনুযায়ী।
+  elig: বেশিরভাগ প্রোগ্রামে SSC ও HSC দুটোতেই GPA ২.৫০ লাগে; ফার্মেসিতে মিলিয়ে GPA ৮.০০ লাগে।
+  app_fee: ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটিতে স্নাতক ভর্তির আবেদন ফর্মের দাম ১,০০০ টাকা।
+  admission_fee: ভর্তির সময় একসাথে দিতে হয় প্রায় ৬২,৬৫০–৮৫,৫৭৫ টাকা; এলএলবি-তে ১,৭৩,৬২৫ টাকা।
+  cost: মোট খরচ BBA-তে ৮,৫১,৫৫০, CSE-তে ১০,৮০,৮০০ আর ফার্মেসিতে ১২,৫০,৬৫০ টাকা (ওয়েভার ছাড়া)।
+  rank: QS ওয়ার্ল্ড ইউনিভার্সিটি র‍্যাংকিং ২০২৭-এ ড্যাফোডিল ১,০০১–১,২০০ ব্যান্ডে আছে।
+  programs: ছয়টি ফ্যাকাল্টিতে ৩৪টি স্নাতক প্রোগ্রাম; CSE, সফটওয়্যার, BBA, ফার্মেসি, আইনসহ।
+quick:
+  open: স্প্রিং ২০২৭-এর আবেদন চলছে
+  close: ২২ ডিসেম্বর ২০২৬
+  exam: ২৬ ডিসেম্বর ২০২৬
+  elig: SSC ও HSC-তে GPA ২.৫০ করে
+  app_fee: ১,০০০ টাকা
+  admission_fee: ভর্তির সময় প্রায় ৬২,৬৫০–৮৫,৫৭৫ টাকা
+  cost: প্রায় ৬.৯৫–১২.৫১ লাখ টাকা
+  rank: "QS ২০২৭: ১,০০১–১,২০০"
+cost_note: মোট খরচ ড্যাফোডিলের অফিসিয়াল টিউশন ফি তালিকার "Total Program Fees" থেকে নেওয়া, ওয়েভার ধরা হয়নি। ভর্তির সময় যে টাকা দিতে হয় তা এর মধ্যেই ধরা। রেজাল্টভিত্তিক ওয়েভার পেলে খরচ কমে; কোর্স রিটেক করলে বাড়ে।
+
+waivers:
+  - { condition: SSC ও HSC দুটোতেই গোল্ডেন GPA ৫ (CSE, SWE, ফার্মেসি ও এলএলবি ছাড়া), amount: "৫০% টিউশন" }
+  - { condition: শুধু HSC-তে গোল্ডেন GPA ৫ (CSE, SWE, ফার্মেসি ও এলএলবি ছাড়া), amount: "৩০% টিউশন" }
+  - { condition: SSC ও HSC দুটোতেই GPA ৫ (CSE, SWE, ফার্মেসি ও এলএলবি ছাড়া), amount: "২৫% টিউশন" }
+  - { condition: মুক্তিযোদ্ধার সন্তান (মূল সনদ যাচাইয়ের পর), amount: "১০০% টিউশন ও রেজিস্ট্রেশন" }
+  - { condition: ভাই/বোন বা স্বামী-স্ত্রী একসাথে পড়লে, amount: "প্রত্যেকে ২০%" }
+  - { condition: "সেমিস্টারে GPA ৪.০০ (বিজনেস, SIT, ইঞ্জিনিয়ারিং ও AHS)", amount: "৫০%" }
+
+about: ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি ২০০২ সালে বেসরকারি বিশ্ববিদ্যালয় আইনে প্রতিষ্ঠিত একটি বেসরকারি বিশ্ববিদ্যালয়। এর স্থায়ী ক্যাম্পাস ঢাকার সাভারের বিরুলিয়ায় ড্যাফোডিল স্মার্ট সিটিতে। ছয়টি ফ্যাকাল্টিতে CSE, সফটওয়্যার ইঞ্জিনিয়ারিং, BBA, ফার্মেসি, আইনসহ ৩৪টি স্নাতক প্রোগ্রাম আছে।
+good:
+  - সব প্রোগ্রামের মোট খরচ অফিসিয়াল সাইটে প্রকাশিত
+  - স্নাতকের সব শিক্ষার্থী বিনা মূল্যে একটি ল্যাপটপ পায়
+  - বেশিরভাগ প্রোগ্রামে ভর্তির ন্যূনতম যোগ্যতা GPA ২.৫০
+think:
+  - ক্যাম্পাস ঢাকা শহরের বাইরে, সাভারের বিরুলিয়ায়
+  - CSE, ফার্মেসি ও এলএলবি-তে মোট খরচ ১০ লাখ টাকার ওপরে
+
+faq:
+  - q: ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটির যোগাযোগ নম্বর কত?
+    a: "ভর্তির হেল্পলাইন ০৯৬১৭৯০১২১২। ভর্তি অফিসের মোবাইল ০১৮৪৭১৪০০৯৪ ও ০১৭১৩৪৯৩০৫০। ইমেইল admission@daffodilvarsity.edu.bd।"
+  - q: ড্যাফোডিল ইউনিভার্সিটিতে ভর্তি ফি কত?
+    a: "ভর্তির সময় প্রোগ্রামভেদে একসাথে প্রায় ৬২,৬৫০ থেকে ৮৫,৫৭৫ টাকা দিতে হয়; এলএলবি-তে ১,৭৩,৬২৫ টাকা। আবেদন ফর্মের দাম ১,০০০ টাকা।"
+  - q: ড্যাফোডিল ইউনিভার্সিটিতে ভর্তি হতে কত জিপিএ লাগে?
+    a: "বেশিরভাগ প্রোগ্রামে SSC ও HSC দুটোতেই কমপক্ষে GPA ২.৫০ লাগে। CSE ও ইঞ্জিনিয়ারিংয়ে বিজ্ঞান বিভাগ এবং পদার্থ, গণিত ও ইংরেজিতে কমপক্ষে C লাগে। ফার্মেসিতে SSC ও HSC মিলিয়ে GPA ৮.০০ লাগে।"
+  - q: ড্যাফোডিল ইউনিভার্সিটিতে সিএসই পড়তে কত খরচ?
+    a: "অফিসিয়াল তালিকা অনুযায়ী CSE-তে ১৫৪.৫ ক্রেডিটের মোট খরচ ১০,৮০,৮০০ টাকা, ওয়েভার ছাড়া। ভর্তির সময় দিতে হয় ৬৬,৯৫০ টাকা।"
+  - q: ড্যাফোডিল ইউনিভার্সিটিতে এখন ভর্তি চলছে কি?
+    a: "হ্যাঁ, স্প্রিং ২০২৭ সেমিস্টারের ভর্তি চলছে। আবেদনের শেষ তারিখ ২২ ডিসেম্বর ২০২৬, ভর্তি পরীক্ষা ২৬ ডিসেম্বর ২০২৬।"
+  - q: ড্যাফোডিল ইউনিভার্সিটির র‍্যাংকিং কত?
+    a: "QS ওয়ার্ল্ড ইউনিভার্সিটি র‍্যাংকিং ২০২৭-এ ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি ১,০০১–১,২০০ ব্যান্ডে আছে।"
+  - q: ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি কোথায়?
+    a: "ঢাকার সাভারে, ড্যাফোডিল স্মার্ট সিটি, বিরুলিয়া, সাভার, ঢাকা-১২১৬।"
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট — টিউশন ফি, url: https://daffodilvarsity.edu.bd/tuition-fees }
+  - { title: DIU ভর্তি — স্প্রিং ২০২৭ সময়সূচি, url: https://daffodilvarsity.edu.bd/admission }
+old_urls: [/2025/11/daffodil-international-university.html]
