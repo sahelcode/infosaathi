@@ -1,0 +1,28 @@
+name: "ডা. মোস্তাক উদ্দিন আহমদ"
+name_en: "Dr. Mostak Uddin Ahmed"
+specialty: gastro
+title: "লিভার, পরিপাকতন্ত্র ও মেডিসিন বিশেষজ্ঞ"
+photo: ./images/dr-mostak-uddin-ahmed.jpg
+banner: ./images/dr-mostak-uddin-ahmed-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (DMC)", "BCS (Health)", "FCPS (Medicine)", "MD (Gastroenterology)"]
+designation: "সহযোগী অধ্যাপক (গ্যাস্ট্রোএন্টারোলজি বিভাগ), সিলেট এম.এ.জি. ওসমানী মেডিকেল কলেজ"
+bmdc: A-29632
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/09/dr-mostak-uddin-ahmed.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ২০৩ (২য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01728680627"
+        note: "সকাল ৮টা থেকে"
