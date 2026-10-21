@@ -1,0 +1,28 @@
+name: "ডা. মোঃ মাজহারুল ইসলাম"
+name_en: "Dr. Md. Mazharul Islam"
+specialty: neurology
+title: "নিউরোলজি (স্নায়ুরোগ), মেডিসিন ও ডায়াবেটিস বিশেষজ্ঞ"
+photo: ./images/dr-md-mazharul-islam.jpg
+banner: ./images/dr-md-mazharul-islam-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "CCD (BIRDEM)", "MD (Neurology)", "Fellowship in Epilepsy & EEG (NINS)"]
+designation: "ন্যাশনাল ইনস্টিটিউট অব নিউরোসায়েন্সেস ও হাসপাতাল, আগারগাঁও, শেরেবাংলা নগর, ঢাকা"
+bmdc: A-60354
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/08/dr-mazharul-islam-neuro-medicine.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৪১৭ (৪র্থ তলা)"
+    days: [বৃহস্পতি]
+    start: "16:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01896409884"
+        note: "সকাল ৮টা থেকে"
