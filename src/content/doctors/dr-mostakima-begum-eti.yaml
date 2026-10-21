@@ -1,0 +1,25 @@
+name: "ডা. মোস্তাকিমা বেগম ইতি"
+name_en: "Dr. Mostakima Begum Eti"
+specialty: gynecology
+title: "প্রসূতি, স্ত্রীরোগ বিশেষজ্ঞ ও সার্জন"
+photo: ./images/dr-mostakima-begum-eti.jpg
+banner: ./images/dr-mostakima-begum-eti-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS (Obs & Gynae)"]
+designation: "কনসালট্যান্ট (অবস্ অ্যান্ড গাইনি), ইবনে সিনা হাসপাতাল সিলেট লিমিটেড"
+bmdc: A-49989
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/10/dr-mostakima-begum-eti-gynecology.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১০ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "10:00"
+    end: "15:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"

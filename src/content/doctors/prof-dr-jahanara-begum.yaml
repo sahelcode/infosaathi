@@ -1,0 +1,28 @@
+name: "অধ্যাপক ডা. জাহানারা বেগম"
+name_en: "Prof. Dr. Jahanara Begum"
+specialty: gynecology
+title: "প্রসূতি, স্ত্রীরোগ বিশেষজ্ঞ ও সার্জন"
+photo: ./images/prof-dr-jahanara-begum.jpg
+banner: ./images/prof-dr-jahanara-begum-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "BCS (Health)", "MCPS", "DGO", "MS (Obs & Gynae)"]
+designation: "অধ্যাপক (অবসরপ্রাপ্ত), সিলেট এম.এ.জি. ওসমানী মেডিকেল কলেজ ও হাসপাতাল"
+bmdc: A-11676
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/09/prof-dr-jahanara-begum-gynecology.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৫ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "13:00"
+    end: "15:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01887358849"
+        note: "সকাল ৮টা থেকে"

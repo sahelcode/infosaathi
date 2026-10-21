@@ -1,0 +1,26 @@
+name: "ডা. রওশন আরা"
+name_en: "Dr. Roushon Ara"
+specialty: gynecology
+title: "বন্ধ্যাত্ব, প্রজনন হরমোন, প্রসূতি ও স্ত্রীরোগ বিশেষজ্ঞ; ল্যাপারোস্কোপিক ও হিস্টেরোস্কোপিক সার্জন"
+photo: ./images/dr-roushon-ara.jpg
+banner: ./images/dr-roushon-ara-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS (Gynae & Obs)", "FCPS (Reproductive Endocrinology & Infertility)"]
+designation: "সহযোগী অধ্যাপক, রিপ্রোডাক্টিভ এন্ডোক্রাইনোলজি অ্যান্ড ইনফার্টিলিটি বিভাগ, ঢাকা মেডিকেল কলেজ ও হাসপাতাল; কনসালট্যান্ট, লুমিনা আইভিএফ অ্যান্ড ফার্টিলিটি কেয়ার"
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৩ (৩য় তলা)"
+    days: [শুক্র]
+    start: "11:00"
+    end: "20:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "09639433330"
+        note: "সকাল ৮টা থেকে"

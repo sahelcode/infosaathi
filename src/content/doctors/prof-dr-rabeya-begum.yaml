@@ -1,0 +1,28 @@
+name: "অধ্যাপক ডা. রাবেয়া বেগম"
+name_en: "Prof. Dr. Rabeya Begum"
+specialty: gynecology
+title: "প্রসূতি, স্ত্রীরোগ বিশেষজ্ঞ ও সার্জন; জেনারেল অ্যান্ড ল্যাপারোস্কোপিক সার্জন"
+photo: ./images/prof-dr-rabeya-begum.jpg
+banner: ./images/prof-dr-rabeya-begum-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS", "FCPS (Obs & Gynae)"]
+designation: "অধ্যাপক (অবস্ অ্যান্ড গাইনি), নর্থ ইস্ট মেডিকেল কলেজ ও হাসপাতাল, সিলেট"
+bmdc: A-33890
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/10/dr-rabeya-begum-gynecology.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩২৯ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "12:00"
+    end: "16:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01308778993"
+        note: "সকাল ৮টা থেকে"

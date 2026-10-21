@@ -1,0 +1,31 @@
+name: "অধ্যাপক ডা. জামিলা আলম"
+name_en: "Prof. Dr. Jamila Alam"
+specialty: gynecology
+title: "প্রসূতি, স্ত্রীরোগ বিশেষজ্ঞ ও সার্জন"
+photo: ./images/prof-dr-jamila-alam.jpg
+banner: ./images/prof-dr-jamila-alam-card.jpg
+banner_month: 2026-10-01
+degrees: ["MBBS (Dhaka)", "BCS (Health)", "MCPS (Gynae)", "DGO (BSMMU)", "FCPS (Obs & Gynae)"]
+designation: "অধ্যাপক ও বিভাগীয় প্রধান (অবস্ অ্যান্ড গাইনি), সিলেট এম.এ.জি. ওসমানী মেডিকেল কলেজ"
+bmdc: A-22587
+city: sylhet
+verified: 2026-10-21
+verified_by: phone
+old_urls: [/2025/10/prof-dr-jamila-alam-gynecology.html]
+
+chambers:
+  - hospital: ibn-sina-hospital-sylhet
+    room: "রুম নং ৩১৩ (৩য় তলা)"
+    days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
+    start: "17:00"
+    end: "22:00"
+    serials:
+      - label: "হাসপাতাল হটলাইন"
+        number: "09610009640"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01762290285"
+        note: "সকাল ৮টা থেকে"
+      - label: "সিরিয়াল"
+        number: "01979030215"
+        note: "সকাল ৮টা থেকে"
