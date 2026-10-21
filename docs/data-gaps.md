@@ -56,3 +56,21 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | hospital | sylhet-mag-osmani-medical-college-hospital | doctor count, visiting hours, OPD hours | official doctor list not readable from workspace; OPD hours on official pages conflict (8am-6pm vs 12am-12pm) | 2026-10-20 |
 | hospital | sylhet-mag-osmani-medical-college-hospital | test price list, cabin/paying ward rent, room types | official site has no prices | 2026-10-20 |
 | hospital | sylhet-mag-osmani-medical-college-hospital | current bed count (confirm) | official About page says 900 (since 1998); old news says upgrade to 2,000 planned; 900 used | 2026-10-20 |
+| doctor | prof-dr-md-mashiur-rahman-majumder | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-khan-asaduzzaman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-nuruddin-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-syed-abdus-subhan-rahin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-mohsinuzzaman-khan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-chowdhury-foyzur-rob | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-kamrul-alam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-m-a-hannan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-m-a-gaffar-khan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | major-dr-md-tanvir-rayhan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | major-dr-md-tanvir-rayhan | photo | card has only the Ibn Sina logo, no photo | 2026-10-21 |
+| doctor | prof-dr-afzal-momin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-aolad-hussain | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-jasim-uddin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-jasim-uddin | bmdc | card says A-4147, too old a number for an assistant professor with MD; left out until confirmed | 2026-10-21 |
+| doctor | dr-md-mizanur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | dr-md-mazharul-islam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
+| doctor | prof-dr-iqbal-ahmed-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
