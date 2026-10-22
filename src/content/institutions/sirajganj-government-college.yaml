@@ -20,6 +20,7 @@ verified_by: official
 
 numbers:
   - { label: যোগাযোগ, number: "075164604" }
+  - { label: অফিস (শিক্ষা অধিদপ্তরের তালিকা), number: "075162020" }
 emails:
   - { label: যোগাযোগ, email: srgovc@gmail.com }
 

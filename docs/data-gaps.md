@@ -192,7 +192,6 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | university | university-of-global-village | BA in Islamic Studies credits, years, cost | department page empty, not in fee table | 2026-10-21 |
 | college | carmichael-college-rangpur | HSC groups, degree pass and masters not on the official এক নজরে page (menu shows only উচ্চ মাধ্যমিক and স্নাতক (সম্মান)); added from Prothom Alo, eduportalbd (up to Masters) and Wikipedia agreeing | confirm with the college | 2026-10-21 |
 | college | naogaon-government-college | students, teachers count | official site (counter shows 0), 6+ searches bn/en; only undated Wikipedia figures (16,000 vs 20,000), not used | 2026-10-21 |
-| college | naogaon-government-college | official email | official teacher list has only personal gmail/yahoo entries; info@ only on a third-party directory | 2026-10-21 |
 | college | naogaon-government-college | HSC results | no board or news figure for this college; official HSC 2025 notice (82.39%, GPA-5 189) found via search, not used per rule; site not reachable from workspace | 2026-10-21 |
 | college | naogaon-government-college | HSC seats per stream | admission notices, district portal, searches bn/en | 2026-10-21 |
 | college | naogaon-government-college | which honours subjects have masters | official dept pages, NU seat-plan notices not reachable from workspace | 2026-10-21 |
@@ -246,9 +245,9 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | sirajganj-government-college | admission fees, phone labels | official admission page gives dates only | 2026-10-22 |
 | college | sirajganj-government-college | HSC results | only sirajganjinfo.com (numbers do not add up: 96.38% vs 798/836) | 2026-10-22 |
 | college | sirajganj-government-college | current principal | three different names (official page may be old) | 2026-10-22 |
-| college | chattogram-government-city-college | honours subject list, which have masters | official department pages not reachable; only Wikipedia/third-party lists | 2026-10-22 |
-| college | chattogram-government-city-college | nationalisation year (1978 vs 1979), campus area, gender, shifts (day/evening) | Wikipedia infobox vs text; eduportalbd name only | 2026-10-22 |
-| college | chattogram-government-city-college | students (16,000 vs 22,000 on Wikipedia), teachers, HSC seats per stream (2,300 total only on shikshabarta) | official site not reachable | 2026-10-22 |
+| college | chattogram-government-city-college | names of the 15 honours/masters departments | official department pages not reachable; only Wikipedia/third-party lists | 2026-10-22 |
+| college | chattogram-government-city-college | gender | Wikipedia infobox vs text; eduportalbd name only | 2026-10-22 |
+| college | chattogram-government-city-college | teachers, HSC seats per stream (2,300 total only on shikshabarta) | official site not reachable | 2026-10-22 |
 | college | chattogram-government-city-college | HSC results, admission fees | only aggregator figures (93.81% 2025) | 2026-10-22 |
 | college | chattogram-government-city-college | current principal | Wikipedia only | 2026-10-22 |
 | college | government-sundarban-adarsha-college-khulna | honours subject list (department pages exist; third-party list of 14 conflicts), masters, postcode | official site not reachable from workspace; NU seat plan not found | 2026-10-22 |
@@ -256,9 +255,9 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | government-sundarban-adarsha-college-khulna | label of main phone, current principal | official homepage snippet | 2026-10-22 |
 | college | hathazari-government-college | gender, postcode, campus area (3.95 acres only on Wikipedia), students, teachers | official site not reachable; Wikipedia 3,375 vs 5,000 | 2026-10-22 |
 | college | hathazari-government-college | HSC seats, admission fees/dates, HSC results | official 2026-27 notice title only; results only on Sohopathi | 2026-10-22 |
-| college | mirsarai-college | official phone/email (only acting principal's number from a Dainik Shiksha notice), postcode, campus area, teachers | official contact page not readable; other numbers only in directories | 2026-10-22 |
+| college | mirsarai-college | official office phone (only acting principal's number), campus area, teachers | official contact page not readable; other numbers only in directories | 2026-10-22 |
 | college | mirsarai-college | HSC seats, admission fees/dates, HSC results | seats only on Sohopathi; no board/news figures | 2026-10-22 |
-| college | fatikchhari-government-college | official phone/email (only Facebook page number used), nationalisation year, campus area | official contact page not readable; 25 searches bn/en | 2026-10-22 |
+| college | fatikchhari-government-college | official phone/email (only Facebook page number used), nationalisation year | official contact page not readable; 25 searches bn/en | 2026-10-22 |
 | college | fatikchhari-government-college | HSC seats (1,000 total only in one truncated snippet), students, teachers, admission fees, HSC results | Prothom Alo seat list not readable; no board/news figures | 2026-10-22 |
 | college | rangpur-city-college | cover photo (Sahel's photo may show Rangpur Govt City College), NU/MPO status, students, teachers, seats, fees, HSC results | EIIN 127495 pages; all other search hits belong to Rangpur Govt City College (EIIN 133547) | 2026-10-22 |
 | school | baf-shaheen-college-dhaka | office phone (only unofficial Google Sites page), campus area, chairman, students/teachers (Wikipedia 11,898 / 355), quota sizes | official site not reachable from workspace | 2026-10-22 |
@@ -269,4 +268,4 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | government-majid-memorial-city-college | HSC seats, 2026-27 fees, HSC results, nationalisation year (1993 only on Wikipedia), principal | official notices not readable; seats/results only on aggregators | 2026-10-22 |
 | college | brindaban-government-college | labelled phones (Sahel's 0831-52723 not found anywhere), masters subjects, honours list (official count 14, list only from aggregators) | official sites not reachable from workspace | 2026-10-22 |
 | college | brindaban-government-college | HSC seats (only 2019 board list), students, teachers, 2026-27 fees, HSC results | sources conflict or are old/aggregators | 2026-10-22 |
-| college | moulvibazar-government-college | names of the 5 masters subjects, gender, HSC seats, students, teachers, fees, HSC results, phone labels | district portal gives counts only; official site not reachable | 2026-10-22 |
+| college | moulvibazar-government-college | names of the 5 masters subjects, gender, HSC seats, fees, HSC results, phone labels | district portal gives counts only; official site not reachable | 2026-10-22 |

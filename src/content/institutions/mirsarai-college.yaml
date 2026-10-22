@@ -6,7 +6,7 @@ type: বেসরকারি
 est: 1973
 eiin: "104661"
 city: chattogram
-address: কলেজ রোড, মিরসরাই, চট্টগ্রাম
+address: কলেজ রোড, মিরসরাই, চট্টগ্রাম-৪৩২০
 web: https://mirsaraicollege.edu.bd
 board: চট্টগ্রাম শিক্ষা বোর্ড
 affiliation: জাতীয় বিশ্ববিদ্যালয়
@@ -21,6 +21,8 @@ verified_by: official
 
 numbers:
   - { label: ভারপ্রাপ্ত অধ্যক্ষ, number: "01812048003" }
+emails:
+  - { label: অফিস, email: mirsaraicollegectg@gmail.com }
 
 subjects:
   - { faculty: ব্যবসায় শিক্ষা, name: হিসাববিজ্ঞান, name_en: Accounting }

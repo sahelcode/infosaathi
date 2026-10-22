@@ -26,6 +26,8 @@ numbers:
   - { label: পরীক্ষা, number: "01747256094" }
   - { label: বোর্ড বৃত্তি, number: "01746848378" }
   - { label: উপবৃত্তি, number: "01782965624" }
+emails:
+  - { label: অফিস, email: ngovtcoll@yahoo.com }
 
 subjects:
   - { faculty: বিজ্ঞান, name: গণিত, name_en: Mathematics }

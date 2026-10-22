@@ -21,8 +21,10 @@ verified: 2026-10-22
 verified_by: official
 
 numbers:
+  - { label: প্রধান যোগাযোগ, number: "029836440" }
   - { label: ভর্তি হটলাইন (সকাল ৯টা–সন্ধ্যা ৬টা), number: "01759536622" }
   - { label: ভর্তি হটলাইন (সকাল ৯টা–সন্ধ্যা ৬টা), number: "01777521159" }
+  - { label: ভর্তি (অতিরিক্ত), number: "01404053816" }
 emails:
   - { label: অফিস, email: info@bafsd.edu.bd }
 

@@ -21,6 +21,8 @@ verified_by: official
 numbers:
   - { label: টেলিফোন, number: "02996641435" }
   - { label: মোবাইল, number: "01511202128" }
+emails:
+  - { label: অধ্যক্ষ, email: principal_sgc@yahoo.com }
 
 seats:
   title: একাদশ শ্রেণির আসন (গত বছর, ২০২৪–২৫ সেশন)
