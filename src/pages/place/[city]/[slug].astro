@@ -138,7 +138,6 @@ const jsonld = {
             <a class="pf-btn primary" href={dir} target="_blank" rel="noopener"><Icon name="route" size={17} w={2.2} />Google Maps-এ পথ দেখুন</a>
             <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
           </div>
-          <nav class="hp-jump" aria-label="এই পেজে">{jump.map(([a, t]) => <a href={`#${a}`}>{t}</a>)}</nav>
         </section>
 
         <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>
@@ -212,7 +211,7 @@ const jsonld = {
           )}
         </Report>
         <ShareRow />
-        <nav class="pf-tags" aria-label="সম্পর্কিত">
+        <nav class="pf-tags hp-tags" aria-label="সম্পর্কিত">
           <a href={`/places/${d.city}/`}>{city.of} দর্শনীয় স্থান</a><a href="/places/">বাংলাদেশের দর্শনীয় স্থান</a>
         </nav>
         <Ad />
@@ -247,10 +246,6 @@ const jsonld = {
     </div>
   </main>
 
-  <div class="pf-sticky" aria-label="দ্রুত কাজ">
-    <a class="pf-btn primary" href={dir} target="_blank" rel="noopener"><Icon name="route" size={17} w={2.2} />Google Maps-এ পথ দেখুন</a>
-    <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
-  </div>
 </Base>
 
 <script>

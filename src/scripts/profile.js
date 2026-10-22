@@ -117,4 +117,6 @@
   /* ---- sticky bar steps aside at the footer ---- */
   const bar=$('.pf-sticky'), foot=$('footer');
   if(bar&&foot&&'IntersectionObserver' in window) new IntersectionObserver(es=>bar.classList.toggle('hide',es[0].isIntersecting),{rootMargin:'0px 0px -40px 0px'}).observe(foot);
+  /* long related-tag text gets a smaller font so two tags stay equal */
+  document.querySelectorAll('.hp-tags a').forEach(a=>a.classList.toggle('sm',a.textContent.trim().length>17));
 })();

@@ -42,8 +42,8 @@
   font:inherit;font-size:14px;font-weight:600;color:var(--ink);white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s,border-color .15s,transform .12s,box-shadow .15s;}
 .pf-btn:hover{border-color:#b7dcc6;background:#f7fcf9;}
 .pf-btn:active{transform:scale(.97);}
-.pf-btn.primary{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 10px 22px -14px rgba(22,163,74,.9);}
-.pf-btn.primary:hover{background:var(--green-d);border-color:var(--green-d);}
+.pf-btn.primary{background:#fff;border-color:#d9e7df;color:var(--ink);}
+.pf-btn.primary:hover{border-color:#b7dcc6;background:#f7fcf9;}
 .pf-btn.sm{height:38px;padding:0 14px;font-size:13.5px;border-radius:12px;}
 
 /* cards */

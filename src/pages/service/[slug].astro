@@ -91,7 +91,7 @@ const jsonld = {
             <ul>{d.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>)}
         </Report>
         <ShareRow />
-        <nav class="pf-tags" aria-label="সম্পর্কিত"><a href="/services/">সব সরকারি সেবা</a></nav>
+        <nav class="pf-tags hp-tags" aria-label="সম্পর্কিত"><a href="/services/">সব সরকারি সেবা</a></nav>
         <Ad />
         {related.length > 0 && (
           <section class="pf-block" aria-labelledby="h-rel"><div class="pf-block-head"><h2 id="h-rel">আরও সরকারি সেবা</h2><a class="see-all" href="/services/">See All</a></div>
@@ -109,5 +109,4 @@ const jsonld = {
       </div></aside>
     </div>
   </main>
-  <div class="pf-sticky un-sticky"><a class="pf-btn primary" href={d.portal_url} target="_blank" rel="noopener"><Icon name="ext" size={17} w={2.2} />অফিসিয়াল পোর্টাল</a><button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button></div>
 </Base>
