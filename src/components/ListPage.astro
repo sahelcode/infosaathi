@@ -19,8 +19,26 @@ const jsonld = {
     <p class="pf-list-intro">{intro}</p>
     <slot name="filter" />
     {chips.length > 0 && <nav class="pf-list-chips">{chips.map((c) => <a href={c.href}>{c.label}{c.n && <span>{c.n}</span>}</a>)}</nav>}
-    <div class="pf-minis">
+    <div class="pf-minis" id="pfList">
       <slot />
     </div>
+    <button class="pf-more" id="pfMore" type="button" hidden>আরও দেখুন</button>
   </main>
 </Base>
+<script>
+  // First 30 rows, then "আরও দেখুন" adds 30 more. Works together with the dropdown filters.
+  const STEP = 30;
+  const list = document.getElementById('pfList');
+  const more = document.getElementById('pfMore') as HTMLButtonElement | null;
+  if (list && more) {
+    let limit = STEP;
+    const render = () => {
+      const rows = [...list.querySelectorAll<HTMLElement>('.pf-mini')].filter((r) => !r.hidden);
+      rows.forEach((r, i) => r.classList.toggle('pg-off', i >= limit));
+      more.hidden = rows.length <= limit;
+    };
+    more.addEventListener('click', () => { limit += STEP; render(); });
+    document.getElementById('lfForm')?.addEventListener('change', () => setTimeout(() => { limit = STEP; render(); }, 0));
+    render();
+  }
+</script>

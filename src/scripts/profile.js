@@ -92,23 +92,29 @@
 
 
   /* ---- share the visiting-card image with an infosaathi.com mark added to the copy (the page keeps the clean image) ---- */
+  const markedFile=async(btn)=>{
+    const img=$('img',btn.closest('section')); if(!img) return null;
+    if(!img.complete) await new Promise((ok,no)=>{ img.onload=ok; img.onerror=no; });
+    const w=img.naturalWidth, h=img.naturalHeight, c=document.createElement('canvas'); c.width=w; c.height=h;
+    const g=c.getContext('2d'); g.drawImage(img,0,0,w,h);
+    /* diagonal mark across the middle: light fill with a soft dark edge so it reads on any card */
+    const fs=Math.max(12,Math.round(w*0.052)), txt='infosaathi.com';
+    g.save(); g.translate(w/2,h/2); g.rotate(-Math.PI/9); g.textAlign='center'; g.textBaseline='middle';
+    g.font='800 '+fs+'px Inter, Arial, sans-serif'; g.lineJoin='round'; g.lineWidth=Math.max(1.5,fs*0.06);
+    g.strokeStyle='rgba(0,0,0,.16)'; g.strokeText(txt,0,0); g.fillStyle='rgba(255,255,255,.26)'; g.fillText(txt,0,0); g.restore();
+    const blob=await new Promise(res=>c.toBlob(res,'image/jpeg',.92));
+    return new File([blob],(btn.dataset.name||'infosaathi').replace(/[^\w.-]+/g,'-')+'.jpg',{type:'image/jpeg'});
+  };
+  const saveFile=(file)=>{ const a=document.createElement('a'); a.href=URL.createObjectURL(file); a.download=file.name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),4000); toast('ছবি ডাউনলোড হয়েছে'); };
   $$('[data-img-share]').forEach(btn=>btn.addEventListener('click',async()=>{
-    const img=$('img',btn.closest('section')); if(!img) return;
     try{
-      if(!img.complete) await new Promise((ok,no)=>{ img.onload=ok; img.onerror=no; });
-      const w=img.naturalWidth, h=img.naturalHeight, c=document.createElement('canvas'); c.width=w; c.height=h;
-      const g=c.getContext('2d'); g.drawImage(img,0,0,w,h);
-      /* diagonal mark across the middle: light fill with a soft dark edge so it reads on any card */
-      const fs=Math.max(12,Math.round(w*0.052)), txt='infosaathi.com';
-      g.save(); g.translate(w/2,h/2); g.rotate(-Math.PI/9); g.textAlign='center'; g.textBaseline='middle';
-      g.font='800 '+fs+'px Inter, Arial, sans-serif'; g.lineJoin='round'; g.lineWidth=Math.max(1.5,fs*0.06);
-      g.strokeStyle='rgba(0,0,0,.16)'; g.strokeText(txt,0,0); g.fillStyle='rgba(255,255,255,.26)'; g.fillText(txt,0,0); g.restore();
-      const blob=await new Promise(res=>c.toBlob(res,'image/jpeg',.92));
-      const file=new File([blob],(btn.dataset.name||'infosaathi').replace(/[^\w.-]+/g,'-')+'.jpg',{type:'image/jpeg'});
+      const file=await markedFile(btn); if(!file) return;
       if(navigator.canShare&&navigator.canShare({files:[file]})){ try{ await navigator.share({files:[file],title:document.title,text:document.title+'\n'+url}); return; }catch(err){ if(err&&err.name==='AbortError') return; } }
-      const a=document.createElement('a'); a.href=URL.createObjectURL(file); a.download=file.name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),4000);
-      toast('ছবি ডাউনলোড হয়েছে');
+      saveFile(file);
     }catch(_){ toast('ছবি শেয়ার করা গেল না'); }
+  }));
+  $$('[data-img-dl]').forEach(btn=>btn.addEventListener('click',async()=>{
+    try{ const file=await markedFile(btn); if(file) saveFile(file); }catch(_){ toast('ছবি ডাউনলোড করা গেল না'); }
   }));
 
   /* ---- correction form (no backend yet) ---- */
@@ -117,4 +123,6 @@
   /* ---- sticky bar steps aside at the footer ---- */
   const bar=$('.pf-sticky'), foot=$('footer');
   if(bar&&foot&&'IntersectionObserver' in window) new IntersectionObserver(es=>bar.classList.toggle('hide',es[0].isIntersecting),{rootMargin:'0px 0px -40px 0px'}).observe(foot);
+  /* long related-tag text gets a smaller font so two tags stay equal */
+  document.querySelectorAll('.hp-tags a').forEach(a=>a.classList.toggle('sm',a.textContent.trim().length>17));
 })();

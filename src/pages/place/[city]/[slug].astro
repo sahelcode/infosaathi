@@ -86,6 +86,7 @@ const jsonld = {
     { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   ],
 };
+import MiniThumb from '../../../components/MiniThumb.astro';
 ---
 <Base title={title} description={description} path={path} ogImage={cover?.src} jsonld={jsonld} draft={d.draft}>
   <main class="pf">
@@ -127,18 +128,9 @@ const jsonld = {
             <h1 class="pf-name">{d.name}</h1>
             <p class="pf-en">{d.name_en}</p>
             <p class="hp-addr"><Icon name="pin" size={15} w={2.2} />{d.area}</p>
-            <div class="pf-badges">
-              {freeEntry && <span class="pf-badge ok"><Icon name="check" size={13} w={3} />প্রবেশ ফি নেই</span>}
-              {d.tags.map((t) => <span class="pf-badge">{t}</span>)}
-              <span class:list={['pf-badge', { src: d.verified_by === 'sources' }]}><Icon name="clock" size={13} w={2.2} />{checked}</span>
-            </div>
+            <p class="un-checked"><Icon name="clock" size={13} w={2.2} />{checked}</p>
             <p class="pl-intro">{d.intro}</p>
           </div>
-          <div class="pf-actions pl-actions">
-            <a class="pf-btn primary" href={dir} target="_blank" rel="noopener"><Icon name="route" size={17} w={2.2} />Google Maps-এ পথ দেখুন</a>
-            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
-          </div>
-          <nav class="hp-jump" aria-label="এই পেজে">{jump.map(([a, t]) => <a href={`#${a}`}>{t}</a>)}</nav>
         </section>
 
         <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>
@@ -204,6 +196,11 @@ const jsonld = {
           </section>
         )}
 
+        <div class="pf-actions pl-end">
+            <a class="pf-btn" href={dir} target="_blank" rel="noopener"><Icon name="route" size={17} w={2.2} />Google Maps-এ পথ দেখুন</a>
+            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+        </div>
+
         <Faq items={faq} />
         <Report placeholder="যেমন: বাস ভাড়া বেড়েছে" note="ভাড়া, ফি ও সময় মৌসুমভেদে বদলায়। যাওয়ার আগে স্থানীয়ভাবে নিশ্চিত হয়ে নিন।">
           {d.sources.length > 0 && (
@@ -212,7 +209,7 @@ const jsonld = {
           )}
         </Report>
         <ShareRow />
-        <nav class="pf-tags" aria-label="সম্পর্কিত">
+        <nav class="pf-tags hp-tags" aria-label="সম্পর্কিত">
           <a href={`/places/${d.city}/`}>{city.of} দর্শনীয় স্থান</a><a href="/places/">বাংলাদেশের দর্শনীয় স্থান</a>
         </nav>
         <Ad />
@@ -222,7 +219,7 @@ const jsonld = {
             <div class="pf-block-head"><h2 id="h-rel">{picked.length ? 'কাছাকাছি আরও যা দেখবেন' : 'আরও দর্শনীয় স্থান'}</h2><a class="see-all" href="/places/">See All</a></div>
             <div class="pf-minis">
               {related.map((x) => (
-                <a class="pf-mini" href={placeUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="mount" size={20} w={1.8} /></span>
+                <a class="pf-mini" href={placeUrl(x)}><MiniThumb d={x.data} icon="mount" />
                   <span class="pf-mini-txt"><b>{x.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{x.data.area}</span></span>
                   <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
               ))}
@@ -247,10 +244,6 @@ const jsonld = {
     </div>
   </main>
 
-  <div class="pf-sticky" aria-label="দ্রুত কাজ">
-    <a class="pf-btn primary" href={dir} target="_blank" rel="noopener"><Icon name="route" size={17} w={2.2} />Google Maps-এ পথ দেখুন</a>
-    <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
-  </div>
 </Base>
 
 <script>

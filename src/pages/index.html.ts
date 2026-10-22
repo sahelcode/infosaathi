@@ -5,6 +5,7 @@ import { getImage } from 'astro:assets';
 import home from '../partials/home.html?raw';
 import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, getServices, serviceUrl, scholarshipUrl, jobUrl, aiToolUrl, isClosed, getNews, getRankings, getApps, newsUrl, isOwnNews } from '../lib/data';
 import { CITIES } from '../lib/taxonomy';
+import { ICONS } from '../lib/icons';
 import { SPECIALTIES, HOTEL_FACILITIES } from '../lib/taxonomy';
 import { ART, artKind } from '../lib/newsArt';
 import { bn, bnDate } from '../lib/format';
@@ -220,7 +221,6 @@ export const GET: APIRoute = async () => {
   html = swap(html, '<span class="eyebrow">Universities</span><a href="#" class="see-all">', '<span class="eyebrow">Universities</span><a href="/universities/" class="see-all">');
   html = swapArray(html, 'hospitalNames', hospRows);
   // cards become links to the real pages
-  html = swap(html, '<a href="#" class="p-view">প্রোফাইল দেখুন</a>', '<a href="${d.url}" class="p-view">প্রোফাইল দেখুন</a>');
   html = swap(
     html,
     `<div class="org-tags"><span>\${h.beds}</span><span>\${h.doctors}</span><span class="hosp-rating">★ \${h.rating}</span></div></div>
@@ -239,5 +239,11 @@ export const GET: APIRoute = async () => {
   html = swap(html, '<span class="eyebrow">Hotels</span><a href="#" class="see-all">', '<span class="eyebrow">Hotels</span><a href="/hotels/" class="see-all">');
   html = swap(html, '<span class="ix-rate">★ ${h.rating}</span></div>\n      </div>\n    </div>`).join(\'\'));', '</div>\n      </div>\n    </a>`).join(\'\'));');
   html = html.replaceAll('__CONTACT_EMAIL__', CONTACT_EMAIL);
+  // little icons that float on the last "সব দেখুন" card of each swipe row
+  const rowIcons: Record<string, (keyof typeof ICONS)[]> = {
+    doctorRow: ['steth', 'heart', 'user'], uniRow: ['cap', 'build', 'award'], hospitalRow: ['build', 'ambulance', 'heart'],
+    collegeRow: ['cap', 'award', 'file'], schoolRow: ['cap', 'star', 'walk'], placeRow: ['mount', 'sun', 'beach'], hotelRow: ['bed', 'pool', 'star'],
+  };
+  html = swap(html, 'var I=/*ROW_ICONS*/{};', `var I=${JSON.stringify(Object.fromEntries(Object.entries(rowIcons).map(([k, v]) => [k, v.map((n) => ICONS[n])])))};`);
   return new Response(html, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
 };

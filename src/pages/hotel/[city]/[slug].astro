@@ -56,7 +56,7 @@ const faq = [
   ...(d.checkin ? [{ q: 'চেক-ইন ও চেক-আউটের সময় কখন?', a: `চেক-ইন ${d.checkin}${d.checkout ? `, চেক-আউট ${d.checkout}` : ''}।` }] : []),
   { q: `${d.name_bn} কোথায়?`, a: `${d.address}।` },
   ...(d.facilities.includes('pool') ? [{ q: `${d.name_bn}-এ সুইমিং পুল আছে?`, a: 'হ্যাঁ, সুইমিং পুল আছে।' }] : []),
-  { q: 'কীভাবে বুক করব?', a: `${mainNum.label} নম্বর ${phoneShow(mainNum.number)}-এ কল করে${d.web ? ' বা হোটেলের ওয়েবসাইট থেকে' : ''} বুক করা যায়।` },
+  { q: 'কীভাবে বুক করব?', a: `${mainNum.label} নম্বর ${phoneShow(mainNum.number)}-এ কল করে বুক করা যায়।` },
   ...d.faq,
 ];
 
@@ -75,7 +75,6 @@ const jsonld = {
       name: d.name,
       alternateName: [d.name_bn, ...(d.short ? [d.short] : [])],
       url: SITE + path,
-      ...(d.web && { sameAs: [d.web] }),
       ...(d.stars && { starRating: { '@type': 'Rating', ratingValue: d.stars } }),
       telephone: phoneIntl(mainNum.number),
       ...(d.rooms_total && { numberOfRooms: d.rooms_total }),
@@ -88,6 +87,7 @@ const jsonld = {
     { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   ],
 };
+import MiniThumb from '../../../components/MiniThumb.astro';
 ---
 <Base title={title} description={description} path={path} ogImage={cover?.src} jsonld={jsonld} draft={d.draft}>
   <main class="pf">
@@ -98,6 +98,7 @@ const jsonld = {
           {photos.length > 0 ? (
             <>
               <div class="pl-gal" data-gal tabindex="0" aria-roledescription="carousel" aria-label={`${d.name}-এর ছবি`}>
+                {d.rating && <span class="ht-badge"><Icon name="star" size={13} w={2} />{bn(d.rating.value)}</span>}
                 {photos.length > 1 && <div class="pl-bars" aria-hidden="true">{photos.map(() => <span><i></i></span>)}</div>}
                 {photos.map((p, i) => (
                   <figure class="pl-slide" aria-roledescription="slide" aria-label={`${bn(i + 1)} / ${bn(photos.length)}`}>
@@ -123,7 +124,7 @@ const jsonld = {
               )}
             </>
           ) : (
-            <div class="pl-gal art"><svg viewBox="0 0 160 80" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><rect width="160" height="80" fill="#DBEAFE" /><rect y="66" width="160" height="14" fill="#EFF6FF" />
+            <div class="pl-gal art">{d.rating && <span class="ht-badge"><Icon name="star" size={13} w={2} />{bn(d.rating.value)}</span>}<svg viewBox="0 0 160 80" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><rect width="160" height="80" fill="#DBEAFE" /><rect y="66" width="160" height="14" fill="#EFF6FF" />
               <rect x="30" y="40" width="26" height="28" rx="2" fill="#EFF6FF" stroke="#3B6FE0" stroke-width="2" /><rect x="104" y="40" width="26" height="28" rx="2" fill="#EFF6FF" stroke="#3B6FE0" stroke-width="2" />
               <rect x="56" y="12" width="48" height="56" rx="2" fill="#EFF6FF" stroke="#3B6FE0" stroke-width="2" />
               {[0, 1, 2, 3].flatMap((r) => [0, 1, 2].map((c) => <rect x={62 + c * 13} y={20 + r * 11} width="8" height="6" rx="1" fill="#3B6FE0" opacity={(r * 3 + c) % 4 ? '.45' : '.9'} />))}
@@ -133,20 +134,8 @@ const jsonld = {
             <h1 class="pf-name">{d.name}</h1>
             <p class="pf-en">{d.name_bn}</p>
             <p class="hp-addr"><Icon name="pin" size={15} w={2.2} />{d.address}</p>
-            <div class="pf-badges">
-              {d.stars && <span class="pf-badge ok"><Icon name="star" size={13} w={2.4} />{bn(d.stars)} তারকা {KIND}</span>}
-              {!d.stars && <span class="pf-badge ok">{KIND}</span>}
-              {d.facilities.includes('pool') && <span class="pf-badge">সুইমিং পুল</span>}
-              <span class:list={['pf-badge', { src: d.verified_by === 'official' }]}><Icon name="clock" size={13} w={2.2} />{checked}</span>
-            </div>
+            <p class="un-checked"><Icon name="clock" size={13} w={2.2} />{checked}</p>
           </div>
-          <div class="pf-actions hp-actions un-actions no-logo">
-            <button class="pf-btn primary" type="button" data-sheet-open="numbers"><Icon name="phone" size={17} w={2.2} />কল করে বুক করুন</button>
-            <a class="pf-btn" href={map} target="_blank" rel="noopener"><Icon name="pin" />ম্যাপ</a>
-            {d.web ? <a class="pf-btn" href={d.web} target="_blank" rel="noopener" aria-label="অফিসিয়াল ওয়েবসাইট"><Icon name="globe" /></a> : <span></span>}
-            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
-          </div>
-          <nav class="hp-jump" aria-label="এই পেজে">{jump.map(([a, t]) => <a href={`#${a}`}>{t}</a>)}</nav>
         </section>
 
         <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>
@@ -197,7 +186,11 @@ const jsonld = {
           {nearby.length > 0 && (
             <ul class="ht-near">{nearby.map((n) => <li>{n.p ? <a href={placeUrl(n.p)}>{n.name}</a> : <span>{n.name}</span>}{n.time && <b>{n.time}</b>}</li>)}</ul>
           )}
-          <a class="pf-btn hp-mapbtn" href={map} target="_blank" rel="noopener"><Icon name="pin" />Google Maps-এ দেখুন</a>
+          <div class="pf-actions hp-actions un-actions un-actions-row">
+            <button class="pf-btn primary" type="button" data-sheet-open="numbers"><Icon name="phone" size={17} w={2.2} />কল করে বুক করুন</button>
+            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+            <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
+          </div>
         </section>
 
         <section class="pf-card" aria-labelledby="h-about"><h2 id="h-about">পরিচিতি</h2><p class="pf-text">{about}</p>
@@ -212,14 +205,13 @@ const jsonld = {
         <section class="pf-card" id="contact" aria-labelledby="h-contact">
           <h2 id="h-contact">বুকিং ও যোগাযোগ</h2>
           <div class="pf-nums">
-            {d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}
+            {d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} nocall />)}
             {d.emails.map((m) => (
               <div class="pf-num un-mail"><span class="pf-num-t"><small class="pf-num-l">ইমেইল · {m.label}</small><b>{m.email}</b></span>
                 <button class="pf-copy" type="button" data-copy-num={m.email} data-copy-msg="ইমেইল কপি হয়েছে" aria-label="ইমেইল কপি করুন"><Icon name="copy" size={17} w={1.9} /></button>
                 <a class="pf-call" href={`mailto:${m.email}`} aria-label="ইমেইল পাঠান"><Icon name="mail" size={17} /></a></div>
             ))}
           </div>
-          {d.web && <div class="hp-info"><div><span class="pf-k">ওয়েবসাইট</span><a class="un-web" href={d.web} target="_blank" rel="noopener">{d.web.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}<Icon name="ext" size={14} /></a></div></div>}
         </section>
 
         <Faq items={faq} />
@@ -230,7 +222,7 @@ const jsonld = {
           )}
         </Report>
         <ShareRow />
-        <nav class="pf-tags" aria-label="সম্পর্কিত"><a href={`/hotels/${d.city}/`}>{city.of} হোটেল</a><a href="/hotels/">বাংলাদেশের হোটেল</a></nav>
+        <nav class="pf-tags hp-tags" aria-label="সম্পর্কিত"><a href={`/hotels/${d.city}/`}>{city.of} হোটেল</a><a href="/hotels/">বাংলাদেশের হোটেল</a></nav>
         <Ad />
 
         {related.length > 0 && (
@@ -238,7 +230,7 @@ const jsonld = {
             <div class="pf-block-head"><h2 id="h-rel">অন্য হোটেল</h2><a class="see-all" href="/hotels/">See All</a></div>
             <div class="pf-minis">
               {related.map((x) => (
-                <a class="pf-mini" href={hotelUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="bed" size={20} w={1.8} /></span>
+                <a class="pf-mini" href={hotelUrl(x)}><MiniThumb d={x.data} icon="bed" />
                   <span class="pf-mini-txt"><b>{x.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{CITIES[x.data.city].bn}</span></span>
                   <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
               ))}
@@ -261,10 +253,6 @@ const jsonld = {
     </div>
   </main>
 
-  <div class="pf-sticky un-sticky" aria-label="দ্রুত যোগাযোগ">
-    <button class="pf-btn primary" type="button" data-sheet-open="numbers"><Icon name="phone" />কল করে বুক করুন</button>
-    <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
-  </div>
   <div class="pf-sheet" data-sheet="numbers" hidden>
     <div class="pf-sheet-bg" data-sheet-close></div>
     <div class="pf-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-h">

@@ -31,5 +31,4 @@ const { kind, icon, name, sub, line, badges, action, jump, checked } = Astro.pro
     <a class="pf-btn primary" href={action.href} target="_blank" rel="noopener"><Icon name={action.icon} size={17} w={2.2} />{action.label}</a>
     <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
   </div>
-  <nav class="hp-jump" aria-label="এই পেজে">{jump.map(([a, t]) => <a href={`#${a}`}>{t}</a>)}</nav>
 </section>

@@ -118,6 +118,7 @@ const jsonld = {
       ...(photo && { image: new URL(photo.src, SITE).href }),
       address: { '@type': 'PostalAddress', streetAddress: d.address, addressLocality: city.en, addressCountry: 'BD' },
     },
+    { '@type': 'WebPage', url: SITE + path, name: title, description, inLanguage: 'bn', ...(d.verified && { dateModified: isoDay(d.verified) }) },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) },
     { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   ],
@@ -139,12 +140,6 @@ const jsonld = {
             <p class="pf-en">{d.name}</p>
             <p class="hp-addr">{d.address}</p>
             <p class="hp-meta">{d.type} {KIND[d.kind]}{d.est && ` · প্রতিষ্ঠা ${bn(d.est)}`}</p>
-          </div>
-          <div class:list={['pf-actions', 'hp-actions', 'un-actions', { 'has-logo': true }]}>
-            {single ? <a class="pf-btn" href={`tel:${mainNum.number}`}><Icon name="phone" />কল করুন</a>
-                    : <button class="pf-btn" type="button" data-sheet-open="numbers"><Icon name="phone" />কল করুন</button>}
-            <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
-            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
           </div>
         </section>
 
@@ -253,6 +248,12 @@ const jsonld = {
             </div>
           )}
         </section>
+        <div class:list={['pf-actions', 'hp-actions', 'un-actions', 'un-actions-row']}>
+          {single ? <a class="pf-btn" href={`tel:${mainNum.number}`}><Icon name="phone" />কল করুন</a>
+          : <button class="pf-btn" type="button" data-sheet-open="numbers"><Icon name="phone" />কল করুন</button>}
+          <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
+          <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+        </div>
 
         <section class="un-fact" id="contact" aria-labelledby="h-nums"><h2 id="h-nums">যোগাযোগের নম্বর</h2>
           <div class="pf-nums hp-nums">

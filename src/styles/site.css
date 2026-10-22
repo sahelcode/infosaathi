@@ -13,4 +13,26 @@
 .hp-logo.ed-mono,.ed-mono{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#16a34a,#065f46);color:#fff;font-family:'Inter',sans-serif;font-size:22px;font-weight:800;letter-spacing:.5px;}
 @media (min-width:768px){.ed-mono{font-size:30px;}}
 .hp-cover.un-cover{background:linear-gradient(120deg,#dcfce7,#ccfbf1 60%,#e0f2fe);}
-.pf-badge.src{background:#eff6ff;color:#1d4ed8;}
+.pf-badge.src{background:#f1f5f3;color:var(--ink-2);}
+
+.pf-minis .pf-mini.pg-off{display:none;}
+.pf-more{display:flex;align-items:center;justify-content:center;width:100%;height:46px;margin-top:12px;border-radius:14px;border:1px solid #d9e7df;background:#fff;font:inherit;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;}
+.pf-more[hidden]{display:none;}
+
+/* detail pages: calm numbers, address, justified text, white facilities */
+.pf:not(.dx) .pf-num,.pf-sheet .pf-num{background:#fff;border:1px solid #e4ece7;border-radius:12px;padding:6px 6px 6px 12px;}
+.pf:not(.dx) .pf-num b,.pf-sheet .pf-num b{font-size:15px;color:var(--ink);}
+.pf:not(.dx) .pf-num small:not(.pf-num-l){color:var(--muted);}
+.pf:not(.dx) .pf-copy,.pf:not(.dx) .pf-call,.pf-sheet .pf-copy,.pf-sheet .pf-call{width:34px;height:34px;border-radius:10px;background:#fff;border:1px solid #d9e7df;color:var(--ink-2);box-shadow:none;}
+.pf-hero-body .hp-addr{display:flex;align-items:flex-start;justify-content:center;gap:6px;margin-top:8px;font-size:13.5px;line-height:1.5;text-align:center;color:#64748b;}
+.pf-hero-body .hp-addr svg{flex:0 0 auto;margin-top:3px;color:#94a3b8;}
+.pl-intro,.pf-text{text-align:justify;text-justify:inter-word;}
+.hp-fac{background:#fff;border:1px solid #e4ece7;}
+.hp-fac-i{background:#f4f7f5;color:var(--ink-2);}
+.ht-rating{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;font-size:13px;color:var(--muted);}
+.ht-rating svg{color:#f59e0b;fill:#f59e0b;}
+.ht-rating b{font-size:15px;color:var(--ink);}
+.ht-badge{position:absolute;z-index:4;right:12px;top:22px;display:inline-flex;align-items:center;gap:4px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.94);color:var(--ink);font-size:13.5px;font-weight:700;box-shadow:0 6px 14px -8px rgba(0,0,0,.45);}
+.ht-badge svg{color:#f59e0b;fill:#f59e0b;}
+.pl-gal.art .ht-badge{top:12px;}
+.ht-badge svg{position:static!important;width:13px!important;height:13px!important;flex:0 0 auto;}

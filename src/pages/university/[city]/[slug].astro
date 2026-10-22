@@ -109,10 +109,12 @@ const jsonld = {
       ...(photo && { image: new URL(photo.src, SITE).href }),
       address: { '@type': 'PostalAddress', streetAddress: u.address, addressLocality: city.en, addressCountry: 'BD' },
     },
+    { '@type': 'WebPage', url: SITE + path, name: title, description, inLanguage: 'bn', ...(u.verified && { dateModified: isoDay(u.verified) }) },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) },
     { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   ],
 };
+import MiniThumb from '../../../components/MiniThumb.astro';
 ---
 <Base title={title} description={description} path={path} ogImage={photo?.src} jsonld={jsonld} draft={u.draft}>
   <main class="pf un-page">
@@ -272,7 +274,7 @@ const jsonld = {
             <div class="pf-block-head"><h2 id="h-rel">অন্য বিশ্ববিদ্যালয়</h2><a class="see-all" href="/universities/">See All</a></div>
             <div class="pf-minis">
               {related.map((x) => (
-                <a class="pf-mini" href={universityUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="cap" size={20} w={1.8} /></span>
+                <a class="pf-mini" href={universityUrl(x)}><MiniThumb d={x.data} icon="cap" />
                   <span class="pf-mini-txt"><b>{x.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{CITIES[x.data.city].bn} · {x.data.type}</span></span>
                   <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
               ))}

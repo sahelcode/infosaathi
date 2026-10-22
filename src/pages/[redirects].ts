@@ -3,6 +3,7 @@
 import type { APIRoute } from 'astro';
 import { getDoctors, doctorUrl, getUniversities, universityUrl, getInstitutions, institutionUrl } from '../lib/data';
 import { SHOW_DRAFTS } from '../lib/site';
+import { FALLBACK_REDIRECTS } from '../lib/old-fallbacks';
 
 export function getStaticPaths() {
   return [{ params: { redirects: '_redirects' } }];
@@ -25,5 +26,9 @@ export const GET: APIRoute = async () => {
     if (i.data.draft && !SHOW_DRAFTS) continue;
     for (const old of i.data.old_urls) lines.push(`${old} ${institutionUrl(i)} 301`);
   }
+  // Fallbacks last, and never for a link that already has its own page above.
+  const used = new Set(lines.map((l) => l.split(' ')[0]));
+  // Cloudflare rejects the whole file if a source has a fragment (#), query (?) or placeholder (: or *).
+  for (const [from, to] of FALLBACK_REDIRECTS) if (!used.has(from) && !/[#?:*]/.test(from)) lines.push(`${from} ${to} 301`);
   return new Response(lines.join('\n') + '\n', { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 };

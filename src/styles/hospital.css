@@ -170,5 +170,8 @@
 .hp-doc .pf-mini-txt,.hp-doc .pf-mini-txt *{min-width:0;}
 
 .hp-tags a.sm{font-size:12px;padding:8px 6px;}
+.hp-tags a:only-child{grid-column:1 / -1;}
 .un-rel-i.has-logo{background:#fff;border:1px solid #e4ece7;padding:5px;box-sizing:border-box;}
 .un-rel-i.has-logo img{display:block;width:100%;height:100%;object-fit:contain;}
+.un-rel-i.has-photo{padding:0;overflow:hidden;background:#e8f0ec;}
+.un-rel-i.has-photo img{display:block;width:100%;height:100%;object-fit:cover;}

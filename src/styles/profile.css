@@ -34,7 +34,8 @@
 .pf-post{margin-top:6px;font-size:13px;line-height:1.55;color:var(--ink-2);}
 .pf-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px;}
 .pf-badge{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;background:#f1f5f3;color:var(--ink-2);font-size:12px;font-weight:600;}
-.pf-badge.ok{background:#dcf7e6;color:var(--green-d);}
+.pf-badge.ok{background:#f1f5f3;color:var(--ink-2);}
+.pf-badge.ok svg{color:var(--green);}
 .pf-actions{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;padding:0 16px 16px;}
 
 /* buttons */
@@ -42,8 +43,8 @@
   font:inherit;font-size:14px;font-weight:600;color:var(--ink);white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s,border-color .15s,transform .12s,box-shadow .15s;}
 .pf-btn:hover{border-color:#b7dcc6;background:#f7fcf9;}
 .pf-btn:active{transform:scale(.97);}
-.pf-btn.primary{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 10px 22px -14px rgba(22,163,74,.9);}
-.pf-btn.primary:hover{background:var(--green-d);border-color:var(--green-d);}
+.pf-btn.primary{background:#fff;border-color:#d9e7df;color:var(--ink);}
+.pf-btn.primary:hover{border-color:#b7dcc6;background:#f7fcf9;}
 .pf-btn.sm{height:38px;padding:0 14px;font-size:13.5px;border-radius:12px;}
 
 /* cards */
@@ -198,3 +199,11 @@
 /* report row outside the doctor trust box (university, college, school) */
 .pf-report summary b{display:block;font-size:14.5px;}
 .pf-report summary small{display:block;margin-top:1px;font-size:12.5px;color:var(--muted);}
+
+/* quick facts under the hero of hotel, place and the other simple pages: one calm card, label left, value right */
+.un-glance{margin-top:12px;padding:2px 16px;background:#fff;border:1px solid #e4ece7;border-radius:18px;box-shadow:0 1px 2px rgba(15,42,28,.04),0 14px 30px -22px rgba(15,42,28,.28);}
+.un-glance .un-g{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:12px 0;border-top:1px solid #eef3f0;}
+.un-glance .un-g:first-child{border-top:0;}
+.un-glance .un-g-i{display:none;}
+.un-glance small{font-size:13.5px;color:var(--muted);flex:0 0 auto;}
+.un-glance b{font-size:14px;font-weight:700;text-align:right;color:var(--ink);}

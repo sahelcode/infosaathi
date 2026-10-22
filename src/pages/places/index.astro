@@ -8,13 +8,14 @@ import { CITIES } from '../../lib/taxonomy';
 import { bn } from '../../lib/format';
 const list = await getPlaces();
 const cities = [...new Set(list.map((p) => p.data.city))];
+import MiniThumb from '../../components/MiniThumb.astro';
 ---
 <ListPage title="বাংলাদেশের দর্শনীয় স্থান: কীভাবে যাবেন, খরচ ও কখন যাবেন | InfoSaathi" h1="দর্শনীয় স্থান" path="/places/" crumbs={[['হোম', '/']]}
   intro="বাংলাদেশের ঘোরার জায়গা: কী দেখবেন, কীভাবে যাবেন, ভাড়া, খরচ আর কখন যাওয়া ভালো।"
   >
   <ListFilter slot="filter" fields={[cityField(cities), placeTypeField(list.map((p) => p.data.kind))]} />
   {list.map((p) => (
-    <a class="pf-mini" href={placeUrl(p)} data-city={p.data.city} data-type={placeGroup(p.data.kind)}><span class="hp-near-i un-rel-i"><Icon name="mount" size={20} w={1.8} /></span>
+    <a class="pf-mini" href={placeUrl(p)} data-city={p.data.city} data-type={placeGroup(p.data.kind)}><MiniThumb d={p.data} icon="mount" />
       <span class="pf-mini-txt"><b>{p.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{p.data.area}</span></span>
       <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
   ))}

@@ -13,12 +13,13 @@ export async function getStaticPaths() {
 }
 const { city, hospitals } = Astro.props as { city: City; hospitals: Hospital[] };
 const c = CITIES[city];
+import MiniThumb from '../../components/MiniThumb.astro';
 ---
 <ListPage title={`${c.of} হাসপাতালের তালিকা | InfoSaathi`} h1={`${c.of} হাসপাতাল`} path={`/hospitals/${city}/`}
   crumbs={[['হোম', '/'], ['হাসপাতাল', '/hospitals/']]} intro={`${c.of} ${bn(hospitals.length)}টি হাসপাতালের ডাক্তার, নম্বর ও সুবিধা।`}>
   <ListFilter slot="filter" fields={[typeField('ধরন', 'সব ধরন', hospitals.map((h) => h.data.type))]} />
   {hospitals.map((h) => (
-    <a class="pf-mini" href={hospitalUrl(h)} data-city={h.data.city} data-type={h.data.type}><span class="hp-near-i"><Icon name="build" size={20} w={1.8} /></span>
+    <a class="pf-mini" href={hospitalUrl(h)} data-city={h.data.city} data-type={h.data.type}><MiniThumb d={h.data} icon="build" />
       <span class="pf-mini-txt"><b>{h.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{h.data.address}</span></span>
       <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
   ))}

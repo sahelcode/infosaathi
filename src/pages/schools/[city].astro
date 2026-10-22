@@ -10,11 +10,12 @@ export async function getStaticPaths() {
 }
 const { city, list } = Astro.props as { city: City; list: Institution[] };
 const c = CITIES[city];
+import MiniThumb from '../../components/MiniThumb.astro';
 ---
 <ListPage title={`${c.of} স্কুল: ভর্তি, EIIN ও যোগাযোগ | InfoSaathi`} h1={`${c.of} স্কুল`} path={`/schools/${city}/`}
   crumbs={[['হোম', '/'], ['স্কুল', '/schools/']]} intro={`${c.of} ${bn(list.length)}টি স্কুলের তথ্য।`}>
   {list.map((i) => (
-    <a class="pf-mini" href={institutionUrl(i)}><span class="hp-near-i un-rel-i"><Icon name="cap" size={20} w={1.8} /></span>
+    <a class="pf-mini" href={institutionUrl(i)}><MiniThumb d={i.data} icon="cap" />
       <span class="pf-mini-txt"><b>{i.data.name_bn}</b><span class="pf-mini-h">{i.data.name} · {i.data.type}</span></span>
       <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
   ))}
