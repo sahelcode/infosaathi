@@ -224,7 +224,7 @@ import MiniThumb from '../../../components/MiniThumb.astro';
           )}
         </Report>
         <ShareRow />
-        {d.google && <p class="ht-google">Google Maps রেটিং: {bn(d.google.value)}{d.google.count ? ` (${bn(d.google.count)}টি রিভিউ)` : ''}{d.google.date ? `, ${bnDate(d.google.date)}-এর হিসাব` : ''}</p>}
+        {d.google && <p class="ht-google">Google Maps রেটিং: {bn(d.google.value)}</p>}
         <nav class="pf-tags hp-tags" aria-label="সম্পর্কিত"><a href={`/hotels/${d.city}/`}>{city.of} হোটেল</a><a href="/hotels/">বাংলাদেশের হোটেল</a></nav>
         <Ad />
 
