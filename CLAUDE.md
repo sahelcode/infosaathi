@@ -9,7 +9,7 @@ Trigger: Sahel sends doctor data plus two photos. Do ONLY this task in that sess
 
 ### Input from Sahel
 - Bangla name, English name, specialty (key from `src/lib/taxonomy.ts`), city.
-- Chamber(s): hospital (an existing file in `src/content/hospitals/`) or own name + address; room; days; start/end time; fee if known.
+- Chamber(s): hospital (an existing file in `src/content/hospitals/`) or own name + address; room; days; start/end time; fee if known (a missing fee shows "কল করে জানুন" automatically; do not log chamber fees in `docs/data-gaps.md`).
 - Serial numbers with labels and the time they can be called (`note`).
 - Verification: how and when (phone, date).
 - Two images. FIRST image = profile portrait. SECOND image = visiting card (banner). Check this by looking at the images; if the content contradicts the order (it happened once), trust the content and say so.

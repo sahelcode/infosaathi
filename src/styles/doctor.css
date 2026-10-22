@@ -174,3 +174,5 @@ body:has(.dx){padding-bottom:0;}
 .dx .dx-multi{margin-top:10px;}
 .dx .dx-multi + .dx-multi{padding-top:0;border-top:none;}
 @media (prefers-reduced-motion:reduce){.dx-ch-toggle{transition:none;}}
+
+.dx-fee.na{font-size:13px;font-weight:600;color:var(--green-d);}

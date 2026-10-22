@@ -86,7 +86,7 @@ const faq = [
     a: chambers.map(placeLine).join('। ') + '।' + (offDays.length ? ` ${offDays.map((x) => x + 'বার').join(', ')} বন্ধ।` : ''),
   },
   { q: `${d.name}-এর চেম্বার কোথায়?`, a: chambers.map((c) => `${c.name}: ${c.address}${c.room ? ', ' + c.room : ''}`).join('। ') + '।' },
-  ...(feeChamber ? [{ q: `${d.name}-এর ভিজিট ফি কত?`, a: `${feeChamber.name}-এ ${feeText(feeChamber.fee!)}।` }] : []),
+  { q: `${d.name}-এর ভিজিট ফি কত?`, a: feeChamber ? `${feeChamber.name}-এ ${feeText(feeChamber.fee!)}।` : `ফি আমরা এখনো যুক্ত করিনি। সঠিক ফি জানতে ${phoneShow(firstSerial.number)} নম্বরে কল করুন।` },
   ...d.faq,
 ];
 
@@ -233,13 +233,13 @@ const jsonld = {
               <dl class="dx-facts">
                 <div><dt><Icon name="cal" size={15} />দিন</dt><dd><div class="pf-days">{DAYS.map((x) => <span class:list={['pf-day', { on: c.days.includes(x) }]} data-d={DAY_JS[x]}>{DAY_SHORT[x]}</span>)}</div></dd></div>
                 <div><dt><Icon name="clock" size={15} />সময়</dt><dd class="pf-v">{c.timeText}</dd></div>
-                {c.fee && (
-                  <div><dt><Icon name="cash" size={15} />ফি</dt><dd class="dx-fee">
+                <div><dt><Icon name="cash" size={15} />ফি</dt>{c.fee ? (
+                  <dd class="dx-fee">
                     {c.fee.new && <span>নতুন <b>{taka(c.fee.new)}</b></span>}
                     {c.fee.old && <span>পুরনো <b>{taka(c.fee.old)}</b></span>}
                     {c.fee.report && <span>রিপোর্ট <b>{taka(c.fee.report)}</b></span>}
-                  </dd></div>
-                )}
+                  </dd>
+                ) : <dd class="dx-fee na">কল করে জানুন</dd>}</div>
               </dl>
               <div class="pf-nums">{c.serials.map((s) => <NumRow label={s.label} number={s.number} note={s.note} />)}</div>
               <a class="pf-maplink" href={c.map} target="_blank" rel="noopener"><Icon name="route" size={16} />ম্যাপে দেখুন · Get directions</a>
