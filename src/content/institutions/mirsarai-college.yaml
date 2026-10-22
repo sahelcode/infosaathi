@@ -1,0 +1,41 @@
+draft: false
+kind: college
+name: Mirsarai College
+name_bn: মিরসরাই কলেজ
+type: বেসরকারি
+est: 1973
+eiin: "104661"
+city: chattogram
+address: কলেজ রোড, মিরসরাই, চট্টগ্রাম
+web: https://mirsaraicollege.edu.bd
+board: চট্টগ্রাম শিক্ষা বোর্ড
+affiliation: জাতীয় বিশ্ববিদ্যালয়
+gender: সহশিক্ষা
+levels: [একাদশ–দ্বাদশ শ্রেণি, ডিগ্রি (পাস), অনার্স]
+streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+logo: ./images/mirsarai-college-logo.png
+photo: ./images/mirsarai-college.jpg
+students: "প্রায় ৪,০০০"
+verified: 2026-10-22
+verified_by: official
+
+numbers:
+  - { label: ভারপ্রাপ্ত অধ্যক্ষ, number: "01812048003" }
+
+subjects:
+  - { faculty: ব্যবসায় শিক্ষা, name: হিসাববিজ্ঞান, name_en: Accounting }
+  - { faculty: ব্যবসায় শিক্ষা, name: ব্যবস্থাপনা, name_en: Management }
+
+about: ১৯৭৩ সালে মিরসরাই উপজেলা সদরে স্থানীয় উদ্যোক্তারা কলেজটি প্রতিষ্ঠা করেন। এটি এমপিওভুক্ত বেসরকারি কলেজ। এখানে উচ্চ মাধ্যমিক, ডিগ্রি (পাস) এবং হিসাববিজ্ঞান ও ব্যবস্থাপনায় অনার্স পড়ানো হয়; শিক্ষার্থী প্রায় ৪ হাজার।
+faq:
+  - q: মিরসরাই কলেজ কি সরকারি?
+    a: না। মিরসরাই কলেজ এমপিওভুক্ত বেসরকারি কলেজ।
+  - q: মিরসরাই কলেজে অনার্সে কোন কোন বিষয় আছে?
+    a: অনার্সে ২টি বিষয় আছে — হিসাববিজ্ঞান ও ব্যবস্থাপনা।
+  - q: ডিগ্রি (পাস)-এ কোন কোন কোর্স পড়ানো হয়?
+    a: বিএ, বিএসএস, বিবিএস ও বিএসসি।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://mirsaraicollege.edu.bd/ }
+  - { title: Eduportalbd – EIIN 104661, url: "https://locator.eduportalbd.com/institutes/?ins=104661" }
+old_urls: [/2025/08/mirsarai-college.html]
