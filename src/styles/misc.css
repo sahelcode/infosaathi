@@ -33,3 +33,4 @@
 .mx-warn{display:flex;}
 .un-docs .mx-warn svg{color:#d97706;}
 .pf-card-head + .un-docs,.pf-card-head + .un-steps{margin-top:14px;}
+@media (max-width:767px){.hp-actions.mx-actions{grid-template-columns:1fr 46px;}.hp-actions.mx-actions .pf-btn:first-child{grid-column:auto;}}
