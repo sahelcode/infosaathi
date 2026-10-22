@@ -265,3 +265,5 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | school | baf-shaheen-college-dhaka | SSC/HSC results | no board or news figures for this institution | 2026-10-22 |
 | college | government-begum-rokeya-college | cover photo (Sahel's has a "BADHON 1159" watermark), postcode (5404 only on Wikipedia), campus area (7.28 vs 3.66 acres) | official site not reachable; Wikipedia conflicts | 2026-10-22 |
 | college | government-begum-rokeya-college | HSC seats, honours seats, fees, students (current), HSC 2025 GPA-5, current principal | official notice titles only; seats only on Sohopathi | 2026-10-22 |
+| college | government-majid-memorial-city-college | official phone/email (landline only from directories), masters, honours seats, campus area, students, teachers | official contact page not reachable; honours list only from nubd.info (NU mirror) | 2026-10-22 |
+| college | government-majid-memorial-city-college | HSC seats, 2026-27 fees, HSC results, nationalisation year (1993 only on Wikipedia), principal | official notices not readable; seats/results only on aggregators | 2026-10-22 |
