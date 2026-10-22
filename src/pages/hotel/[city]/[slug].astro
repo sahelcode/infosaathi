@@ -56,7 +56,7 @@ const faq = [
   ...(d.checkin ? [{ q: 'চেক-ইন ও চেক-আউটের সময় কখন?', a: `চেক-ইন ${d.checkin}${d.checkout ? `, চেক-আউট ${d.checkout}` : ''}।` }] : []),
   { q: `${d.name_bn} কোথায়?`, a: `${d.address}।` },
   ...(d.facilities.includes('pool') ? [{ q: `${d.name_bn}-এ সুইমিং পুল আছে?`, a: 'হ্যাঁ, সুইমিং পুল আছে।' }] : []),
-  { q: 'কীভাবে বুক করব?', a: `${mainNum.label} নম্বর ${phoneShow(mainNum.number)}-এ কল করে${d.web ? ' বা হোটেলের ওয়েবসাইট থেকে' : ''} বুক করা যায়।` },
+  { q: 'কীভাবে বুক করব?', a: `${mainNum.label} নম্বর ${phoneShow(mainNum.number)}-এ কল করে বুক করা যায়।` },
   ...d.faq,
 ];
 
@@ -75,7 +75,6 @@ const jsonld = {
       name: d.name,
       alternateName: [d.name_bn, ...(d.short ? [d.short] : [])],
       url: SITE + path,
-      ...(d.web && { sameAs: [d.web] }),
       ...(d.stars && { starRating: { '@type': 'Rating', ratingValue: d.stars } }),
       telephone: phoneIntl(mainNum.number),
       ...(d.rooms_total && { numberOfRooms: d.rooms_total }),
@@ -134,12 +133,8 @@ import MiniThumb from '../../../components/MiniThumb.astro';
             <h1 class="pf-name">{d.name}</h1>
             <p class="pf-en">{d.name_bn}</p>
             <p class="hp-addr"><Icon name="pin" size={15} w={2.2} />{d.address}</p>
-            <div class="pf-badges">
-              {d.stars && <span class="pf-badge ok"><Icon name="star" size={13} w={2.4} />{bn(d.stars)} তারকা {KIND}</span>}
-              {!d.stars && <span class="pf-badge ok">{KIND}</span>}
-              {d.facilities.includes('pool') && <span class="pf-badge">সুইমিং পুল</span>}
-              <span class:list={['pf-badge', { src: d.verified_by === 'official' }]}><Icon name="clock" size={13} w={2.2} />{checked}</span>
-            </div>
+            {d.rating && <p class="ht-rating"><Icon name="star" size={15} w={2} /><b>{bn(d.rating.value)}</b><span>{d.rating.source}{d.rating.count ? ` · ${bn(d.rating.count)}টি রিভিউ` : ''}</span></p>}
+            <p class="un-checked"><Icon name="clock" size={13} w={2.2} />{checked}</p>
           </div>
         </section>
 
@@ -210,14 +205,13 @@ import MiniThumb from '../../../components/MiniThumb.astro';
         <section class="pf-card" id="contact" aria-labelledby="h-contact">
           <h2 id="h-contact">বুকিং ও যোগাযোগ</h2>
           <div class="pf-nums">
-            {d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}
+            {d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} nocall />)}
             {d.emails.map((m) => (
               <div class="pf-num un-mail"><span class="pf-num-t"><small class="pf-num-l">ইমেইল · {m.label}</small><b>{m.email}</b></span>
                 <button class="pf-copy" type="button" data-copy-num={m.email} data-copy-msg="ইমেইল কপি হয়েছে" aria-label="ইমেইল কপি করুন"><Icon name="copy" size={17} w={1.9} /></button>
                 <a class="pf-call" href={`mailto:${m.email}`} aria-label="ইমেইল পাঠান"><Icon name="mail" size={17} /></a></div>
             ))}
           </div>
-          {d.web && <div class="hp-info"><div><span class="pf-k">ওয়েবসাইট</span><a class="un-web" href={d.web} target="_blank" rel="noopener">{d.web.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}<Icon name="ext" size={14} /></a></div></div>}
         </section>
 
         <Faq items={faq} />

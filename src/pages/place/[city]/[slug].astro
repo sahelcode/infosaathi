@@ -128,11 +128,7 @@ import MiniThumb from '../../../components/MiniThumb.astro';
             <h1 class="pf-name">{d.name}</h1>
             <p class="pf-en">{d.name_en}</p>
             <p class="hp-addr"><Icon name="pin" size={15} w={2.2} />{d.area}</p>
-            <div class="pf-badges">
-              {freeEntry && <span class="pf-badge ok"><Icon name="check" size={13} w={3} />প্রবেশ ফি নেই</span>}
-              {d.tags.map((t) => <span class="pf-badge">{t}</span>)}
-              <span class:list={['pf-badge', { src: d.verified_by === 'sources' }]}><Icon name="clock" size={13} w={2.2} />{checked}</span>
-            </div>
+            <p class="un-checked"><Icon name="clock" size={13} w={2.2} />{checked}</p>
             <p class="pl-intro">{d.intro}</p>
           </div>
         </section>
