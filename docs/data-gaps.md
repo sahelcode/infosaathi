@@ -246,3 +246,16 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | sirajganj-government-college | admission fees, phone labels | official admission page gives dates only | 2026-10-22 |
 | college | sirajganj-government-college | HSC results | only sirajganjinfo.com (numbers do not add up: 96.38% vs 798/836) | 2026-10-22 |
 | college | sirajganj-government-college | current principal | three different names (official page may be old) | 2026-10-22 |
+| college | chattogram-government-city-college | honours subject list, which have masters | official department pages not reachable; only Wikipedia/third-party lists | 2026-10-22 |
+| college | chattogram-government-city-college | nationalisation year (1978 vs 1979), campus area, gender, shifts (day/evening) | Wikipedia infobox vs text; eduportalbd name only | 2026-10-22 |
+| college | chattogram-government-city-college | students (16,000 vs 22,000 on Wikipedia), teachers, HSC seats per stream (2,300 total only on shikshabarta) | official site not reachable | 2026-10-22 |
+| college | chattogram-government-city-college | HSC results, admission fees | only aggregator figures (93.81% 2025) | 2026-10-22 |
+| college | chattogram-government-city-college | current principal | Wikipedia only | 2026-10-22 |
+| college | government-sundarban-adarsha-college-khulna | logo | Sahel's image is the Rover Scout group logo; college's own logo needed | 2026-10-22 |
+| college | government-sundarban-adarsha-college-khulna | honours subject list (department pages exist; third-party list of 14 conflicts), masters, postcode | official site not reachable from workspace; NU seat plan not found | 2026-10-22 |
+| college | government-sundarban-adarsha-college-khulna | students, teachers, HSC seats, admission fees/dates, HSC results | official notice titles only; seats only on Sohopathi | 2026-10-22 |
+| college | government-sundarban-adarsha-college-khulna | label of main phone, current principal | official homepage snippet | 2026-10-22 |
+| college | hathazari-government-college | gender, postcode, campus area (3.95 acres only on Wikipedia), students, teachers | official site not reachable; Wikipedia 3,375 vs 5,000 | 2026-10-22 |
+| college | hathazari-government-college | HSC seats, admission fees/dates, HSC results | official 2026-27 notice title only; results only on Sohopathi | 2026-10-22 |
+| college | mirsarai-college | official phone/email (only acting principal's number from a Dainik Shiksha notice), postcode, campus area, teachers | official contact page not readable; other numbers only in directories | 2026-10-22 |
+| college | mirsarai-college | HSC seats, admission fees/dates, HSC results | seats only on Sohopathi; no board/news figures | 2026-10-22 |
