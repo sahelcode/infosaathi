@@ -173,6 +173,13 @@ section{padding:96px 0;position:relative;}
 .row-scroll{display:grid;grid-auto-flow:column;grid-auto-columns:270px;gap:18px;overflow-x:auto;padding:36px 4px 12px;scroll-snap-type:x mandatory;-ms-overflow-style:none;scrollbar-width:none;scroll-behavior:smooth;}
 
 .row-scroll::-webkit-scrollbar{display:none;}
+/* last card of every swipe row: leads to the full list */
+.row-scroll > .row-all{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:170px;border:1.5px dashed #cfe3d8;border-radius:20px;background:#fff;color:#15803d;font-size:15px;font-weight:600;text-align:center;}
+.row-all i{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #d9e7df;background:#f4fbf7;animation:rowNudge 1.6s ease-in-out infinite;}
+.row-all svg{width:18px;height:18px;}
+@keyframes rowNudge{0%,100%{transform:translateX(-3px);}50%{transform:translateX(5px);}}
+@media (prefers-reduced-motion:reduce){.row-all i{animation:none;}}
+
 
 .row-scroll > *{scroll-snap-align:start;}
 
@@ -2292,6 +2299,15 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   var G=[['A+','a-positive'],['A-','a-negative'],['B+','b-positive'],['B-','b-negative'],['O+','o-positive'],['O-','o-negative'],['AB+','ab-positive'],['AB-','ab-negative']];
   box.innerHTML=G.map(function(x){return '<a class="bp-g" href="/blood/'+x[1]+'/" aria-label="রক্তের গ্রুপ '+x[0]+'">'+x[0]+'</a>';}).join('');
 })();
+</script>
+<script>
+(function(){document.querySelectorAll('.row-scroll').forEach(function(row){
+  var sec=row.closest('section'); var a=sec&&sec.querySelector('.see-all'); var h=a&&a.getAttribute('href');
+  if(!h||h.charAt(0)!=='/') return;
+  var c=document.createElement('a'); c.className='row-all'; c.href=h;
+  c.innerHTML='<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><span>সব দেখুন</span>';
+  row.appendChild(c);
+});})();
 </script>
 <script src="/search.js" defer></script>
 </body>
