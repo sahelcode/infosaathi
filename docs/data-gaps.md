@@ -269,5 +269,5 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | government-majid-memorial-city-college | HSC seats, 2026-27 fees, HSC results, nationalisation year (1993 only on Wikipedia), principal | official notices not readable; seats/results only on aggregators | 2026-10-22 |
 | college | brindaban-government-college | labelled phones (Sahel's 0831-52723 not found anywhere), masters subjects, honours list (official count 14, list only from aggregators) | official sites not reachable from workspace | 2026-10-22 |
 | college | brindaban-government-college | HSC seats (only 2019 board list), students, teachers, 2026-27 fees, HSC results | sources conflict or are old/aggregators | 2026-10-22 |
-| college | moulvibazar-government-college | logo, cover (Sahel's cover carries a Gemini AI mark; images did not arrive as files) | asked Sahel | 2026-10-22 |
+| college | moulvibazar-government-college | cover (Sahel's cover carries a Gemini AI mark) | asked Sahel | 2026-10-22 |
 | college | moulvibazar-government-college | names of the 5 masters subjects, gender, HSC seats, students, teachers, fees, HSC results, phone labels | district portal gives counts only; official site not reachable | 2026-10-22 |
