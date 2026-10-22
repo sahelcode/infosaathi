@@ -117,7 +117,21 @@ const enAbout = `${d.name_en} is a ${sp.en} specialist in ${city.en}, Bangladesh
 // Title: both names + both specialty words, so Bangla and English searches both match. Description repeats the real chamber facts.
 const titleSp = spTitle.length <= 40 ? spTitle : sp.bn; // the card's own wording (e.g. "মেডিসিন ও হৃদরোগ বিশেষজ্ঞ") finds more searches
 const title = `${d.name} (${d.name_en}) – ${titleSp} | ${sp.en}, ${city.en}`;
-const description = `${d.name} (${d.name_en}), ${spTitle} (${sp.en}), ${city.bn}। চেম্বার: ${first.name}, ${first.address}${first.start ? ` · ${first.daysTxt} ${first.timeText}` : ''}। সিরিয়াল: ${phoneShow(firstSerial.number)}। Chamber, appointment & phone number.`;
+// Google cuts descriptions near 155 characters, so the parts are added in order of value and the rest is dropped.
+const descParts = [
+  `${d.name} (${d.name_en}), ${spTitle}, ${city.bn}।`,
+  `চেম্বার: ${first.name}`,
+  first.start ? `${first.daysTxt} ${first.timeText}।` : '',
+  `সিরিয়াল: ${phoneShow(firstSerial.number)}।`,
+  `ঠিকানা: ${first.address}`,
+];
+let description = '';
+for (const part of descParts) {
+  const next = (description + ' ' + part).trim();
+  if (next.length > 155) break;
+  description = next;
+}
+if (!description) description = `${d.name}, ${spTitle}, ${city.bn}। চেম্বার, সময় ও সিরিয়াল নম্বর।`;
 const crumbs = [
   ['হোম', '/'],
   ['ডাক্তার', '/doctors/'],

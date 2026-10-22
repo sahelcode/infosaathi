@@ -13,7 +13,7 @@ import MiniDoctor from '../../../components/MiniDoctor.astro';
 import HospitalCover from '../../../components/HospitalCover.astro';
 import { getDoctors, getHospitals, hospitalUrl, doctorsAt, type Hospital } from '../../../lib/data';
 import { CITIES, SPECIALTIES, FACILITIES, TEST_GROUPS } from '../../../lib/taxonomy';
-import { bn, taka, phoneShow, phoneIntl, daysText, timeRange, bnDate, bnMonth } from '../../../lib/format';
+import { bn, taka, phoneShow, phoneIntl, daysText, timeRange, bnDate, bnMonth, isoDay } from '../../../lib/format';
 import { SITE } from '../../../lib/site';
 import '../../../styles/hospital.css';
 import '../../../styles/uni.css';
@@ -105,6 +105,7 @@ const jsonld = {
       ...(photo && { image: new URL(photo.src, SITE).href }),
       address: { '@type': 'PostalAddress', streetAddress: h.address, addressLocality: city.en, addressCountry: 'BD' },
     },
+    { '@type': 'WebPage', url: SITE + path, name: title, description, inLanguage: 'bn', ...(h.verified && { dateModified: isoDay(h.verified) }) },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + u })) },
     { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   ],
