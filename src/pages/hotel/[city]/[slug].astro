@@ -141,11 +141,6 @@ import MiniThumb from '../../../components/MiniThumb.astro';
               <span class:list={['pf-badge', { src: d.verified_by === 'official' }]}><Icon name="clock" size={13} w={2.2} />{checked}</span>
             </div>
           </div>
-          <div class="pf-actions hp-actions un-actions no-logo">
-            <button class="pf-btn primary" type="button" data-sheet-open="numbers"><Icon name="phone" size={17} w={2.2} />কল করে বুক করুন</button>
-            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
-            <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
-          </div>
         </section>
 
         <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>
@@ -196,7 +191,11 @@ import MiniThumb from '../../../components/MiniThumb.astro';
           {nearby.length > 0 && (
             <ul class="ht-near">{nearby.map((n) => <li>{n.p ? <a href={placeUrl(n.p)}>{n.name}</a> : <span>{n.name}</span>}{n.time && <b>{n.time}</b>}</li>)}</ul>
           )}
-          <a class="pf-btn hp-mapbtn" href={map} target="_blank" rel="noopener"><Icon name="pin" />Google Maps-এ দেখুন</a>
+          <div class="pf-actions hp-actions un-actions un-actions-row">
+            <button class="pf-btn primary" type="button" data-sheet-open="numbers"><Icon name="phone" size={17} w={2.2} />কল করে বুক করুন</button>
+            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+            <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
+          </div>
         </section>
 
         <section class="pf-card" aria-labelledby="h-about"><h2 id="h-about">পরিচিতি</h2><p class="pf-text">{about}</p>

@@ -5,6 +5,7 @@ import { getImage } from 'astro:assets';
 import home from '../partials/home.html?raw';
 import { getDoctors, getHospitals, getUniversities, getInstitutions, doctorUrl, hospitalUrl, universityUrl, institutionUrl, instSection, doctorsAt, getPlaces, placeUrl, getHotels, hotelUrl, getScholarships, getJobs, getAiTools, getServices, serviceUrl, scholarshipUrl, jobUrl, aiToolUrl, isClosed, getNews, getRankings, getApps, newsUrl, isOwnNews } from '../lib/data';
 import { CITIES } from '../lib/taxonomy';
+import { ICONS } from '../lib/icons';
 import { SPECIALTIES, HOTEL_FACILITIES } from '../lib/taxonomy';
 import { ART, artKind } from '../lib/newsArt';
 import { bn, bnDate } from '../lib/format';
@@ -238,16 +239,11 @@ export const GET: APIRoute = async () => {
   html = swap(html, '<span class="eyebrow">Hotels</span><a href="#" class="see-all">', '<span class="eyebrow">Hotels</span><a href="/hotels/" class="see-all">');
   html = swap(html, '<span class="ix-rate">★ ${h.rating}</span></div>\n      </div>\n    </div>`).join(\'\'));', '</div>\n      </div>\n    </a>`).join(\'\'));');
   html = html.replaceAll('__CONTACT_EMAIL__', CONTACT_EMAIL);
-  // how many items each swipe row leaves out, for the last "সব দেখুন" card
-  const totals = {
-    doctorRow: doctors.length,
-    uniRow: (await getUniversities()).length,
-    hospitalRow: hospitals.length,
-    collegeRow: (await getInstitutions()).filter((i) => instSection(i) === 'college').length,
-    schoolRow: (await getInstitutions()).filter((i) => instSection(i) === 'school').length,
-    placeRow: (await getPlaces()).length,
-    hotelRow: (await getHotels()).length,
+  // little icons that float on the last "সব দেখুন" card of each swipe row
+  const rowIcons: Record<string, (keyof typeof ICONS)[]> = {
+    doctorRow: ['steth', 'heart', 'user'], uniRow: ['cap', 'build', 'award'], hospitalRow: ['build', 'ambulance', 'heart'],
+    collegeRow: ['cap', 'award', 'file'], schoolRow: ['cap', 'star', 'walk'], placeRow: ['mount', 'sun', 'beach'], hotelRow: ['bed', 'pool', 'star'],
   };
-  html = swap(html, 'var T=/*ROW_TOTALS*/{};', `var T=${JSON.stringify(totals)};`);
+  html = swap(html, 'var I=/*ROW_ICONS*/{};', `var I=${JSON.stringify(Object.fromEntries(Object.entries(rowIcons).map(([k, v]) => [k, v.map((n) => ICONS[n])])))};`);
   return new Response(html, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
 };

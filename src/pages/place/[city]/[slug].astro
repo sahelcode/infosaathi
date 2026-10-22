@@ -135,10 +135,6 @@ import MiniThumb from '../../../components/MiniThumb.astro';
             </div>
             <p class="pl-intro">{d.intro}</p>
           </div>
-          <div class="pf-actions pl-actions">
-            <a class="pf-btn primary" href={dir} target="_blank" rel="noopener"><Icon name="route" size={17} w={2.2} />Google Maps-এ পথ দেখুন</a>
-            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
-          </div>
         </section>
 
         <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>
@@ -203,6 +199,11 @@ import MiniThumb from '../../../components/MiniThumb.astro';
             <p class="pf-text">{d.stay}</p>
           </section>
         )}
+
+        <div class="pf-actions pl-end">
+            <a class="pf-btn" href={dir} target="_blank" rel="noopener"><Icon name="route" size={17} w={2.2} />Google Maps-এ পথ দেখুন</a>
+            <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+        </div>
 
         <Faq items={faq} />
         <Report placeholder="যেমন: বাস ভাড়া বেড়েছে" note="ভাড়া, ফি ও সময় মৌসুমভেদে বদলায়। যাওয়ার আগে স্থানীয়ভাবে নিশ্চিত হয়ে নিন।">
