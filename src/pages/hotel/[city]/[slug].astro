@@ -28,6 +28,8 @@ const KIND = d.kind === 'resort' ? 'রিসোর্ট' : 'হোটেল';
 const photos = d.photos;
 const map = `https://maps.google.com/?q=${encodeURIComponent(d.map_query)}`;
 const mainNum = d.numbers[0];
+// Photo badge: the real Google rating when we have it, otherwise the default 4.5 the owner chose.
+const badgeRating = d.google?.value ?? d.rating?.value ?? 4.5;
 const checked = d.verified_by === 'phone' ? `ফোনে যাচাই: ${bnDate(d.verified)}` : `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
 const minPrice = d.rooms.length ? Math.min(...d.rooms.map((r) => r.price)) : undefined;
 const plus = d.price_plus ? '++' : '';
@@ -98,7 +100,7 @@ import MiniThumb from '../../../components/MiniThumb.astro';
           {photos.length > 0 ? (
             <>
               <div class="pl-gal" data-gal tabindex="0" aria-roledescription="carousel" aria-label={`${d.name}-এর ছবি`}>
-                {d.rating && <span class="ht-badge"><Icon name="star" size={13} w={2} />{bn(d.rating.value)}</span>}
+                <span class="ht-badge"><Icon name="star" size={13} w={2} />{bn(badgeRating)}</span>
                 {photos.length > 1 && <div class="pl-bars" aria-hidden="true">{photos.map(() => <span><i></i></span>)}</div>}
                 {photos.map((p, i) => (
                   <figure class="pl-slide" aria-roledescription="slide" aria-label={`${bn(i + 1)} / ${bn(photos.length)}`}>
@@ -124,7 +126,7 @@ import MiniThumb from '../../../components/MiniThumb.astro';
               )}
             </>
           ) : (
-            <div class="pl-gal art">{d.rating && <span class="ht-badge"><Icon name="star" size={13} w={2} />{bn(d.rating.value)}</span>}<svg viewBox="0 0 160 80" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><rect width="160" height="80" fill="#DBEAFE" /><rect y="66" width="160" height="14" fill="#EFF6FF" />
+            <div class="pl-gal art"><span class="ht-badge"><Icon name="star" size={13} w={2} />{bn(badgeRating)}</span><svg viewBox="0 0 160 80" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><rect width="160" height="80" fill="#DBEAFE" /><rect y="66" width="160" height="14" fill="#EFF6FF" />
               <rect x="30" y="40" width="26" height="28" rx="2" fill="#EFF6FF" stroke="#3B6FE0" stroke-width="2" /><rect x="104" y="40" width="26" height="28" rx="2" fill="#EFF6FF" stroke="#3B6FE0" stroke-width="2" />
               <rect x="56" y="12" width="48" height="56" rx="2" fill="#EFF6FF" stroke="#3B6FE0" stroke-width="2" />
               {[0, 1, 2, 3].flatMap((r) => [0, 1, 2].map((c) => <rect x={62 + c * 13} y={20 + r * 11} width="8" height="6" rx="1" fill="#3B6FE0" opacity={(r * 3 + c) % 4 ? '.45' : '.9'} />))}
@@ -222,6 +224,7 @@ import MiniThumb from '../../../components/MiniThumb.astro';
           )}
         </Report>
         <ShareRow />
+        {d.google && <p class="ht-google">Google Maps রেটিং: {bn(d.google.value)}{d.google.count ? ` (${bn(d.google.count)}টি রিভিউ)` : ''}{d.google.date ? `, ${bnDate(d.google.date)}-এর হিসাব` : ''}</p>}
         <nav class="pf-tags hp-tags" aria-label="সম্পর্কিত"><a href={`/hotels/${d.city}/`}>{city.of} হোটেল</a><a href="/hotels/">বাংলাদেশের হোটেল</a></nav>
         <Ad />
 
@@ -245,7 +248,7 @@ import MiniThumb from '../../../components/MiniThumb.astro';
             <b class="pf-sum-h">{d.short ?? d.name_bn}</b>
             <span class="pf-sum-l"><Icon name="wallet" size={14} w={2.2} />{minPrice ? `ভাড়া ${taka(minPrice)}${plus} থেকে` : 'ভাড়া ফোনে জেনে নিন'}</span>
             {d.checkin && <span class="pf-sum-l"><Icon name="clock" size={14} w={2.2} />চেক-ইন: {d.checkin}</span>}
-            <div class="pf-sheet-grp">{d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}</div>
+            <div class="pf-sheet-grp">{d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} nocall />)}</div>
           </div>
           <Ad side />
         </div>

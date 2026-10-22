@@ -175,6 +175,9 @@ section{padding:96px 0;position:relative;}
 .row-scroll::-webkit-scrollbar{display:none;}
 /* doctor card: two light buttons, whole card opens the profile */
 .p-card[data-url]{cursor:pointer;}
+.p-card[data-url]{display:flex;flex-direction:column;}
+.p-card[data-url] .p-body{flex:1;display:flex;flex-direction:column;}
+.p-card[data-url] .p-btns{margin-top:auto;padding-top:14px;}
 .p-btns{display:flex;justify-content:center;gap:8px;margin-top:14px;}
 .p-btns .p-view{margin-top:0;padding:8px 14px;background:#fff;color:#0f2a1d;border:1px solid #d9e7df;font-weight:600;}
 .p-btns .p-view:hover{background:#f7fcf9;border-color:#b7dcc6;}

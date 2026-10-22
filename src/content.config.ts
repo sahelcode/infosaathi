@@ -335,6 +335,7 @@ const hotels = defineCollection({
         address: z.string(),
         stars: z.number().int().min(1).max(5).optional(), // only if the hotel itself states it
         rating: z.object({ value: z.number().min(1).max(5), count: z.number().int().optional(), source: z.string().optional() }).optional(), // a real rating with its source, e.g. { value: 4.5, count: 1200, source: 'Google Maps' }
+        google: z.object({ value: z.number().min(1).max(5), count: z.number().int().optional(), date: z.coerce.date().optional() }).optional(), // the Google Maps rating, copied exactly; shown small at the end of the page and on the photo badge
         web: z.url().optional(),
         map_query: z.string(),
         geo: z.object({ lat: z.number(), lng: z.number() }).optional(),

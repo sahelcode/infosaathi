@@ -36,3 +36,5 @@
 .ht-badge svg{color:#f59e0b;fill:#f59e0b;}
 .pl-gal.art .ht-badge{top:12px;}
 .ht-badge svg{position:static!important;width:13px!important;height:13px!important;flex:0 0 auto;}
+.ht-google{margin-top:10px;text-align:center;font-size:11.5px;color:#94a3b8;}
+@media (min-width:768px){.pf-hero-body .hp-addr{justify-content:flex-start;text-align:left;}}
