@@ -232,3 +232,8 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | joypurhat-girls-cadet-college | phone numbers (confirm), teacher count, version/medium | official site shows no phone; Sahel's numbers not found online (5 searches); only house tutors mentioned | 2026-10-22 |
 | college | joypurhat-girls-cadet-college | HSC 2025, SSC 2025 results with numbers | news headlines only, no counts | 2026-10-22 |
 | college | joypurhat-girls-cadet-college | current principal | three different names (official site outdated) | 2026-10-22 |
+| college | rajshahi-government-city-college | affiliation (NU or Rajshahi University) | Wikipedia says NU; Apr 2024 ministry order placed it under RU (Daily Star, Dhaka Post); implementation not confirmed | 2026-10-22 |
+| college | rajshahi-government-city-college | gender, campus area, students, teachers | only Wikipedia (6,500+ students); site not reachable from workspace | 2026-10-22 |
+| college | rajshahi-government-city-college | honours/masters subject list, HSC seats | official departments page lists 15 departments, honours not confirmed; seats only on Wikipedia (undated) | 2026-10-22 |
+| college | rajshahi-government-city-college | principal's phone (digits unclear), Sahel's number +880-7247-76200 not found anywhere | official contact page snippets | 2026-10-22 |
+| college | rajshahi-government-city-college | admission fees/dates 2026-27, HSC results | official notice titles only; board-wide results only | 2026-10-22 |
