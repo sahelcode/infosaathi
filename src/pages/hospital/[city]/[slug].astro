@@ -110,6 +110,7 @@ const jsonld = {
     { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   ],
 };
+import MiniThumb from '../../../components/MiniThumb.astro';
 ---
 <Base title={title} description={description} path={path} ogImage={photo?.src} jsonld={jsonld} draft={h.draft} noindex={h.name_en.startsWith('Example')}>
   <main class="pf un-page">
@@ -235,7 +236,7 @@ const jsonld = {
             <div class="pf-block-head"><h2 id="h-near">{city.of} অন্য হাসপাতাল</h2><a class="see-all" href={`/hospitals/${h.city}/`}>See All</a></div>
             <div class="pf-minis">
               {near.map((x) => (
-                <a class="pf-mini" href={hospitalUrl(x)}><span class="hp-near-i"><Icon name="build" size={20} w={1.8} /></span>
+                <a class="pf-mini" href={hospitalUrl(x)}><MiniThumb d={x.data} icon="build" />
                   <span class="pf-mini-txt"><b>{x.data.name}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{x.data.address}</span></span>
                   <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
               ))}

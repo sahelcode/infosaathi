@@ -1,0 +1,13 @@
+---
+// Thumb for list rows and "related" rows: logo if the item has one, else its photo, else the section icon.
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import type { IconName } from '../lib/icons';
+interface Props { d: { logo?: any; photo?: any; photos?: { src: any }[] }; icon: IconName; blue?: boolean }
+const { d, icon } = Astro.props;
+const logo = d.logo;
+const photo = d.photo ?? d.photos?.[0]?.src;
+---
+{logo ? <span class="hp-near-i un-rel-i has-logo"><Image src={logo} alt="" width={88} height={88} loading="lazy" /></span>
+ : photo ? <span class="hp-near-i un-rel-i has-photo"><Image src={photo} alt="" width={104} height={104} loading="lazy" /></span>
+ : <span class="hp-near-i un-rel-i"><Icon name={icon} size={20} w={1.8} /></span>}

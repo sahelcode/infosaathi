@@ -14,3 +14,7 @@
 @media (min-width:768px){.ed-mono{font-size:30px;}}
 .hp-cover.un-cover{background:linear-gradient(120deg,#dcfce7,#ccfbf1 60%,#e0f2fe);}
 .pf-badge.src{background:#eff6ff;color:#1d4ed8;}
+
+.pf-minis .pf-mini.pg-off{display:none;}
+.pf-more{display:flex;align-items:center;justify-content:center;width:100%;height:46px;margin-top:12px;border-radius:14px;border:1px solid #d9e7df;background:#fff;font:inherit;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;}
+.pf-more[hidden]{display:none;}
