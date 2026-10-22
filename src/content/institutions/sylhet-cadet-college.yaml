@@ -10,12 +10,13 @@ city: sylhet
 address: বিমানবন্দর সড়ক, সিলেট-৩১০১
 web: https://scc.army.mil.bd
 board: সিলেট শিক্ষা বোর্ড
+affiliation: প্রতিরক্ষা মন্ত্রণালয়
 gender: বালক
 levels: [৭ম – ১২শ শ্রেণি]
 logo: ./images/sylhet-cadet-college-logo.png
 photo: ./images/sylhet-cadet-college.jpg
 students: "৩০০+"
-verified: 2026-10-21
+verified: 2026-10-22
 verified_by: official
 
 numbers:
