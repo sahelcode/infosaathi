@@ -1,0 +1,42 @@
+draft: false
+kind: college
+name: Fatikchhari Government College
+name_bn: ফটিকছড়ি সরকারি কলেজ
+type: সরকারি
+est: 1970
+eiin: "104389"
+city: chattogram
+address: বিবিরহাট, উত্তর ধুরুং, ফটিকছড়ি, চট্টগ্রাম-৪৩৫০
+web: https://fgc.edu.bd
+board: চট্টগ্রাম শিক্ষা বোর্ড
+affiliation: জাতীয় বিশ্ববিদ্যালয়
+gender: সহশিক্ষা
+levels: [একাদশ–দ্বাদশ শ্রেণি, ডিগ্রি (পাস), অনার্স]
+streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+logo: ./images/fatikchhari-government-college-logo.png
+photo: ./images/fatikchhari-government-college.jpg
+verified: 2026-10-22
+verified_by: official
+
+numbers:
+  - { label: যোগাযোগ (ফেসবুক পেজ), number: "01852446166" }
+emails:
+  - { label: যোগাযোগ (ফেসবুক পেজ), email: fcbd.net@gmail.com }
+
+subjects:
+  - { faculty: ব্যবসায় শিক্ষা, name: হিসাববিজ্ঞান, name_en: Accounting }
+  - { faculty: ব্যবসায় শিক্ষা, name: ব্যবস্থাপনা, name_en: Management }
+
+about: ১৯৭০ সালে ফটিকছড়ির বিবিরহাটে উচ্চ মাধ্যমিক কলেজ হিসেবে কলেজটি প্রতিষ্ঠিত হয়; পরে ডিগ্রি (পাস) ও অনার্স চালু হয়। এখন এখানে উচ্চ মাধ্যমিক, ডিগ্রি (পাস) এবং হিসাববিজ্ঞান ও ব্যবস্থাপনায় অনার্স পড়ানো হয়।
+faq:
+  - q: ফটিকছড়ি সরকারি কলেজের জাতীয় বিশ্ববিদ্যালয় কোড কত?
+    a: জাতীয় বিশ্ববিদ্যালয়ে কলেজের কোড ৪৩৪১।
+  - q: ফটিকছড়ি সরকারি কলেজে অনার্সে কোন কোন বিষয় আছে?
+    a: অনার্সে ২টি বিষয় আছে — হিসাববিজ্ঞান ও ব্যবস্থাপনা।
+  - q: ডিগ্রি (পাস)-এ কোন কোন কোর্স পড়ানো হয়?
+    a: বিএসসি ও বিবিএস-এর ফল কলেজের ওয়েবসাইটে প্রকাশিত হয়।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://fgc.edu.bd/ }
+  - { title: চট্টগ্রাম জেলা প্রশাসন – কলেজের তালিকা, url: https://chittagong.gov.bd/pages/static-pages/college-13oa5i-6a5c7001e526284e210e595e }
+old_urls: [/2025/08/fatikchhari-government-college.html]
