@@ -225,3 +225,7 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | chittagong-government-womens-college | admission fees and dates 2026-27 | official notice titles only | 2026-10-22 |
 | college | chittagong-government-womens-college | HSC results | Chattogram board, news bn/en; only aggregator figures, not used | 2026-10-22 |
 | college | chittagong-government-womens-college | year made government | 1968 only on Wikipedia | 2026-10-22 |
+| school | bogra-cantonment-public-school-and-college | gender, shifts, campus area | official site (snippets only; not reachable from workspace); only Wikipedia/directories (14–21 acres conflict) | 2026-10-22 |
+| school | bogra-cantonment-public-school-and-college | students, teachers count | only Wikipedia (6,722 / 188), not official | 2026-10-22 |
+| school | bogra-cantonment-public-school-and-college | class seats, HSC seats (1,050 only in one local news), admission 2027 / HSC 2026-27 fees, dates, eligibility | official notice titles only, boguralive | 2026-10-22 |
+| school | bogra-cantonment-public-school-and-college | HSC 2024/2025 and SSC 2026 results | only Wikipedia/aggregators; SSC 2026 news figures unclear | 2026-10-22 |

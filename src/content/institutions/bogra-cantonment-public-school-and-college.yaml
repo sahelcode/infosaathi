@@ -1,0 +1,46 @@
+draft: false
+kind: school_college
+name: Bogra Cantonment Public School and College
+name_bn: বগুড়া ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ
+short: BCPSC
+type: বেসরকারি
+est: 1979
+eiin: "119251"
+city: bogura
+address: মাজহিরা সেনানিবাস, ঢাকা–রংপুর মহাসড়ক, বগুড়া-৫৮০০
+web: https://www.bcpsc.edu.bd
+board: রাজশাহী শিক্ষা বোর্ড
+levels: [নার্সারি – ৫ম শ্রেণি, ৬ষ্ঠ – ১০ম শ্রেণি, একাদশ – দ্বাদশ শ্রেণি]
+versions: বাংলা ও ইংরেজি ভার্সন
+streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+logo: ./images/bogra-cantonment-public-school-and-college-logo.png
+photo: ./images/bogra-cantonment-public-school-and-college.jpg
+verified: 2026-10-22
+verified_by: official
+
+numbers:
+  - { label: অধ্যক্ষের পিএ, number: "02589113170" }
+  - { label: প্রধান সহকারী (হেড ক্লার্ক), number: "01769113177" }
+  - { label: শিক্ষা শাখা কর্মকর্তা, number: "01309119251" }
+emails:
+  - { label: অফিস, email: bcpsc79@yahoo.com }
+  - { label: ওয়েবসাইট, email: webbcpsc@gmail.com }
+
+results:
+  - { exam: SSC, year: 2025, pass_rate: 100, gpa5: 342, examinees: 371 }
+
+about: ১৯৭৯ সালে বগুড়ার মাজহিরা সেনানিবাসে প্রতিষ্ঠানটি প্রতিষ্ঠিত হয়। এটি বাংলাদেশ সেনাবাহিনী পরিচালিত; ১১ পদাতিক ডিভিশনের জিওসি ও বগুড়া এরিয়া কমান্ডার এর প্রধান পৃষ্ঠপোষক। এখানে নার্সারি থেকে দ্বাদশ শ্রেণি পর্যন্ত বাংলা ও ইংরেজি ভার্সনে পড়ানো হয়।
+faq:
+  - q: বগুড়া ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ কারা পরিচালনা করে?
+    a: বাংলাদেশ সেনাবাহিনী। ১১ পদাতিক ডিভিশনের জিওসি ও বগুড়া এরিয়া কমান্ডার এর প্রধান পৃষ্ঠপোষক।
+  - q: এখানে কি ইংরেজি ভার্সন আছে?
+    a: হ্যাঁ। বাংলা ও ইংরেজি দুই ভার্সনেই ভর্তি নেওয়া হয়।
+  - q: বগুড়া ক্যান্টনমেন্ট পাবলিক স্কুলের এসএসসি ২০২৫ ফলাফল কেমন?
+    a: এসএসসি ২০২৫-এ ৩৭১ জন পরীক্ষার্থীর সবাই পাস করেছে, জিপিএ-৫ পেয়েছে ৩৪২ জন।
+  - q: অফিস কখন খোলা থাকে?
+    a: সকাল ৮টা থেকে বিকেল ৩টা পর্যন্ত।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট – যোগাযোগ, url: https://www.bcpsc.edu.bd/contact }
+  - { title: ঢাকা ট্রিবিউন – রাজশাহী বোর্ডের এসএসসি ২০২৫ ফল, url: https://www.dhakatribune.com/bangladesh/nation/386070/bogra-tops-gpa-5-and-pass-rate-in-rajshahi-board }
+old_urls: [/2025/08/bogra-cantonment-public-school-college.html]
