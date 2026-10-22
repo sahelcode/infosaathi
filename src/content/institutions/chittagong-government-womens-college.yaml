@@ -1,0 +1,52 @@
+draft: false
+kind: college
+name: Chittagong Government Women's College
+name_bn: চট্টগ্রাম সরকারি মহিলা কলেজ
+type: সরকারি
+est: 1957
+eiin: "104710"
+city: chattogram
+address: নাছিরাবাদ, সিডিএ অ্যাভিনিউ, চট্টগ্রাম-৪০০০
+web: https://pro.cgwc.edu.bd
+board: চট্টগ্রাম শিক্ষা বোর্ড
+affiliation: জাতীয় বিশ্ববিদ্যালয়
+gender: বালিকা
+levels: [একাদশ–দ্বাদশ শ্রেণি, ডিগ্রি (পাস), অনার্স, মাস্টার্স]
+streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+logo: ./images/chittagong-government-womens-college-logo.png
+photo: ./images/chittagong-government-womens-college.jpg
+campus: প্রায় ২০ একর
+students: "প্রায় ১৩,০০০"
+teachers: "৭৩"
+verified: 2026-10-22
+verified_by: official
+
+numbers:
+  - { label: যোগাযোগ, number: "01830173693" }
+
+subjects:
+  - { faculty: কলা, name: বাংলা, name_en: Bangla }
+  - { faculty: কলা, name: ইংরেজি, name_en: English }
+  - { faculty: কলা, name: দর্শন, name_en: Philosophy }
+  - { faculty: কলা, name: ইসলামের ইতিহাস ও সংস্কৃতি, name_en: Islamic History and Culture }
+  - { faculty: সামাজিক বিজ্ঞান, name: অর্থনীতি, name_en: Economics }
+  - { faculty: সামাজিক বিজ্ঞান, name: রাষ্ট্রবিজ্ঞান, name_en: Political Science }
+  - { faculty: সামাজিক বিজ্ঞান, name: সমাজবিজ্ঞান, name_en: Sociology }
+  - { faculty: সামাজিক বিজ্ঞান, name: সমাজকর্ম, name_en: Social Work }
+  - { faculty: জীব ও ভূবিজ্ঞান, name: মনোবিজ্ঞান, name_en: Psychology }
+
+about: ১৯৫৭ সালে আন্দরকিল্লা শাহী জামে মসজিদের পাশে ভিক্টোরিয়া ইসলামিক হোস্টেলে ১৫০ জন ছাত্রী ও ৮ জন শিক্ষক নিয়ে কলেজটির যাত্রা শুরু হয়। ১৯৬১–৬২ সালে কলেজ খুলশীর পাহাড়ে প্রায় ২০ একর জায়গায় সরে আসে। এখন এখানে উচ্চ মাধ্যমিক, ডিগ্রি (পাস), অনার্স ও মাস্টার্স পড়ানো হয়।
+faq:
+  - q: চট্টগ্রাম সরকারি মহিলা কলেজে অনার্সে কোন কোন বিষয় আছে?
+    a: অনার্সে ৯টি বিষয় আছে — বাংলা, ইংরেজি, দর্শন, ইসলামের ইতিহাস ও সংস্কৃতি, অর্থনীতি, রাষ্ট্রবিজ্ঞান, সমাজবিজ্ঞান, সমাজকর্ম ও মনোবিজ্ঞান।
+  - q: চট্টগ্রাম সরকারি মহিলা কলেজে কতজন শিক্ষার্থী পড়ে?
+    a: কলেজের ওয়েবসাইট অনুযায়ী প্রায় ১৩,০০০ শিক্ষার্থী পড়ে, শিক্ষক ৭৩ জন।
+  - q: চট্টগ্রাম সরকারি মহিলা কলেজে কি ছেলেরা পড়তে পারে?
+    a: না। এটি শুধু মেয়েদের কলেজ।
+  - q: চট্টগ্রাম সরকারি মহিলা কলেজের জাতীয় বিশ্ববিদ্যালয় কোড কত?
+    a: জাতীয় বিশ্ববিদ্যালয়ে কলেজের কোড ৪৩০২।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://pro.cgwc.edu.bd/ }
+  - { title: Eduportalbd – EIIN 104710, url: "https://locator.eduportalbd.com/institutes/?ins=104710" }
+old_urls: [/2025/08/chittagong-govt-womens-college.html]
