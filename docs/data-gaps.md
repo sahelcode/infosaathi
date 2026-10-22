@@ -251,7 +251,6 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | chattogram-government-city-college | students (16,000 vs 22,000 on Wikipedia), teachers, HSC seats per stream (2,300 total only on shikshabarta) | official site not reachable | 2026-10-22 |
 | college | chattogram-government-city-college | HSC results, admission fees | only aggregator figures (93.81% 2025) | 2026-10-22 |
 | college | chattogram-government-city-college | current principal | Wikipedia only | 2026-10-22 |
-| college | government-sundarban-adarsha-college-khulna | logo | Sahel's image is the Rover Scout group logo; college's own logo needed | 2026-10-22 |
 | college | government-sundarban-adarsha-college-khulna | honours subject list (department pages exist; third-party list of 14 conflicts), masters, postcode | official site not reachable from workspace; NU seat plan not found | 2026-10-22 |
 | college | government-sundarban-adarsha-college-khulna | students, teachers, HSC seats, admission fees/dates, HSC results | official notice titles only; seats only on Sohopathi | 2026-10-22 |
 | college | government-sundarban-adarsha-college-khulna | label of main phone, current principal | official homepage snippet | 2026-10-22 |
