@@ -258,3 +258,8 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | hathazari-government-college | HSC seats, admission fees/dates, HSC results | official 2026-27 notice title only; results only on Sohopathi | 2026-10-22 |
 | college | mirsarai-college | official phone/email (only acting principal's number from a Dainik Shiksha notice), postcode, campus area, teachers | official contact page not readable; other numbers only in directories | 2026-10-22 |
 | college | mirsarai-college | HSC seats, admission fees/dates, HSC results | seats only on Sohopathi; no board/news figures | 2026-10-22 |
+| college | fatikchhari-government-college | official phone/email (only Facebook page number used), nationalisation year, campus area | official contact page not readable; 25 searches bn/en | 2026-10-22 |
+| college | fatikchhari-government-college | HSC seats (1,000 total only in one truncated snippet), students, teachers, admission fees, HSC results | Prothom Alo seat list not readable; no board/news figures | 2026-10-22 |
+| college | rangpur-city-college | cover photo (Sahel's photo may show Rangpur Govt City College), NU/MPO status, students, teachers, seats, fees, HSC results | EIIN 127495 pages; all other search hits belong to Rangpur Govt City College (EIIN 133547) | 2026-10-22 |
+| school | baf-shaheen-college-dhaka | office phone (only unofficial Google Sites page), campus area, chairman, students/teachers (Wikipedia 11,898 / 355), quota sizes | official site not reachable from workspace | 2026-10-22 |
+| school | baf-shaheen-college-dhaka | SSC/HSC results | no board or news figures for this institution | 2026-10-22 |
