@@ -220,7 +220,6 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | sylhet-government-college | students, teachers count, campus area | only undated Wikipedia figures (5,026 students, 34 acres), not used | 2026-10-22 |
 | college | sylhet-government-college | official email, labels of extra phones, current admission fees and dates | official homepage snippet masks the email; no 2026-27 notice found | 2026-10-22 |
 | college | sylhet-government-college | HSC results | Sylhet board, news bn/en; only board-wide figures | 2026-10-22 |
-| college | rajshahi-cadet-college | logo, cover photo | images did not arrive as files in the session; asked Sahel to resend | 2026-10-22 |
 | college | chittagong-government-womens-college | HSC seats (current), honours seats, which subjects have masters, whether History/Physics have honours | official seat page (old site, partial), notices, NU, 3+ searches bn/en; site not reachable from workspace | 2026-10-22 |
 | college | chittagong-government-womens-college | official email, phone labels | contact page email garbled in snippet (underscore in gmail); other numbers only from directories | 2026-10-22 |
 | college | chittagong-government-womens-college | admission fees and dates 2026-27 | official notice titles only | 2026-10-22 |
