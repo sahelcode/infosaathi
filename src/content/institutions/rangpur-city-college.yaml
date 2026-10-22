@@ -1,0 +1,32 @@
+draft: false
+kind: college
+name: Rangpur City College
+name_bn: রংপুর সিটি কলেজ
+type: বেসরকারি
+est: 2000
+eiin: "127495"
+city: rangpur
+address: আশরতপুর, পার্ক মোড় সংলগ্ন, রংপুর-৫৪০০
+web: https://rangpurcitycollege.edu.bd
+board: দিনাজপুর শিক্ষা বোর্ড
+levels: [একাদশ–দ্বাদশ শ্রেণি]
+streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+logo: ./images/rangpur-city-college-logo.png
+verified: 2026-10-22
+verified_by: official
+
+numbers:
+  - { label: টেলিফোন, number: "052152001" }
+  - { label: মোবাইল, number: "01731964947" }
+
+about: ২০০০ সালে রংপুর শহরের আশরতপুরে কলেজটি প্রতিষ্ঠিত হয়। এটি বেসরকারি উচ্চ মাধ্যমিক কলেজ; এখানে একাদশ–দ্বাদশ শ্রেণিতে বিজ্ঞান, মানবিক ও ব্যবসায় শিক্ষা বিভাগে পড়ানো হয়। এটি রংপুর সরকারি সিটি কলেজ থেকে আলাদা প্রতিষ্ঠান।
+faq:
+  - q: রংপুর সিটি কলেজ আর রংপুর সরকারি সিটি কলেজ কি একই?
+    a: না। রংপুর সিটি কলেজ আশরতপুরের বেসরকারি কলেজ (EIIN ১২৭৪৯৫, প্রতিষ্ঠা ২০০০)। রংপুর সরকারি সিটি কলেজ আলাদা একটি সরকারি কলেজ।
+  - q: রংপুর সিটি কলেজে কি অনার্স আছে?
+    a: না। এখানে শুধু একাদশ–দ্বাদশ শ্রেণি (এইচএসসি) পড়ানো হয়।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://rangpurcitycollege.edu.bd/ }
+  - { title: Eduportalbd – EIIN 127495, url: "https://locator.eduportalbd.com/institutes/?ins=127495" }
+old_urls: [/2025/09/rangpur-city-college.html]
