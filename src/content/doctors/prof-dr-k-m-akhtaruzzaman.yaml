@@ -8,7 +8,7 @@ banner_month: 2026-10-01
 degrees: ["MBBS", "DCM", "MCPS (Medicine)", "MD (Cardiology)"]
 designation: "অধ্যাপক ও বিভাগীয় প্রধান (কার্ডিওলজি), সিলেট উইমেন্স মেডিকেল কলেজ ও হাসপাতাল"
 city: sylhet
-verified: 2026-10-21
+verified: 2026-10-23
 verified_by: phone
 
 chambers:
@@ -17,6 +17,7 @@ chambers:
     days: [শনি, রবি, সোম, মঙ্গল, বুধ, বৃহস্পতি]
     start: "18:00"
     end: "22:00"
+    fee: { visit: 1000 }
     serials:
       - label: "সিরিয়াল"
         number: "01714000770"

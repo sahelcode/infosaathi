@@ -72,7 +72,7 @@ const about =
   `${d.name} ${city.of} একজন ${spTitle}।${d.designation ? ` ${d.designation}।` : ''} বর্তমানে ${chambers.map((c) => c.name).join(' ও ')}-এ রোগী দেখেন।`;
 
 const feeText = (f: NonNullable<(typeof chambers)[number]['fee']>) =>
-  [f.new && `নতুন রোগী ${taka(f.new)}`, f.old && `পুরনো রোগী ${taka(f.old)}`, f.report && `রিপোর্ট দেখাতে ${taka(f.report)}`].filter(Boolean).join(', ');
+  [f.visit && `ভিজিট ${taka(f.visit)}`, f.new && `নতুন রোগী ${taka(f.new)}`, f.old && `পুরনো রোগী ${taka(f.old)}`, f.report && `রিপোর্ট দেখাতে ${taka(f.report)}`].filter(Boolean).join(', ');
 const feeChamber = chambers.find((c) => c.fee);
 
 const faq = [
@@ -153,7 +153,7 @@ const jsonld = {
       openingHoursSpecification: chambers.filter((c) => c.days.length && c.start && c.end).map((c) => ({
         '@type': 'OpeningHoursSpecification', dayOfWeek: c.days.map((x) => DAY_EN[x]), opens: c.start, closes: c.end,
       })),
-      ...(feeChamber?.fee?.new && { priceRange: `BDT ${feeChamber.fee.new}` }),
+      ...((feeChamber?.fee?.visit ?? feeChamber?.fee?.new) && { priceRange: `BDT ${feeChamber?.fee?.visit ?? feeChamber?.fee?.new}` }),
       isAccessibleForFree: false,
     },
     { '@type': 'WebPage', '@id': SITE + path, url: SITE + path, name: title, description, inLanguage: ['bn', 'en'], about: { '@id': SITE + path + '#doctor' },
@@ -235,6 +235,7 @@ const jsonld = {
                 <div><dt><Icon name="clock" size={15} />সময়</dt><dd class="pf-v">{c.timeText}</dd></div>
                 <div><dt><Icon name="cash" size={15} />ফি</dt>{c.fee ? (
                   <dd class="dx-fee">
+                    {c.fee.visit && <span>ভিজিট <b>{taka(c.fee.visit)}</b></span>}
                     {c.fee.new && <span>নতুন <b>{taka(c.fee.new)}</b></span>}
                     {c.fee.old && <span>পুরনো <b>{taka(c.fee.old)}</b></span>}
                     {c.fee.report && <span>রিপোর্ট <b>{taka(c.fee.report)}</b></span>}
