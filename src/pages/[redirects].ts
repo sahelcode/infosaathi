@@ -28,6 +28,7 @@ export const GET: APIRoute = async () => {
   }
   // Fallbacks last, and never for a link that already has its own page above.
   const used = new Set(lines.map((l) => l.split(' ')[0]));
-  for (const [from, to] of FALLBACK_REDIRECTS) if (!used.has(from)) lines.push(`${from} ${to} 301`);
+  // Cloudflare rejects the whole file if a source has a fragment (#), query (?) or placeholder (: or *).
+  for (const [from, to] of FALLBACK_REDIRECTS) if (!used.has(from) && !/[#?:*]/.test(from)) lines.push(`${from} ${to} 301`);
   return new Response(lines.join('\n') + '\n', { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 };
