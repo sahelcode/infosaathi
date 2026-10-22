@@ -212,3 +212,13 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | mc-college-sylhet | campus area | official history ~150 acres (1920s), report/risingbd 144, Prothom Alo/Wikipedia 124; left out | 2026-10-21 |
 | college | mc-college-sylhet | honours faculty grouping | official site does not group subjects; NU faculty names used (Botany, Zoology, Psychology under জীব ও ভূবিজ্ঞান) | 2026-10-21 |
 | college | mc-college-sylhet | principal's phone number | official contact, teachers and home pages | 2026-10-21 |
+| college | rajshahi-cadet-college | HSC streams, cadet count, teacher count | official about/academics pages (snippets only; site not reachable from workspace), 3+ searches bn/en | 2026-10-22 |
+| college | rajshahi-cadet-college | HSC 2024/2025 and SSC 2025 results for this college | Rajshahi board, news bn/en; only all-cadet-college totals | 2026-10-22 |
+| college | rajshahi-cadet-college | exact rename date (plaque says January 1972), postcode, landline | official site says only "soon after independence"; 6271 only on Wikipedia; landline 025888-79075 linked to ORCA Dhaka office | 2026-10-22 |
+| college | rajshahi-cadet-college | 2027 application fee, exam date | official admission site not reachable; only last year's fee in news | 2026-10-22 |
+| college | sylhet-government-college | masters / preliminary masters (unconfirmed), honours seats per subject | official "Masters Program" page lists generic departments; no masters notice found; site not reachable from workspace | 2026-10-22 |
+| college | sylhet-government-college | logo, cover photo | images did not arrive as files in the session; asked Sahel to resend | 2026-10-22 |
+| college | sylhet-government-college | students, teachers count, campus area | only undated Wikipedia figures (5,026 students, 34 acres), not used | 2026-10-22 |
+| college | sylhet-government-college | official email, labels of extra phones, current admission fees and dates | official homepage snippet masks the email; no 2026-27 notice found | 2026-10-22 |
+| college | sylhet-government-college | HSC results | Sylhet board, news bn/en; only board-wide figures | 2026-10-22 |
+| college | rajshahi-cadet-college | logo, cover photo | images did not arrive as files in the session; asked Sahel to resend | 2026-10-22 |
