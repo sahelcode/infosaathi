@@ -220,7 +220,6 @@ export const GET: APIRoute = async () => {
   html = swap(html, '<span class="eyebrow">Universities</span><a href="#" class="see-all">', '<span class="eyebrow">Universities</span><a href="/universities/" class="see-all">');
   html = swapArray(html, 'hospitalNames', hospRows);
   // cards become links to the real pages
-  html = swap(html, '<a href="#" class="p-view">প্রোফাইল দেখুন</a>', '<a href="${d.url}" class="p-view">প্রোফাইল দেখুন</a>');
   html = swap(
     html,
     `<div class="org-tags"><span>\${h.beds}</span><span>\${h.doctors}</span><span class="hosp-rating">★ \${h.rating}</span></div></div>
@@ -239,5 +238,16 @@ export const GET: APIRoute = async () => {
   html = swap(html, '<span class="eyebrow">Hotels</span><a href="#" class="see-all">', '<span class="eyebrow">Hotels</span><a href="/hotels/" class="see-all">');
   html = swap(html, '<span class="ix-rate">★ ${h.rating}</span></div>\n      </div>\n    </div>`).join(\'\'));', '</div>\n      </div>\n    </a>`).join(\'\'));');
   html = html.replaceAll('__CONTACT_EMAIL__', CONTACT_EMAIL);
+  // how many items each swipe row leaves out, for the last "সব দেখুন" card
+  const totals = {
+    doctorRow: doctors.length,
+    uniRow: (await getUniversities()).length,
+    hospitalRow: hospitals.length,
+    collegeRow: (await getInstitutions()).filter((i) => instSection(i) === 'college').length,
+    schoolRow: (await getInstitutions()).filter((i) => instSection(i) === 'school').length,
+    placeRow: (await getPlaces()).length,
+    hotelRow: (await getHotels()).length,
+  };
+  html = swap(html, 'var T=/*ROW_TOTALS*/{};', `var T=${JSON.stringify(totals)};`);
   return new Response(html, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
 };

@@ -173,12 +173,27 @@ section{padding:96px 0;position:relative;}
 .row-scroll{display:grid;grid-auto-flow:column;grid-auto-columns:270px;gap:18px;overflow-x:auto;padding:36px 4px 12px;scroll-snap-type:x mandatory;-ms-overflow-style:none;scrollbar-width:none;scroll-behavior:smooth;}
 
 .row-scroll::-webkit-scrollbar{display:none;}
+/* doctor card: two light buttons, whole card opens the profile */
+.p-card[data-url]{cursor:pointer;}
+.p-btns{display:flex;justify-content:center;gap:8px;margin-top:14px;}
+.p-btns .p-view{margin-top:0;padding:8px 14px;background:#fff;color:#0f2a1d;border:1px solid #d9e7df;font-weight:600;}
+.p-btns .p-view:hover{background:#f7fcf9;border-color:#b7dcc6;}
 /* last card of every swipe row: leads to the full list */
-.row-scroll > .row-all{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:170px;border:1.5px dashed #cfe3d8;border-radius:20px;background:#fff;color:#15803d;font-size:15px;font-weight:600;text-align:center;}
-.row-all i{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid #d9e7df;background:#f4fbf7;animation:rowNudge 1.6s ease-in-out infinite;}
-.row-all svg{width:18px;height:18px;}
-@keyframes rowNudge{0%,100%{transform:translateX(-3px);}50%{transform:translateX(5px);}}
-@media (prefers-reduced-motion:reduce){.row-all i{animation:none;}}
+.row-scroll > .row-all{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:200px;border:1px solid #cfe9da;border-radius:20px;background:linear-gradient(160deg,#e9fbf0 0%,#f6fcf8 55%,#fff 100%);color:#0f2a1d;text-align:center;padding:18px;transition:transform .25s var(--ease),box-shadow .25s;}
+.row-all::before,.row-all::after{content:'';position:absolute;border-radius:50%;pointer-events:none;filter:blur(2px);}
+.row-all::before{width:150px;height:150px;left:-50px;top:-60px;background:radial-gradient(circle,rgba(34,197,94,.22),transparent 70%);animation:raDrift 7s ease-in-out infinite;}
+.row-all::after{width:130px;height:130px;right:-40px;bottom:-50px;background:radial-gradient(circle,rgba(14,165,233,.16),transparent 70%);animation:raDrift 9s ease-in-out infinite reverse;}
+.row-all .ra-ring{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:#fff;color:#15803d;box-shadow:0 8px 20px -10px rgba(21,128,61,.55);animation:raPulse 2.2s ease-out infinite;margin-bottom:6px;}
+.row-all .ra-ring svg{width:24px;height:24px;animation:raArrow 1.4s ease-in-out infinite;}
+.row-all .ra-n{position:relative;z-index:1;font-family:var(--font-body);font-size:26px;font-weight:800;line-height:1.1;color:#15803d;}
+.row-all .ra-t{position:relative;z-index:1;font-size:14px;font-weight:600;color:#334155;}
+.row-all .ra-go{position:relative;z-index:1;margin-top:8px;display:inline-flex;align-items:center;gap:5px;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #d9e7df;font-size:13px;font-weight:700;color:#0f2a1d;transition:gap .2s,border-color .2s;}
+@media (hover:hover){.row-all:hover{transform:translateY(-4px);box-shadow:0 18px 30px -20px rgba(6,95,53,.5);}.row-all:hover .ra-go{gap:9px;border-color:#9ad6b2;}}
+.row-all:active{transform:scale(.97);}
+@keyframes raArrow{0%,100%{transform:translateX(-3px);}50%{transform:translateX(5px);}}
+@keyframes raPulse{0%{box-shadow:0 8px 20px -10px rgba(21,128,61,.55),0 0 0 0 rgba(34,197,94,.35);}70%{box-shadow:0 8px 20px -10px rgba(21,128,61,.55),0 0 0 16px rgba(34,197,94,0);}100%{box-shadow:0 8px 20px -10px rgba(21,128,61,.55),0 0 0 0 rgba(34,197,94,0);}}
+@keyframes raDrift{0%,100%{transform:translate(0,0);}50%{transform:translate(18px,14px);}}
+@media (prefers-reduced-motion:reduce){.row-all::before,.row-all::after,.row-all .ra-ring,.row-all .ra-ring svg{animation:none;}}
 
 
 .row-scroll > *{scroll-snap-align:start;}
@@ -1728,10 +1743,10 @@ if(searchPills) searchPills.insertAdjacentHTML('beforeend', [['ডাক্ত�
 
 
 document.getElementById('doctorRow').innerHTML = doctorNames.map((d,i)=>`
-  <div class="p-card">
+  <div class="p-card" data-url="${d.url}">
     <div class="p-avatar-wrap"><div class="p-avatar av">${docAvatar(i)}${d.photo?`<img src="${d.photo}" alt="${d.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:''}</div></div>
     <span class="verified-badge">Verified</span>
-    <div class="p-body"><b>${d.name}</b><div class="specialty">${d.specialty}</div><div class="degrees">${d.degrees}</div><div class="hospital">${d.hospital}</div><a href="#" class="p-view">প্রোফাইল দেখুন</a></div>
+    <div class="p-body"><b>${d.name}</b><div class="specialty">${d.specialty}</div><div class="degrees">${d.degrees}</div><div class="hospital">${d.hospital}</div><div class="p-btns"><a href="${d.url}" class="p-view">Profile</a><a href="${d.url}#chambers" class="p-view">Appointment</a></div></div>
   </div>
 `).join('');
 
@@ -2301,13 +2316,22 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 })();
 </script>
 <script>
-(function(){document.querySelectorAll('.row-scroll').forEach(function(row){
+(function(){
+var T=/*ROW_TOTALS*/{};
+var U={doctorRow:'জন ডাক্তার',uniRow:'টি বিশ্ববিদ্যালয়',hospitalRow:'টি হাসপাতাল',collegeRow:'টি কলেজ',schoolRow:'টি স্কুল',placeRow:'টি জায়গা',hotelRow:'টি হোটেল'};
+var arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+document.querySelectorAll('.row-scroll').forEach(function(row){
   var sec=row.closest('section'); var a=sec&&sec.querySelector('.see-all'); var h=a&&a.getAttribute('href');
   if(!h||h.charAt(0)!=='/') return;
+  var left=(T[row.id]||0)-row.children.length;
   var c=document.createElement('a'); c.className='row-all'; c.href=h;
-  c.innerHTML='<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><span>সব দেখুন</span>';
+  var top=left>0&&U[row.id]?'<span class="ra-n">আরও '+left.toLocaleString('bn-BD')+'</span><span class="ra-t">'+U[row.id]+' আছে</span>':'<span class="ra-t">আরও আছে</span>';
+  c.innerHTML='<span class="ra-ring">'+arrow+'</span>'+top+'<span class="ra-go">সব দেখুন '+'<b style="display:inline-flex;width:14px">'+arrow.replace('<svg','<svg width="14" height="14"')+'</b></span>';
   row.appendChild(c);
-});})();
+});
+var dr=document.getElementById('doctorRow');
+if(dr) dr.addEventListener('click',function(e){ if(e.target.closest('a')) return; var c=e.target.closest('.p-card'); if(c&&c.dataset.url) location.href=c.dataset.url; });
+})();
 </script>
 <script src="/search.js" defer></script>
 </body>
