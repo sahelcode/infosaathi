@@ -241,3 +241,8 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | school | rangpur-cantonment-public-school-and-college | HSC streams and seats, versions, shifts, gender | official seat page not reachable; versions/shifts only on Wikipedia | 2026-10-22 |
 | school | rangpur-cantonment-public-school-and-college | students, teachers, campus area | only Wikipedia (7,749 students, 219 teachers, 20.3 acres) | 2026-10-22 |
 | school | rangpur-cantonment-public-school-and-college | admission 2027 / HSC 2026-27 fees, dates, eligibility; HSC 2025 result | official link titles only; blogs not used | 2026-10-22 |
+| college | sirajganj-government-college | degree (pass) level, 4 more honours subjects (Islamic Studies, Marketing, Finance, Zoology), Management honours, which have masters | official department pages (12 confirmed); others only on honoursadmission.com | 2026-10-22 |
+| college | sirajganj-government-college | students, teachers, campus area, HSC seats, honours seats | only an aggregator (12,913 students, 116 teachers) | 2026-10-22 |
+| college | sirajganj-government-college | admission fees, phone labels | official admission page gives dates only | 2026-10-22 |
+| college | sirajganj-government-college | HSC results | only sirajganjinfo.com (numbers do not add up: 96.38% vs 798/836) | 2026-10-22 |
+| college | sirajganj-government-college | current principal | three different names (official page may be old) | 2026-10-22 |

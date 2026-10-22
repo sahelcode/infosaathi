@@ -13,6 +13,7 @@ export const CITIES = {
   naogaon: { bn: 'নওগাঁ', en: 'Naogaon', in: 'নওগাঁয়', of: 'নওগাঁর' },
   bogura: { bn: 'বগুড়া', en: 'Bogura', in: 'বগুড়ায়', of: 'বগুড়ার' },
   joypurhat: { bn: 'জয়পুরহাট', en: 'Joypurhat', in: 'জয়পুরহাটে', of: 'জয়পুরহাটের' },
+  sirajganj: { bn: 'সিরাজগঞ্জ', en: 'Sirajganj', in: 'সিরাজগঞ্জে', of: 'সিরাজগঞ্জের' },
   rajshahi: { bn: 'রাজশাহী', en: 'Rajshahi', in: 'রাজশাহীতে', of: 'রাজশাহীর' },
   khulna: { bn: 'খুলনা', en: 'Khulna', in: 'খুলনায়', of: 'খুলনার' },
   barishal: { bn: 'বরিশাল', en: 'Barishal', in: 'বরিশালে', of: 'বরিশালের' },

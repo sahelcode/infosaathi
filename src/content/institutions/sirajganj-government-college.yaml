@@ -1,0 +1,52 @@
+draft: false
+kind: college
+name: Sirajganj Government College
+name_bn: সিরাজগঞ্জ সরকারি কলেজ
+type: সরকারি
+est: 1940
+eiin: "128461"
+city: sirajganj
+address: বি.এ. কলেজ রোড, সিরাজগঞ্জ সদর, সিরাজগঞ্জ
+web: https://srgc.edu.bd
+board: রাজশাহী শিক্ষা বোর্ড
+affiliation: জাতীয় বিশ্ববিদ্যালয়
+gender: সহশিক্ষা
+levels: [একাদশ–দ্বাদশ শ্রেণি, অনার্স, মাস্টার্স]
+streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+logo: ./images/sirajganj-government-college-logo.png
+photo: ./images/sirajganj-government-college.jpg
+verified: 2026-10-22
+verified_by: official
+
+numbers:
+  - { label: যোগাযোগ, number: "075164604" }
+emails:
+  - { label: যোগাযোগ, email: srgovc@gmail.com }
+
+subjects:
+  - { faculty: কলা, name: বাংলা, name_en: Bangla }
+  - { faculty: কলা, name: ইংরেজি, name_en: English }
+  - { faculty: কলা, name: ইতিহাস, name_en: History }
+  - { faculty: কলা, name: ইসলামের ইতিহাস ও সংস্কৃতি, name_en: Islamic History and Culture }
+  - { faculty: কলা, name: দর্শন, name_en: Philosophy }
+  - { faculty: সামাজিক বিজ্ঞান, name: রাষ্ট্রবিজ্ঞান, name_en: Political Science }
+  - { faculty: সামাজিক বিজ্ঞান, name: অর্থনীতি, name_en: Economics }
+  - { faculty: ব্যবসায় শিক্ষা, name: হিসাববিজ্ঞান, name_en: Accounting }
+  - { faculty: বিজ্ঞান, name: পদার্থবিজ্ঞান, name_en: Physics }
+  - { faculty: বিজ্ঞান, name: রসায়ন, name_en: Chemistry }
+  - { faculty: বিজ্ঞান, name: গণিত, name_en: Mathematics }
+  - { faculty: জীব ও ভূবিজ্ঞান, name: উদ্ভিদবিজ্ঞান, name_en: Botany }
+
+about: যমুনা নদীর পাশের শহর সিরাজগঞ্জে উচ্চশিক্ষার সুযোগ তৈরির জন্য ১৯৪০ সালে "সিরাজগঞ্জ কলেজ" নামে কলেজটি প্রতিষ্ঠিত হয়। ১৯৭৯ সালে কলেজটি সরকারি হয়। এখন এখানে উচ্চ মাধ্যমিক, অনার্স, মাস্টার্স ও প্রিলিমিনারি-টু-মাস্টার্স পড়ানো হয়।
+faq:
+  - q: সিরাজগঞ্জ সরকারি কলেজ কবে সরকারি হয়?
+    a: ১৯৭৯ সালে। কলেজটি প্রতিষ্ঠিত হয় ১৯৪০ সালে।
+  - q: সিরাজগঞ্জ সরকারি কলেজে অনার্সে কোন কোন বিষয় আছে?
+    a: কলেজের ওয়েবসাইটে ১২টি অনার্স বিভাগ পাওয়া যায় — বাংলা, ইংরেজি, ইতিহাস, ইসলামের ইতিহাস ও সংস্কৃতি, দর্শন, রাষ্ট্রবিজ্ঞান, অর্থনীতি, হিসাববিজ্ঞান, পদার্থবিজ্ঞান, রসায়ন, গণিত ও উদ্ভিদবিজ্ঞান।
+  - q: এখানে কি মাস্টার্স ও প্রিলিমিনারি মাস্টার্স পড়ানো হয়?
+    a: হ্যাঁ। কলেজে মাস্টার্স (নিয়মিত) ও প্রিলিমিনারি-টু-মাস্টার্সে ভর্তির নোটিশ দেওয়া হয়।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://srgc.edu.bd/ }
+  - { title: Eduportalbd – EIIN 128461, url: "https://locator.eduportalbd.com/institutes/?ins=128461" }
+old_urls: [/2025/08/sirajganj-government-college.html]
