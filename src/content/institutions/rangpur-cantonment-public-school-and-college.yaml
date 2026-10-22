@@ -1,0 +1,43 @@
+draft: false
+kind: school_college
+name: Cantonment Public School and College, Rangpur
+name_bn: ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজ, রংপুর
+short: CPSCR
+type: বেসরকারি
+est: 1978
+eiin: "127500"
+city: rangpur
+address: রংপুর সেনানিবাস, ওয়ার্ড নং-১৬, ডাকঘর উপশহর, রংপুর-৫৪০১
+web: https://cpscr.edu.bd
+board: দিনাজপুর শিক্ষা বোর্ড
+affiliation: জাতীয় বিশ্ববিদ্যালয় (ডিগ্রি পাস)
+levels: [প্লে – ১০ম শ্রেণি, একাদশ – দ্বাদশ শ্রেণি, ডিগ্রি (পাস)]
+logo: ./images/rangpur-cantonment-public-school-and-college-logo.png
+photo: ./images/rangpur-cantonment-public-school-and-college.jpg
+verified: 2026-10-22
+verified_by: official
+
+numbers:
+  - { label: টেলিফোন, number: "02589966034" }
+  - { label: মোবাইল, number: "01769660137" }
+emails:
+  - { label: অফিস, email: cpsc.rng1978@gmail.com }
+  - { label: অফিস (বিকল্প), email: cpscr_1978@yahoo.com }
+
+results:
+  - { exam: SSC, year: 2026, pass_rate: 99.44, gpa5: 329, examinees: 533 }
+  - { exam: SSC, year: 2025, pass_rate: 99.82, gpa5: 330, examinees: 543 }
+  - { exam: HSC, year: 2024, pass_rate: 99.55, gpa5: 456, examinees: 888 }
+
+about: ১৯৭৭ সালে তৎকালীন উত্তরাঞ্চলের কমান্ডার ব্রিগেডিয়ার এম এ লতিফ ভিত্তিপ্রস্তর স্থাপন করেন; ১৯৭৮ সালে নার্সারি থেকে ষষ্ঠ শ্রেণি নিয়ে ক্লাস শুরু হয়। ১৯৮০ সালে দশম শ্রেণি পর্যন্ত এবং ১৯৮১ সালে কলেজ শাখা চালু হয়। পরে জাতীয় বিশ্ববিদ্যালয়ের অধীনে ডিগ্রি (পাস) কোর্স যুক্ত হয়।
+faq:
+  - q: রংপুর ক্যান্টনমেন্ট পাবলিক স্কুল অ্যান্ড কলেজে কোন কোন শ্রেণিতে পড়ানো হয়?
+    a: প্লে থেকে দশম শ্রেণি, একাদশ–দ্বাদশ শ্রেণি এবং জাতীয় বিশ্ববিদ্যালয়ের অধীনে ডিগ্রি (পাস)।
+  - q: এসএসসি ২০২৬-এ ফলাফল কেমন?
+    a: ৫৩৩ জন পরীক্ষার্থীর মধ্যে ৫৩০ জন পাস করেছে, পাসের হার ৯৯.৪৪%। জিপিএ-৫ পেয়েছে ৩২৯ জন।
+  - q: স্কুল ও কলেজের কোড কত?
+    a: স্কুল কোড ৫৩৫০, কলেজ কোড ৫৩৭৫।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://cpscr.edu.bd/ }
+  - { title: বাসস – এসএসসি ২০২৬ ফল, url: https://www.bssnews.net/district/413478 }

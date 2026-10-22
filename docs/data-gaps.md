@@ -237,3 +237,7 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | rajshahi-government-city-college | honours/masters subject list, HSC seats | official departments page lists 15 departments, honours not confirmed; seats only on Wikipedia (undated) | 2026-10-22 |
 | college | rajshahi-government-city-college | principal's phone (digits unclear), Sahel's number +880-7247-76200 not found anywhere | official contact page snippets | 2026-10-22 |
 | college | rajshahi-government-city-college | admission fees/dates 2026-27, HSC results | official notice titles only; board-wide results only | 2026-10-22 |
+| school | rangpur-cantonment-public-school-and-college | old Blogger URL | docs/old-posts-plan.csv has /2025/08/cantonment-public-school-and-college.html but it does not name the city; asked Sahel | 2026-10-22 |
+| school | rangpur-cantonment-public-school-and-college | HSC streams and seats, versions, shifts, gender | official seat page not reachable; versions/shifts only on Wikipedia | 2026-10-22 |
+| school | rangpur-cantonment-public-school-and-college | students, teachers, campus area | only Wikipedia (7,749 students, 219 teachers, 20.3 acres) | 2026-10-22 |
+| school | rangpur-cantonment-public-school-and-college | admission 2027 / HSC 2026-27 fees, dates, eligibility; HSC 2025 result | official link titles only; blogs not used | 2026-10-22 |
