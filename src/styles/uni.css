@@ -161,3 +161,14 @@
 /* call / website / share row sits under the About section */
 .un-actions-row{padding:0;margin:14px 0 0;}
 @media (min-width:1024px){.un-actions-row{padding:0;}}
+
+/* actions row inside a card (after the about text): a normal-width call button, not squeezed by the hero grid */
+@media (min-width:768px){.hp-actions.un-actions.un-actions-row{grid-template-columns:200px 46px 46px;padding-left:0;justify-content:start;}}
+/* good / think boxes: white, calm, as tall as their own text */
+.un-pc{align-items:start;}
+.un-pc-b.good,.un-pc-b.think{background:#fff;border:1px solid #e4ece7;}
+.un-pc-b.good > b{color:var(--ink);}
+.un-pc-b.think > b{color:var(--ink);}
+.un-pc-b.good > b svg{color:var(--green);}
+.un-pc-b.think > b svg{color:#b45309;}
+.un-pc-b.good li::before,.un-pc-b.think li::before{background:#94a3b8;}
