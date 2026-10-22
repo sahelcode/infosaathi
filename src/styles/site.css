@@ -32,3 +32,7 @@
 .ht-rating{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;font-size:13px;color:var(--muted);}
 .ht-rating svg{color:#f59e0b;fill:#f59e0b;}
 .ht-rating b{font-size:15px;color:var(--ink);}
+.ht-badge{position:absolute;z-index:4;right:12px;top:22px;display:inline-flex;align-items:center;gap:4px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.94);color:var(--ink);font-size:13.5px;font-weight:700;box-shadow:0 6px 14px -8px rgba(0,0,0,.45);}
+.ht-badge svg{color:#f59e0b;fill:#f59e0b;}
+.pl-gal.art .ht-badge{top:12px;}
+.ht-badge svg{position:static!important;width:13px!important;height:13px!important;flex:0 0 auto;}

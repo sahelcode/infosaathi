@@ -98,6 +98,7 @@ import MiniThumb from '../../../components/MiniThumb.astro';
           {photos.length > 0 ? (
             <>
               <div class="pl-gal" data-gal tabindex="0" aria-roledescription="carousel" aria-label={`${d.name}-এর ছবি`}>
+                {d.rating && <span class="ht-badge"><Icon name="star" size={13} w={2} />{bn(d.rating.value)}</span>}
                 {photos.length > 1 && <div class="pl-bars" aria-hidden="true">{photos.map(() => <span><i></i></span>)}</div>}
                 {photos.map((p, i) => (
                   <figure class="pl-slide" aria-roledescription="slide" aria-label={`${bn(i + 1)} / ${bn(photos.length)}`}>
@@ -123,7 +124,7 @@ import MiniThumb from '../../../components/MiniThumb.astro';
               )}
             </>
           ) : (
-            <div class="pl-gal art"><svg viewBox="0 0 160 80" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><rect width="160" height="80" fill="#DBEAFE" /><rect y="66" width="160" height="14" fill="#EFF6FF" />
+            <div class="pl-gal art">{d.rating && <span class="ht-badge"><Icon name="star" size={13} w={2} />{bn(d.rating.value)}</span>}<svg viewBox="0 0 160 80" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><rect width="160" height="80" fill="#DBEAFE" /><rect y="66" width="160" height="14" fill="#EFF6FF" />
               <rect x="30" y="40" width="26" height="28" rx="2" fill="#EFF6FF" stroke="#3B6FE0" stroke-width="2" /><rect x="104" y="40" width="26" height="28" rx="2" fill="#EFF6FF" stroke="#3B6FE0" stroke-width="2" />
               <rect x="56" y="12" width="48" height="56" rx="2" fill="#EFF6FF" stroke="#3B6FE0" stroke-width="2" />
               {[0, 1, 2, 3].flatMap((r) => [0, 1, 2].map((c) => <rect x={62 + c * 13} y={20 + r * 11} width="8" height="6" rx="1" fill="#3B6FE0" opacity={(r * 3 + c) % 4 ? '.45' : '.9'} />))}
@@ -133,7 +134,6 @@ import MiniThumb from '../../../components/MiniThumb.astro';
             <h1 class="pf-name">{d.name}</h1>
             <p class="pf-en">{d.name_bn}</p>
             <p class="hp-addr"><Icon name="pin" size={15} w={2.2} />{d.address}</p>
-            {d.rating && <p class="ht-rating"><Icon name="star" size={15} w={2} /><b>{bn(d.rating.value)}</b><span>{d.rating.source}{d.rating.count ? ` · ${bn(d.rating.count)}টি রিভিউ` : ''}</span></p>}
             <p class="un-checked"><Icon name="clock" size={13} w={2.2} />{checked}</p>
           </div>
         </section>
