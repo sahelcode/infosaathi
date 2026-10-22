@@ -56,119 +56,16 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | hospital | sylhet-mag-osmani-medical-college-hospital | doctor count, visiting hours, OPD hours | official doctor list not readable from workspace; OPD hours on official pages conflict (8am-6pm vs 12am-12pm) | 2026-10-20 |
 | hospital | sylhet-mag-osmani-medical-college-hospital | test price list, cabin/paying ward rent, room types | official site has no prices | 2026-10-20 |
 | hospital | sylhet-mag-osmani-medical-college-hospital | current bed count (confirm) | official About page says 900 (since 1998); old news says upgrade to 2,000 planned; 900 used | 2026-10-20 |
-| doctor | prof-dr-md-mashiur-rahman-majumder | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-khan-asaduzzaman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-nuruddin-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-syed-abdus-subhan-rahin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-mohsinuzzaman-khan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-chowdhury-foyzur-rob | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-kamrul-alam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-m-a-hannan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-m-a-gaffar-khan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | major-dr-md-tanvir-rayhan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | major-dr-md-tanvir-rayhan | photo | card has only the Ibn Sina logo, no photo | 2026-10-21 |
-| doctor | prof-dr-afzal-momin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-aolad-hussain | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-jasim-uddin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | dr-md-jasim-uddin | bmdc | card says A-4147, too old a number for an assistant professor with MD; left out until confirmed | 2026-10-21 |
-| doctor | dr-md-mizanur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-mazharul-islam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-iqbal-ahmed-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-zia-uddin-ahmed-sami | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-md-oyes-ahmed-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-mostak-uddin-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-roushon-ara | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-mostakima-begum-eti | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-ashrafee-noor-badrunnesa | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-ummey-sayeeda-bilkis | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-milia-tamanna-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-rabeya-begum | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-shamima-akhter | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-jamila-alam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-jahanara-begum | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-mohammad-rashedul-hasan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | dr-roushon-ara | bmdc | card has no BMDC number; web search found no reliable source | 2026-10-21 |
-| doctor | dr-monirul-islam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-mohammad-iqbal-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-m-a-ahad | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-jalal-uddin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-m-a-majid | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-saiful-islam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-abu-ahmed-golam-akbar | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-ibrahim-khalil | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-syed-musa-m-a-kaiyum | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-md-rashedul-haque | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-mohammad-shohel | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-a-t-reza-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-ruhul-amin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-aziza-jahan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-tafhima-tarin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-abdul-hannan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-soma-sarkar | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-mahbub-alam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-monowarul-islam-bhuiyan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-m-delowar-hossain | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | dr-aziza-jahan | photo | visiting card shows only the Ibn Sina logo, no portrait | 2026-10-21 |
 | doctor | dr-tafhima-tarin | photo | visiting card shows only the Ibn Sina logo, no portrait | 2026-10-21 |
-| doctor | prof-dr-gulzar-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-jamal-ahmed-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-md-majedur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-abdullah-yusuf-jamil | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-zahir-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-surovi-poddar | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-reza-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | major-dr-md-mahtabul-hasan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-ahmad-nasim-hasan-lavlu | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-ahmed-maksud-hasan-laskar | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-shamsul-haque-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-md-shafiqur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-fakhruzzaman-shaheed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-mubin-uddin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-abu-yousuf-md-nazim | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | prof-dr-md-shafiqur-rahman | old_urls | docs/old-doctor-urls.tsv has /2025/12/dr-md-shafiqur-rahman.html but no specialty to confirm it is the same doctor | 2026-10-21 |
-| doctor | sadia-arifin-runa | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | md-mostafizur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-abm-younus | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | lt-col-dr-akm-mizanur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-habibur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-ashraful-islam-rana | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-md-siddiqur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-saifur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-col-dr-salah-uddin-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-ssa-al-mahmud-sadi | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-md-mozammel-haque-faruk | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-syed-nafi-mahdi | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-azizul-haque-manik | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-asm-mainul-hasan | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-fazlul-haque-sohail | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-iftekharul-alam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-anm-yusuf | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-ahmed-faruk | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-nur-e-al-amin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-tasnim-ahmed-khan-ratul | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-chowdhury-monjur-muntahi | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | kawsar-ahmed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-ahmad-zahid-al-kadir | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-sudeshna-sinha | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-chowdhury-mohammad-omar-faruk | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-md-fayzul-islam-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-ayesha-rafiq-chowdhury | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-munaida-haque | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-ummehani-islam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-farhana-haque | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-albabur-rahman | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-saleh-ahmed-shahin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | prof-dr-syed-mamun-muhammad | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-md-aminul-islam | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-mst-latifa-yasmin | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | dr-m-a-shahed | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
-| doctor | abida-sultana | chambers.fee | visiting card has no fee; web search found no reliable source | 2026-10-21 |
 | doctor | dr-md-aminul-islam | bmdc | visiting card has no BMDC number; web search found no reliable source | 2026-10-21 |
 | doctor | dr-mst-latifa-yasmin | chambers.room | card gives only ডেন্টাল কেয়ার ইউনিট, no room number | 2026-10-21 |
 | doctor | dr-m-a-shahed | chambers.room | card gives only ডেন্টাল কেয়ার ইউনিট, no room number | 2026-10-21 |
 | doctor | prof-dr-md-fayzul-islam-chowdhury | chambers.room | card has no room number | 2026-10-21 |
-| doctor | dr-habibur-rahman | chambers.fee | visiting card and Sahel's data give no fee | 2026-10-21 |
-| doctor | dr-suravi-podder | chambers.fee | visiting card and Sahel's data give no fee | 2026-10-21 |
 | university | teesta-university | application open/close dates, application fee, admission exam, seats, competition per seat | official site (admission notice, leaflet images not readable, apply page), news (bn/en) | 2026-10-21 |
 | university | teesta-university | students, teachers, rank, emails (obfuscated on site) | official site, Wikipedia, uniRank, news | 2026-10-21 |
 | university | trust-university-barishal | admission dates, eligibility (GPA), application and admission fee, tuition/total cost, credits, waivers | official site is a JS app that cannot be read from the workspace (all pages blank); uniRank, Trust Group page, UGC listing (blocked), Facebook (blocked), 8 searches (bn/en), no news circulars found | 2026-10-21 |
@@ -271,3 +168,10 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | moulvibazar-government-college | names of the 5 masters subjects, gender, HSC seats, fees, HSC results, phone labels | district portal gives counts only; official site not reachable | 2026-10-22 |
 | college | (16 college files, 2026-10-22 batch) | students/teachers with "+" are Sahel's estimates rounded down, not from an official source; replace when official figures are found | 11 research agents, search budget ran out; official sites not reachable | 2026-10-22 |
 | college | naogaon, sirajganj, hathazari, bogra-cantonment, rangpur-cantonment, sylhet-cadet, baf-shaheen, rajshahi-womens, rangpur-city | current principal (conflicting or not found) | news and official-site snippets | 2026-10-22 |
+| college | sylhet-government-womens-college | students (current count) | official home/about pages, Wikipedia, news (bn/en); only 5,013 (2013, old official page) found, not used | 2026-10-22 |
+| college | sylhet-government-womens-college | masters per honours department (except Bangla, English) | official notice board pages 1-11; department page fails to load | 2026-10-22 |
+| college | sylhet-government-womens-college | HSC seats per group, HSC 2026-27 fees and eligibility | official notice board (notice files are image scans or not reachable), Sylhet Board seat list | 2026-10-22 |
+| college | sylhet-government-womens-college | HSC results (recent years) | Sylhet Board, 4 searches (bn/en), news; only 2016 (regional news) found, not used | 2026-10-22 |
+| college | sylhet-government-womens-college | HSC business studies group (still offered?) | official 2022-23 lists show it; 2026-27 selection lists show only science and humanities | 2026-10-22 |
+| college | sylhet-government-womens-college | honours admission notice and fees (latest session) | official notice board shows only 2022-23; NU degree pass notice forwarded 2026-10-11 | 2026-10-22 |
+| college | sylhet-government-womens-college | 01711120358 / gwcsyl@gmail.com (board-listed contact) | Sylhet Board HSC 2026 centre list, no label; not on official site, not used | 2026-10-22 |

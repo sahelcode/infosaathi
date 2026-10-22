@@ -63,7 +63,7 @@ const doctors = defineCollection({
                 days: days.optional(), // may be empty only while draft: true
                 start: time.optional(),
                 end: time.optional(),
-                fee: z.object({ new: z.number().optional(), old: z.number().optional(), report: z.number().optional() }).optional(),
+                fee: z.object({ visit: z.number().optional(), new: z.number().optional(), old: z.number().optional(), report: z.number().optional() }).optional(),
                 serials: z
                   .array(z.object({ label: z.string().default('সিরিয়াল'), number: phone, note: z.string().optional() }))
                   .default([]),
