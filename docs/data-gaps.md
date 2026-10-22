@@ -229,3 +229,7 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | school | bogra-cantonment-public-school-and-college | students, teachers count | only Wikipedia (6,722 / 188), not official | 2026-10-22 |
 | school | bogra-cantonment-public-school-and-college | class seats, HSC seats (1,050 only in one local news), admission 2027 / HSC 2026-27 fees, dates, eligibility | official notice titles only, boguralive | 2026-10-22 |
 | school | bogra-cantonment-public-school-and-college | HSC 2024/2025 and SSC 2026 results | only Wikipedia/aggregators; SSC 2026 news figures unclear | 2026-10-22 |
+| college | joypurhat-girls-cadet-college | cover photo | Sahel's photo has a "bdquery" watermark; waiting for his decision or a new photo | 2026-10-22 |
+| college | joypurhat-girls-cadet-college | phone numbers (confirm), teacher count, version/medium | official site shows no phone; Sahel's numbers not found online (5 searches); only house tutors mentioned | 2026-10-22 |
+| college | joypurhat-girls-cadet-college | HSC 2025, SSC 2025 results with numbers | news headlines only, no counts | 2026-10-22 |
+| college | joypurhat-girls-cadet-college | current principal | three different names (official site outdated) | 2026-10-22 |

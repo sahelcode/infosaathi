@@ -12,6 +12,7 @@ export const CITIES = {
   chattogram: { bn: 'চট্টগ্রাম', en: 'Chattogram', in: 'চট্টগ্রামে', of: 'চট্টগ্রামের' },
   naogaon: { bn: 'নওগাঁ', en: 'Naogaon', in: 'নওগাঁয়', of: 'নওগাঁর' },
   bogura: { bn: 'বগুড়া', en: 'Bogura', in: 'বগুড়ায়', of: 'বগুড়ার' },
+  joypurhat: { bn: 'জয়পুরহাট', en: 'Joypurhat', in: 'জয়পুরহাটে', of: 'জয়পুরহাটের' },
   rajshahi: { bn: 'রাজশাহী', en: 'Rajshahi', in: 'রাজশাহীতে', of: 'রাজশাহীর' },
   khulna: { bn: 'খুলনা', en: 'Khulna', in: 'খুলনায়', of: 'খুলনার' },
   barishal: { bn: 'বরিশাল', en: 'Barishal', in: 'বরিশালে', of: 'বরিশালের' },
