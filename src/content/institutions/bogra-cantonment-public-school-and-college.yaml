@@ -13,6 +13,8 @@ board: রাজশাহী শিক্ষা বোর্ড
 levels: [নার্সারি – ৫ম শ্রেণি, ৬ষ্ঠ – ১০ম শ্রেণি, একাদশ – দ্বাদশ শ্রেণি]
 versions: বাংলা ও ইংরেজি ভার্সন
 streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+students: "৬,০০০+"
+teachers: "১৫০+"
 logo: ./images/bogra-cantonment-public-school-and-college-logo.png
 photo: ./images/bogra-cantonment-public-school-and-college.jpg
 verified: 2026-10-22
@@ -27,6 +29,7 @@ emails:
   - { label: ওয়েবসাইট, email: webbcpsc@gmail.com }
 
 results:
+  - { exam: SSC, year: 2026, pass_rate: 100, gpa5: 324, examinees: 418 }
   - { exam: SSC, year: 2025, pass_rate: 100, gpa5: 342, examinees: 371 }
 
 about: ১৯৭৯ সালে বগুড়ার মাজহিরা সেনানিবাসে প্রতিষ্ঠানটি প্রতিষ্ঠিত হয়। এটি বাংলাদেশ সেনাবাহিনী পরিচালিত; ১১ পদাতিক ডিভিশনের জিওসি ও বগুড়া এরিয়া কমান্ডার এর প্রধান পৃষ্ঠপোষক। এখানে নার্সারি থেকে দ্বাদশ শ্রেণি পর্যন্ত বাংলা ও ইংরেজি ভার্সনে পড়ানো হয়।

@@ -16,6 +16,7 @@ streams: [বিজ্ঞান, মানবিক, ব্যবসায় �
 logo: ./images/mirsarai-college-logo.png
 photo: ./images/mirsarai-college.jpg
 students: "প্রায় ৪,০০০"
+teachers: "৩৫+"
 verified: 2026-10-22
 verified_by: official
 
@@ -36,6 +37,8 @@ faq:
     a: অনার্সে ২টি বিষয় আছে — হিসাববিজ্ঞান ও ব্যবস্থাপনা।
   - q: ডিগ্রি (পাস)-এ কোন কোন কোর্স পড়ানো হয়?
     a: বিএ, বিএসএস, বিবিএস ও বিএসসি।
+  - q: মিরসরাই কলেজের অধ্যক্ষ কে?
+    a: মোহাম্মদ রেজাউল করিম, ভারপ্রাপ্ত অধ্যক্ষ (কলেজের ওয়েবসাইট অনুযায়ী)।
 
 sources:
   - { title: অফিসিয়াল ওয়েবসাইট, url: https://mirsaraicollege.edu.bd/ }

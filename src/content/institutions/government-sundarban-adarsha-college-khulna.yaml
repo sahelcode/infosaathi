@@ -13,6 +13,8 @@ affiliation: জাতীয় বিশ্ববিদ্যালয়
 gender: সহশিক্ষা
 levels: [একাদশ–দ্বাদশ শ্রেণি, ডিগ্রি (পাস), অনার্স]
 streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+students: "৫,০০০+"
+teachers: "৬০+"
 faculties: [কলা, সামাজিক বিজ্ঞান, ব্যবসায় শিক্ষা, বিজ্ঞান]
 logo: ./images/government-sundarban-adarsha-college-khulna-logo.png
 photo: ./images/government-sundarban-adarsha-college-khulna.jpg
@@ -35,6 +37,8 @@ faq:
     a: জাতীয় বিশ্ববিদ্যালয়ে কলেজের কোড ০৩১৫।
   - q: সরকারি সুন্দরবন আদর্শ কলেজ কোথায়?
     a: খুলনা শহরে, যশোর–ঢাকা মহাসড়কের পাশে ২৩১ খানজাহান আলী রোডে।
+  - q: সরকারি সুন্দরবন আদর্শ কলেজের অধ্যক্ষ কে?
+    a: প্রফেসর মো. জাহাঙ্গীর আলী (কলেজের ওয়েবসাইট অনুযায়ী)।
 
 sources:
   - { title: অফিসিয়াল ওয়েবসাইট, url: https://gsac.ac.bd/ }

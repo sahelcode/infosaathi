@@ -11,6 +11,8 @@ web: https://rangpurcitycollege.edu.bd
 board: দিনাজপুর শিক্ষা বোর্ড
 levels: [একাদশ–দ্বাদশ শ্রেণি]
 streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+students: "১,২০০+"
+teachers: "৩০+"
 logo: ./images/rangpur-city-college-logo.png
 verified: 2026-10-22
 verified_by: official
