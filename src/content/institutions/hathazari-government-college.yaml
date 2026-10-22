@@ -1,0 +1,47 @@
+draft: false
+kind: college
+name: Hathazari Government College
+name_bn: হাটহাজারী সরকারি কলেজ
+type: সরকারি
+est: 1968
+eiin: "104464"
+city: chattogram
+address: ফটিকা, ওয়ার্ড নং-০৫, হাটহাজারী, চট্টগ্রাম
+web: https://hathazaricollege.edu.bd
+board: চট্টগ্রাম শিক্ষা বোর্ড
+affiliation: জাতীয় বিশ্ববিদ্যালয়
+levels: [একাদশ–দ্বাদশ শ্রেণি, ডিগ্রি (পাস), অনার্স]
+streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+logo: ./images/hathazari-government-college-logo.png
+photo: ./images/hathazari-government-college.jpg
+verified: 2026-10-22
+verified_by: official
+
+numbers:
+  - { label: অফিস (হেল্পলাইন), number: "01829594366" }
+  - { label: অফিস (হেল্পলাইন), number: "01817712365" }
+  - { label: অধ্যক্ষ, number: "01889608888" }
+  - { label: উপাধ্যক্ষ, number: "01818245058" }
+emails:
+  - { label: অফিস, email: hathazaricollege@yahoo.com }
+
+subjects:
+  - { faculty: সামাজিক বিজ্ঞান, name: অর্থনীতি, name_en: Economics }
+  - { faculty: সামাজিক বিজ্ঞান, name: রাষ্ট্রবিজ্ঞান, name_en: Political Science }
+  - { faculty: সামাজিক বিজ্ঞান, name: সমাজবিজ্ঞান, name_en: Sociology }
+  - { faculty: ব্যবসায় শিক্ষা, name: হিসাববিজ্ঞান, name_en: Accounting }
+  - { faculty: ব্যবসায় শিক্ষা, name: ব্যবস্থাপনা, name_en: Management }
+
+about: ১৯৬৮ সালে হাটহাজারী উপজেলা সদরে কলেজটি প্রতিষ্ঠিত হয়। ২০১৭ সালে কলেজটি সরকারি হয়। এখানে উচ্চ মাধ্যমিক, ডিগ্রি (পাস) এবং ৫টি বিষয়ে অনার্স পড়ানো হয়।
+faq:
+  - q: হাটহাজারী সরকারি কলেজে অনার্সে কোন কোন বিষয় আছে?
+    a: অনার্সে ৫টি বিষয় আছে — অর্থনীতি, রাষ্ট্রবিজ্ঞান, সমাজবিজ্ঞান, হিসাববিজ্ঞান ও ব্যবস্থাপনা।
+  - q: কলেজের জাতীয় বিশ্ববিদ্যালয় কোড কত?
+    a: জাতীয় বিশ্ববিদ্যালয়ে কলেজের কোড ৪৩১২।
+  - q: হাটহাজারী কলেজ কবে সরকারি হয়?
+    a: ২০১৭ সালে। কলেজটি প্রতিষ্ঠিত হয় ১৯৬৮ সালে।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট – যোগাযোগ, url: https://hathazaricollege.edu.bd/contact_us }
+  - { title: Eduportalbd – EIIN 104464, url: "https://locator.eduportalbd.com/institutes/?ins=104464" }
+old_urls: [/2025/08/hathazari-government-college.html]
