@@ -276,7 +276,10 @@ const jsonld = {
             <button class="pf-banner" type="button" data-zoom aria-label="চেম্বার কার্ড বড় করে দেখুন">
               <Image src={d.banner} width={1000} alt={`${d.name} (${d.name_en}) – ${spTitle}, ${first.name}, রোগী দেখার সময় ${first.timeText}, সিরিয়াল ${phoneShow(firstSerial.number)}`} />
             </button>
-            <button class="dx-imgshare" type="button" data-img-share data-name={`${d.name_en} visiting card`}><Icon name="share" size={17} />শেয়ার করুন</button>
+            <div class="dx-imgbtns">
+              <button class="dx-imgshare" type="button" data-img-share data-name={`${d.name_en} visiting card`}><Icon name="share" size={17} />শেয়ার করুন</button>
+              <button class="dx-imgshare" type="button" data-img-dl data-name={`${d.name_en} visiting card`}><Icon name="download" size={17} />ডাউনলোড</button>
+            </div>
             <p class="pf-banner-note">হাসপাতাল থেকে পাওয়া কার্ড। ওপরের তথ্য আমরা ফোন করে আলাদা করে যাচাই করি।</p>
           </section>
         )}

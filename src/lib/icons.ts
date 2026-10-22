@@ -20,6 +20,7 @@ export const ICONS = {
   chevl: '<path d="M15 6l-6 6 6 6"/>',
   phone: "<path d=\"M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2\"/>",
   pin: "<path d=\"M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z\"/><circle cx=\"12\" cy=\"9\" r=\"2.5\"/>",
+  download: "<path d=\"M12 4v11\"/><path d=\"m7 11 5 5 5-5\"/><path d=\"M5 20h14\"/>",
   share: "<circle cx=\"18\" cy=\"5\" r=\"3\"/><circle cx=\"6\" cy=\"12\" r=\"3\"/><circle cx=\"18\" cy=\"19\" r=\"3\"/><path d=\"m8.6 13.5 6.8 4M15.4 6.5l-6.8 4\"/>",
   check: "<path d=\"M20 6 9 17l-5-5\"/>",
   clock: "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 3\"/>",
