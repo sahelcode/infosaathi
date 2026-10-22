@@ -166,3 +166,10 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | brindaban-government-college | labelled phones (Sahel's 0831-52723 not found anywhere), masters subjects, honours list (official count 14, list only from aggregators) | official sites not reachable from workspace | 2026-10-22 |
 | college | brindaban-government-college | HSC seats (only 2019 board list), students, teachers, 2026-27 fees, HSC results | sources conflict or are old/aggregators | 2026-10-22 |
 | college | moulvibazar-government-college | names of the 5 masters subjects, gender, HSC seats, fees, HSC results, phone labels | district portal gives counts only; official site not reachable | 2026-10-22 |
+| college | sylhet-government-womens-college | students (current count) | official home/about pages, Wikipedia, news (bn/en); only 5,013 (2013, old official page) found, not used | 2026-10-22 |
+| college | sylhet-government-womens-college | masters per honours department (except Bangla, English) | official notice board pages 1-11; department page fails to load | 2026-10-22 |
+| college | sylhet-government-womens-college | HSC seats per group, HSC 2026-27 fees and eligibility | official notice board (notice files are image scans or not reachable), Sylhet Board seat list | 2026-10-22 |
+| college | sylhet-government-womens-college | HSC results (recent years) | Sylhet Board, 4 searches (bn/en), news; only 2016 (regional news) found, not used | 2026-10-22 |
+| college | sylhet-government-womens-college | HSC business studies group (still offered?) | official 2022-23 lists show it; 2026-27 selection lists show only science and humanities | 2026-10-22 |
+| college | sylhet-government-womens-college | honours admission notice and fees (latest session) | official notice board shows only 2022-23; NU degree pass notice forwarded 2026-10-11 | 2026-10-22 |
+| college | sylhet-government-womens-college | 01711120358 / gwcsyl@gmail.com (board-listed contact) | Sylhet Board HSC 2026 centre list, no label; not on official site, not used | 2026-10-22 |
