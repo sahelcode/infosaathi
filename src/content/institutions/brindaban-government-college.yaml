@@ -1,0 +1,57 @@
+draft: false
+kind: college
+name: Brindaban Government College
+name_bn: বৃন্দাবন সরকারি কলেজ
+type: সরকারি
+est: 1931
+eiin: "129447"
+city: habiganj
+address: কলেজ রোড, রাজনগর, হবিগঞ্জ-৩৩০০
+web: https://bgch.edu.bd
+board: সিলেট শিক্ষা বোর্ড
+affiliation: জাতীয় বিশ্ববিদ্যালয়
+gender: সহশিক্ষা
+levels: [একাদশ–দ্বাদশ শ্রেণি, ডিগ্রি (পাস), অনার্স, মাস্টার্স]
+streams: [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
+logo: ./images/brindaban-government-college-logo.png
+photo: ./images/brindaban-government-college.jpg
+campus: ৬.১০ একর
+verified: 2026-10-22
+verified_by: official
+
+numbers:
+  - { label: যোগাযোগ, number: "01334926950" }
+emails:
+  - { label: অফিস, email: brindabangovtc@gmail.com }
+
+subjects:
+  - { faculty: কলা, name: বাংলা, name_en: Bangla }
+  - { faculty: কলা, name: ইংরেজি, name_en: English }
+  - { faculty: কলা, name: ইতিহাস, name_en: History }
+  - { faculty: কলা, name: ইসলামের ইতিহাস ও সংস্কৃতি, name_en: Islamic History and Culture }
+  - { faculty: কলা, name: দর্শন, name_en: Philosophy }
+  - { faculty: সামাজিক বিজ্ঞান, name: রাষ্ট্রবিজ্ঞান, name_en: Political Science }
+  - { faculty: সামাজিক বিজ্ঞান, name: অর্থনীতি, name_en: Economics }
+  - { faculty: ব্যবসায় শিক্ষা, name: হিসাববিজ্ঞান, name_en: Accounting }
+  - { faculty: ব্যবসায় শিক্ষা, name: ব্যবস্থাপনা, name_en: Management }
+  - { faculty: বিজ্ঞান, name: পদার্থবিজ্ঞান, name_en: Physics }
+  - { faculty: বিজ্ঞান, name: রসায়ন, name_en: Chemistry }
+  - { faculty: বিজ্ঞান, name: গণিত, name_en: Mathematics }
+  - { faculty: জীব ও ভূবিজ্ঞান, name: উদ্ভিদবিজ্ঞান, name_en: Botany }
+  - { faculty: জীব ও ভূবিজ্ঞান, name: প্রাণিবিজ্ঞান, name_en: Zoology }
+
+about: ১৯৩১ সালে "হবিগঞ্জ কলেজ" নামে মনোহরগঞ্জ বাজারে কলেজটির যাত্রা শুরু হয়; পরে নাম হয় বৃন্দাবন কলেজ। ১৯৭৯ সালের ৭ মে কলেজটি সরকারি হয়। এখানে উচ্চ মাধ্যমিক, ডিগ্রি (পাস), ১৪টি বিষয়ে অনার্স এবং মাস্টার্স পড়ানো হয়; ক্যাম্পাস ৬.১০ একর।
+faq:
+  - q: বৃন্দাবন সরকারি কলেজ কবে সরকারি হয়?
+    a: ১৯৭৯ সালের ৭ মে। কলেজটি প্রতিষ্ঠিত হয় ১৯৩১ সালে।
+  - q: অনার্সে কয়টি বিষয় আছে?
+    a: ১৪টি — বাংলা, ইংরেজি, ইতিহাস, ইসলামের ইতিহাস ও সংস্কৃতি, দর্শন, রাষ্ট্রবিজ্ঞান, অর্থনীতি, হিসাববিজ্ঞান, ব্যবস্থাপনা, পদার্থবিজ্ঞান, রসায়ন, গণিত, উদ্ভিদবিজ্ঞান ও প্রাণিবিজ্ঞান।
+  - q: কলেজের জাতীয় বিশ্ববিদ্যালয় কোড কত?
+    a: জাতীয় বিশ্ববিদ্যালয়ে কলেজের কোড ১৮০১।
+  - q: মেয়েদের থাকার ব্যবস্থা আছে কি?
+    a: হ্যাঁ। কলেজে ছাত্রী নিবাস আছে।
+
+sources:
+  - { title: অফিসিয়াল ওয়েবসাইট, url: https://bgch.edu.bd/ }
+  - { title: অফিসিয়াল ওয়েবসাইট – ইতিহাস, url: https://www.bc.gov.bd/ourHistory }
+old_urls: [/2025/07/brindaban-govt-college.html]
