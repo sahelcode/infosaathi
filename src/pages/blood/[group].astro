@@ -27,6 +27,7 @@ const recv = RECEIVE_FROM[g];
 const give = DONATE_TO(g);
 const path = `/blood/${slugOf(g)}/`;
 const abo = g.startsWith('AB') ? 'AB' : g[0];
+const aboBn = ({ A: 'এ', B: 'বি', O: 'ও', AB: 'এবি' } as Record<string, string>)[abo];
 const rh = g.endsWith('+') ? 'পজিটিভ' : 'নেগেটিভ';
 const aboNote = abo === 'O' ? 'O গ্রুপের লাল রক্তকণিকায় A বা B অ্যান্টিজেন থাকে না' : abo === 'AB' ? 'AB গ্রুপের লাল রক্তকণিকায় A ও B দুটো অ্যান্টিজেনই থাকে' : `${abo} গ্রুপের লাল রক্তকণিকায় ${abo} অ্যান্টিজেন থাকে`;
 const special = g === 'O-' ? 'O নেগেটিভ প্রায় সব গ্রুপের রোগীকে লাল রক্তকণিকা দিতে পারে, তাই জরুরি অবস্থায় এই গ্রুপের চাহিদা বেশি থাকে।'
@@ -44,7 +45,7 @@ const jsonld = { '@context': 'https://schema.org', '@graph': [
   { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ] };
 ---
-<Base title={`${g} রক্ত লাগবে? ${g} রক্তদাতা সংস্থা: জেলা ও উপজেলা অনুযায়ী ফোন নম্বর | InfoSaathi`} description={`${g} (${abo} ${rh}) রক্ত লাগলে কী করবেন, কে ${g} রক্ত দিতে পারেন, কার রক্ত নিতে পারেন। জেলা ও উপজেলা বেছে রক্তদাতা সংস্থার ফোন নম্বর খুঁজুন।`} path={path} jsonld={jsonld}>
+<Base title={`${g} (${aboBn} ${rh}) রক্ত লাগবে? রক্তদাতা সংস্থার ফোন নম্বর | InfoSaathi`} description={`${g} (${abo} ${rh}) রক্ত লাগলে কী করবেন, কে ${g} রক্ত দিতে পারেন, কার রক্ত নিতে পারেন। জেলা ও উপজেলা বেছে রক্তদাতা সংস্থার ফোন নম্বর খুঁজুন।`} path={path} jsonld={jsonld}>
   <main class="pf"><div class="bo">
     <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{g}</a></nav>
     <article class="bd">
