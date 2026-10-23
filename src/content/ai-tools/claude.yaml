@@ -1,5 +1,6 @@
 name: "Claude"
 vendor: "Anthropic"
+logo: ./images/claude.png
 category: "চ্যাটবট"
 summary: "Anthropic-এর এআই সহকারী, যা লেখা, বিশ্লেষণ ও কোডিংয়ে প্রশ্নোত্তর ও কাজে সাহায্য করে"
 url: "https://claude.ai/"

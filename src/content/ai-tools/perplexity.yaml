@@ -1,5 +1,6 @@
 name: "Perplexity"
 vendor: "Perplexity AI"
+logo: ./images/perplexity.png
 category: "গবেষণা"
 summary: "উৎসসহ উত্তর দেওয়া এআই সার্চ ও গবেষণার টুল"
 url: "https://www.perplexity.ai/"

@@ -1,5 +1,6 @@
 name: "ChatGPT"
 vendor: "OpenAI"
+logo: ./images/chatgpt.png
 category: "চ্যাটবট"
 summary: "OpenAI-এর এআই চ্যাটবট, যেখানে প্রশ্ন করা, লেখা, কোড ও ছবি নিয়ে কাজ করা যায়"
 url: "https://chatgpt.com/"

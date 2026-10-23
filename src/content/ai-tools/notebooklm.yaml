@@ -1,5 +1,6 @@
 name: "NotebookLM"
 vendor: "Google"
+logo: ./images/notebooklm.png
 category: "গবেষণা"
 summary: "নিজের দেওয়া সোর্স বিশ্লেষণ করে সারাংশ ও ব্যাখ্যা দেওয়া গুগলের এআই গবেষণা টুল"
 url: "https://notebook.google/"

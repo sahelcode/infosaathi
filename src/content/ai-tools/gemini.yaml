@@ -1,5 +1,6 @@
 name: "Gemini"
 vendor: "Google"
+logo: ./images/gemini.png
 category: "চ্যাটবট"
 summary: "Google-এর এআই অ্যাসিস্ট্যান্ট, যা চ্যাট, ছবি তৈরি ও গবেষণায় সাহায্য করে"
 url: "https://gemini.google/"

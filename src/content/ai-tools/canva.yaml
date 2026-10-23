@@ -1,5 +1,6 @@
 name: "Canva"
 vendor: "Canva"
+logo: ./images/canva.png
 category: "ডিজাইন"
 summary: "ডিজাইন প্ল্যাটফর্ম, যার Magic Studio-র এআই ফিচারে লেখা, ছবি সম্পাদনা ও অনুবাদ করা যায়"
 url: "https://www.canva.com/"
