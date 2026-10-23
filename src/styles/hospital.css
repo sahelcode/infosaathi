@@ -140,7 +140,7 @@
 .hp-tel{color:#0f2a1c;text-decoration:none;letter-spacing:.01em;}
 .hp-tel:hover{color:#1d7a4d;}
 .un-page .un-fact dd a{font-weight:700;}
-@media (min-width:768px){.hp-actions.un-actions{grid-template-columns:auto 46px 46px;padding-left:24px;}}
+@media (min-width:768px){.hp-actions.un-actions{grid-template-columns:1fr 64px 64px;padding-left:24px;padding-right:24px;}}
 @media (max-width:374px){.hp-actions.un-actions{grid-template-columns:1fr 46px 46px;}.hp-actions.un-actions .pf-btn:first-child{grid-column:auto;}}
 .hp-cover.has-photo img{object-position:center 72%;}
 

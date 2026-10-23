@@ -207,3 +207,6 @@
 .un-glance .un-g-i{display:none;}
 .un-glance small{font-size:13.5px;color:var(--muted);flex:0 0 auto;}
 .un-glance b{font-size:14px;font-weight:700;text-align:right;color:var(--ink);}
+/* share labels: short on phones, full sentence from tablet up */
+.pf-sh .sh-l{display:none;}
+@media (min-width:768px){.pf-sh .sh-s{display:none;}.pf-sh .sh-l{display:inline;}}

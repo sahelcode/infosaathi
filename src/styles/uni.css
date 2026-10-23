@@ -163,7 +163,7 @@
 @media (min-width:1024px){.un-actions-row{padding:0;}}
 
 /* actions row inside a card (after the about text): a normal-width call button, not squeezed by the hero grid */
-@media (min-width:768px){.hp-actions.un-actions.un-actions-row{grid-template-columns:200px 46px 46px;padding-left:0;justify-content:start;}}
+@media (min-width:768px){.hp-actions.un-actions.un-actions-row{grid-template-columns:1fr 64px 64px;padding-left:0;padding-right:0;justify-content:stretch;}}
 /* good / think boxes: white, calm, as tall as their own text */
 .un-pc{align-items:start;}
 .un-pc-b.good,.un-pc-b.think{background:#fff;border:1px solid #e4ece7;}

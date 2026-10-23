@@ -288,7 +288,7 @@ const jsonld = {
 
         <Report placeholder="যেমন: চেম্বারের সময় বদলেছে" note="তথ্য পরিবর্তন হতে পারে। চেম্বারে যাওয়ার আগে ফোন করে নিশ্চিত হয়ে নিন।" />
 
-        <ShareRow copy />
+        <ShareRow />
 
         <nav class="pf-tags" aria-label="সম্পর্কিত">
           <a href={`/doctors/${d.city}/${d.specialty}/`}>{city.in} {sp.bn}</a>
@@ -332,12 +332,6 @@ const jsonld = {
       </aside>
     </div>
   </main>
-
-  <div class="pf-sticky dx-bar" aria-label="দ্রুত যোগাযোগ">
-    <button class="pf-btn primary" type="button" data-sheet-open="numbers"><Icon name="phone" />সিরিয়াল নিন</button>
-    <a class="pf-btn" href={first.map} target="_blank" rel="noopener"><Icon name="route" />ম্যাপ</a>
-    {waNum && <a class="pf-btn wa" href={`https://wa.me/${waNum}`} target="_blank" rel="noopener" aria-label="WhatsApp"><Icon name="wa" size={20} w={1.8} /></a>}
-  </div>
 
   <div class="pf-sheet" data-sheet="numbers" hidden>
     <div class="pf-sheet-bg" data-sheet-close></div>

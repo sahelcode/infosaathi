@@ -86,7 +86,7 @@
 .mx-page:not(:has(.mx-band.ai)) .pf-today{background:#fff;border:1px solid var(--line);color:var(--ink-2);}
 .mx-page:not(:has(.mx-band.ai)) .pf-today::before,.mx-page:not(:has(.mx-band.ai)) .pf-today i{display:none!important;}
 .mx-page:not(:has(.mx-band.ai)) .pf-btn.primary{background:#fff;color:var(--ink);border:1px solid var(--line);}
-@media (min-width:768px){.mx-actions-mid{grid-template-columns:auto 46px;justify-content:start;}}
+@media (min-width:768px){.mx-actions-mid{grid-template-columns:1fr 64px;justify-content:stretch;}}
 
 /* desktop: header text block reads top to bottom, no narrow badge column */
 @media (min-width:768px){

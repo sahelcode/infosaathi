@@ -87,19 +87,12 @@
 /* share + related tags fill the row */
 .dx .pf-share{display:grid;grid-template-columns:1fr 1fr;max-width:none;gap:8px;}
 .dx .pf-sh{justify-content:center;}
-.dx .pf-sh.cp{grid-column:1/-1;}
-@media (min-width:640px){.dx .pf-share{grid-template-columns:repeat(3,1fr);}.dx .pf-sh.cp{grid-column:auto;}}
 .dx .pf-sh.wa{background:#22a559;border-color:#22a559;}
 .dx .pf-sh.fb{background:#2f6fd0;border-color:#2f6fd0;}
 .dx .pf-tags{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;}
 .dx .pf-tags a{text-align:center;padding:10px 12px;border-radius:14px;line-height:1.35;overflow-wrap:anywhere;}
 
-/* sticky bar */
-.pf-sticky.dx-bar{grid-template-columns:1fr 1fr;}
-.pf-sticky.dx-bar:has(.wa){grid-template-columns:1.6fr 1fr 48px;}
 .dx-sheet-wa{width:100%;margin-top:12px;}
-.pf-sticky.dx-bar .pf-btn{height:46px;font-size:14.5px;min-width:0;padding:0 10px;white-space:nowrap;overflow:hidden;}
-.pf-sticky.dx-bar .pf-btn.primary{background:#1d7a4d;border-color:#1d7a4d;box-shadow:none;gap:6px;}
 .pf-btn.wa{background:#22a559;border-color:#22a559;color:#fff;}
 
 /* desktop side column */
@@ -146,7 +139,6 @@
 
 /* the old body padding left a white strip under the footer; keep room for the sticky bar inside the page instead */
 body:has(.dx){padding-bottom:0;}
-@media (max-width:1023px){.dx.pf{padding-bottom:92px;}}
 
 /* visiting card: tap the picture to zoom, button below shares it */
 .dx .pf-banner-z{display:none;}
