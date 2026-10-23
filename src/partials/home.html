@@ -1310,6 +1310,18 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 .top-cover > .top-feature-section,section:has(#uniRow){padding-bottom:64px !important;}
 .app-section{padding:64px 0 !important;}
 @media (min-width:769px){.top-cover > .top-feature-section,section:has(#uniRow){padding-bottom:96px !important;}.app-section{padding:80px 0 !important;}}
+/* v21: category pills carry a coloured gradient badge instead of a thin green line icon */
+.pill-card .pill-icn{border:0 !important;color:#fff !important;background:var(--pk,linear-gradient(135deg,#16a34a,#0d9488)) !important;box-shadow:0 8px 16px -9px var(--pks,rgba(22,163,74,.7));}
+.pill-card .pill-icn svg{stroke-width:1.9;}
+.pill-card:hover .pill-icn{background:var(--pk,linear-gradient(135deg,#16a34a,#0d9488)) !important;}
+.pk-doctor{--pk:linear-gradient(135deg,#14b8a6,#0ea5e9);--pks:rgba(14,165,233,.7);}
+.pk-hospital{--pk:linear-gradient(135deg,#fb7185,#e11d48);--pks:rgba(225,29,72,.6);}
+.pk-university{--pk:linear-gradient(135deg,#3b82f6,#1e3a8a);--pks:rgba(30,58,138,.65);}
+.pk-hotels{--pk:linear-gradient(135deg,#fbbf24,#f97316);--pks:rgba(249,115,22,.65);}
+.pk-scholarship{--pk:linear-gradient(135deg,#4ade80,#15803d);--pks:rgba(21,128,61,.6);}
+.pk-jobs{--pk:linear-gradient(135deg,#22d3ee,#0369a1);--pks:rgba(3,105,161,.6);}
+.pk-news{--pk:linear-gradient(135deg,#94a3b8,#334155);--pks:rgba(51,65,85,.55);}
+.verified-badge{background:#1d6fd8 !important;color:#fff !important;border:0 !important;}
 </style>
 </head>
 <body>
@@ -1782,7 +1794,7 @@ document.getElementById('doctorRow').innerHTML = doctorNames.map((d,i)=>`
   <div class="p-card" data-url="${d.url}">
     <div class="p-avatar-wrap"><div class="p-avatar av">${docAvatar(i)}${d.photo?`<img src="${d.photo}" alt="${d.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:''}</div></div>
     <span class="verified-badge">Verified</span>
-    <div class="p-body"><b>${d.name}</b><div class="specialty">${d.specialty}</div><div class="degrees">${d.degrees}</div><div class="hospital">${d.hospital}</div><div class="p-btns"><a href="${d.url}" class="p-view">Profile</a><a href="${d.url}#chambers" class="p-view">Appointment</a></div></div>
+    <div class="p-body"><b>${d.name}</b><div class="specialty">${d.specialty}</div><div class="degrees">${d.degrees}</div><div class="hospital">${d.hospital}</div><div class="p-btns"><a href="${d.url}" class="p-view">Profile</a><a href="${d.url}" class="p-view">Appointment</a></div></div>
   </div>
 `).join('');
 
@@ -2340,11 +2352,11 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   ];
   const setB = [
     {k:'company',name:'Companies',count:'6.8M+'},{k:'news',name:'News',count:'40K+'},
-    {k:'banks',name:'Banks',count:'11K+'},{k:'ngo',name:'NGOs',count:'220K+'},
+{k:'ngo',name:'NGOs',count:'220K+'},
     {k:'events',name:'Events',count:'190K+'},{k:'startup',name:'Startups',count:'480K+'},
   ];
   const dest = {doctor:'#doctorRow',university:'#uniRow',hospital:'#hospitalRow'};
-  const pill = (c,i) => `<a href="${c.href}" class="pill-card${c.soon?' is-soon':''}"><span class="pill-icn">${icon(c.k,22,22)}</span><span class="pill-text"><b>${c.name} <small class="pill-en">${c.en}</small></b><span class="pill-count">${c.count}</span></span></a>`;
+  const pill = (c,i) => `<a href="${c.href}" class="pill-card${c.soon?' is-soon':''}"><span class="pill-icn pk-${c.k}">${icon(c.k,22,22)}</span><span class="pill-text"><b>${c.name} <small class="pill-en">${c.en}</small></b><span class="pill-count">${c.count}</span></span></a>`;
   const rep = (arr) => arr.concat(arr).map(pill).join('');
   rowA.innerHTML = rep(setA) + rep(setA);
   rowB.innerHTML = rep(setB) + rep(setB);
