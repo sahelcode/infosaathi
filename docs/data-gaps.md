@@ -186,3 +186,6 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | school | bangladesh-noubahini-school-and-college-khulna | email, phone labels | official contact page has empty phone/email; admission page lists 3 numbers without labels | 2026-10-23 |
 | school | bangladesh-noubahini-school-and-college-khulna | 2027 class 1-9 admission (dates, seats, fees) | notice is an image on the official site that could not be opened (server error); 3 searches bn/en found nothing | 2026-10-23 |
 | school | bangladesh-noubahini-school-and-college-khulna | SSC results | Jessore Board, 4 searches (bn/en), news; no school-wise figures found | 2026-10-23 |
+| hotel | coxs-bazar-sea-beach | which real resort this is (name, official page) | 5 searches bn/en: "Sea Beach Resort" Cox's Bazar, "সী বিচ রিসোর্ট" কক্সবাজার, booking sites; no resort by this name; photos show only the beach | 2026-10-23 |
+| hotel | coxs-bazar-sea-beach | resort phone/WhatsApp, email, website | no resort found; only tourist police helpline kept | 2026-10-23 |
+| hotel | coxs-bazar-sea-beach | rooms, prices, total rooms, facilities, check-in/out, rules | no resort found | 2026-10-23 |
