@@ -62,4 +62,7 @@ const image = ogImage ? new URL(ogImage, SITE).href : undefined;
 
 <style is:global>
   .draft-bar{padding:8px 16px;background:#f59e0b;color:#fff;font-size:13px;font-weight:700;text-align:center;}
+  /* short pages: the footer sits at the bottom of the window instead of leaving empty space below it */
+  body{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;}
+  body > main{flex:1 0 auto;width:100%;}
 </style>

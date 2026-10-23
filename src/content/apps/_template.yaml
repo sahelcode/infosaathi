@@ -1,0 +1,10 @@
+# Copy this file to add an app (file name = the app name in lower case).
+# Home page shows the first 8 apps; /apps/ shows up to 30 (then "আরও দেখুন").
+name: "App name"
+desc: "One short line about what it does"
+url: "https://play.google.com/store/apps/details?id=..."   # the exact Play Store page
+own: false          # true only for our own apps (button says Play Store)
+featured: false
+order: 10           # lower comes first among apps without a priority
+priority: 1         # OPTIONAL. 1, 2 or 3 = shown before everything else, in that order, on the home page and on /apps/. Remove the line for normal apps.
+draft: false        # true hides the app everywhere without deleting it

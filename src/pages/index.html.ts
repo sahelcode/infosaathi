@@ -126,7 +126,7 @@ export const GET: APIRoute = async () => {
   }));
   const rankInfo = { system: rk.data.system, source: rk.data.source_url, note: rk.data.note ?? '', verified: bnDate(rk.data.verified) };
 
-  const appRows = (await getApps()).map((x, i) => ({ name: x.data.name, desc: x.data.desc, url: x.data.url, featured: x.data.featured, own: x.data.own, t: i }));
+  const appRows = (await getApps()).slice(0, 8).map((x, i) => ({ name: x.data.name, desc: x.data.desc, url: x.data.url, featured: x.data.featured, own: x.data.own, t: i }));
 
   let html = swapArray(home, 'doctorNames', docRows);
   html = swapArray(html, 'usefulApps', appRows);
