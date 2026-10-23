@@ -175,3 +175,6 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | college | sylhet-government-womens-college | HSC business studies group (still offered?) | official 2022-23 lists show it; 2026-27 selection lists show only science and humanities | 2026-10-22 |
 | college | sylhet-government-womens-college | honours admission notice and fees (latest session) | official notice board shows only 2022-23; NU degree pass notice forwarded 2026-10-11 | 2026-10-22 |
 | college | sylhet-government-womens-college | 01711120358 / gwcsyl@gmail.com (board-listed contact) | Sylhet Board HSC 2026 centre list, no label; not on official site, not used | 2026-10-22 |
+| school | sylhet-government-model-school-and-college | admission fees and seats (class 6 and class XI 2026-27) | official notice board (notices are scanned PDFs, not readable from workspace), 4 searches (bn/en) | 2026-10-23 |
+| school | sylhet-government-model-school-and-college | SSC/HSC results | official site, Sylhet board news (Prothom Alo, Daily Star, TBS), 3 searches (bn/en); no school-level figures | 2026-10-23 |
+| school | sylhet-government-model-school-and-college | shifts, versions | official about, contact and home pages | 2026-10-23 |
