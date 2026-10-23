@@ -5,13 +5,15 @@ short: "গ্র্যান্ড সুলতান"
 city: moulvibazar
 address: "শ্রীমঙ্গল, মৌলভীবাজার ৩২১০"
 stars: 5
-google: { value: 4.5 }
+google: { value: 4.7 }
 web: "https://grandsultanresort.com"
 map_query: "Grand Sultan Tea Resort & Golf, Srimangal"
 verified: 2026-10-23
 verified_by: official
 photos:
   - { src: ./images/grand-sultan-tea-resort.jpg, caption: "রিসোর্ট ভবন ও চারপাশের চা-বাগান", sub: "উপর থেকে তোলা ছবি", label: "রিসোর্ট" }
+  - { src: ./images/grand-sultan-tea-resort-2.jpg, caption: "তিন বিছানার রুম, জানালায় সবুজ বাগান", label: "রুম" }
+  - { src: ./images/grand-sultan-tea-resort-3.jpg, caption: "রাতের আলোয় রিসোর্ট ভবন ও পুকুর", label: "সন্ধ্যা" }
 
 numbers:
   - { label: "রিজার্ভেশন", number: "09678785959" }
