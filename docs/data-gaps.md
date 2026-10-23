@@ -189,3 +189,6 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | hotel | coxs-bazar-sea-beach | which real resort this is (name, official page) | 5 searches bn/en: "Sea Beach Resort" Cox's Bazar, "সী বিচ রিসোর্ট" কক্সবাজার, booking sites; no resort by this name; photos show only the beach | 2026-10-23 |
 | hotel | coxs-bazar-sea-beach | resort phone/WhatsApp, email, website | no resort found; only tourist police helpline kept | 2026-10-23 |
 | hotel | coxs-bazar-sea-beach | rooms, prices, total rooms, facilities, check-in/out, rules | no resort found | 2026-10-23 |
+| hotel | grand-sultan-tea-resort | room rates (rooms list) | official Rooms & Suites page, guest policy, 2 searches (bn/en); only OTA prices found | 2026-10-23 |
+| hotel | grand-sultan-tea-resort | in-room amenities | official Rooms & Suites page lists none | 2026-10-23 |
+| hotel | grand-sultan-tea-resort | event hall capacity | official home, Recreations and Relaxation pages | 2026-10-23 |
