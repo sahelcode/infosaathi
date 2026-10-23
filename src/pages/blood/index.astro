@@ -23,7 +23,6 @@ const jsonld = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
     <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব"><a href="/">হোম</a><span>›</span><a href="/blood/">রক্তদাতা সংস্থা</a></nav>
     <h1 class="pf-list-h">রক্তদাতা সংস্থা</h1>
     <p class="pf-list-intro">জেলা ও উপজেলা অনুযায়ী রক্তদাতা সংস্থার ফোন নম্বর, ঠিকানা ও ফেসবুক গ্রুপ। প্রতিটি তথ্যের পাশে লেখা আছে কবে ও কীভাবে যাচাই হয়েছে।</p>
-    <div class="bd-joinbar"><small>আপনার একটি কল কারও জীবন বাঁচাতে পারে। স্বেচ্ছায় রক্ত দিতে চাইলে নিজের সম্মতিতে নাম লেখান।</small><a class="bd-join" href="/blood/join/"><span class="bd-join-d" aria-hidden="true"></span>ডোনার হিসেবে যুক্ত হন</a></div>
     <BloodFinder districts={districts} upaMap={upaMap} />
     <nav class="bo-gnav" aria-label="রক্তের গ্রুপ">{GROUPS.map((g) => <a href={`/blood/${slugOf(g)}/`}>{g}</a>)}</nav>
     {orgs.length > 0 ? <BloodOrgs orgs={orgs} showDistrict /> : <p class="bo-empty">রক্তদাতা সংস্থার তালিকা তৈরি হচ্ছে। যাচাই করা তথ্য পেলেই এখানে যোগ হবে।</p>}
