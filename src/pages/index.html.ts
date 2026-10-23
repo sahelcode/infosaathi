@@ -97,12 +97,13 @@ export const GET: APIRoute = async () => {
   );
 
   // hotels: real ones only, no ratings (there are no real reviews yet)
-  const hotelRows = (await getHotels()).slice(0, 8).map((h) => ({
+  const hotelRows = await Promise.all((await getHotels()).slice(0, 8).map(async (h) => ({
+    img: h.data.photos[0] ? (await getImage({ src: h.data.photos[0].src, width: 480, format: 'webp' })).src : '',
     name: h.data.name,
     loc: `${h.data.address.split(',')[0]}, ${CITIES[h.data.city].bn}`,
     tags: [...(h.data.stars ? [`${h.data.stars}-star`] : []), ...h.data.facilities.slice(0, 2).map((f) => HOTEL_FACILITIES[f])].slice(0, 3),
     url: hotelUrl(h),
-  }));
+  })));
 
   // scholarships, jobs, AI tools: real entries; open ones first. Government services: links to the official portals only.
   const FUND = { full: 'সম্পূর্ণ অর্থায়িত', partial: 'আংশিক', varies: 'ভিন্ন ভিন্ন' } as const;
@@ -236,6 +237,7 @@ export const GET: APIRoute = async () => {
   html = swap(html, '<span class="eyebrow">Hospitals</span><a href="#" class="see-all">', '<span class="eyebrow">Hospitals</span><a href="/hospitals/" class="see-all">');
 
   html = swap(html, "put('hotelRow', hotels.map((h,i)=>`\n    <div class=\"org-card ix-card\">", "put('hotelRow', hotels.map((h,i)=>`\n    <a class=\"org-card ix-card\" href=\"${h.url}\" style=\"color:inherit;text-decoration:none\">");
+  html = swap(html, "<div class=\"ix-image\">${hotelArt(i+1)}</div>", "<div class=\"ix-image\">${h.img ? `<img src=\"${h.img}\" alt=\"\" loading=\"lazy\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\">` : hotelArt(i+1)}</div>");
   html = swap(html, '<span class="eyebrow">Hotels</span><a href="#" class="see-all">', '<span class="eyebrow">Hotels</span><a href="/hotels/" class="see-all">');
   html = swap(html, '<span class="ix-rate">★ ${h.rating}</span></div>\n      </div>\n    </div>`).join(\'\'));', '</div>\n      </div>\n    </a>`).join(\'\'));');
   html = html.replaceAll('__CONTACT_EMAIL__', CONTACT_EMAIL);
