@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
+import MiscActions from '../../components/MiscActions.astro';
 import MiscHero from '../../components/MiscHero.astro';
 import Window from '../../components/Window.astro';
 import Faq from '../../components/Faq.astro';
@@ -69,6 +70,7 @@ const jsonld = {
           <Window open={d.open} close={d.close} rows={[...(d.published ? [['বিজ্ঞপ্তি প্রকাশ', bnDate(d.published)] as [string, string]] : []), ...(d.apply_how ? [['আবেদনের মাধ্যম', d.apply_how] as [string, string]] : [])]} />
           {d.circular_url && <a class="pf-btn hp-mapbtn" href={d.circular_url} target="_blank" rel="noopener"><Icon name="file" />অফিসিয়াল বিজ্ঞপ্তি দেখুন</a>}
         </section>
+        <MiscActions action={applyHref ? { href: applyHref, label: d.apply_url ? 'অনলাইনে আবেদন' : 'অফিসিয়াল বিজ্ঞপ্তি', icon: 'ext' } : { href: '#', label: 'আবেদন', icon: 'ext' }} />
 
         {d.posts.length > 0 && (
           <section class="pf-card" id="posts" aria-labelledby="h-posts">

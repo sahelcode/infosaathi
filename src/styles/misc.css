@@ -79,3 +79,11 @@
 .mx-page .mx-tile{background:#fff;border:1px solid var(--line);}
 .mx-page .un-g-i,.mx-page .mx-tile-i{background:#fff;color:var(--ink-2);}
 .mx-edu + .pf-hero-body,.mx-cover + .pf-hero-body{padding-top:18px;}
+
+/* apply and share sit a few sections down, quiet and white; no dots or green fills */
+.mx-actions-mid{margin-top:14px;padding:0;grid-template-columns:1fr 46px;}
+.mx-page:not(:has(.mx-band.ai)) .pf-badge.ok{background:#fff;border:1px solid var(--line);color:var(--ink-2);}
+.mx-page:not(:has(.mx-band.ai)) .pf-today{background:#fff;border:1px solid var(--line);color:var(--ink-2);}
+.mx-page:not(:has(.mx-band.ai)) .pf-today::before,.mx-page:not(:has(.mx-band.ai)) .pf-today i{display:none!important;}
+.mx-page:not(:has(.mx-band.ai)) .pf-btn.primary{background:#fff;color:var(--ink);border:1px solid var(--line);}
+@media (min-width:768px){.mx-actions-mid{grid-template-columns:auto 46px;justify-content:start;}}

@@ -994,7 +994,10 @@ body.menu-open{overflow:hidden;}
 
 .bp-copy h2{margin:0 0 10px;font-size:17px;line-height:1.35;color:#0f2a1c;display:flex;align-items:center;gap:8px;}
 
-.bp-copy h2::before{content:"";width:9px;height:12px;border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;background:#e11d48;flex:0 0 auto;}
+.bp-copy h2::before{display:none}
+.bp-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;}
+.bp-head h2{margin:0!important;}
+#bloodCta .bp-copy{padding-bottom:0;}
 
 .bp-copy p{display:none;}
 
@@ -1392,10 +1395,9 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
     <div class="blood-panel reveal">
       <div class="bp-copy">
         <span class="bp-eyebrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2.5s7 7.3 7 12.2a7 7 0 0 1-14 0C5 9.800 12 2.500 12 2.500Z"/></svg>জরুরি রক্ত</span>
-        <h2>আপনার রক্ত প্রয়োজন?</h2>
+        <div class="bp-head"><h2>আপনার রক্ত প্রয়োজন?</h2><a class="see-all" href="/blood/">রক্ত খুঁজুন</a></div>
         <p>রোগীর রক্তের গ্রুপটি বেছে নিন। কোন গ্রুপের দাতা রক্ত দিতে পারবেন আর কার জন্য রক্ত দেওয়া যাবে, বিস্তারিত পেজে দেখুন।</p>
         <div class="bp-groups" id="bpGroups" role="group" aria-label="রোগীর রক্তের গ্রুপ"></div>
-        <a class="bp-orgs" href="/blood/">জেলা ও উপজেলা অনুযায়ী রক্তদাতা সংস্থা দেখুন →</a>
       </div>
     </div>
   </div>

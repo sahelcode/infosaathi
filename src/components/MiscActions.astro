@@ -1,0 +1,10 @@
+---
+import Icon from './Icon.astro';
+import type { IconName } from '../lib/icons';
+interface Props { action: { href: string; label: string; icon: IconName } }
+const { action } = Astro.props;
+---
+<div class="pf-actions hp-actions mx-actions mx-actions-mid">
+  <a class="pf-btn primary" href={action.href} target="_blank" rel="noopener"><Icon name={action.icon} size={17} w={2.2} />{action.label}</a>
+  <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
+</div>

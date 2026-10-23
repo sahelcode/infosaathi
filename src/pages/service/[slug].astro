@@ -2,6 +2,7 @@
 // Government service page (template ready; pages appear once files exist in src/content/services/).
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
+import MiscActions from '../../components/MiscActions.astro';
 import MiscHero from '../../components/MiscHero.astro';
 import Faq from '../../components/Faq.astro';
 import Report from '../../components/Report.astro';
@@ -60,6 +61,7 @@ const jsonld = {
         {d.steps.length > 0 && (
           <section class="pf-card" id="steps" aria-labelledby="h-st"><h2 id="h-st">আবেদনের ধাপ</h2>
             <ol class="un-steps">{d.steps.map((s, i) => <li><span class="un-step-n">{bn(i + 1)}</span><span><b>{s.title}</b><small>{s.text}</small></span></li>)}</ol></section>
+        <MiscActions action={{ href: d.portal_url, label: 'অফিসিয়াল পোর্টাল', icon: 'ext' }} />
         )}
         {d.fees.length > 0 && (
           <section class="pf-card" id="fees" aria-labelledby="h-fee"><h2 id="h-fee">ফি</h2>
