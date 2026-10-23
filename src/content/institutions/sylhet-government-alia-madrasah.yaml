@@ -1,0 +1,19 @@
+draft: false
+kind: madrasa
+name: Sylhet Government Alia Madrasah
+name_bn: সিলেট সরকারি আলিয়া মাদ্রাসা
+short: সিলেট আলিয়া
+type: সরকারি
+madrasa_type: সরকারি মাদ্রাসা
+est: 1913
+city: sylhet
+address: চৌহাট্টা, সিলেট ৩১০০
+web: https://sylgovaliamadrasa.edu.bd
+students: "৬৫০-এর বেশি"
+area: ৯ একর
+facilities: [৩টি ভবন, ছাত্রাবাস, খেলার মাঠ, "১১,০০০ বইয়ের লাইব্রেরি"]
+verified: 2026-10-24
+verified_by: sources
+about: "সিলেট সরকারি আলিয়া মাদ্রাসা ১৯১৩ সালে প্রতিষ্ঠিত হয়। এটি সিলেট শহরের চৌহাট্টায় ৯ একর জায়গার ওপর। উইকিপিডিয়া অনুযায়ী এখানে ৬৫০-এর বেশি শিক্ষার্থী ও ১৮ জন কর্মী আছেন। ক্যাম্পাসে ৩টি ভবন, ছাত্রাবাস, খেলার মাঠ ও লাইব্রেরি আছে।"
+sources:
+  - { title: "Wikipedia", url: "https://en.wikipedia.org/wiki/Sylhet_Government_Alia_Madrasah" }

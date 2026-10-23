@@ -1,0 +1,20 @@
+draft: false
+kind: madrasa
+name: Badedeorail Fultali Kamil Madrasa
+name_bn: বাদেদেওরাইল ফুলতলী কামিল মাদ্রাসা
+short: বাদেদেওরাইল ফুলতলী
+type: বেসরকারি
+madrasa_type: ফুলতলি মাদ্রাসা
+est: 1920
+eiin: "130525"
+city: sylhet
+address: বাদেদেওরাইল, জকিগঞ্জ, সিলেট
+board: বাংলাদেশ মাদ্রাসা শিক্ষা বোর্ড
+affiliation: ইসলামিক আরবি বিশ্ববিদ্যালয়
+levels: [দাখিল, আলিম, ফাজিল, কামিল (হাদীস), কামিল (তাফসীর)]
+students: "প্রায় ৯০০"
+verified: 2026-10-24
+verified_by: sources
+about: "বাদেদেওরাইল ফুলতলী কামিল মাদ্রাসা সিলেটের জকিগঞ্জ উপজেলায়। উইকিপিডিয়া অনুযায়ী এটি ১৯২০ সালে মাওলানা ফাতির আলী প্রতিষ্ঠা করেন। এটি এমপিওভুক্ত। দাখিল থেকে কামিল (হাদীস ও তাফসীর) পর্যন্ত পড়ানো হয়।"
+sources:
+  - { title: "Wikipedia", url: "https://en.wikipedia.org/wiki/Badedeorail_Fultali_Kamil_Madrasa" }

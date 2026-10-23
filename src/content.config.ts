@@ -227,11 +227,14 @@ const institutions = defineCollection({
         streams: z.array(z.string()).default([]), // একাদশ–দ্বাদশের বিভাগ, e.g. [বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা]
         faculties: z.array(z.string()).default([]), // অনার্সের অনুষদ, used when `subjects` is not listed
         campus: z.string().optional(),
+        madrasa_type: z.enum(['কওমি মাদ্রাসা', 'সরকারি মাদ্রাসা', 'আলিয়া মাদ্রাসা', 'হিফজ মাদ্রাসা', 'প্রাইভেট মাদ্রাসা', 'সুন্নি মাদ্রাসা', 'ফুলতলি মাদ্রাসা']).optional(), // মাদ্রাসার ধরন (শুধু kind: madrasa)
+        muhtamim: z.string().optional(), // বর্তমান মুহতামিম/অধ্যক্ষ, তারিখসহ সূত্র থেকে
+        area: z.string().optional(), // আয়তন, e.g. ৪.৪৩ একর
         students: z.string().optional(),
         teachers: z.string().optional(),
         verified: date,
-        verified_by: verifiedBy,
-        numbers: z.array(z.object({ label: z.string(), number: phone, note: z.string().optional() })).min(1, 'অন্তত একটি নম্বর দিন'),
+        verified_by: z.enum(['phone', 'official', 'sources'], 'verified_by হবে phone, official অথবা sources').default('phone'),
+        numbers: z.array(z.object({ label: z.string(), number: phone, note: z.string().optional() })).default([]),
         emails: z.array(z.object({ label: z.string(), email: z.email() })).default([]),
         admission: z
           .object({
@@ -265,7 +268,8 @@ const institutions = defineCollection({
         sources: sources,
         old_urls: z.array(z.string().startsWith('/')).default([]),
       })
-      .refine((u) => u.draft || u.verified_by === 'phone' || u.sources.length > 0, 'official তথ্যের জন্য অন্তত একটি sources দিন'),
+      .refine((u) => u.draft || u.verified_by === 'phone' || u.sources.length > 0, 'official তথ্যের জন্য অন্তত একটি sources দিন')
+      .refine((u) => u.draft || u.kind === 'madrasa' || u.numbers.length > 0, 'অন্তত একটি নম্বর দিন'),
 });
 
 // Famous place. Photos come first on the page (2-3 animated, names underneath); without photos a drawn scene of `kind` is shown.

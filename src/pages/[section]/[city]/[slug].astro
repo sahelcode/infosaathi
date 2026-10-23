@@ -35,7 +35,7 @@ const short = d.short ?? d.name_bn;
 const mono = (d.short ?? d.name.split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]).join('')).slice(0, 4);
 const A = d.admission;
 const map = `https://maps.google.com/?q=${encodeURIComponent(d.name + ', ' + city.en)}`;
-const checkedBadge = d.verified_by === 'phone' ? `ফোনে যাচাই: ${bnDate(d.verified)}` : `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
+const checkedBadge = d.verified_by === 'sources' ? `খোলা সূত্র থেকে সংগৃহীত: ${bnDate(d.verified)}` : d.verified_by === 'phone' ? `ফোনে যাচাই: ${bnDate(d.verified)}` : `অফিসিয়াল সূত্রে হালনাগাদ: ${bnDate(d.verified)}`;
 const facs = [...new Set(d.subjects.map((s) => s.faculty))];
 const facList = d.faculties.length ? d.faculties : facs;
 const isHsc = (l: string) => /একাদশ|HSC|উচ্চ/i.test(l);
@@ -60,7 +60,18 @@ const latest = results[0];
 
 const NA = 'আমরা সঠিক তথ্য পাইনি';
 const genderText = d.gender === 'সহশিক্ষা' ? 'সহশিক্ষা (ছেলে ও মেয়ে)' : d.gender === 'বালক' ? 'শুধু ছেলে' : d.gender === 'বালিকা' ? 'শুধু মেয়ে' : '';
-const glance: { k: string; v: string }[] = [
+const isMadrasa = section === 'madrasa';
+const glance: { k: string; v: string }[] = isMadrasa ? [
+  { k: 'ধরন', v: d.madrasa_type ?? `${d.type} মাদরাসা` },
+  { k: 'প্রতিষ্ঠা', v: d.est ? bn(d.est) : '' },
+  { k: 'মুহতামিম/অধ্যক্ষ', v: d.muhtamim ?? '' },
+  { k: 'মোট শিক্ষার্থী', v: d.students ?? '' },
+  { k: 'শিক্ষক', v: d.teachers ?? '' },
+  { k: 'আয়তন', v: d.area ?? d.campus ?? '' },
+  ...(d.board ? [{ k: 'শিক্ষা বোর্ড', v: d.board }] : []),
+  ...(d.affiliation ? [{ k: 'অধিভুক্তি', v: d.affiliation }] : []),
+  ...(d.eiin ? [{ k: 'EIIN', v: bn(d.eiin) }] : []),
+] : [
   { k: 'ধরন', v: `${d.type} ${KIND[d.kind]}` },
   { k: 'প্রতিষ্ঠা', v: d.est ? bn(d.est) : '' },
   { k: 'EIIN', v: d.eiin ? bn(d.eiin) : '' },
@@ -79,7 +90,7 @@ const about =
   d.about ??
   `${d.name_bn} ${d.est ? bn(d.est) + ' সালে প্রতিষ্ঠিত ' : ''}${city.of} একটি ${d.type} ${KIND[d.kind]}।` +
     (d.levels.length ? ` এখানে ${d.levels.join(', ')} পড়ানো হয়।` : '');
-const mainNum = d.numbers[0];
+const mainNum = d.numbers[0] as (typeof d.numbers)[number] | undefined;
 const single = d.numbers.length === 1;
 const faq = [
   ...(d.eiin ? [{ q: `${d.name_bn}-এর EIIN নম্বর কত?`, a: `${bn(d.eiin)}।` }] : []),
@@ -92,7 +103,7 @@ const faq = [
   ...(d.fees.length ? [] : [{ q: `${d.name_bn}-এ ভর্তির খরচ কত?`, a: 'আমরা এখনো সঠিক তথ্য পাইনি। ভর্তির আগে কলেজের নোটিশ বা অফিসে জেনে নিন।' }]),
   ...(d.web ? [{ q: `${d.name_bn}-এর অফিসিয়াল ওয়েবসাইট কী?`, a: `${d.web.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}।` }] : []),
   { q: `${d.name_bn} কোথায়?`, a: `${d.address}।` },
-  { q: `${d.name_bn}-এর যোগাযোগ নম্বর কী?`, a: `${mainNum.label}: ${phoneShow(mainNum.number)}।` },
+  ...(mainNum ? [{ q: `${d.name_bn}-এর যোগাযোগ নম্বর কী?`, a: `${mainNum.label}: ${phoneShow(mainNum.number)}।` }] : []),
   ...d.faq,
 ];
 
@@ -114,7 +125,7 @@ const jsonld = {
       url: SITE + path,
       ...(d.web && { sameAs: [d.web] }),
       ...(d.est && { foundingDate: String(d.est) }),
-      telephone: phoneIntl(mainNum.number),
+      ...(mainNum && { telephone: phoneIntl(mainNum.number) }),
       ...(photo && { image: new URL(photo.src, SITE).href }),
       address: { '@type': 'PostalAddress', streetAddress: d.address, addressLocality: city.en, addressCountry: 'BD' },
     },
@@ -139,7 +150,7 @@ const jsonld = {
             <h1 class="pf-name">{d.name_bn}</h1>
             <p class="pf-en">{d.name}</p>
             <p class="hp-addr">{d.address}</p>
-            <p class="hp-meta">{d.type} {KIND[d.kind]}{d.est && ` · প্রতিষ্ঠা ${bn(d.est)}`}</p>
+            <p class="hp-meta">{d.madrasa_type ?? `${d.type} ${KIND[d.kind]}`}{d.est && ` · প্রতিষ্ঠা ${bn(d.est)}`}</p>
           </div>
         </section>
 
@@ -249,7 +260,7 @@ const jsonld = {
           )}
         </section>
         <div class:list={['pf-actions', 'hp-actions', 'un-actions', 'un-actions-row']}>
-          {single ? <a class="pf-btn" href={`tel:${mainNum.number}`}><Icon name="phone" />কল করুন</a>
+          {!mainNum ? null : single ? <a class="pf-btn" href={`tel:${mainNum.number}`}><Icon name="phone" />কল করুন</a>
           : <button class="pf-btn" type="button" data-sheet-open="numbers"><Icon name="phone" />কল করুন</button>}
           <a class="pf-btn" href={map} target="_blank" rel="noopener" aria-label="ম্যাপ"><Icon name="pin" /></a>
           <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
@@ -257,6 +268,7 @@ const jsonld = {
 
         <section class="un-fact" id="contact" aria-labelledby="h-nums"><h2 id="h-nums">যোগাযোগের নম্বর</h2>
           <div class="pf-nums hp-nums">
+            {d.numbers.length === 0 && <p class="un-na">আমরা সঠিক তথ্য পাইনি</p>}
             {d.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} />)}
             {d.emails.map((m) => (
               <div class="pf-num un-mail"><span class="pf-num-t"><small class="pf-num-l">ইমেইল · {m.label}</small><b>{m.email}</b></span>

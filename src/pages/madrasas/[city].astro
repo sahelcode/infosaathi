@@ -1,0 +1,22 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import Icon from '../../components/Icon.astro';
+import { getInstitutions, institutionUrl, instSection, type Institution } from '../../lib/data';
+import { CITIES, type City } from '../../lib/taxonomy';
+import { bn } from '../../lib/format';
+export async function getStaticPaths() {
+  const list = (await getInstitutions()).filter((i) => instSection(i) === 'madrasa');
+  return [...new Set(list.map((i) => i.data.city))].map((city) => ({ params: { city }, props: { city, list: list.filter((i) => i.data.city === city) } }));
+}
+const { city, list } = Astro.props as { city: City; list: Institution[] };
+const c = CITIES[city];
+import MiniThumb from '../../components/MiniThumb.astro';
+---
+<ListPage title={`${c.of} মাদ্রাসা: তথ্য ও যোগাযোগ | InfoSaathi`} h1={`${c.of} মাদ্রাসা`} path={`/madrasas/${city}/`}
+  crumbs={[['হোম', '/'], ['মাদ্রাসা', '/madrasas/']]} intro={`${c.of} ${bn(list.length)}টি মাদ্রাসার তথ্য।`}>
+  {list.map((i) => (
+    <a class="pf-mini" href={institutionUrl(i)}><MiniThumb d={i.data} icon="cap" />
+      <span class="pf-mini-txt"><b>{i.data.name_bn}</b><span class="pf-mini-h">{i.data.name} · {i.data.madrasa_type ?? i.data.type}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>

@@ -1,0 +1,21 @@
+draft: false
+kind: madrasa
+name: Al-Jamia Al-Islamia Patiya
+name_bn: আল-জামিয়া আল-ইসলামিয়া পটিয়া
+short: পটিয়া মাদ্রাসা
+type: বেসরকারি
+madrasa_type: কওমি মাদ্রাসা
+est: 1938
+city: chattogram
+address: পটিয়া, চট্টগ্রাম
+web: https://jamiahislamiahpatiya.com
+levels: [নূরানি, নাজেরা ও হিফজ, ইবতেদায়ি থেকে দাওরায়ে হাদীস (এমএ), উচ্চতর বিশেষায়িত কোর্স]
+students: "প্রায় ৫,০০০"
+teachers: "প্রায় ১৬০"
+muhtamim: "আল্লামা আবু তাহের কাসেমী নদভী (অফিসিয়াল সাইটে ‘রেক্টর’ হিসেবে লেখা)"
+verified: 2026-10-24
+verified_by: sources
+about: "আল-জামিয়া আল-ইসলামিয়া পটিয়া ১৯৩৮ সালে চট্টগ্রামের পটিয়ায় প্রতিষ্ঠিত হয়। এটি একটি কওমি মাদ্রাসা, যা পটিয়া মাদ্রাসা নামে পরিচিত। এখানে নূরানি, নাজেরা, হিফজ থেকে দাওরায়ে হাদীস পর্যন্ত পড়ানো হয়। সাধারণ শিক্ষার এসএসসিও এখানে আছে।"
+sources:
+  - { title: "অফিসিয়াল ওয়েবসাইট", url: "https://jamiahislamiahpatiya.com/en/about-us/" }
+  - { title: "Wikipedia", url: "https://en.wikipedia.org/wiki/Al_Jamia_Al_Islamia_Patiya" }

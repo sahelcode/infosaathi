@@ -1,0 +1,21 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import ListFilter from '../../components/ListFilter.astro';
+import { cityField, typeField } from '../../lib/filters';
+import Icon from '../../components/Icon.astro';
+import MiniThumb from '../../components/MiniThumb.astro';
+import { getInstitutions, institutionUrl, instSection } from '../../lib/data';
+import { CITIES } from '../../lib/taxonomy';
+const list = (await getInstitutions()).filter((i) => instSection(i) === 'madrasa');
+const cities = [...new Set(list.map((i) => i.data.city))];
+const kindOf = (i: (typeof list)[number]) => i.data.madrasa_type ?? `${i.data.type} মাদ্রাসা`;
+---
+<ListPage title="বাংলাদেশের মাদ্রাসা: কওমি, আলিয়া ও সরকারি মাদ্রাসার তথ্য | InfoSaathi" h1="মাদ্রাসা" path="/madrasas/" crumbs={[['হোম', '/']]}
+  intro="কওমি, আলিয়া, সরকারি ও অন্যান্য মাদ্রাসার প্রতিষ্ঠাকাল, শিক্ষার্থী, শিক্ষক ও যোগাযোগ।">
+  <ListFilter slot="filter" fields={[cityField(cities), typeField('ধরন', 'সব ধরন', list.map(kindOf))]} />
+  {list.map((i) => (
+    <a class="pf-mini" href={institutionUrl(i)} data-city={i.data.city} data-type={kindOf(i)}><MiniThumb d={i.data} icon="cap" />
+      <span class="pf-mini-txt"><b>{i.data.name_bn}</b><span class="pf-mini-h"><Icon name="pin" size={12} />{CITIES[i.data.city].bn} · {kindOf(i)}</span></span>
+      <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>
+  ))}
+</ListPage>

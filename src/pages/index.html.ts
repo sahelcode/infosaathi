@@ -240,10 +240,24 @@ export const GET: APIRoute = async () => {
   html = swap(html, "<div class=\"ix-image\">${hotelArt(i+1)}</div>", "<div class=\"ix-image\">${h.img ? `<img src=\"${h.img}\" alt=\"\" loading=\"lazy\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\">` : hotelArt(i+1)}</div>");
   html = swap(html, '<span class="eyebrow">Hotels</span><a href="#" class="see-all">', '<span class="eyebrow">Hotels</span><a href="/hotels/" class="see-all">');
   html = swap(html, '<span class="ix-rate">★ ${h.rating}</span></div>\n      </div>\n    </div>`).join(\'\'));', '</div>\n      </div>\n    </a>`).join(\'\'));');
+  // madrasas: same card as the university row, placed right after the blood section; the type (কওমি, সরকারি, ফুলতলি ...) replaces public/private
+  const madrasaList = inst.filter((i) => instSection(i) === 'madrasa').slice(0, 8);
+  const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const madrasaCards = (await Promise.all(madrasaList.map(async (m) => {
+    const img = m.data.photo ? (await getImage({ src: m.data.photo, width: 640, format: 'webp' })).src : '';
+    const logo = m.data.logo ? (await getImage({ src: m.data.logo, width: 140, format: 'webp' })).src : '';
+    const kind = m.data.madrasa_type ?? `${m.data.type} মাদ্রাসা`;
+    const dome = '<svg viewBox="0 0 160 80" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><rect width="160" height="80" fill="#f1f6f3"/><rect y="64" width="160" height="16" fill="#e4eee8"/><path d="M56 64V44a24 24 0 0 1 48 0v20z" fill="#fff" stroke="#8fb09e" stroke-width="2"/><path d="M80 12v8" stroke="#8fb09e" stroke-width="2" stroke-linecap="round"/><rect x="28" y="30" width="10" height="34" fill="#fff" stroke="#8fb09e" stroke-width="2"/><rect x="122" y="30" width="10" height="34" fill="#fff" stroke="#8fb09e" stroke-width="2"/><path d="M28 30l5-9 5 9M122 30l5-9 5 9" fill="none" stroke="#8fb09e" stroke-width="2" stroke-linejoin="round"/></svg>';
+    return `<a class="org-card uni-card" href="${institutionUrl(m)}" style="color:inherit;text-decoration:none"><div class="org-image">${img ? `<img src="${img}" alt="" loading="lazy">` : dome}</div><div class="org-body"><div class="logo-row"><div class="org-logo ${logo ? 'has-img' : ''}" style="${logo ? '' : 'background:#eef5f1;color:#2f6b4f'}">${logo ? `<img src="${logo}" alt="" loading="lazy">` : 'ম'}</div><div class="org-name-wrap"><span class="uni-rank">${esc(kind)}</span></div></div><b class="uni-full-name">${esc(m.data.name_bn)}</b><div class="uni-meta"><span class="uni-loc">${esc(CITIES[m.data.city].bn)}, বাংলাদেশ</span>${m.data.est ? `<span class="uni-est">Est. ${m.data.est}</span>` : ''}</div></div></a>`;
+  }))).join('');
+  if (madrasaCards) {
+    const section = `<section class="tight" id="madrasaSec"><div class="container"><div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Madrasas</span><a href="/madrasas/" class="see-all">See All<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Learning rooted in faith</h2></div><div class="row-scroll reveal" id="madrasaRow">${madrasaCards}</div></div></section>\n\n`;
+    html = swap(html, '<!-- ============================================================ 6.6 MORE CATEGORIES', section + '<!-- ============================================================ 6.6 MORE CATEGORIES');
+  }
   html = html.replaceAll('__CONTACT_EMAIL__', CONTACT_EMAIL);
   // little icons that float on the last "সব দেখুন" card of each swipe row
   const rowIcons: Record<string, (keyof typeof ICONS)[]> = {
-    doctorRow: ['steth', 'heart', 'user'], uniRow: ['cap', 'build', 'award'], hospitalRow: ['build', 'ambulance', 'heart'],
+    doctorRow: ['steth', 'heart', 'user'], uniRow: ['cap', 'build', 'award'], hospitalRow: ['build', 'ambulance', 'heart'], madrasaRow: ['cap', 'build', 'award'],
     collegeRow: ['cap', 'award', 'file'], schoolRow: ['cap', 'star', 'walk'], placeRow: ['mount', 'sun', 'beach'], hotelRow: ['bed', 'pool', 'star'],
   };
   html = swap(html, 'var I=/*ROW_ICONS*/{};', `var I=${JSON.stringify(Object.fromEntries(Object.entries(rowIcons).map(([k, v]) => [k, v.map((n) => ICONS[n])])))};`);

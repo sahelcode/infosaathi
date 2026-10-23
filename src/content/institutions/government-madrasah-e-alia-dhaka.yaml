@@ -1,0 +1,18 @@
+draft: false
+kind: madrasa
+name: Government Madrasah-e-Alia, Dhaka
+name_bn: সরকারি মাদ্রাসা-ই-আলিয়া, ঢাকা
+short: ঢাকা আলিয়া
+type: সরকারি
+madrasa_type: সরকারি মাদ্রাসা
+est: 1780
+city: dhaka
+address: বকশীবাজার, ঢাকা
+web: https://www.dhkgovmalia.edu.bd
+board: বাংলাদেশ মাদ্রাসা শিক্ষা বোর্ড
+affiliation: ইসলামিক আরবি বিশ্ববিদ্যালয়
+verified: 2026-10-24
+verified_by: sources
+about: "সরকারি মাদ্রাসা-ই-আলিয়া ১৭৮০ সালে ব্রিটিশ সরকারের উদ্যোগে প্রতিষ্ঠিত হয়। এটি ঢাকার বকশীবাজারে অবস্থিত। বাংলাদেশ মাদ্রাসা শিক্ষা বোর্ড ও ইসলামিক আরবি বিশ্ববিদ্যালয়ের সাথে যুক্ত।"
+sources:
+  - { title: "Wikipedia", url: "https://en.wikipedia.org/wiki/Government_Madrasah-e-Alia" }

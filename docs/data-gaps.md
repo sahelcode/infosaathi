@@ -202,3 +202,11 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | school | viqarunnisa-noon-school-and-college | monthly tuition and class 1-9 admission fees | official site has no fee page; 3 searches (bn/en) found only news on application fees | 2026-10-23 |
 | school | viqarunnisa-noon-school-and-college | 2027 class 1-9 admission (dates, seats) | not yet published; latest is the 2026 lottery (2,020 seats, Prothom Alo 2025-11-23), used as "গত বছর" in FAQ | 2026-10-23 |
 | school | viqarunnisa-noon-school-and-college | HSC 2026 result | 2 searches (bn/en) and news; only HSC 2025 found | 2026-10-23 |
+
+## Madrasa (demo, 2026-10-24)
+- Phones: none of the 5 madrasas has a verified number (detail page shows "আমরা সঠিক তথ্য পাইনি").
+- Current muhtamim/principal missing: Dhaka Alia, Sylhet Alia, Darul Uloom Hathazari, Badedeorail Fultali. Patiya: taken from the official site (listed as "rector").
+- Student/teacher counts missing: Dhaka Alia (both), Sylhet Alia (teachers).
+- Badedeorail Fultali: 1920 founding year is unsourced, confirm before launch.
+- Badge is "খোলা সূত্র থেকে সংগৃহীত" (mostly Wikipedia), not phone-verified.
+- No photos or logos yet; home card uses a neutral mosque placeholder.
