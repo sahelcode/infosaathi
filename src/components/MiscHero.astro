@@ -1,5 +1,6 @@
 ---
 // Top block shared by scholarship, job, AI tool and service pages.
+import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 import type { IconName } from '../lib/icons';
 interface Props {
@@ -13,21 +14,50 @@ interface Props {
   jump: string[][];
   checked: string;
   logo?: ImageMetadata;
+  cover?: ImageMetadata;
 }
-const { kind, name, sub, line, badges, action, checked, logo } = Astro.props;
-import { Image } from 'astro:assets';
+const { kind, icon, name, sub, line, badges, action, checked, logo, cover } = Astro.props;
+const stroke = { fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' } as const;
 ---
 <section class="pf-hero hp-hero">
-  {kind === 'ai' ? (
-    <div class="mx-anim ai" aria-hidden="true"><span class="mx-ai-line"></span><span class="mx-ai-dots"><i></i><i></i><i></i></span><span class="mx-ai-bar"></span></div>
-  ) : (
-    <div class={`mx-anim ${kind}`} aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+  {kind === 'ai' && (
+    <div class="hp-cover mx-band ai" aria-hidden="true">
+      <svg class="mx-net" viewBox="0 0 400 104" preserveAspectRatio="xMidYMid slice">
+        <g class="mx-links" stroke="rgba(255,255,255,.35)" stroke-width="1" fill="none">
+          <path d="M30 30 L110 60 L190 24 L270 70 L350 34"/><path d="M30 78 L110 60 L190 84 L270 70 L350 82"/><path d="M110 60 L190 24"/><path d="M190 84 L270 70"/><path d="M190 24 L270 70"/>
+        </g>
+        <g class="mx-pulses" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+          <path class="p1" pathLength="100" d="M30 30 L110 60 L190 24 L270 70 L350 34"/><path class="p2" pathLength="100" d="M30 78 L110 60 L190 84 L270 70 L350 82"/>
+        </g>
+        <g fill="#fff">
+          <circle class="n n1" cx="30" cy="30" r="3.5"/><circle class="n n2" cx="110" cy="60" r="4.5"/><circle class="n n3" cx="190" cy="24" r="3.5"/><circle class="n n4" cx="270" cy="70" r="4.5"/><circle class="n n5" cx="350" cy="34" r="3.5"/><circle class="n n6" cx="30" cy="78" r="3"/><circle class="n n7" cx="190" cy="84" r="3"/><circle class="n n8" cx="350" cy="82" r="3"/>
+        </g>
+      </svg>
+      <span class="mx-code"><i></i><i></i><i></i></span>
+      <span class="mx-sweep"></span>
+    </div>
   )}
-  <div class="pf-hero-body mx-body">
-    {kind === 'ai' && logo && <div class="mx-logo"><Image src={logo} alt="" width={120} height={120} /></div>}
+  {kind === 'sch' && (
+    <div class="mx-edu" aria-hidden="true">
+      <svg class="e1" width="30" height="30" viewBox="0 0 24 24" {...stroke}><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg>
+      <svg class="e2" width="26" height="26" viewBox="0 0 24 24" {...stroke}><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5z"/><path d="M8 7h7M8 11h5"/></svg>
+      <svg class="e3" width="26" height="26" viewBox="0 0 24 24" {...stroke}><path d="M4 20l1-4L17 4l3 3L8 19l-4 1z"/><path d="M14 7l3 3"/></svg>
+      <svg class="e4" width="28" height="28" viewBox="0 0 24 24" {...stroke}><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>
+      <svg class="e5" width="26" height="26" viewBox="0 0 24 24" {...stroke}><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg>
+      <svg class="e6" width="26" height="26" viewBox="0 0 24 24" {...stroke}><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"/></svg>
+      <span class="mx-edu-line"></span>
+    </div>
+  )}
+  {(kind === 'job' || kind === 'gov') && (
+    <div class={`mx-cover ${kind}`} aria-hidden="true">{cover && <Image src={cover} alt="" width={1200} height={300} />}</div>
+  )}
+  <div class="pf-hero-body">
+    {kind === 'ai' && (
+      <div class="hp-logo un-logo ed-mono mx-ico ai" aria-hidden="true">{logo ? <Image class="mx-logo-img" src={logo} alt="" width={120} height={120} /> : <Icon name={icon} size={36} w={1.8} />}</div>
+    )}
     <h1 class="pf-name">{name}</h1>
     {sub && <p class="pf-en">{sub}</p>}
-    {line && <p class="hp-addr">{kind === "job" && <Icon name="pin" size={15} w={2.2} />}{line}</p>}
+    {line && <p class="hp-addr">{kind === 'job' && <Icon name="pin" size={15} w={2.2} />}{line}</p>}
     <div class="pf-badges">
       {badges.map((b) => b.ok ? <span class="pf-badge ok"><Icon name="check" size={13} w={3} />{b.text}</span> : <span class="pf-badge">{b.text}</span>)}
       <span class="pf-badge src"><Icon name="clock" size={13} w={2.2} />{checked}</span>

@@ -58,7 +58,7 @@ const jsonld = {
     <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{d.title}</a></nav>
     <div class="pf-grid">
       <article class="pf-main">
-        <MiscHero kind="job" icon="brief" name={d.title} sub={d.org} line={d.location ?? 'বাংলাদেশ'}
+        <MiscHero cover={d.cover} kind="job" icon="brief" name={d.title} sub={d.org} line={d.location ?? 'বাংলাদেশ'}
           badges={[{ text: `${d.sector} চাকরি`, ok: true }, ...(d.vacancies ? [{ text: `${d.vacancies} পদ` }] : [])]}
           action={applyHref ? { href: applyHref, label: d.apply_url ? 'অনলাইনে আবেদন' : 'অফিসিয়াল বিজ্ঞপ্তি', icon: 'ext' } : { href: '#', label: 'আবেদন', icon: 'ext' }} jump={jump} checked={checked} />
 

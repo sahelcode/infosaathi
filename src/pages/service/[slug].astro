@@ -52,7 +52,7 @@ const jsonld = {
     <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{d.name}</a></nav>
     <div class="pf-grid">
       <article class="pf-main">
-        <MiscHero kind="gov" icon="gov" name={d.name} sub={d.name_en ?? d.dept} line={d.summary}
+        <MiscHero cover={d.cover} kind="gov" icon="gov" name={d.name} sub={d.name_en ?? d.dept} line={d.summary}
           badges={[{ text: d.category, ok: true }, ...(d.online ? [{ text: 'অনলাইনে আবেদন' }] : [])]}
           action={{ href: d.portal_url, label: 'অফিসিয়াল পোর্টাল', icon: 'ext' }} jump={jump} checked={checked} />
         <div class="un-glance">{glance.map((g) => <div class="un-g"><span class="un-g-i"><Icon name={g.icon} size={18} /></span><small>{g.k}</small><b>{g.v}</b></div>)}</div>

@@ -35,35 +35,47 @@
 .pf-card-head + .un-docs,.pf-card-head + .un-steps{margin-top:14px;}
 @media (max-width:767px){.hp-actions.mx-actions{grid-template-columns:1fr 46px;}.hp-actions.mx-actions .pf-btn:first-child{grid-column:auto;}}
 
-/* ===== calm header animation (no photos, no logos, no coloured band) ===== */
-.mx-anim{position:relative;height:60px;overflow:hidden;border-bottom:1px solid var(--line);background:#fff;display:flex;flex-direction:column;justify-content:center;gap:7px;padding:0 20px;}
-.mx-anim i{display:block;height:5px;border-radius:3px;background:#e3ece7;transform-origin:left;animation:mxWrite 4.2s cubic-bezier(.4,0,.2,1) infinite;}
-.mx-anim i:nth-child(1){width:62%;}
-.mx-anim i:nth-child(2){width:84%;animation-delay:.35s;}
-.mx-anim i:nth-child(3){width:46%;animation-delay:.7s;}
-.mx-anim b{position:absolute;top:0;bottom:0;width:80px;left:-80px;background:linear-gradient(90deg,transparent,rgba(22,163,74,.12),transparent);animation:mxScan 4.2s ease-in-out infinite;}
-@keyframes mxWrite{0%{transform:scaleX(0);opacity:.4}35%,80%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
-@keyframes mxScan{0%{left:-80px}60%,100%{left:100%}}
-.mx-anim.ai{height:68px;flex-direction:row;align-items:center;gap:14px;}
-.mx-ai-line{position:relative;display:block;height:8px;width:0;max-width:52%;border-radius:4px;background:#d6e4dc;animation:mxType 3.6s steps(22) infinite;}
-.mx-ai-line::after{content:'';position:absolute;right:-5px;top:-4px;width:2px;height:16px;background:#16a34a;animation:mxCaret .6s steps(1) infinite;}
-.mx-ai-dots{display:flex;gap:4px;}
-.mx-ai-dots i{width:6px;height:6px;border-radius:50%;background:#9db8a9;animation:mxDot 1.1s ease-in-out infinite;}
-.mx-ai-dots i:nth-child(2){animation-delay:.15s;}
-.mx-ai-dots i:nth-child(3){animation-delay:.3s;}
-.mx-ai-bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:#eef3f0;overflow:hidden;}
-.mx-ai-bar::after{content:'';position:absolute;top:0;bottom:0;width:30%;background:#16a34a;animation:mxBar 1.8s ease-in-out infinite;}
-@keyframes mxType{0%{width:0}70%,100%{width:52%}}
-@keyframes mxCaret{50%{opacity:0}}
-@keyframes mxDot{0%,100%{opacity:.25;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
-@keyframes mxBar{0%{left:-30%}100%{left:100%}}
-@media (prefers-reduced-motion:reduce){.mx-anim i,.mx-anim b,.mx-ai-line,.mx-ai-line::after,.mx-ai-dots i,.mx-ai-bar::after{animation:none!important}.mx-anim i{opacity:1}.mx-ai-line{width:40%}}
-.mx-body{padding-top:18px;}
-.mx-logo{width:64px;height:64px;margin:0 auto 12px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:8px;}
-.mx-logo img{display:block;width:100%;height:100%;object-fit:contain;}
+/* ===== header visuals ===== */
+/* AI tools: gradient band with a small network that "thinks" */
+.mx-band{position:relative;overflow:hidden;}
+.mx-net{position:absolute;inset:0;width:100%;height:100%;}
+.mx-net .n{animation:mxNode 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center;}
+.mx-net .n2{animation-delay:.3s}.mx-net .n3{animation-delay:.6s}.mx-net .n4{animation-delay:.9s}.mx-net .n5{animation-delay:1.2s}.mx-net .n6{animation-delay:.5s}.mx-net .n7{animation-delay:.8s}.mx-net .n8{animation-delay:1.1s}
+.mx-net .p1,.mx-net .p2{stroke-dasharray:14 86;stroke-dashoffset:14;animation:mxFlow 2.6s linear infinite;}
+.mx-net .p2{animation-delay:1.1s;animation-duration:3s;}
+.mx-code{position:absolute;right:14px;top:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-end;}
+.mx-code i{display:block;height:4px;border-radius:2px;background:rgba(255,255,255,.55);width:0;animation:mxTyping 3s steps(14) infinite;}
+.mx-code i:nth-child(1){max-width:78px}.mx-code i:nth-child(2){max-width:52px;animation-delay:.5s}.mx-code i:nth-child(3){max-width:66px;animation-delay:1s}
+.mx-sweep{position:absolute;top:0;bottom:0;width:90px;left:-90px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);animation:mxSweep 3.6s ease-in-out infinite;}
+@keyframes mxNode{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.5)}}
+@keyframes mxFlow{from{stroke-dashoffset:14}to{stroke-dashoffset:-100}}
+@keyframes mxTyping{0%{width:0}60%,100%{width:100%}}
+@keyframes mxSweep{0%{left:-90px}70%,100%{left:100%}}
+.mx-logo-img{display:block;width:100%;height:100%;object-fit:contain;background:#fff;}
+.mx-ico.ai:has(.mx-logo-img){background:#fff;}
+
+/* scholarships: default visual, a little taller, with study icons */
+.mx-edu{position:relative;height:120px;overflow:hidden;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-around;padding:0 14px;}
+.mx-edu svg{color:#8fb09e;animation:mxFloat 4.4s ease-in-out infinite;}
+.mx-edu .e2{animation-delay:.5s}.mx-edu .e3{animation-delay:1s}.mx-edu .e4{animation-delay:1.5s}.mx-edu .e5{animation-delay:2s}.mx-edu .e6{animation-delay:2.5s}
+.mx-edu .e1{color:#16a34a;}
+.mx-edu-line{position:absolute;left:0;bottom:0;height:2px;width:35%;background:linear-gradient(90deg,transparent,#16a34a,transparent);animation:mxLine 4s ease-in-out infinite;}
+@keyframes mxFloat{0%,100%{transform:translateY(5px)}50%{transform:translateY(-6px)}}
+@keyframes mxLine{0%{left:-35%}100%{left:100%}}
+@media (max-width:420px){.mx-edu .e6{display:none;}}
+
+/* jobs and government services: low picture band, still, no logo */
+.mx-cover{height:96px;overflow:hidden;background:#f3f7f5;border-bottom:1px solid var(--line);}
+.mx-cover img{display:block;width:100%;height:100%;object-fit:cover;}
+.mx-cover.job:empty{background:repeating-linear-gradient(0deg,#f3f7f5 0 15px,#eaf1ed 15px 16px);}
+.mx-cover.gov:empty{background:linear-gradient(#f3f7f5,#f3f7f5);}
+.mx-cover:not(:empty){height:110px;}
+@media (min-width:768px){.mx-cover{height:120px;}.mx-cover:not(:empty){height:150px;}.mx-edu{height:150px;}}
+@media (prefers-reduced-motion:reduce){.mx-net .n,.mx-net .p1,.mx-net .p2,.mx-code i,.mx-sweep,.mx-edu svg,.mx-edu-line{animation:none!important}.mx-code i{width:100%}}
 
 /* these four page types: all text justified, only the apply button has colour */
 .mx-page .pf-text,.mx-page .un-docs li,.mx-page .un-steps small,.mx-page .un-pc-b li,.mx-page .mx-tile small,.mx-page .pf-card p{text-align:justify;text-justify:inter-word;}
 .mx-page .pf-btn:not(.primary){background:#fff;color:var(--ink-2);border:1px solid var(--line);}
 .mx-page .mx-tile{background:#fff;border:1px solid var(--line);}
 .mx-page .un-g-i,.mx-page .mx-tile-i{background:#fff;color:var(--ink-2);}
+.mx-edu + .pf-hero-body,.mx-cover + .pf-hero-body{padding-top:18px;}

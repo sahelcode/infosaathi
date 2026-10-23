@@ -409,9 +409,11 @@ const scholarships = defineCollection({
 
 const jobs = defineCollection({
   loader: files('jobs'),
-  schema: z
+  schema: ({ image }) =>
+    z
     .object({
       draft: z.boolean().default(false),
+      cover: image().optional(), // low header picture, e.g. ./images/<slug>.jpg (1200x300)
       title: z.string().min(3), // the circular's title
       org: z.string(),
       sector: z.enum(['সরকারি', 'ব্যাংক', 'বাহিনী', 'সংস্থা', 'বেসরকারি'], 'sector হবে: সরকারি, ব্যাংক, বাহিনী, সংস্থা, বেসরকারি'),
@@ -473,9 +475,11 @@ const aiTools = defineCollection({
 const SERVICE_CATEGORIES = ['পাসপোর্ট ও ভ্রমণ', 'পরিচয় ও নিবন্ধন', 'কর ও ব্যবসা', 'ভূমি', 'পরিবহন', 'শিক্ষা', 'স্বাস্থ্য', 'নাগরিক সেবা'] as const;
 const services = defineCollection({
   loader: files('services'),
-  schema: z
+  schema: ({ image }) =>
+    z
     .object({
       draft: z.boolean().default(false),
+      cover: image().optional(), // low header picture, e.g. ./images/<slug>.jpg (1200x300)
       name: z.string().min(3),
       name_en: z.string().optional(),
       dept: z.string(), // who provides it
