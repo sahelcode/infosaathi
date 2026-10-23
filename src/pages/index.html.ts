@@ -177,9 +177,16 @@ export const GET: APIRoute = async () => {
   const nJobs = (await getJobs()).length;
   const unit = (n: number, u: string) => (n > 0 ? `${bn(n)}টি ${u}` : 'শীঘ্রই আসছে');
   const EN: Record<string, string> = { hospital: 'Hospitals', university: 'Universities', hotels: 'Hotels', scholarship: 'Scholarships', jobs: 'Jobs', news: 'News' };
-  const mk = (k: string, name: string, href: string, n: number, u: string) => ({ k, name, en: EN[k], href, count: unit(n, u), soon: n === 0 });
+  // Optional coloured icon images: src/assets/pill-icons/<key>.png (see README there). Without a file the page draws a gradient badge.
+  const pillFiles = import.meta.glob<{ default: ImageMetadata }>('/src/assets/pill-icons/*.{png,webp,jpg,jpeg}', { eager: true });
+  const pillImg: Record<string, string> = {};
+  for (const [path, mod] of Object.entries(pillFiles)) {
+    const key = path.split('/').pop()!.replace(/\.[a-z]+$/i, '');
+    pillImg[key] = (await getImage({ src: mod.default, width: 128, format: 'webp' })).src;
+  }
+  const mk = (k: string, name: string, href: string, n: number, u: string) => ({ k, name, en: EN[k], href, count: unit(n, u), soon: n === 0, img: pillImg[k] ?? '' });
   html = swapArray(html, 'setA', [
-    { k: 'doctor', name: 'ডাক্তার', en: 'Doctors', href: '/doctors/', count: doctors.length ? `${bn(doctors.length)} জন যাচাই করা` : 'শীঘ্রই আসছে', soon: !doctors.length },
+    { k: 'doctor', name: 'ডাক্তার', en: 'Doctors', href: '/doctors/', count: doctors.length ? `${bn(doctors.length)} জন যাচাই করা` : 'শীঘ্রই আসছে', soon: !doctors.length, img: pillImg.doctor ?? '' },
     mk('hospital', 'হাসপাতাল', '/hospitals/', hospitals.length, 'প্রোফাইল'),
     mk('university', 'বিশ্ববিদ্যালয়', '/universities/', (await getUniversities()).length, 'প্রোফাইল'),
     mk('hotels', 'হোটেল', '/hotels/', nHotels, 'হোটেল'),
