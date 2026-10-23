@@ -1,27 +1,40 @@
 system: "QS World University Rankings 2027"
 year: 2027
 source_url: "https://online92.thedailystar.net/youth/education-0/news/qs-world-university-rankings-2027-where-did-bangladeshi-universities-rank-4201926"
-note: "কিউএস ২০২৭ (প্রকাশ জুন ২০২৬)-এ বাংলাদেশের ১৩টি বিশ্ববিদ্যালয় আছে। কিউএসের নিজস্ব পাতা এখানে খোলা যায়নি; তালিকা দ্য ডেইলি স্টারের প্রতিবেদন থেকে নেওয়া, ঢাবি, বুয়েট, নর্থ সাউথ ও এআইইউবির অবস্থান দ্য ফিনান্সিয়াল এক্সপ্রেস, এনএসইউ ও এআইইউবির নিজস্ব পাতার সঙ্গে মিলেছে। ১,৪০১+ ব্যান্ডের বিশ্ববিদ্যালয়গুলো বর্ণানুক্রমে সাজানো। আগের বছরের অবস্থান নিশ্চিতভাবে না পাওয়ায় দেওয়া হয়নি।"
+note: "কিউএস ২০২৭ (প্রকাশ ১৮ জুন ২০২৬)-এ বাংলাদেশের ১৩টি বিশ্ববিদ্যালয় আছে। অবস্থান কিউএসের নিজস্ব পাতা ও দ্য ডেইলি স্টারের প্রতিবেদন মিলিয়ে দেওয়া। কেইউইটির কিউএস পাতায় ২০২৭ সাল এখনো ওঠেনি, তাই এর অবস্থান দুটি আলাদা পাতা মিলিয়ে নেওয়া। কিউএস ঢাবিকে যৌথভাবে ৬০০তম দেখায়। একই ব্যান্ডের বিশ্ববিদ্যালয়গুলো বর্ণানুক্রমে সাজানো। এই র‍্যাঙ্কিং কিউএসের, আমাদের নিজের নয়।"
 rows:
   - name_bn: "ঢাকা বিশ্ববিদ্যালয়"
     name_en: "University of Dhaka"
     rank: "৬০০"
+    prev: "৫৮৪"
+    trend: down
   - name_bn: "বাংলাদেশ প্রকৌশল বিশ্ববিদ্যালয় (বুয়েট)"
     name_en: "Bangladesh University of Engineering and Technology"
     rank: "৭১১–৭২০"
+    prev: "৭৬১–৭৭০"
+    trend: up
   - name_bn: "নর্থ সাউথ ইউনিভার্সিটি"
     name_en: "North South University"
     rank: "৯০১–৯৫০"
+    prev: "৯৫১–১,০০০"
+    trend: up
     university: north-south-university
   - name_bn: "ব্র্যাক বিশ্ববিদ্যালয়"
     name_en: "BRAC University"
     rank: "১,০০১–১,২০০"
+    prev: "১,২০১–১,৪০০"
+    trend: up
   - name_bn: "ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটি"
     name_en: "Daffodil International University"
     rank: "১,০০১–১,২০০"
+    prev: "১,০০১–১,২০০"
+    trend: flat
+    university: daffodil-international-university
   - name_bn: "আমেরিকান ইন্টারন্যাশনাল ইউনিভার্সিটি-বাংলাদেশ"
     name_en: "American International University-Bangladesh"
     rank: "১,৪০১+"
+    prev: "১,৪০১+"
+    trend: flat
     university: american-international-university-bangladesh
   - name_bn: "বাংলাদেশ কৃষি বিশ্ববিদ্যালয়"
     name_en: "Bangladesh Agricultural University"
@@ -29,15 +42,23 @@ rows:
   - name_bn: "চট্টগ্রাম প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়"
     name_en: "Chittagong University of Engineering and Technology"
     rank: "১,৪০১+"
+    prev: "১,৪০১+"
+    trend: flat
   - name_bn: "ইসলামিক ইউনিভার্সিটি অব টেকনোলজি"
     name_en: "Islamic University of Technology"
     rank: "১,৪০১+"
+    prev: "১,২০১–১,৪০০"
+    trend: down
   - name_bn: "জাহাঙ্গীরনগর বিশ্ববিদ্যালয়"
     name_en: "Jahangirnagar University"
     rank: "১,৪০১+"
+    prev: "১,২০১–১,৪০০"
+    trend: down
   - name_bn: "খুলনা প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়"
     name_en: "Khulna University of Engineering and Technology"
     rank: "১,৪০১+"
+    prev: "১,৪০১+"
+    trend: flat
   - name_bn: "শাহজালাল বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়"
     name_en: "Shahjalal University of Science and Technology"
     rank: "১,৪০১+"
@@ -45,4 +66,6 @@ rows:
   - name_bn: "রাজশাহী বিশ্ববিদ্যালয়"
     name_en: "University of Rajshahi"
     rank: "১,৪০১+"
-verified: 2026-10-07
+    prev: "১,২০১–১,৪০০"
+    trend: down
+verified: 2026-10-23
