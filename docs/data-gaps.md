@@ -192,3 +192,8 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | hotel | grand-sultan-tea-resort | room rates (rooms list) | official Rooms & Suites page, guest policy, 2 searches (bn/en); only OTA prices found | 2026-10-23 |
 | hotel | grand-sultan-tea-resort | in-room amenities | official Rooms & Suites page lists none | 2026-10-23 |
 | hotel | grand-sultan-tea-resort | event hall capacity | official home, Recreations and Relaxation pages | 2026-10-23 |
+| school | blue-bird-high-school-and-college-sylhet | email | official contact page shows only a template placeholder (infoname@gmail.com); old value info@bbhsc.edu.bd not found anywhere, removed | 2026-10-23 |
+| school | blue-bird-high-school-and-college-sylhet | class 11 (2026-27) admission fees, seats, HSC groups | notice is an image on the official site that could not be opened (server error); 3 searches bn/en | 2026-10-23 |
+| school | blue-bird-high-school-and-college-sylhet | SSC results | Sylhet board news, 3 searches (bn/en); only non-official directories list school-wise figures, not used | 2026-10-23 |
+| school | blue-bird-high-school-and-college-sylhet | shifts, versions, class 1-5 listing | official site menu lists only classes 6-12 plus nursery classes | 2026-10-23 |
+| school | blue-bird-high-school-and-college-sylhet | old Blogger URL | not in docs/old-posts-plan.csv | 2026-10-23 |
