@@ -88,7 +88,7 @@
 
 @media (min-width:768px){
   .pl-gal{aspect-ratio:16 / 9;}
-  .pl-thumbs{grid-template-columns:repeat(3,minmax(0,170px));padding:14px 24px 0;gap:14px;}
+  .pl-thumbs{grid-template-columns:repeat(3,minmax(0,1fr));padding:14px 24px 0;gap:14px;}
   .pl-hero-body{display:block;padding:18px 24px 14px;text-align:left;}
   .pl-hero-body .pf-badges{justify-content:flex-start;}
   .pl-hero-body .hp-addr{justify-content:flex-start;}
