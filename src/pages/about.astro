@@ -1,43 +1,107 @@
 ---
+import { Image } from 'astro:assets';
 import Prose from '../layouts/Prose.astro';
 import { CONTACT_EMAIL } from '../lib/site';
-const toc = [
-  { id: 'kon', label: 'InfoSaathi কী' },
-  { id: 'keno', label: 'কেন এই উদ্যোগ' },
-  { id: 'ki-dei', label: 'আমরা কী দিই, কী দিই না' },
-  { id: 'niti', label: 'আমাদের কাজের নীতি' },
-  { id: 'poricalona', label: 'কারা পরিচালনা করেন' },
-  { id: 'jogajog', label: 'যোগাযোগ' },
+import { bn } from '../lib/format';
+import { getDoctors, getHospitals, getUniversities, getInstitutions, instSection, getHotels, getScholarships, getJobs, getNews } from '../lib/data';
+import doctorIcon from '../assets/pill-icons/doctor.png';
+import hospitalIcon from '../assets/pill-icons/hospital.png';
+import universityIcon from '../assets/pill-icons/university.png';
+import collegeIcon from '../assets/pill-icons/college.png';
+import madrasaIcon from '../assets/pill-icons/madrasa.png';
+import hotelsIcon from '../assets/pill-icons/hotels.png';
+import scholarshipIcon from '../assets/pill-icons/scholarship.png';
+import jobsIcon from '../assets/pill-icons/jobs.png';
+import newsIcon from '../assets/pill-icons/news.png';
+
+// The numbers are counted from the published data, so they are never out of date.
+const inst = await getInstitutions();
+const n = {
+  doctors: (await getDoctors()).length,
+  hospitals: (await getHospitals()).length,
+  universities: (await getUniversities()).length,
+  colleges: inst.filter((i) => instSection(i) === 'college').length,
+  madrasas: inst.filter((i) => instSection(i) === 'madrasa').length,
+  hotels: (await getHotels()).length,
+  scholarships: (await getScholarships()).length,
+  jobs: (await getJobs()).length,
+  news: (await getNews()).length,
+};
+const c = (v: number, unit: string) => (v > 0 ? `${bn(v)}টি ${unit}` : 'শীঘ্রই আসছে');
+const tiles = [
+  { icon: doctorIcon, name: 'ডাক্তার', sub: n.doctors ? `${bn(n.doctors)} জন` : 'শীঘ্রই আসছে', href: '/doctors/' },
+  { icon: hospitalIcon, name: 'হাসপাতাল', sub: c(n.hospitals, 'প্রোফাইল'), href: '/hospitals/' },
+  { icon: universityIcon, name: 'বিশ্ববিদ্যালয়', sub: c(n.universities, 'প্রোফাইল'), href: '/universities/' },
+  { icon: collegeIcon, name: 'কলেজ', sub: c(n.colleges, 'কলেজ'), href: '/colleges/' },
+  { icon: madrasaIcon, name: 'মাদরাসা', sub: c(n.madrasas, 'মাদরাসা'), href: '/madrasas/' },
+  { icon: hotelsIcon, name: 'হোটেল', sub: c(n.hotels, 'হোটেল'), href: '/hotels/' },
+  { icon: scholarshipIcon, name: 'বৃত্তি', sub: c(n.scholarships, 'বৃত্তি'), href: '/scholarships/' },
+  { icon: jobsIcon, name: 'চাকরি', sub: c(n.jobs, 'বিজ্ঞপ্তি'), href: '/jobs/' },
+  { icon: newsIcon, name: 'খবর', sub: c(n.news, 'খবর'), href: '/news/' },
 ];
 ---
-<Prose title="আমাদের সম্পর্কে" description="InfoSaathi বাংলাদেশের ডাক্তার, হাসপাতাল ও প্রতিষ্ঠানের তথ্য যাচাইয়ের তারিখসহ এক জায়গায় রাখার একটি স্বতন্ত্র উদ্যোগ। জানুন আমাদের লক্ষ্য ও কাজের নীতি।" path="/about/" kicker="পরিচিতি" type="AboutPage" toc={toc}
-  lead="InfoSaathi বাংলাদেশের মানুষের জন্য একটি তথ্যের ঠিকানা। শুরুটা চিকিৎসা দিয়ে: কোন ডাক্তার কোথায়, কবে বসেন, সিরিয়ালের নম্বর কী, এই প্রয়োজনীয় তথ্যগুলো আমরা সাজিয়ে রাখি, প্রতিটির সঙ্গে যাচাইয়ের তারিখ জানিয়ে।">
+<Prose title="আমাদের সম্পর্কে" description="InfoSaathi বাংলাদেশের ডাক্তার, হাসপাতাল, শিক্ষাপ্রতিষ্ঠান, চাকরি, বৃত্তি ও সরকারি সেবার তথ্য সূত্র ও তারিখসহ এক জায়গায় রাখার একটি স্বতন্ত্র উদ্যোগ। জানুন আমাদের কাজের নীতি।" path="/about/" kicker="পরিচিতি" type="AboutPage" bare wide
+  lead="InfoSaathi বাংলাদেশের মানুষের জন্য একটি তথ্যের ঠিকানা। ডাক্তার, হাসপাতাল, পড়াশোনা, চাকরি, ঘোরাঘুরি ও সরকারি সেবার দরকারি তথ্য এক জায়গায়, সূত্র ও তারিখসহ।">
 
-  <h2 id="kon">InfoSaathi কী</h2>
-  <p>InfoSaathi একটি স্বাধীন বাংলা তথ্য-ওয়েবসাইট। এখানে ডাক্তারের চেম্বার ও সময়সূচি, হাসপাতাল, শিক্ষাপ্রতিষ্ঠান, রক্তদাতা সংগঠনসহ দৈনন্দিন জীবনের প্রয়োজনীয় তথ্য পাওয়া যায়। আমরা কোনো হাসপাতাল, ক্লিনিক বা ডাক্তারের প্রতিনিধি নই, এবং কোনো প্রতিষ্ঠানের হয়ে বিজ্ঞাপন বা প্রচার করি না।</p>
+  <section class="ab-sec" id="ki-ache">
+    <h2>এখানে কী আছে</h2>
+    <p class="ab-sub">সংখ্যাগুলো সাইটে এখন প্রকাশিত পাতা থেকে গোনা।</p>
+    <div class="ab-tiles">
+      {tiles.map((t) => (
+        <a class="ab-tile" href={t.href}>
+          <Image src={t.icon} width={88} height={88} alt="" loading="lazy" />
+          <span><b>{t.name}</b><span>{t.sub}</span></span>
+        </a>
+      ))}
+    </div>
+    <div class="ab-chips">
+      <a href="/places/">দর্শনীয় স্থান</a><a href="/ai-tools/">এআই টুলস</a><a href="/services/">সরকারি সেবা</a><a href="/rankings/">বিশ্ববিদ্যালয় র‍্যাঙ্কিং</a><a href="/apps/">অ্যাপ</a><a href="/blood/">রক্তদাতা সংগঠন</a>
+    </div>
+  </section>
 
-  <h2 id="keno">কেন এই উদ্যোগ</h2>
-  <p>অসুস্থ মানুষ বা তাঁর পরিবার যখন ডাক্তার খোঁজেন, তখন সবচেয়ে বেশি দরকার হয় সঠিক তথ্য: চেম্বারের ঠিকানা, বসার দিন ও সময়, সিরিয়ালের নম্বর। অনলাইনে এসব তথ্য প্রায়ই পুরোনো, অসম্পূর্ণ বা পরস্পরবিরোধী। ভুল তথ্যে কেউ দূর থেকে এসে ফিরে যান, কেউ বন্ধ নম্বরে বারবার ফোন করেন। এই সমস্যা কমানোই আমাদের লক্ষ্য।</p>
+  <section class="ab-sec" id="keno">
+    <h2>কেন InfoSaathi</h2>
+    <p>অনলাইনে দরকারি তথ্য প্রায়ই পুরোনো, অসম্পূর্ণ বা একটা আরেকটার সঙ্গে মেলে না। ভুল তথ্যে কেউ দূর থেকে এসে ফিরে যান, কেউ বন্ধ নম্বরে বারবার ফোন করেন। আমরা তথ্য এক জায়গায় রাখি, আর কোন তথ্য কবে ও কোথা থেকে যাচাই হয়েছে তা পাশে লিখে দিই।</p>
+  </section>
 
-  <h2 id="ki-dei">আমরা কী দিই, কী দিই না</h2>
-  <div class="ps-badges">
-    <div class="ps-badge"><b>আমরা যা দিই</b><span>চেম্বারের ঠিকানা, দিন-সময়, সিরিয়ালের নম্বর, ডিগ্রি ও পদবি, আর প্রতিটি তথ্য কবে যাচাই হয়েছে তার তারিখ।</span></div>
-    <div class="ps-badge"><b>আমরা যা দিই না</b><span>চিকিৎসা পরামর্শ, রোগ নির্ণয়, ওষুধের ব্যবস্থা, অথবা "সেরা ডাক্তার" জাতীয় ঘোষণা। কোনো ডাক্তারকে অর্থের বিনিময়ে উপরে তোলা হয় না।</span></div>
-  </div>
+  <section class="ab-sec" id="niti">
+    <h2>আমাদের তিনটি নিয়ম</h2>
+    <div class="ab-cards c3">
+      <div class="ab-card"><h3>সূত্র ও তারিখ</h3><p>প্রতিটি পাতায় তথ্যের সূত্র ও যাচাইয়ের তারিখ থাকে। যাচাই হয়নি, এমন তথ্য যাচাই হয়েছে বলে দেখানো হয় না।</p></div>
+      <div class="ab-card"><h3>টাকায় অবস্থান কেনা যায় না</h3><p>কোনো ডাক্তার, হাসপাতাল বা প্রতিষ্ঠান অর্থ দিয়ে তালিকায় উপরে ওঠে না।</p></div>
+      <div class="ab-card"><h3>ভুল হলে ঠিক করি</h3><p>ভুল জানালে আমরা আবার যাচাই করে পাতা ঠিক করি। প্রমাণ না পেলে সন্দেহজনক অংশ সরিয়ে রাখি।</p></div>
+    </div>
+    <p style="margin-top:14px">পুরো পদ্ধতি লেখা আছে <a href="/verification/">তথ্য যেভাবে যাচাই করি</a> পাতায়।</p>
+  </section>
 
-  <h2 id="niti">আমাদের কাজের নীতি</h2>
-  <ul>
-    <li><strong>সত্যতা আগে।</strong> যে তথ্য যাচাই করা যায়নি, তা যাচাই হয়নি বলেই জানানো হয়।</li>
-    <li><strong>তারিখসহ তথ্য।</strong> তথ্য বদলায়, তাই প্রতিটি ডাক্তারের পাতায় সর্বশেষ যাচাইয়ের তারিখ দেওয়া থাকে।</li>
-    <li><strong>নিরপেক্ষতা।</strong> তালিকায় ডাক্তারের অবস্থান অর্থ দিয়ে কেনা যায় না।</li>
-    <li><strong>ভুল স্বীকার ও সংশোধন।</strong> ভুল ধরা পড়লে দ্রুত শুধরে নিই। বিস্তারিত আছে <a href="/verification/">তথ্য যেভাবে যাচাই করি</a> পাতায়।</li>
-  </ul>
-  <p>আমরা কীভাবে তথ্য সংগ্রহ ও যাচাই করি, তা পুরোটাই খোলাখুলি লেখা আছে <a href="/verification/">যাচাই পদ্ধতির পাতায়</a>।</p>
+  <section class="ab-sec" id="utsho">
+    <h2>তথ্য কোথা থেকে আসে</h2>
+    <div class="ab-cards c2">
+      <div class="ab-card"><h3>ডাক্তার</h3><p>চেম্বারের সময়, ঠিকানা ও সিরিয়ালের নম্বর আমরা নিজে ফোন করে মিলিয়ে নিই। ফোনে যাচাই না হলে পাতা প্রকাশ হয় না।</p></div>
+      <div class="ab-card"><h3>হাসপাতাল, শিক্ষাপ্রতিষ্ঠান ও বাকি সব</h3><p>অফিসিয়াল ওয়েবসাইট ও নির্ভরযোগ্য খোলা সূত্র থেকে। এই কাজে আমরা এআই-সহায়তায় সূত্র খুঁজি ও পড়ি। সূত্রে মেলানো না গেলে সেই তথ্য বসাই না, পাতায় লেখা থাকে "আমরা সঠিক তথ্য পাইনি"। কোন তথ্য কোন ধরনের সূত্রের, তা প্রতিটি পাতার ব্যাজে দেখানো থাকে।</p></div>
+    </div>
+  </section>
 
-  <h2 id="poricalona">কারা পরিচালনা করেন</h2>
-  <p>InfoSaathi সিলেট থেকে পরিচালিত একটি স্বতন্ত্র উদ্যোগ। প্রতিষ্ঠাতা ও সম্পাদক: <strong>সাহেল আহমেদ</strong>। ডাক্তারদের তথ্য আমরা নিজেরা ফোন করে যাচাই করি।</p>
-  <div class="ps-note">এখনও আমরা প্রাথমিক পর্যায়ে আছি, তাই তালিকা ছোট। সংখ্যা বাড়ানোর চেয়ে প্রতিটি তথ্য নির্ভুল রাখাকে আমরা বেশি গুরুত্ব দিই।</div>
+  <section class="ab-sec" id="nai">
+    <h2>আমরা যা নই</h2>
+    <p>আমরা কোনো ডাক্তার, হাসপাতাল, বিশ্ববিদ্যালয়, সরকারি সংস্থা বা অন্য কোনো প্রতিষ্ঠানের প্রতিনিধি নই। সরকারি সেবার পাতাগুলো গাইড, সরকারি সাইট নয়। আমরা চিকিৎসা পরামর্শ, চাকরি, বৃত্তি বা ভর্তি দিই না, বুকিং বা আবেদনও নিই না। আবেদন সবসময় সংশ্লিষ্ট প্রতিষ্ঠানের অফিসিয়াল সাইটে করুন। বিস্তারিত <a href="/disclaimer/">তথ্যের দায়মুক্তি</a> পাতায়।</p>
+  </section>
 
-  <h2 id="jogajog">যোগাযোগ</h2>
-  <p>পরামর্শ, সংশোধন বা কোনো প্রশ্ন থাকলে লিখুন <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> ঠিকানায়, অথবা দেখুন <a href="/contact/">যোগাযোগের পাতা</a>।</p>
+  <section class="ab-sec" id="biggapon">
+    <h2>বিজ্ঞাপন</h2>
+    <p>সাইট চালানোর খরচ মেটাতে আমরা গুগলের মতো বিজ্ঞাপন সেবা ব্যবহার করতে পারি। বিজ্ঞাপন কোনো তালিকার অবস্থান বদলায় না। বিজ্ঞাপন আলাদাভাবে দেখানো হয় এবং তা আমাদের সুপারিশ নয়। জানুন <a href="/ads-and-cookies/">বিজ্ঞাপন ও কুকি নীতি</a> পাতায়।</p>
+  </section>
+
+  <section class="ab-sec" id="poricalona">
+    <h2>কারা চালান</h2>
+    <p>InfoSaathi সিলেট থেকে পরিচালিত একটি স্বতন্ত্র উদ্যোগ। প্রতিষ্ঠাতা ও সম্পাদক: <strong>সাহেল আহমেদ</strong>।</p>
+    <div class="ps-note">আমরা এখনও বাড়ছি, তাই কিছু পাতায় তথ্য অসম্পূর্ণ থাকতে পারে। সংখ্যার চেয়ে নির্ভুলতাকে আমরা বেশি গুরুত্ব দিই।</div>
+  </section>
+
+  <section class="ab-sec" id="jogajog">
+    <div class="ab-cta">
+      <p>ভুল দেখলে বা পরামর্শ থাকলে জানান। ইমেইল: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+      <a class="ps-cta" href="/contact/">যোগাযোগ করুন</a>
+    </div>
+  </section>
 </Prose>

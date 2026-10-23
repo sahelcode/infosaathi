@@ -14,8 +14,10 @@ interface Props {
   toc?: { id: string; label: string }[];
   showDate?: boolean;
   noindex?: boolean;
+  bare?: boolean;      // no white card around the body: pages built from their own cards
+  wide?: boolean;      // wider column for card grids
 }
-const { title, description, path, kicker, lead, type = 'WebPage', toc = [], showDate = true, noindex = false } = Astro.props;
+const { title, description, path, kicker, lead, type = 'WebPage', toc = [], showDate = true, noindex = false, bare = false, wide = false } = Astro.props;
 const url = SITE + path;
 const jsonld = {
   '@context': 'https://schema.org',
@@ -30,7 +32,7 @@ const jsonld = {
 ---
 <Base title={`${title} | InfoSaathi`} description={description} path={path} jsonld={jsonld} noindex={noindex}>
   <main class="ps">
-    <div class="ps-wrap">
+    <div class={`ps-wrap${wide ? ' wide' : ''}`}>
       <nav class="ps-crumb" aria-label="breadcrumb"><a href="/">হোম</a> › <span>{title}</span></nav>
       <header class="ps-head">
         <span class="ps-kicker">{kicker}</span>
@@ -43,7 +45,7 @@ const jsonld = {
           <ol>{toc.map((t) => <li><a href={'#' + t.id}>{t.label}</a></li>)}</ol>
         </nav>
       )}
-      <article class="ps-body"><slot /></article>
+      <article class={`ps-body${bare ? ' ps-bare' : ''}`}><slot /></article>
     </div>
   </main>
 </Base>
