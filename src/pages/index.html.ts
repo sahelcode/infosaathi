@@ -176,7 +176,7 @@ export const GET: APIRoute = async () => {
   const nSch = (await getScholarships()).length;
   const nJobs = (await getJobs()).length;
   const unit = (n: number, u: string) => (n > 0 ? `${bn(n)}টি ${u}` : 'শীঘ্রই আসছে');
-  const EN: Record<string, string> = { hospital: 'Hospitals', university: 'Universities', hotels: 'Hotels', scholarship: 'Scholarships', jobs: 'Jobs', news: 'News' };
+  const EN: Record<string, string> = { hospital: 'Hospitals', university: 'Universities', college: 'Colleges', madrasa: 'Madrasas', hotels: 'Hotels', scholarship: 'Scholarships', jobs: 'Jobs', news: 'News' };
   // Optional coloured icon images: src/assets/pill-icons/<key>.png (see README there). Without a file the page draws a gradient badge.
   const pillFiles = import.meta.glob<{ default: ImageMetadata }>('/src/assets/pill-icons/*.{png,webp,jpg,jpeg}', { eager: true });
   const pillImg: Record<string, string> = {};
@@ -189,9 +189,11 @@ export const GET: APIRoute = async () => {
     { k: 'doctor', name: 'ডাক্তার', en: 'Doctors', href: '/doctors/', count: doctors.length ? `${bn(doctors.length)} জন যাচাই করা` : 'শীঘ্রই আসছে', soon: !doctors.length, img: pillImg.doctor ?? '' },
     mk('hospital', 'হাসপাতাল', '/hospitals/', hospitals.length, 'প্রোফাইল'),
     mk('university', 'বিশ্ববিদ্যালয়', '/universities/', (await getUniversities()).length, 'প্রোফাইল'),
+    mk('college', 'কলেজ', '/colleges/', inst.filter((i) => instSection(i) === 'college').length, 'কলেজ'),
     mk('hotels', 'হোটেল', '/hotels/', nHotels, 'হোটেল'),
   ]);
   html = swapArray(html, 'setB', [
+    mk('madrasa', 'মাদরাসা', '/madrasas/', inst.filter((i) => instSection(i) === 'madrasa').length, 'মাদরাসা'),
     mk('scholarship', 'বৃত্তি', '/scholarships/', nSch, 'বৃত্তি'),
     mk('jobs', 'চাকরি', '/jobs/', nJobs, 'বিজ্ঞপ্তি'),
     mk('news', 'সংবাদ', '/news/', newsAll.length, 'খবর'),

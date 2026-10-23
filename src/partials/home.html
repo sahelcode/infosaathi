@@ -1321,6 +1321,8 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 .pk-scholarship{--pk:linear-gradient(135deg,#4ade80,#15803d);--pks:rgba(21,128,61,.6);}
 .pk-jobs{--pk:linear-gradient(135deg,#22d3ee,#0369a1);--pks:rgba(3,105,161,.6);}
 .pk-news{--pk:linear-gradient(135deg,#94a3b8,#334155);--pks:rgba(51,65,85,.55);}
+.pk-college{--pk:linear-gradient(135deg,#a78bfa,#6d28d9);--pks:rgba(109,40,217,.6);}
+.pk-madrasa{--pk:linear-gradient(135deg,#34d399,#0f766e);--pks:rgba(15,118,110,.6);}
 .pill-card .pill-icn.has-img{background:none !important;box-shadow:none;padding:0;overflow:visible;}
 .pill-icn.has-img img{display:block;width:100%;height:100%;object-fit:contain;}
 .verified-badge{background:#1d6fd8 !important;color:#fff !important;border:0 !important;}
@@ -2369,7 +2371,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     {k:'events',name:'Events',count:'190K+'},{k:'startup',name:'Startups',count:'480K+'},
   ];
   const dest = {doctor:'#doctorRow',university:'#uniRow',hospital:'#hospitalRow'};
-  const pill = (c,i) => `<a href="${c.href}" class="pill-card${c.soon?' is-soon':''}"><span class="pill-icn pk-${c.k}${c.img?' has-img':''}">${c.img?`<img src="${c.img}" alt="" width="46" height="46" loading="lazy">`:icon(c.k,22,22)}</span><span class="pill-text"><b>${c.name} <small class="pill-en">${c.en}</small></b><span class="pill-count">${c.count}</span></span></a>`;
+  const pill = (c,i) => `<a href="${c.href}" class="pill-card${c.soon?' is-soon':''}"><span class="pill-icn pk-${c.k}${c.img?' has-img':''}">${c.img?`<img src="${c.img}" alt="" width="46" height="46" loading="lazy">`:icon(c.k==='college'?'cap':c.k==='madrasa'?'build':c.k,22,22)}</span><span class="pill-text"><b>${c.name} <small class="pill-en">${c.en}</small></b><span class="pill-count">${c.count}</span></span></a>`;
   const rep = (arr) => arr.concat(arr).map(pill).join('');
   rowA.innerHTML = rep(setA) + rep(setA);
   rowB.innerHTML = rep(setB) + rep(setB);
