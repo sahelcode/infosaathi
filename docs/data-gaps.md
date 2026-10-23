@@ -178,3 +178,7 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | school | sylhet-government-model-school-and-college | admission fees and seats (class 6 and class XI 2026-27) | official notice board (notices are scanned PDFs, not readable from workspace), 4 searches (bn/en) | 2026-10-23 |
 | school | sylhet-government-model-school-and-college | SSC/HSC results | official site, Sylhet board news (Prothom Alo, Daily Star, TBS), 3 searches (bn/en); no school-level figures | 2026-10-23 |
 | school | sylhet-government-model-school-and-college | shifts, versions | official about, contact and home pages | 2026-10-23 |
+| school | sylhet-government-pilot-high-school | seats per class and shift | official notices (2026 admission), admission pages, 3 searches (bn/en) | 2026-10-23 |
+| school | sylhet-government-pilot-high-school | tuition and admission fees | official tuition page holds unrelated template text | 2026-10-23 |
+| school | sylhet-government-pilot-high-school | SSC results | official board result page did not load, Sylhet board news, 3 searches (bn/en) | 2026-10-23 |
+| school | sylhet-government-pilot-high-school | old Blogger URL | not in docs/old-posts-plan.csv | 2026-10-23 |
