@@ -1352,6 +1352,18 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 .rank-table .rank-row:first-child .rank-num{color:#15803d;}
 .rank-table{margin-top:14px;}
 #scholarGrid{margin-top:14px;}
+/* v22c: government service cards share row lines; plain "apply" text, no background */
+#govGrid{margin-top:14px;}
+#govGrid .feature-card p{-webkit-line-clamp:3;margin-bottom:6px;}
+#govGrid .fc-foot{justify-content:flex-start;}
+#govGrid .gov-go{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#15803d;background:none;}
+#govGrid .gov-go svg{width:14px;height:14px;transition:transform .2s;}
+@media (hover:hover){#govGrid .feature-card:hover .gov-go svg{transform:translateX(3px);}}
+@media (hover:none){#govGrid .feature-card:hover{transform:none;}}
+@supports (grid-template-rows:subgrid){
+#govGrid .feature-card{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;}
+#govGrid .fc-foot{align-self:end;margin-top:0;}
+}
 .rank-name b{display:block;font-size:14.5px;line-height:1.35;}
 .rank-name span{margin-top:2px;line-height:1.35;}
 @media (max-width:640px){.rank-row{grid-template-columns:32px 1fr;padding:14px 16px;}}
@@ -2030,9 +2042,9 @@ document.getElementById('aiGrid').innerHTML = aiTools.map(a=>`
 `).join('');
 
 document.getElementById('govGrid').innerHTML = govServices.map(g=>`
-  <div class="feature-card"><div class="fc-top"><div class="cat-icn ${tint(g.t)}">${icon('govt')}</div></div>
+  <a class="feature-card" href="${g.url||'#'}" style="color:inherit;text-decoration:none"><div class="fc-top"><div class="cat-icn ${tint(g.t)}">${icon('govt')}</div></div>
   <h4>${g.name}</h4><p>${g.dept}</p>
-  <div class="fc-foot"><span>${icon('clock',12,12)} ${g.time}</span><span class="btn-text">Start<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></div>
+  <div class="fc-foot"><span class="gov-go">আবেদন করুন<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
 `).join('');
 
 document.getElementById('appMarquee').innerHTML = usefulApps.map(a=>`
