@@ -287,7 +287,7 @@ const places = defineCollection({
         verified_by: z.enum(['visited', 'sources'], 'verified_by হবে visited অথবা sources').default('sources'),
         map_query: z.string(), // what to search on Google Maps, e.g. "Jaflong Zero Point"
         geo: z.object({ lat: z.number(), lng: z.number() }).optional(),
-        photos: z.array(z.object({ src: image(), caption: z.string(), sub: z.string().optional(), label: z.string().optional(), credit: z.string().optional(), license: z.string().optional(), credit_url: z.url().optional() })).max(5).default([]),
+        photos: z.array(z.object({ src: image(), caption: z.string(), sub: z.string().optional(), label: z.string().optional(), credit: z.string().optional(), license: z.string().optional(), credit_url: z.url().optional() })).max(6).default([]),
         intro: z.string(), // 1-2 sentences
         glance: z.object({
           from: z.string(), // e.g. সিলেট শহর থেকে
