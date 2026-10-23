@@ -23,7 +23,7 @@
   --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono:'JetBrains Mono', ui-monospace, monospace;
 
-  --bg:#F3FBF6;
+  --bg:#F7FAFC;
   --bg-soft:#E9F6EE;
   --surface:#FFFFFF;
   --surface-2:#EBF5EF;
@@ -469,13 +469,13 @@ footer{border-top:1px solid var(--border);padding:68px 0 30px;}
 /* === User-provided mobile header + hero === */
 .mobile-container{width:100%;max-width:480px;background:transparent;min-height:auto;box-shadow:none;position:relative;margin:0 auto;padding-bottom:0;}
 
-.top-cover{background:linear-gradient(180deg,#e4f7ea 0%,#ebfaf1 35%,#f0faf4 70%,#f3fbf6 100%);}
+.top-cover{background:linear-gradient(120deg,#ffffff 0%,#f6faff 52%,#eef8f2 100%);}
 
 .brand-logo{display:flex;align-items:center;gap:9px;text-decoration:none;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;font-size:22px;font-weight:800;line-height:1;}
 
 .brand-logo img{width:36px;height:36px;object-fit:contain;display:block;flex:0 0 auto;}
 
-.brand-logo span{background:linear-gradient(90deg,#16a34a,#0d9488);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+.brand-logo span{color:#123b5d;}
 
 
 .navbar{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(255,255,255,.92);border-bottom:1px solid rgba(226,232,240,.75);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
@@ -1293,6 +1293,23 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 .doc-head-top .see-all{margin-left:auto;}
 
 .row-nav{margin-left:0;}
+
+/* ===== v20: colour system (navy brand, green action, orange accent), white gradient hero, globe call-outs ===== */
+.eyebrow{color:#c2570a;}
+.hero-title{color:#123b5d;}
+.hero-lead{color:#e8710c;}
+.hero-accent{background:none;-webkit-text-fill-color:#16a34a;color:#16a34a;}
+.hg-glow{background:radial-gradient(circle at 50% 50%,rgba(18,59,93,.07) 0%,rgba(22,163,74,.05) 45%,transparent 68%);}
+.hg-chip{flex-direction:column;align-items:flex-start;gap:1px;padding:7px 11px;border-radius:10px;border:1px dashed #16a34a;background:rgba(255,255,255,.88);box-shadow:none;color:#123b5d;font-size:12px;}
+.hg-chip b{display:flex;align-items:center;gap:6px;font-weight:700;}
+.hg-chip small{font-size:11px;font-weight:500;color:#64748b;}
+.hg-chip i{width:7px;height:7px;border-radius:50%;background:#16a34a;animation:hgPulse 2s infinite;}
+@keyframes hgPulse{0%{box-shadow:0 0 0 0 rgba(22,163,74,.5)}70%{box-shadow:0 0 0 7px rgba(22,163,74,0)}100%{box-shadow:0 0 0 0 rgba(22,163,74,0)}}
+@media (prefers-reduced-motion:reduce){.hg-chip i{animation:none}}
+/* v20 rhythm: every section keeps the same space below it; the apps band no longer doubles it */
+.top-cover > .top-feature-section,section:has(#uniRow){padding-bottom:64px !important;}
+.app-section{padding:64px 0 !important;}
+@media (min-width:769px){.top-cover > .top-feature-section,section:has(#uniRow){padding-bottom:96px !important;}.app-section{padding:80px 0 !important;}}
 </style>
 </head>
 <body>
@@ -1307,7 +1324,7 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
         <a href="#doctorRow">ডাক্তার</a><a href="#hospitalRow">হাসপাতাল</a><a href="#uniRow">বিশ্ববিদ্যালয়</a><a href="#collegeRow">কলেজ</a><a href="#placeRow">দর্শনীয় স্থান</a><a href="#hotelRow">হোটেল</a>
     </div>
     <div class="nav-right-group">
-        <button class="nav-btn" type="button">সহযোগিতা</button>
+        <a class="nav-btn" href="__WA_LINK__" target="_blank" rel="noopener">যোগাযোগ</a>
         <button class="hamburger-btn" id="menuBtn" type="button" aria-label="মেনু" aria-expanded="false" aria-controls="drawer">
             <span class="hb"><i></i><i></i><i></i></span>
         </button>
@@ -1335,7 +1352,7 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
       <a href="#news" class="dr-row dr-anim" style="--i:11"><span class="dr-row-icn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="16" rx="1.5"/><path d="M17 8h4v10a2 2 0 0 1-2 2h-2"/><path d="M6.5 8h7M6.5 11h7M6.5 14h4"/></svg></span><span class="dr-row-txt">খবর</span><svg class="dr-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
     </nav>
     <div class="dr-foot dr-anim" style="--i:13">
-      <button class="dr-cta" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.6a4.6 4.6 0 0 0-7.8-3.3L12 6.3l-1-1a4.6 4.6 0 1 0-6.5 6.5l7.5 7.5 7.5-7.5c.9-.9 1.3-1.9 1.3-3.2Z"/></svg>সহযোগিতা করুন</button>
+      <a class="dr-cta" href="__WA_LINK__" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>যোগাযোগ করুন</a>
       <p>তথ্য ভুল দেখলে বা নতুন তথ্য দিতে যোগাযোগ করুন</p>
     </div>
 </aside>
@@ -1344,14 +1361,14 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <div class="mobile-container">
 
     <section class="hero-section">
-        <h1 class="hero-title">যাচাইকৃত তথ্য, <span class="hero-accent">এক সার্চে</span></h1>
+        <h1 class="hero-title"><span class="hero-lead">যাচাইকৃত তথ্য,</span> <span class="hero-accent">এক সার্চে</span></h1>
         <p class="hero-subtitle">ডাক্তার, হাসপাতাল, শিক্ষাপ্রতিষ্ঠান ও দর্শনীয় স্থান — বাংলাদেশ থেকে বিশ্বজুড়ে</p>
 
         <div class="hero-globe" aria-hidden="true">
             <div class="hg-glow"></div>
             <canvas id="heroGlobe" width="300" height="300"></canvas>
-            <span class="hg-chip hg-c1">Live · Bangladesh</span>
-            <span class="hg-chip hg-c2">Verified data</span>
+            <span class="hg-chip hg-c1"><b><i></i>Live · Bangladesh</b><small>ঢাকা কেন্দ্র</small></span>
+            <span class="hg-chip hg-c2"><b>Verified data</b><small>উৎস ও তারিখসহ</small></span>
         </div>
 
         <div class="search-box">
@@ -2031,6 +2048,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   const D=Math.PI/180, pts=[];
   for(let k=0;k<RAW.length;k+=2){ const la=RAW[k]/2*D, lo=RAW[k+1]/2*D; pts.push([Math.sin(la),Math.cos(la),lo]); }
   const HUB=[23.8,90.4];
+  const NODE_ICONS=['M12 5v14M5 12h14','M2 9l10-5 10 5-10 5-10-5zM6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5','M3 21h18M6 21V6l6-3 6 3v15M12 9v5M9.5 11.5h5','M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z','M5 12l4 4 10-10'].map(d=>new Path2D(d));
   const CITIES=[[51.5,-0.1],[25.2,55.3],[3.1,101.7],[-33.9,151.2],[35.7,139.7],[30.0,31.2],[24.7,46.7],[1.35,103.8],[-1.3,36.8]];
   const toV=(la,lo)=>[Math.cos(la*D)*Math.cos(lo*D),Math.cos(la*D)*Math.sin(lo*D),Math.sin(la*D)];
   const hubV=toV(HUB[0],HUB[1]);
@@ -2058,9 +2076,9 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     ctx.clearRect(0,0,W,W);
     /* sphere body */
     const g=ctx.createRadialGradient(cx-R*.35,cy-R*.4,R*.1,cx,cy,R);
-    g.addColorStop(0,'rgba(255,255,255,.95)'); g.addColorStop(1,'rgba(220,245,230,.9)');
+    g.addColorStop(0,'rgba(255,255,255,.96)'); g.addColorStop(1,'rgba(232,241,249,.92)');
     ctx.fillStyle=g; ctx.beginPath(); ctx.arc(cx,cy,R,0,6.2832); ctx.fill();
-    ctx.strokeStyle='rgba(22,163,74,.25)'; ctx.lineWidth=1; ctx.stroke();
+    ctx.strokeStyle='rgba(18,59,93,.18)'; ctx.lineWidth=1; ctx.stroke();
     /* land dots */
     const ct=Math.cos(tilt), st=Math.sin(tilt);
     for(const p of pts){
@@ -2068,7 +2086,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
       const x0=p[1]*cl, y0=p[1]*Math.sin(lo), z0=p[0];
       const d=x0*ct-z0*st; if(d<=0.02) continue;
       const sx=cx+y0*R, sy=cy-(x0*st+z0*ct)*R, a=.18+.72*d;
-      ctx.fillStyle='rgba(21,128,61,'+a.toFixed(2)+')';
+      ctx.fillStyle='rgba(18,59,93,'+(a*.85).toFixed(2)+')';
       const r=(1.1+.9*d)*W/300; ctx.fillRect(sx-r/2,sy-r/2,r,r);
     }
     /* arcs */
@@ -2083,17 +2101,24 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
         const sx=cx+v[1]*R, sy=cy-v[2]*R;
         if(vis){ pen?ctx.lineTo(sx,sy):ctx.moveTo(sx,sy); pen=true; last=[sx,sy]; } else pen=false;
       }
-      ctx.strokeStyle='rgba(14,165,233,.85)'; ctx.lineWidth=1.4; ctx.lineCap='round'; ctx.stroke();
-      if(last && head<1){ ctx.fillStyle='#0ea5e9'; ctx.beginPath(); ctx.arc(last[0],last[1],2.2,0,6.2832); ctx.fill(); }
-      if(head>=1){ const e=view(arc.P[48],l0); if(e[0]>0){ ctx.fillStyle='rgba(14,165,233,.9)'; ctx.beginPath(); ctx.arc(cx+e[1]*R,cy-e[2]*R,2.4,0,6.2832); ctx.fill(); } }
+      ctx.strokeStyle='rgba(22,163,74,.85)'; ctx.lineWidth=1.4; ctx.lineCap='round'; ctx.stroke();
+      if(last && head<1){ ctx.fillStyle='#16a34a'; ctx.beginPath(); ctx.arc(last[0],last[1],2.2,0,6.2832); ctx.fill(); }
+      
     }
+    /* icon nodes at the far cities */
+    const sc=W/300;
+    const NODE_SET=[0,1,3,4,5,7,8];
+    CITIES.forEach((c,i)=>{ if(!NODE_SET.includes(i)) return; const v=view(toV(c[0],c[1]),l0); if(v[0]<=0.18) return;
+      const nx=cx+v[1]*R, ny=cy-v[2]*R, nr=12*sc;
+      ctx.beginPath(); ctx.arc(nx,ny,nr,0,6.2832); ctx.fillStyle='#fff'; ctx.fill(); ctx.lineWidth=1.5; ctx.strokeStyle='#16a34a'; ctx.stroke();
+      ctx.save(); ctx.translate(nx-6.5*sc,ny-6.5*sc); ctx.scale(13*sc/24,13*sc/24); ctx.strokeStyle='#16a34a'; ctx.lineWidth=2.3; ctx.lineCap='round'; ctx.lineJoin='round'; ctx.stroke(NODE_ICONS[i%NODE_ICONS.length]); ctx.restore(); });
     /* Bangladesh hub */
     const h=view(hubV,l0);
     if(h[0]>0){
       const hx=cx+h[1]*R, hy=cy-h[2]*R, pulse=(t%1.8)/1.8;
-      ctx.strokeStyle='rgba(22,163,74,'+(0.7*(1-pulse)).toFixed(2)+')'; ctx.lineWidth=1.5;
+      ctx.strokeStyle='rgba(240,128,32,'+(0.8*(1-pulse)).toFixed(2)+')'; ctx.lineWidth=1.6;
       ctx.beginPath(); ctx.arc(hx,hy,3+pulse*14,0,6.2832); ctx.stroke();
-      ctx.fillStyle='#16a34a'; ctx.beginPath(); ctx.arc(hx,hy,3.6,0,6.2832); ctx.fill();
+      ctx.fillStyle='#f08020'; ctx.beginPath(); ctx.arc(hx,hy,4.2,0,6.2832); ctx.fill();
       ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(hx,hy,1.4,0,6.2832); ctx.fill();
     }
   }
@@ -2257,7 +2282,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 (function(){
   const cv=document.getElementById('meshBg'); if(!cv) return;
   const ctx=cv.getContext('2d'), host=cv.parentElement;
-  const COLOR='22,163,74';            // মেশের রং (R,G,B) — সবুজ
+  const COLOR='18,59,93';            // মেশের রং (R,G,B) — সবুজ
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   let W=0,H=0,dpr=1,pts=[],raf=0,visible=true,ptr={x:-999,y:-999};
   function size(){

@@ -3,7 +3,7 @@
 import nav from '../partials/nav.html?raw';
 import footer from '../partials/footer.html?raw';
 import ShareSheet from '../components/ShareSheet.astro';
-import { SITE } from '../lib/site';
+import { SITE, WHATSAPP_LINK } from '../lib/site';
 import '../styles/shared.css';
 import '../styles/profile.css';
 import '../styles/profile2.css';
@@ -46,7 +46,7 @@ const image = ogImage ? new URL(ogImage, SITE).href : undefined;
     {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
   </head>
   <body>
-    <Fragment set:html={nav} />
+    <Fragment set:html={nav.replaceAll('__WA_LINK__', WHATSAPP_LINK)} />
     {draft && <div class="draft-bar">খসড়া · এই পেজ লাইভ সাইটে যাবে না, যতক্ষণ draft: true থাকবে</div>}
     <slot />
     <ShareSheet />

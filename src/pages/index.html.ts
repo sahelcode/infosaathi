@@ -9,7 +9,7 @@ import { ICONS } from '../lib/icons';
 import { SPECIALTIES, HOTEL_FACILITIES } from '../lib/taxonomy';
 import { ART, artKind } from '../lib/newsArt';
 import { bn, bnDate } from '../lib/format';
-import { CONTACT_EMAIL } from '../lib/site';
+import { CONTACT_EMAIL, WHATSAPP_LINK } from '../lib/site';
 
 const swap = (src: string, from: string, to: string) => {
   if (!src.includes(from)) throw new Error(`হোমপেজের টেমপ্লেটে এই অংশ পাওয়া যায়নি: ${from.slice(0, 60)}`);
@@ -254,7 +254,7 @@ export const GET: APIRoute = async () => {
     const section = `<section class="tight" id="madrasaSec"><div class="container"><div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Madrasas</span><a href="/madrasas/" class="see-all">See All<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">Learning rooted in faith</h2></div><div class="row-scroll reveal" id="madrasaRow">${madrasaCards}</div></div></section>\n\n`;
     html = swap(html, '<!-- ============================================================ 6.6 MORE CATEGORIES', section + '<!-- ============================================================ 6.6 MORE CATEGORIES');
   }
-  html = html.replaceAll('__CONTACT_EMAIL__', CONTACT_EMAIL);
+  html = html.replaceAll('__CONTACT_EMAIL__', CONTACT_EMAIL).replaceAll('__WA_LINK__', WHATSAPP_LINK);
   // little icons that float on the last "সব দেখুন" card of each swipe row
   const rowIcons: Record<string, (keyof typeof ICONS)[]> = {
     doctorRow: ['steth', 'heart', 'user'], uniRow: ['cap', 'build', 'award'], hospitalRow: ['build', 'ambulance', 'heart'], madrasaRow: ['cap', 'build', 'award'],
