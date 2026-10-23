@@ -1324,6 +1324,20 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 .pill-card .pill-icn.has-img{background:none !important;box-shadow:none;padding:0;overflow:visible;}
 .pill-icn.has-img img{display:block;width:100%;height:100%;object-fit:contain;}
 .verified-badge{background:#1d6fd8 !important;color:#fff !important;border:0 !important;}
+/* v22: rankings list is just number, name and English name; scholarship cards share row lines */
+.rank-row,.rank-row:hover{grid-template-columns:40px 1fr;gap:12px;padding:14px 20px;color:inherit;text-decoration:none;}
+.rank-table .rank-row:nth-child(n+1) .rank-num{color:var(--text-faint);}
+.rank-table .rank-row:first-child .rank-num{color:#15803d;}
+.rank-table{margin-top:14px;}
+#scholarGrid{margin-top:14px;}
+.rank-name b{display:block;font-size:14.5px;line-height:1.35;}
+.rank-name span{margin-top:2px;line-height:1.35;}
+@media (max-width:640px){.rank-row{grid-template-columns:32px 1fr;padding:14px 16px;}}
+@supports (grid-template-rows:subgrid){
+#scholarGrid .feature-card{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0;}
+#scholarGrid .fc-foot{align-self:end;margin-top:0;}
+}
+@media (hover:none){#scholarGrid .feature-card:hover{transform:none;}}
 </style>
 </head>
 <body>
@@ -1958,12 +1972,9 @@ document.getElementById('uniRow').innerHTML = uniNames.map(u=>`
     </div>`).join(''));
 })();
 
-document.getElementById('rankTable').innerHTML = `<div class="rank-row head"><span>#</span><span>Name</span><span>Score</span><span>Trend</span></div>` +
-  rankData.map((r,i)=>`
-  <div class="rank-row"><span class="rank-num">${String(i+1).padStart(2,'0')}</span>
-  <div class="rank-name"><div class="rank-logo ${tint(r.t)}">${r.name.split(' ').map(w=>w[0]).slice(0,2).join('')}</div><div><b>${r.name}</b><span>${r.sub}</span></div></div>
-  <span class="rank-score">${r.score} / 100</span>
-  <span class="rank-trend ${r.trend}">${r.trend==='up'?'▲ Rising':r.trend==='down'?'▼ Falling':'● Stable'}</span></div>
+document.getElementById('rankTable').innerHTML = rankData.map((r,i)=>`
+  <${r.url?`a href="${r.url}"`:'div'} class="rank-row"><span class="rank-num">${String(i+1).padStart(2,'0')}</span>
+  <div class="rank-name"><div><b>${r.name}</b><span>${r.sub}</span></div></div></${r.url?'a':'div'}>
 `).join('');
 
 

@@ -141,11 +141,10 @@ export const GET: APIRoute = async () => {
   html = swapArray(html, 'rankData', rankRows);
   html = swap(html, 'const newsFeatureData = {', `const newsFeatureData = ${JSON.stringify(newsAll[0])}; const _unused = {`);
   html = swap(html, 'const rankData =', `const rankInfo = ${JSON.stringify(rankInfo)};\nconst rankData =`);
-  html = swap(html, '<span>#</span><span>Name</span><span>Score</span><span>Trend</span>', '<span>#</span><span>বিশ্ববিদ্যালয়</span><span>QS র‍্যাংক</span><span></span>');
-  html = swap(html, "<span class=\"rank-num\">${String(i+1).padStart(2,'0')}</span>", "<span class=\"rank-num\">${r.single?String(i+1).padStart(2,'0'):'–'}</span>");
-  html = swap(html, '<span class="rank-score">${r.score} / 100</span>', '<span class="rank-score">${r.rank}</span>');
-  html = swap(html, "<span class=\"rank-trend ${r.trend}\">${r.trend==='up'?'▲ Rising':r.trend==='down'?'▼ Falling':'● Stable'}</span></div>", "<span class=\"rank-trend flat\">${r.url?`<a href=\"${r.url}\">প্রোফাইল</a>`:''}</span></div>");
-  html = swap(html, '<h2>See who leads — by the numbers</h2><p>Independent, methodology-first rankings refreshed every quarter across research output, employability, and student satisfaction.</p>', `<h2>${rk.data.system}-এ বাংলাদেশ</h2><p style="margin-top:8px"><a href="/rankings/" class="see-all">সব ${bn(rk.data.rows.length)}টি দেখুন</a></p>`);
+  const SEE_ALL_SVG = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+  const qsShort = rk.data.system.replace(/World University Rankings/i, '').replace(/\s+/g, ' ').trim();
+  html = swap(html, '<div class="section-head reveal"><span class="eyebrow">University rankings</span><h2>See who leads — by the numbers</h2><p>Independent, methodology-first rankings refreshed every quarter across research output, employability, and student satisfaction.</p></div>',
+    `<div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">University rankings · ${qsShort}</span><a href="/rankings/" class="see-all">See All${SEE_ALL_SVG}</a></div><h2 style="font-size:28px;">Top ${rankRows.length} in Bangladesh</h2></div>`);
   html = swap(html, '<h2 style="font-size:26px;">Signal, not noise</h2>', '<h2 style="font-size:26px;">সাম্প্রতিক খবর</h2><p style="font-size:13px;color:var(--text-muted)">শিক্ষা ও স্বাস্থ্যের খবর, সূত্রসহ। কিছু শিরোনাম মূল সংবাদমাধ্যমের পাতায় যায়। <a href="/news/" class="see-all">সব খবর</a></p>');
   html = swap(html, '<div class="news-feature"><div class="news-feature-img">', '<a class="news-feature" href="${newsFeatureData.url}" ${newsFeatureData.own?\'\':\'target="_blank" rel="noopener"\'} style="color:inherit;text-decoration:none"><div class="news-feature-img">');
   html = swap(html, '${newsFeatureData.time}</div></div></div>', '${newsFeatureData.source} · ${newsFeatureData.time}</div></div></a>');
@@ -158,7 +157,8 @@ export const GET: APIRoute = async () => {
   // scholarships
   html = swap(html, '<div class="feature-card"><div class="fc-top"><div class="cat-icn ${tint(s.t)}">${icon(\'scholarship\')}</div>', '<a class="feature-card" href="${s.url}" style="color:inherit;text-decoration:none"><div class="fc-top"><div class="cat-icn ${tint(s.t)}">${icon(\'scholarship\')}</div>');
   html = swap(html, '<span class="btn-text">Apply<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></div>\n`).join(\'\');', '<span class="btn-text">Apply<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>\n`).join(\'\');');
-  html = swap(html, '<p>48,000+ active scholarships across undergraduate, graduate, and research programs.</p>', '<p>Scholarships Bangladeshis can apply to, with real deadlines. <a href="/scholarships/" class="see-all">See All</a></p>');
+  html = swap(html, '<div class="section-head reveal"><span class="eyebrow">Scholarships</span><h2 style="font-size:28px;">Funding for the next step</h2><p>48,000+ active scholarships across undergraduate, graduate, and research programs.</p></div>',
+    `<div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Scholarships</span><a href="/scholarships/" class="see-all">See All${SEE_ALL_SVG}</a></div><h2 style="font-size:28px;">Funding for the next step</h2></div>`);
   // jobs
   html = swap(html, '<a href="#" class="btn btn-ghost btn-sm job-apply">Apply</a>', '<a href="${j.url}" class="btn btn-ghost btn-sm job-apply">View</a>');
   html = swap(html, '<span class="eyebrow">Jobs</span><a href="#" class="see-all">', '<span class="eyebrow">Jobs</span><a href="/jobs/" class="see-all">');
