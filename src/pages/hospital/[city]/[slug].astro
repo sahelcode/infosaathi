@@ -86,7 +86,7 @@ const faq = [
   ...(h.faq.some((f) => /আইসিইউ.*খরচ|আইসিইউ.*ভাড়া|ICU.*(খরচ|ভাড়া)/.test(f.q)) ? [] : [{ q: `${short}-এ আইসিইউ-র খরচ কত?`, a: rateRange('icu') ? `${short}-এ আইসিইউ ও ক্রিটিক্যাল কেয়ারের খরচ ${rateRange('icu')} (ইউনিটভেদে আলাদা, এই পেজের খরচের তালিকায় দেখুন)। বদলাতে পারে, জানতে ${phoneShow(serial.number)} নম্বরে ফোন করুন।` : `${short}-এর আইসিইউ খরচের সঠিক তথ্য আমরা এখনো পাইনি। প্রতিদিনের খরচ জানতে ${phoneShow(serial.number)} নম্বরে ফোন করুন।` }]),
 ];
 
-const near = (await getHospitals()).filter((x) => x.data.city === h.city && x.id !== hospital.id).slice(0, 3);
+const near = (await getHospitals()).filter((x) => x.data.city === h.city && x.id !== hospital.id).slice(0, 6);
 
 const photo = h.photo ? await getImage({ src: h.photo, width: 1200, format: 'webp' }) : undefined;
 const title = `${h.name} (${h.name_en}) | ডাক্তার, সিরিয়াল, যোগাযোগ নম্বর`;

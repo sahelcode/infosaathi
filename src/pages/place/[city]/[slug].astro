@@ -61,7 +61,7 @@ const faq = [
 const all = await getPlaces();
 const picked = d.nearby.map((r) => all.find((p) => p.id === r.id)).filter(Boolean) as Place[];
 const others = all.filter((p) => p.id !== place.id && !picked.includes(p));
-const related = [...picked, ...others.filter((p) => p.data.city === d.city), ...others.filter((p) => p.data.city !== d.city)].slice(0, 3);
+const related = [...picked, ...others.filter((p) => p.data.city === d.city), ...others.filter((p) => p.data.city !== d.city)].slice(0, 6);
 
 const cover = photos[0] ? await getImage({ src: photos[0].src, width: 1200, format: 'webp' }) : undefined;
 const title = `${d.name} (${d.name_en}) ভ্রমণ – কীভাবে যাবেন, খরচ ও কী দেখবেন | InfoSaathi`;

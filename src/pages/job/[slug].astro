@@ -40,7 +40,7 @@ const faq = [
   ...d.faq,
 ];
 const all = await getJobs();
-const related = all.filter((x) => x.id !== job.id).slice(0, 3);
+const related = all.filter((x) => x.id !== job.id).slice(0, 6);
 const description = `${d.title}: ${d.org}। ${d.vacancies ? `মোট পদ ${d.vacancies}। ` : ''}আবেদনের শেষ তারিখ ${bnDate(d.close)}। যোগ্যতা, ফি ও আবেদনের নিয়ম।`;
 const crumbs = [['হোম', '/'], ['চাকরি', '/jobs/']];
 const jsonld = {

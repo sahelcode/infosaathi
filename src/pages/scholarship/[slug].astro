@@ -40,7 +40,7 @@ const faq = [
   ...d.faq,
 ];
 const all = await getScholarships();
-const related = all.filter((x) => x.id !== sch.id).slice(0, 3);
+const related = all.filter((x) => x.id !== sch.id).slice(0, 6);
 const description = `${title}: ${d.country}, ${d.levels.join('/')}, ${FUND[d.funding]}।${d.close ? ` আবেদনের শেষ তারিখ ${bnDate(d.close)}।` : ''} যোগ্যতা, ধাপ ও আবেদনের লিংক।`;
 const crumbs = [['হোম', '/'], ['স্কলারশিপ', '/scholarships/']];
 const jsonld = {

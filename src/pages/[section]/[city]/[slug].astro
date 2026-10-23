@@ -109,7 +109,7 @@ const faq = [
 
 const all = await getInstitutions();
 const others = all.filter((x) => x.id !== inst.id && instSection(x) === section);
-const related = [...others.filter((x) => x.data.city === d.city), ...others.filter((x) => x.data.city !== d.city)].slice(0, 3);
+const related = [...others.filter((x) => x.data.city === d.city), ...others.filter((x) => x.data.city !== d.city)].slice(0, 6);
 
 const photo = d.photo ? await getImage({ src: d.photo, width: 1200, format: 'webp' }) : undefined;
 const title = `${d.name_bn} (${d.name})${d.eiin ? ` – EIIN ${d.eiin}` : ''} | ভর্তি, তথ্য ও যোগাযোগ | InfoSaathi`;

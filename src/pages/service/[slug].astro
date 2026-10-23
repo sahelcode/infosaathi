@@ -37,7 +37,7 @@ const faq = [
   ...d.faq,
 ];
 const all = await getServices();
-const related = all.filter((x) => x.id !== svc.id && x.data.category === d.category).concat(all.filter((x) => x.id !== svc.id && x.data.category !== d.category)).slice(0, 3);
+const related = all.filter((x) => x.id !== svc.id && x.data.category === d.category).concat(all.filter((x) => x.id !== svc.id && x.data.category !== d.category)).slice(0, 6);
 const crumbs = [['হোম', '/'], ['সরকারি সেবা', '/services/']];
 const jsonld = {
   '@context': 'https://schema.org',

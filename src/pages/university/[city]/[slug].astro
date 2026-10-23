@@ -88,7 +88,7 @@ const faq = [
 ];
 
 const others = (await getUniversities()).filter((x) => x.id !== uni.id);
-const related = [...others.filter((x) => x.data.city === u.city), ...others.filter((x) => x.data.city !== u.city)].slice(0, 3);
+const related = [...others.filter((x) => x.data.city === u.city), ...others.filter((x) => x.data.city !== u.city)].slice(0, 6);
 
 const photo = u.photo ? await getImage({ src: u.photo, width: 1200, format: 'webp' }) : undefined;
 const title = `${u.name} (${u.name_bn}) – ভর্তি, খরচ ও বিষয় | InfoSaathi`;

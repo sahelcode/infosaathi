@@ -210,3 +210,4 @@
 /* share labels: short on phones, full sentence from tablet up */
 .pf-sh .sh-l{display:none;}
 @media (min-width:768px){.pf-sh .sh-s{display:none;}.pf-sh .sh-l{display:inline;}}
+section.pf-share{grid-template-columns:minmax(0,1fr) minmax(0,1fr);max-width:none;width:100%;}

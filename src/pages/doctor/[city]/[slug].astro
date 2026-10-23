@@ -98,12 +98,12 @@ const fresh = (a: Doctor[]) => [...a].sort((x, y) => +y.data.verified - +x.data.
 const mainHosp = chambers.find((c) => c.href)?.h;
 const sameSpAll = fresh(others.filter((x) => x.data.specialty === d.specialty && x.data.city === d.city));
 // "Related" = same specialty in the same city, up to 4, shown before the hospital's doctors. Hidden while there are none.
-const sameSp = sameSpAll.slice(0, 4);
+const sameSp = sameSpAll.slice(0, 6);
 const sideSp = sameSpAll.slice(0, 3);
 const shown = new Set(sameSp.map((x) => x.id));
 const sameHosp = mainHosp ? evenCut(fresh(doctorsAt(others, mainHosp.id)).filter((x) => !shown.has(x.id)), 4) : [];
 const usedHosp = new Set(chambers.map((c) => c.h?.id));
-const nearHosp = visibleHospitals.filter((h) => h.data.city === d.city && !usedHosp.has(h.id)).slice(0, 3);
+const nearHosp = visibleHospitals.filter((h) => h.data.city === d.city && !usedHosp.has(h.id)).slice(0, 6);
 const placeOf = (x: Doctor) => {
   const c = x.data.chambers[0];
   const n = c.name ?? allHospitals.get(c.hospital!.id)?.data.short ?? allHospitals.get(c.hospital!.id)?.data.name;
