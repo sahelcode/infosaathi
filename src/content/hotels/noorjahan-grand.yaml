@@ -35,3 +35,5 @@ nearby:
 sources:
   - { title: "অফিসিয়াল ওয়েবসাইট", url: "https://noorjahangrand.com" }
   - { title: "অফিসিয়াল ওয়েবসাইট — রুম ও ভাড়া", url: "https://noorjahangrand.com/rooms-gridview/" }
+
+google: { value: 4.4 }

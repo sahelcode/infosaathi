@@ -28,3 +28,5 @@ nearby:
 sources:
   - { title: "অফিসিয়াল ওয়েবসাইট", url: "https://www.panpacific.com/en/hotels-and-resorts/pp-dhaka.html" }
   - { title: "অফিসিয়াল ওয়েবসাইট – রুম", url: "https://www.panpacific.com/en/hotels-and-resorts/pp-dhaka/rooms.html" }
+
+google: { value: 4.4 }

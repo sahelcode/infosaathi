@@ -34,3 +34,5 @@ nearby:
   - { name: "জাফলং", place: jaflong }
 sources:
   - { title: "অফিসিয়াল ওয়েবসাইট", url: "https://grandsylhet.com" }
+
+google: { value: 4.4 }
