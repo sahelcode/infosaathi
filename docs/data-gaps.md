@@ -197,3 +197,8 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | school | blue-bird-high-school-and-college-sylhet | SSC results | Sylhet board news, 3 searches (bn/en); only non-official directories list school-wise figures, not used | 2026-10-23 |
 | school | blue-bird-high-school-and-college-sylhet | shifts, versions, class 1-5 listing | official site menu lists only classes 6-12 plus nursery classes | 2026-10-23 |
 | school | blue-bird-high-school-and-college-sylhet | old Blogger URL | not in docs/old-posts-plan.csv | 2026-10-23 |
+| school | viqarunnisa-noon-school-and-college | helpline numbers (5) | kept from the 2026-10-06 file; official contact page now shows only 02-58310500, board site and 2 searches show none | 2026-10-23 |
+| school | viqarunnisa-noon-school-and-college | teachers | official site and Dhaka Board site give no count; Wikipedia 650 is from 2012, sohopathi 500 unsourced; not used | 2026-10-23 |
+| school | viqarunnisa-noon-school-and-college | monthly tuition and class 1-9 admission fees | official site has no fee page; 3 searches (bn/en) found only news on application fees | 2026-10-23 |
+| school | viqarunnisa-noon-school-and-college | 2027 class 1-9 admission (dates, seats) | not yet published; latest is the 2026 lottery (2,020 seats, Prothom Alo 2025-11-23), used as "গত বছর" in FAQ | 2026-10-23 |
+| school | viqarunnisa-noon-school-and-college | HSC 2026 result | 2 searches (bn/en) and news; only HSC 2025 found | 2026-10-23 |
