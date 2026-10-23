@@ -1,0 +1,41 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import { getApps } from '../../lib/data';
+const apps = (await getApps()).slice(0, 30);
+const TINTS = ['#16a34a,#0d9488', '#3b82f6,#1e3a8a', '#f97316,#c2410c', '#8b5cf6,#5b21b6', '#06b6d4,#0e7490', '#ec4899,#9d174d'];
+const mono = (name: string) => {
+  const w = name.trim().split(/\s+/);
+  return (w.length > 1 ? w[0][0] + w[1][0] : name.slice(0, 2)).toUpperCase();
+};
+---
+<ListPage title="কাজে লাগার মোবাইল অ্যাপ | InfoSaathi" h1="অ্যাপ" path="/apps/" crumbs={[['হোম', '/']]}
+  intro="বাছাই করা কিছু কাজের অ্যাপ। ডাউনলোড বাটন গুগল প্লে স্টোরে নিয়ে যায়।">
+  {apps.map((a, i) => (
+    <div class="pf-mini app-item">
+      <div class="ap-head">
+        <span class="ap-logo" style={`background:linear-gradient(135deg,${TINTS[i % TINTS.length]})`}>{mono(a.data.name)}</span>
+        <span class="ap-txt"><b>{a.data.name}</b><span class="ap-d">{a.data.desc}</span></span>
+      </div>
+      <a class="ap-get" href={a.data.url} target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>{a.data.own ? 'Play Store' : 'ডাউনলোড'}
+      </a>
+    </div>
+  ))}
+</ListPage>
+<style is:global>
+  .app-item{gap:12px;padding:12px;align-items:center;}
+  .app-item .ap-head{display:flex;align-items:center;gap:12px;min-width:0;flex:1;}
+  .app-item .ap-logo{width:46px;height:46px;border-radius:13px;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;font-family:'Inter',sans-serif;}
+  .app-item .ap-txt{min-width:0;display:block;}
+  .app-item .ap-txt b{display:block;font-size:15px;line-height:1.35;}
+  .app-item .ap-d{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px;font-size:12.5px;line-height:1.45;color:var(--muted);}
+  .app-item .ap-get{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 12px;border-radius:10px;background:#16a34a;color:#fff;font-size:12.5px;font-weight:600;white-space:nowrap;}
+  .app-item .ap-get:hover{background:#15803d;}
+  @media (min-width:700px) and (max-width:899px){.pf-minis:has(.app-item){grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media (min-width:900px){
+    .pf-minis:has(.app-item){grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+    .pf-minis .app-item{flex-direction:column;align-items:stretch;justify-content:flex-start;padding:16px;gap:14px;}
+    .pf-minis .app-item .ap-head{flex:none;justify-content:flex-start;}
+    .pf-minis .app-item .ap-get{width:100%;padding:10px 12px;font-size:13px;}
+  }
+</style>

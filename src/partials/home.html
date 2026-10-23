@@ -1326,6 +1326,26 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 .pill-card .pill-icn.has-img{background:none !important;box-shadow:none;padding:0;overflow:visible;}
 .pill-icn.has-img img{display:block;width:100%;height:100%;object-fit:contain;}
 .verified-badge{background:#1d6fd8 !important;color:#fff !important;border:0 !important;}
+/* v22b: compact jobs rows (title to the end, View last), spacing, plain apps row */
+.simple-list .job-row{grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:12px 16px;border-radius:0;color:inherit;text-decoration:none;}
+.simple-list .job-row:hover{background:var(--surface-2);}
+.job-main{min-width:0;}
+.job-title{font-size:14.5px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.job-sub{flex-wrap:nowrap;gap:0;margin-top:3px;white-space:nowrap;overflow:hidden;}
+.job-sub span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis;}
+.job-sub span:not(:first-child){flex:none;}
+.job-sub span::after{margin:0 6px;}
+.job-apply{pointer-events:none;padding:7px 14px;}
+.app-section{padding-top:0 !important;padding-bottom:0 !important;}
+.app-marquee-wrap{margin-top:14px;-webkit-mask-image:none;mask-image:none;overflow:visible;}
+.app-marquee{animation:none !important;width:auto;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 2px 6px;margin:0 -2px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.app-marquee::-webkit-scrollbar{display:none;}
+.app-marquee .app-card{scroll-snap-align:start;flex:0 0 236px;}
+.app-card:hover{transform:none;box-shadow:none;}
+.app-card .app-logo{font-family:"Inter",sans-serif;}
+.app-more{flex:0 0 auto;align-self:stretch;display:flex;align-items:center;justify-content:center;gap:4px;min-width:96px;padding:0 18px;border-radius:var(--radius-lg);border:1px dashed var(--border-strong,#cbd5e1);color:#6b7a72;font-size:14px;font-weight:600;background:#fff;text-decoration:none;}
+.app-more:hover{color:#15803d;border-color:#86d9a5;}
+@media (min-width:1100px){.app-marquee{overflow:visible;gap:16px;}.app-marquee .app-card{flex:1 1 0;min-width:0;}}
 /* v22: rankings list is just number, name and English name; scholarship cards share row lines */
 .rank-row,.rank-row:hover{grid-template-columns:40px 1fr;gap:12px;padding:14px 20px;color:inherit;text-decoration:none;}
 .rank-table .rank-row:nth-child(n+1) .rank-num{color:var(--text-faint);}
@@ -1518,10 +1538,7 @@ footer .logo{font-family:var(--font-body);font-weight:800;font-size:22px;color:#
 <section class="app-section tight">
   <div class="app-bg"><div class="app-bg-shape"></div><div class="app-bg-shape"></div><div class="app-bg-shape"></div><div class="app-bg-shape"></div><div class="app-bg-shape"></div></div>
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Useful apps</span>
-      <h2 style="font-size:28px;">কাজে লাগবে এমন কিছু অ্যাপ<span class="bn" style="display:block;font-size:15px;font-weight:400;color:var(--text-muted);margin-top:6px;">Useful apps for your phone</span></h2>
-    </div>
+    <div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Useful apps</span><a href="/apps/" class="see-all">See All<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a></div><h2 style="font-size:28px;">কাজে লাগবে এমন কিছু অ্যাপ</h2></div>
     <div class="app-marquee-wrap reveal"><div class="app-marquee" id="appMarquee"></div></div>
   </div>
 </section>
@@ -1991,9 +2008,8 @@ document.getElementById('scholarGrid').innerHTML = scholarships.map(s=>`
 `).join('');
 
 document.getElementById('jobList').innerHTML = jobs.map(j=>`
-  <div class="job-row"><div class="job-logo ${tint(j.t)}">${j.company.split(' ').map(w=>w[0]).slice(0,2).join('')}</div>
-  <div><div class="job-title">${j.title}</div><div class="job-sub"><span>${j.company}</span><span>${j.loc}</span><span>${j.salary}</span></div></div>
-  <a href="#" class="btn btn-ghost btn-sm job-apply">Apply</a></div>
+  <a class="job-row" href="${j.url||'#'}"><div class="job-main"><div class="job-title">${j.title}</div><div class="job-sub"><span>${j.company}</span><span>${j.salary}</span></div></div>
+  <span class="btn btn-ghost btn-sm job-apply">View</span></a>
 `).join('');
 
 
@@ -2019,13 +2035,13 @@ document.getElementById('govGrid').innerHTML = govServices.map(g=>`
   <div class="fc-foot"><span>${icon('clock',12,12)} ${g.time}</span><span class="btn-text">Start<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></div>
 `).join('');
 
-document.getElementById('appMarquee').innerHTML = [...usefulApps,...usefulApps].map(a=>`
-  <div class="app-card ${a.featured?'featured':''}">
-    <div class="app-head"><div class="app-logo ${tint(a.t)}">${initials(a.name)}</div>
+document.getElementById('appMarquee').innerHTML = usefulApps.map(a=>`
+  <div class="app-card">
+    <div class="app-head"><div class="app-logo" style="background:linear-gradient(135deg,${['#16a34a,#0d9488','#3b82f6,#1e3a8a','#f97316,#c2410c','#8b5cf6,#5b21b6','#06b6d4,#0e7490','#ec4899,#9d174d'][a.t%6]})">${a.name.trim().split(/\s+/).length>1?a.name.trim().split(/\s+/).slice(0,2).map(w=>w[0]).join('').toUpperCase():a.name.slice(0,2).toUpperCase()}</div>
     <div class="app-info"><b>${a.name}</b><span class="app-desc">${a.desc}</span></div></div>
     <a href="${a.url||'#'}" class="app-dl" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download</a>
   </div>
-`).join('');
+`).join('') + `<a class="app-more" href="/apps/"><span>See All</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>`;
 
 /* ============================================================ HORIZONTAL SCROLLER CONTROLS ============================================================ */
 document.querySelectorAll('[data-scroll]').forEach(btn=>{
@@ -2187,7 +2203,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
  /* rows are filled by scripts further down the page, so start once the whole page script has run */
  const start=()=>{
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const specs=[['pillRowA',-1,30],['pillRowB',1,30],['appMarquee',-1,34]]; /* id, direction, seconds per loop */
+  const specs=[['pillRowA',-1,30],['pillRowB',1,30]]; /* id, direction, seconds per loop */
   const rows=[];
   specs.forEach(([id,dir,sec])=>{
     const el=document.getElementById(id); if(!el||!el.children.length) return;

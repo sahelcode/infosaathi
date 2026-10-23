@@ -111,7 +111,7 @@ export const GET: APIRoute = async () => {
     name: x.data.name_bn ?? x.data.name, org: x.data.provider, amount: x.data.country, badge: FUND[x.data.funding], t: i,
     deadline: x.data.close ? (isClosed(x.data.close) ? 'আবেদন শেষ' : `শেষ ${bnDate(x.data.close)}`) : 'তারিখ ঘোষণা হয়নি', url: scholarshipUrl(x),
   }));
-  const jobRows = (await getJobs()).filter((x) => !isClosed(x.data.close)).slice(0, 5).map((x, i) => ({
+  const jobRows = (await getJobs()).filter((x) => !isClosed(x.data.close)).slice(0, 3).map((x, i) => ({
     title: x.data.title, company: x.data.org, loc: x.data.sector, salary: `শেষ ${bnDate(x.data.close)}`, t: i, url: jobUrl(x),
   }));
   const aiRows = (await getAiTools()).slice(0, 4).map((x, i) => ({ name: x.data.name, cat: x.data.category, desc: x.data.summary, free: x.data.free_plan ? 'ফ্রি প্ল্যান আছে' : 'পেইড', t: i, url: aiToolUrl(x) }));
@@ -160,9 +160,8 @@ export const GET: APIRoute = async () => {
   html = swap(html, '<div class="section-head reveal"><span class="eyebrow">Scholarships</span><h2 style="font-size:28px;">Funding for the next step</h2><p>48,000+ active scholarships across undergraduate, graduate, and research programs.</p></div>',
     `<div class="doc-head reveal" style="margin-bottom:6px;"><div class="doc-head-top"><span class="eyebrow">Scholarships</span><a href="/scholarships/" class="see-all">See All${SEE_ALL_SVG}</a></div><h2 style="font-size:28px;">Funding for the next step</h2></div>`);
   // jobs
-  html = swap(html, '<a href="#" class="btn btn-ghost btn-sm job-apply">Apply</a>', '<a href="${j.url}" class="btn btn-ghost btn-sm job-apply">View</a>');
   html = swap(html, '<span class="eyebrow">Jobs</span><a href="#" class="see-all">', '<span class="eyebrow">Jobs</span><a href="/jobs/" class="see-all">');
-  html = swap(html, '<h2 style="font-size:28px;">Careers worldwide</h2>', '<h2 style="font-size:28px;">Open recruitment circulars</h2>');
+  html = swap(html, '<h2 style="font-size:28px;">Careers worldwide</h2>', '<h2 style="font-size:28px;">Apply before it closes</h2>');
   // AI tools
   html = swap(html, '<div class="feature-card"><div class="fc-top"><div class="cat-icn ${tint(a.t)}">${icon(\'aitools\')}</div>', '<a class="feature-card" href="${a.url}" style="color:inherit;text-decoration:none"><div class="fc-top"><div class="cat-icn ${tint(a.t)}">${icon(\'aitools\')}</div>');
   html = swap(html, "<span>${icon('star',12,12)} ${a.rating}</span><span class=\"btn-text\">View<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></div>", "<span>${a.free}</span><span class=\"btn-text\">দেখুন<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></a>");
