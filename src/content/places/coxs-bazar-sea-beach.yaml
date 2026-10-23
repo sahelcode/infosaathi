@@ -8,8 +8,12 @@ verified: 2026-10-06
 verified_by: sources
 map_query: Cox's Bazar Sea Beach, Sugandha Point
 geo: { lat: 21.4142, lng: 91.9833 }
-# photos:                       # নিজের তোলা ২–৩টি ছবি src/content/places/images/-এ রেখে নিচের মতো লিখুন
-#   - { src: ./images/coxs-bazar-sea-beach-1.jpg, caption: সুগন্ধা পয়েন্টে সূর্যাস্ত, sub: সুগন্ধা পয়েন্ট, label: সুগন্ধা }
+photos:
+  - { src: ./images/coxs-bazar-sea-beach-1.jpg, caption: "সাদা বালির সৈকতে রঙিন ছাতা আর নারকেল গাছ" }
+  - { src: ./images/coxs-bazar-sea-beach-2.jpg, caption: "ওপর থেকে দেখা লম্বা সৈকত, কমলা ছাতা আর ঝাউবন" }
+  - { src: ./images/coxs-bazar-sea-beach-3.jpg, caption: "সৈকতে ছাতার নিচে সারি সারি চেয়ার" }
+  - { src: ./images/coxs-bazar-sea-beach-4.jpg, caption: "ড্রোন থেকে দেখা সৈকত আর পাশের ভবন" }
+  - { src: ./images/coxs-bazar-sea-beach-5.jpg, caption: "সৈকতে সূর্যাস্তের সময় মানুষের ভিড়" }
 intro: বঙ্গোপসাগরের তীরে প্রায় ১২০ কিলোমিটার লম্বা কক্সবাজার সমুদ্র সৈকত, এশিয়ার দীর্ঘতম প্রাকৃতিক বালুকাময় সৈকত। শহরের লাবণী, সুগন্ধা ও কলাতলী পয়েন্ট থেকে মেরিন ড্রাইভ ধরে হিমছড়ি আর ইনানী পর্যন্ত পুরোটাই ঘোরা যায়।
 
 glance:
