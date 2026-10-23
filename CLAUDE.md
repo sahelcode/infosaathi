@@ -115,6 +115,42 @@ Trigger: Sahel sends a college/school name (often with the old Blogger link) plu
 6. `npm run build` must pass BEFORE pushing. Open `dist/college/<city>/<slug>/index.html` (or `dist/school/...`): one h1, JSON-LD, phones equal the data. Playwright at 360 and 390 px: no overflow, no JS error; look at one screenshot (header, "এক নজরে", contact rows).
 7. One commit per item, `git pull --rebase`, `git push`. Report in Bengali: files, live path, gaps, conflicts, anything unopened.
 
+## Task type: ADD OR UPDATE AN APP (`src/content/apps/`)
+
+Trigger: Sahel sends an app name (often with a logo, a Play Store link, or a priority). Do ONLY this task in that session (no layout/CSS/template changes, no other features; remind him if he asks for one).
+
+### Input from Sahel
+- App name, the exact Play Store link, the logo image (square), whether it is our own app, and an optional priority 1-3.
+- Missing the exact link: use the official Play Store page only if you can open it or the developer's official site shows it; otherwise keep the search link `https://play.google.com/store/search?q=<name>&c=apps` and say so. Never guess a package id.
+- Missing logo: build without `logo` (a coloured monogram shows) and say so. Logos come from Sahel or the app's own brand page he points to; never lift one from a random site.
+
+### Steps
+1. Read `src/content/apps/_template.yaml`, one finished app (`hifz-quran.yaml`) and the `apps` schema in `src/content.config.ts`.
+2. Slug = app name lower case, hyphenated. If the file exists, update it in place.
+3. `desc`: one short plain Bangla line saying what the app does (from the store page or the official site). No ratings, download counts or claims you cannot source.
+4. Logo: square PNG, 256-512 px (resize only down, never enlarge, do not crop the emblem; if the image is not square, pad it with transparent edges). Save as `src/content/apps/images/<slug>.png`, set `logo: "./images/<slug>.png"`. LOOK at it (Read tool).
+5. `priority` (optional, 1, 2 or 3): shown before every other app, in that order, on the home page and on /apps/. Only three exist. If Sahel gives a number that is already used, ask which app gives it up. Apps without a priority follow by `order` (lower first). `draft: true` hides an app everywhere without deleting it. `own: true` only for our own apps (button says Play Store).
+6. The home page shows the first 8 apps, /apps/ the first 30 (then "আরও দেখুন").
+7. `npm run build` must pass (check the real exit code and that `dist/index.html` and `dist/apps/index.html` are not empty). Check `dist/apps/index.html` for the order and the logo `<img>`. Playwright at 360 and 1280: no horizontal overflow, the logo loads, the home "Useful apps" row and /apps/ both look right; look at one screenshot of each.
+8. One commit, `git pull --rebase`, `git push`. Report in Bengali: files, what link was used (exact or search), the priority order now, anything left out and why.
+
+## Task type: UPDATE UNIVERSITY RANKINGS (`src/content/rankings/`)
+
+Trigger: Sahel asks to update the ranking (a new QS edition, a correction, or more rows). Do ONLY this task in that session. No layout/CSS/template changes. Filters such as "world top 10" or "India top 10" are a new feature that needs sourced data for each list: do not build them, remind him to finish the data first.
+
+### How the site uses it
+- One YAML per edition (`qs-2027.yaml`). `getRankings()` sorts by `year` (newest first) and the home page and /rankings/ use the FIRST file. Never add two files with the same `year` (the home page would pick one at random). A second ranking system needs a decision from Sahel first.
+- The home page shows the first 5 rows as a numbered list (01-05, name and English name, no rank column), so `rows` must be in the source's rank order, best first. Ties and bands that the source lists alphabetically stay alphabetical.
+
+### Steps
+1. Read `src/content/rankings/qs-2027.yaml` and the `rankings` schema in `src/content.config.ts`.
+2. Sources: the official ranking page first (QS: topuniversities.com). If the workspace cannot open it (WebFetch usually fails there), use WebSearch to find reputable reports (Daily Star, Prothom Alo, The Financial Express, the universities' own pages). A rank goes live only when the official page states it, or when two independent pages agree. If they disagree, prefer the official and newest one, otherwise leave that university out and say so. Research text pasted by Sahel from another AI is a lead, not a source.
+3. Rows: `name_bn`, `name_en`, `rank` exactly as the ranking states it, in Bangla digits ("৬০০", "৭১১–৭২০", "১,৪০১+"). `prev` and `trend` ONLY if the source states last year's rank. `university:` ONLY if a page for that university exists in `src/content/universities/` (use the file name). Never guess a band.
+4. `system`, `year`, one `source_url` (the best page), `note` (plain Bangla: how many Bangladeshi universities, which source was used and what could not be opened, and that the ranking is not ours), `verified: <today>`.
+5. Do not delete the old edition file; the newer `year` takes over automatically.
+6. `npm run build` (real exit code, `dist/index.html` not empty). Check the home list and /rankings/ in `dist`, then Playwright at 360 and 1280: the numbered list, no overflow; look at one screenshot.
+7. One commit, `git pull --rebase`, `git push`. Report in Bengali: what changed, sources used, rows that disagreed or could not be verified.
+
 ## DATA GAPS (applies to doctors, universities, hospitals)
 - Before marking any field missing, do maximum research: official site, at least 3 searches in Bangla and English, news. Only then leave it out (the page shows "আমরা সঠিক তথ্য পাইনি").
 - Every missing field is recorded in `docs/data-gaps.md`: one row per item with `type | file | field | what was searched | date`. Update the row instead of duplicating.

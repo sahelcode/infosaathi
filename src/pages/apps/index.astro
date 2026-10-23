@@ -1,7 +1,8 @@
 ---
 import ListPage from '../../components/ListPage.astro';
+import { getImage } from 'astro:assets';
 import { getApps } from '../../lib/data';
-const apps = (await getApps()).slice(0, 30);
+const apps = await Promise.all((await getApps()).slice(0, 30).map(async (a) => ({ ...a, logoUrl: a.data.logo ? (await getImage({ src: a.data.logo, width: 96, format: 'webp' })).src : '' })));
 const TINTS = ['#16a34a,#0d9488', '#3b82f6,#1e3a8a', '#f97316,#c2410c', '#8b5cf6,#5b21b6', '#06b6d4,#0e7490', '#ec4899,#9d174d'];
 const mono = (name: string) => {
   const w = name.trim().split(/\s+/);
@@ -13,7 +14,9 @@ const mono = (name: string) => {
   {apps.map((a, i) => (
     <div class="pf-mini app-item">
       <div class="ap-head">
-        <span class="ap-logo" style={`background:linear-gradient(135deg,${TINTS[i % TINTS.length]})`}>{mono(a.data.name)}</span>
+        {a.logoUrl
+          ? <span class="ap-logo has-img"><img src={a.logoUrl} alt="" width="46" height="46" loading="lazy" /></span>
+          : <span class="ap-logo" style={`background:linear-gradient(135deg,${TINTS[i % TINTS.length]})`}>{mono(a.data.name)}</span>}
         <span class="ap-txt"><b>{a.data.name}</b><span class="ap-d">{a.data.desc}</span></span>
       </div>
       <a class="ap-get" href={a.data.url} target="_blank" rel="noopener">
@@ -26,6 +29,8 @@ const mono = (name: string) => {
   .app-item{gap:12px;padding:12px;align-items:center;}
   .app-item .ap-head{display:flex;align-items:center;gap:12px;min-width:0;flex:1;}
   .app-item .ap-logo{width:46px;height:46px;border-radius:13px;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;font-family:'Inter',sans-serif;}
+  .app-item .ap-logo.has-img{background:none;overflow:hidden;}
+  .app-item .ap-logo img{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit;}
   .app-item .ap-txt{min-width:0;display:block;}
   .app-item .ap-txt b{display:block;font-size:15px;line-height:1.35;}
   .app-item .ap-d{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px;font-size:12.5px;line-height:1.45;color:var(--muted);}

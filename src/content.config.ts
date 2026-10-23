@@ -513,7 +513,7 @@ export const AI_CATS = AI_CATEGORIES;
 export const SERVICE_CATS = SERVICE_CATEGORIES;
 // ---- Homepage news and university rankings ----
 const apps = defineCollection({ loader: glob({ pattern: '**/[^_]*.yaml', base: './src/content/apps' }),
-  schema: z.object({ draft: z.boolean().default(false), name: z.string(), desc: z.string(), url: z.url(), own: z.boolean().default(false), featured: z.boolean().default(false), order: z.number().default(99), priority: z.number().int().min(1).max(3).optional() }) });
+  schema: ({ image }) => z.object({ draft: z.boolean().default(false), name: z.string(), desc: z.string(), url: z.url(), logo: image().optional(), own: z.boolean().default(false), featured: z.boolean().default(false), order: z.number().default(99), priority: z.number().int().min(1).max(3).optional() }) });
 // Two kinds of item: (1) a headline that links out to the outlet (needs `url`), (2) our own weekly article (needs `body`, shown at /news/<file-name>/).
 // Blood donor organisations: a phone number and/or a Facebook group, with district and upazila (thana).
 const bloodOrgs = defineCollection({

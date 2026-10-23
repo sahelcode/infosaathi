@@ -3,6 +3,7 @@
 name: "App name"
 desc: "One short line about what it does"
 url: "https://play.google.com/store/apps/details?id=..."   # the exact Play Store page
+logo: "./images/app-name.png"   # OPTIONAL. Square PNG, 256-512 px, saved in src/content/apps/images/. Without it the page shows a coloured monogram.
 own: false          # true only for our own apps (button says Play Store)
 featured: false
 order: 10           # lower comes first among apps without a priority
