@@ -132,7 +132,7 @@ export const GET: APIRoute = async () => {
   html = swapArray(html, 'usefulApps', appRows);
   html = swap(html, '<span class="app-desc">${a.desc}</span>', '<span class="app-desc">${a.desc}</span>');
   html = swap(html, '</svg>Download</a>', '</svg>${a.own?\'Play Store\':\'ডাউনলোড\'}</a>');
-  html = swapArray(html, 'newsData', newsAll.slice(1));
+  html = swapArray(html, 'newsData', newsAll.slice(1, 5));
   html = swap(html, 'const newsFeatureData = {', `const NEWS_ART = ${JSON.stringify(ART)};\nconst newsFeatureData = {`);
   html = swap(html, "${icon('news',44,44)}</div>\n  <div class=\"news-feature-body\">", "${NEWS_ART[newsFeatureData.kind]||icon('news',44,44)}</div>\n  <div class=\"news-feature-body\">");
   html = swap(html, '<div class="news-thumb ${tint(n.t)}">${icon(\'news\',20,20)}</div>', '<div class="news-thumb">${NEWS_ART[n.kind]||icon(\'news\',20,20)}</div>');
