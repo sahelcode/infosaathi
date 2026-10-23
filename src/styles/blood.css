@@ -62,3 +62,15 @@
 .bd-faq summary::-webkit-details-marker{display:none;}
 .bd-faq p{margin:8px 0 0;font-size:14.5px;line-height:1.8;color:#3a4a42;}
 @media (max-width:640px){.bd-hero{padding:14px;}.bd-badge{width:54px;height:54px;font-size:20px;}.bd-hero h1{font-size:19px;}}
+
+/* join button: quiet white, a small drop that beats */
+.bd-join{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 20px;margin-top:16px;border-radius:14px;border:1px solid var(--line,#dbe7e0);background:#fff;color:var(--ink,#0f2a1c);font:inherit;font-size:15px;font-weight:700;text-decoration:none;transition:border-color .2s,transform .15s;}
+.bd-join:hover{border-color:#e11d48;transform:translateY(-1px);}
+.bd-join-d{width:10px;height:13px;border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;background:#e11d48;animation:bdBeat 1.8s ease-in-out infinite;}
+@keyframes bdBeat{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(225,29,72,.35)}40%{transform:scale(1.2);box-shadow:0 0 0 7px rgba(225,29,72,0)}}
+.bd-joinbar{display:flex;flex-direction:column;gap:2px;margin:14px 0 6px;}
+.bd-joinbar small{font-size:13px;line-height:1.6;color:var(--muted,#64748b);}
+.bd-joinbar .bd-join{margin-top:8px;align-self:flex-start;}
+.bd-note{margin-top:10px;font-size:13px;color:var(--muted,#64748b);}
+.bd-steps{padding-left:20px;line-height:1.8;font-size:15px;text-align:justify;}
+@media (prefers-reduced-motion:reduce){.bd-join-d{animation:none}}
