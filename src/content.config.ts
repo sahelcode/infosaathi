@@ -470,7 +470,7 @@ const aiTools = defineCollection({
       alternatives: z.array(reference('aiTools')).default([]),
       premium_steps: z.array(z.object({ title: z.string(), text: z.string() })).default([]), // tool-specific upgrade steps; a generic list is shown when empty
       faq: extraFaq,
-      sources,
+      sources: z.array(z.object({ title: z.string(), url: z.url() })).max(3, 'তথ্যসূত্র সর্বোচ্চ ৩টি (অফিসিয়াল সাইট, প্রিমিয়ামের ধাপের সহায়তা পেজ ও আরেকটি)'),
       verified: date,
       verified_by: verifiedOfficial,
     })

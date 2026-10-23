@@ -26,7 +26,14 @@ think:
   - "Plus, Pro ও Ultra সব দেশে নেই; বাংলাদেশে পাওয়া যায় কি না পেজে বলা নেই"
   - "বাংলা ভাষার মান নিয়ে অফিসিয়াল পেজে কিছু বলা নেই"
 alternatives: ["chatgpt", "claude", "notebooklm"]
+premium_steps:
+  - { title: "Gemini অ্যাপ খুলুন", text: "নিজের ব্যক্তিগত Google অ্যাকাউন্টে gemini.google.com-এ ঢুকুন। অফিস বা স্কুলের অ্যাকাউন্টে নিয়ম আলাদা।" }
+  - { title: "Settings & help-এ যান", text: "নিচের দিকের Settings & help খুলে View Subscriptions বেছে নিন।" }
+  - { title: "Google AI প্ল্যান বাছুন", text: "তালিকা থেকে নিজের পছন্দের Google AI প্ল্যান বাছুন। কিছু প্ল্যান শুধু নির্দিষ্ট দেশে মেলে।" }
+  - { title: "পেমেন্ট দিন", text: "পর্দার নির্দেশ মেনে পেমেন্ট পদ্ধতি দিন ও Subscribe করুন। পরে প্ল্যান বদলাতে one.google.com-এ Manage membership থেকে Change membership plan-এ যাওয়া যায়।" }
+  - { title: "বাতিলের নিয়ম", text: "Settings & help থেকে Manage subscription, তারপর Cancel membership। প্ল্যান শেষ হলে Pro মডেলের সুবিধা চলে যায়।" }
 sources:
   - { title: "Gemini Subscriptions", url: "https://gemini.google/subscriptions/" }
+  - { title: "Gemini · Google AI প্ল্যান সাবস্ক্রাইব ও আপগ্রেড (অফিসিয়াল সহায়তা)", url: "https://support.google.com/gemini/answer/14517446?hl=en" }
 verified: 2026-10-23
 verified_by: official

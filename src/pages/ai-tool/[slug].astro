@@ -29,7 +29,7 @@ const glance = [
   { icon: 'globe', k: 'বাংলা সমর্থন', v: d.bangla === 'অজানা' ? 'অফিসিয়ালি জানা যায়নি' : d.bangla },
   { icon: 'users', k: 'তৈরি করেছে', v: d.vendor },
 ] as { icon: 'wallet' | 'spark' | 'globe' | 'users'; k: string; v: string }[];
-const jump = [d.pricing.length && ['pricing', 'দাম'], d.use_cases.length && ['uses', 'কীসে কাজে লাগে'], (d.good.length || d.think.length) && ['about', 'ভালো-মন্দ'], d.alternatives.length && ['alts', 'বিকল্প'], ['faq', 'প্রশ্ন']].filter(Boolean) as string[][];
+const jump = [d.pricing.length && ['pricing', 'দাম'], d.use_cases.length && ['uses', 'কীসে কাজে লাগে'], (d.good.length || d.think.length) && ['about', 'ভালো-মন্দ'], d.alternatives.length && ['alts', 'বিকল্প'], d.pricing.some((p) => !/^(free|ফ্রি)/i.test(p.plan.trim())) && ['premium', 'প্রিমিয়াম'], ['faq', 'প্রশ্ন']].filter(Boolean) as string[][];
 const hasPaid = d.pricing.some((p) => !/^(free|ফ্রি)/i.test(p.plan.trim()));
 const generic = [
   { title: 'অফিসিয়াল সাইটে যান', text: `${host} খুলুন। অন্য কোনো সাইট বা তৃতীয় পক্ষের লিংক থেকে কিনবেন না।` },
@@ -39,26 +39,29 @@ const generic = [
   { title: 'প্ল্যান চালু হয়েছে কি না দেখুন', text: 'পেমেন্টের পর অ্যাকাউন্টের সেটিংসে প্ল্যান সক্রিয় দেখাচ্ছে কি না নিশ্চিত হোন। সাবস্ক্রিপশন বাতিল করার নিয়ম আগেই জেনে রাখুন।' },
 ];
 const premiumSteps = d.premium_steps.length ? d.premium_steps : generic;
+const realSteps = d.premium_steps.length > 0;
 const all = await getAiTools();
 const alts = d.alternatives.map((r) => all.find((x) => x.id === r.id)).filter(Boolean) as AiTool[];
 const faq = [
   { q: `${d.name} কি ফ্রি?`, a: d.free_plan ? `হ্যাঁ, অফিসিয়াল সাইটে ফ্রি প্ল্যান আছে। তবে ব্যবহারের সীমা থাকতে পারে।` : 'না, অফিসিয়াল সাইটে ফ্রি প্ল্যান দেখা যায়নি।' },
   ...(d.pricing.length ? [{ q: `${d.name}-এর দাম কত?`, a: d.pricing.map((p) => `${p.plan}: ${p.price}`).join('; ') + '। দাম বদলাতে পারে, অফিসিয়াল সাইটে মিলিয়ে নিন।' }] : []),
+  ...(hasPaid && realSteps ? [{ q: `${d.name} প্রিমিয়াম কীভাবে নেব?`, a: d.premium_steps.map((st, i) => `${bn(i + 1)}. ${st.title}: ${st.text}`).join(' ') }] : []),
   { q: `${d.name} কে তৈরি করেছে?`, a: `${d.vendor}।` },
   ...d.faq,
 ];
-const description = `${d.name} (${d.vendor}): ${d.summary}। ${d.free_plan ? 'ফ্রি প্ল্যান আছে। ' : ''}দাম, কীসে কাজে লাগে আর বিকল্প।`;
+const description = (hasPaid && realSteps ? `${d.name} প্রিমিয়াম কীভাবে নেবেন, ধাপে ধাপে। ` : '') + `${d.name} (${d.vendor}): ${d.summary}। ${d.free_plan ? 'ফ্রি প্ল্যান আছে। ' : ''}দাম, কীসে কাজে লাগে আর বিকল্প।`;
 const crumbs = [['হোম', '/'], ['AI টুলস', '/ai-tools/']];
 const jsonld = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'SoftwareApplication', name: d.name, applicationCategory: 'BusinessApplication', url: d.url, description: d.summary, publisher: { '@type': 'Organization', name: d.vendor } },
+    { '@type': 'SoftwareApplication', dateModified: d.verified.toISOString().slice(0, 10), name: d.name, applicationCategory: 'BusinessApplication', url: d.url, description: d.summary, publisher: { '@type': 'Organization', name: d.vendor } },
     { '@type': 'BreadcrumbList', itemListElement: [...crumbs, [d.name, path]].map(([n, l], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + l })) },
+    ...(hasPaid && realSteps ? [{ '@type': 'HowTo', name: `${d.name} প্রিমিয়াম কীভাবে নেবেন`, description: `${d.name}-এর পেইড প্ল্যানে আপগ্রেড করার ধাপ, অফিসিয়াল সহায়তা পেজ অনুযায়ী।`, step: d.premium_steps.map((st, i) => ({ '@type': 'HowToStep', position: i + 1, name: st.title, text: st.text })) }] : []),
     { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   ],
 };
 ---
-<Base title={`${d.name} – দাম, ফ্রি প্ল্যান ও কীসে কাজে লাগে | InfoSaathi`} description={description} path={path} jsonld={jsonld} draft={d.draft}>
+<Base title={hasPaid && realSteps ? `${d.name} প্রিমিয়াম কীভাবে নেবেন – ধাপ, দাম ও ফ্রি প্ল্যান | InfoSaathi` : `${d.name} – দাম, ফ্রি প্ল্যান ও কীসে কাজে লাগে | InfoSaathi`} description={description} path={path} jsonld={jsonld} draft={d.draft}>
   <main class="pf mx-page">
     <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{d.name}</a></nav>
     <div class="pf-grid">
@@ -100,7 +103,7 @@ const jsonld = {
         )}
         <Faq items={faq} />
         {hasPaid && (
-          <section class="pf-card" id="premium" aria-labelledby="h-prem"><div class="pf-card-head"><h2 id="h-prem">প্রিমিয়াম নেবেন যেভাবে</h2></div>
+          <section class="pf-card" id="premium" aria-labelledby="h-prem"><div class="pf-card-head"><h2 id="h-prem">{d.name} প্রিমিয়াম নেবেন যেভাবে</h2></div>
             <ol class="un-steps">{premiumSteps.map((st, i) => <li><span class="un-step-n">{bn(i + 1)}</span><span><b>{st.title}</b><small>{st.text}</small></span></li>)}</ol>
             {d.premium_steps.length === 0 && <p class="pf-note">এই ধাপগুলো সাধারণ নিয়মে লেখা। কোন কার্ড বা পেমেন্ট পদ্ধতি বাংলাদেশ থেকে চলবে, তা আমরা যাচাই করিনি; অফিসিয়াল চেকআউটে দেখে নিন।</p>}
           </section>

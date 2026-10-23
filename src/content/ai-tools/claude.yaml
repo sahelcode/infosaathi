@@ -28,8 +28,14 @@ think:
   - "বাংলা সমর্থন নিয়ে অফিসিয়াল পেজে স্পষ্ট তথ্য পাওয়া যায়নি"
   - "দাম ডলারে; দেশভেদে ও সময়ভেদে বদলাতে পারে"
 alternatives: ["chatgpt", "gemini", "notebooklm"]
+premium_steps:
+  - { title: "Claude-এ লগইন করুন", text: "claude.ai-এ ইমেইল বা Google দিয়ে অ্যাকাউন্ট খুলুন বা ঢুকুন। অ্যাকাউন্ট খুলতে সমর্থিত দেশের ফোন নম্বর লাগে।" }
+  - { title: "Settings > Billing খুলুন", text: "বাঁ দিকের নিচে নিজের নাম বা নামের আদ্যক্ষরে ক্লিক করে Settings বেছে নিন, তারপর Billing-এ যান।" }
+  - { title: "Upgrade plan চাপুন", text: "Upgrade plan চাপার পর খোলা পেজে Get Pro plan বাছুন।" }
+  - { title: "মাসিক না বার্ষিক বাছুন", text: "বিলিং মাসিক না বার্ষিক হবে, তা বেছে নিন। অফিসিয়াল পেজ অনুযায়ী ডিফল্টে সাবস্ক্রিপশন নিজে থেকে নবায়ন হয়।" }
+  - { title: "পেমেন্ট দিয়ে Subscribe করুন", text: "পেমেন্টের তথ্য দিয়ে Subscribe চাপুন। পেইড প্ল্যান শুধু সমর্থিত অবস্থানে থাকা ব্যবহারকারীর জন্য। যেকোনো সময় বাতিল করা যায়।" }
 sources:
   - { title: "Claude · Pricing", url: "https://claude.com/pricing" }
-  - { title: "Claude", url: "https://claude.ai/" }
+  - { title: "Claude · Pro প্ল্যানে সাইন আপ (অফিসিয়াল সহায়তা)", url: "https://support.claude.com/en/articles/8325609-how-do-i-sign-up-for-the-pro-plan" }
 verified: 2026-10-07
 verified_by: official

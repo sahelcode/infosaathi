@@ -26,8 +26,15 @@ think:
   - "প্ল্যানের দাম বছরের হিসাবে দেখানো হয়েছে; মাসিক বিলিংয়ের দাম এখানে যাচাই করা হয়নি"
   - "বাংলা সমর্থন নিয়ে অফিসিয়াল পেজে স্পষ্ট তথ্য পাওয়া যায়নি"
 alternatives: ["chatgpt", "gemini"]
+premium_steps:
+  - { title: "Canva-তে লগইন করুন", text: "canva.com-এ নিজের অ্যাকাউন্টে ঢুকুন।" }
+  - { title: "Upgrade your plan চাপুন", text: "হোম পেজ থেকে Upgrade your plan বা Start your free trial বেছে নিন।" }
+  - { title: "Canva Pro বেছে Upgrade চাপুন", text: "Canva Pro বাছাই করে Upgrade চাপুন। যোগ্য হলে ফ্রি ট্রায়ালের অপশন দেখাবে। প্রতিটি অ্যাকাউন্ট ও প্রতিটি পেমেন্ট পদ্ধতির জন্য একটি করে ট্রায়াল মেলে।" }
+  - { title: "মাসিক না বার্ষিক বাছুন", text: "মাসিক বা বার্ষিক প্ল্যান বেছে Next চাপুন।" }
+  - { title: "পেমেন্ট পদ্ধতি দিয়ে নিশ্চিত করুন", text: "পেমেন্ট পদ্ধতি বেছে তথ্য দিন ও আপগ্রেড নিশ্চিত করুন। প্ল্যান নিজে থেকে নবায়ন হয়, তাই চাইলে নবায়নের আগে বাতিল করুন।" }
 sources:
   - { title: "Canva · Pricing", url: "https://www.canva.com/pricing/" }
   - { title: "Canva · AI features", url: "https://www.canva.com/ai-image-generator/" }
+  - { title: "Canva · Canva Pro-তে আপগ্রেড (অফিসিয়াল সহায়তা)", url: "https://www.canva.com/help/upgrade-to-canva-pro/" }
 verified: 2026-10-07
 verified_by: official

@@ -25,6 +25,12 @@ think:
   - "পেইড প্ল্যানের দাম Google AI প্ল্যানের দাম; দেশভেদে বদলাতে পারে"
   - "বাংলা সমর্থন অফিসিয়াল পেজে স্পষ্টভাবে নিশ্চিত করা যায়নি, তাই অজানা রাখা হয়েছে"
 alternatives: ["gemini", "claude", "perplexity"]
+premium_steps:
+  - { title: "কোন পথে নেবেন ঠিক করুন", text: "অফিসিয়াল পেজ অনুযায়ী উন্নত NotebookLM মেলে Google AI প্ল্যান (Plus, Pro বা Ultra), যোগ্য Google Workspace প্ল্যান, বা Google Cloud-এর এন্টারপ্রাইজ প্ল্যানে।" }
+  - { title: "ব্যক্তিগত ব্যবহারে Google AI প্ল্যান নিন", text: "one.google.com/ai-তে গিয়ে Google AI Plus, Pro বা Ultra বেছে সাবস্ক্রাইব করুন। Gmail অ্যাকাউন্ট থাকলে Standard ফ্রি।" }
+  - { title: "অফিস বা স্কুলের অ্যাকাউন্টে জানুন", text: "Workspace অ্যাকাউন্ট হলে আপনার লাইসেন্স যোগ্য কি না দেখুন। এন্টারপ্রাইজ প্ল্যানে অ্যাডমিনকে অ্যাক্সেস দিতে বলুন।" }
+  - { title: "সীমা মিলিয়ে নিন", text: "প্ল্যানভেদে নোটবুক ও সোর্সের সীমা আলাদা এবং বদলাতে পারে। কেনার আগে বর্তমান সীমা দেখে নিন।" }
+  - { title: "আপগ্রেড হয়েছে কি না দেখুন", text: "আপগ্রেড হলে প্রোফাইল ছবির পাশে আলাদা ব্যাজ দেখা যায়।" }
 sources:
   - { title: "Gemini Notebook (NotebookLM)", url: "https://notebook.google/" }
   - { title: "Notebook plan upgrades · Google Help", url: "https://support.google.com/notebooklm/answer/16213268" }

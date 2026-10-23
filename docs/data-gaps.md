@@ -218,3 +218,7 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 - No photos or logos yet; home card uses a neutral mosque placeholder.
 - Satpur Kamil Madrasah (satpur-kamil-madrasah, 2026-10-24): no verified phone (only a third-party directory number), no current principal from an official source (last named principal is from 2022 news), student/teacher counts (Wikipedia says 1,500+ without a second source), email. Website satpurkm.edu.bd taken from the official logo, not opened (blocked from workspace). Searched: en/bn Wikipedia, institution.bd (BANBEIS record), Lamakazi union portal (not reachable), 4 searches bn/en.
 - Govt Madrasah-e-Alia Dhaka (government-madrasah-e-alia-dhaka, 2026-10-24): student and teacher counts, Fazil honours subject list, campus area, gender (only one directory says boys). Searched: official site (about, contact, notice pages 1-3), DME page, en Wikipedia, institution.bd, 4 searches bn/en, news (TBS, BSS, Bangla Tribune). Principal and phone filled from the official site.
+
+## AI tools premium steps (2026-10-24)
+- Perplexity: no official upgrade-steps page found; the page shows a generic list with an unverified-payment note. Add premium_steps from an official source.
+- Payment methods accepted from Bangladesh are not verified for any tool.
