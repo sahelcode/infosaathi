@@ -12,16 +12,22 @@ interface Props {
   action: { href: string; label: string; icon: IconName };
   jump: string[][];
   checked: string;
+  logo?: ImageMetadata;
 }
-const { kind, icon, name, sub, line, badges, action, jump, checked } = Astro.props;
+const { kind, name, sub, line, badges, action, checked, logo } = Astro.props;
+import { Image } from 'astro:assets';
 ---
 <section class="pf-hero hp-hero">
-  <div class={`hp-cover mx-band ${kind}`}></div>
-  <div class="pf-hero-body">
-    <div class={`hp-logo un-logo ed-mono mx-ico ${kind}`} aria-hidden="true"><Icon name={icon} size={36} w={1.8} /></div>
+  {kind === 'ai' ? (
+    <div class="mx-anim ai" aria-hidden="true"><span class="mx-ai-line"></span><span class="mx-ai-dots"><i></i><i></i><i></i></span><span class="mx-ai-bar"></span></div>
+  ) : (
+    <div class={`mx-anim ${kind}`} aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+  )}
+  <div class="pf-hero-body mx-body">
+    {kind === 'ai' && logo && <div class="mx-logo"><Image src={logo} alt="" width={120} height={120} /></div>}
     <h1 class="pf-name">{name}</h1>
     {sub && <p class="pf-en">{sub}</p>}
-    {line && <p class="hp-addr"><Icon name="pin" size={15} w={2.2} />{line}</p>}
+    {line && <p class="hp-addr">{kind === "job" && <Icon name="pin" size={15} w={2.2} />}{line}</p>}
     <div class="pf-badges">
       {badges.map((b) => b.ok ? <span class="pf-badge ok"><Icon name="check" size={13} w={3} />{b.text}</span> : <span class="pf-badge">{b.text}</span>)}
       <span class="pf-badge src"><Icon name="clock" size={13} w={2.2} />{checked}</span>

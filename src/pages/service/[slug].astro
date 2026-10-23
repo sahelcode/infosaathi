@@ -48,7 +48,7 @@ const jsonld = {
 };
 ---
 <Base title={`${d.name} – ফি, কাগজপত্র ও আবেদনের ধাপ | InfoSaathi`} description={`${d.name} (${d.dept}): ${d.summary}`} path={path} jsonld={jsonld} draft={d.draft}>
-  <main class="pf">
+  <main class="pf mx-page">
     <nav class="pf-crumbs" aria-label="ব্রেডক্রাম্ব">{crumbs.map(([n, l]) => (<><a href={l}>{n}</a><span>›</span></>))}<a href={path}>{d.name}</a></nav>
     <div class="pf-grid">
       <article class="pf-main">
@@ -96,8 +96,7 @@ const jsonld = {
         {related.length > 0 && (
           <section class="pf-block" aria-labelledby="h-rel"><div class="pf-block-head"><h2 id="h-rel">আরও সরকারি সেবা</h2><a class="see-all" href="/services/">See All</a></div>
             <div class="pf-minis">{related.map((x) => (
-              <a class="pf-mini" href={serviceUrl(x)}><span class="hp-near-i un-rel-i"><Icon name="gov" size={20} w={1.8} /></span>
-                <span class="pf-mini-txt"><b>{x.data.name}</b><span class="pf-mini-h">{x.data.dept}</span></span>
+              <a class="pf-mini" href={serviceUrl(x)}><span class="pf-mini-txt"><b>{x.data.name}</b><span class="pf-mini-h">{x.data.dept}</span></span>
                 <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>))}</div></section>
         )}
       </article>

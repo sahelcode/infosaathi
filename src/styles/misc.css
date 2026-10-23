@@ -34,3 +34,36 @@
 .un-docs .mx-warn svg{color:#d97706;}
 .pf-card-head + .un-docs,.pf-card-head + .un-steps{margin-top:14px;}
 @media (max-width:767px){.hp-actions.mx-actions{grid-template-columns:1fr 46px;}.hp-actions.mx-actions .pf-btn:first-child{grid-column:auto;}}
+
+/* ===== calm header animation (no photos, no logos, no coloured band) ===== */
+.mx-anim{position:relative;height:60px;overflow:hidden;border-bottom:1px solid var(--line);background:#fff;display:flex;flex-direction:column;justify-content:center;gap:7px;padding:0 20px;}
+.mx-anim i{display:block;height:5px;border-radius:3px;background:#e3ece7;transform-origin:left;animation:mxWrite 4.2s cubic-bezier(.4,0,.2,1) infinite;}
+.mx-anim i:nth-child(1){width:62%;}
+.mx-anim i:nth-child(2){width:84%;animation-delay:.35s;}
+.mx-anim i:nth-child(3){width:46%;animation-delay:.7s;}
+.mx-anim b{position:absolute;top:0;bottom:0;width:80px;left:-80px;background:linear-gradient(90deg,transparent,rgba(22,163,74,.12),transparent);animation:mxScan 4.2s ease-in-out infinite;}
+@keyframes mxWrite{0%{transform:scaleX(0);opacity:.4}35%,80%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+@keyframes mxScan{0%{left:-80px}60%,100%{left:100%}}
+.mx-anim.ai{height:68px;flex-direction:row;align-items:center;gap:14px;}
+.mx-ai-line{position:relative;display:block;height:8px;width:0;max-width:52%;border-radius:4px;background:#d6e4dc;animation:mxType 3.6s steps(22) infinite;}
+.mx-ai-line::after{content:'';position:absolute;right:-5px;top:-4px;width:2px;height:16px;background:#16a34a;animation:mxCaret .6s steps(1) infinite;}
+.mx-ai-dots{display:flex;gap:4px;}
+.mx-ai-dots i{width:6px;height:6px;border-radius:50%;background:#9db8a9;animation:mxDot 1.1s ease-in-out infinite;}
+.mx-ai-dots i:nth-child(2){animation-delay:.15s;}
+.mx-ai-dots i:nth-child(3){animation-delay:.3s;}
+.mx-ai-bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:#eef3f0;overflow:hidden;}
+.mx-ai-bar::after{content:'';position:absolute;top:0;bottom:0;width:30%;background:#16a34a;animation:mxBar 1.8s ease-in-out infinite;}
+@keyframes mxType{0%{width:0}70%,100%{width:52%}}
+@keyframes mxCaret{50%{opacity:0}}
+@keyframes mxDot{0%,100%{opacity:.25;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+@keyframes mxBar{0%{left:-30%}100%{left:100%}}
+@media (prefers-reduced-motion:reduce){.mx-anim i,.mx-anim b,.mx-ai-line,.mx-ai-line::after,.mx-ai-dots i,.mx-ai-bar::after{animation:none!important}.mx-anim i{opacity:1}.mx-ai-line{width:40%}}
+.mx-body{padding-top:18px;}
+.mx-logo{width:64px;height:64px;margin:0 auto 12px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:8px;}
+.mx-logo img{display:block;width:100%;height:100%;object-fit:contain;}
+
+/* these four page types: all text justified, only the apply button has colour */
+.mx-page .pf-text,.mx-page .un-docs li,.mx-page .un-steps small,.mx-page .un-pc-b li,.mx-page .mx-tile small,.mx-page .pf-card p{text-align:justify;text-justify:inter-word;}
+.mx-page .pf-btn:not(.primary){background:#fff;color:var(--ink-2);border:1px solid var(--line);}
+.mx-page .mx-tile{background:#fff;border:1px solid var(--line);}
+.mx-page .un-g-i,.mx-page .mx-tile-i{background:#fff;color:var(--ink-2);}

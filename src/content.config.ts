@@ -443,11 +443,13 @@ const jobs = defineCollection({
 const AI_CATEGORIES = ['চ্যাটবট', 'লেখা', 'কোড', 'ছবি', 'ভিডিও', 'অডিও', 'গবেষণা', 'অনুবাদ', 'ডিজাইন', 'প্রোডাক্টিভিটি'] as const;
 const aiTools = defineCollection({
   loader: files('ai-tools'),
-  schema: z
+  schema: ({ image }) =>
+    z
     .object({
       draft: z.boolean().default(false),
       name: z.string().min(2),
       vendor: z.string(),
+      logo: image().optional(), // the tool's official app icon, ./images/<slug>.png
       category: z.enum(AI_CATEGORIES, `category হবে: ${AI_CATEGORIES.join(', ')}`),
       summary: z.string(), // one line, Bangla
       url: z.url(),
