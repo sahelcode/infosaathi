@@ -39,3 +39,4 @@
 .ht-google{margin-top:10px;text-align:center;font-size:11.5px;color:#94a3b8;}
 @media (min-width:768px){.pf-hero-body .hp-addr{justify-content:flex-start;text-align:left;}}
 .pf-minis .pf-mini-txt b,.pf-minis .pf-mini-txt small{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.pf-chips span{background:#fff;border:1px solid var(--line);color:var(--ink-2);}
