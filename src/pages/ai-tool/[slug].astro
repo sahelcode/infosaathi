@@ -5,6 +5,7 @@ import MiscHero from '../../components/MiscHero.astro';
 import Faq from '../../components/Faq.astro';
 import Report from '../../components/Report.astro';
 import ShareRow from '../../components/ShareRow.astro';
+import MiscActions from '../../components/MiscActions.astro';
 import Ad from '../../components/Ad.astro';
 import { getAiTools, aiToolUrl, type AiTool } from '../../lib/data';
 import { bn, bnDate } from '../../lib/format';
@@ -29,6 +30,15 @@ const glance = [
   { icon: 'users', k: 'তৈরি করেছে', v: d.vendor },
 ] as { icon: 'wallet' | 'spark' | 'globe' | 'users'; k: string; v: string }[];
 const jump = [d.pricing.length && ['pricing', 'দাম'], d.use_cases.length && ['uses', 'কীসে কাজে লাগে'], (d.good.length || d.think.length) && ['about', 'ভালো-মন্দ'], d.alternatives.length && ['alts', 'বিকল্প'], ['faq', 'প্রশ্ন']].filter(Boolean) as string[][];
+const hasPaid = d.pricing.some((p) => !/^(free|ফ্রি)/i.test(p.plan.trim()));
+const generic = [
+  { title: 'অফিসিয়াল সাইটে যান', text: `${host} খুলুন। অন্য কোনো সাইট বা তৃতীয় পক্ষের লিংক থেকে কিনবেন না।` },
+  { title: 'লগইন বা সাইন আপ করুন', text: `${d.name}-এর অ্যাকাউন্টে ঢুকুন। অ্যাকাউন্ট না থাকলে ফ্রি অ্যাকাউন্ট খুলে নিন।` },
+  { title: 'প্ল্যান ও দাম দেখুন', text: 'Pricing বা Upgrade পেজে প্ল্যানগুলোর সুবিধা ও দাম মিলিয়ে আপনার কাজের উপযোগী প্ল্যান বাছুন।' },
+  { title: 'পেমেন্ট করুন', text: 'চেকআউটে যে পেমেন্ট পদ্ধতি দেখায় তার একটি দিয়ে দাম দিন। মাসিক না বছরের হিসাব, তা পেমেন্টের আগে আরেকবার দেখে নিন।' },
+  { title: 'প্ল্যান চালু হয়েছে কি না দেখুন', text: 'পেমেন্টের পর অ্যাকাউন্টের সেটিংসে প্ল্যান সক্রিয় দেখাচ্ছে কি না নিশ্চিত হোন। সাবস্ক্রিপশন বাতিল করার নিয়ম আগেই জেনে রাখুন।' },
+];
+const premiumSteps = d.premium_steps.length ? d.premium_steps : generic;
 const all = await getAiTools();
 const alts = d.alternatives.map((r) => all.find((x) => x.id === r.id)).filter(Boolean) as AiTool[];
 const faq = [
@@ -71,6 +81,7 @@ const jsonld = {
           <section class="pf-card" id="uses" aria-labelledby="h-uses"><h2 id="h-uses">কীসে কাজে লাগে</h2>
             <ul class="mx-tiles">{d.use_cases.map((u) => <li class="mx-tile"><span class="mx-tile-i"><Icon name="check" size={18} w={2.2} /></span><b>{u.title}</b><small>{u.text}</small></li>)}</ul></section>
         )}
+        {hasPaid ? <MiscActions action={{ href: d.url, label: 'অফিসিয়াল সাইট', icon: 'ext' }} premium="#premium" /> : <MiscActions action={{ href: d.url, label: 'অফিসিয়াল সাইট', icon: 'ext' }} />}
         <Ad />
         {(d.about || d.good.length > 0 || d.think.length > 0) && (
           <section class="pf-card" id="about" aria-labelledby="h-ab"><h2 id="h-ab">পরিচিতি</h2>{d.about && <p class="pf-text">{d.about}</p>}
@@ -88,6 +99,12 @@ const jsonld = {
                 <span class="pf-mini-go"><Icon name="chev" size={16} w={2.4} /></span></a>))}</div></section>
         )}
         <Faq items={faq} />
+        {hasPaid && (
+          <section class="pf-card" id="premium" aria-labelledby="h-prem"><div class="pf-card-head"><h2 id="h-prem">প্রিমিয়াম নেবেন যেভাবে</h2></div>
+            <ol class="un-steps">{premiumSteps.map((st, i) => <li><span class="un-step-n">{bn(i + 1)}</span><span><b>{st.title}</b><small>{st.text}</small></span></li>)}</ol>
+            {d.premium_steps.length === 0 && <p class="pf-note">এই ধাপগুলো সাধারণ নিয়মে লেখা। কোন কার্ড বা পেমেন্ট পদ্ধতি বাংলাদেশ থেকে চলবে, তা আমরা যাচাই করিনি; অফিসিয়াল চেকআউটে দেখে নিন।</p>}
+          </section>
+        )}
         <Report placeholder="যেমন: দাম বদলেছে" note="এআই টুলের দাম ও সুবিধা ঘনঘন বদলায়। ব্যবহারের আগে অফিসিয়াল সাইটে মিলিয়ে নিন।">
           {d.sources.length > 0 && (<div class="un-src"><b class="pf-h3" style="display:block;margin:4px 0 0">তথ্যসূত্র</b>
             <ul>{d.sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.title}<Icon name="ext" size={14} /></a></li>)}</ul></div>)}

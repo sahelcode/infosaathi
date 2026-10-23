@@ -468,6 +468,7 @@ const aiTools = defineCollection({
       good: list,
       think: list,
       alternatives: z.array(reference('aiTools')).default([]),
+      premium_steps: z.array(z.object({ title: z.string(), text: z.string() })).default([]), // tool-specific upgrade steps; a generic list is shown when empty
       faq: extraFaq,
       sources,
       verified: date,

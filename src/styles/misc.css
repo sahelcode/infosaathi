@@ -99,3 +99,8 @@
 }
 .mx-page .un-steps{margin-top:16px;}
 @media (min-width:768px){.mx-page .un-steps small{font-size:13.5px;line-height:1.65;}.mx-page .un-steps b{font-size:15.5px;}}
+/* ai tool: official site, premium and share in one quiet row above the intro */
+.mx-actions-mid.has-premium{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 46px;}
+@media (min-width:768px){.mx-actions-mid.has-premium{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 64px;}}
+.mx-page .mx-actions-mid .pf-btn.primary{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:none;}
+#premium{scroll-margin-top:84px;}

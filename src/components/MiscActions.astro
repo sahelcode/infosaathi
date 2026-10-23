@@ -1,10 +1,11 @@
 ---
 import Icon from './Icon.astro';
 import type { IconName } from '../lib/icons';
-interface Props { action: { href: string; label: string; icon: IconName } }
-const { action } = Astro.props;
+interface Props { action: { href: string; label: string; icon: IconName }; premium?: string }
+const { action, premium } = Astro.props;
 ---
-<div class="pf-actions hp-actions mx-actions mx-actions-mid">
+<div class:list={['pf-actions', 'hp-actions', 'mx-actions', 'mx-actions-mid', premium && 'has-premium']}>
   <a class="pf-btn primary" href={action.href} target="_blank" rel="noopener"><Icon name={action.icon} size={17} w={2.2} />{action.label}</a>
+  {premium && <a class="pf-btn" href={premium}><Icon name="wallet" size={17} w={2.2} />প্রিমিয়াম নিন</a>}
   <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
 </div>
