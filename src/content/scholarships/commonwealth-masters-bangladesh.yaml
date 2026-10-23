@@ -7,7 +7,7 @@ funding: full
 duration: "১ বছর (টিচড মাস্টার্স)"
 round: "২০২৭–২৮"
 close: 2026-10-20
-next_note: "আবেদনের শেষ সময় ২০ অক্টোবর, বিকাল ৪টা (ব্রিটিশ সময়)। পড়া শুরু সেপ্টেম্বর/অক্টোবর ২০২৭"
+next_note: "২০২৭–২৮ রাউন্ডের আবেদন ২০ অক্টোবর ২০২৬, বিকাল ৪টায় (ব্রিটিশ সময়) শেষ হয়েছে। পরের রাউন্ডের তারিখ এখনো ঘোষিত নয়। এই রাউন্ডে পড়া শুরু সেপ্টেম্বর/অক্টোবর ২০২৭"
 apply_url: "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/"
 eligibility:
   - "যোগ্য কমনওয়েলথ দেশের নাগরিক বা শরণার্থী হতে হবে, বাংলাদেশ যোগ্য দেশের তালিকায় আছে"
@@ -32,5 +32,5 @@ think:
   - "বাংলাদেশের মনোনয়ন সংস্থা কোনটি ও তাদের আলাদা শর্ত আছে কি না, তা CSC পেজে দেখে নিন"
 sources:
   - { title: "CSC · Commonwealth Master's Scholarships", url: "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/" }
-verified: 2026-10-07
+verified: 2026-10-23
 verified_by: official

@@ -202,6 +202,12 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | school | viqarunnisa-noon-school-and-college | monthly tuition and class 1-9 admission fees | official site has no fee page; 3 searches (bn/en) found only news on application fees | 2026-10-23 |
 | school | viqarunnisa-noon-school-and-college | 2027 class 1-9 admission (dates, seats) | not yet published; latest is the 2026 lottery (2,020 seats, Prothom Alo 2025-11-23), used as "গত বছর" in FAQ | 2026-10-23 |
 | school | viqarunnisa-noon-school-and-college | HSC 2026 result | 2 searches (bn/en) and news; only HSC 2025 found | 2026-10-23 |
+| service | driving-licence | current official fee list (learner, smart card, renewal) | BRTA fee pages on brta.gov.bd and circle sites (Dhaka, Khulna, Rajshahi) found but not readable from workspace; 4 searches (bn/en); only news/blogs with different amounts | 2026-10-23 |
+| service | driving-licence | BRTA helpline number | 2 searches (bn/en), official site not readable; only Eid control-room news | 2026-10-23 |
+| service | birth-registration | current official fee list, helpline number | bdris.gov.bd shows maintenance page (only email support@bdris.gov.bd); 3 searches (bn/en); only blogs | 2026-10-23 |
+| service | e-passport | helpline number | epassport.gov.bd body not readable; 2 searches (bn/en) | 2026-10-23 |
+| service | e-tin, land-mutation, nid-correction | fees on the official portal | secure.incometax.gov.bd, mutation.land.gov.bd, land.gov.bd, services.nidw.gov.bd blocked from workspace; facts checked in 2026 news instead | 2026-10-23 |
+| job | bpsc-51-bcs | cover image | Sahel has not sent one | 2026-10-23 |
 
 ## Madrasa (demo, 2026-10-24)
 - Phones: none of the 5 madrasas has a verified number (detail page shows "আমরা সঠিক তথ্য পাইনি").
