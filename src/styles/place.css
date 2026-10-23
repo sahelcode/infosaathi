@@ -137,3 +137,10 @@ a.pl-credit:hover{color:rgba(255,255,255,.9);text-decoration:underline;}
 #route .un-prog .pl-route-l{flex:1 1 0;}
 .pl-end{display:grid;grid-template-columns:1fr 44px;gap:8px;margin-top:12px;}
 .pl-end .pf-btn{height:42px;font-size:13.5px;min-width:0;}
+/* warnings are plain text: no icon, a thin divider between items */
+.pl-tips{gap:0;}
+.pl-tips li{padding:11px 0;border-top:1px solid #edf2ef;}
+.pl-tips li:first-child{border-top:0;padding-top:2px;}
+/* map + share row: same edges as the cards above it */
+.pf-actions.pl-end{padding:0;margin:14px 0 0;grid-template-columns:minmax(0,1fr) 46px;justify-content:stretch;}
+@media (min-width:768px){.pf-actions.pl-end{padding:0;grid-template-columns:minmax(0,1fr) 64px;justify-content:stretch;}}

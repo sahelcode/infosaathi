@@ -185,7 +185,7 @@ import MiniThumb from '../../../components/MiniThumb.astro';
         {d.tips.length > 0 && (
           <section class="pf-card" id="safety" aria-labelledby="h-safety">
             <h2 id="h-safety">সতর্কতা</h2>
-            <ul class="pl-tips">{d.tips.map((t) => <li><Icon name="warn" size={18} /><span><b>{t.title}</b> {t.text}</span></li>)}</ul>
+            <ul class="pl-tips">{d.tips.map((t) => <li><span><b>{t.title}</b> {t.text}</span></li>)}</ul>
           </section>
         )}
 
