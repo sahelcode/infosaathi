@@ -20,6 +20,23 @@ const { kind, icon, name, sub, line, badges, action, checked, logo, cover } = As
 const stroke = { fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' } as const;
 ---
 <section class="pf-hero hp-hero">
+  {kind === 'ai' && (
+    <div class="hp-cover mx-band ai" aria-hidden="true">
+      <svg class="mx-net" viewBox="0 0 400 104" preserveAspectRatio="xMidYMid slice">
+        <g class="mx-links" stroke="rgba(255,255,255,.35)" stroke-width="1" fill="none">
+          <path d="M30 30 L110 60 L190 24 L270 70 L350 34"/><path d="M30 78 L110 60 L190 84 L270 70 L350 82"/><path d="M110 60 L190 24"/><path d="M190 84 L270 70"/><path d="M190 24 L270 70"/>
+        </g>
+        <g class="mx-pulses" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+          <path class="p1" pathLength="100" d="M30 30 L110 60 L190 24 L270 70 L350 34"/><path class="p2" pathLength="100" d="M30 78 L110 60 L190 84 L270 70 L350 82"/>
+        </g>
+        <g fill="#fff">
+          <circle class="n n1" cx="30" cy="30" r="3.5"/><circle class="n n2" cx="110" cy="60" r="4.5"/><circle class="n n3" cx="190" cy="24" r="3.5"/><circle class="n n4" cx="270" cy="70" r="4.5"/><circle class="n n5" cx="350" cy="34" r="3.5"/><circle class="n n6" cx="30" cy="78" r="3"/><circle class="n n7" cx="190" cy="84" r="3"/><circle class="n n8" cx="350" cy="82" r="3"/>
+        </g>
+      </svg>
+      <span class="mx-code"><i></i><i></i><i></i></span>
+      <span class="mx-sweep"></span>
+    </div>
+  )}
   {kind === 'sch' && (
     <div class="mx-edu" aria-hidden="true">
       <svg class="e1" width="30" height="30" viewBox="0 0 24 24" {...stroke}><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg>
@@ -46,10 +63,4 @@ const stroke = { fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'str
       <span class="pf-badge src"><Icon name="clock" size={13} w={2.2} />{checked}</span>
     </div>
   </div>
-  {kind === 'ai' && (
-    <div class="pf-actions hp-actions mx-actions">
-      <a class="pf-btn primary" href={action.href} target="_blank" rel="noopener"><Icon name={action.icon} size={17} w={2.2} />{action.label}</a>
-      <button class="pf-btn" type="button" data-share aria-label="শেয়ার"><Icon name="share" /></button>
-    </div>
-  )}
 </section>
