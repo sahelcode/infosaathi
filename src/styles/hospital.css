@@ -175,3 +175,6 @@
 .un-rel-i.has-logo img{display:block;width:100%;height:100%;object-fit:contain;}
 .un-rel-i.has-photo{padding:0;overflow:hidden;background:#e8f0ec;}
 .un-rel-i.has-photo img{display:block;width:100%;height:100%;object-fit:cover;}
+.pf-btn.is-off{opacity:.45;pointer-events:none;cursor:default;}
+.hp-info.hp-info-map{margin-top:0;}
+.hp-info.hp-info-map div{border-top:1px dashed var(--line);}
