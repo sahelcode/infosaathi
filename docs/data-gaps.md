@@ -211,9 +211,10 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 
 ## Madrasa (demo, 2026-10-24)
 - Phones: none of the 5 madrasas has a verified number (detail page shows "আমরা সঠিক তথ্য পাইনি").
-- Current muhtamim/principal missing: Dhaka Alia, Sylhet Alia, Darul Uloom Hathazari, Badedeorail Fultali. Patiya: taken from the official site (listed as "rector").
+- Current muhtamim/principal missing: Sylhet Alia, Darul Uloom Hathazari, Badedeorail Fultali. Patiya: taken from the official site (listed as "rector").
 - Student/teacher counts missing: Dhaka Alia (both), Sylhet Alia (teachers).
 - Badedeorail Fultali: 1920 founding year is unsourced, confirm before launch.
 - Badge is "খোলা সূত্র থেকে সংগৃহীত" (mostly Wikipedia), not phone-verified.
 - No photos or logos yet; home card uses a neutral mosque placeholder.
 - Satpur Kamil Madrasah (satpur-kamil-madrasah, 2026-10-24): no verified phone (only a third-party directory number), no current principal from an official source (last named principal is from 2022 news), student/teacher counts (Wikipedia says 1,500+ without a second source), email. Website satpurkm.edu.bd taken from the official logo, not opened (blocked from workspace). Searched: en/bn Wikipedia, institution.bd (BANBEIS record), Lamakazi union portal (not reachable), 4 searches bn/en.
+- Govt Madrasah-e-Alia Dhaka (government-madrasah-e-alia-dhaka, 2026-10-24): student and teacher counts, Fazil honours subject list, campus area, gender (only one directory says boys). Searched: official site (about, contact, notice pages 1-3), DME page, en Wikipedia, institution.bd, 4 searches bn/en, news (TBS, BSS, Bangla Tribune). Principal and phone filled from the official site.
