@@ -182,3 +182,7 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 | school | sylhet-government-pilot-high-school | tuition and admission fees | official tuition page holds unrelated template text | 2026-10-23 |
 | school | sylhet-government-pilot-high-school | SSC results | official board result page did not load, Sylhet board news, 3 searches (bn/en) | 2026-10-23 |
 | school | sylhet-government-pilot-high-school | old Blogger URL | not in docs/old-posts-plan.csv | 2026-10-23 |
+| school | bangladesh-noubahini-school-and-college-khulna | students, teachers | official site disagrees with itself: home page 7000+ students / 150+ teachers, about page 4,300+ / 100+; not used | 2026-10-23 |
+| school | bangladesh-noubahini-school-and-college-khulna | email, phone labels | official contact page has empty phone/email; admission page lists 3 numbers without labels | 2026-10-23 |
+| school | bangladesh-noubahini-school-and-college-khulna | 2027 class 1-9 admission (dates, seats, fees) | notice is an image on the official site that could not be opened (server error); 3 searches bn/en found nothing | 2026-10-23 |
+| school | bangladesh-noubahini-school-and-college-khulna | SSC results | Jessore Board, 4 searches (bn/en), news; no school-wise figures found | 2026-10-23 |
