@@ -7,9 +7,9 @@ url: "https://gemini.google/"
 free_plan: true
 pricing:
   - { plan: "Free", price: "বিনামূল্যে", note: "Google অ্যাকাউন্ট লাগে; ছবি তৈরি, Deep Research, Gemini Live ও ১৫ GB স্টোরেজ" }
-  - { plan: "Google AI Plus", price: "মাসে $৪.৯৯", note: "ফ্রির দ্বিগুণ সীমা, ভিডিও তৈরি, ৪০০ GB স্টোরেজ" }
-  - { plan: "Google AI Pro", price: "মাসে $১৯.৯৯", note: "ফ্রির ৪ গুণ সীমা, Jules কোডিং এজেন্ট, ৫ TB স্টোরেজ" }
-  - { plan: "Google AI Ultra", price: "মাসে $৯৯.৯৯ থেকে", note: "$৯৯.৯৯ (৫ গুণ সীমা) বা $১৯৯.৯৯ (২০ গুণ সীমা)" }
+  - { plan: "Google AI Plus", price: "মাসে $৪.৯৯ (অক্টোবর ২০২৬-এ)", note: "ফ্রির দ্বিগুণ সীমা, ভিডিও তৈরি, ৪০০ GB স্টোরেজ" }
+  - { plan: "Google AI Pro", price: "মাসে $১৯.৯৯ (অক্টোবর ২০২৬-এ)", note: "ফ্রির ৪ গুণ সীমা, Jules কোডিং এজেন্টে বেশি সীমা, ৫ TB স্টোরেজ" }
+  - { plan: "Google AI Ultra", price: "মাসে $৯৯.৯৯ থেকে (অক্টোবর ২০২৬-এ)", note: "$৯৯.৯৯ (৫ গুণ সীমা) বা $১৯৯.৯৯ (২০ গুণ সীমা)" }
 bangla: "অজানা"
 platforms: ["মোবাইল অ্যাপ", "ওয়েব"]
 use_cases:
@@ -21,12 +21,12 @@ good:
   - "ফ্রি প্ল্যানেই ছবি তৈরি ও Deep Research আছে"
   - "Google অ্যাকাউন্টের স্টোরেজের সঙ্গে প্ল্যান মেলানো"
 think:
-  - "ফ্রিতে মডেল ব্যবহারের সীমা বদলাতে পারে (Pro মডেলে 'varying access')"
-  - "Pro ও Ultra শুধু ১৮+ বয়সীদের জন্য"
+  - "ফ্রি প্ল্যানে শুধু Flash-Lite মডেল; Pro মডেল Google AI Pro ও Ultra-তে"
+  - "Google AI প্ল্যান (Plus, Pro, Ultra) শুধু ১৮+ বয়সীদের জন্য"
   - "Plus, Pro ও Ultra সব দেশে নেই; বাংলাদেশে পাওয়া যায় কি না পেজে বলা নেই"
   - "বাংলা ভাষার মান নিয়ে অফিসিয়াল পেজে কিছু বলা নেই"
 alternatives: ["chatgpt", "claude", "notebooklm"]
 sources:
   - { title: "Gemini Subscriptions", url: "https://gemini.google/subscriptions/" }
-verified: 2026-10-07
+verified: 2026-10-23
 verified_by: official
