@@ -8,7 +8,7 @@ const { side = false } = Astro.props;
 {ADS_LIVE ? (
   <div class:list={['ad-slot', 'ad-live', { side }]} aria-label="বিজ্ঞাপন">
     <small>বিজ্ঞাপন</small>
-    <ins class="adsbygoogle" style="display:block" data-ad-client={ADSENSE_CLIENT} data-ad-slot={ADSENSE_SLOT} data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle" style="display:block" data-ad-client={ADSENSE_CLIENT} data-ad-slot={ADSENSE_SLOT} data-ad-format="horizontal" data-full-width-responsive="true"></ins>
   </div>
 ) : SHOW_DRAFTS ? (
   <div class:list={['ad-slot', { side }]} aria-label="বিজ্ঞাপন"><span>{side ? 'বিজ্ঞাপন · ৩০০×২৫০' : 'বিজ্ঞাপন'}</span></div>
