@@ -270,7 +270,7 @@ export const GET: APIRoute = async () => {
   // Ads: three places on the home page (university/hospital, after news, before the footer).
   // Nothing is printed until ADSENSE_SLOT is set; the AdSense script itself loads as soon as ADSENSE_CLIENT is set.
   const adBox = ADS_LIVE
-    ? `<div class="container"><div class="ad-slot ad-live" aria-label="বিজ্ঞাপন"><small>বিজ্ঞাপন</small><ins class="adsbygoogle" style="display:block" data-ad-client="${ADSENSE_CLIENT}" data-ad-slot="${ADSENSE_SLOT}" data-ad-format="horizontal" data-full-width-responsive="true"></ins></div></div>\n`
+    ? `<div class="container"><div class="ad-slot ad-live" aria-label="বিজ্ঞাপন"><small>বিজ্ঞাপন</small><ins class="adsbygoogle" style="display:block" data-ad-client="${ADSENSE_CLIENT}" data-ad-slot="${ADSENSE_SLOT}" data-ad-format="horizontal" data-full-width-responsive="false"></ins></div></div>\n`
     : '';
   const adCss = adBox ? '<style>.ad-live{display:block;text-align:center;overflow:hidden;margin:18px 0}.ad-live small{display:block;font-size:11px;color:#94a3b8;margin-bottom:4px}.ad-live:has(ins[data-ad-status="unfilled"]){display:none}</style>\n' : '';
   if (ADSENSE_SRC) html = swap(html, '</head>', `<script async src="${ADSENSE_SRC}" crossorigin="anonymous"></script>\n${adCss}</head>`);
