@@ -25,6 +25,8 @@ export async function getStaticPaths() {
 
 const { hospital } = Astro.props as { hospital: Hospital };
 const h = hospital.data;
+// Ad rule: a page with no own about text and no own FAQ is thin, so it shows only the first ad.
+const thinAds = !h.about && !(h.faq && h.faq.length);
 const city = CITIES[h.city];
 const short = h.short ?? h.name;
 const path = hospitalUrl(hospital);
@@ -229,7 +231,7 @@ import MiniThumb from '../../../components/MiniThumb.astro';
           <a href={`/doctors/${h.city}/`}>{city.of} ডাক্তার</a>
         </nav>
 
-        <Ad />
+        {!thinAds && <Ad />}
 
         {near.length > 0 && (
           <section class="pf-block" aria-labelledby="h-near">
@@ -252,7 +254,7 @@ import MiniThumb from '../../../components/MiniThumb.astro';
             <div class="pf-sheet-grp">{h.numbers.map((n) => <NumRow label={n.label} number={n.number} note={n.note} er={n.kind === 'emergency'} />)}</div>
             <a class="pf-btn" href={map} target="_blank" rel="noopener"><Icon name="pin" />ম্যাপে দেখুন</a>
           </div>
-          <Ad side />
+          {!thinAds && <Ad side />}
         </div>
       </aside>
     </div>
