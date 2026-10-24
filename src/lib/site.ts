@@ -10,7 +10,7 @@ export const SHOW_DRAFTS = import.meta.env.DEV || process.env.SHOW_DRAFTS === '1
 // after approval and paste its slot number here (one unit can be reused on every box).
 // Previews (npm run dev) show grey placeholders instead.
 export const ADSENSE_CLIENT = 'ca-pub-9545422197271271';
-export const ADSENSE_SLOT = '';
+export const ADSENSE_SLOT = '4825591813';
 export const ADS_LIVE = Boolean(ADSENSE_CLIENT && ADSENSE_SLOT);
 export const ADSENSE_SRC = ADSENSE_CLIENT ? `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}` : '';
 
