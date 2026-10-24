@@ -1,11 +1,13 @@
 ---
 // Simple list page frame: breadcrumb, heading, intro, chips, then the list in the default slot.
 import Base from '../layouts/Base.astro';
-import { SITE } from '../lib/site';
+import { SITE, ADS_LIVE, SHOW_DRAFTS } from '../lib/site';
+import Ad from './Ad.astro';
 import '../styles/hospital.css';
 import '../styles/uni.css';
 interface Props { title: string; h1: string; intro: string; path: string; crumbs: string[][]; chips?: { href: string; label: string; n?: string }[] }
 const { title, h1, intro, path, crumbs, chips = [] } = Astro.props;
+const showAd = ADS_LIVE || SHOW_DRAFTS;
 const jsonld = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -22,7 +24,10 @@ const jsonld = {
     <div class="pf-minis" id="pfList">
       <slot />
     </div>
+    {showAd && <div class="pf-ad-mid" id="pfAdMid"><Ad /></div>}
+    {showAd && <script is:inline>(function(){var l=document.getElementById('pfList'),a=document.getElementById('pfAdMid');if(!l||!a)return;var r=l.querySelectorAll('.pf-mini');if(r.length>12){r[11].after(a);}else{a.remove();}})();</script>}
     <button class="pf-more" id="pfMore" type="button" hidden>আরও দেখুন</button>
+    {showAd && <Ad />}
   </main>
 </Base>
 <script>
@@ -42,3 +47,7 @@ const jsonld = {
     render();
   }
 </script>
+<style is:global>
+  .pf-minis > .pf-ad-mid{grid-column:1 / -1;width:100%}
+  .pf-ad-mid .ad-slot{margin-top:0}
+</style>

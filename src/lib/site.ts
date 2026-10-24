@@ -5,13 +5,18 @@ export const SITE = 'https://infosaathi.com';
 // to preview them. A normal `npm run build` (what Cloudflare runs) never publishes a draft.
 export const SHOW_DRAFTS = import.meta.env.DEV || process.env.SHOW_DRAFTS === '1';
 
-// AdSense: put your publisher id here (ca-pub-XXXXXXXXXXXXXXXX) when the new site is approved.
-// Until then the published site shows no ad boxes; previews show grey placeholders.
-export const ADSENSE_CLIENT = '';
+// AdSense publisher id. With it set, every page loads the AdSense script (needed for the site review).
+// Ad boxes appear only when ADSENSE_SLOT is also set: create one responsive display ad unit in AdSense
+// after approval and paste its slot number here (one unit can be reused on every box).
+// Previews (npm run dev) show grey placeholders instead.
+export const ADSENSE_CLIENT = 'ca-pub-9545422197271271';
+export const ADSENSE_SLOT = '';
+export const ADS_LIVE = Boolean(ADSENSE_CLIENT && ADSENSE_SLOT);
+export const ADSENSE_SRC = ADSENSE_CLIENT ? `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}` : '';
 
 // Public contact address shown on the contact, privacy and policy pages. Change it here only.
 export const CONTACT_EMAIL = 'contact@infosaathi.com';
-export const UPDATED = '১২ অক্টোবর ২০২৬';
+export const UPDATED = '২৪ অক্টোবর ২০২৬';
 
 // "যোগাযোগ" button: opens WhatsApp with a ready message. Number in international form, no plus sign.
 export const WHATSAPP_NUMBER = '8801730175092';

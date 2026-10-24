@@ -9,7 +9,7 @@ import { ICONS } from '../lib/icons';
 import { SPECIALTIES, HOTEL_FACILITIES } from '../lib/taxonomy';
 import { ART, artKind } from '../lib/newsArt';
 import { bn, bnDate } from '../lib/format';
-import { CONTACT_EMAIL, WHATSAPP_LINK } from '../lib/site';
+import { CONTACT_EMAIL, WHATSAPP_LINK, ADSENSE_CLIENT, ADSENSE_SLOT, ADSENSE_SRC, ADS_LIVE } from '../lib/site';
 
 const swap = (src: string, from: string, to: string) => {
   if (!src.includes(from)) throw new Error(`হোমপেজের টেমপ্লেটে এই অংশ পাওয়া যায়নি: ${from.slice(0, 60)}`);
@@ -267,5 +267,18 @@ export const GET: APIRoute = async () => {
     collegeRow: ['cap', 'award', 'file'], schoolRow: ['cap', 'star', 'walk'], placeRow: ['mount', 'sun', 'beach'], hotelRow: ['bed', 'pool', 'star'],
   };
   html = swap(html, 'var I=/*ROW_ICONS*/{};', `var I=${JSON.stringify(Object.fromEntries(Object.entries(rowIcons).map(([k, v]) => [k, v.map((n) => ICONS[n])])))};`);
+  // Ads: three places on the home page (university/hospital, after news, before the footer).
+  // Nothing is printed until ADSENSE_SLOT is set; the AdSense script itself loads as soon as ADSENSE_CLIENT is set.
+  const adBox = ADS_LIVE
+    ? `<div class="container"><div class="ad-slot ad-live" aria-label="বিজ্ঞাপন"><small>বিজ্ঞাপন</small><ins class="adsbygoogle" style="display:block" data-ad-client="${ADSENSE_CLIENT}" data-ad-slot="${ADSENSE_SLOT}" data-ad-format="auto" data-full-width-responsive="true"></ins></div></div>\n`
+    : '';
+  const adCss = adBox ? '<style>.ad-live{display:block;text-align:center;overflow:hidden;margin:18px 0}.ad-live small{display:block;font-size:11px;color:#94a3b8;margin-bottom:4px}.ad-live:has(ins[data-ad-status="unfilled"]){display:none}</style>\n' : '';
+  if (ADSENSE_SRC) html = swap(html, '</head>', `<script async src="${ADSENSE_SRC}" crossorigin="anonymous"></script>\n${adCss}</head>`);
+  if (adBox) {
+    html = swap(html, '<div class="row-scroll reveal" id="uniRow"></div>\n  </div>\n</section>', '<div class="row-scroll reveal" id="uniRow"></div>\n  </div>\n</section>\n' + adBox);
+    html = swap(html, '<div id="newsList"></div>\n      </div>\n    </div>\n  </div>\n</section>', '<div id="newsList"></div>\n      </div>\n    </div>\n  </div>\n</section>\n' + adBox);
+    html = swap(html, '<!-- ============================================================ 26. FOOTER', adBox + '<!-- ============================================================ 26. FOOTER');
+    html = swap(html, '</body>', "<script>document.querySelectorAll('ins.adsbygoogle').forEach(function(){try{(window.adsbygoogle=window.adsbygoogle||[]).push({})}catch(e){}})</script>\n</body>");
+  }
   return new Response(html, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
 };
