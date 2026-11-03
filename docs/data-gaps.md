@@ -227,3 +227,4 @@ Rules are in CLAUDE.md ("DATA GAPS"). When a gap is filled, update the YAML, set
 ## AI tools premium steps (2026-10-24)
 - Perplexity: no official upgrade-steps page found; the page shows a generic list with an unverified-payment note. Add premium_steps from an official source.
 - Payment methods accepted from Bangladesh are not verified for any tool.
+| university | bangladesh-university-of-engineering-and-technology | 2026–27 application dates, fee, eligibility and seats (circular not out; 2025–26 used, labelled গত বছর); admission fee and total cost; students/teachers counts; total 2025–26 applicants; registrar email | buet.ac.bd (robots-disallowed for fetch), ugadmission.buet.ac.bd, Prothom Alo, Daily Star, Financial Express, bdnews24, 6 searches bn/en | 2026-11-03 |
