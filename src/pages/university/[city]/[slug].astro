@@ -147,7 +147,7 @@ import MiniThumb from '../../../components/MiniThumb.astro';
           <dl>
             {glance.map((g) => {
               const s = g.v ? split(g.v) : undefined;
-              return <div class:list={['un-row', { na: !g.v }]}><dt>{g.k}</dt><dd>{s ? s.t : NA}</dd></div>;
+              return <div class:list={['un-row', { na: !g.v }]}><dt>{g.k}</dt><dd>{s ? s.t : NA}{s && s.n && <em>{s.n}</em>}</dd></div>;
             })}
           </dl>
         </section>
