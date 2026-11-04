@@ -11,8 +11,20 @@ const ds=v=>v instanceof Date?v.toISOString().slice(0,10):String(v);
 const bnd=s=>String(s).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]);
 const tm=t=>{const [h,m]=t.split(':').map(Number);const p=h<5?'রাত':h<12?'সকাল':h<16?'দুপুর':h<18?'বিকাল':h<20?'সন্ধ্যা':'রাত';const h12=h%12||12;return `${p} ${bnd(h12)}${m?':'+bnd(String(m).padStart(2,'0')):'টা'}`;};
 const hosp=Object.fromEntries(rd('hospitals').map(h=>[h.slug,h]));
+
+// Search names: the name without titles and initials, with Bengali spelling variants folded together
+// (ই/ঈ, উ/ঊ, ি/ী, ু/ূ, ন/ণ, স/শ/ষ), plus the English name without titles. Helps the agent match loose spellings.
+const TITLES=/^(প্রফেসর ডা\.|অধ্যাপক ডা\.|সহযোগী অধ্যাপক ডা\.|ডা\.|মেজর ডা\.|ডাঃ|ডা|Prof\. Dr\.|Dr\.|Dr|Major Dr\.|Prof\.)\s*/i;
+const isInit=w=>/^[\u0980-\u09FFA-Za-z]{1,2}\.?$/.test(w)&&w.endsWith('.')||/^([\u0980-\u09FFA-Za-z]\.)+$/.test(w);
+const fold=s=>s.replace(/ঈ/g,'ই').replace(/ঊ/g,'উ').replace(/ী/g,'ি').replace(/ূ/g,'ু').replace(/ণ/g,'ন').replace(/[শষ]/g,'স').replace(/ৈ/g,'ই');
+const searchNames=d=>{
+  let bn=d.name.replace(TITLES,'').replace(TITLES,'').split(/\s+/).filter(w=>w&&!isInit(w)).join(' ');
+  let en=d.name_en.replace(TITLES,'').replace(TITLES,'').split(/\s+/).filter(w=>w&&!isInit(w)).join(' ').toLowerCase();
+  const out=[...new Set([bn,fold(bn),en])].filter(Boolean);
+  return out.join(' ; ');
+};
 const stripT=n=>n.replace(/^(প্রফেসর ডা\.|অধ্যাপক ডা\.|ডা\.|মেজর ডা\.|ডাঃ|Prof\. Dr\.|Dr\.|Major Dr\.|Prof\.)\s*/i,'').trim();
-let o=['# InfoSaathi ডাক্তার তালিকা (ডাটাবেস)',`# সর্বশেষ হালনাগাদ: ${TODAY}`,'# প্রতিটি লাইন একজন ডাক্তার। তথ্য infosaathi.com থেকে, ফোনে যাচাই করা।','# ফরম্যাট: ID | নাম (বাংলা) | নাম (English) | বিশেষজ্ঞতা | চেম্বার ও সময় ও ফি | সিরিয়াল নম্বর | যাচাইয়ের তারিখ | পেজ',''];
+let o=['# InfoSaathi ডাক্তার তালিকা (ডাটাবেস)',`# সর্বশেষ হালনাগাদ: ${TODAY}`,'# প্রতিটি লাইন একজন ডাক্তার। তথ্য infosaathi.com থেকে, ফোনে যাচাই করা।','# ফরম্যাট: ID | নাম (বাংলা) | নাম (English) | খোঁজার নাম (পদবি ও ইনিশিয়াল বাদে, বানান মিলিয়ে) | বিশেষজ্ঞতা | চেম্বার ও সময় ও ফি | সিরিয়াল নম্বর | যাচাইয়ের তারিখ | পেজ',''];
 const docs=rd('doctors').sort((a,b)=>a.name_en.localeCompare(b.name_en));
 let i=0;
 for(const d of docs){ i++;
@@ -24,7 +36,7 @@ for(const d of docs){ i++;
   }).join(' || ');
   const sr=(d.chambers||[]).flatMap(c=>c.serials||[]).map(s=>`${s.label||'সিরিয়াল'} ${s.number}${s.note?' ('+s.note+')':''}`);
   const uniq=[...new Set(sr)].join('; ');
-  o.push(`D${String(i).padStart(3,'0')} | ${d.name} | ${d.name_en} | ${spec[d.specialty]||d.specialty} | ${ch} | ${uniq||'নেই'} | ${ds(d.verified)} | /doctor/${d.city}/${d.slug}/`);
+  o.push(`D${String(i).padStart(3,'0')} | ${d.name} | ${d.name_en} | খোঁজার নাম: ${searchNames(d)} | ${spec[d.specialty]||d.specialty} | ${ch} | ${uniq||'নেই'} | ${ds(d.verified)} | /doctor/${d.city}/${d.slug}/`);
 }
 fs.writeFileSync(OUT+'/knowledge-doctors.txt',o.join('\n'));
 // hospitals
