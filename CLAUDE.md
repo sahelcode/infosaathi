@@ -172,6 +172,16 @@ Trigger: Sahel asks to update the ranking (a new QS edition, a correction, or mo
 - Maximum 2 sources per file (enforced by the schema): the official website (or the official page that holds the facts) first, then the single most useful second page (the official fee/admission/notice page, or one reputable news article), only if it helps trust or SEO. Never more than 2. Prefer the official page that holds the most numbers.
 - If more pages were used, keep the facts but list only the 2 best; every number must still be consistent with those pages.
 
+## WHATSAPP AGENT KNOWLEDGE FILES (after every doctor, university or hospital change)
+
+Sahel's WhatsApp Business AI answers doctor/university questions from three Word files. They are generated from `src/content/`, never edited by hand.
+- After ANY change to `src/content/doctors/`, `universities/` or `hospitals/` (new, updated or deleted item), run `./scripts/build-agent-knowledge.sh` (needs Python `python-docx`; `pip install python-docx --break-system-packages` if missing). It rewrites `agent-knowledge/knowledge-doctors|universities|hospitals` as `.txt` and `.docx`, with today's date on top.
+- Commit the `agent-knowledge/` files in the same commit (or the same batch) as the content change, then push. Do this even when only one item changed.
+- Drafts are excluded automatically. A doctor without verified data must never appear in these files.
+- `agent-knowledge/agent-prompt.txt` is the agent's instruction text. Change it only when Sahel asks.
+- In the final Bengali report add one line: "WhatsApp আপডেট ফাইল তৈরি: agent-knowledge/ (এই তারিখের)". Sahel downloads the three `.docx` files from GitHub and re-uploads them to WhatsApp Business (Knowledge > Files and links).
+- Do not add any new feature to the pages for this. The agent files are a separate export.
+
 ## Other rules
 - AI-researched data must carry sources and honest badges; Sahel verifies by phone.
 - Photos only from Sahel or free-licence sources with credit. Never lift photos from other sites.
