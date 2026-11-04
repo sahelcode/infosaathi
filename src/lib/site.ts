@@ -19,5 +19,5 @@ export const CONTACT_EMAIL = 'contact@infosaathi.com';
 export const UPDATED = '২৪ অক্টোবর ২০২৬';
 
 // "যোগাযোগ" button: opens WhatsApp with a ready message. Number in international form, no plus sign.
-export const WHATSAPP_NUMBER = '8801730175092';
+export const WHATSAPP_NUMBER = '8801777572437';
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('আমি InfoSaathi থেকে আপনার সাথে যোগাযোগ করছি। আমার সাহায্যের দরকার।')}`;
